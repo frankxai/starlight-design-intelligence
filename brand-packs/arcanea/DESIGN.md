@@ -50,3 +50,13 @@ colors:
 - **Cinematic Pacing:** Deliberate, slow reveals (0.8s – 2.0s entrances) with long breathing holds.
 - **Transitions:** Domain-warp, gravitational lens, and cosmic thread weaving.
 - **Camera Movement:** Dolly push, pan, and Three.js orbital sweeps on the World Graph.
+
+---
+
+## 6 · Higgsfield Production Notes
+
+- Use the shared workspace at `C:\Users\frank\starlight\higgsfield\`.
+- Reuse `assets\arcanea\dashboard_hero_premium_upscaled.png` and `assets\arcanea\dashboard_hero_premium.mp4` before spending new credits.
+- Arcanea prompts must inherit the cinematic language from `repos\arcanea-ecosystem\videos\arcanea-cinematic-hero\design.md`.
+- Cinematic stills route to Nano Banana Pro, Soul Cinematic, or Cinema Studio Image depending on whether text/diagrams, character fidelity, or filmic lighting is primary.
+- 9:16 motion proofs route to Seedance 2.0 or Kling 3.0 only after cost preflight.
