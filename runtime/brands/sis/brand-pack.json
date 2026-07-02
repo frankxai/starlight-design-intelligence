@@ -1,0 +1,21 @@
+{
+  "brandId": "sis",
+  "brandOperatingUnit": "starlight-substrate",
+  "version": "2026-07-02",
+  "updatedAt": "2026-07-02T17:30:00Z",
+  "positioning": "Calm operational intelligence substrate. Trust, systems, evidence, command centers for the entire ecosystem.",
+  "visualPrinciples": {
+    "coreAesthetic": "Nocturnal intelligence lab: obsidian, smoked glass, brushed metal, command observatory, signal field. Liquid glass depth for layers, clean functional beauty inspired by Vercel/GitHub patterns. Insightful, trustworthy, likeable through clear purpose.",
+    "inspiration": ["Apple liquid glass for depth and premium tactility", "Vercel minimal high-craft", "GitHub approachable insightful patterns"],
+    "qualityStandard": "World-class only. Meaningful, insightful, ultra tasteful. No filler."
+  },
+  "colorTokens": {
+    "foundation": { "void": "#0a0a0b", "space": "#111113", "elevated": "#1a1a1f" },
+    "accent": { "primary": "#6366f1", "secondary": "#a5b4fc" }
+  },
+  "imageDirection": "Premium generated bases for creative intelligence visuals + deterministic overlays for exact data/governance. Leverage high-quality image models for insightful diagrams and posters.",
+  "socialRules": { "static": "Deterministic + premium creative hybrid. Precise crops." },
+  "websiteRules": { "assets": "Synced from central DAM registry to Vercel public/assets." },
+  "approvalRoute": "#social-approvals",
+  "doNotUse": ["playful SaaS", "neon hacker cliche", "generic dashboard filler"]
+}

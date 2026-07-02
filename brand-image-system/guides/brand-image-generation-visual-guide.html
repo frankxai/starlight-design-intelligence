@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frank Multi-Brand Visual Intelligence Command</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060709;
+      --panel: #0d0f12;
+      --panel-accent: #13171c;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --line: #1f2937;
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.15);
+      --cyan: #06b6d4;
+      --cyan-glow: rgba(6, 182, 212, 0.15);
+      --amber: #f59e0b;
+      --amber-glow: rgba(245, 158, 11, 0.15);
+      --indigo: #6366f1;
+      --indigo-glow: rgba(99, 102, 241, 0.15);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 400px;
+      padding: 80px 8vw 60px;
+      background: 
+        radial-gradient(circle at 80% 20%, var(--cyan-glow) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, var(--emerald-glow) 0%, transparent 40%),
+        linear-gradient(180deg, #0b0c10 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), var(--emerald), transparent);
+    }
+
+    .eyebrow {
+      font-family: var(--font-display);
+      color: var(--cyan);
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      margin: 0 0 20px;
+      max-width: 900px;
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lede {
+      max-width: 750px;
+      color: var(--muted);
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    /* Tabs Navigation */
+    .tabs-nav {
+      display: flex;
+      justify-content: flex-start;
+      border-bottom: 1px solid var(--line);
+      margin: 30px 8vw 0;
+      gap: 24px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tabs-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 12px 4px 16px;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+    }
+
+    .tab-btn.active {
+      color: var(--cyan);
+    }
+
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+    }
+
+    main {
+      padding: 40px 8vw 80px;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out forwards;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .card:hover {
+      border-color: #374151;
+      transform: translateY(-2px);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--line);
+    }
+
+    .card.brand-card-frankx::before { background: var(--amber); }
+    .card.brand-card-sis::before { background: var(--cyan); }
+    .card.brand-card-arcanea::before { background: var(--indigo); }
+    .card.brand-card-gencreator::before { background: var(--emerald); }
+
+    .pill {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .pill-cyan { background: var(--cyan-glow); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.3); }
+    .pill-emerald { background: var(--emerald-glow); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .pill-amber { background: var(--amber-glow); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .pill-indigo { background: var(--indigo-glow); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .metadata-list {
+      margin: 16px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .metadata-list li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .metadata-list strong {
+      color: var(--text);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    th {
+      font-family: var(--font-display);
+      background: var(--panel-accent);
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    td {
+      background: var(--panel);
+      color: var(--muted);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .interactive-builder {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    select, textarea {
+      width: 100%;
+      background: var(--panel-accent);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      padding: 12px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    select:focus, textarea:focus {
+      border-color: var(--cyan);
+    }
+
+    textarea {
+      font-family: Consolas, monospace;
+      font-size: 14px;
+      resize: vertical;
+      min-height: 180px;
+    }
+
+    .btn-copy {
+      background: var(--cyan);
+      color: #000000;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: #22d3ee;
+    }
+
+    .btn-copy:active {
+      transform: scale(0.98);
+    }
+
+    .alert-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--emerald);
+      color: #000000;
+      font-family: var(--font-display);
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(16,185,129,0.3);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+
+    .alert-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gate-score {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="eyebrow">Multi-Brand Visual Intelligence Command</div>
+    <h1>Inspected Visual Systems & Dynamic Loops</h1>
+    <p class="lede">A federated design framework scaling across 10 brand satellites. Generative source frames combined with precise code overlays, backed by a rigorous 30-point evaluation gate.</p>
+  </header>
+
+  <nav class="tabs-nav">
+    <button class="tab-btn active" onclick="switchTab(event, 'tab-overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab(event, 'tab-brands')">10 Satellites</button>
+    <button class="tab-btn" onclick="switchTab(event, 'tab-loops')">Creative Loops</button>
+    <button class="tab-btn" onclick="switchTab(event, 'tab-builder')">Prompt Builder</button>
+    <button class="tab-btn" onclick="switchTab(event, 'tab-gate')">30pt Gate</button>
+  </nav>
+
+  <main>
+    <!-- OVERVIEW TAB -->
+    <div id="tab-overview" class="tab-content active">
+      <h2>The Core Mandate</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>No Artifact, No Claim.</h3>
+          <p>Every single visual asset must be explicitly written to disk, scored, and logged in the CSV ledger. We do not approve "conceptual runs" or undocumented files. Base images are generated text-free; typography and UI schemas are rendered deterministically using Pillow or browser captures.</p>
+        </div>
+        <div class="card">
+          <h3>Tool Lane Routing</h3>
+          <p>We leverage Codex <code>image_gen</code> and Antigravity <code>generate_image</code> for high-craft still base frames, and Grok CLI for motion and video jobs. Hermes batch loops are reserved for reflection passes and structured analysis once credential paths are validated.</p>
+        </div>
+      </div>
+
+      <section style="margin-top: 40px;">
+        <h2>Ecosystem Snapshot</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Satellite Brand</th>
+              <th>Primary Repo</th>
+              <th>Monthly Target</th>
+              <th>VisualMetaphor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>FrankX</strong></td>
+              <td><code>frankx.ai-vercel-website</code></td>
+              <td>40 assets</td>
+              <td>Executive cockpit, obsidian glass, signal nodes, metrics</td>
+            </tr>
+            <tr>
+              <td><strong>Starlight (SIS)</strong></td>
+              <td><code>Starlight-Intelligence-System</code></td>
+              <td>25 assets</td>
+              <td>Nocturnal command center, dark map interface, proof gates</td>
+            </tr>
+            <tr>
+              <td><strong>Arcanea</strong></td>
+              <td><code>arcanea-ai-app</code></td>
+              <td>25 assets</td>
+              <td>Mythic creative forge, light portal, ink and ancient paper</td>
+            </tr>
+            <tr>
+              <td><strong>AI-Architect</strong></td>
+              <td><code>enterprise-ai-kit</code></td>
+              <td>20 assets</td>
+              <td>Architectural blueprint grid, governance maps, CoE workflows</td>
+            </tr>
+            <tr>
+              <td><strong>Agentic Income</strong></td>
+              <td><code>agentic-income-network</code></td>
+              <td>20 assets</td>
+              <td>Cashflow conveyor paths, mechanical gears, pipelines</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- BRANDS TAB -->
+    <div id="tab-brands" class="tab-content">
+      <h2>10 Active Satellites</h2>
+      <div class="grid-3" id="brand-cards-container">
+        <!-- Rendered by JS for simplicity and maintainability -->
+      </div>
+    </div>
+
+    <!-- LOOPS TAB -->
+    <div id="tab-loops" class="tab-content">
+      <h2>Creative Loop Library</h2>
+      <div class="grid-3">
+        <div class="card">
+          <span class="pill pill-cyan">Tier A</span>
+          <h3>Product Proof Loop</h3>
+          <p>Real screenshots, terminal outputs, browser flows, and dashboard states. Always preferred for core product launches to avoid fake UI visual slop.</p>
+        </div>
+        <div class="card">
+          <span class="pill pill-amber">Tier B + C</span>
+          <h3>Physical Infographic</h3>
+          <p>Generative base layers depicting clean blank boards, panels, or rails. All labels, arrows, and data points are overlaid via programmatically rendered text.</p>
+        </div>
+        <div class="card">
+          <span class="pill pill-indigo">Tier B</span>
+          <h3>Brand World Poster</h3>
+          <p>High-craft atmospheric frames representing the philosophical or mythic universe of a brand. Used as hero graphics or video source frames.</p>
+        </div>
+        <div class="card">
+          <span class="pill pill-indigo">Tier B</span>
+          <h3>Character / Mascot</h3>
+          <p>Consistent character generations locked to reference seeds. Critical for AnimeLegends episode frames and recurrent visual hosts.</p>
+        </div>
+        <div class="card">
+          <span class="pill pill-emerald">Tier C</span>
+          <h3>Exact Carousel</h3>
+          <p>Deterministic typography sheets and document pages rendered via CSS/SVG or Figma template variables.</p>
+        </div>
+        <div class="card">
+          <span class="pill pill-cyan">Tier B</span>
+          <h3>Motion Source Frame</h3>
+          <p>Source frames engineered with high local contrast and clean movement vectors, optimized for subsequent image-to-video generation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUILDER TAB -->
+    <div id="tab-builder" class="tab-content">
+      <h2>Interactive Prompt Architect</h2>
+      <div class="grid-2">
+        <div class="interactive-builder">
+          <div class="form-group">
+            <label for="builder-brand">Satellite Brand</label>
+            <select id="builder-brand" onchange="generatePrompt()">
+              <!-- Populated by JS -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="builder-loop">Creative Loop</label>
+            <select id="builder-loop" onchange="generatePrompt()">
+              <option value="infographic">Physical Infographic (Tier B+C)</option>
+              <option value="world">Brand World Poster (Tier B)</option>
+              <option value="mascot">Character/Mascot (Tier B)</option>
+              <option value="motion">Motion Source Frame (Tier B)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="builder-platform">Platform / Surface</label>
+            <select id="builder-platform" onchange="generatePrompt()">
+              <option value="linkedin">LinkedIn/X Square (1:1)</option>
+              <option value="instagram">Instagram vertical (4:5)</option>
+              <option value="story">Story/Reel (9:16)</option>
+              <option value="website">Website Hero (16:9)</option>
+              <option value="farcaster">Farcaster/OG (1.91:1)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label for="builder-result">Generated Prompt String</label>
+            <textarea id="builder-result" readonly></textarea>
+          </div>
+          <button class="btn-copy" onclick="copyPrompt()">Copy Prompt to Clipboard</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GATE TAB -->
+    <div id="tab-gate" class="tab-content">
+      <h2>30-Point Quality Gate</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="gate-score">05/05</div>
+          <h3>First Read & Hierarchy</h3>
+          <p>One clear visual focus. No chaotic element collision. The eye must land on the main brand metaphor instantly.</p>
+        </div>
+        <div class="card">
+          <div class="gate-score">05/05</div>
+          <h3>Brand Fit</h3>
+          <p>Adherence to the brand-specific materials, palettes, and rules defined in the unit registry. Zero off-brand gradients.</p>
+        </div>
+        <div class="card">
+          <div class="gate-score">05/05</div>
+          <h3>Craft & Composition</h3>
+          <p>Correct aspect ratio framing. Clean lighting, premium surface textures, and proper negative space for overlays.</p>
+        </div>
+        <div class="card">
+          <div class="gate-score">05/05</div>
+          <h3>Accessibility</h3>
+          <p>High local contrast, text safe zones for overlay rendering, and clear boundaries for crop testing.</p>
+        </div>
+        <div class="card">
+          <div class="gate-score">05/05</div>
+          <h3>Accuracy & Provenance</h3>
+          <p>No garbled pseudo-text artifacts, warped hands, double heads, or floating items. Prompt lineage tracked.</p>
+        </div>
+        <div class="card">
+          <div class="gate-score">05/05</div>
+          <h3>Surface Usefulness</h3>
+          <p>Fulfills the exact aspect ratio requirement for the target platform. Space reserved in crop zones.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="alert-toast" id="copy-toast">Prompt copied to clipboard!</div>
+
+  <script>
+    // Tab switching logic
+    function switchTab(evt, tabId) {
+      const contents = document.getElementsByClassName("tab-content");
+      for (let i = 0; i < contents.length; i++) {
+        contents[i].classList.remove("active");
+      }
+      const buttons = document.getElementsByClassName("tab-btn");
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+      }
+      document.getElementById(tabId).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+
+    // Brands Data
+    const brandsData = [
+      { id: "frankx", name: "FrankX Demand", repo: "frankx.ai-vercel-website", voice: "Sharp, direct, elite, tactical, controlled", color: "amber", direction: "Executive AI command layer: black glass, graphite, signal lines, cockpit console." },
+      { id: "sis", name: "Starlight Substrate (SIS)", repo: "Starlight-Intelligence-System", voice: "Calm operational intelligence, trust, systems", color: "cyan", direction: "Nocturnal intelligence lab: obsidian, smoked glass, command observatory." },
+      { id: "arcanea", name: "Arcanea Product & IP", repo: "arcanea-ai-app", voice: "Mythic but precise; poetic but not vague", color: "indigo", direction: "Creative intelligence: codex, portal, creative forge, spell-interface." },
+      { id: "ai-architect", name: "AI-Architect", repo: "enterprise-ai-kit", voice: "Enterprise credible, architectural, practical", color: "cyan", direction: "Center of excellence blueprints, governance maps, frameworks." },
+      { id: "income", name: "Agentic Income Network", repo: "agentic-income-network", voice: "Pragmatic conversion, trusted tools", color: "amber", direction: "Revenue engines, offer paths, proof ladders, cashflow rails." },
+      { id: "realityarchitect", name: "Reality Architect", repo: "RealityArchitect", voice: "Transformational, structured, reflective", color: "indigo", direction: "Life design maps, intentional systems, timeline architectures." },
+      { id: "gencreator", name: "GenCreator", repo: "gencreator.ai", voice: "Creator-operating-system clarity", color: "emerald", direction: "Architecture-warm creator desks, artifact trays, cohort signals." },
+      { id: "vibeclubs", name: "VibeClubs", repo: "vibeclubs", voice: "Community energy, event identity", color: "indigo", direction: "Nightlife energy, glowing social events, clean vector shapes." },
+      { id: "mind", name: "Research & Mind", repo: "research-intelligence", voice: "Credible, curious, evidence-led", color: "cyan", direction: "Research synthesis labs, parchment boards, confidence rails." },
+      { id: "tooling", name: "Tooling / OSS", repo: "awesome-design-agent-skills", voice: "Clear, useful, technical", color: "emerald", direction: "Repository command screens, empty terminal frames, code rails." }
+    ];
+
+    // Populate dropdowns and cards
+    window.onload = function() {
+      const brandContainer = document.getElementById("brand-cards-container");
+      const selectBrand = document.getElementById("builder-brand");
+
+      brandsData.forEach(brand => {
+        // Create brand card
+        const card = document.createElement("div");
+        card.className = `card brand-card-${brand.id}`;
+        card.innerHTML = `
+          <span class="pill pill-${brand.color}">${brand.id}</span>
+          <h3>${brand.name}</h3>
+          <ul class="metadata-list">
+            <li><strong>Repo:</strong> <code>${brand.repo}</code></li>
+            <li><strong>Voice:</strong> ${brand.voice}</li>
+            <li><strong>Visuals:</strong> ${brand.direction}</li>
+          </ul>
+        `;
+        brandContainer.appendChild(card);
+
+        // Populate option
+        const opt = document.createElement("option");
+        opt.value = brand.id;
+        opt.textContent = brand.name;
+        selectBrand.appendChild(opt);
+      });
+
+      generatePrompt();
+    };
+
+    // Prompt generator logic
+    function generatePrompt() {
+      const brandId = document.getElementById("builder-brand").value;
+      const loopType = document.getElementById("builder-loop").value;
+      const platform = document.getElementById("builder-platform").value;
+
+      const brand = brandsData.find(b => b.id === brandId);
+
+      let ratio = "1:1";
+      if (platform === "website") ratio = "16:9";
+      if (platform === "story") ratio = "9:16";
+      if (platform === "instagram") ratio = "4:5";
+      if (platform === "farcaster") ratio = "1.91:1";
+
+      let prompt = `Use case: ads-marketing. Asset type: ${brand.name} social and website source frame (${ratio}). `;
+      
+      if (loopType === "infographic") {
+        prompt += `Primary request: create a premium ${brand.name} system flow chart with completely blank modular boxes and connective rails, no text. `;
+        prompt += `Scene/backdrop: ${brand.direction} arranged as a clean left-to-right system. `;
+      } else if (loopType === "world") {
+        prompt += `Primary request: create an atmospheric cinematic illustration representing the visual world of ${brand.name}, no text. `;
+        prompt += `Scene/backdrop: ${brand.direction} showing craft and transformation. `;
+      } else if (loopType === "mascot") {
+        prompt += `Primary request: create a character concept sheet of a recurring host in a clean studio setting, no text. `;
+        prompt += `Scene/backdrop: ${brand.direction} backdrop with flat lighting. `;
+      } else {
+        prompt += `Primary request: create an animation-ready source frame representing ${brand.name}, no text. `;
+        prompt += `Scene/backdrop: ${brand.direction} showing subtle visual kinetics. `;
+      }
+
+      prompt += `Style/medium: high-fidelity generated poster frame, premium cinematic editorial, highly structured, clean materials, not soft or cartoonish. `;
+      prompt += `Composition/framing: clean layout with strong negative space in the upper-left for later code-rendered text overlays. `;
+      prompt += `Constraints: absolutely no written text, no words, no numbers, no fake logo shapes, no fake UI screenshots, no garbled letters.`;
+
+      document.getElementById("builder-result").value = prompt;
+    }
+
+    // Copy to clipboard
+    function copyPrompt() {
+      const textarea = document.getElementById("builder-result");
+      textarea.select();
+      document.execCommand("copy");
+
+      const toast = document.getElementById("copy-toast");
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

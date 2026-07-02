@@ -1,0 +1,14 @@
+{
+  "workflowId": "website-hero",
+  "version": "2026-07-02",
+  "description": "First viewport visuals for brand sites. Prioritize real product proof or high-craft generated with liquid glass depth. Deterministic elements for text/claims.",
+  "allowedRoutes": ["browser-capture-real-proof", "premium-generated-with-deterministic-overlay", "hybrid-liquid-glass-render"],
+  "outputs": [
+    {"format": "png", "width": 1920, "height": 1080, "name": "desktop"},
+    {"format": "png", "width": 1080, "height": 1920, "name": "mobile"}
+  ],
+  "qaGate": {
+    "requiredScore": 27,
+    "checks": ["responsive", "textSafeAreas", "provenance", "premiumTaste", "insightful"]
+  }
+}

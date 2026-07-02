@@ -1,0 +1,19 @@
+{
+  "brandId": "ai-coe",
+  "brandOperatingUnit": "ai-architect-coe",
+  "version": "2026-07-02",
+  "updatedAt": "2026-07-02T17:30:00Z",
+  "positioning": "Enterprise credible AI Center of Excellence. Architectural, proof-led, governance systems.",
+  "visualPrinciples": {
+    "coreAesthetic": "Clean enterprise excellence: diagrams, operating models, real proof. Liquid glass for premium executive feel on solid foundations. Vercel/GitHub craft for clarity. Insightful and trustworthy.",
+    "inspiration": ["Vercel minimal", "GitHub functional insight", "Apple liquid glass for depth in presentations"],
+    "qualityStandard": "World-class design team standard only. Avoid hype; every visual earns its place with meaning."
+  },
+  "colorTokens": {
+    "foundation": { "void": "#0a0a0b", "space": "#111113" },
+    "accent": { "primary": "#3b82f6", "secondary": "#60a5fa" }
+  },
+  "imageDirection": "Exact diagrams and frameworks via deterministic renderers. Creative infographics via premium models when insightful.",
+  "approvalRoute": "#social-approvals",
+  "doNotUse": ["AI hype", "fake proof"]
+}

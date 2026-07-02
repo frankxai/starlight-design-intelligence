@@ -1,0 +1,18 @@
+{
+  "workflowId": "social-static",
+  "version": "2026-07-02",
+  "description": "Single post images, quote cards, proof cards. Hybrid: premium image models (Grok, Infogenius process) for creative/insightful bases where they excel at text and composition; deterministic HTML/Satori/Playwright renderer for exact text, claims, UI.",
+  "allowedRoutes": ["premium-creative-base + deterministic-overlay", "full-deterministic-renderer", "figma-canva-with-export"],
+  "blockedRoutes": ["raw-image-gen-exact-text-only"],
+  "outputs": [
+    {"format": "png", "width": 1080, "height": 1080, "name": "square"},
+    {"format": "png", "width": 1200, "height": 628, "name": "og"},
+    {"format": "png", "width": 1080, "height": 1350, "name": "4:5"},
+    {"format": "png", "width": 1080, "height": 1920, "name": "9:16"}
+  ],
+  "qaGate": {
+    "requiredScore": 28,
+    "checks": ["brandFit", "textLegibility", "noFakeUI", "insightfulMeaningful", "liquidGlassDepthWhereAppropriate", "VercelGitHubCraft"]
+  },
+  "tasteStandard": "World-class only. Apple liquid glass (translucency, depth, premium feel), Vercel clean functional beauty, GitHub approachable insightful patterns + likeability. Meaningful and insightful content."
+}

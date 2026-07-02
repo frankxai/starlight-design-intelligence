@@ -1,0 +1,16 @@
+{
+  "workflowId": "infographic",
+  "version": "2026-07-02",
+  "description": "Insightful systems, architectures, diagrams. Hybrid: premium image gen (Grok/Infogenius) for creative artistic bases where text excels, deterministic renderer for precision facts/labels.",
+  "allowedRoutes": ["premium-creative-infographic", "deterministic-svg-code", "figma-canva-renderer"],
+  "blockedRoutes": ["raw-image-gen-for-exact-text"],
+  "outputs": [
+    { "format": "png", "width": 1920, "height": 1080, "name": "main" },
+    { "format": "png", "width": 1200, "height": 630, "name": "og" }
+  ],
+  "qaGate": {
+    "requiredScore": 28,
+    "checks": ["factualAccuracy", "sourceLabels", "textLegibility", "brandFit", "insightfulMeaningful", "noFakeText"]
+  },
+  "tasteStandard": "World-class: Apple liquid glass depth where applicable, Vercel clean craft, GitHub insightful approachability. Every element earns its place."
+}

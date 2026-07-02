@@ -1,0 +1,21 @@
+{
+  "brandId": "gencreator",
+  "brandOperatingUnit": "creator-systems-acos",
+  "version": "2026-07-02",
+  "updatedAt": "2026-07-02T17:30:00Z",
+  "positioning": "Operating System for AI-Native Creators. Architecture-warm, practical, artifact-driven, cohort rituals.",
+  "visualPrinciples": {
+    "coreAesthetic": "Warm architecture: creator stacks, visible artifacts, clean systems maps. Liquid glass for modern depth on practical foundations. Vercel/GitHub patterns for clarity and likeability. Insightful, meaningful, world-class.",
+    "inspiration": ["Vercel functional beauty", "GitHub approachable + Mona-like warmth", "Apple liquid glass refinement"],
+    "qualityStandard": "Only publish ultra-tasteful assets that feel like a top design team. No productivity sameness, make outputs visible and premium."
+  },
+  "colorTokens": {
+    "foundation": { "void": "#0f0f11", "space": "#18181b" },
+    "accent": { "primary": "#22c55e", "warm": "#f4a261" }
+  },
+  "imageDirection": "Strong on architecture diagrams (deterministic preferred) and creator lifestyle/product proof. Premium models for insightful visual essays/infographics.",
+  "socialRules": { "static": "Architecture + human/artifact focus." },
+  "websiteRules": { "assets": "Registry-synced to Vercel." },
+  "approvalRoute": "#social-approvals",
+  "doNotUse": ["productivity-tool sameness", "blending with AnimeLegends mascots"]
+}
