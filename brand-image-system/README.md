@@ -12,6 +12,7 @@
 - Brand packs in `../brand-packs/` remain human sources.
 - Local working mirror: `C:\Users\frank\brands\image-system`
 - Governance: agent-governance.md, brand-operating-units.json, source-map.md
+- Routing cheat sheet: `visual-template-routing-2026-07-04.md`
 
 ## Key Foundations Now Live
 - **Taste Standard**: World-class design team only. Apple liquid glass (translucency, depth, blur), Vercel clean functional beauty, GitHub approachable + insightful (Mona-like likeability), meaningful content. Ultra tasteful, no slop.

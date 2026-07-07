@@ -1,0 +1,29 @@
+{
+  "hermes": {
+    "version": "1.0",
+    "description": "Hermes adapter for brand-image-system runtime. Use this template to generate media-job.json files that Hermes can orchestrate.",
+    "requiredSkills": ["brand-image-system", "todo-discipline"],
+    "recommendedProfiles": ["arcanea", "starlight"],
+    "blockedTools": ["image_gen"],
+    "enforcedRoutes": ["renderer"]
+  },
+  "jobTemplate": {
+    "jobId": "{{date}}-{{brand}}-{{workflow}}",
+    "brandId": "{{brandId}}",
+    "workflowId": "{{workflowId}}",
+    "surface": "",
+    "audience": "",
+    "brief": "",
+    "assetTier": "A",
+    "sourceMethod": "renderer-backed",
+    "paths": {
+      "jobRoot": "C:/Users/frank/brands/image-system/jobs/{{date}}/{{jobId}}"
+    },
+    "qa": {
+      "inspected": false,
+      "score30": 0
+    },
+    "decision": "draft"
+  },
+  "instructions": "Always load the brand pack and workflow pack first. Never use raw image_gen for final text or claims. Route through deterministic renderer."
+}
