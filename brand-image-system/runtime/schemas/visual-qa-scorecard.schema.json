@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/visual-qa-scorecard.schema.json",
+  "title": "Brand Image System Visual QA Scorecard",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "jobId", "surface", "verifier", "inspectionStatus", "candidates", "selectedCandidateId", "overallDecision", "evidenceRefs", "updatedAt"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string", "const": "1.0.0" },
+    "jobId": { "type": "string" },
+    "surface": { "type": "string" },
+    "verifier": { "type": ["string", "null"] },
+    "inspectionStatus": { "type": "string", "enum": ["pending", "inspected"] },
+    "candidates": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidateId", "jobType", "outputPaths", "sidecarPaths", "scores", "totalScore30", "decision", "strengths", "defects", "cropRisk", "rightsStatus", "rightsNotes"],
+        "properties": {
+          "candidateId": { "type": "string" },
+          "jobType": { "type": "string" },
+          "outputPaths": { "type": "array", "items": { "type": "string" } },
+          "sidecarPaths": { "type": "array", "items": { "type": "string" } },
+          "scores": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["firstRead", "brandFit", "craft", "accessibilityAndCrop", "accuracyAndProvenance", "surfaceUsefulness"],
+            "properties": {
+              "firstRead": { "type": "integer", "minimum": 0, "maximum": 5 },
+              "brandFit": { "type": "integer", "minimum": 0, "maximum": 5 },
+              "craft": { "type": "integer", "minimum": 0, "maximum": 5 },
+              "accessibilityAndCrop": { "type": "integer", "minimum": 0, "maximum": 5 },
+              "accuracyAndProvenance": { "type": "integer", "minimum": 0, "maximum": 5 },
+              "surfaceUsefulness": { "type": "integer", "minimum": 0, "maximum": 5 }
+            }
+          },
+          "totalScore30": { "type": ["integer", "null"], "minimum": 0, "maximum": 30 },
+          "decision": { "type": "string", "enum": ["pending", "approved", "iterate", "restart", "blocked"] },
+          "strengths": { "type": "array", "items": { "type": "string" } },
+          "defects": { "type": "array", "items": { "type": "string" } },
+          "cropRisk": { "type": "string" },
+          "rightsStatus": { "type": "string", "enum": ["owned", "generated-owned", "licensed", "unknown", "blocked", "needs-review"] },
+          "rightsNotes": { "type": "string" }
+        }
+      }
+    },
+    "selectedCandidateId": { "type": ["string", "null"] },
+    "overallDecision": { "type": "string", "enum": ["pending", "promote", "no-winner", "iterate", "blocked"] },
+    "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

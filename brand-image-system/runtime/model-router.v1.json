@@ -1,0 +1,99 @@
+{
+  "$schema": "./schemas/model-router.schema.json",
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-12",
+  "provider": "./providers/higgsfield.provider.json",
+  "portfolioPolicy": {
+    "canonicalPublishingUnits": 10,
+    "exactTextAndClaims": "deterministic-only",
+    "defaultBakeoffCandidates": ["nano_banana_flash", "flux_2", "seedream_v5_lite"],
+    "defaultCandidateCount": 3,
+    "maximumCandidateCount": 6,
+    "minimumPromotionScore30": 26,
+    "flagshipPromotionScore30": 28,
+    "publicationStateCeiling": "approval_pending",
+    "vibeclubs": "decision_required"
+  },
+  "brandRoutes": [
+    {
+      "brandUnitId": "frankx-demand",
+      "deterministicFirst": ["real product proof", "operating artifacts", "architecture and offer diagrams"],
+      "generatedRoles": ["executive editorial source frame", "campaign plate", "founder-free commercial scene"],
+      "preferredStillModels": ["nano_banana_flash", "flux_2", "seedream_v5_lite"],
+      "blocked": ["fake UI", "fake founder likeness", "cute bots", "generic neon command center"],
+      "specialGate": "founder likeness requires approved identity references and explicit human approval"
+    },
+    {
+      "brandUnitId": "creator-systems-acos",
+      "deterministicFirst": ["real UI", "cohort artifacts", "creator stack maps"],
+      "generatedRoles": ["reference-faithful creator scene", "modular campaign background", "studio source frame"],
+      "preferredStillModels": ["nano_banana_flash", "nano_banana_pro", "flux_2"],
+      "blocked": ["fake product UI", "generic productivity app aesthetic", "Anime Legends mascot crossover"],
+      "specialGate": "product evidence and exact artifact labels remain deterministic"
+    },
+    {
+      "brandUnitId": "arcanea-product-ip",
+      "deterministicFirst": ["canon extracts", "world maps", "approved sigils and UI captures"],
+      "generatedRoles": ["cinematic world plate", "original character exploration", "motion source frame"],
+      "preferredStillModels": ["nano_banana_flash", "gpt_image_2", "seedream_v5_lite"],
+      "blocked": ["borrowed character likeness", "fantasy cosplay", "purple-cliche filler", "canon contradiction"],
+      "specialGate": "canon and IP verifier must approve before promotion"
+    },
+    {
+      "brandUnitId": "starlight-substrate",
+      "deterministicFirst": ["protocol diagram", "release receipt", "system map", "real dashboard capture"],
+      "generatedRoles": ["operational editorial support", "material systems metaphor", "restrained motion source frame"],
+      "preferredStillModels": ["flux_2", "seedream_v5_lite", "nano_banana_flash"],
+      "blocked": ["fake dashboard", "neon hacker cliche", "decorative neural filler", "private data"],
+      "specialGate": "public-private boundary and claim evidence review"
+    },
+    {
+      "brandUnitId": "ai-architect-coe",
+      "deterministicFirst": ["architecture proof", "governance diagram", "implementation artifact"],
+      "generatedRoles": ["enterprise editorial plate", "non-factual workshop scene", "campaign background"],
+      "preferredStillModels": ["flux_2", "nano_banana_flash", "seedream_v5_lite"],
+      "blocked": ["AI hype imagery", "fake architecture", "unreadable framework text", "unsupported enterprise claim"],
+      "specialGate": "enterprise claim and customer-confidentiality review"
+    },
+    {
+      "brandUnitId": "reality-architect",
+      "deterministicFirst": ["method map", "practice card", "timeline architecture"],
+      "generatedRoles": ["grounded transformation scene", "reflective editorial plate", "practice source frame"],
+      "preferredStillModels": ["seedream_v5_lite", "flux_2", "nano_banana_flash"],
+      "blocked": ["mystical self-help cliche", "outcome guarantee", "generic journal flat-lay"],
+      "specialGate": "transformation claims and private-vault boundary review"
+    },
+    {
+      "brandUnitId": "anime-legends-media-ip",
+      "deterministicFirst": ["approved character sheet", "canon note", "reserved sigil"],
+      "generatedRoles": ["original character exploration", "world reveal", "motion plate"],
+      "preferredStillModels": ["nano_banana_flash", "nano_banana_pro", "gpt_image_2"],
+      "blocked": ["unlicensed character likeness", "reserved mascot drift", "recap-channel aesthetic", "bro-gym energy"],
+      "specialGate": "original-IP, character-consistency, and likeness review"
+    },
+    {
+      "brandUnitId": "research-mind-intelligence",
+      "deterministicFirst": ["cited research map", "educational diagram", "source table"],
+      "generatedRoles": ["non-diagnostic conceptual illustration", "editorial research plate"],
+      "preferredStillModels": ["flux_2", "nano_banana_flash", "seedream_v5_lite"],
+      "blocked": ["medical diagnosis imagery", "decorative brain filler", "unsupported causal claim", "patient likeness"],
+      "specialGate": "specialist review for high-stakes health or psychological claims"
+    },
+    {
+      "brandUnitId": "tooling-oss-distribution",
+      "deterministicFirst": ["real terminal capture", "release diff", "repository proof", "exact install diagram"],
+      "generatedRoles": ["rare editorial support frame", "release campaign background"],
+      "preferredStillModels": ["flux_2", "nano_banana_flash", "seedream_v5_lite"],
+      "blocked": ["fake terminal", "unverifiable badge", "invented benchmark", "secret-bearing screenshot"],
+      "specialGate": "security, repository authenticity, and license review"
+    },
+    {
+      "brandUnitId": "agentic-income-network",
+      "deterministicFirst": ["real economics", "offer map", "disclosure", "experiment receipt"],
+      "generatedRoles": ["commercial editorial source frame", "tool-comparison background"],
+      "preferredStillModels": ["flux_2", "nano_banana_flash", "seedream_v5_lite"],
+      "blocked": ["income guarantee", "cash-rain aesthetic", "fake revenue dashboard", "hidden affiliate relationship"],
+      "specialGate": "financial claim, affiliate disclosure, and conversion-proof review"
+    }
+  ]
+}

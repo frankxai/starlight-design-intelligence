@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/model-learning-receipt.schema.json",
+  "title": "Brand Image System Model Learning Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "jobId", "brandUnitId", "surface", "visualRole", "candidates", "selection", "learnings", "performanceRef", "updatedAt"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string", "const": "1.0.0" },
+    "jobId": { "type": "string" },
+    "brandUnitId": { "type": "string" },
+    "surface": { "type": "string" },
+    "visualRole": { "type": "string" },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidateId", "jobType", "costCredits", "score30", "decision", "rejectionReason"],
+        "properties": {
+          "candidateId": { "type": "string" },
+          "jobType": { "type": "string" },
+          "costCredits": { "type": "number", "minimum": 0 },
+          "score30": { "type": ["integer", "null"], "minimum": 0, "maximum": 30 },
+          "decision": { "type": "string" },
+          "rejectionReason": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selectedCandidateId", "decision", "creditsPerPromotedMaster"],
+      "properties": {
+        "selectedCandidateId": { "type": ["string", "null"] },
+        "decision": { "type": "string" },
+        "creditsPerPromotedMaster": { "type": ["number", "null"], "minimum": 0 }
+      }
+    },
+    "learnings": { "type": "array", "items": { "type": "string" } },
+    "performanceRef": { "type": ["string", "null"] },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

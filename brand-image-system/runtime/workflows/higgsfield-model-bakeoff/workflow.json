@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/workflow-pack.schema.json",
+  "workflowId": "higgsfield-model-bakeoff",
+  "displayName": "Higgsfield Model Bake-off",
+  "purpose": "Compare a small cost-capped set of image models against one brand and surface brief, preserve evidence, and promote at most one inspected master for deterministic finishing.",
+  "surfaces": [
+    "social source frame",
+    "website hero source frame",
+    "campaign plate",
+    "motion source frame"
+  ],
+  "allowedProductionRoutes": [
+    "Higgsfield CLI after live cost preflight",
+    "Higgsfield web Unlimited for human exploration only",
+    "deterministic overlay after winner selection",
+    "VIS provenance and curation packet"
+  ],
+  "requiredOutputs": [
+    { "kind": "source brief", "pathHint": "brief.md" },
+    { "kind": "bake-off job", "pathHint": "model-bakeoff.json" },
+    { "kind": "live preflight receipt", "pathHint": "preflight.json" },
+    { "kind": "candidate outputs", "pathHint": "candidates/<candidate-id>/" },
+    { "kind": "VIS provenance sidecars", "pathHint": "candidates/<candidate-id>/*.vis.provenance.json" },
+    { "kind": "run receipt", "pathHint": "run-receipt.json" },
+    { "kind": "independent QA scorecard", "pathHint": "qa-scorecard.json" },
+    { "kind": "selection decision", "pathHint": "selection.json" },
+    { "kind": "approval packet", "pathHint": "social-packet.json" }
+  ],
+  "qaGates": [
+    "brand pack and model router loaded",
+    "machine preflight is allow or bounded",
+    "live per-candidate cost and account balance captured",
+    "recent account transaction window is quiet",
+    "predicted total is inside the job cap",
+    "actual exports inspected",
+    "portable provenance and rights state recorded",
+    "30 point score recorded by an independent verifier",
+    "exact text and claims deferred to deterministic rendering",
+    "packet stops at approval_pending"
+  ],
+  "blockedRoutes": [
+    "assuming web Unlimited applies to CLI or MCP",
+    "unbounded batch generation",
+    "generated public text, metrics, citations, UI, or diagrams",
+    "publishing without a named human approval",
+    "recurring schedule before three clean manual cycles",
+    "identity training or likeness generation without explicit approval"
+  ],
+  "approvalRequired": true,
+  "updatedAt": "2026-07-12"
+}

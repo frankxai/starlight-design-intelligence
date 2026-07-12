@@ -1,0 +1,71 @@
+{
+  "$schema": "../schemas/model-bakeoff.schema.json",
+  "schemaVersion": "1.0.0",
+  "jobId": "2026-07-12-frankx-visual-factory-bakeoff",
+  "repo": "frankx.ai-vercel-website",
+  "brandId": "frankx-demand",
+  "workflowId": "higgsfield-model-bakeoff",
+  "surface": "social-static source frame, 1:1",
+  "audience": "AI architects, founders, ambitious creators, and agentic operators",
+  "visualRole": "executive editorial source frame for a deterministic visual-factory announcement",
+  "brief": "Show governed selection turning abundant AI generation into credible brand intelligence. The image must feel tactile, commercial, restrained, and reusable without inventing UI or public text.",
+  "provider": "higgsfield",
+  "outputRoot": "C:/Users/frank/starlight/higgsfield/briefs/2026-07-12-frankx-visual-factory-bakeoff",
+  "ledgerPath": "C:/Users/frank/starlight/higgsfield/ledger.jsonl",
+  "budget": {
+    "maxCredits": 5,
+    "minimumBalanceAfter": 750,
+    "livePreflightRequired": true,
+    "recentSpendLookbackMinutes": 20
+  },
+  "prompt": {
+    "text": "Square cinematic editorial photograph of a real physical creative-intelligence operations table in a dark executive studio. A brushed black-steel table holds matte graphite architecture cards and slender copper signal threads. One clean human hand moves a single card from an evidence group toward an approved group, making selection and governance immediately legible without words. Subtle cool-white edge light, restrained warm copper accents, precise material detail, strong visual hierarchy, generous negative space in the upper left for a later deterministic headline, credible Fortune-meets-Monocle systems editorial, tactile, original, premium, calm and commercially sharp.",
+    "negative": "No readable text, letters, numbers, logos, fake UI, dashboards, robots, cute bots, floating holograms, glowing orbs, neon hacker aesthetic, purple gradients, excessive lens flare, clutter, distorted hands, extra fingers, illegible symbols, watermarks, or generic stock-photo smiles.",
+    "sourcePath": "C:/Users/frank/starlight/higgsfield/briefs/2026-07-12-frankx-visual-factory-bakeoff/brief.md"
+  },
+  "candidates": [
+    {
+      "candidateId": "nano-banana-2",
+      "jobType": "nano_banana_flash",
+      "displayName": "Nano Banana 2",
+      "role": "prompt adherence and physical storytelling",
+      "costHintCredits": 1.5,
+      "params": { "aspect_ratio": "1:1", "resolution": "1k" }
+    },
+    {
+      "candidateId": "flux-2-pro",
+      "jobType": "flux_2",
+      "displayName": "FLUX.2 Pro",
+      "role": "material craft and editorial composition",
+      "costHintCredits": 1,
+      "params": { "aspect_ratio": "1:1", "resolution": "1k", "variant": "pro" }
+    },
+    {
+      "candidateId": "seedream-5-lite",
+      "jobType": "seedream_v5_lite",
+      "displayName": "Seedream 5 Lite",
+      "role": "cinematic composition and restrained atmosphere",
+      "costHintCredits": 1,
+      "params": { "aspect_ratio": "1:1", "quality": "basic" }
+    }
+  ],
+  "execution": {
+    "waitTimeout": "20m",
+    "waitInterval": "5s",
+    "sequential": true,
+    "stopOnFailure": true
+  },
+  "qa": {
+    "minimumScore30": 26,
+    "flagshipScore30": 28,
+    "actualExportInspection": true,
+    "independentVerifier": true,
+    "rightsReview": true
+  },
+  "downstream": {
+    "system": "multi-brand-social-os",
+    "maximumState": "approval_pending",
+    "publishingAllowed": false
+  },
+  "updatedAt": "2026-07-12"
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "../schemas/provider.schema.json",
+  "providerId": "higgsfield",
+  "displayName": "Higgsfield",
+  "executionSurfaces": [
+    {
+      "id": "web-unlimited",
+      "mode": "human-operated exploration",
+      "automationEligible": false,
+      "costTruth": "The live account UI must show an Unlimited badge and applicable expiry for the selected model.",
+      "notes": "Plan-level marketing is not account-level proof. Export only selected candidates into a governed job folder."
+    },
+    {
+      "id": "cli-metered",
+      "mode": "reproducible generation and model bake-offs",
+      "automationEligible": true,
+      "costTruth": "Live CLI cost preflight and account status immediately before execution.",
+      "notes": "Treat every CLI/MCP call as metered; the current CLI has no Unlimited execution parameter."
+    }
+  ],
+  "costPolicy": {
+    "livePreflightRequired": true,
+    "defaultMaxCreditsPerJob": 5,
+    "failClosed": true,
+    "notes": "Recorded hints are orientation only. The runner must use live costs and refuse execution above the cap or below the minimum post-run balance."
+  },
+  "models": [
+    {
+      "jobType": "nano_banana_flash",
+      "displayName": "Nano Banana 2",
+      "mediaType": "image",
+      "roles": ["reference-faithful drafts", "prompt adherence", "brand-family exploration"],
+      "cliQuotaClass": "metered",
+      "observedCostHint": 1.5,
+      "observedAt": "2026-07-12",
+      "notes": "Do not confuse with nano_banana_pro or the misleading nano_banana_2 alias."
+    },
+    {
+      "jobType": "flux_2",
+      "displayName": "FLUX.2",
+      "mediaType": "image",
+      "roles": ["editorial composition", "material detail", "campaign source frames"],
+      "cliQuotaClass": "metered",
+      "observedCostHint": 1,
+      "observedAt": "2026-07-12",
+      "notes": "Use the pro 1K variant for controlled drafts unless the job earns a higher setting."
+    },
+    {
+      "jobType": "seedream_v5_lite",
+      "displayName": "Seedream 5 Lite",
+      "mediaType": "image",
+      "roles": ["fast composition search", "cinematic editorial drafts", "style-family exploration"],
+      "cliQuotaClass": "metered",
+      "observedCostHint": 1,
+      "observedAt": "2026-07-12",
+      "notes": "Use basic quality for initial comparisons; promote only after visual inspection."
+    },
+    {
+      "jobType": "kling_omni_image",
+      "displayName": "Kling O1 Image",
+      "mediaType": "image",
+      "roles": ["low-cost exploration", "image editing", "motion-source continuity"],
+      "cliQuotaClass": "metered",
+      "observedCostHint": 0.5,
+      "observedAt": "2026-07-12",
+      "notes": "Useful as a targeted fourth candidate when the remaining job cap permits it."
+    },
+    {
+      "jobType": "nano_banana_pro",
+      "displayName": "Nano Banana Pro",
+      "mediaType": "image",
+      "roles": ["reference edits", "high-resolution finalists", "template-family consistency"],
+      "cliQuotaClass": "metered",
+      "observedCostHint": 2,
+      "observedAt": "2026-07-12",
+      "notes": "Use after a draft family has earned promotion."
+    },
+    {
+      "jobType": "gpt_image_2",
+      "displayName": "GPT Image 2",
+      "mediaType": "image",
+      "roles": ["high-complexity composition", "premium finalist", "controlled edits"],
+      "cliQuotaClass": "metered",
+      "observedCostHint": 7,
+      "observedAt": "2026-07-12",
+      "notes": "Outside the default five-credit runner ceiling; requires a separately approved job cap."
+    }
+  ],
+  "humanGates": [
+    "account or workspace changes",
+    "Soul identity training or human likeness datasets",
+    "spend above the approved job cap",
+    "recurring or unattended generation",
+    "brand identity or canon changes",
+    "public scheduling or publishing",
+    "legal, IP, health, financial, or enterprise claim exceptions"
+  ],
+  "updatedAt": "2026-07-12"
+}

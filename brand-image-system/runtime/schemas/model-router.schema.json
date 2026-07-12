@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/model-router.schema.json",
+  "title": "Brand Image System Model Router",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "updatedAt", "provider", "portfolioPolicy", "brandRoutes"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string", "const": "1.0.0" },
+    "updatedAt": { "type": "string", "format": "date" },
+    "provider": { "type": "string", "minLength": 1 },
+    "portfolioPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonicalPublishingUnits",
+        "exactTextAndClaims",
+        "defaultBakeoffCandidates",
+        "defaultCandidateCount",
+        "maximumCandidateCount",
+        "minimumPromotionScore30",
+        "flagshipPromotionScore30",
+        "publicationStateCeiling",
+        "vibeclubs"
+      ],
+      "properties": {
+        "canonicalPublishingUnits": { "type": "integer", "minimum": 1 },
+        "exactTextAndClaims": { "type": "string", "const": "deterministic-only" },
+        "defaultBakeoffCandidates": { "type": "array", "minItems": 2, "items": { "type": "string" } },
+        "defaultCandidateCount": { "type": "integer", "minimum": 2 },
+        "maximumCandidateCount": { "type": "integer", "minimum": 2 },
+        "minimumPromotionScore30": { "type": "integer", "minimum": 0, "maximum": 30 },
+        "flagshipPromotionScore30": { "type": "integer", "minimum": 0, "maximum": 30 },
+        "publicationStateCeiling": { "type": "string", "const": "approval_pending" },
+        "vibeclubs": { "type": "string", "const": "decision_required" }
+      }
+    },
+    "brandRoutes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["brandUnitId", "deterministicFirst", "generatedRoles", "preferredStillModels", "blocked", "specialGate"],
+        "properties": {
+          "brandUnitId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+          "deterministicFirst": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "generatedRoles": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "preferredStillModels": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "blocked": { "type": "array", "items": { "type": "string" } },
+          "specialGate": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

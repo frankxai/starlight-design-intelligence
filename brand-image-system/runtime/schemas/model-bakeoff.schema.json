@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/model-bakeoff.schema.json",
+  "title": "Brand Image System Model Bake-off Job",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "jobId",
+    "repo",
+    "brandId",
+    "workflowId",
+    "surface",
+    "audience",
+    "visualRole",
+    "brief",
+    "provider",
+    "outputRoot",
+    "ledgerPath",
+    "budget",
+    "prompt",
+    "candidates",
+    "execution",
+    "qa",
+    "downstream",
+    "updatedAt"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string", "const": "1.0.0" },
+    "jobId": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$" },
+    "repo": { "type": "string", "minLength": 1 },
+    "brandId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "workflowId": { "type": "string", "const": "higgsfield-model-bakeoff" },
+    "surface": { "type": "string", "minLength": 1 },
+    "audience": { "type": "string", "minLength": 1 },
+    "visualRole": { "type": "string", "minLength": 1 },
+    "brief": { "type": "string", "minLength": 1 },
+    "provider": { "type": "string", "const": "higgsfield" },
+    "outputRoot": { "type": "string", "minLength": 1 },
+    "ledgerPath": { "type": "string", "minLength": 1 },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maxCredits", "minimumBalanceAfter", "livePreflightRequired", "recentSpendLookbackMinutes"],
+      "properties": {
+        "maxCredits": { "type": "number", "exclusiveMinimum": 0 },
+        "minimumBalanceAfter": { "type": "number", "minimum": 0 },
+        "livePreflightRequired": { "type": "boolean", "const": true },
+        "recentSpendLookbackMinutes": { "type": "integer", "minimum": 0, "maximum": 120 }
+      }
+    },
+    "prompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "negative", "sourcePath"],
+      "properties": {
+        "text": { "type": "string", "minLength": 20 },
+        "negative": { "type": "string" },
+        "sourcePath": { "type": "string", "minLength": 1 }
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidateId", "jobType", "displayName", "role", "params"],
+        "properties": {
+          "candidateId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+          "jobType": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_]*$" },
+          "displayName": { "type": "string", "minLength": 1 },
+          "role": { "type": "string", "minLength": 1 },
+          "costHintCredits": { "type": "number", "minimum": 0 },
+          "params": {
+            "type": "object",
+            "additionalProperties": {
+              "type": ["string", "number", "boolean", "array"],
+              "items": { "type": ["string", "number", "boolean"] }
+            }
+          }
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["waitTimeout", "waitInterval", "sequential", "stopOnFailure"],
+      "properties": {
+        "waitTimeout": { "type": "string", "pattern": "^[0-9]+[smh]$" },
+        "waitInterval": { "type": "string", "pattern": "^[0-9]+[smh]$" },
+        "sequential": { "type": "boolean", "const": true },
+        "stopOnFailure": { "type": "boolean", "const": true }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimumScore30", "flagshipScore30", "actualExportInspection", "independentVerifier", "rightsReview"],
+      "properties": {
+        "minimumScore30": { "type": "integer", "minimum": 0, "maximum": 30 },
+        "flagshipScore30": { "type": "integer", "minimum": 0, "maximum": 30 },
+        "actualExportInspection": { "type": "boolean", "const": true },
+        "independentVerifier": { "type": "boolean", "const": true },
+        "rightsReview": { "type": "boolean", "const": true }
+      }
+    },
+    "downstream": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["system", "maximumState", "publishingAllowed"],
+      "properties": {
+        "system": { "type": "string", "const": "multi-brand-social-os" },
+        "maximumState": { "type": "string", "const": "approval_pending" },
+        "publishingAllowed": { "type": "boolean", "const": false }
+      }
+    },
+    "updatedAt": { "type": "string", "format": "date" }
+  }
+}

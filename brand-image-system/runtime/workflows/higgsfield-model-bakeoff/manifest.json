@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "loopId": "higgsfield-model-bakeoff",
+  "role": "provider-sub-loop",
+  "status": "manual_qualification",
+  "scheduleEnabled": false,
+  "requiredCleanCyclesBeforeScheduleProposal": 3,
+  "maxIterationsPerRun": 4,
+  "defaultCandidateCount": 3,
+  "defaultMaxCredits": 5,
+  "worker": "../../tools/higgsfield-bakeoff.mjs",
+  "verifier": "VERIFIER.md",
+  "jobSchema": "../../schemas/model-bakeoff.schema.json",
+  "publicationCeiling": "approval_pending",
+  "stopOn": [
+    "machine-hold",
+    "auth-unavailable",
+    "cost-unavailable",
+    "budget-exceeded",
+    "balance-guardrail",
+    "ambiguous-generation-failure",
+    "provenance-write-failure",
+    "human-decision-required"
+  ],
+  "updatedAt": "2026-07-12"
+}

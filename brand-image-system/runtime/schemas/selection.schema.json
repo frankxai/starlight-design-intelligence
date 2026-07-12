@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/selection.schema.json",
+  "title": "Brand Image System Candidate Selection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "jobId", "decision", "selectedCandidateId", "reason", "deterministicNext", "downstreamState", "evidenceRefs", "updatedAt"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string", "const": "1.0.0" },
+    "jobId": { "type": "string" },
+    "decision": { "type": "string", "enum": ["pending", "promote", "no-winner", "iterate", "blocked"] },
+    "selectedCandidateId": { "type": ["string", "null"] },
+    "reason": { "type": "string" },
+    "deterministicNext": { "type": "array", "items": { "type": "string" } },
+    "downstreamState": { "type": "string", "enum": ["held", "assets_verified", "approval_pending"] },
+    "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

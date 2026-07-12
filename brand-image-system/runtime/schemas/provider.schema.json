@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/provider.schema.json",
+  "title": "Brand Image System Generation Provider",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "providerId",
+    "displayName",
+    "executionSurfaces",
+    "costPolicy",
+    "models",
+    "humanGates",
+    "updatedAt"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "providerId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "displayName": { "type": "string", "minLength": 1 },
+    "executionSurfaces": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "mode", "automationEligible", "costTruth"],
+        "properties": {
+          "id": { "type": "string" },
+          "mode": { "type": "string" },
+          "automationEligible": { "type": "boolean" },
+          "costTruth": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "costPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["livePreflightRequired", "defaultMaxCreditsPerJob", "failClosed"],
+      "properties": {
+        "livePreflightRequired": { "type": "boolean" },
+        "defaultMaxCreditsPerJob": { "type": "number", "exclusiveMinimum": 0 },
+        "failClosed": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "models": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["jobType", "displayName", "mediaType", "roles", "cliQuotaClass"],
+        "properties": {
+          "jobType": { "type": "string" },
+          "displayName": { "type": "string" },
+          "mediaType": { "type": "string" },
+          "roles": { "type": "array", "items": { "type": "string" } },
+          "cliQuotaClass": { "type": "string", "enum": ["metered", "unknown"] },
+          "observedCostHint": { "type": ["number", "null"], "minimum": 0 },
+          "observedAt": { "type": ["string", "null"], "format": "date" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "humanGates": { "type": "array", "items": { "type": "string" } },
+    "updatedAt": { "type": "string", "format": "date" }
+  }
+}
