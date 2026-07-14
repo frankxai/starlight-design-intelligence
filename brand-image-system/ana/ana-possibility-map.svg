@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Ana: one intelligence, many doorways</title>
+  <desc id="desc">A visual map of Ana Cecilia Cancino's bilingual reflective-practice ecosystem and its compounding loop.</desc>
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-opacity="0.14"/></filter>
+    <style>
+      .serif{font-family:Georgia,'Times New Roman',serif}.sans{font-family:Arial,Helvetica,sans-serif}.eyebrow{font:700 15px Arial;letter-spacing:3px;text-transform:uppercase}.small{font:400 16px Arial;fill:#6c564b}.label{font:700 20px Arial;fill:#2e1e14}.body{font:400 16px Arial;fill:#5c463d}.micro{font:700 12px Arial;letter-spacing:2px;fill:#8c6a53}
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="#fbf6ec"/>
+  <rect x="38" y="38" width="1524" height="924" rx="34" fill="#fffaf2" stroke="#2e1e14" stroke-opacity=".10"/>
+  <path d="M58 330 C280 180 390 180 575 295 S920 430 1060 280" fill="none" stroke="#c9a961" stroke-width="10" stroke-linecap="round" opacity=".38"/>
+  <path d="M58 690 C300 830 430 750 585 635 S880 560 1030 700" fill="none" stroke="#1f5f4a" stroke-width="9" stroke-linecap="round" opacity=".24"/>
+  <g transform="translate(92 92)">
+    <text class="eyebrow" fill="#c28f7c">ANA CECILIA CANCINO · POSSIBILITY MAP</text>
+    <text y="62" class="serif" font-size="64" font-weight="700" fill="#2e1e14">One intelligence,</text>
+    <text y="128" class="serif" font-size="64" font-weight="700" fill="#2e1e14">many doorways.</text>
+    <text y="172" class="small">A human-led practice OS for returning the soul to the world of work.</text>
+  </g>
+  <g filter="url(#shadow)">
+    <circle cx="360" cy="470" r="150" fill="#2d1b33"/>
+    <circle cx="360" cy="470" r="126" fill="none" stroke="#c9a961" stroke-width="2" stroke-dasharray="2 12" opacity=".9"/>
+    <text x="360" y="455" text-anchor="middle" class="serif" font-size="58" font-weight="700" fill="#fffaf2">ANA</text>
+    <text x="360" y="489" text-anchor="middle" class="sans" font-size="17" letter-spacing="3" fill="#f4dfb4">VOICE · CARE · AGENCY</text>
+    <text x="360" y="528" text-anchor="middle" class="sans" font-size="14" fill="#fffaf2" opacity=".72">human in front · agents backstage</text>
+  </g>
+  <g fill="#fffaf2" stroke="#2e1e14" stroke-opacity=".13" filter="url(#shadow)">
+    <rect x="610" y="238" width="270" height="115" rx="22"/><rect x="920" y="238" width="270" height="115" rx="22"/>
+    <rect x="610" y="405" width="270" height="115" rx="22"/><rect x="920" y="405" width="270" height="115" rx="22"/>
+    <rect x="610" y="572" width="270" height="115" rx="22"/><rect x="920" y="572" width="270" height="115" rx="22"/>
+  </g>
+  <g stroke="#c9a961" stroke-width="3" fill="none" opacity=".8"><path d="M495 430 C540 350 560 320 610 300"/><path d="M495 455 C575 430 580 430 610 463"/><path d="M495 500 C550 570 575 610 610 625"/><path d="M495 410 C650 300 760 330 920 300"/><path d="M495 470 C700 470 760 460 920 463"/><path d="M495 530 C680 635 800 630 920 625"/></g>
+  <g>
+    <text x="638" y="274" class="micro">01 · SANCTUARY</text><text x="638" y="306" class="label">Bilingual home + journal</text><text x="638" y="330" class="body">Seven living threads, library, letters.</text>
+    <text x="948" y="274" class="micro">02 · PRACTICE</text><text x="948" y="306" class="label">Three clear doorways</text><text x="948" y="330" class="body">Clarity · circle · workshop.</text>
+    <text x="638" y="441" class="micro">03 · BACKSTAGE</text><text x="638" y="473" class="label">Six quiet companions</text><text x="638" y="497" class="body">Listen, gather, write, host, protect.</text>
+    <text x="948" y="441" class="micro">04 · COMPOUNDING</text><text x="948" y="473" class="label">Approved patterns become assets</text><text x="948" y="497" class="body">Letters, guides, prompts, products.</text>
+    <text x="638" y="608" class="micro">05 · FREEDOM</text><text x="638" y="640" class="label">Travel-friendly rhythm</text><text x="638" y="664" class="body">Remote sessions + light digital shop.</text>
+    <text x="948" y="608" class="micro">06 · BOUNDARY</text><text x="948" y="640" class="label">Care before scale</text><text x="948" y="664" class="body">Private by default · human sign-off.</text>
+  </g>
+  <g transform="translate(1260 218)"><rect width="250" height="472" rx="22" fill="#2e1e14"/><text x="28" y="42" class="eyebrow" fill="#c9a961">THE LOOP</text><text x="28" y="84" class="serif" font-size="28" font-weight="700" fill="#fffaf2">Sense</text><text x="28" y="125" class="serif" font-size="28" font-weight="700" fill="#fffaf2">Remember</text><text x="28" y="166" class="serif" font-size="28" font-weight="700" fill="#fffaf2">Compose</text><text x="28" y="207" class="serif" font-size="28" font-weight="700" fill="#fffaf2">Host</text><text x="28" y="248" class="serif" font-size="28" font-weight="700" fill="#fffaf2">Deliver</text><text x="28" y="289" class="serif" font-size="28" font-weight="700" fill="#fffaf2">Compound</text><path d="M31 334 H205" stroke="#c9a961" stroke-width="2"/><text x="28" y="370" class="sans" font-size="15" fill="#f4dfb4">Every cycle creates</text><text x="28" y="394" class="sans" font-size="15" fill="#f4dfb4">more clarity, not more noise.</text><text x="28" y="432" class="sans" font-size="13" fill="#fffaf2" opacity=".7">AI stays backstage.</text><text x="28" y="452" class="sans" font-size="13" fill="#fffaf2" opacity=".7">Ana stays the author.</text></g>
+  <g transform="translate(92 812)"><rect width="1090" height="92" rx="20" fill="#c9a961" fill-opacity=".18" stroke="#c9a961" stroke-opacity=".45"/><text x="28" y="38" class="serif" font-size="25" font-weight="700" fill="#2e1e14">Build together: a living intelligence system that compounds context, creativity, and agency.</text><text x="28" y="67" class="small">The invitation is not to automate Ana away. It is to give her practice a memory, a rhythm, and room to breathe.</text></g>
+  <g transform="translate(1260 738)"><rect width="250" height="166" rx="22" fill="#1f5f4a" fill-opacity=".94"/><text x="25" y="42" class="eyebrow" fill="#f4dfb4">SOURCE THREADS</text><text x="25" y="75" class="sans" font-size="14" fill="#fffaf2">Ana Brand OS</text><text x="25" y="98" class="sans" font-size="14" fill="#fffaf2">Ana Companion</text><text x="25" y="121" class="sans" font-size="14" fill="#fffaf2">FrankX ally + portal</text><text x="25" y="144" class="sans" font-size="14" fill="#fffaf2">Ana AI Business Kit</text></g>
+</svg>

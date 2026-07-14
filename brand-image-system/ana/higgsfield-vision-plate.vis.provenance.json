@@ -1,0 +1,17 @@
+{
+  "provider": "higgsfield-mcp",
+  "model": "recraft_v4_1",
+  "jobId": "b4eee2c0-0dd8-48a2-960b-829a875903d0",
+  "status": "completed",
+  "createdAt": "2026-07-13T14:09:48Z",
+  "costCredits": 10,
+  "asset": "higgsfield-vision-plate.svg",
+  "derivative": "higgsfield-vision-plate.webp",
+  "sha256": {
+    "svg": "B0E1F92F831EA7833CC666D704399669DFBB16413DA07657C9135C9E4B31779F",
+    "webp": "CB1DCEE4DE81F6DE439535D71E50A4394CAAFEACD24401842280347C1BE1DDFE"
+  },
+  "promptPolicy": "No readable words; exact infographic typography is deterministic SVG.",
+  "rightsStatus": "needs-review",
+  "sourceReferences": ["Ana Brand OS", "ana-companion", "FrankX Ana ally/portal", "Ana AI Business Kit", "Cecilia chat safety audit"]
+}

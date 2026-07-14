@@ -1,0 +1,124 @@
+{
+  "version": "2026-06-23",
+  "task": "Recover and quality-gate the Ana possibility-map visual package after cross-worktree contamination.",
+  "surface": "Draft partner infographic and future web or social derivative",
+  "audience": "Ana first, then an explicitly approved collaborator or client",
+  "first_read": "Ana remains the author while one human-led intelligence supports several practical doorways.",
+  "standards": [
+    "design-agent-standards/OUTCOMES.md",
+    "design-agent-standards/AGENTIC_DESIGN_LOOP.md",
+    "design-agent-standards/PREMIUM_ASSET_STANDARD.md",
+    "design-agent-standards/best-practices/image-logo-visual-generation.md",
+    "starlight-design-intelligence/evals/generated-asset-quality-gate.md"
+  ],
+  "references": [
+    {
+      "label": "Ana infographic brief",
+      "source": "brand-image-system/ana/ana-infographic-brief.md",
+      "reason": "Defines the intended audience, hierarchy, palette, and human-sign-off posture."
+    },
+    {
+      "label": "Ana ecosystem synthesis",
+      "source": "brand-image-system/ana/ana-synthesis.md",
+      "reason": "Provides the factual content and safety boundaries behind the map."
+    },
+    {
+      "label": "Higgsfield source receipt",
+      "source": "brand-image-system/ana/higgsfield-vision-plate.vis.provenance.json",
+      "reason": "Records provider, model, hashes, cost, and unresolved rights status for generated decorative media."
+    }
+  ],
+  "direction": {
+    "keep": [
+      "Human-led authorship and explicit sign-off",
+      "Warm ivory, espresso, restrained gold, clay, plum, and emerald palette",
+      "Deterministic editable labels and relationships",
+      "Sense-to-compound loop as the ownable system idea"
+    ],
+    "avoid": [
+      "Generated or malformed public typography",
+      "Treating decorative generated texture as product proof",
+      "Publishing before rights and factual-owner review",
+      "Claiming a finished export without desktop, mobile, and crop inspection"
+    ],
+    "signature": "One intelligence, many doorways — with Ana visibly at the center and AI backstage.",
+    "system": [
+      "Use ana-possibility-map.svg as the editable restart source",
+      "Keep exact public text in vector or code overlays",
+      "Use generated pathway media only as optional texture after rights clearance",
+      "Require an inspected export and 26/30 score before release"
+    ]
+  },
+  "asset_quality": {
+    "tier": "C",
+    "source_method": "vector-diagram",
+    "provenance": "owned",
+    "why_premium": "A deterministic vector diagram is the correct medium for exact labels, accessible structure, and reusable crops; the present composition still needs another pass before it qualifies for release.",
+    "shortcut_risk": "high",
+    "context_tested": false
+  },
+  "artifacts": [
+    {
+      "path_or_url": "brand-image-system/ana/ana-possibility-map.svg",
+      "kind": "image",
+      "inspected": true,
+      "notes": "Source inspected as code: 43 deterministic text nodes, ARIA title/description, no embedded raster. Candidate restart source; not yet crop-tested."
+    },
+    {
+      "path_or_url": "brand-image-system/ana/ana-finished-infographic.webp",
+      "kind": "image",
+      "inspected": true,
+      "notes": "Rejected as a final export because generated/malformed typography and ambiguous labels fail the exact-text gate; no dedicated provenance receipt was found."
+    },
+    {
+      "path_or_url": "brand-image-system/ana/higgsfield-vision-plate.webp",
+      "kind": "image",
+      "inspected": true,
+      "notes": "Decorative abstract source inspected at original detail. It contains no text, but its rights status remains needs-review and it is not primary proof."
+    }
+  ],
+  "checks": [
+    {
+      "name": "asset-tier",
+      "status": "pass",
+      "evidence": "Tier C vector diagram is the correct primary medium; generated pathway plate is decorative only."
+    },
+    {
+      "name": "export-inspection",
+      "status": "fail",
+      "evidence": "Original WebP exports were visually inspected; the file labeled finished contains malformed generated text and cannot ship."
+    },
+    {
+      "name": "exact-public-text",
+      "status": "fail",
+      "evidence": "The rejected raster does not preserve exact editable copy; restart from the deterministic SVG."
+    },
+    {
+      "name": "provenance-and-rights",
+      "status": "fail",
+      "evidence": "The pathway plate receipt says rightsStatus needs-review, while the rejected finished raster has no dedicated receipt."
+    },
+    {
+      "name": "desktop-mobile-social-crops",
+      "status": "blocked",
+      "evidence": "No verified in-context desktop, mobile, or social crop set exists."
+    },
+    {
+      "name": "visual-qa",
+      "status": "fail",
+      "evidence": "Package score is 20/30; the release threshold is 26/30."
+    }
+  ],
+  "score": {
+    "total": 20,
+    "max": 30,
+    "notes": "Hierarchy 4, brand fit 4, craft 2, accessibility/crops 3, accuracy/provenance 3, usefulness 4. Restart the export path while preserving the research and deterministic SVG."
+  },
+  "decision": "restart",
+  "known_risks": [
+    "The historical ana-finished-infographic.webp filename could be mistaken for approval; QUALITY-REVIEW.md explicitly rejects it.",
+    "Generated pathway media rights are not yet cleared.",
+    "Ana has not signed off on public use.",
+    "No production surface or crop has been verified."
+  ]
+}
