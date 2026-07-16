@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FrankX Social Card — Liquid Glass</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background:#0a0a0b; }
+    body {
+      width: 1080px; height: 1080px;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+      color: #e2e8f0;
+      overflow: hidden;
+    }
+    .card {
+      width: 1080px; height: 1080px;
+      background: linear-gradient(145deg, #111113 0%, #0a0a0b 100%);
+      border: 1px solid #1e1e1e;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 64px;
+    }
+    .glass {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .header { font-size: 48px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+    .sub { font-size: 20px; opacity: 0.8; margin-top: 12px; }
+    .body { font-size: 28px; line-height: 1.4; max-width: 900px; }
+    .footer {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 16px; opacity: 0.75;
+    }
+    .accent { color: #10b981; }
+    .soul { color: #f59e0b; }
+    .signal {
+      position: absolute; top: -40px; right: -40px; width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="social-card">
+    <div class="signal"></div>
+    <div class="glass">
+      <div class="header">Command Layer.<br>Owned Systems.</div>
+      <div class="sub">FrankX · Creative OS E2E · 2026-07-16</div>
+    </div>
+    <div class="body">
+      Turn AI capability into <span class="accent">leverage</span>, products, and revenue loops.<br>
+      Mechanisms over hype. Proof over theater.
+    </div>
+    <div class="footer glass">
+      <div>frankx.ai</div>
+      <div class="soul">Authority · Systems · Outcomes</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "brandId": "arcanea",
+  "brandOperatingUnit": "arcanea-product-ip",
+  "version": "2026-07-02",
+  "updatedAt": "2026-07-02T17:30:00Z",
+  "positioning": "Mythic creative intelligence platform and IP. Codex, portal, creative forge with precision and craft.",
+  "visualPrinciples": {
+    "coreAesthetic": "Mythic yet concrete: codex pages, portals with depth, sigils with meaning, constellation maps. Heavy use of liquid glass for ethereal layers, rich but readable. World-class taste — Apple refinement meets insightful creative systems.",
+    "inspiration": ["Apple liquid glass depth and tactility", "Vercel clean craft", "GitHub approachable insight + mascot warmth for characters"],
+    "qualityStandard": "Ultra tasteful, meaningful, insightful only. No purple cliche, no unreadable ornament."
+  },
+  "colorTokens": {
+    "foundation": { "void": "#0a0a0b", "space": "#111113" },
+    "accent": { "primary": "#c084fc", "secondary": "#a5f3fc" }
+  },
+  "imageDirection": "Premium models excellent for mythic-creative infographics and atmospheric bases (text can be strong). Deterministic for exact sigils/text. Hybrid approach.",
+  "socialRules": { "static": "Creative premium base + precise overlay where needed." },
+  "approvalRoute": "#social-approvals",
+  "doNotUse": ["fantasy cosplay", "purple cliche", "unreadable ornament"]
+}

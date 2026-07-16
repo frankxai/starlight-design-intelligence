@@ -1,0 +1,158 @@
+{
+  "version": "2026-07-02",
+  "canonical_source": "C:\\Users\\frank\\starlight\\repos\\agentic-ops-hub\\docs\\MULTI_BRAND_AGENT_OPERATING_SYSTEM_2026-06-19.md",
+  "local_working_mirror": "C:\\Users\\frank\\brands\\image-system",
+  "operating_units": [
+    {
+      "id": "frankx-demand",
+      "name": "FrankX Demand",
+      "command_channel": "#brand-frankx",
+      "support_channels": ["#frankx-growth", "#content-comms", "#content-film-prep", "#social-command", "#social-approvals"],
+      "primary_repos": ["frankx.ai-vercel-website", "FrankX", "author-os", "prompt-engine", "prompt-library"],
+      "brand_sources": ["starlight-design-intelligence/brand-packs/frankx", "_intelligence/brand-worlds.md"],
+      "voice": "Sharp, direct, elite, tactical, controlled. Ruthless clarity, leverage, outcomes, systems.",
+      "visual_direction": "Executive AI command layer: black glass, graphite, market screens, signal lines, brushed metal, cockpit, deal room, intelligence console.",
+      "prompt_guardrails": ["No cute bots", "No generic AI assistant aesthetic", "No soft startup gradients", "Prefer product proof and commercial mechanisms"]
+    },
+    {
+      "id": "arcanea-product-ip",
+      "name": "Arcanea Product and IP",
+      "command_channel": "#brand-arcanea",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["Arcanea", "arcanea.ai", "arcanea-academy", "arcanea-world"],
+      "brand_sources": ["starlight-design-intelligence/brand-packs/arcanea", "_intelligence/brand-worlds.md"],
+      "voice": "Mythic but precise; poetic but not vague.",
+      "visual_direction": "Mythic creative intelligence: codex, portal, sigil, constellation, creative forge, spell-interface.",
+      "prompt_guardrails": ["No fantasy cosplay", "No purple cliche", "No unreadable ornament", "Keep craft and transformation concrete"]
+    },
+    {
+      "id": "starlight-substrate",
+      "name": "Starlight Substrate",
+      "command_channel": "#brand-starlight",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["Starlight-Intelligence-System", "starlight-agent-config", "starlight-design-intelligence"],
+      "brand_sources": ["starlight-design-intelligence/brand-packs/sis", "_intelligence/brand-worlds.md"],
+      "voice": "Calm operational intelligence, trust, systems, evidence, command centers.",
+      "visual_direction": "Nocturnal intelligence lab: obsidian, smoked glass, brushed metal, command observatory, signal field, oracle interface.",
+      "prompt_guardrails": ["No playful SaaS", "No neon hacker cliche", "No generic dashboard filler", "Show governance and evidence"]
+    },
+    {
+      "id": "ai-architect-coe",
+      "name": "AI-Architect / AI CoE",
+      "command_channel": "#brand-ai-coe",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["enterprise-ai-kit", "enterprise-ai-coe-ops", "gencreator.ai", "frankx.ai-vercel-website"],
+      "brand_sources": ["agentic-ops-hub", "gencreator.ai/strategy_v3.md"],
+      "voice": "Enterprise credible, architectural, practical, proof-led.",
+      "visual_direction": "Center of excellence diagrams, governance systems, operating-model maps, real proof and implementation artifacts.",
+      "prompt_guardrails": ["Avoid AI hype", "Use exact diagrams for frameworks", "Treat claims as proof-gated", "Needs a central brand pack"]
+    },
+    {
+      "id": "agentic-income-network",
+      "name": "Agentic Income Network",
+      "command_channel": "#brand-agentic-income",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["agentic-income-network", "creator-revenue-engine", "checkout-revenue-ops"],
+      "brand_sources": ["agentic-ops-hub"],
+      "voice": "Pragmatic conversion, trusted tools, fast path from attention to action.",
+      "visual_direction": "Revenue engines, offer paths, proof ladders, automation maps, dashboards with real metrics when available.",
+      "prompt_guardrails": ["No get-rich-quick aesthetics", "No unverifiable income claims", "Use exact overlays for numbers", "Needs a central brand pack"]
+    },
+    {
+      "id": "reality-architect",
+      "name": "Reality Architect",
+      "command_channel": "#brand-reality-architect",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["reality-architect-ops", "RealityArchitect"],
+      "brand_sources": ["agentic-ops-hub"],
+      "voice": "Transformational, structured, reflective, grounded in practices and systems.",
+      "visual_direction": "Life design maps, intentional systems, timeline architectures, reflective but concrete visual language.",
+      "prompt_guardrails": ["No vague mystical self-help", "No generic journal imagery", "Use diagrams for processes", "Needs a central brand pack"]
+    },
+    {
+      "id": "creator-systems-acos",
+      "name": "Creator Systems / ACOS",
+      "command_channel": "#brand-creator-systems",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["agentic-creator-os", "gencreator.ai", "creator-product-kit", "creator-cohort-ops"],
+      "brand_sources": ["gencreator.ai/strategy_v3.md", "gencreator.ai/public/brand", "agentic-creator-os/modules/social-media-engine/README.md"],
+      "voice": "Creator-operating-system clarity: applied research, cohort outcomes, artifacts shipped publicly.",
+      "visual_direction": "Architecture-warm, creator stack maps, cohort rituals, artifact thresholds, practical operator visuals.",
+      "prompt_guardrails": ["Do not blend with AnimeLegends mascots", "No productivity-tool sameness", "Make outputs and artifacts visible", "Needs a central brand pack"]
+    },
+    {
+      "id": "research-mind-intelligence",
+      "name": "Research and Mind Intelligence",
+      "command_channel": "#brand-research-intelligence",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["research-intelligence", "mind-intelligence", "health-intelligence-ops"],
+      "brand_sources": ["agentic-ops-hub", "_intelligence/visual-worlds/neural-cosmos.md"],
+      "voice": "Credible, curious, evidence-led, synthesis-oriented.",
+      "visual_direction": "Research maps, mind systems, neural/cosmos inspiration only when grounded in evidence and provenance.",
+      "prompt_guardrails": ["Do not imply medical claims without source checks", "Avoid decorative neural filler", "Use citations and exact overlays", "Needs a central brand pack"]
+    },
+    {
+      "id": "tooling-oss-distribution",
+      "name": "Tooling / OSS Distribution",
+      "command_channel": "#brand-tooling-oss",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["awesome-design-agent-skills", "design-agent-skills", "prompt-library", "tooling repos"],
+      "brand_sources": ["agentic-ops-hub", "starlight-design-intelligence/DESIGN_AGENT_OPERATING_SYSTEM.md"],
+      "voice": "Clear, useful, technical, contribution-friendly.",
+      "visual_direction": "Repository proof, CLI flows, diagrams, install paths, before/after evidence, public OSS templates.",
+      "prompt_guardrails": ["No fake terminal screenshots", "No unverifiable badges", "Use real code or exact captures", "Needs a central brand pack"]
+    },
+    {
+      "id": "anime-legends-media-ip",
+      "name": "Anime Legends / Media IP",
+      "command_channel": "#brand-anime-legends",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["AnimeLegends"],
+      "brand_sources": ["AnimeLegends/brand/voice.md", "AnimeLegends/brand/visual-tokens.md", "AnimeLegends/brand/never-say.md", "AnimeLegends/brand/assets"],
+      "voice": "Mythic precision. Ancient knowledge. No hype.",
+      "visual_direction": "Anime-mythic media IP with reserved mascots, sigils, and lore systems; strong channel-specific assets.",
+      "prompt_guardrails": ["Respect reserved mascot IP", "No recap-channel tone", "No bro-gym energy", "No unlicensed character likenesses"]
+    }
+  ],
+  "incubator_lanes": [
+    {
+      "id": "music-intelligence",
+      "name": "Music Intelligence",
+      "decision_needed": "Standalone brand, FrankX content vertical, or Arcanea studio capability"
+    },
+    {
+      "id": "health-intelligence",
+      "name": "Health Intelligence",
+      "decision_needed": "Research Intelligence, Arcanea creator vertical, or separate professional content lane"
+    },
+    {
+      "id": "dream-life-library-intelligence",
+      "name": "Dream / Life / Library Intelligence",
+      "decision_needed": "Reality Architect, Research Intelligence, or private second-brain systems"
+    },
+    {
+      "id": "investor-intelligence",
+      "name": "Investor Intelligence",
+      "decision_needed": "Commercial vertical, research lane, or archive candidate"
+    },
+    {
+      "id": "chat-exporter-starter-forks",
+      "name": "Chat / exporter / starter forks",
+      "decision_needed": "Reusable tooling, old experiments, or archive candidates"
+    }
+  ],
+  "social_platform_rooms": [
+    "#social-command",
+    "#social-approvals",
+    "#social-x",
+    "#social-linkedin",
+    "#social-instagram",
+    "#social-youtube",
+    "#social-tiktok",
+    "#social-threads",
+    "#social-bluesky",
+    "#social-farcaster",
+    "#social-syndication"
+  ],
+  "approval_rule": "Human approval is required in #social-approvals before publishing or scheduling social posts."
+}

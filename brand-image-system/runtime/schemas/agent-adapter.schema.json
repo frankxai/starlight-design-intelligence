@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/agent-adapter.schema.json",
+  "title": "Brand Image System Agent Adapter",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "adapterId",
+    "targetAgent",
+    "generatedFrom",
+    "requiredReads",
+    "allowedActions",
+    "blockedActions",
+    "handoffFields",
+    "updatedAt"
+  ],
+  "properties": {
+    "adapterId": {
+      "type": "string"
+    },
+    "targetAgent": {
+      "type": "string",
+      "enum": ["codex", "claude-code", "grok-cli", "antigravity", "hermes", "mcp", "figma", "canva", "remotion", "browser"]
+    },
+    "generatedFrom": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "requiredReads": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowedActions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blockedActions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "handoffFields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

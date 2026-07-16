@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/brand-pack.schema.json",
+  "title": "Brand Image System Brand Pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "brandId",
+    "displayName",
+    "operatingUnit",
+    "sourceDocs",
+    "audiences",
+    "positioning",
+    "voice",
+    "visual",
+    "channels",
+    "approvals",
+    "doNotUse",
+    "updatedAt"
+  ],
+  "properties": {
+    "brandId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operatingUnit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceDocs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "canonicalRepos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "audiences": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "positioning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["oneLine", "proof", "failureModes"],
+      "properties": {
+        "oneLine": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proof": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "failureModes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["traits", "bannedPhrases"],
+      "properties": {
+        "traits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bannedPhrases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "visual": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["principles", "colors", "typography", "imageDirection"],
+      "properties": {
+        "principles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "colors": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "typography": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "imageDirection": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "channels": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "approvals": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["requiredBeforePublicAction"],
+      "properties": {
+        "requiredBeforePublicAction": {
+          "type": "boolean"
+        },
+        "route": {
+          "type": "string"
+        }
+      }
+    },
+    "doNotUse": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

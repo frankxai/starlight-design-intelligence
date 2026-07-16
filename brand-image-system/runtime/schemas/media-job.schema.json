@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/media-job.schema.json",
+  "title": "Brand Image System Media Job",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "jobId",
+    "brandId",
+    "workflowId",
+    "surface",
+    "audience",
+    "brief",
+    "assetTier",
+    "sourceMethod",
+    "paths",
+    "qa",
+    "decision",
+    "updatedAt"
+  ],
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$"
+    },
+    "brandId": {
+      "type": "string"
+    },
+    "workflowId": {
+      "type": "string"
+    },
+    "surface": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "brief": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assetTier": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "blocked"]
+    },
+    "sourceMethod": {
+      "type": "string"
+    },
+    "promptLog": {
+      "type": "string"
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["jobRoot"],
+      "properties": {
+        "jobRoot": {
+          "type": "string"
+        },
+        "source": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "type": "string"
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inspected", "score30", "notes"],
+      "properties": {
+        "inspected": {
+          "type": "boolean"
+        },
+        "score30": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "socialConfidence100": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["draft", "approved", "iterate", "restart", "blocked", "published"]
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

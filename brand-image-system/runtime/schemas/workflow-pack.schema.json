@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/workflow-pack.schema.json",
+  "title": "Brand Image System Workflow Pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workflowId",
+    "displayName",
+    "purpose",
+    "surfaces",
+    "allowedProductionRoutes",
+    "requiredOutputs",
+    "qaGates",
+    "blockedRoutes",
+    "updatedAt"
+  ],
+  "properties": {
+    "workflowId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "surfaces": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "allowedProductionRoutes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "requiredOutputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "pathHint"],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "pathHint": {
+            "type": "string"
+          },
+          "dimensions": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "qaGates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "blockedRoutes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approvalRequired": {
+      "type": "boolean",
+      "default": true
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

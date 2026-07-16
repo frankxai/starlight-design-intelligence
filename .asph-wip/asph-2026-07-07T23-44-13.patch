@@ -1,0 +1,327 @@
+diff --git a/brand-image-system/README.md b/brand-image-system/README.md
+index 44e59c3..cba9010 100644
+--- a/brand-image-system/README.md
++++ b/brand-image-system/README.md
+@@ -12,6 +12,7 @@
+ - Brand packs in `../brand-packs/` remain human sources.
+ - Local working mirror: `C:\Users\frank\brands\image-system`
+ - Governance: agent-governance.md, brand-operating-units.json, source-map.md
++- Routing cheat sheet: `visual-template-routing-2026-07-04.md`
+ 
+ ## Key Foundations Now Live
+ - **Taste Standard**: World-class design team only. Apple liquid glass (translucency, depth, blur), Vercel clean functional beauty, GitHub approachable + insightful (Mona-like likeability), meaningful content. Ultra tasteful, no slop.
+@@ -30,4 +31,4 @@
+ All new assets must meet the elevated taste bar before entering the DAM.
+ 
+ See `multi-agent-brand-template-operating-system.md` for full strategy.
+-See `runtime/dam/ASSET_MANAGEMENT_SYSTEM.md` for connected asset ops.
+\ No newline at end of file
++See `runtime/dam/ASSET_MANAGEMENT_SYSTEM.md` for connected asset ops.
+diff --git a/brand-image-system/hermes-maximization-plan.md b/brand-image-system/hermes-maximization-plan.md
+new file mode 100644
+index 0000000..9fe6ece
+--- /dev/null
++++ b/brand-image-system/hermes-maximization-plan.md
+@@ -0,0 +1,67 @@
++# Hermes Maximization Plan
++
++**Date**: 2026-07-07
++**Status**: Living document — update as we execute
++**Owner**: Starlight Swarm + Hermes
++
++## Executive Summary
++Hermes has the strongest architectural advantages in the entire agent ecosystem (persistent memory, skills as automatic learning, 23 specialized profiles, cron autonomy, kanban, curator). This plan turns those latent advantages into a decisive moat by making Hermes the **conductor** of the Starlight swarm, with the brand-image-system runtime as the central visual contract.
++
++## 1. Core Principles
++- Brand-image-system runtime is the single source of truth for all visual work.
++- Hermes profiles replace the "default" single-profile habit.
++- Automatic learning loop: every visual job feeds scores back into memory/skills.
++- Hermes becomes the swarm conductor via kanban + deliberate delegation.
++
++## 2. Profile Activation Strategy
++
++| Profile | Role | Key Skills | Cron Ownership | Memory Focus |
++|---------|------|------------|----------------|--------------|
++| starlight | Swarm conductor | gencreator-swarm-evolver, kanban, delegation | Daily evolution + dispatch | Swarm health |
++| arcanea | Creative execution | brand-image-system adapter, frontend-ultimate | Nightly renderer jobs | Visual QA + approved assets |
++| gencreator / frankx | Core brand + CoE | agentic-passive-income, todo-discipline | Weekly strategy | 6-Pillar intelligence |
++| technology-guardian | Tech pillar | coding-agents, hermes-agent, systematic-debugging | — | Renderers & infrastructure |
++| strategy-guardian | Strategy pillar | research tools | Monthly research pulse | Strategic reports |
++| arena-judge | Evaluation | multi-llm-arena | Continuous eval | Leaderboards |
++
++## 3. Brand-Image-System Integration
++- All visual jobs must use `media-job.json` validated against the schema.
++- Raw `image_gen` tool is blocked for Tier A assets in arcanea/starlight profiles.
++- Deterministic renderer (HTML/Satori/Playwright) is the default path.
++- Hermes adapter files live in `runtime/adapters/hermes/`.
++
++## 4. Automatic Learning Loop
++- Every completed media job writes structured QA data to Hermes memory.
++- Curator runs with `consolidate: true` to turn high-performing patterns into skills.
++- Low-scoring jobs (<22/30) automatically generate "lesson" skills.
++- Multi-LLM Arena scores renderers and models over time.
++
++## 5. Swarm Coordination
++- Enable `kanban.dispatch_in_gateway: true`
++- Standard lanes: visual-production, strategy-deep-work, swarm-evolution, code-review
++- Hermes creates media-jobs, delegates rendering, routes to approval.
++
++## 6. Config Changes
++- `curator.consolidate: true`
++- `kanban.dispatch_in_gateway: true`
++- Stronger memory settings
++- Delegation max depth = 2
++
++## 7. New Crons
++1. nightly-visual-production (renderer jobs)
++2. weekly-profile-health
++3. monthly-learning-consolidation
++
++## 8. Positioning vs Other Agents
++- Hermes = Conductor + Memory + Learning Loop + Visual Production System
++- Codex / Claude Code = Implementation of renderers and workflows
++- Grok CLI / Antigravity = High-volume generation (after renderer proven)
++- Multi-LLM Arena = Automatic judge
++
++## Current Status (2026-07-07)
++- Hermes adapter created
++- First media-job.json created for FrankX social-static
++- Deep audit of agent instruction files started
++- This plan document initialized
++
++**Next Actions**: Activate arcanea profile, run deeper repo audit, implement first renderer loop.
+\ No newline at end of file
+diff --git a/brand-image-system/runtime/adapters/hermes/AGENTS.fragment.md b/brand-image-system/runtime/adapters/hermes/AGENTS.fragment.md
+new file mode 100644
+index 0000000..456a1a7
+--- /dev/null
++++ b/brand-image-system/runtime/adapters/hermes/AGENTS.fragment.md
+@@ -0,0 +1,23 @@
++# Hermes Integration with Brand Image System
++
++**Rule**: All visual production work must go through the brand-image-system runtime.
++
++## When Working on Visual Assets
++1. Load the brand pack from `runtime/brands/<brand>/`
++2. Load the workflow pack from `runtime/workflows/<workflow>/`
++3. Create or validate a `media-job.json` against the schema
++4. Use only allowed production routes (HTML/Satori renderer preferred)
++5. Never use raw `image_gen` tool for final public text or claims
++6. Write all outputs to the local mirror: `C:\Users\frank\brands\image-system\`
++7. Record QA score (30-point gate) and decision in the media-job
++
++## Profile Recommendations
++- Use `arcanea` profile for creative execution
++- Use `starlight` profile for orchestration
++- Load `brand-image-system` and `todo-discipline` skills
++
++## Blocked Actions
++- Direct generative overlays with exact text
++- Bypassing the renderer for Tier A assets
++
++This fragment should be included in any Hermes AGENTS.md or profile instructions related to visual work.
+\ No newline at end of file
+diff --git a/brand-image-system/runtime/adapters/hermes/hermes-media-job.md b/brand-image-system/runtime/adapters/hermes/hermes-media-job.md
+new file mode 100644
+index 0000000..f10f70e
+--- /dev/null
++++ b/brand-image-system/runtime/adapters/hermes/hermes-media-job.md
+@@ -0,0 +1,11 @@
++# Hermes Media Job Workflow
++
++Hermes should:
++1. Create the `media-job.json` using the template
++2. Delegate rendering to the appropriate profile or tool (Satori/Playwright)
++3. Monitor the job folder for evidence.json
++4. Run visual QA and update the decision field
++5. Feed results back into Hermes memory for automatic learning
++
++Example command pattern:
++hermes -p arcanea chat -q "Execute media-job 2026-07-07-frankx-social-static using the brand-image-system runtime"
+\ No newline at end of file
+diff --git a/brand-image-system/runtime/adapters/hermes/media-job-template.json b/brand-image-system/runtime/adapters/hermes/media-job-template.json
+new file mode 100644
+index 0000000..87ece42
+--- /dev/null
++++ b/brand-image-system/runtime/adapters/hermes/media-job-template.json
+@@ -0,0 +1,29 @@
++{
++  "hermes": {
++    "version": "1.0",
++    "description": "Hermes adapter for brand-image-system runtime. Use this template to generate media-job.json files that Hermes can orchestrate.",
++    "requiredSkills": ["brand-image-system", "todo-discipline"],
++    "recommendedProfiles": ["arcanea", "starlight"],
++    "blockedTools": ["image_gen"],
++    "enforcedRoutes": ["renderer"]
++  },
++  "jobTemplate": {
++    "jobId": "{{date}}-{{brand}}-{{workflow}}",
++    "brandId": "{{brandId}}",
++    "workflowId": "{{workflowId}}",
++    "surface": "",
++    "audience": "",
++    "brief": "",
++    "assetTier": "A",
++    "sourceMethod": "renderer-backed",
++    "paths": {
++      "jobRoot": "C:/Users/frank/brands/image-system/jobs/{{date}}/{{jobId}}"
++    },
++    "qa": {
++      "inspected": false,
++      "score30": 0
++    },
++    "decision": "draft"
++  },
++  "instructions": "Always load the brand pack and workflow pack first. Never use raw image_gen for final text or claims. Route through deterministic renderer."
++}
+\ No newline at end of file
+diff --git a/brand-image-system/visual-template-routing-2026-07-04.md b/brand-image-system/visual-template-routing-2026-07-04.md
+new file mode 100644
+index 0000000..02889d4
+--- /dev/null
++++ b/brand-image-system/visual-template-routing-2026-07-04.md
+@@ -0,0 +1,144 @@
++# Visual Template Routing Cheat Sheet
++
++Date: 2026-07-04
++
++Purpose: decide which visual templates and workflows to use for each Starlight/FrankX/Arcanea business unit, without letting agents improvise off-brand images.
++
++## Verdict
++
++Use the existing template system, but route it more strictly:
++
++- **FrankX Demand** should use the mature renderer-backed social-static and infographic system now.
++- **Starlight/SIS** should use website-hero, website-header, product-proof, and infographic templates for command centers, governance maps, and observability proof.
++- **Arcanea** should use website-hero, motion-source-frame, brand-world poster, and controlled social-static templates, with exact text rendered outside image generation.
++- **GenCreator / Creator Systems** should use product-proof, carousel, infographic, and website-header templates, but needs a central compiled brand pack before scaling.
++- **AI CoE / Enterprise AI** should use deterministic infographic, deck-slide, website-header, and product-proof templates first. Avoid cinematic generation unless it supports a real framework.
++- **Agentic Income** should use offer-path, revenue-engine, proof-ladder, and deterministic social-static templates. No generated money/status imagery and no unverifiable numbers.
++- **Tooling / OSS** should use real code capture, CLI flow, README/social preview, OG image, and install-path diagrams. No fake terminals.
++- **AnimeLegends** should stay in source-frame and character/world reference workflows until the brand pack is compiled. Do not use generic anime wallpaper as a template.
++
++## Template Inventory Checked
++
++| Template or workflow | Current source | Use now? | Best use |
++| --- | --- | --- | --- |
++| Media job brief | `brand-image-system/templates/media-job.md` | Yes | Required intake for serious visual jobs. |
++| Media job JSON | `C:/Users/frank/brands/image-system/templates/media-job.template.json` | Yes | Machine-readable job packet for generated/captured assets. |
++| Design evidence | `design-agent-standards/templates/design-loop-evidence.json` | Yes | QA proof, asset tier, score, decision. |
++| Social static | `runtime/workflows/social-static/workflow.json` | Yes | Square, 4:5, 9:16, OG, LinkedIn/X/Instagram static assets. |
++| Website hero | `runtime/workflows/website-hero/workflow.json` | Yes | First viewport hero visuals, product proof, high-craft generated base plus deterministic overlay. |
++| Website header | `brand-image-system/runtime/workflows/website-header/workflow.json` | Yes | Section banners, route headers, campaign headers, OG reuse. |
++| Infographic | `runtime/workflows/infographic/workflow.json` | Yes | Architecture, systems, comparisons, proof maps. Deterministic labels required. |
++| Social-card renderer | `runtime/renderers/social-card/index.html` | Yes, but refactor | Strong FrankX seed; split tokens/content so it can serve multiple brands. |
++| v0 scene brief | `starlight-agent-config/core/loops/v0-command-center/premium-scene-brief.template.md` | Yes | v0 frontend direction packets and premium scene contracts. |
++| v0 prompt packs | `starlight-agent-config/core/loops/v0-command-center/v0-prompt-packs.md` | Yes | v0 should draft layouts/components, not final claims or exact infographics. |
++| Command-center card | `starlight-agent-config/core/loops/v0-command-center/command-center-card.template.md` | Yes | Project management handoff card for Command Center. |
++| Approved FrankX variants | `C:/Users/frank/brands/image-system/frankx/approved/2026-07-02-platform-variants/` | Yes | Current best reusable proof of multi-crop template quality. |
++| Multi-brand seed batch | `C:/Users/frank/brands/image-system/review/multi-brand-seed-batch-contact-sheet-20260702.png` | Source frames only | Good aesthetic direction, not final templates without overlays/proof. |
++
++## Brand And Business Routing
++
++| Brand/business | Primary templates | Best surfaces | Source method | Do not use |
++| --- | --- | --- | --- | --- |
++| FrankX Demand | `social-static`, `infographic`, `website-header`, `website-hero`, `OG image` | LinkedIn/X/IG proof cards, blog hero, YouTube thumb, website OG, offer pages | Generated physical-system base + deterministic overlay; product/workflow capture when available | Cute bots, Arcanea mythic language, fake dashboards, soft startup gradients |
++| Starlight/SIS | `website-hero`, `product-proof`, `infographic`, `website-header`, `motion-source-frame` | Command Center, observability, governance, protocol maps, repo/system diagrams | Real UI proof, browser capture, exact diagrams, restrained generated source frames | Neon hacker visuals, random node clouds, generic sci-fi dashboards |
++| Arcanea | `website-hero`, `social-static`, `motion-source-frame`, `brand-world poster`, `website-header` | Brand worlds, creator forge pages, academy/program pages, lore/product launches | Art-directed generated world frames + precise overlays; Figma/Remotion for motion source | Purple cliche, cosplay fantasy, unreadable sigils/text, vague portals with no product evidence |
++| GenCreator / Creator Systems | `product-proof`, `social-carousel`, `infographic`, `website-header`, `social-static` | Creator OS, cohorts, creator stack maps, template kits, product proof | Deterministic diagrams and product captures first; generated source frames for warmth | Generic creator desk clutter, fake social UI, influencer stock-photo styling |
++| AI CoE / Enterprise AI | `infographic`, `deck-slide`, `website-header`, `product-proof`, `OG image` | Consulting pages, operating model, governance map, executive decks, LinkedIn diagrams | Code/Figma/Canva/Satori diagrams; browser captures for proof | AI hype, glowing brains, robots, fake proof, decorative node clouds |
++| Agentic Income | `infographic`, `social-static`, `website-header`, `offer-path`, `revenue-engine map` | Offer pages, launch posts, revenue workflows, checkout/product pages | Exact overlays for numbers; generated base may show physical pipeline/conveyor metaphor | Money piles, luxury cars, get-rich-quick signals, fake income metrics |
++| Reality Architect | `infographic`, `website-hero`, `motion-source-frame`, `social-static` | Decision architecture, transformation maps, reflective systems, programs | Deterministic life/system maps plus controlled atmospheric posters | Generic cosmic surrealism, self-help stock imagery, fake dashboards |
++| Research / Mind Intelligence | `infographic`, `website-header`, `research-to-content`, `OG image` | Research syntheses, knowledge maps, mind-system pages, newsletter visuals | Source-backed diagrams, exact citations/labels, archive/lab metaphors | Fake citations, generic blue brain imagery, medical/science claims without source checks |
++| Tooling / OSS | `product-proof`, `OG image`, `infographic`, `README/social preview`, `CLI flow` | GitHub repo cards, install docs, release posts, CLI demos | Real terminal/code capture, deterministic renderer, browser screenshots | Fake terminal text, fake stars/badges, generated code snippets |
++| VibeClubs | `social-static`, `website-header`, `event poster`, `9:16 story/reel cover` | Events, community rituals, club identity, culture posts | Art-directed event/world source frame + exact event overlays | Generic party stock, blurry crowds, fake event text |
++| AnimeLegends | `character reference`, `episode poster`, `motion-source-frame`, `brand-world poster` | Media IP development, episode/social posters, lore assets | Character sheets and source frames with strict repo-local IP rules | Generic anime wallpaper, inconsistent characters, pseudo-Japanese text, unlicensed likenesses |
++
++## Recommended Priority Order
++
++1. **FrankX social-static renderer loop**
++   - Promote the approved `frankx-platform-variants` pattern as the template benchmark.
++   - Refactor `social-card/index.html` into a token/content driven renderer.
++   - Produce five repeatable modules: command layer, AI stack comparison, creator revenue flywheel, refresh queue, website/social compounding.
++
++2. **SIS command and governance template set**
++   - Build `website-hero` and `infographic` variants for Command Center, agent observatory, v0/Codex/GitHub/Vercel loops, memory/governance, and project proof.
++   - Use real Observatory/Command Center captures as Tier A proof whenever possible.
++
++3. **Arcanea cinematic source-frame system**
++   - Use generated frames for creative forge, codex, portal, sigil, and world-engine scenes.
++   - Add deterministic overlays, product/tool proof, or motion-source framing before publishing.
++
++4. **Enterprise AI / AI CoE diagram pack**
++   - Build deterministic operating-model maps, governance boards, and implementation blueprints.
++   - Use this for LinkedIn, decks, landing sections, and sales collateral.
++
++5. **GenCreator and Agentic Income conversion packs**
++   - GenCreator: creator stack maps, cohort artifact boards, product captures.
++   - Agentic Income: offer paths, proof ladders, funnel mechanics, checkout flows.
++   - Both need exact overlays and claim-risk checks.
++
++6. **Compile missing central brand packs**
++   - Agentic Income, Tooling/OSS, Research/Mind, AnimeLegends, and fuller GenCreator should be compiled into `runtime/brands`.
++   - Local provisional guides are useful but not enough for scaled agent production.
++
++## Which Templates To Give v0
++
++Give v0:
++
++- Scene briefs for website hero/header and premium app surfaces.
++- Brand pack excerpts: visual world, copy posture, do-not-use list, asset tier.
++- Screenshots/product captures as context for layout direction.
++- Component intentions: proof rail, command nav, mechanism panel, CTA band, social/OG frame.
++- One brand at a time with one surface at a time.
++
++Do not give v0:
++
++- Huge cross-brand strategy dumps.
++- Exact final social text, factual diagrams, or claim-heavy infographics as image-rendering tasks.
++- Medical/financial/legal/high-stakes claims without source packets.
++- Logo finalization tasks. Logos stay vector-first.
++- Generic prompts like "make it premium" without a media job and brand pack.
++
++## Template Production Rules
++
++```mermaid
++flowchart TD
++  A["Signal or campaign idea"] --> B["Classify brand operating unit"]
++  B --> C["Pick workflow template"]
++  C --> D["Create media job"]
++  D --> E{"Source method"}
++  E --> F["Tier A product/proof capture"]
++  E --> G["Tier B generated source frame"]
++  E --> H["Tier C deterministic renderer"]
++  F --> I["Exact overlay / crop set"]
++  G --> I
++  H --> I
++  I --> J["Visual QA + 30 point score"]
++  J --> K{"26/30+"}
++  K -->|yes| L["Approval packet / DAM registry"]
++  K -->|no| M["Iterate or restart"]
++```
++
++## Use / Avoid By Asset Type
++
++| Asset type | Use | Avoid |
++| --- | --- | --- |
++| Hero visual | Product proof, browser capture, strong generated poster, WebGL only with fallback | Abstract gradients, fake dashboards, generic 3D primitives |
++| Social card | Deterministic text and crop variants, generated base only if it adds meaning | Raw generated text, tiny labels, one crop pretending to fit every channel |
++| Infographic | Code/SVG/Figma/Canva renderer, exact labels, source checks | Raw image-gen diagrams with pseudo-text |
++| Motion source | Excellent still frame first, one motion job, reduced-motion route | Moving weak assets to hide poor composition |
++| Logo/identity | Vector-first, one-color 16px/32px test, render after mark works | Generated render as final logo |
++| Product proof | Real app/site capture, Vercel preview, repo screenshot, actual workflow state | Fake UI, invented metrics, placeholder dashboards |
++
++## Immediate Next Actions
++
++1. Refactor the FrankX social-card renderer into a reusable multi-brand renderer with token/content JSON.
++2. Add compiled runtime brand packs for Agentic Income, Tooling/OSS, Research/Mind, AnimeLegends, and a fuller GenCreator pack.
++3. Create SIS and Arcanea approved variant contact sheets matching the FrankX multi-crop standard.
++4. Create one `media-job.json` per priority brand for the next sprint:
++   - FrankX: `frankx-command-layer`
++   - SIS: `command-center-governance-map`
++   - Arcanea: `creative-forge-world-frame`
++   - AI CoE: `enterprise-ai-operating-model`
++   - GenCreator: `creator-os-workflow-map`
++   - Agentic Income: `offer-path-proof-ladder`
++5. Add each approved asset to `C:/Users/frank/brands/image-system/runtime/asset-registry.json` with `usedIn` entries before claiming it is live.
++

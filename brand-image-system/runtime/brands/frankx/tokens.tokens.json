@@ -1,0 +1,26 @@
+{
+  "brandId": "frankx",
+  "version": "2026-07-02",
+  "tokens": {
+    "color": {
+      "void": { "value": "#0a0a0b", "type": "color" },
+      "space": { "value": "#111113", "type": "color" },
+      "elevated": { "value": "#1a1a1f", "type": "color" },
+      "border": { "value": "#1e1e1e", "type": "color" },
+      "techPrimary": { "value": "#10b981", "type": "color" },
+      "techSecondary": { "value": "#06b6d4", "type": "color" },
+      "soulPrimary": { "value": "#f59e0b", "type": "color" },
+      "soulSecondary": { "value": "#fbbf24", "type": "color" },
+      "glassLight": { "value": "rgba(255,255,255,0.06)", "type": "color" },
+      "glassStrong": { "value": "rgba(255,255,255,0.12)", "type": "color" }
+    },
+    "typography": {
+      "heading": { "value": "Poppins, Outfit, system-ui", "type": "fontFamily" },
+      "body": { "value": "Inter, system-ui", "type": "fontFamily" },
+      "mono": { "value": "JetBrains Mono, monospace", "type": "fontFamily" }
+    },
+    "glass": {
+      "layer": { "value": "backdrop-filter: blur(12px); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);", "type": "string" }
+    }
+  }
+}
