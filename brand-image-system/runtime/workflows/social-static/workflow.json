@@ -2,7 +2,8 @@
   "$schema": "../../schemas/workflow-pack.schema.json",
   "workflowId": "social-static",
   "displayName": "Social Static Image",
-  "purpose": "Create one exact, on-brand social image for a feed post, proof card, quote card, or announcement.",
+  "version": "2026-07-16",
+  "purpose": "Create one exact, on-brand social image for a feed post, proof card, quote card, or announcement. Hybrid allowed: premium gen for creative bases; deterministic renderer for exact public text, claims, UI, and charts.",
   "surfaces": [
     "LinkedIn feed image",
     "Instagram feed image",
@@ -13,50 +14,39 @@
   "allowedProductionRoutes": [
     "HTML/CSS renderer",
     "Satori/OG renderer",
+    "Playwright capture of deterministic template",
     "Figma",
     "Canva",
     "browser capture",
-    "image generation for background/source frame only"
+    "image generation for background/source frame only",
+    "premium creative-infographic route with character-level text QA (Grok / Infogenius / GPT-image family)"
   ],
   "requiredOutputs": [
-    {
-      "kind": "source brief",
-      "pathHint": "brief.md"
-    },
-    {
-      "kind": "media job",
-      "pathHint": "media-job.json"
-    },
-    {
-      "kind": "square crop",
-      "pathHint": "crops/square.png",
-      "dimensions": "1080x1080"
-    },
-    {
-      "kind": "portrait crop",
-      "pathHint": "crops/portrait.png",
-      "dimensions": "1080x1350"
-    },
-    {
-      "kind": "evidence",
-      "pathHint": "evidence.json"
-    }
+    { "kind": "source brief", "pathHint": "brief.md" },
+    { "kind": "media job", "pathHint": "media-job.json" },
+    { "kind": "square crop", "pathHint": "crops/square.png", "dimensions": "1080x1080" },
+    { "kind": "portrait crop", "pathHint": "crops/portrait.png", "dimensions": "1080x1350" },
+    { "kind": "og crop", "pathHint": "crops/og.png", "dimensions": "1200x628" },
+    { "kind": "story crop", "pathHint": "crops/story.png", "dimensions": "1080x1920" },
+    { "kind": "evidence", "pathHint": "evidence.json" }
   ],
   "qaGates": [
     "brand pack loaded",
-    "exact text rendered deterministically",
-    "actual output path exists",
-    "square and portrait crop inspected",
-    "30 point score recorded",
+    "exact text rendered deterministically unless premium creative-infographic exception is explicit and fully inspected",
+    "actual output path exists for all four crops",
+    "square, portrait, og, and story crops inspected",
+    "30 point score recorded with ship bar score30 >= 28",
     "human approval required before public posting"
   ],
+  "scoreThreshold": 28,
+  "scoreScale": 30,
   "blockedRoutes": [
-    "raw image generation containing final public text",
+    "raw image generation containing final public text without creative-infographic exception + character QA",
     "fake UI",
     "uncited claims",
     "generic gradient filler as primary asset",
-    "Hermes image generation until backend is verified"
+    "Hermes image_generate until backend and first output path are verified"
   ],
   "approvalRequired": true,
-  "updatedAt": "2026-07-02"
+  "updatedAt": "2026-07-16"
 }
