@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/workflow-pack.schema.json",
+  "workflowId": "arcanea-codex-encyclopedia",
+  "displayName": "Arcanea Codex Encyclopedia Still + Loop",
+  "version": "2026-07-16",
+  "purpose": "Flagship world-media still (cast portrait bible or godbeast hero) plus optional I2V loop. Design card → Grok quality 2k → score30 → human approve. Not product chrome.",
+  "surfaces": [
+    "Codex encyclopedia page",
+    "World social source frame",
+    "Book plate candidate",
+    "Trailer still candidate"
+  ],
+  "allowedProductionRoutes": [
+    "xAI Grok Imagine quality 2k (XAIImageGenProvider)",
+    "xAI Grok Imagine video 1.5 I2V",
+    "Higgsfield Soul after face approve",
+    "NB2 only for labeled explore (not default ship)",
+    "deterministic Codex card overlay on approved still",
+    "channel crops from master"
+  ],
+  "requiredOutputs": [
+    { "kind": "design cards / prompts", "pathHint": "prompts.json" },
+    { "kind": "media job", "pathHint": "media-job.json" },
+    { "kind": "master still", "pathHint": "NN-slug.png" },
+    { "kind": "optional video", "pathHint": "NN-slug.mp4" },
+    { "kind": "evidence", "pathHint": "evidence.json" }
+  ],
+  "qaGates": [
+    "stylePackId house-myth-tech (or labeled secondary)",
+    "rail=world",
+    "VISUAL_DOCTRINE materials whitelist",
+    "design card completed before generate",
+    "paths on disk not CDN-only",
+    "score30 recorded with ship bar >= 28",
+    "human approval before public",
+    "no gen text UI watermark"
+  ],
+  "scoreThreshold": 28,
+  "scoreScale": 30,
+  "blockedRoutes": [
+    "product chrome placement without Codex frame",
+    "anime house unlabeled",
+    "prompt soup without design card",
+    "raw image_generate FAL thrash without xAI route-switch",
+    "invent-a-verse entities outside CANON_LOCKED"
+  ],
+  "approvalRequired": true,
+  "jobRootHint": "arcanea-ai-app/.arcanea/image-lab/<jobId>/",
+  "relatedOperatingModel": "arcanea-ai-app/.arcanea/image-lab/ARCANEA_VISUAL_OS_OPERATING_MODEL.md",
+  "updatedAt": "2026-07-16"
+}

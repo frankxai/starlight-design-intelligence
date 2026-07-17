@@ -4,8 +4,9 @@
     "description": "Hermes adapter for brand-image-system runtime. Use this template to generate media-job.json files that Hermes can orchestrate.",
     "requiredSkills": ["brand-image-system", "todo-discipline"],
     "recommendedProfiles": ["arcanea", "starlight"],
-    "blockedTools": ["image_gen"],
-    "enforcedRoutes": ["renderer"]
+    "blockedTools": [],
+    "enforcedRoutes": ["hybrid-declared"],
+    "routeSwitch": "If Hermes image_generate FAL fails, use XAIImageGenProvider (grok-imagine-image-quality@2k). Do not thrice-retry FAL."
   },
   "jobTemplate": {
     "jobId": "{{date}}-{{brand}}-{{workflow}}",
@@ -15,15 +16,18 @@
     "audience": "",
     "brief": "",
     "assetTier": "A",
-    "sourceMethod": "renderer-backed",
+    "sourceMethod": "hybrid-or-renderer",
+    "stylePackId": "",
+    "rail": "product|world",
     "paths": {
       "jobRoot": "C:/Users/frank/brands/image-system/jobs/{{date}}/{{jobId}}"
     },
     "qa": {
       "inspected": false,
-      "score30": 0
+      "score30": 0,
+      "notes": ""
     },
     "decision": "draft"
   },
-  "instructions": "Always load the brand pack and workflow pack first. Never use raw image_gen for final text or claims. Route through deterministic renderer."
+  "instructions": "Load brand pack + workflow pack first. Declare rail + stylePackId. Exact public text/claims → deterministic. Flagship creative bases → premium gen (Grok 2k). Hybrid OK. Arcanea world: ARCANEA_VISUAL_OS_OPERATING_MODEL.md + arcanea-codex-encyclopedia workflow. score30>=28 + human approve before public."
 }

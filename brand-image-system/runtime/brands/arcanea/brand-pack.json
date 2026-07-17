@@ -1,20 +1,62 @@
 {
   "brandId": "arcanea",
   "brandOperatingUnit": "arcanea-product-ip",
-  "version": "2026-07-02",
-  "updatedAt": "2026-07-02T17:30:00Z",
-  "positioning": "Mythic creative intelligence platform and IP. Codex, portal, creative forge with precision and craft.",
+  "version": "2026-07-16",
+  "updatedAt": "2026-07-16T18:00:00Z",
+  "positioning": "Mythic creative intelligence platform and IP. Codex, portal, creative forge with precision and craft. Dual-rail: lab chrome vs world media.",
   "visualPrinciples": {
-    "coreAesthetic": "Mythic yet concrete: codex pages, portals with depth, sigils with meaning, constellation maps. Heavy use of liquid glass for ethereal layers, rich but readable. World-class taste — Apple refinement meets insightful creative systems.",
-    "inspiration": ["Apple liquid glass depth and tactility", "Vercel clean craft", "GitHub approachable insight + mascot warmth for characters"],
-    "qualityStandard": "Ultra tasteful, meaningful, insightful only. No purple cliche, no unreadable ornament."
+    "coreAesthetic": "Dual rail. Product chrome = AI-lab premium (TASTE). World media = luxury cosmic myth-tech cinematic encyclopedia (VISUAL_DOCTRINE). Never collapse rails.",
+    "inspiration": [
+      "Apple liquid glass depth and tactility (chrome)",
+      "Vercel clean craft (chrome)",
+      "Museum-grade cinematic myth-tech (world)",
+      "GitHub approachable insight for product; franchise key art for Codex"
+    ],
+    "qualityStandard": "score30 >= 28 + human approve. Ultra tasteful only. No purple cliche, no unreadable ornament, no fantasy-game chrome."
+  },
+  "dualRails": {
+    "product": {
+      "railId": "RAIL-P",
+      "authority": "TASTE.md + DESIGN.md + @arcanea/design-system",
+      "stylePackId": "product-lab-chrome",
+      "defaultEngine": "code-tokens-playwright"
+    },
+    "world": {
+      "railId": "RAIL-W",
+      "authority": "VISUAL_DOCTRINE.md + house-myth-tech style pack",
+      "stylePackId": "house-myth-tech",
+      "defaultEngine": "grok-imagine-image-quality@2k",
+      "videoEngine": "grok-imagine-video-1.5",
+      "labRoot": "arcanea-ai-app/.arcanea/image-lab/"
+    }
   },
   "colorTokens": {
     "foundation": { "void": "#0a0a0b", "space": "#111113" },
-    "accent": { "primary": "#c084fc", "secondary": "#a5f3fc" }
+    "accent": { "primary": "#c084fc", "secondary": "#a5f3fc" },
+    "productChromeNote": "Prefer TASTE Atlantean Teal / Cosmic Blue / Arcanean Gold for UI; purple accent is world-optional not chrome default."
   },
-  "imageDirection": "Premium models excellent for mythic-creative infographics and atmospheric bases (text can be strong). Deterministic for exact sigils/text. Hybrid approach.",
-  "socialRules": { "static": "Creative premium base + precise overlay where needed." },
+  "imageDirection": "Flagship world stills: Grok Imagine quality 2k + Prompt OS v2 design cards. Explore/NFT bulk: NB2 labeled non-ship. Exact text/Codex cards: deterministic overlay. Hybrid first-class for social.",
+  "engineRouting": {
+    "flagshipStill": "grok-imagine-image-quality@2k",
+    "flagshipVideo": "grok-imagine-video-1.5",
+    "exploreBulk": "nb2-nano-banana",
+    "identityVolume": "higgsfield-soul-after-face-approve",
+    "exactText": "html-satori-playwright",
+    "falMissing": "route-switch-xai-oauth"
+  },
+  "socialRules": {
+    "static": "Source from approved Codex masters → Codex museum card overlay → four crops. One subject per post. Human gate.",
+    "motion": "6s identity-preserving loops; silent-first; title as overlay not gen text."
+  },
   "approvalRoute": "#social-approvals",
-  "doNotUse": ["fantasy cosplay", "purple cliche", "unreadable ornament"]
+  "shipBarScore30": 28,
+  "operatingModel": "arcanea-ai-app/.arcanea/image-lab/ARCANEA_VISUAL_OS_OPERATING_MODEL.md",
+  "doNotUse": [
+    "fantasy cosplay chrome",
+    "purple cliche wallpaper as product UI",
+    "unreadable ornament",
+    "anime as house style",
+    "raw lab dumps to social",
+    "world key art as unframed homepage chrome"
+  ]
 }
