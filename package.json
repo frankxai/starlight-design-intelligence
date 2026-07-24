@@ -1,0 +1,20 @@
+{
+  "name": "starlight-design-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-kernel.mjs",
+    "validate:release": "node scripts/validate-release-evidence.mjs",
+    "validate:media": "node scripts/validate-media-job.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "pngjs": "7.0.0"
+  }
+}

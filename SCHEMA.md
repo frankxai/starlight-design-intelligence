@@ -3,7 +3,7 @@
 <!-- STARLIGHT-REPO-CONTRACT:START -->
 ## Starlight repository contract
 
-Contract: `starlight.repo_profile.v2` · Team: `music-media-release-team` · Priority: `tier-0`
+Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · Priority: `tier-0`
 ### Contract index
 
 - Repository profile: `starlight.repo_profile.v2`
@@ -12,6 +12,12 @@ Contract: `starlight.repo_profile.v2` · Team: `music-media-release-team` · Pri
 - Entitlements: `starlight.entitlement.v1` when this repo grants product access
 - Operation receipts: `starlight.operation_receipt.v1` for delivery, verification, and releases
 - Run receipts: `starlight.run_receipt.v1` for bounded agent work
+- Web release evidence: `starlight.web_release_evidence.v1` for high-value public
+  surfaces, defined in `schemas/web-release-evidence.schema.json` and enforced by
+  `scripts/validate-release-evidence.mjs`
+- Media jobs: `brand-image-system/runtime/schemas/media-job.schema.json`, combined
+  with the selected workflow's numerical ship bar and filesystem evidence by
+  `scripts/validate-media-job.mjs`
 
 ### Runtime data stores
 

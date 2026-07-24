@@ -17,11 +17,12 @@
     "assetTier": "A",
     "sourceMethod": "renderer-backed",
     "paths": {
-      "jobRoot": "C:/Users/frank/brands/image-system/jobs/{{date}}/{{jobId}}"
+      "jobRoot": "$STARLIGHT_ASSET_ROOT/jobs/{{date}}/{{jobId}}"
     },
     "qa": {
       "inspected": false,
-      "score30": 0
+      "score30": 0,
+      "notes": "Not inspected."
     },
     "decision": "draft"
   },

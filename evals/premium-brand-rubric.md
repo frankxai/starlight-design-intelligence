@@ -12,4 +12,5 @@ Score each area 1-5.
 | Brand boundary | Tone leaks across brands | FrankX, Starlight, Arcanea stay distinct |
 | Production readiness | Pretty mock only | Responsive, accessible, implementable |
 
-Scores under 25 need another pass before publication.
+Flagship public surfaces require 32/35 and may still be blocked by an independent
+reviewer. Scores under 28 need another pass before any publication.

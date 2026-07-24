@@ -1,25 +1,28 @@
 # Design Agent Operating System
 
-This repo is the owned design-intelligence layer. Public curation belongs in `awesome-design-agent-skills`; reusable skill packaging belongs in `design-agent-skills`; canonical standards belong in `design-agent-standards`.
-
-`starlight-design-agent-skills` is the executable companion repo. Keep both: this repo owns brand intelligence, while the skills repo owns runtime hooks, brand routing, and evidence templates.
+This repository is the canonical design-intelligence and release-contract layer.
+Public curation may live in `awesome-design-agent-skills` and
+`awesome-motion-design-agent-skills`, but curation is not runtime authority.
+Installable personal/plugin skills are derived snapshots of `skills/` here and must
+retain a source reference.
 
 ## Core Loop
 
 For any Starlight, FrankX, Arcanea, Agentic Income, or partner visual task:
 
-1. Read the workspace Design Taste Kernel.
-2. Read `design-agent-standards/PREMIUM_ASSET_STANDARD.md`.
-3. Read `design-agent-standards/OUTCOMES.md`.
-4. Read `design-agent-standards/AGENTIC_DESIGN_LOOP.md`.
-5. Load the relevant brand pack from this repo.
-6. Choose asset tier and source method.
-7. Research current references if the work touches trends, tooling, platform crops, motion, or public brand comparison.
-8. Produce a direction board: Keep, Avoid, Signature, System, Sources.
-9. Generate, code, animate, capture, or design with the correct tool.
-10. Inspect the actual output.
-11. Score with `evals/generated-asset-quality-gate.md`.
-12. Iterate or restart until it clears the gate.
+1. Read `skills/world-class-web-release/SKILL.md`.
+2. Resolve the requested `surface.brand_id` through
+   `brand-image-system/runtime/brands/<brand_id>/brand-pack.json`.
+3. Stop on an unknown brand or a missing source document.
+4. Capture current surface or host context at desktop and mobile.
+5. Produce exactly three source-grounded directions.
+6. Select and build the static composition.
+7. Pass editorial and typography gates.
+8. Add motion only when it has a named job.
+9. Inspect actual desktop, mobile, reduced-motion, and runtime outputs.
+10. Record content-addressed release evidence.
+11. Obtain independent verification and named-human approval.
+12. Verify production and rollback.
 
 ## Brand Roles
 
@@ -39,7 +42,9 @@ For any Starlight, FrankX, Arcanea, Agentic Income, or partner visual task:
 
 ## Handoff Standard
 
-Every serious visual handoff should include:
+Every flagship web handoff must include a schema-valid
+`starlight.web_release_evidence.v1` manifest. Other serious visual handoffs should
+include:
 
 - Outcome contract.
 - Direction board.

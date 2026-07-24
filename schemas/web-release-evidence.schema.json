@@ -1,0 +1,738 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "starlight.web_release_evidence.v1",
+  "title": "Starlight Web Release Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "surface", "owners", "sources", "direction", "editorial", "typography", "visual", "motion", "engineering", "release"],
+  "properties": {
+    "schema_version": { "const": "starlight.web_release_evidence.v1" },
+    "surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "name", "brand_id", "repo", "route", "changed_paths", "production_url", "recipient", "job"],
+      "properties": {
+        "kind": { "enum": ["redesign", "greenfield"] },
+        "name": { "type": "string", "minLength": 3 },
+        "brand_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "repo": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+        "route": { "type": "string", "pattern": "^/(?!/|.*\\.\\.)" },
+        "changed_paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^(?!/|.*\\.\\.)[^\\\\]+$" }
+        },
+        "production_url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "recipient": { "type": "string", "minLength": 3 },
+        "job": { "type": "string", "minLength": 12 }
+      }
+    },
+    "owners": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maker", "verifier", "approver"],
+      "properties": {
+        "maker": { "type": "string", "minLength": 2 },
+        "verifier": { "type": "string", "minLength": 2 },
+        "approver": { "type": "string", "minLength": 2 }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recipient_evidence", "references"],
+      "properties": {
+        "current": { "$ref": "#/$defs/responsiveCapture" },
+        "host_context": { "$ref": "#/$defs/responsiveCapture" },
+        "recipient_evidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/sourceArtifact" } },
+        "references": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/sourceArtifact" } }
+      }
+    },
+    "direction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["options", "selected", "decision_owner", "selection_evidence"],
+      "properties": {
+        "options": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "thesis", "composition", "typography", "imagery", "motion_posture", "artifact"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+              "thesis": { "type": "string", "minLength": 20 },
+              "composition": { "type": "string", "minLength": 12 },
+              "typography": { "type": "string", "minLength": 12 },
+              "imagery": { "type": "string", "minLength": 12 },
+              "motion_posture": { "type": "string", "minLength": 12 },
+              "artifact": { "$ref": "#/$defs/directionImage" }
+            }
+          }
+        },
+        "selected": { "type": "string", "minLength": 1 },
+        "decision_owner": { "type": "string", "minLength": 2 },
+        "selection_evidence": { "$ref": "#/$defs/textArtifact" }
+      }
+    },
+    "editorial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_scores", "score", "verdict", "read_aloud", "name_swap", "concrete_anchor", "copy_artifact", "copy_sha256", "verifier", "verified_at"],
+      "properties": {
+        "item_scores": { "$ref": "#/$defs/editorialScores" },
+        "score": { "type": "integer", "minimum": 18, "maximum": 20 },
+        "verdict": { "const": "pass" },
+        "read_aloud": { "const": true },
+        "name_swap": { "const": "pass" },
+        "concrete_anchor": { "const": "pass" },
+        "copy_artifact": { "$ref": "#/$defs/textArtifact" },
+        "copy_sha256": { "$ref": "#/$defs/sha256" },
+        "verifier": { "type": "string", "minLength": 2 },
+        "verified_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "item_scores", "score", "display", "body", "font_files", "source_and_license", "computed_fonts", "mobile_specimen", "fallback_specimen", "verdict", "verifier", "verified_at"],
+      "properties": {
+        "mode": { "enum": ["system", "existing_project", "new_webfont"] },
+        "item_scores": { "$ref": "#/$defs/typographyScores" },
+        "score": { "type": "integer", "minimum": 15, "maximum": 16 },
+        "display": { "type": "string", "minLength": 2 },
+        "body": { "type": "string", "minLength": 2 },
+        "mono": { "type": ["string", "null"] },
+        "font_files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["family", "source", "license", "weights", "styles", "file_check", "artifact"],
+            "properties": {
+              "family": { "type": "string", "minLength": 2 },
+              "source": { "type": "string", "minLength": 3 },
+              "license": { "type": "string", "minLength": 3 },
+              "weights": { "type": "array", "minItems": 1, "items": { "type": "integer", "minimum": 100, "maximum": 900, "multipleOf": 100 } },
+              "styles": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["normal", "italic"] } },
+              "file_check": { "const": "container-signature" },
+              "artifact": { "$ref": "#/$defs/fontArtifact" }
+            }
+          }
+        },
+        "source_and_license": { "$ref": "#/$defs/textArtifact" },
+        "computed_fonts": { "$ref": "#/$defs/fontReport" },
+        "mobile_specimen": { "$ref": "#/$defs/mobileImage" },
+        "fallback_specimen": { "$ref": "#/$defs/screenshotImage" },
+        "verdict": { "const": "pass" },
+        "verifier": { "type": "string", "minLength": 2 },
+        "verified_at": { "type": "string", "format": "date-time" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "mode": { "const": "new_webfont" } }, "required": ["mode"] },
+          "then": { "properties": { "font_files": { "minItems": 1 } } }
+        }
+      ]
+    },
+    "visual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_scores", "score", "after_desktop", "after_mobile", "comparison", "verdict", "verifier", "verified_at"],
+      "properties": {
+        "item_scores": { "$ref": "#/$defs/visualScores" },
+        "score": { "type": "integer", "minimum": 28, "maximum": 30 },
+        "after_desktop": { "$ref": "#/$defs/desktopImage" },
+        "after_mobile": { "$ref": "#/$defs/mobileImage" },
+        "comparison": { "$ref": "#/$defs/desktopImage" },
+        "verdict": { "const": "pass" },
+        "verifier": { "type": "string", "minLength": 2 },
+        "verified_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "motion": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["decision", "item_scores", "score", "job", "reduced_motion", "runtime_evidence", "mobile_evidence", "reduced_motion_evidence", "verdict", "verifier", "verified_at"],
+          "properties": {
+            "decision": { "const": "ship" },
+            "item_scores": { "$ref": "#/$defs/motionScores" },
+            "score": { "type": "integer", "minimum": 16, "maximum": 18 },
+            "job": { "type": "string", "minLength": 12 },
+            "reduced_motion": { "const": true },
+            "runtime_evidence": { "$ref": "#/$defs/desktopMotionSequence" },
+            "mobile_evidence": { "$ref": "#/$defs/mobileMotionSequence" },
+            "reduced_motion_evidence": { "$ref": "#/$defs/reducedMotionSequence" },
+            "verdict": { "const": "pass" },
+            "verifier": { "type": "string", "minLength": 2 },
+            "verified_at": { "type": "string", "format": "date-time" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["decision", "reason", "verifier", "verified_at"],
+          "properties": {
+            "decision": { "const": "cut" },
+            "reason": { "type": "string", "minLength": 12 },
+            "verifier": { "type": "string", "minLength": 2 },
+            "verified_at": { "type": "string", "format": "date-time" }
+          }
+        }
+      ]
+    },
+    "engineering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit_sha", "checks", "accessibility", "performance", "links", "claims", "privacy", "analytics", "console"],
+      "properties": {
+        "commit_sha": { "$ref": "#/$defs/gitSha" },
+        "checks": {
+          "type": "array",
+          "uniqueItems": true,
+          "allOf": [
+            { "contains": { "const": "typecheck" } },
+            { "contains": { "const": "lint" } },
+            { "contains": { "const": "build" } }
+          ],
+          "items": { "enum": ["typecheck", "lint", "test", "build", "links", "claims", "accessibility", "performance", "privacy", "analytics"] }
+        },
+        "accessibility": { "$ref": "#/$defs/accessibilityReport" },
+        "performance": { "$ref": "#/$defs/performanceReport" },
+        "links": { "$ref": "#/$defs/linksReport" },
+        "claims": { "$ref": "#/$defs/claimsReport" },
+        "privacy": { "$ref": "#/$defs/privacyReport" },
+        "analytics": { "$ref": "#/$defs/analyticsReport" },
+        "console": { "$ref": "#/$defs/consoleReport" }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preview_url", "production_url", "production_commit_sha", "commit_changed_paths", "verified_at", "post_deploy", "rollback"],
+      "properties": {
+        "preview_url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "production_url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "production_commit_sha": { "$ref": "#/$defs/gitSha" },
+        "commit_changed_paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^(?!/|.*\\.\\.)[^\\\\]+$" }
+        },
+        "verified_at": { "type": "string", "format": "date-time" },
+        "post_deploy": { "$ref": "#/$defs/postDeployReport" },
+        "rollback": { "$ref": "#/$defs/rollbackReport" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "surface": {
+            "type": "object",
+            "properties": {
+              "kind": { "const": "redesign" }
+            }
+          }
+        }
+      },
+      "then": {
+        "type": "object",
+        "properties": {
+          "sources": {
+            "type": "object",
+            "required": ["current"],
+            "properties": {
+              "current": { "$ref": "#/$defs/responsiveCapture" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "surface": {
+            "type": "object",
+            "properties": {
+              "kind": { "const": "greenfield" }
+            }
+          }
+        }
+      },
+      "then": {
+        "type": "object",
+        "properties": {
+          "sources": {
+            "type": "object",
+            "required": ["host_context"],
+            "properties": {
+              "host_context": { "$ref": "#/$defs/responsiveCapture" }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "gitSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "viewports": {
+      "type": "array",
+      "uniqueItems": true,
+      "allOf": [
+        { "contains": { "const": "desktop" } },
+        { "contains": { "const": "mobile" } }
+      ],
+      "items": { "enum": ["desktop", "mobile", "reduced-motion"] }
+    },
+    "localFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "mime"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^(?!/|.*\\.\\.)[^\\\\]+$" },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "mime": { "enum": ["image/png", "text/markdown", "text/plain", "application/json", "font/woff2", "font/woff", "font/ttf"] },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "textArtifact": {
+      "allOf": [
+        { "$ref": "#/$defs/localFile" },
+        { "properties": { "mime": { "enum": ["text/markdown", "text/plain"] } } }
+      ]
+    },
+    "jsonArtifact": {
+      "allOf": [
+        { "$ref": "#/$defs/localFile" },
+        { "properties": { "mime": { "const": "application/json" } } }
+      ]
+    },
+    "imageArtifact": {
+      "allOf": [
+        { "$ref": "#/$defs/localFile" },
+        {
+          "required": ["width", "height"],
+          "properties": {
+            "mime": { "const": "image/png" },
+            "width": { "type": "integer", "minimum": 320 },
+            "height": { "type": "integer", "minimum": 240 }
+          }
+        }
+      ]
+    },
+    "desktopImage": {
+      "allOf": [
+        { "$ref": "#/$defs/imageArtifact" },
+        { "properties": { "width": { "minimum": 1024 }, "height": { "minimum": 600 } } }
+      ]
+    },
+    "mobileImage": {
+      "allOf": [
+        { "$ref": "#/$defs/imageArtifact" },
+        { "properties": { "width": { "minimum": 320 }, "height": { "minimum": 568 } } }
+      ]
+    },
+    "directionImage": {
+      "allOf": [
+        { "$ref": "#/$defs/imageArtifact" },
+        { "properties": { "width": { "minimum": 960 }, "height": { "minimum": 540 } } }
+      ]
+    },
+    "screenshotImage": {
+      "allOf": [
+        { "$ref": "#/$defs/imageArtifact" },
+        { "properties": { "width": { "minimum": 640 }, "height": { "minimum": 360 } } }
+      ]
+    },
+    "viewport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["css_width", "css_height", "device_pixel_ratio"],
+      "properties": {
+        "css_width": { "type": "integer", "minimum": 320 },
+        "css_height": { "type": "integer", "minimum": 568 },
+        "device_pixel_ratio": { "type": "integer", "minimum": 1, "maximum": 3 }
+      }
+    },
+    "motionFrame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["at_ms", "state", "artifact"],
+      "properties": {
+        "at_ms": { "type": "integer", "minimum": 0 },
+        "state": { "enum": ["initial", "active", "resting"] },
+        "artifact": { "$ref": "#/$defs/imageArtifact" }
+      }
+    },
+    "motionSequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "tested_url", "viewport", "frames"],
+      "properties": {
+        "kind": { "const": "frame-sequence" },
+        "tested_url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "viewport": { "$ref": "#/$defs/viewport" },
+        "frames": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 12,
+          "items": { "$ref": "#/$defs/motionFrame" }
+        }
+      }
+    },
+    "desktopMotionSequence": {
+      "allOf": [
+        { "$ref": "#/$defs/motionSequence" },
+        {
+          "properties": {
+            "viewport": {
+              "properties": {
+                "css_width": { "minimum": 1024 },
+                "css_height": { "minimum": 600 }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "mobileMotionSequence": {
+      "allOf": [
+        { "$ref": "#/$defs/motionSequence" },
+        {
+          "properties": {
+            "viewport": {
+              "properties": {
+                "css_width": { "maximum": 480 }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "reducedMotionFrame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["at_ms", "artifact"],
+      "properties": {
+        "at_ms": { "type": "integer", "minimum": 0 },
+        "artifact": { "$ref": "#/$defs/imageArtifact" }
+      }
+    },
+    "reducedMotionSequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "tested_url", "preference", "viewport", "frames"],
+      "properties": {
+        "kind": { "const": "reduced-motion-stability" },
+        "tested_url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "preference": { "const": "reduce" },
+        "viewport": { "$ref": "#/$defs/viewport" },
+        "frames": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "$ref": "#/$defs/reducedMotionFrame" }
+        }
+      }
+    },
+    "fontArtifact": {
+      "allOf": [
+        { "$ref": "#/$defs/localFile" },
+        { "properties": { "mime": { "enum": ["font/woff2", "font/woff", "font/ttf"] } } }
+      ]
+    },
+    "sourceArtifact": {
+      "oneOf": [
+        { "$ref": "#/$defs/textArtifact" },
+        { "$ref": "#/$defs/imageArtifact" }
+      ]
+    },
+    "responsiveCapture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["desktop", "mobile"],
+      "properties": {
+        "desktop": { "$ref": "#/$defs/desktopImage" },
+        "mobile": { "$ref": "#/$defs/mobileImage" }
+      }
+    },
+    "reportBase": {
+      "type": "object",
+      "required": ["kind", "status", "tested_url", "viewports", "tested_at", "artifact"],
+      "properties": {
+        "kind": { "type": "string" },
+        "status": { "const": "pass" },
+        "tested_url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "viewports": { "$ref": "#/$defs/viewports" },
+        "tested_at": { "type": "string", "format": "date-time" },
+        "artifact": { "$ref": "#/$defs/jsonArtifact" }
+      }
+    },
+    "fontReport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "status", "tested_url", "viewports", "tested_at", "mode", "display_family", "body_family", "weights_verified", "fallback_readable", "layout_shift", "artifact"],
+      "properties": {
+        "kind": { "const": "computed-fonts" },
+        "status": { "const": "pass" },
+        "tested_url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "viewports": { "$ref": "#/$defs/viewports" },
+        "tested_at": { "type": "string", "format": "date-time" },
+        "mode": { "enum": ["system", "existing_project", "new_webfont"] },
+        "display_family": { "type": "string", "minLength": 2 },
+        "body_family": { "type": "string", "minLength": 2 },
+        "weights_verified": { "type": "array", "minItems": 1, "items": { "type": "integer" } },
+        "fallback_readable": { "const": true },
+        "layout_shift": { "type": "number", "minimum": 0, "maximum": 0.1 },
+        "artifact": { "$ref": "#/$defs/jsonArtifact" }
+      }
+    },
+    "accessibilityReport": {
+      "allOf": [
+        { "$ref": "#/$defs/reportBase" },
+        {
+          "additionalProperties": false,
+          "required": ["kind", "status", "tested_url", "viewports", "tested_at", "artifact", "serious_violations", "keyboard_pass", "zoom_200_pass"],
+          "properties": {
+            "kind": { "const": "accessibility" },
+            "status": { "const": "pass" },
+            "tested_url": true,
+            "viewports": true,
+            "tested_at": true,
+            "artifact": true,
+            "serious_violations": { "const": 0 },
+            "keyboard_pass": { "const": true },
+            "zoom_200_pass": { "const": true }
+          }
+        }
+      ]
+    },
+    "performanceReport": {
+      "allOf": [
+        { "$ref": "#/$defs/reportBase" },
+        {
+          "additionalProperties": false,
+          "required": ["kind", "status", "tested_url", "viewports", "tested_at", "artifact", "lcp_ms", "cls", "inp_ms"],
+          "properties": {
+            "kind": { "const": "performance" },
+            "status": { "const": "pass" },
+            "tested_url": true,
+            "viewports": true,
+            "tested_at": true,
+            "artifact": true,
+            "lcp_ms": { "type": "number", "minimum": 0, "maximum": 2500 },
+            "cls": { "type": "number", "minimum": 0, "maximum": 0.1 },
+            "inp_ms": { "type": "number", "minimum": 0, "maximum": 200 }
+          }
+        }
+      ]
+    },
+    "linksReport": {
+      "allOf": [
+        { "$ref": "#/$defs/reportBase" },
+        {
+          "additionalProperties": false,
+          "required": ["kind", "status", "tested_url", "viewports", "tested_at", "artifact", "checked", "broken"],
+          "properties": {
+            "kind": { "const": "links" },
+            "status": { "const": "pass" },
+            "tested_url": true,
+            "viewports": true,
+            "tested_at": true,
+            "artifact": true,
+            "checked": { "type": "integer", "minimum": 1 },
+            "broken": { "const": 0 }
+          }
+        }
+      ]
+    },
+    "claimsReport": {
+      "allOf": [
+        { "$ref": "#/$defs/reportBase" },
+        {
+          "additionalProperties": false,
+          "required": ["kind", "status", "tested_url", "viewports", "tested_at", "artifact", "checked", "unsupported"],
+          "properties": {
+            "kind": { "const": "claims" },
+            "status": { "const": "pass" },
+            "tested_url": true,
+            "viewports": true,
+            "tested_at": true,
+            "artifact": true,
+            "checked": { "type": "integer", "minimum": 0 },
+            "unsupported": { "const": 0 }
+          }
+        }
+      ]
+    },
+    "privacyReport": {
+      "allOf": [
+        { "$ref": "#/$defs/reportBase" },
+        {
+          "additionalProperties": false,
+          "required": ["kind", "status", "tested_url", "viewports", "tested_at", "artifact", "named_entities", "consent", "violations"],
+          "properties": {
+            "kind": { "const": "privacy" },
+            "status": { "const": "pass" },
+            "tested_url": true,
+            "viewports": true,
+            "tested_at": true,
+            "artifact": true,
+            "named_entities": { "type": "integer", "minimum": 0 },
+            "consent": { "enum": ["not-required", "verified"] },
+            "violations": { "const": 0 }
+          }
+        }
+      ]
+    },
+    "analyticsReport": {
+      "allOf": [
+        { "$ref": "#/$defs/reportBase" },
+        {
+          "additionalProperties": false,
+          "required": ["kind", "status", "tested_url", "viewports", "tested_at", "artifact", "expected_events", "verified_events"],
+          "properties": {
+            "kind": { "const": "analytics" },
+            "status": { "const": "pass" },
+            "tested_url": true,
+            "viewports": true,
+            "tested_at": true,
+            "artifact": true,
+            "expected_events": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "verified_events": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      ]
+    },
+    "consoleReport": {
+      "allOf": [
+        { "$ref": "#/$defs/reportBase" },
+        {
+          "additionalProperties": false,
+          "required": ["kind", "status", "tested_url", "viewports", "tested_at", "artifact", "errors"],
+          "properties": {
+            "kind": { "const": "console" },
+            "status": { "const": "pass" },
+            "tested_url": true,
+            "viewports": true,
+            "tested_at": true,
+            "artifact": true,
+            "errors": { "const": 0 }
+          }
+        }
+      ]
+    },
+    "postDeployReport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "status", "production_url", "deployed_commit_sha", "tested_at", "artifact"],
+      "properties": {
+        "kind": { "const": "post-deploy" },
+        "status": { "const": "pass" },
+        "production_url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "deployed_commit_sha": { "$ref": "#/$defs/gitSha" },
+        "tested_at": { "type": "string", "format": "date-time" },
+        "artifact": { "$ref": "#/$defs/jsonArtifact" }
+      }
+    },
+    "rollbackReport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "target_commit_sha", "procedure", "verified", "tested_at", "artifact"],
+      "properties": {
+        "kind": { "const": "rollback" },
+        "target_commit_sha": { "$ref": "#/$defs/gitSha" },
+        "procedure": { "type": "string", "minLength": 12 },
+        "verified": { "const": true },
+        "tested_at": { "type": "string", "format": "date-time" },
+        "artifact": { "$ref": "#/$defs/jsonArtifact" }
+      }
+    },
+    "editorialScores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recipient_reality", "observed_truth", "proposition", "first_120_words", "sentence_craft", "taxonomy_restraint", "proof_adjacency", "voice", "deletion_discipline", "independent_read"],
+      "properties": {
+        "recipient_reality": { "$ref": "#/$defs/twoPoint" },
+        "observed_truth": { "$ref": "#/$defs/twoPoint" },
+        "proposition": { "$ref": "#/$defs/twoPoint" },
+        "first_120_words": { "$ref": "#/$defs/twoPoint" },
+        "sentence_craft": { "$ref": "#/$defs/twoPoint" },
+        "taxonomy_restraint": { "$ref": "#/$defs/twoPoint" },
+        "proof_adjacency": { "$ref": "#/$defs/twoPoint" },
+        "voice": { "$ref": "#/$defs/twoPoint" },
+        "deletion_discipline": { "$ref": "#/$defs/twoPoint" },
+        "independent_read": { "$ref": "#/$defs/twoPoint" }
+      }
+    },
+    "typographyScores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["voice", "hierarchy", "specimens", "provenance", "loading", "reflow", "accessibility", "restraint"],
+      "properties": {
+        "voice": { "$ref": "#/$defs/twoPoint" },
+        "hierarchy": { "$ref": "#/$defs/twoPoint" },
+        "specimens": { "$ref": "#/$defs/twoPoint" },
+        "provenance": { "$ref": "#/$defs/twoPoint" },
+        "loading": { "$ref": "#/$defs/twoPoint" },
+        "reflow": { "$ref": "#/$defs/twoPoint" },
+        "accessibility": { "$ref": "#/$defs/twoPoint" },
+        "restraint": { "$ref": "#/$defs/twoPoint" }
+      }
+    },
+    "visualScores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recipient_fit", "composition", "typography", "evidence", "responsive_craft", "distinctiveness"],
+      "properties": {
+        "recipient_fit": { "$ref": "#/$defs/fivePoint" },
+        "composition": { "$ref": "#/$defs/fivePoint" },
+        "typography": { "$ref": "#/$defs/fivePoint" },
+        "evidence": { "$ref": "#/$defs/fivePoint" },
+        "responsive_craft": { "$ref": "#/$defs/fivePoint" },
+        "distinctiveness": { "$ref": "#/$defs/fivePoint" }
+      }
+    },
+    "motionScores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["job", "static_foundation", "choreography", "control", "restraint", "mobile", "reduced_motion", "performance", "brand_memory"],
+      "properties": {
+        "job": { "$ref": "#/$defs/twoPoint" },
+        "static_foundation": { "$ref": "#/$defs/twoPoint" },
+        "choreography": { "$ref": "#/$defs/twoPoint" },
+        "control": { "$ref": "#/$defs/twoPoint" },
+        "restraint": { "$ref": "#/$defs/twoPoint" },
+        "mobile": { "$ref": "#/$defs/twoPoint" },
+        "reduced_motion": { "$ref": "#/$defs/twoPoint" },
+        "performance": { "$ref": "#/$defs/twoPoint" },
+        "brand_memory": { "$ref": "#/$defs/twoPoint" }
+      }
+    },
+    "twoPoint": { "type": "integer", "minimum": 0, "maximum": 2 },
+    "fivePoint": { "type": "integer", "minimum": 0, "maximum": 5 }
+  }
+}

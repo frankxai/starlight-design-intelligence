@@ -1,16 +1,21 @@
 {
+  "$schema": "../../schemas/workflow-pack.schema.json",
   "workflowId": "infographic",
-  "version": "2026-07-02",
-  "description": "Insightful systems, architectures, diagrams. Hybrid: premium image gen (Grok/Infogenius) for creative artistic bases where text excels, deterministic renderer for precision facts/labels.",
-  "allowedRoutes": ["premium-creative-infographic", "deterministic-svg-code", "figma-canva-renderer"],
-  "blockedRoutes": ["raw-image-gen-for-exact-text"],
-  "outputs": [
-    { "format": "png", "width": 1920, "height": 1080, "name": "main" },
-    { "format": "png", "width": 1200, "height": 630, "name": "og" }
+  "displayName": "Evidence-led Infographic",
+  "purpose": "Explain one sourced system, comparison, or decision with exact labels and inspectable hierarchy.",
+  "surfaces": ["editorial infographic", "architecture diagram", "presentation visual", "social explainer"],
+  "allowedProductionRoutes": ["deterministic SVG or HTML", "Figma", "Canva", "generated source art with deterministic labels"],
+  "requiredOutputs": [
+    { "kind": "source brief", "pathHint": "brief.md" },
+    { "kind": "source register", "pathHint": "sources.json" },
+    { "kind": "main visual", "pathHint": "crops/main.png", "dimensions": "1920x1080" },
+    { "kind": "open graph crop", "pathHint": "crops/og.png", "dimensions": "1200x630" },
+    { "kind": "evidence", "pathHint": "evidence.json" }
   ],
-  "qaGate": {
-    "requiredScore": 28,
-    "checks": ["factualAccuracy", "sourceLabels", "textLegibility", "brandFit", "insightfulMeaningful", "noFakeText"]
-  },
-  "tasteStandard": "World-class: Apple liquid glass depth where applicable, Vercel clean craft, GitHub insightful approachability. Every element earns its place."
+  "qaGates": ["actual export inspected", "factual accuracy", "source labels", "text legibility", "brand fit", "no synthetic exact text"],
+  "scoreThreshold": 28,
+  "scoreScale": 30,
+  "blockedRoutes": ["raw image generation for exact labels", "uncited claims", "decorative complexity without explanatory value"],
+  "approvalRequired": true,
+  "updatedAt": "2026-07-24"
 }

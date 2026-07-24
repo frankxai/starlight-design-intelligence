@@ -10,11 +10,16 @@ Use this skill when an interface needs to feel intentional over time. Motion sho
 ## Workflow
 
 1. Identify the surface: app flow, dashboard, landing page, onboarding, gallery, content page, video, or social asset.
-2. Name the job of motion: orient, reveal, confirm, explain, focus, transition, delight, or create memory.
-3. Pick the brand mode: FrankX directness, Starlight operational intelligence, Arcanea cinematic ritual, or Vibeclubs embodied energy.
-4. Define the choreography: what moves first, what anchors the eye, what remains still, and what the user controls.
-5. Specify timing, easing, runtime, interruption behavior, and reduced-motion variant.
-6. Add acceptance criteria: legibility, performance, accessibility, responsiveness, and brand fit.
+2. Define the first read before animation.
+3. Name the job of motion: orient, reveal, confirm, explain, focus, show causality, show progress, show spatial relationship, or create one brand memory.
+4. Pass the still-frame gate. Do not animate a weak composition.
+5. Pick the brand and surface mode.
+6. Write the beat sequence: setup, trigger, primary move, support, hold, resolution.
+7. Name the hero object, stable anchor, what remains still, and what the user controls.
+8. Choose the lightest runtime that preserves the intent.
+9. Specify timing, easing, interruption, mobile choreography, performance budget, and reduced-motion equivalent.
+10. Verify actual desktop, mobile, reduced-motion, and runtime capture.
+11. Score with `evals/motion-purpose-gate.md`.
 
 ## Defaults
 
@@ -23,7 +28,21 @@ Use this skill when an interface needs to feel intentional over time. Motion sho
 - Launch pages: use one signature motion idea; avoid many unrelated effects.
 - Arcanea surfaces: allow cinematic reveal, glyph, portal, and artifact motifs when tied to meaning.
 - Starlight/SIS surfaces: use evidence, trace, signal, and constellation motifs with restraint.
+- Partner/editorial pages: keep prose still; let one real artifact or causal sequence carry the motion.
+
+## Runtime Selection
+
+- CSS for hover, focus, simple state changes, and low-risk transitions.
+- Motion for React for component choreography, presence, layout transitions, and React scroll work.
+- GSAP only for authored pinned/scrubbed timelines that simpler runtimes cannot express.
+- Rive for interactive vector state machines.
+- Lottie/dotLottie for portable non-interactive vector sequences.
+- Three.js only when 3D is central to the proposition and visually verified.
+- Remotion for rendered evidence, explainers, and exact media exports.
+- Generated media tools produce source material; they do not approve or finish it.
+
+For substantial motion, complete `templates/SITE_MOTION_SPEC.md` before implementation.
 
 ## Output
 
-Return: motion job, brand mode, choreography, tokens, runtime recommendation, reduced-motion behavior, QA checklist, and implementation notes.
+Return: motion thesis, first-read diagnosis, still-frame verdict, motion map, runtime choice, reduced-motion plan, implementation tasks, required QA proof, and gate score.

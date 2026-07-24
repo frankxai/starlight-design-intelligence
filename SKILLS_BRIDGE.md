@@ -1,6 +1,6 @@
 # Skills Bridge
 
-`starlight-design-intelligence` and `starlight-design-agent-skills` both exist, but they serve different jobs.
+`starlight-design-intelligence` is the canonical source. Skills installed into Codex, Claude, plugins, or product repositories are derived distributions.
 
 ## This Repo Owns
 
@@ -10,9 +10,6 @@
 - Brand-specific examples.
 - Generated-asset evals.
 - Internal/private strategy when safe to keep local.
-
-## starlight-design-agent-skills Owns
-
 - Runnable skills.
 - Hook guidance.
 - Brand routing.
@@ -21,17 +18,15 @@
 
 ## Rule
 
-Agents should read this repo for brand intelligence, then execute through `starlight-design-agent-skills` or `design-agent-skills`.
+Agents read and execute the skills in this repository. A personal skill or plugin may mirror a versioned skill, but must not become a competing source of truth.
 
 Do not copy private brand doctrine into public curation repos. If a public-safe version is needed, summarize principles without private strategy, private memory, client material, or unreleased product specifics.
 
 ## Bridge Flow
 
 1. Agent receives a visual/design task.
-2. Agent reads `design-agent-standards/AGENTIC_DESIGN_LOOP.md`.
-3. Agent reads `design-agent-standards/PREMIUM_ASSET_STANDARD.md`.
-4. Agent routes brand through `starlight-design-agent-skills`.
-5. Agent reads the relevant brand pack here.
-6. Agent chooses asset tier and source method.
-7. Agent creates or updates an evidence manifest.
-8. Agent produces, inspects, scores, and hands off.
+2. Agent loads `skills/world-class-web-release/SKILL.md` for high-value web surfaces.
+3. Agent reads the relevant brand pack here.
+4. Agent chooses source, asset tier, typography, and motion posture.
+5. Agent creates or updates the release-evidence manifest.
+6. Agent produces, inspects, scores, independently verifies, and hands off.

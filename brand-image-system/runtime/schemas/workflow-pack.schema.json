@@ -12,10 +12,16 @@
     "allowedProductionRoutes",
     "requiredOutputs",
     "qaGates",
+    "scoreThreshold",
+    "scoreScale",
     "blockedRoutes",
+    "approvalRequired",
     "updatedAt"
   ],
   "properties": {
+    "$schema": {
+      "type": "string"
+    },
     "workflowId": {
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9-]*$"
@@ -66,6 +72,14 @@
       },
       "minItems": 1
     },
+    "scoreThreshold": {
+      "type": "integer",
+      "minimum": 26,
+      "maximum": 30
+    },
+    "scoreScale": {
+      "const": 30
+    },
     "blockedRoutes": {
       "type": "array",
       "items": {
@@ -73,8 +87,7 @@
       }
     },
     "approvalRequired": {
-      "type": "boolean",
-      "default": true
+      "const": true
     },
     "updatedAt": {
       "type": "string",
