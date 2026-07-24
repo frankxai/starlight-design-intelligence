@@ -3,7 +3,7 @@
 <!-- STARLIGHT-REPO-CONTRACT:START -->
 ## Starlight repository contract
 
-Contract: `starlight.repo_profile.v2` · Team: `music-media-release-team` · Priority: `tier-0`
+Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · Priority: `tier-0`
 ### Data boundary
 
 - Classification: `internal`

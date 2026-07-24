@@ -1,0 +1,53 @@
+name: Design kernel
+
+on:
+  pull_request:
+    paths:
+      - ".agent-harness.json"
+      - ".github/workflows/design-kernel.yml"
+      - "brand-image-system/**"
+      - "brand-packs/**"
+      - "evals/**"
+      - "playbooks/**"
+      - "schemas/**"
+      - "scripts/**"
+      - "skills/**"
+      - "templates/**"
+      - "tests/**"
+      - "AGENTS.md"
+      - "DESIGN.md"
+      - "DESIGN_AGENT_OPERATING_SYSTEM.md"
+      - "README.md"
+      - "RUNBOOK.md"
+      - "SECURITY.md"
+      - "SKILLS.md"
+      - "SKILLS_BRIDGE.md"
+      - "SYSTEM.md"
+      - "SCHEMA.md"
+      - "TESTING.md"
+      - "package.json"
+      - "package-lock.json"
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: design-kernel-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - run: npm test

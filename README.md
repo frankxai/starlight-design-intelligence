@@ -2,7 +2,7 @@
 
 Owned methodology, reusable skill system, premium taste layer.
 
-This repo is the source of truth for how FrankX, Starlight Intelligence Systems, Arcanea, and related products should look, move, explain themselves, and avoid generic AI output.
+This repo is the source of truth for how FrankX, Starlight Intelligence Systems, Arcanea, and related products should look, move, explain themselves, and earn release approval.
 
 ## Operating Thesis
 
@@ -15,9 +15,10 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 | Area | Purpose |
 | --- | --- |
 | `brand-packs/` | Brand-specific design, copy, product, token, and motion doctrine. |
-| `skills/` | Portable design-intelligence skills that can be converted into Codex plugins or agent packs. |
+| `skills/` | Canonical executable design-intelligence skills. Personal/plugin installations are derived snapshots. |
 | `evals/` | Rubrics and checklists for anti-slop review, premium brand scoring, and UI quality. |
 | `examples/` | Before/after examples showing the quality delta this system should produce. |
+| `scripts/` | Deterministic validators for the kernel and release evidence. |
 
 ## Brand Boundaries
 
@@ -32,9 +33,11 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 
 - `awesome-design-agent-skills`: public design-agent curation.
 - `awesome-motion-design-agent-skills`: public motion-agent curation.
-- `motion-design-studio`: installable Codex plugin for daily motion/design-agent use.
+- `motion-design-studio`: optional motion-production adapter; it is not a canonical dependency until a real, installable repository exists.
 - `visual-intelligence`: tooling and GitHub Action layer for asset and visual QA.
 - `starlight-agent-skills`: portable substrate skills for Starlight/SIS runtime consumption.
+
+There is no separate `starlight-design-agent-skills` authority. Creating another canonical layer would increase drift. Installations must retain a source reference to this repository and pass `npm test` before release.
 
 ## Standards
 
@@ -43,3 +46,7 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 - Prefer real product screenshots, workflows, and before/after examples over abstract decoration.
 - Preserve brand separation. Arcanea can be mythic; Starlight must remain high-trust.
 - Use public repos for authority and discovery; use this repo for owned differentiation.
+- A public flagship release requires current desktop/mobile source capture, exactly three visual directions, independent editorial and visual verification, and production/rollback proof.
+- Production proof is emitted after deployment as an external CI artifact or a
+  later receipts commit; it is never embedded in the production commit whose SHA
+  it records.

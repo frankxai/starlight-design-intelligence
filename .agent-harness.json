@@ -3,7 +3,7 @@
   "repo": {
     "id": "starlight-design-intelligence",
     "classification": "agent-substrate",
-    "operating_unit": "music-media",
+    "operating_unit": "design-intelligence",
     "lane": "design",
     "lifecycle": "active",
     "priority": "tier-0",
@@ -17,16 +17,20 @@
   },
   "ownership": {
     "human_owner": "Frank",
-    "steward_team": "music-media-release-team",
-    "support_lane": "music-is-ops"
+    "steward_team": "frankx-product-revenue-team",
+    "support_lane": "design-intelligence"
   },
   "commands": {
     "health": [
       "git status --short"
     ],
-    "lint": [],
+    "lint": [
+      "npm run validate"
+    ],
     "typecheck": [],
-    "test": [],
+    "test": [
+      "npm test"
+    ],
     "build": [],
     "security": [
       "pwsh ../security/Invoke-RepoSecurityScan.ps1 -Path ."
@@ -45,7 +49,9 @@
     "design": "DESIGN.md"
   },
   "runtime": {
-    "package_managers": [],
+    "package_managers": [
+      "npm"
+    ],
     "services": [],
     "dependencies": []
   },
@@ -64,25 +70,26 @@
     ],
     "projects": [],
     "domains": [],
-    "promotion_policy": "named-human-approval",
+    "promotion_policy": "independent-verifier-and-named-human-approval",
     "rollback": "Revert the bounded change or promote the last verified deployment after confirming data compatibility."
   },
   "agentic": {
-    "team_profile_ref": "music-media-release-team",
+    "team_profile_ref": "frankx-product-revenue-team",
     "skills": [
-      "agentic-music-os",
-      "suno-release",
-      "motion-media-producer",
+      "world-class-web-release",
+      "editorial-articulation",
+      "typography-art-direction",
+      "motion-and-interaction",
       "visual-intelligence"
     ],
     "plugins": [
-      "music-media-release"
+      "product-design"
     ],
     "tools": [
       "github",
       "vercel",
       "visual-intelligence",
-      "remotion"
+      "browser"
     ],
     "write_scopes": [
       "assigned-task-paths-only"
@@ -112,7 +119,7 @@
       "reduced-motion",
       "accessibility",
       "performance",
-      "visual-score-26"
+      "visual-score-28"
     ],
     "ai": [],
     "release": [
@@ -159,14 +166,17 @@
         "sourceForPlugins": true,
         "designTasteKernel": {
           "enabled": true,
-          "root": "C:\\Users\\frank\\starlight\\repos",
+          "root": ".",
           "files": [
-            "C:\\Users\\frank\\starlight\\repos\\DESIGN_TASTE.md",
-            "C:\\Users\\frank\\starlight\\repos\\WEB_EXPERIENCE_STANDARD.md",
-            "C:\\Users\\frank\\starlight\\repos\\MOTION_TASTE_RUBRIC.md",
-            "C:\\Users\\frank\\starlight\\repos\\MULTI_AGENT_DESIGN_COUNCIL.md",
-            "C:\\Users\\frank\\starlight\\repos\\VISUAL_QA_GATE.md"
+            "skills/world-class-web-release/SKILL.md",
+            "evals/web-release-gate.md"
           ],
+          "brandRouting": {
+            "registryRoot": "brand-image-system/runtime/brands",
+            "selector": "surface.brand_id",
+            "packFile": "brand-pack.json",
+            "unknownBrand": "fail"
+          },
           "appliesTo": [
             "site",
             "app",
@@ -179,7 +189,7 @@
             "social",
             "frontend"
           ],
-          "motionPlugin": "motion-design-studio",
+          "motionSkill": "motion-and-interaction",
           "visualVerificationRequired": true
         }
       }

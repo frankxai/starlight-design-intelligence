@@ -1,14 +1,21 @@
 {
+  "$schema": "../../schemas/workflow-pack.schema.json",
   "workflowId": "website-hero",
-  "version": "2026-07-02",
-  "description": "First viewport visuals for brand sites. Prioritize real product proof or high-craft generated with liquid glass depth. Deterministic elements for text/claims.",
-  "allowedRoutes": ["browser-capture-real-proof", "premium-generated-with-deterministic-overlay", "hybrid-liquid-glass-render"],
-  "outputs": [
-    {"format": "png", "width": 1920, "height": 1080, "name": "desktop"},
-    {"format": "png", "width": 1080, "height": 1920, "name": "mobile"}
+  "displayName": "Flagship First Viewport",
+  "purpose": "Resolve the first viewport around one subject, one proposition, one action, and real proof.",
+  "surfaces": ["homepage hero", "partner first viewport", "launch hero", "product first viewport"],
+  "allowedProductionRoutes": ["real product or artifact capture", "authorized documentary media", "deterministic product render", "art-directed image with verified deterministic text"],
+  "requiredOutputs": [
+    { "kind": "experience thesis", "pathHint": "experience-thesis.md" },
+    { "kind": "three direction artifacts", "pathHint": "directions/" },
+    { "kind": "desktop first viewport", "pathHint": "crops/desktop.png", "dimensions": "1440x900" },
+    { "kind": "mobile first viewport", "pathHint": "crops/mobile.png", "dimensions": "390x844" },
+    { "kind": "release evidence", "pathHint": "release.json" }
   ],
-  "qaGate": {
-    "requiredScore": 27,
-    "checks": ["responsive", "textSafeAreas", "provenance", "premiumTaste", "insightful"]
-  }
+  "qaGates": ["current context captured", "exactly three directions compared", "real subject visible", "mobile composed", "independent review", "production and rollback proof"],
+  "scoreThreshold": 27,
+  "scoreScale": 30,
+  "blockedRoutes": ["slogan-only hero", "generic AI atmosphere", "identical card grid", "fake proof", "desktop-only composition"],
+  "approvalRequired": true,
+  "updatedAt": "2026-07-24"
 }

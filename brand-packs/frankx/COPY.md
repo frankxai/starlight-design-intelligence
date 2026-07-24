@@ -1,19 +1,69 @@
-# FrankX Copy
+# FrankX Editorial Language
 
-FrankX copy should make the next move obvious.
+FrankX copy should sound like one alert person speaking to another. The writing
+earns attention through observation and judgment—not inflated nouns.
 
-## Rules
+## Order of Truth
 
-- Lead with the concrete offer or insight.
-- Name the mechanism: agent, skill, plugin, repo, template, system, workflow, or product.
-- Use short paragraphs and operational verbs.
-- Make calls to action specific: audit, install, launch, publish, package, verify.
-- Put proof near claims.
+For a high-value page, the first 120 words should establish:
 
-## Bad
+1. why this page exists for this reader;
+2. what Frank actually saw, made, tested, or learned;
+3. the smallest honest proposition for a next move.
 
-"Transform your future with next-generation AI."
+Mechanisms come after the human reason. “Agent,” “skill,” “graph,” “system,” and
+“infrastructure” are useful only when they make the proof more precise.
 
-## Better
+## Sentence Standard
 
-"Install a reusable agent skill pack, run the audit, and turn one workflow into a productized system."
+- Prefer a concrete noun and active verb.
+- Vary sentence length; let the important sentence stand alone.
+- Make one claim per sentence.
+- Put the proof next to the claim.
+- Use the recipient's name only when the page contains authorized, specific context.
+- Write calls to action as human choices: reply, compare, try, inspect, meet.
+- Read the copy aloud. Rewrite any line Frank would not naturally say.
+
+## Required Tests
+
+### Name-swap test
+
+Replace the person or product name. If the paragraph still works unchanged, it is
+generic and cannot ship.
+
+### Builder-taxonomy test
+
+Remove words such as AI, agent, skill, infrastructure, ecosystem, sovereign,
+substrate, constellation, and authority graph. If the meaning disappears, the
+sentence was hiding behind taxonomy.
+
+### Concrete-anchor test
+
+Every important claim needs one observable anchor: a moment, artifact, decision,
+result, quotation, or working behavior.
+
+### Deletion test
+
+Delete the grandest adjective and the most abstract noun. If the line improves,
+keep the deletion.
+
+## Avoid
+
+- “The infrastructure already exists.”
+- “A sovereign agent fleet.”
+- “This is not presentationware.”
+- “Unlock,” “reimagine,” “elevate,” or “transform” without a measurable object.
+- False intimacy, invented quotations, synthetic praise, or implied endorsement.
+- Explaining Frank's entire ecosystem before earning the reader's interest.
+
+## Example
+
+Weak:
+
+> Transform your future with a next-generation intelligence substrate.
+
+Specific:
+
+> You turned a live audience question into a usable method in under three minutes.
+> I built a small working kit around that move. If it feels true to your process,
+> I would like to test it with you for one week.

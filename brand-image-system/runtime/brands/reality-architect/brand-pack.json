@@ -1,13 +1,28 @@
 {
+  "$schema": "../../schemas/brand-pack.schema.json",
   "brandId": "reality-architect",
-  "brandOperatingUnit": "reality-architect",
-  "version": "2026-07-02",
-  "updatedAt": "2026-07-02T17:30:00Z",
-  "positioning": "Transformational life design, intentional systems, reflective practices.",
-  "visualPrinciples": {
-    "coreAesthetic": "Grounded, architectural, reflective with depth. Liquid glass for contemplative layers. Clean, meaningful, insightful — Apple/Vercel/GitHub standards of craft and likeability.",
-    "qualityStandard": "Ultra tasteful world-class only. No vague mysticism."
+  "displayName": "Reality Architect",
+  "operatingUnit": "reality-architect",
+  "sourceDocs": ["brand-image-system/source-map.md"],
+  "canonicalRepos": [],
+  "audiences": ["reflective builders", "people designing intentional practices"],
+  "positioning": {
+    "oneLine": "Grounded life-design practices expressed through choices, maps, and repeatable rituals.",
+    "proof": ["decision maps", "practice records", "before-and-after behavior"],
+    "failureModes": ["vague mysticism", "therapy claims", "aestheticized self-help"]
   },
-  "imageDirection": "Diagrams and maps via deterministic + premium creative for atmospheric insight.",
-  "approvalRoute": "#social-approvals"
+  "voice": {
+    "traits": ["grounded", "reflective", "plainspoken", "careful"],
+    "bannedPhrases": ["manifest anything", "quantum leap", "your highest self"]
+  },
+  "visual": {
+    "principles": ["Make reflection tangible", "Prefer lived evidence", "Use quiet hierarchy"],
+    "colors": { "ink": "#171513", "paper": "#f4efe6", "earth": "#9a6f4f" },
+    "typography": { "displayRole": "reflective authority", "readingRole": "slow, accessible reading" },
+    "imageDirection": ["real environments", "annotated maps", "material practice artifacts"]
+  },
+  "channels": { "primary": ["editorial", "workshops", "practice material"] },
+  "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
+  "doNotUse": ["clinical claims", "cosmic stock imagery", "generic sacred geometry"],
+  "updatedAt": "2026-07-24"
 }

@@ -1,20 +1,28 @@
 {
+  "$schema": "../../schemas/brand-pack.schema.json",
   "brandId": "arcanea",
-  "brandOperatingUnit": "arcanea-product-ip",
-  "version": "2026-07-02",
-  "updatedAt": "2026-07-02T17:30:00Z",
-  "positioning": "Mythic creative intelligence platform and IP. Codex, portal, creative forge with precision and craft.",
-  "visualPrinciples": {
-    "coreAesthetic": "Mythic yet concrete: codex pages, portals with depth, sigils with meaning, constellation maps. Heavy use of liquid glass for ethereal layers, rich but readable. World-class taste — Apple refinement meets insightful creative systems.",
-    "inspiration": ["Apple liquid glass depth and tactility", "Vercel clean craft", "GitHub approachable insight + mascot warmth for characters"],
-    "qualityStandard": "Ultra tasteful, meaningful, insightful only. No purple cliche, no unreadable ornament."
+  "displayName": "Arcanea",
+  "operatingUnit": "arcanea-product-ip",
+  "sourceDocs": ["brand-packs/arcanea/DESIGN.md"],
+  "canonicalRepos": ["frankxai/arcanea"],
+  "audiences": ["world-builders", "writers", "visual creators", "creative technologists"],
+  "positioning": {
+    "oneLine": "A mythic creative-intelligence world that resolves imagination into usable canon and tools.",
+    "proof": ["codex artifacts", "world systems", "creator workflows"],
+    "failureModes": ["fantasy cosplay", "unreadable lore", "portals that hide the product"]
   },
-  "colorTokens": {
-    "foundation": { "void": "#0a0a0b", "space": "#111113" },
-    "accent": { "primary": "#c084fc", "secondary": "#a5f3fc" }
+  "voice": {
+    "traits": ["mythic", "exact", "cinematic", "inviting"],
+    "bannedPhrases": ["generic magic", "limitless possibilities", "AI-powered fantasy"]
   },
-  "imageDirection": "Premium models excellent for mythic-creative infographics and atmospheric bases (text can be strong). Deterministic for exact sigils/text. Hybrid approach.",
-  "socialRules": { "static": "Creative premium base + precise overlay where needed." },
-  "approvalRoute": "#social-approvals",
-  "doNotUse": ["fantasy cosplay", "purple cliche", "unreadable ornament"]
+  "visual": {
+    "principles": ["World first, tool revealed", "Symbols carry meaning", "Stillness stages spectacle"],
+    "colors": { "void": "#05070f", "parchment": "#f0e9d9", "gold": "#c5a26f", "indigo": "#3f2a6b" },
+    "typography": { "displayRole": "mythic culture", "readingRole": "immersive long-form" },
+    "imageDirection": ["canonical characters", "visitable worlds", "working creator artifacts"]
+  },
+  "channels": { "primary": ["product", "editorial", "cinematic media"] },
+  "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
+  "doNotUse": ["purple cliché", "generic generated texture", "mythology without product consequence"],
+  "updatedAt": "2026-07-24"
 }

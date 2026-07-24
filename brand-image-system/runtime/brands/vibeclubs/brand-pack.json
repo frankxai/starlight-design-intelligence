@@ -1,13 +1,28 @@
 {
+  "$schema": "../../schemas/brand-pack.schema.json",
   "brandId": "vibeclubs",
-  "brandOperatingUnit": "vibeclubs",
-  "version": "2026-07-02",
-  "updatedAt": "2026-07-02T17:30:00Z",
-  "positioning": "Community and vibe-driven experiences with creator energy.",
-  "visualPrinciples": {
-    "coreAesthetic": "Warm, energetic, community-first with modern craft. Liquid glass layers for premium feel, clean Vercel-style execution, GitHub-like approachability and likeability.",
-    "qualityStandard": "World-class only. Insightful, meaningful, ultra tasteful."
+  "displayName": "Vibeclubs",
+  "operatingUnit": "vibeclubs",
+  "sourceDocs": ["brand-packs/vibeclubs/DESIGN.md"],
+  "canonicalRepos": [],
+  "audiences": ["community hosts", "members", "participating creators"],
+  "positioning": {
+    "oneLine": "Community experiences designed around participation, shared energy, and visible belonging.",
+    "proof": ["real gatherings", "member contributions", "repeat participation"],
+    "failureModes": ["faceless community stock", "manufactured hype", "empty engagement metrics"]
   },
-  "imageDirection": "Premium creative for vibe and community visuals; deterministic for exact info.",
-  "approvalRoute": "#social-approvals"
+  "voice": {
+    "traits": ["warm", "energetic", "welcoming", "specific"],
+    "bannedPhrases": ["good vibes only", "join the movement", "community revolution"]
+  },
+  "visual": {
+    "principles": ["People before platform", "Show participation", "Keep information usable"],
+    "colors": { "ink": "#171313", "paper": "#fff8ef", "warm": "#f97316", "signal": "#ec4899" },
+    "typography": { "displayRole": "social energy", "readingRole": "clear event and community information" },
+    "imageDirection": ["owned event photography", "member artifacts", "authentic environments"]
+  },
+  "channels": { "primary": ["events", "community product", "social media"] },
+  "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
+  "doNotUse": ["generic festival gradients", "synthetic crowds", "glass-card community dashboards"],
+  "updatedAt": "2026-07-24"
 }

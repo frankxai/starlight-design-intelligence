@@ -1,21 +1,28 @@
 {
+  "$schema": "../../schemas/brand-pack.schema.json",
   "brandId": "gencreator",
-  "brandOperatingUnit": "creator-systems-acos",
-  "version": "2026-07-02",
-  "updatedAt": "2026-07-02T17:30:00Z",
-  "positioning": "Operating System for AI-Native Creators. Architecture-warm, practical, artifact-driven, cohort rituals.",
-  "visualPrinciples": {
-    "coreAesthetic": "Warm architecture: creator stacks, visible artifacts, clean systems maps. Liquid glass for modern depth on practical foundations. Vercel/GitHub patterns for clarity and likeability. Insightful, meaningful, world-class.",
-    "inspiration": ["Vercel functional beauty", "GitHub approachable + Mona-like warmth", "Apple liquid glass refinement"],
-    "qualityStandard": "Only publish ultra-tasteful assets that feel like a top design team. No productivity sameness, make outputs visible and premium."
+  "displayName": "GenCreator",
+  "operatingUnit": "creator-systems",
+  "sourceDocs": ["brand-image-system/source-map.md"],
+  "canonicalRepos": [],
+  "audiences": ["AI-native creators", "creator-operators", "cohort participants"],
+  "positioning": {
+    "oneLine": "Practical creator architecture that turns practice into visible, reusable artifacts.",
+    "proof": ["creator stacks", "published artifacts", "cohort rituals"],
+    "failureModes": ["productivity-tool sameness", "faceless automation", "frameworks without output"]
   },
-  "colorTokens": {
-    "foundation": { "void": "#0f0f11", "space": "#18181b" },
-    "accent": { "primary": "#22c55e", "warm": "#f4a261" }
+  "voice": {
+    "traits": ["warm", "practical", "encouraging", "artifact-led"],
+    "bannedPhrases": ["10x your content", "effortless growth", "creator revolution"]
   },
-  "imageDirection": "Strong on architecture diagrams (deterministic preferred) and creator lifestyle/product proof. Premium models for insightful visual essays/infographics.",
-  "socialRules": { "static": "Architecture + human/artifact focus." },
-  "websiteRules": { "assets": "Registry-synced to Vercel." },
-  "approvalRoute": "#social-approvals",
-  "doNotUse": ["productivity-tool sameness", "blending with AnimeLegends mascots"]
+  "visual": {
+    "principles": ["Show the maker", "Make outputs visible", "Use architecture to clarify practice"],
+    "colors": { "ink": "#0f0f11", "paper": "#f6f1e8", "signal": "#22c55e", "warm": "#f4a261" },
+    "typography": { "displayRole": "human confidence", "readingRole": "guided practice" },
+    "imageDirection": ["real creator artifacts", "working sessions", "clear system maps"]
+  },
+  "channels": { "primary": ["product", "cohort material", "creator media"] },
+  "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
+  "doNotUse": ["generic creator desk", "mascot substitution for proof", "empty automation diagrams"],
+  "updatedAt": "2026-07-24"
 }

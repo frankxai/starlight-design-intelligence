@@ -2,7 +2,9 @@
 
 ## Architecture (Foundations 2026-07-02)
 - **Canonical Strategy + Registry**: starlight-design-intelligence/brand-image-system/runtime + asset-registry.json (or DB)
-- **Local Working Mirror**: C:\Users\frank\brands\image-system/jobs/YYYY/MM/<job-id>/ + approved/
+- **Working Mirror**: `$STARLIGHT_ASSET_ROOT/jobs/YYYY/MM/<job-id>/` plus
+  `$STARLIGHT_ASSET_ROOT/approved/`. The variable must resolve to an explicit
+  absolute path; no machine-specific fallback is allowed.
 - **Central Visual DAM (recommended OSS)**:
   - **Immich** (self-hosted): Excellent for images/videos with AI search, facial/object recognition, albums per brand/profile/campaign. Great for browsing "used assets".
   - **ResourceSpace** (open source full DAM): Advanced metadata, permissions, collections, AI tagging. Self-host or cloud.

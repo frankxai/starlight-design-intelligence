@@ -1,121 +1,42 @@
 {
+  "$schema": "../../schemas/brand-pack.schema.json",
   "brandId": "frankx",
-  "brandOperatingUnit": "frankx-demand",
-  "version": "2026-07-02",
-  "updatedAt": "2026-07-02T17:30:00Z",
-  "canonicalRepoPaths": [
-    "C:\\Users\\frank\\starlight\\repos\\starlight-design-intelligence\\brand-packs\\frankx",
-    "C:\\Users\\frank\\starlight\\repos\\frankx.ai-vercel-website"
-  ],
-  "audiences": ["founders", "ai-native builders", "strategists", "creators scaling to systems"],
-  "positioning": "Practical authority and ecosystem funnel for turning AI capability into owned systems, products, revenue loops, and leverage. FrankX is the sharp, direct, commercially literate edge.",
-  "voice": {
-    "core": "Clear, sharp, founder-to-founder. Practical before poetic. Strategic but not corporate. Confident claims backed by mechanism, examples, or operational detail.",
-    "tone": ["direct", "elite", "tactical", "controlled", "insightful"],
-    "avoid": ["mythic Arcanea language", "enterprise fog", "empty hustle", "generic unlock potential"]
-  },
-  "visualPrinciples": {
-    "coreAesthetic": "Executive AI command layer meets refined modern luxury. Obsidian void foundation with liquid glass depth (translucent layers, soft blur, premium material feel), clean technical grids, subtle signal lines, brushed metal accents.",
-    "inspiration": [
-      "Apple liquid glass: depth, translucency, layered interfaces, premium tactile feel",
-      "Vercel: clean minimalism, high craft, functional beauty, excellent typography and spacing",
-      "GitHub: approachable professionalism, insightful patterns, Mona-like likeability and mascot warmth where fitting",
-      "FrankX dual-spectrum: Tech (emerald/cyan active systems) + Soul (amber/gold contemplative)"
-    ],
-    "mood": "Clean technical luxury. Editorial, precise, minimalist, authoritative, quietly confident. Meaningful and insightful — every element earns its place.",
-    "qualityStandard": "World-class design team only. Ultra tasteful. No AI slop, no generic SaaS cards, no filler. Only assets that could come from a top-tier in-house design team at Apple/Vercel/GitHub level are publishable. Every asset must feel premium, insightful, and likeable.",
-    "forbidden": [
-      "Garish neon gradients",
-      "unaligned text blocks",
-      "crowded grids",
-      "default card shadows",
-      "fake UI or pseudo-text in generated pixels",
-      "cute bots or generic AI assistant aesthetic",
-      "soft startup gradients"
-    ]
-  },
-  "colorTokens": {
-    "foundation": {
-      "void": "#0a0a0b",
-      "space": "#111113",
-      "elevated": "#1a1a1f",
-      "border": "#1e1e1e",
-      "borderStrong": "#2f2f2f"
-    },
-    "techSpectrum": {
-      "primary": "#10b981",
-      "secondary": "#06b6d4",
-      "glow": "#0f1f1a"
-    },
-    "soulSpectrum": {
-      "primary": "#f59e0b",
-      "secondary": "#fbbf24",
-      "glow": "#241b0f"
-    },
-    "glass": {
-      "translucentLight": "rgba(255,255,255,0.06)",
-      "translucentStrong": "rgba(255,255,255,0.12)",
-      "blur": "backdrop-blur(12px)"
-    }
-  },
-  "typeTokens": {
-    "headings": "Poppins/Outfit — bold geometric, perfect-fourth scale (1.333), 24px-90px, tight letter-spacing",
-    "body": "Inter — clean readability, 14-18px, line-height 1.6-1.7",
-    "data": "JetBrains Mono — 12-14px, tabular numbers",
-    "editorial": "Source Serif 4 / Playfair — warmer cream #e8ddd0 for contemplative paths"
-  },
-  "layoutTokens": {
-    "grid": "Obsidian grid: subtle thin borders #1e1e1e + clean vertical/horizontal lines",
-    "atmosphere": "Restrained glows at 5-12% opacity (emerald/cyan tech or amber/gold soul). Liquid glass layering with depth and subtle blur.",
-    "spacing": "Generous, editorial, high-restraint — breathing room as a feature"
-  },
-  "motionTokens": {
-    "principle": "Purposeful, restrained, high-craft. Subtle transitions, meaningful reveals. No decorative animation.",
-    "tools": "Framer Motion / Remotion / Higgsfield for video"
-  },
-  "imageDirection": {
-    "base": "Executive command room aesthetic: black glass, graphite, market screens, signal lines, brushed metal, cockpit, deal room, intelligence console. Physical props representing systems on premium surfaces. Cinematic lighting with depth.",
-    "premiumModels": "Leverage Grok, NB2/GPT-2-image (Infogenius process), and other premium generators for creative infographics, posters, and artistic bases where they excel at insightful text and composition. Combine with deterministic overlays for precision elements.",
-    "deterministic": "Exact text, charts, UI, diagrams, claims via HTML/Satori/Playwright/Figma code renderers or post-process overlays — never baked into raw generated pixels unless the job explicitly uses a premium creative-infographic route with verified QA.",
-    "tierA": "Real product proof, browser captures, high-fidelity renders with provenance",
-    "tierB": "Strong generated base + deterministic refinement",
-    "tierC": "Exploratory or supporting"
-  },
-  "socialRules": {
-    "static": "Single post image/quote card: deterministic layout + optional premium creative base. Precise crops (square, 4:5, 9:16, 16:9 thumb, OG). Text safe areas, high legibility.",
-    "carousel": "Story/document style — renderer first.",
-    "videoFrames": "Approved still before motion. Hook + subtitles via approved process."
-  },
-  "websiteRules": {
-    "hero": "First viewport: real proof or high-craft generated with liquid glass depth. Desktop/mobile responsive.",
-    "headers": "Section banners: deterministic + generated or captured media. No fake text overlap.",
-    "assets": "Vercel Blob or site public/assets. Always synced from approved DAM registry entry."
-  },
-  "infographicRules": {
-    "default": "Code/SVG/Figma/Canva/renderer for precision. Factual accuracy, source labels, readable text.",
-    "creative": "Premium image gen (Grok + Infogenius process) allowed for insightful, artistic infographics when job specifies creative route. Always pair with evidence and human review."
-  },
-  "claimRiskRules": {
-    "high": "Escalate to Frank. Require source + proof. No medical/financial/legal/investment claims without explicit approval.",
-    "medium": "Evidence link + freshness check required.",
-    "low": "Standard brand fit + 30-point gate."
-  },
-  "approvalRoute": "#social-approvals or brand command channel before publish",
-  "doNotUse": [
-    "cute bots",
-    "generic AI assistant aesthetic",
-    "soft startup gradients",
-    "unverifiable claims",
-    "fake UI/screenshots",
-    "Arcanea mythic language on FrankX surfaces"
-  ],
-  "exampleArtifacts": [
-    "frankx-platform-variants (improved deterministic + liquid glass versions)",
-    "command layer cards with exact text overlays"
-  ],
+  "displayName": "FrankX",
+  "operatingUnit": "frankx-demand",
   "sourceDocs": [
-    "brand-packs/frankx/DESIGN.md",
     "brand-packs/frankx/BRAND.md",
-    "design-agent-standards/PREMIUM_ASSET_STANDARD.md"
-  ]
+    "brand-packs/frankx/COPY.md",
+    "brand-packs/frankx/DESIGN.md",
+    "brand-packs/frankx/SURFACE_MODES.md",
+    "brand-packs/frankx/MOTION.md"
+  ],
+  "canonicalRepos": ["frankxai/frankx.ai-vercel-website"],
+  "audiences": ["founders", "AI-native builders", "creators scaling into systems"],
+  "positioning": {
+    "oneLine": "A builder-led body of work that turns ambitious AI ideas into legible, usable systems.",
+    "proof": ["working products", "source repositories", "real workflows", "specific results"],
+    "failureModes": ["generic AI authority", "ecosystem diagrams before human value", "claims without artifacts"]
+  },
+  "voice": {
+    "traits": ["observant", "direct", "specific", "understated"],
+    "bannedPhrases": ["sovereign substrate", "the infrastructure already exists", "this is not presentationware"]
+  },
+  "visual": {
+    "principles": [
+      "Choose editorial, product, or soul mode before styling",
+      "Start with a person, artifact, or working scene",
+      "Prefer one authored composition to equal-weight card walls"
+    ],
+    "colors": { "ink": "#0a0a0b", "paper": "#f3efe7", "tech": "#10b981", "soul": "#f59e0b" },
+    "typography": {
+      "displayRole": "selected per surface from licensed specimens",
+      "readingRole": "high-legibility authored prose",
+      "dataRole": "technical evidence only"
+    },
+    "imageDirection": ["real product proof", "authorized people and artifacts", "documentary source material"]
+  },
+  "channels": { "primary": ["website", "product", "editorial", "social proof"] },
+  "approvals": { "requiredBeforePublicAction": true, "route": "independent-verifier-and-named-human" },
+  "doNotUse": ["universal obsidian command center", "liquid-glass card walls", "fake UI", "invented intimacy"],
+  "updatedAt": "2026-07-24"
 }

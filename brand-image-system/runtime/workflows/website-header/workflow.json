@@ -1,68 +1,21 @@
 {
   "$schema": "../../schemas/workflow-pack.schema.json",
   "workflowId": "website-header",
-  "displayName": "Website Header Or Section Visual",
-  "purpose": "Create a reusable website header, campaign banner, section visual, or first-viewport supporting image with exact layout and inspectable crops.",
-  "surfaces": [
-    "website hero support image",
-    "section header",
-    "campaign landing banner",
-    "product route visual",
-    "newsletter or OG reuse"
-  ],
-  "allowedProductionRoutes": [
-    "real product capture",
-    "Vercel preview screenshot",
-    "HTML/CSS renderer",
-    "browser capture",
-    "Remotion still frame",
-    "Figma",
-    "image generation for art-directed poster/source frame only"
-  ],
+  "displayName": "Website Section Visual",
+  "purpose": "Create a reusable section header or campaign visual with exact hierarchy and inspected responsive crops.",
+  "surfaces": ["section header", "campaign banner", "product route visual", "newsletter visual", "open graph image"],
+  "allowedProductionRoutes": ["real product capture", "verified preview capture", "HTML or Satori renderer", "Remotion still", "Figma", "art-directed source image"],
   "requiredOutputs": [
-    {
-      "kind": "source brief",
-      "pathHint": "brief.md"
-    },
-    {
-      "kind": "media job",
-      "pathHint": "media-job.json"
-    },
-    {
-      "kind": "desktop header crop",
-      "pathHint": "crops/desktop-header.png",
-      "dimensions": "1600x900"
-    },
-    {
-      "kind": "mobile header crop",
-      "pathHint": "crops/mobile-header.png",
-      "dimensions": "1080x1350"
-    },
-    {
-      "kind": "open graph crop",
-      "pathHint": "crops/og.png",
-      "dimensions": "1200x630"
-    },
-    {
-      "kind": "evidence",
-      "pathHint": "evidence.json"
-    }
+    { "kind": "source brief", "pathHint": "brief.md" },
+    { "kind": "desktop crop", "pathHint": "crops/desktop.png", "dimensions": "1600x900" },
+    { "kind": "mobile crop", "pathHint": "crops/mobile.png", "dimensions": "1080x1350" },
+    { "kind": "open graph crop", "pathHint": "crops/og.png", "dimensions": "1200x630" },
+    { "kind": "evidence", "pathHint": "evidence.json" }
   ],
-  "qaGates": [
-    "brand pack loaded",
-    "asset tier A, B, or correct C",
-    "desktop and mobile crop inspected",
-    "first-read test passes",
-    "no clipped or overlapping text",
-    "30 point score is 26 or higher before handoff"
-  ],
-  "blockedRoutes": [
-    "cheap inline SVG hero as primary asset",
-    "generic abstract background as primary asset",
-    "uninspected generated media",
-    "fake dashboard with unreadable text",
-    "Hermes image generation until backend is verified"
-  ],
+  "qaGates": ["brand pack loaded", "desktop and mobile inspected", "first-read passes", "no clipping", "provenance recorded"],
+  "scoreThreshold": 26,
+  "scoreScale": 30,
+  "blockedRoutes": ["generic abstract filler", "fake dashboard", "uninspected generated media", "cheap placeholder art"],
   "approvalRequired": true,
-  "updatedAt": "2026-07-02"
+  "updatedAt": "2026-07-24"
 }

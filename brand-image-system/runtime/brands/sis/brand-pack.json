@@ -1,21 +1,28 @@
 {
+  "$schema": "../../schemas/brand-pack.schema.json",
   "brandId": "sis",
-  "brandOperatingUnit": "starlight-substrate",
-  "version": "2026-07-02",
-  "updatedAt": "2026-07-02T17:30:00Z",
-  "positioning": "Calm operational intelligence substrate. Trust, systems, evidence, command centers for the entire ecosystem.",
-  "visualPrinciples": {
-    "coreAesthetic": "Nocturnal intelligence lab: obsidian, smoked glass, brushed metal, command observatory, signal field. Liquid glass depth for layers, clean functional beauty inspired by Vercel/GitHub patterns. Insightful, trustworthy, likeable through clear purpose.",
-    "inspiration": ["Apple liquid glass for depth and premium tactility", "Vercel minimal high-craft", "GitHub approachable insightful patterns"],
-    "qualityStandard": "World-class only. Meaningful, insightful, ultra tasteful. No filler."
+  "displayName": "Starlight Intelligence Systems",
+  "operatingUnit": "starlight-substrate",
+  "sourceDocs": ["brand-packs/sis/DESIGN.md"],
+  "canonicalRepos": ["frankxai/starlight-intelligence-system"],
+  "audiences": ["AI platform leaders", "operators", "evaluation and governance teams"],
+  "positioning": {
+    "oneLine": "Calm operational intelligence that makes agent work, evidence, and decisions legible.",
+    "proof": ["agent traces", "evaluation deltas", "provenance records", "governed handoffs"],
+    "failureModes": ["hype science fiction", "generic dashboard filler", "black-box intelligence"]
   },
-  "colorTokens": {
-    "foundation": { "void": "#0a0a0b", "space": "#111113", "elevated": "#1a1a1f" },
-    "accent": { "primary": "#6366f1", "secondary": "#a5b4fc" }
+  "voice": {
+    "traits": ["calm", "operational", "evidence-led", "trustworthy"],
+    "bannedPhrases": ["sentient system", "autonomous revolution", "magic intelligence"]
   },
-  "imageDirection": "Premium generated bases for creative intelligence visuals + deterministic overlays for exact data/governance. Leverage high-quality image models for insightful diagrams and posters.",
-  "socialRules": { "static": "Deterministic + premium creative hybrid. Precise crops." },
-  "websiteRules": { "assets": "Synced from central DAM registry to Vercel public/assets." },
-  "approvalRoute": "#social-approvals",
-  "doNotUse": ["playful SaaS", "neon hacker cliche", "generic dashboard filler"]
+  "visual": {
+    "principles": ["Show the trace", "Make confidence inspectable", "Keep operational reading stable"],
+    "colors": { "void": "#0a0a0b", "space": "#111113", "signal": "#6366f1", "evidence": "#a5b4fc" },
+    "typography": { "displayRole": "operational authority", "readingRole": "dense but calm UI" },
+    "imageDirection": ["real product states", "evidence stacks", "agent and evaluation traces"]
+  },
+  "channels": { "primary": ["product", "enterprise website", "technical documentation"] },
+  "approvals": { "requiredBeforePublicAction": true, "route": "independent-verifier-and-named-human" },
+  "doNotUse": ["radiant particle fields", "moving dashboards during reading", "uncited confidence claims"],
+  "updatedAt": "2026-07-24"
 }
