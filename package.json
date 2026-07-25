@@ -12,7 +12,7 @@
     "test": "node --test"
   },
   "engines": {
-    "node": ">=24"
+    "node": ">=24.14.0 <25"
   },
   "devDependencies": {
     "ajv": "8.18.0",
