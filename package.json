@@ -12,12 +12,12 @@
     "test": "node --test"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "devDependencies": {
-    "ajv": "8.17.1",
+    "ajv": "8.18.0",
     "ajv-formats": "3.0.1",
     "pngjs": "7.0.0",
-    "yaml": "2.8.1"
+    "yaml": "2.8.3"
   }
 }
