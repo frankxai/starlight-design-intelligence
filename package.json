@@ -1,10 +1,12 @@
 {
   "name": "starlight-design-intelligence",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate-kernel.mjs",
+    "validate:adoption": "node scripts/validate-adoption.mjs",
+    "validate:portfolio": "node scripts/validate-adoption.mjs --registry-only",
     "validate:release": "node scripts/validate-release-evidence.mjs",
     "validate:media": "node scripts/validate-media-job.mjs",
     "test": "node --test"
@@ -15,6 +17,7 @@
   "devDependencies": {
     "ajv": "8.17.1",
     "ajv-formats": "3.0.1",
-    "pngjs": "7.0.0"
+    "pngjs": "7.0.0",
+    "yaml": "2.8.1"
   }
 }

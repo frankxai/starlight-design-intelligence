@@ -18,10 +18,21 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
 - Media jobs: `brand-image-system/runtime/schemas/media-job.schema.json`, combined
   with the selected workflow's numerical ship bar and filesystem evidence by
   `scripts/validate-media-job.mjs`
+- Downstream design adoption: `starlight.design_contract.v1`, defined in
+  `schemas/design-contract.schema.json` and enforced by
+  `scripts/validate-adoption.mjs`
+- Portfolio design authority: `starlight.design_portfolio.v1`, stored in
+  `portfolio/core-surfaces.json`
 
 ### Runtime data stores
 
 - `git`
 
 Product-owned schemas and migrations remain in this repository. Cross-estate contracts are adapters, not a shared database. PII is prohibited in product analytics events.
+
+The design contract pins a full lowercase kernel commit SHA and the SHA-256 of
+the selected brand pack's raw Git blob at that commit. It contains no shared
+colors, typography, motion tokens, components, or layout recipes. Those remain
+brand-local. The portfolio registry has no mutable adoption status: a
+repository either passes its pinned workflow or it does not.
 <!-- STARLIGHT-REPO-CONTRACT:END -->

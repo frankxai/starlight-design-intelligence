@@ -1,0 +1,43 @@
+name: Starlight design contract
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  design-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out caller
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          path: downstream
+          persist-credentials: false
+      - name: Check out immutable design kernel
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: frankxai/starlight-design-intelligence
+          ref: ${{ job.workflow_sha }}
+          path: kernel
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: kernel/package-lock.json
+      - name: Install pinned validator dependencies
+        working-directory: kernel
+        run: npm ci --ignore-scripts
+      - name: Validate downstream adoption
+        run: >-
+          node kernel/scripts/validate-adoption.mjs
+          --downstream-root downstream
+          --kernel-root kernel
+          --caller-repository "${{ github.repository }}"
+          --workflow-repository "${{ job.workflow_repository }}"
+          --workflow-path "${{ job.workflow_file_path }}"
+          --workflow-sha "${{ job.workflow_sha }}"

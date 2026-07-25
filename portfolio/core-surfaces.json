@@ -1,0 +1,65 @@
+{
+  "schema_version": "starlight.design_portfolio.v1",
+  "repositories": [
+    {
+      "repository": "frankxai/frankx.ai-vercel-website",
+      "brand_id": "frankx",
+      "surfaces": [
+        {
+          "id": "homepage",
+          "mode": "editorial",
+          "claim_classes": ["availability", "capability", "provenance"]
+        },
+        {
+          "id": "ai-architecture",
+          "mode": "product",
+          "claim_classes": ["capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/Starlight-Intelligence-System",
+      "brand_id": "sis",
+      "surfaces": [
+        {
+          "id": "homepage",
+          "mode": "operations",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/arcanea-ai-app",
+      "brand_id": "arcanea",
+      "surfaces": [
+        {
+          "id": "homepage",
+          "mode": "mythic-world",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/gencreator.ai",
+      "brand_id": "gencreator",
+      "surfaces": [
+        {
+          "id": "product-home",
+          "mode": "product-intelligence",
+          "claim_classes": ["availability", "capability", "pricing"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/gencreator-community",
+      "brand_id": "gencreator",
+      "surfaces": [
+        {
+          "id": "community-home",
+          "mode": "community-editorial",
+          "claim_classes": ["availability", "capability", "testimonial"]
+        }
+      ]
+    }
+  ]
+}

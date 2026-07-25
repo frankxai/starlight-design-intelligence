@@ -4,7 +4,8 @@
   "displayName": "Arcanea",
   "operatingUnit": "arcanea-product-ip",
   "sourceDocs": ["brand-packs/arcanea/DESIGN.md"],
-  "canonicalRepos": ["frankxai/arcanea"],
+  "canonicalRepos": ["frankxai/arcanea", "frankxai/arcanea-ai-app"],
+  "surfaceModes": ["mythic-world", "creator-tool", "lore-editorial"],
   "audiences": ["world-builders", "writers", "visual creators", "creative technologists"],
   "positioning": {
     "oneLine": "A mythic creative-intelligence world that resolves imagination into usable canon and tools.",

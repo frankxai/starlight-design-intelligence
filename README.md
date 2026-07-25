@@ -19,6 +19,7 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 | `evals/` | Rubrics and checklists for anti-slop review, premium brand scoring, and UI quality. |
 | `examples/` | Before/after examples showing the quality delta this system should produce. |
 | `scripts/` | Deterministic validators for the kernel and release evidence. |
+| `portfolio/` | Canonical repository-to-brand and core-surface adoption requirements. |
 
 ## Brand Boundaries
 
@@ -38,6 +39,25 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 - `starlight-agent-skills`: portable substrate skills for Starlight/SIS runtime consumption.
 
 There is no separate `starlight-design-agent-skills` authority. Creating another canonical layer would increase drift. Installations must retain a source reference to this repository and pass `npm test` before release.
+
+## Design Contract Mesh
+
+The portfolio shares one release protocol, not one visual costume. A downstream
+repository adopts `starlight.design_contract.v1` at
+`.starlight/design-contract.json` and calls
+`.github/workflows/design-contract.yml` at a full immutable commit SHA.
+
+The contract pins the raw Git-blob digest of its brand pack, its local design
+sources, core surfaces, claim classes, and release-evidence convention. The
+validator owns the canonical kernel, workflow, registry, and brand-pack paths;
+downstream files cannot redirect those authorities. Brand-local surface modes
+keep FrankX, SIS, Arcanea, and GenCreator visually distinct.
+
+Adoption is successful only when the reusable workflow verifies the trusted
+caller repository, exact kernel checkout, brand ownership, full surface set,
+tracked non-symlink local contracts, and structurally parsed caller workflow.
+Registry inclusion is the requirement; there is no self-reported “adopted”
+flag.
 
 ## Standards
 

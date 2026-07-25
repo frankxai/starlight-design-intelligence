@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
+import { validatePortfolioRegistry } from "./validate-adoption.mjs";
 
 const root = process.cwd();
 const failures = [];
@@ -47,6 +48,10 @@ const required = [
   "playbooks/site-motion-rollout.md",
   "brand-image-system/runtime/schemas/media-job.schema.json",
   "schemas/web-release-evidence.schema.json",
+  "schemas/design-contract.schema.json",
+  "portfolio/core-surfaces.json",
+  ".github/workflows/design-contract.yml",
+  "scripts/validate-adoption.mjs",
   "scripts/validate-media-job.mjs",
   "skills/world-class-web-release/SKILL.md",
   "skills/editorial-articulation/SKILL.md",
@@ -56,6 +61,8 @@ const required = [
 for (const path of required) {
   if (!existsSync(join(root, path))) failures.push(`missing required file: ${path}`);
 }
+
+failures.push(...validatePortfolioRegistry({ kernelRoot: root }));
 
 const inventory = read("SKILLS.md");
 const skillNames = readdirSync(join(root, "skills"), { withFileTypes: true })
