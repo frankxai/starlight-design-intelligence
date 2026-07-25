@@ -4,7 +4,8 @@
   "displayName": "GenCreator",
   "operatingUnit": "creator-systems",
   "sourceDocs": ["brand-image-system/source-map.md"],
-  "canonicalRepos": [],
+  "canonicalRepos": ["frankxai/gencreator.ai", "frankxai/gencreator-community"],
+  "surfaceModes": ["product-intelligence", "community-editorial"],
   "audiences": ["AI-native creators", "creator-operators", "cohort participants"],
   "positioning": {
     "oneLine": "Practical creator architecture that turns practice into visible, reusable artifacts.",

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/starlight-design-contract-v1.json",
+  "title": "Starlight downstream design contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "repository",
+    "kernel_commit_sha",
+    "brand",
+    "surfaces",
+    "local_contracts",
+    "release_evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "starlight.design_contract.v1"
+    },
+    "repository": {
+      "$ref": "#/$defs/repository"
+    },
+    "kernel_commit_sha": {
+      "$ref": "#/$defs/commitSha"
+    },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "pack_sha256"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/brandId"
+        },
+        "pack_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "surfaces": {
+      "$ref": "#/$defs/surfaces"
+    },
+    "local_contracts": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/cleanPath"
+      }
+    },
+    "release_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "receipt_directory"],
+      "properties": {
+        "schema_version": {
+          "const": "starlight.web_release_evidence.v1"
+        },
+        "receipt_directory": {
+          "$ref": "#/$defs/cleanPath"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "repository": {
+      "type": "string",
+      "pattern": "^frankxai\\/[A-Za-z0-9._-]+$"
+    },
+    "commitSha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "brandId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "cleanPath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!\\/)(?!.*\\\\)(?!.*(?:^|\\/)\\.\\.?($|\\/))(?!.*[\\u0000-\\u001f\\u007f]).+$"
+    },
+    "claimClass": {
+      "type": "string",
+      "enum": [
+        "availability",
+        "capability",
+        "compatibility",
+        "performance",
+        "pricing",
+        "provenance",
+        "result",
+        "testimonial"
+      ]
+    },
+    "surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "mode", "claim_classes"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "mode": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "claim_classes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/claimClass"
+          }
+        }
+      }
+    },
+    "surfaces": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/surface"
+      }
+    },
+    "portfolioRepository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "brand_id", "surfaces"],
+      "properties": {
+        "repository": {
+          "$ref": "#/$defs/repository"
+        },
+        "brand_id": {
+          "$ref": "#/$defs/brandId"
+        },
+        "surfaces": {
+          "$ref": "#/$defs/surfaces"
+        }
+      }
+    },
+    "portfolioRegistry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "repositories"],
+      "properties": {
+        "schema_version": {
+          "const": "starlight.design_portfolio.v1"
+        },
+        "repositories": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/portfolioRepository"
+          }
+        }
+      }
+    }
+  }
+}

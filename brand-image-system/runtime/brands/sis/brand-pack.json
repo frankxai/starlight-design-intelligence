@@ -5,6 +5,7 @@
   "operatingUnit": "starlight-substrate",
   "sourceDocs": ["brand-packs/sis/DESIGN.md"],
   "canonicalRepos": ["frankxai/starlight-intelligence-system"],
+  "surfaceModes": ["operations", "evidence", "editorial"],
   "audiences": ["AI platform leaders", "operators", "evaluation and governance teams"],
   "positioning": {
     "oneLine": "Calm operational intelligence that makes agent work, evidence, and decisions legible.",
