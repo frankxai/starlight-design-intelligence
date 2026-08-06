@@ -17,7 +17,7 @@ This workflow records evidence and risk; it does not provide legal advice. Quali
 
 1. **Inventory existing use.** Find font files, CSS imports, framework loaders, package dependencies, design tokens, PDFs/decks, logos, screenshots, and brand documents. Record actual family, style, weight, variable axes, format, and locations.
 2. **Identify the source.** Record foundry/author, canonical product/page URL, acquisition method/date, account or order reference without secrets, and the exact license/EULA file or URL captured for review.
-3. **Inspect files.** Use font metadata tooling where available to record internal family/subfamily, PostScript name, version, copyright, license strings/URLs, supported axes, glyph coverage, and file hash. A font filename is not identity proof.
+3. **Inspect files.** Font identity inspection is mandatory for approval. Use font metadata tooling to record internal family/subfamily, PostScript name, version, copyright, license strings/URLs, supported axes, glyph coverage, and file hash. If tooling is unavailable, document manual verification of every field and block approval until all fields are recorded. A font filename is not identity proof.
 4. **Map intended uses.** Explicitly classify web self-hosting/CDN, desktop creation, app/software embedding, print, logo/wordmark, social/video raster output, PDF/e-book embedding, client/contractor transfer, modification/subsetting, and redistribution.
 5. **Compare rights to use.** Record each use as allowed, restricted, ambiguous, or not reviewed. Do not infer that free download, browser access, repository presence, or a similar family name grants rights.
 6. **Choose the implementation.** Select files, subsets, unicode ranges, preload, `font-display`, fallbacks, variable/static instances, and caching/CDN policy. Do not upload proprietary font binaries to public Git unless redistribution is explicitly allowed.
@@ -47,7 +47,7 @@ uses:
   web_self_host: allowed
   desktop_creation: allowed
   app_embedding: ambiguous
-  logo_wordmark: reviewed
+  logo_wordmark: allowed  # only when the EULA permits wordmark use
   social_video_raster: allowed
   redistribution: prohibited
 implementation:

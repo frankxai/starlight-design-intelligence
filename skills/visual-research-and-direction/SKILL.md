@@ -64,7 +64,7 @@ A direction board is an inspectable artifact, not prose alone. It must include:
 - rights state unknown for production material;
 - three boards differ only by palette/font;
 - boards use placeholder copy instead of real product truth;
-- output depends on a copyrighted composition, unlicensed font, or competitor mark;
+- output depends on an unlicensed or copied composition, unlicensed font, or competitor mark;
 - no mobile state/crop, no anti-reference, or no named decision owner.
 
 ## Output

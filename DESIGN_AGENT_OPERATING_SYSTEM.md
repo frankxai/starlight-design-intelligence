@@ -21,8 +21,9 @@ For any Starlight, FrankX, Arcanea, Agentic Income, or partner visual task:
    category map, anti-references, and exactly three materially different boards.
 7. For a new or rebuilt identity, use `brand-strategy-to-identity` and obtain a
    named decision owner's territory selection before implementation.
-8. Build and verify the vector identity with `logo-system`; pass
-   `font-licensing-gate` before new font files or wordmarks enter production.
+8. Build and verify the vector identity with `logo-system`. Every new production
+   use of a font must pass `font-licensing-gate` or cite a matching approved rights
+   record for that exact use, including web, app, print, client transfer, and embedding.
 9. Encode the selected constitution, typography, color, imagery, tokens,
    templates, and asset provenance in the brand pack and owning repository.
 10. Build the static composition before motion.
