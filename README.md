@@ -17,6 +17,7 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 | `brand-packs/` | Brand-specific design, copy, product, token, and motion doctrine. |
 | `skills/` | Canonical executable design-intelligence skills. Personal/plugin installations are derived snapshots. |
 | `evals/` | Rubrics and checklists for anti-slop review, premium brand scoring, and UI quality. |
+| `benchmarks/` | Dated external-skill and tool comparisons with explicit adoption boundaries. |
 | `examples/` | Before/after examples showing the quality delta this system should produce. |
 | `scripts/` | Deterministic validators for the kernel and release evidence. |
 | `portfolio/` | Canonical repository-to-brand and core-surface adoption requirements. |
@@ -66,6 +67,12 @@ flag.
 - Prefer real product screenshots, workflows, and before/after examples over abstract decoration.
 - Preserve brand separation. Arcanea can be mythic; Starlight must remain high-trust.
 - Use public repos for authority and discovery; use this repo for owned differentiation.
+- Build logos as editable vectors and pass small-size, monochrome, similarity,
+  source, and lockup-family checks before effects or 3D applications.
+- Record font identity, files, source, rights evidence, intended uses, specimens,
+  computed production fonts, and fallback behavior before release.
+- External agent skills accelerate a named stage; they never become implicit
+  brand authority or production proof.
 - A public flagship release requires current desktop/mobile source capture, exactly three visual directions, independent editorial and visual verification, and production/rollback proof.
 - Production proof is emitted after deployment as an external CI artifact or a
   later receipts commit; it is never embedded in the production commit whose SHA

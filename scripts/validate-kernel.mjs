@@ -54,6 +54,10 @@ const required = [
   "scripts/validate-adoption.mjs",
   "scripts/validate-media-job.mjs",
   "skills/world-class-web-release/SKILL.md",
+  "skills/brand-strategy-to-identity/SKILL.md",
+  "skills/visual-research-and-direction/SKILL.md",
+  "skills/logo-system/SKILL.md",
+  "skills/font-licensing-gate/SKILL.md",
   "skills/editorial-articulation/SKILL.md",
   "skills/typography-art-direction/SKILL.md",
   "templates/SITE_MOTION_SPEC.md"

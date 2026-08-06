@@ -11,18 +11,28 @@ retain a source reference.
 For any Starlight, FrankX, Arcanea, Agentic Income, or partner visual task:
 
 1. Read `skills/world-class-web-release/SKILL.md`.
-2. Resolve the requested `surface.brand_id` through
+2. Identify the canonical product repository, accountable owner, production
+   surface, and prior identity/asset history. Stop when any is unknown.
+3. Resolve the requested `surface.brand_id` through
    `brand-image-system/runtime/brands/<brand_id>/brand-pack.json`.
-3. Stop on an unknown brand or a missing source document.
-4. Capture current surface or host context at desktop and mobile.
-5. Produce exactly three source-grounded directions.
-6. Select and build the static composition.
-7. Pass editorial and typography gates.
-8. Add motion only when it has a named job.
-9. Inspect actual desktop, mobile, reduced-motion, and runtime outputs.
-10. Record content-addressed release evidence.
-11. Obtain independent verification and named-human approval.
-12. Verify production and rollback.
+4. Stop on an unknown brand, a missing source document, or ambiguous ownership.
+5. Capture current surface or host context at desktop and mobile.
+6. Use `visual-research-and-direction` to build a sourced reference ledger,
+   category map, anti-references, and exactly three materially different boards.
+7. For a new or rebuilt identity, use `brand-strategy-to-identity` and obtain a
+   named decision owner's territory selection before implementation.
+8. Build and verify the vector identity with `logo-system`. Every new production
+   use of a font must pass `font-licensing-gate` or cite a matching approved rights
+   record for that exact use, including web, app, print, client transfer, and embedding.
+9. Encode the selected constitution, typography, color, imagery, tokens,
+   templates, and asset provenance in the brand pack and owning repository.
+10. Build the static composition before motion.
+11. Pass editorial, typography, generated-asset, accessibility, and visual gates.
+12. Add motion only when it has a named job and reduced-motion equivalent.
+13. Inspect actual desktop, mobile, 320px/reflow, reduced-motion, and runtime outputs.
+14. Record content-addressed release evidence.
+15. Obtain independent verification and named-human approval.
+16. Verify production and rollback.
 
 ## Brand Roles
 
@@ -37,6 +47,8 @@ For any Starlight, FrankX, Arcanea, Agentic Income, or partner visual task:
 - Generate cinematic frames, campaign imagery, world scenes, and exploratory mood.
 - Edit from a base image for consistent characters, objects, screenshots, or compositions.
 - Build logos as vector first; create 3D renders only after the mark works.
+- Record font identity, source, exact files, rights evidence, intended uses, and
+  production rendering before approval.
 - Use GSAP/Motion/Remotion/Lottie when motion communicates a clear purpose.
 - Block Tier D decorative filler as the primary asset for premium surfaces.
 
