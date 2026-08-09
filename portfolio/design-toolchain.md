@@ -31,8 +31,9 @@ Figma, Canva, Google Drive, a DAM, and Vercel are execution surfaces. None is al
 - The connected Figma setup has linked FrankX and Arcanea workspaces but no usable owned foundations yet. Generic vendor kits are references, not a system.
 - Canva has an Arcanea Brand Kit and an organised content folder spine. It is a capable production layer but has not been established as a multi-brand product-design system.
 - Google Drive contains the human Empire operating index and source/evidence material. It is the correct working-source layer, not the production delivery layer.
-- The current asset registry is a control-plane seed. A single actual DAM and sync path still need to be selected and verified.
-- Cloudinary is not currently proven as an estate-wide active DAM. Do not add it beside other libraries simply because it is available; choose it only if it wins the managed-media and transformation decision.
+- The current asset registry is a control-plane seed. A connected Cloudinary account contains a small FrankX namespace and a mostly sample/pilot inventory, but it has not yet proven an estate-wide metadata, transformation, delivery, or usage-tracking workflow.
+- Vercel is already an active portfolio runtime across multiple brand and product projects. Its role is delivery and release evidence, not cross-portfolio source-media authority.
+- Keep Cloudinary as a controlled pilot. Do not add a second DAM or migrate media until it passes a single-brand metadata, approval, transformation, delivery, and usage-tracking proof.
 
 ## Figma boundary
 
