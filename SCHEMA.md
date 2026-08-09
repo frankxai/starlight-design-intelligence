@@ -23,6 +23,9 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
   `scripts/validate-adoption.mjs`
 - Portfolio design authority: `starlight.design_portfolio.v1`, stored in
   `portfolio/core-surfaces.json`
+- Portfolio toolchain boundary: `starlight.design_toolchain.v1`, stored in
+  `portfolio/design-toolchain.json`; it contains roles, readiness, and rules but
+  no private tool identifiers, credentials, or asset binaries.
 
 ### Runtime data stores
 
