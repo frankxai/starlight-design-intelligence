@@ -96,26 +96,30 @@
       ]
     },
     "central_dam": {
-      "status": "decision-pending",
+      "status": "connected-pilot",
       "role": "Approved shared media, provenance, derivatives, rights, usage tracking, and delivery references.",
       "current_control_plane": "brand-image-system/runtime/asset-registry.json",
+      "observed": [
+        "A connected Cloudinary account contains a small FrankX namespace and a mostly sample/pilot inventory.",
+        "The account has not yet demonstrated an organisation-wide metadata, transformation, or delivery workflow."
+      ],
       "requirements": [
         "one selected DAM",
         "brand/campaign/rights/source/status/usage/owner metadata",
         "asset IDs referenced from code and content manifests"
       ],
-      "options_under_review": [
-        "Immich or ResourceSpace as documented current recommendation",
-        "Cloudinary when a managed transformation and delivery workflow is selected and verified"
-      ],
+      "decision_gate": "Keep Cloudinary as a pilot until it passes a single-brand metadata, approval, transformation, delivery, and usage-tracking proof. Do not migrate or run a second unmanaged library in parallel.",
       "prohibited": [
         "parallel ungoverned asset libraries",
         "public use before rights and approval metadata"
       ]
     },
     "vercel": {
-      "status": "application-specific",
-      "role": "Site delivery, real product proof captures, and app-owned public assets.",
+      "status": "active-portfolio",
+      "role": "Site delivery, real product proof captures, preview/production release evidence, and app-owned public assets.",
+      "observed": [
+        "A connected Starlight Intelligence Vercel team serves multiple FrankX, Arcanea, Starlight, GenCreator, community, academy, and incubator projects."
+      ],
       "blob_role": "User uploads, generated exports, and private or ephemeral product files.",
       "prohibited": [
         "cross-portfolio source-media authority"
