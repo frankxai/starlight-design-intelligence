@@ -1,0 +1,165 @@
+{
+  "schema_version": "starlight.design_toolchain.v1",
+  "last_verified": "2026-08-10",
+  "authority_model": {
+    "portfolio_registry": {
+      "repository": "frankxai/agentic-ops",
+      "owns": [
+        "brand identity",
+        "domain",
+        "repository",
+        "lifecycle",
+        "business-role",
+        "exclusions"
+      ],
+      "does_not_own": [
+        "visual tokens",
+        "component APIs",
+        "Figma files",
+        "content templates"
+      ]
+    },
+    "design_intelligence": {
+      "repository": "frankxai/starlight-design-intelligence",
+      "owns": [
+        "brand packs",
+        "design standards",
+        "quality gates",
+        "portfolio design contracts",
+        "toolchain policy"
+      ],
+      "does_not_own": [
+        "app-specific generated code",
+        "private media binaries",
+        "unreviewed design-tool edits"
+      ]
+    },
+    "product_repositories": {
+      "owns": [
+        "local implementation contracts",
+        "component implementations",
+        "app-specific tokens",
+        "release evidence"
+      ],
+      "rule": "Pin and validate the central brand pack; do not redefine portfolio policy."
+    }
+  },
+  "systems": {
+    "github": {
+      "status": "active",
+      "role": "Canonical reviewable contracts, source token schemas, component API metadata, source SVGs, manifests, validators, and release evidence.",
+      "prohibited": [
+        "campaign-export binaries",
+        "hand-maintained design-tool token copies"
+      ]
+    },
+    "figma": {
+      "status": "foundation-not-established",
+      "role": "Per-brand visual projection, component design, flow review, and design QA.",
+      "known_workspaces": [
+        "FrankX",
+        "Arcanea"
+      ],
+      "prohibited": [
+        "portfolio-wide raw-token authority",
+        "cross-brand mega-library",
+        "re-publishing third-party reference kits as owned design"
+      ],
+      "next_gate": "Explicit approval of a small foundation scope and a plan capable of the intended shared-library and variable-mode workflow.",
+      "required_pipeline": [
+        "central brand pack plus local contract",
+        "generated token projection",
+        "Figma validation",
+        "code mapping",
+        "visual regression evidence"
+      ]
+    },
+    "canva": {
+      "status": "partial",
+      "role": "Brand Kits, locked content templates, decks, campaign variants, and reusable social production.",
+      "observed": [
+        "Arcanea Brand Kit exists",
+        "content folder taxonomy exists"
+      ],
+      "prohibited": [
+        "product UI source of truth",
+        "canonical product tokens"
+      ],
+      "next_gate": "Create or validate Brand Kits only for active brands with an approved central brand pack."
+    },
+    "google_drive": {
+      "status": "active-human-operation",
+      "role": "Working originals, legal and rights evidence, human-readable operating material, registrar evidence, and approved source material before DAM ingest.",
+      "prohibited": [
+        "runtime public delivery",
+        "canonical product token authority"
+      ]
+    },
+    "central_dam": {
+      "status": "decision-pending",
+      "role": "Approved shared media, provenance, derivatives, rights, usage tracking, and delivery references.",
+      "current_control_plane": "brand-image-system/runtime/asset-registry.json",
+      "requirements": [
+        "one selected DAM",
+        "brand/campaign/rights/source/status/usage/owner metadata",
+        "asset IDs referenced from code and content manifests"
+      ],
+      "options_under_review": [
+        "Immich or ResourceSpace as documented current recommendation",
+        "Cloudinary when a managed transformation and delivery workflow is selected and verified"
+      ],
+      "prohibited": [
+        "parallel ungoverned asset libraries",
+        "public use before rights and approval metadata"
+      ]
+    },
+    "vercel": {
+      "status": "application-specific",
+      "role": "Site delivery, real product proof captures, and app-owned public assets.",
+      "blob_role": "User uploads, generated exports, and private or ephemeral product files.",
+      "prohibited": [
+        "cross-portfolio source-media authority"
+      ]
+    }
+  },
+  "asset_flow": [
+    "Working original and rights context in Google Drive",
+    "Human review and approval",
+    "Register in the selected DAM plus asset-registry.json",
+    "Deliver via approved site media path or transformation",
+    "Record every live use in usedIn or an equivalent manifest"
+  ],
+  "icon_policy": {
+    "product_ui_default": "Lucide",
+    "editorial_optional": "Phosphor after license and style review",
+    "marks": "Approved originals only; do not imitate or copy another brand's identity."
+  },
+  "brand_enrollment": {
+    "required_fields": [
+      "brand_id",
+      "registry_commit",
+      "central_brand_pack",
+      "product_repository",
+      "local_contract",
+      "figma_workspace_or_exemption",
+      "canva_brand_kit_or_exemption",
+      "dam_namespace",
+      "content_owner",
+      "accessibility_owner"
+    ],
+    "rule": "A brand cannot claim design-system adoption until its central pack, local contract, and release evidence validate together."
+  },
+  "external_reference_policy": {
+    "allowed": [
+      "reference ledgers",
+      "licensed icon libraries",
+      "documented pattern research",
+      "owned screenshots for analysis"
+    ],
+    "prohibited": [
+      "copying another brand's visual identity",
+      "unlicensed assets",
+      "third-party reference kits published as owned components"
+    ]
+  }
+}
