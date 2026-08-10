@@ -20,7 +20,7 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 | `benchmarks/` | Dated external-skill and tool comparisons with explicit adoption boundaries. |
 | `examples/` | Before/after examples showing the quality delta this system should produce. |
 | `scripts/` | Deterministic validators for the kernel and release evidence. |
-| `portfolio/` | Canonical repository-to-brand and core-surface adoption requirements. |
+| `portfolio/` | Canonical repository-to-brand, core-surface adoption, and toolchain-boundary requirements. |
 
 ## Brand Boundaries
 
