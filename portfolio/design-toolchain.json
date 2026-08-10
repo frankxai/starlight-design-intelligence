@@ -54,7 +54,7 @@
       ]
     },
     "figma": {
-      "status": "foundation-not-established",
+      "status": "foundation-v1-established",
       "role": "Per-brand visual projection, component design, flow review, and design QA.",
       "known_workspaces": [
         "FrankX",
@@ -65,13 +65,18 @@
         "cross-brand mega-library",
         "re-publishing third-party reference kits as owned design"
       ],
-      "next_gate": "Explicit approval of a small foundation scope and a plan capable of the intended shared-library and variable-mode workflow.",
+      "next_gate": "Commit a generated projection and provenance record, then validate a named desktop and mobile flow before components or library publishing.",
       "required_pipeline": [
         "central brand pack plus local contract",
-        "generated token projection",
-        "Figma validation",
+        "committed generated token projection",
+        "Figma foundation and flow validation",
         "code mapping",
         "visual regression evidence"
+      ],
+      "observed": [
+        "The existing FrankX workspace now has four deliberate one-mode collections, 60 local variables, 14 text styles, and five effect styles.",
+        "The bootstrap passed collection, mode, alias, scope, WEB code-syntax, and style-coverage validation.",
+        "Arcanea remains a separate overlay with no mutation in this execution."
       ]
     },
     "canva": {
@@ -166,4 +171,4 @@
       "third-party reference kits published as owned components"
     ]
   }
-}
+}\n
