@@ -1,6 +1,6 @@
 {
-  "adapterId": "hermes-brand-image-runtime",
-  "targetAgent": "hermes",
+  "adapterId": "grok-cli-brand-image-runtime",
+  "targetAgent": "grok-cli",
   "generatedFrom": [
     "brand-image-system/runtime/adapters/agent-adapter-contract.json",
     "brand-image-system/runtime/schemas/agent-adapter-contract.schema.json",

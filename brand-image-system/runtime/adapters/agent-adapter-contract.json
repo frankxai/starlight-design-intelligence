@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "starlight.agentAdapterContract.v1",
+  "common": {
+    "generatedFrom": [
+      "brand-image-system/runtime/adapters/agent-adapter-contract.json",
+      "brand-image-system/runtime/schemas/agent-adapter-contract.schema.json",
+      "brand-image-system/runtime/schemas/agent-adapter.schema.json",
+      "brand-image-system/runtime/schemas/media-job.schema.json",
+      "brand-image-system/runtime/schemas/vis-asset-evidence-binding.schema.json"
+    ],
+    "requiredReads": [
+      "brand-image-system/runtime/brands/<brandId>/brand-pack.json",
+      "brand-image-system/runtime/workflows/<workflowId>/workflow.json",
+      "brand-image-system/runtime/schemas/media-job.schema.json",
+      "brand-image-system/runtime/schemas/vis-asset-evidence-binding.schema.json"
+    ],
+    "allowedActions": [
+      "create schema-valid draft media jobs",
+      "route allowed deterministic rendering",
+      "record QA, review, and local evidence",
+      "request named human approval",
+      "attach immutable VIS asset evidence bindings"
+    ],
+    "blockedActions": [
+      "approve or publish without distinct maker verifier and named human approval",
+      "publish without immutable VIS asset evidence binding",
+      "use raw generated public text or claims",
+      "write asset outputs outside STARLIGHT_ASSET_ROOT"
+    ],
+    "handoffFields": [
+      "jobId",
+      "brandId",
+      "workflowId",
+      "paths",
+      "qa",
+      "review",
+      "visBinding",
+      "decision",
+      "approval"
+    ]
+  },
+  "targets": [
+    { "targetAgent": "codex", "adapterId": "codex-brand-image-runtime", "outputPath": "brand-image-system/runtime/adapters/codex/adapter.json" },
+    { "targetAgent": "claude-code", "adapterId": "claude-code-brand-image-runtime", "outputPath": "brand-image-system/runtime/adapters/claude-code/adapter.json" },
+    { "targetAgent": "grok-cli", "adapterId": "grok-cli-brand-image-runtime", "outputPath": "brand-image-system/runtime/adapters/grok-cli/adapter.json" },
+    { "targetAgent": "antigravity", "adapterId": "antigravity-brand-image-runtime", "outputPath": "brand-image-system/runtime/adapters/antigravity/adapter.json" },
+    { "targetAgent": "hermes", "adapterId": "hermes-brand-image-runtime", "outputPath": "brand-image-system/runtime/adapters/hermes/hermes-adapter.json" },
+    { "targetAgent": "mcp", "adapterId": "mcp-brand-image-runtime", "outputPath": "brand-image-system/runtime/adapters/mcp/adapter.json" }
+  ],
+  "updatedAt": "2026-08-11"
+}

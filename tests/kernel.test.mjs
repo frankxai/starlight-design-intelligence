@@ -418,11 +418,20 @@ test("skills gate validates portable frontmatter and content hygiene", () => {
   assert.match(output, /Skills valid: portable frontmatter and content hygiene passed/);
 });
 
+test("generated adapters match the shared contract", () => {
+  const output = execFileSync(process.execPath, ["scripts/generate-agent-adapters.mjs", "--check"], {
+    encoding: "utf8"
+  });
+  assert.match(output, /Generated adapters match the shared contract/);
+});
+
 function approvedMediaJob(assetRoot, score = 28) {
   const jobRoot = join(assetRoot, "jobs/approved");
+  const output = "inspected visual export";
+  const evidence = JSON.stringify({ score30: score });
   mkdirSync(jobRoot, { recursive: true });
-  writeFileSync(join(jobRoot, "social.png"), "inspected visual export");
-  writeFileSync(join(jobRoot, "evidence.json"), JSON.stringify({ score30: score }));
+  writeFileSync(join(jobRoot, "social.png"), output);
+  writeFileSync(join(jobRoot, "evidence.json"), evidence);
   return {
     jobId: "2026-07-24-frankx-social-static",
     brandId: "frankx",
@@ -450,6 +459,28 @@ function approvedMediaJob(assetRoot, score = 28) {
       verdict: "pass",
       notes: "Independent check passed at full size and contact-sheet scale."
     },
+    visBinding: {
+      schemaVersion: "starlight.visAssetEvidenceBinding.v1",
+      assets: [
+        {
+          outputPath: "social.png",
+          assetId: `asset_${"a".repeat(24)}`,
+          versionId: `ver_${"b".repeat(32)}`,
+          sha256: digest(Buffer.from(output)),
+          rightsStatus: "generated-owned",
+          approvalStatus: "approved",
+          provenanceEventId: "prov_social_static_001",
+          provenanceEventType: "generated",
+          lineage: { kind: "source" }
+        }
+      ],
+      releaseEvidence: {
+        releaseRecordId: "release_social_static_001",
+        evidencePath: "evidence.json",
+        evidenceSha256: digest(Buffer.from(evidence)),
+        recordedAt: "2026-07-24T12:01:00Z"
+      }
+    },
     approval: {
       approver: "Frank",
       reviewedAt: "2026-07-24T12:00:00Z",
@@ -464,6 +495,26 @@ test("media-job validator accepts inspected output at the workflow ship bar", ()
   const assetRoot = mkdtempSync(join(tmpdir(), "starlight-media-"));
   const failures = validateMediaJob(approvedMediaJob(assetRoot), { assetRoot });
   assert.deepEqual(failures, []);
+});
+
+test("media-job validator requires a complete VIS binding for promotion", () => {
+  const assetRoot = mkdtempSync(join(tmpdir(), "starlight-media-"));
+  const job = approvedMediaJob(assetRoot);
+  delete job.visBinding;
+  const failures = validateMediaJob(job, { assetRoot });
+  assert.match(failures.join("\n"), /must have required property 'visBinding'/);
+});
+
+test("media-job validator rejects mismatched or non-approved VIS asset evidence", () => {
+  const assetRoot = mkdtempSync(join(tmpdir(), "starlight-media-"));
+  const job = approvedMediaJob(assetRoot);
+  job.visBinding.assets[0].sha256 = "0".repeat(64);
+  let failures = validateMediaJob(job, { assetRoot });
+  assert.match(failures.join("\n"), /SHA-256 mismatch for output/);
+  job.visBinding.assets[0].sha256 = digest(Buffer.from("inspected visual export"));
+  job.visBinding.assets[0].rightsStatus = "blocked";
+  failures = validateMediaJob(job, { assetRoot });
+  assert.match(failures.join("\n"), /must be equal to one of the allowed values/);
 });
 
 test("media-job validator rejects uninspected zero-score Tier D approval", () => {

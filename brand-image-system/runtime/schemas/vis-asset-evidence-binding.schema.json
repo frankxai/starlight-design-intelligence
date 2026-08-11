@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/vis-asset-evidence-binding.schema.json",
+  "title": "VIS Asset Evidence Binding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "assets", "releaseEvidence"],
+  "properties": {
+    "schemaVersion": { "const": "starlight.visAssetEvidenceBinding.v1" },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/assetBinding" }
+    },
+    "releaseEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["releaseRecordId", "evidencePath", "evidenceSha256", "recordedAt"],
+      "properties": {
+        "releaseRecordId": { "type": "string", "minLength": 3 },
+        "evidencePath": { "$ref": "#/$defs/relativePath" },
+        "evidenceSha256": { "$ref": "#/$defs/sha256" },
+        "recordedAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "relativePath": { "type": "string", "minLength": 1, "pattern": "^(?!/|.*\\.\\.)[^\\\\]+$" },
+    "assetBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outputPath", "assetId", "versionId", "sha256", "rightsStatus", "approvalStatus", "provenanceEventId", "provenanceEventType", "lineage"],
+      "properties": {
+        "outputPath": { "$ref": "#/$defs/relativePath" },
+        "assetId": { "type": "string", "pattern": "^asset_[a-f0-9]{24}$" },
+        "versionId": { "type": "string", "pattern": "^ver_[a-f0-9]{32}$" },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "rightsStatus": { "enum": ["owned", "generated-owned", "licensed"] },
+        "approvalStatus": { "const": "approved" },
+        "provenanceEventId": { "type": "string", "minLength": 3 },
+        "provenanceEventType": { "enum": ["indexed", "prompt-linked", "generated", "edited", "evaluated", "approved", "uploaded", "derivative-created"] },
+        "lineage": {
+          "oneOf": [
+            { "type": "object", "additionalProperties": false, "required": ["kind"], "properties": { "kind": { "const": "source" } } },
+            { "type": "object", "additionalProperties": false, "required": ["kind", "sourceAssetId", "sourceVersionId"], "properties": { "kind": { "const": "derivative" }, "sourceAssetId": { "type": "string", "pattern": "^asset_[a-f0-9]{24}$" }, "sourceVersionId": { "type": "string", "pattern": "^ver_[a-f0-9]{32}$" } } }
+          ]
+        }
+      }
+    }
+  }
+}

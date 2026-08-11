@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -23,6 +24,54 @@ function resolveJobPath(jobRoot, path) {
   return resolve(jobRoot, path);
 }
 
+function sha256(path) {
+  return createHash("sha256").update(readFileSync(path)).digest("hex");
+}
+
+function validateVisReceipt(job, jobRoot, validateBinding, failures) {
+  const binding = job.visBinding;
+  if (!validateBinding(binding)) {
+    failures.push(
+      ...validateBinding.errors.map((error) => `/visBinding${formatAjvError(error)}`)
+    );
+    return;
+  }
+
+  const outputPaths = new Set(job.paths?.outputs ?? []);
+  const bindingsByPath = new Map();
+  for (const asset of binding.assets) {
+    if (bindingsByPath.has(asset.outputPath)) {
+      failures.push(`/visBinding/assets duplicates outputPath: ${asset.outputPath}`);
+    }
+    bindingsByPath.set(asset.outputPath, asset);
+  }
+  for (const outputPath of outputPaths) {
+    const asset = bindingsByPath.get(outputPath);
+    if (!asset) {
+      failures.push(`/visBinding/assets missing output binding: ${outputPath}`);
+      continue;
+    }
+    const output = resolveJobPath(jobRoot, outputPath);
+    if (existsSync(output) && statSync(output).isFile() && sha256(output) !== asset.sha256) {
+      failures.push(`/visBinding/assets SHA-256 mismatch for output: ${outputPath}`);
+    }
+  }
+  for (const outputPath of bindingsByPath.keys()) {
+    if (!outputPaths.has(outputPath)) {
+      failures.push(`/visBinding/assets references undeclared output: ${outputPath}`);
+    }
+  }
+
+  const release = binding.releaseEvidence;
+  if (release?.evidencePath !== job.paths?.evidence) {
+    failures.push("/visBinding/releaseEvidence/evidencePath must equal paths.evidence");
+  }
+  const evidence = resolveJobPath(jobRoot, release?.evidencePath ?? "");
+  if (existsSync(evidence) && statSync(evidence).isFile() && sha256(evidence) !== release?.evidenceSha256) {
+    failures.push("/visBinding/releaseEvidence/evidenceSha256 must match paths.evidence bytes");
+  }
+}
+
 export function validateMediaJob(
   job,
   { root = scriptRoot, assetRoot = process.env.STARLIGHT_ASSET_ROOT } = {}
@@ -33,7 +82,12 @@ export function validateMediaJob(
   const schema = loadJson(
     resolve(root, "brand-image-system/runtime/schemas/media-job.schema.json")
   );
+  const visBindingSchema = loadJson(
+    resolve(root, "brand-image-system/runtime/schemas/vis-asset-evidence-binding.schema.json")
+  );
+  ajv.addSchema(visBindingSchema);
   const validate = ajv.compile(schema);
+  const validateBinding = ajv.getSchema(visBindingSchema.$id);
   if (!validate(job)) failures.push(...validate.errors.map(formatAjvError));
 
   const brandPath = resolve(
@@ -89,6 +143,7 @@ export function validateMediaJob(
             failures.push(`/paths artifact is empty: ${path}`);
           }
         }
+        validateVisReceipt(job, jobRoot, validateBinding, failures);
       }
     }
   }

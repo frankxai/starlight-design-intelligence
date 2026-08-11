@@ -156,6 +156,9 @@
         }
       }
     },
+    "visBinding": {
+      "$ref": "https://frankx.ai/schemas/brand-image-system/vis-asset-evidence-binding.schema.json"
+    },
     "decision": {
       "type": "string",
       "enum": ["draft", "approved", "iterate", "restart", "blocked", "published"]
@@ -176,7 +179,7 @@
         "required": ["decision"]
       },
       "then": {
-        "required": ["approval", "review"],
+        "required": ["approval", "review", "visBinding"],
         "properties": {
           "assetTier": {
             "enum": ["A", "B", "C"]

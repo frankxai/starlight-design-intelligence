@@ -47,13 +47,17 @@ const required = [
   "evals/web-release-gate.md",
   "playbooks/site-motion-rollout.md",
   "brand-image-system/runtime/schemas/media-job.schema.json",
+  "brand-image-system/runtime/schemas/vis-asset-evidence-binding.schema.json",
   "brand-image-system/runtime/schemas/agent-adapter.schema.json",
+  "brand-image-system/runtime/schemas/agent-adapter-contract.schema.json",
+  "brand-image-system/runtime/adapters/agent-adapter-contract.json",
   "brand-image-system/runtime/adapters/hermes/hermes-adapter.json",
   "brand-image-system/runtime/adapters/hermes/media-job-template.json",
   "schemas/web-release-evidence.schema.json",
   "scripts/validate-media-job.mjs",
   "scripts/validate-copy-style.mjs",
   "scripts/validate-skills.mjs",
+  "scripts/generate-agent-adapters.mjs",
   "skills/world-class-web-release/SKILL.md",
   "skills/editorial-articulation/SKILL.md",
   "skills/typography-art-direction/SKILL.md",
@@ -95,11 +99,15 @@ try {
 const brandSchema = json("brand-image-system/runtime/schemas/brand-pack.schema.json");
 const workflowSchema = json("brand-image-system/runtime/schemas/workflow-pack.schema.json");
 const mediaJobSchema = json("brand-image-system/runtime/schemas/media-job.schema.json");
+const visBindingSchema = json("brand-image-system/runtime/schemas/vis-asset-evidence-binding.schema.json");
 const agentAdapterSchema = json("brand-image-system/runtime/schemas/agent-adapter.schema.json");
+const adapterContractSchema = json("brand-image-system/runtime/schemas/agent-adapter-contract.schema.json");
 const validateBrand = ajv.compile(brandSchema);
 const validateWorkflow = ajv.compile(workflowSchema);
+ajv.addSchema(visBindingSchema);
 const validateMediaJob = ajv.compile(mediaJobSchema);
 const validateAgentAdapter = ajv.compile(agentAdapterSchema);
+const validateAdapterContract = ajv.compile(adapterContractSchema);
 const brandFiles = listFiles("brand-image-system/runtime/brands", "brand-pack.json");
 const workflowFiles = readdirSync(join(root, "brand-image-system/runtime/workflows"), {
   withFileTypes: true
@@ -152,8 +160,8 @@ if (!validateAgentAdapter(hermesAdapter)) formatErrors(hermesAdapterPath, valida
 if (hermesAdapter.targetAgent !== "hermes") {
   failures.push(`${hermesAdapterPath}: targetAgent must be hermes`);
 }
-if (!hermesAdapter.requiredReads?.includes("brand-image-system/runtime/adapters/hermes/media-job-template.json")) {
-  failures.push(`${hermesAdapterPath}: requiredReads must include the schema-valid media-job template`);
+if (!hermesAdapter.requiredReads?.includes("brand-image-system/runtime/schemas/media-job.schema.json")) {
+  failures.push(`${hermesAdapterPath}: requiredReads must include the canonical media-job schema`);
 }
 
 const hermesMediaTemplatePath = "brand-image-system/runtime/adapters/hermes/media-job-template.json";
@@ -161,6 +169,20 @@ const hermesMediaTemplate = json(hermesMediaTemplatePath);
 if (!validateMediaJob(hermesMediaTemplate)) formatErrors(hermesMediaTemplatePath, validateMediaJob.errors);
 if (hermesMediaTemplate.decision !== "draft") {
   failures.push(`${hermesMediaTemplatePath}: template must remain a non-promotable draft`);
+}
+
+const adapterContractPath = "brand-image-system/runtime/adapters/agent-adapter-contract.json";
+const adapterContract = json(adapterContractPath);
+if (!validateAdapterContract(adapterContract)) formatErrors(adapterContractPath, validateAdapterContract.errors);
+for (const target of adapterContract.targets ?? []) {
+  const adapter = json(target.outputPath);
+  if (!validateAgentAdapter(adapter)) formatErrors(target.outputPath, validateAgentAdapter.errors);
+  if (adapter.targetAgent !== target.targetAgent || adapter.adapterId !== target.adapterId) {
+    failures.push(`${target.outputPath}: generated adapter identity differs from the shared contract`);
+  }
+  if (!adapter.handoffFields?.includes("visBinding")) {
+    failures.push(`${target.outputPath}: generated adapter must hand off VIS evidence bindings`);
+  }
 }
 
 const canonicalDocs = [
@@ -179,6 +201,7 @@ const canonicalDocs = [
   "brand-packs/frankx/DESIGN.md",
   "brand-image-system/runtime/README.md",
   "brand-image-system/runtime/dam/ASSET_MANAGEMENT_SYSTEM.md",
+  "brand-image-system/runtime/dam/VIS_ASSET_EVIDENCE_BINDING.md",
   "brand-image-system/runtime/adapters/hermes/AGENTS.fragment.md"
 ];
 for (const path of canonicalDocs) {

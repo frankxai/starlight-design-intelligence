@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "validate": "node scripts/validate-kernel.mjs && node scripts/validate-skills.mjs",
+    "validate": "node scripts/validate-kernel.mjs && node scripts/validate-skills.mjs && node scripts/generate-agent-adapters.mjs --check",
     "validate:skills": "node scripts/validate-skills.mjs",
+    "generate:adapters": "node scripts/generate-agent-adapters.mjs",
     "validate:release": "node scripts/validate-release-evidence.mjs",
     "validate:media": "node scripts/validate-media-job.mjs",
     "test": "node --test"
