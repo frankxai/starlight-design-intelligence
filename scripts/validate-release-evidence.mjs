@@ -7,6 +7,7 @@ import { isDeepStrictEqual } from "node:util";
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 import { PNG } from "pngjs";
+import { findProhibitedAiSlang } from "./validate-copy-style.mjs";
 
 const scriptRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -108,6 +109,21 @@ function inspectArtifact(artifact, label, evidenceRoot, failures) {
         `${label}: dimensions mismatch; manifest ${artifact.width}x${artifact.height}, actual ${actual.width}x${actual.height}`
       );
     }
+  }
+}
+
+function verifyPublicCopyStyle(manifest, evidenceRoot, failures) {
+  const artifact = manifest.editorial?.copy_artifact;
+  if (!artifact?.path || !artifact.mime?.startsWith("text/")) return;
+  const absolute = resolve(evidenceRoot, artifact.path);
+  const relativePath = relative(evidenceRoot, absolute);
+  if (!relativePath || relativePath.startsWith("..") || resolve(relativePath) === relativePath) return;
+  if (!existsSync(absolute) || !statSync(absolute).isFile()) return;
+  const prohibited = findProhibitedAiSlang(readFileSync(absolute, "utf8"));
+  if (prohibited.length) {
+    failures.push(
+      `/editorial/copy_artifact contains prohibited generic AI slang: ${prohibited.join(", ")}`
+    );
   }
 }
 
@@ -425,6 +441,7 @@ export function validateReleaseManifest(
 
   const evidenceRoot = dirname(resolve(manifestPath));
   verifyMotionEvidence(manifest, evidenceRoot, failures);
+  verifyPublicCopyStyle(manifest, evidenceRoot, failures);
   for (const { value, path } of collectArtifacts(manifest)) {
     inspectArtifact(value, path, evidenceRoot, failures);
   }

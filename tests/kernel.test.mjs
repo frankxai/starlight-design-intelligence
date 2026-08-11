@@ -704,6 +704,27 @@ test("release validator ties scores, selection, copy, and production to reviewed
   assert.match(result.stderr, /production_commit_sha must equal/);
 });
 
+test("release validator rejects generic AI slang in reviewed public copy", () => {
+  const repoRoot = mkdtempSync(join(tmpdir(), "starlight-release-"));
+  const commits = initReleaseRepo(repoRoot);
+  const directory = join(repoRoot, "docs/release-evidence/proof");
+  mkdirSync(directory, { recursive: true });
+  const manifest = buildValidRelease(directory, commits);
+  const copy = writeArtifact(
+    directory,
+    "copy.md",
+    "An AI-powered, next-gen, revolutionary system for your workflow.",
+    "text/markdown"
+  );
+  manifest.editorial.copy_artifact = copy;
+  manifest.editorial.copy_sha256 = copy.sha256;
+  const path = join(directory, "release.json");
+  writeFileSync(path, JSON.stringify(manifest));
+  const result = runManifest(path, repoRoot);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /contains prohibited generic AI slang: AI-powered, next-gen, revolutionary/);
+});
+
 test("release validator rejects remote or non-visual screenshot evidence", () => {
   const repoRoot = mkdtempSync(join(tmpdir(), "starlight-release-"));
   const commits = initReleaseRepo(repoRoot);

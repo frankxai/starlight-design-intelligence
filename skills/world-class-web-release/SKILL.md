@@ -26,7 +26,8 @@ evidence tell one coherent story.
 5. **Build the static composition.** Resolve hierarchy, pacing, typography, proof,
    responsive behavior, and conversion before motion.
 6. **Pass editorial articulation.** Use `skills/editorial-articulation/SKILL.md`.
-   Read every sentence aloud. Reject name-swappable or taxonomy-led copy.
+   Read every sentence aloud. Reject name-swappable or taxonomy-led copy and the
+   prohibited generic AI slang listed in `evals/anti-slop-copy-gate.md`.
 7. **Earn motion.** Use `skills/motion-and-interaction/SKILL.md`. Motion must
    orient, explain, confirm, reveal causality, or create one brand memory.
 8. **Compare and verify.** Capture desktop, mobile, interactions, and reduced
