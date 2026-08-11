@@ -46,6 +46,9 @@ const required = [
   "evals/web-release-gate.md",
   "playbooks/site-motion-rollout.md",
   "brand-image-system/runtime/schemas/media-job.schema.json",
+  "brand-image-system/runtime/schemas/agent-adapter.schema.json",
+  "brand-image-system/runtime/adapters/hermes/hermes-adapter.json",
+  "brand-image-system/runtime/adapters/hermes/media-job-template.json",
   "schemas/web-release-evidence.schema.json",
   "scripts/validate-media-job.mjs",
   "skills/world-class-web-release/SKILL.md",
@@ -89,9 +92,11 @@ try {
 const brandSchema = json("brand-image-system/runtime/schemas/brand-pack.schema.json");
 const workflowSchema = json("brand-image-system/runtime/schemas/workflow-pack.schema.json");
 const mediaJobSchema = json("brand-image-system/runtime/schemas/media-job.schema.json");
+const agentAdapterSchema = json("brand-image-system/runtime/schemas/agent-adapter.schema.json");
 const validateBrand = ajv.compile(brandSchema);
 const validateWorkflow = ajv.compile(workflowSchema);
 const validateMediaJob = ajv.compile(mediaJobSchema);
+const validateAgentAdapter = ajv.compile(agentAdapterSchema);
 const brandFiles = listFiles("brand-image-system/runtime/brands", "brand-pack.json");
 const workflowFiles = readdirSync(join(root, "brand-image-system/runtime/workflows"), {
   withFileTypes: true
@@ -136,6 +141,23 @@ const invalidApprovedMediaJob = {
 };
 if (validateMediaJob(invalidApprovedMediaJob)) {
   failures.push("media-job schema permits uninspected zero-score Tier D approval");
+}
+
+const hermesAdapterPath = "brand-image-system/runtime/adapters/hermes/hermes-adapter.json";
+const hermesAdapter = json(hermesAdapterPath);
+if (!validateAgentAdapter(hermesAdapter)) formatErrors(hermesAdapterPath, validateAgentAdapter.errors);
+if (hermesAdapter.targetAgent !== "hermes") {
+  failures.push(`${hermesAdapterPath}: targetAgent must be hermes`);
+}
+if (!hermesAdapter.requiredReads?.includes("brand-image-system/runtime/adapters/hermes/media-job-template.json")) {
+  failures.push(`${hermesAdapterPath}: requiredReads must include the schema-valid media-job template`);
+}
+
+const hermesMediaTemplatePath = "brand-image-system/runtime/adapters/hermes/media-job-template.json";
+const hermesMediaTemplate = json(hermesMediaTemplatePath);
+if (!validateMediaJob(hermesMediaTemplate)) formatErrors(hermesMediaTemplatePath, validateMediaJob.errors);
+if (hermesMediaTemplate.decision !== "draft") {
+  failures.push(`${hermesMediaTemplatePath}: template must remain a non-promotable draft`);
 }
 
 const canonicalDocs = [

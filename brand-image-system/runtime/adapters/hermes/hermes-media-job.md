@@ -1,7 +1,7 @@
 # Hermes Media Job Workflow
 
 Hermes should:
-1. Create the `media-job.json` using the template
+1. Read `hermes-adapter.json`, then copy the schema-valid `media-job-template.json` to the job folder and replace its draft values.
 2. Delegate rendering to the appropriate profile or tool (Satori/Playwright)
 3. Monitor the job folder for evidence.json
 4. Run visual QA, record the selected workflow's 30-point score, and keep the

@@ -1,0 +1,35 @@
+{
+  "adapterId": "hermes-brand-image-runtime",
+  "targetAgent": "hermes",
+  "generatedFrom": [
+    "brand-image-system/runtime/schemas/agent-adapter.schema.json",
+    "brand-image-system/runtime/schemas/media-job.schema.json",
+    "brand-image-system/runtime/adapters/hermes/AGENTS.fragment.md"
+  ],
+  "requiredReads": [
+    "brand-image-system/runtime/brands/<brandId>/brand-pack.json",
+    "brand-image-system/runtime/workflows/<workflowId>/workflow.json",
+    "brand-image-system/runtime/adapters/hermes/media-job-template.json"
+  ],
+  "allowedActions": [
+    "create schema-valid draft media jobs",
+    "route deterministic rendering",
+    "record QA and evidence",
+    "request named human approval"
+  ],
+  "blockedActions": [
+    "approve or publish without named human approval",
+    "use raw generated public text or claims",
+    "write asset outputs outside STARLIGHT_ASSET_ROOT"
+  ],
+  "handoffFields": [
+    "jobId",
+    "brandId",
+    "workflowId",
+    "paths",
+    "qa",
+    "decision",
+    "approval"
+  ],
+  "updatedAt": "2026-08-11"
+}

@@ -5,12 +5,12 @@
 ## When Working on Visual Assets
 1. Load the brand pack from `runtime/brands/<brand>/`
 2. Load the workflow pack from `runtime/workflows/<workflow>/`
-3. Create and validate a `media-job.json` with `npm run validate:media`; schema-only
-   validation cannot approve an asset
-4. Use only allowed production routes (HTML/Satori renderer preferred)
-5. Never use raw `image_gen` tool for final public text or claims
-6. Write outputs under the explicit absolute `STARLIGHT_ASSET_ROOT`; stop if unset.
-7. Record QA score, inspected output paths, evidence, and named human approval.
+3. Copy `media-job-template.json`, replace its identity, brief, and route fields, then validate the resulting `media-job.json` with `npm run validate:media -- path/to/media-job.json`; schema-only validation cannot approve an asset
+4. Read `hermes-adapter.json` before orchestration; it is the schema-valid Hermes policy manifest.
+5. Use only allowed production routes (HTML/Satori renderer preferred)
+6. Never use raw `image_gen` tool for final public text or claims
+7. Write outputs under the explicit absolute `STARLIGHT_ASSET_ROOT`; stop if unset.
+8. Record QA score, inspected output paths, evidence, and named human approval.
    The selected workflow's numerical ship bar is binding.
 
 ## Profile Recommendations
