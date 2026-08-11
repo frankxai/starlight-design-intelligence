@@ -435,6 +435,14 @@ function approvedMediaJob(assetRoot, score = 28) {
       score30: score,
       notes: "Inspected at full size and contact-sheet scale."
     },
+    review: {
+      maker: "Design maker",
+      verifier: "Independent verifier",
+      reviewedAt: "2026-07-24T11:45:00Z",
+      iteration: 2,
+      verdict: "pass",
+      notes: "Independent check passed at full size and contact-sheet scale."
+    },
     approval: {
       approver: "Frank",
       reviewedAt: "2026-07-24T12:00:00Z",
@@ -469,6 +477,42 @@ test("media-job validator enforces the selected workflow threshold", () => {
   const assetRoot = mkdtempSync(join(tmpdir(), "starlight-media-"));
   const failures = validateMediaJob(approvedMediaJob(assetRoot, 27), { assetRoot });
   assert.match(failures.join("\n"), /must be at least 28 for social-static/);
+});
+
+test("media-job validator separates maker, verifier, and approver", () => {
+  const assetRoot = mkdtempSync(join(tmpdir(), "starlight-media-"));
+  const job = approvedMediaJob(assetRoot);
+  job.review.verifier = job.review.maker;
+  const failures = validateMediaJob(job, { assetRoot });
+  assert.match(failures.join("\n"), /maker, verifier, and approval approver must be distinct/);
+});
+
+test("media-job validator requires a structured reflection record for iteration", () => {
+  const job = {
+    jobId: "2026-07-24-frankx-social-static-iterate",
+    brandId: "frankx",
+    workflowId: "social-static",
+    surface: "social proof card",
+    audience: "founders",
+    brief: "Retry the evidence hierarchy with a clearer claim.",
+    assetTier: "A",
+    sourceMethod: "deterministic renderer",
+    paths: { jobRoot: "/tmp/starlight-media/iterate" },
+    qa: { inspected: true, score30: 24, notes: "Readable but not at the workflow ship bar." },
+    decision: "iterate",
+    updatedAt: "2026-07-24"
+  };
+  const failures = validateMediaJob(job);
+  assert.match(failures.join("\n"), /must have required property 'review'/);
+  job.review = {
+    maker: "Design maker",
+    verifier: "Independent verifier",
+    reviewedAt: "2026-07-24T12:00:00Z",
+    iteration: 1,
+    verdict: "iterate",
+    notes: "Clarify proof hierarchy and re-render the social card."
+  };
+  assert.deepEqual(validateMediaJob(job), []);
 });
 
 test("release validator accepts content-addressed greenfield production evidence", () => {

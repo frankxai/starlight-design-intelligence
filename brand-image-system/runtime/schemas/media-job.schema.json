@@ -126,6 +126,36 @@
         }
       }
     },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maker", "verifier", "reviewedAt", "iteration", "verdict", "notes"],
+      "properties": {
+        "maker": {
+          "type": "string",
+          "minLength": 2
+        },
+        "verifier": {
+          "type": "string",
+          "minLength": 2
+        },
+        "reviewedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "iteration": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "verdict": {
+          "enum": ["pass", "iterate", "restart", "blocked"]
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 3
+        }
+      }
+    },
     "decision": {
       "type": "string",
       "enum": ["draft", "approved", "iterate", "restart", "blocked", "published"]
@@ -146,7 +176,7 @@
         "required": ["decision"]
       },
       "then": {
-        "required": ["approval"],
+        "required": ["approval", "review"],
         "properties": {
           "assetTier": {
             "enum": ["A", "B", "C"]
@@ -161,6 +191,57 @@
               },
               "score30": {
                 "minimum": 26
+              }
+            }
+          },
+          "review": {
+            "properties": {
+              "verdict": {
+                "const": "pass"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "const": "iterate"
+          }
+        },
+        "required": ["decision"]
+      },
+      "then": {
+        "required": ["review"],
+        "properties": {
+          "review": {
+            "properties": {
+              "verdict": {
+                "const": "iterate"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "const": "restart"
+          }
+        },
+        "required": ["decision"]
+      },
+      "then": {
+        "required": ["review"],
+        "properties": {
+          "review": {
+            "properties": {
+              "verdict": {
+                "const": "restart"
               }
             }
           }

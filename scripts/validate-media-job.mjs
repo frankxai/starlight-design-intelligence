@@ -58,6 +58,10 @@ export function validateMediaJob(
   }
 
   if (["approved", "published"].includes(job.decision)) {
+    const reviewers = [job.review?.maker, job.review?.verifier, job.approval?.approver];
+    if (reviewers.every(Boolean) && new Set(reviewers).size !== 3) {
+      failures.push("/review maker, verifier, and approval approver must be distinct");
+    }
     if (job.qa?.score30 < workflow?.scoreThreshold) {
       failures.push(
         `/qa/score30 must be at least ${workflow.scoreThreshold} for ${job.workflowId}`

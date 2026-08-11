@@ -20,8 +20,8 @@
   - id, brand, workflow, jobId, filePath (local + blob url), formats/crops, score, approvedAt
   - usedIn: array of { site: "frankx.ai", profile: "linkedin/frankx", postId or slug, date, context }
 - Process:
-  1. Media job completes + evidence + 30-pt score → human review.
-  2. Approve → register in DAM + registry with initial usedIn=[].
+  1. Media job completes + evidence + 30-pt score → independent maker/verifier review with a recorded iteration and verdict.
+  2. Pass review → named human approval → register in DAM + registry with initial usedIn=[].
   3. When scheduling/posting (social or site update): Update registry usedIn entry (script or manual with PR).
   4. Sync: Cron or manual script copies approved assets to target Vercel sites / GitHub folders + updates manifest.
   5. Validation: Before publish, check registry for freshness and usage.

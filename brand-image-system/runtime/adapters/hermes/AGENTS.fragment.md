@@ -10,7 +10,7 @@
 5. Use only allowed production routes (HTML/Satori renderer preferred)
 6. Never use raw `image_gen` tool for final public text or claims
 7. Write outputs under the explicit absolute `STARLIGHT_ASSET_ROOT`; stop if unset.
-8. Record QA score, inspected output paths, evidence, and named human approval.
+8. Record QA score, a structured maker/verifier review with iteration and verdict, inspected output paths, evidence, and named human approval.
    The selected workflow's numerical ship bar is binding.
 
 ## Profile Recommendations

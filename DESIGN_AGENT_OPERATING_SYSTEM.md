@@ -51,4 +51,6 @@ include:
 - Source links or local standards used.
 - Asset list.
 - QA score.
+- A structured review record with maker, independent verifier, iteration number, verdict, and next action.
+- A distinct named human approver before any approved or published asset state.
 - Known limitations or next iteration.
