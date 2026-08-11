@@ -53,6 +53,7 @@ const required = [
   "schemas/web-release-evidence.schema.json",
   "scripts/validate-media-job.mjs",
   "scripts/validate-copy-style.mjs",
+  "scripts/validate-skills.mjs",
   "skills/world-class-web-release/SKILL.md",
   "skills/editorial-articulation/SKILL.md",
   "skills/typography-art-direction/SKILL.md",

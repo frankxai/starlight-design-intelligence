@@ -411,6 +411,13 @@ test("canonical kernel validates all skills, brand packs, workflows, and schemas
   assert.match(output, /7 brand packs, 4 workflows/);
 });
 
+test("skills gate validates portable frontmatter and content hygiene", () => {
+  const output = execFileSync(process.execPath, ["scripts/validate-skills.mjs"], {
+    encoding: "utf8"
+  });
+  assert.match(output, /Skills valid: portable frontmatter and content hygiene passed/);
+});
+
 function approvedMediaJob(assetRoot, score = 28) {
   const jobRoot = join(assetRoot, "jobs/approved");
   mkdirSync(jobRoot, { recursive: true });
