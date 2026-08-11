@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readFileSync, realpathSync, statSync } from "node:fs";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import Ajv2020 from "ajv/dist/2020.js";
@@ -18,6 +18,18 @@ function formatAjvError(error) {
 function isInside(parent, child) {
   const path = relative(parent, child);
   return Boolean(path) && !path.startsWith("..") && !isAbsolute(path);
+}
+
+function canonicalPath(path) {
+  return realpathSync.native?.(path) ?? realpathSync(path);
+}
+
+function isCanonicallyInside(parent, child) {
+  try {
+    return isInside(canonicalPath(parent), canonicalPath(child));
+  } catch {
+    return false;
+  }
 }
 
 function resolveJobPath(jobRoot, path) {
@@ -52,7 +64,12 @@ function validateVisReceipt(job, jobRoot, validateBinding, failures) {
       continue;
     }
     const output = resolveJobPath(jobRoot, outputPath);
-    if (existsSync(output) && statSync(output).isFile() && sha256(output) !== asset.sha256) {
+    if (
+      existsSync(output) &&
+      statSync(output).isFile() &&
+      isCanonicallyInside(jobRoot, output) &&
+      sha256(output) !== asset.sha256
+    ) {
       failures.push(`/visBinding/assets SHA-256 mismatch for output: ${outputPath}`);
     }
   }
@@ -67,7 +84,12 @@ function validateVisReceipt(job, jobRoot, validateBinding, failures) {
     failures.push("/visBinding/releaseEvidence/evidencePath must equal paths.evidence");
   }
   const evidence = resolveJobPath(jobRoot, release?.evidencePath ?? "");
-  if (existsSync(evidence) && statSync(evidence).isFile() && sha256(evidence) !== release?.evidenceSha256) {
+  if (
+    existsSync(evidence) &&
+    statSync(evidence).isFile() &&
+    isCanonicallyInside(jobRoot, evidence) &&
+    sha256(evidence) !== release?.evidenceSha256
+  ) {
     failures.push("/visBinding/releaseEvidence/evidenceSha256 must match paths.evidence bytes");
   }
 }
@@ -126,7 +148,9 @@ export function validateMediaJob(
     } else {
       const resolvedAssetRoot = resolve(assetRoot);
       const jobRoot = resolve(job.paths?.jobRoot ?? "");
-      if (!isInside(resolvedAssetRoot, jobRoot)) {
+      if (!existsSync(resolvedAssetRoot) || !existsSync(jobRoot)) {
+        failures.push("/paths/jobRoot and STARLIGHT_ASSET_ROOT must exist for approval");
+      } else if (!isCanonicallyInside(resolvedAssetRoot, jobRoot)) {
         failures.push("/paths/jobRoot must be inside the declared asset root");
       } else {
         const evidencePaths = [
@@ -139,6 +163,8 @@ export function validateMediaJob(
             failures.push(`/paths artifact escapes jobRoot: ${path}`);
           } else if (!existsSync(absolute) || !statSync(absolute).isFile()) {
             failures.push(`/paths artifact does not exist: ${path}`);
+          } else if (!isCanonicallyInside(jobRoot, absolute)) {
+            failures.push(`/paths artifact resolves outside jobRoot: ${path}`);
           } else if (statSync(absolute).size === 0) {
             failures.push(`/paths artifact is empty: ${path}`);
           }

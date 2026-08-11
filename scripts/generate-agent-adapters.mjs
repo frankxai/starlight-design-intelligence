@@ -1,12 +1,30 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
+import { dirname, isAbsolute, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import Ajv2020 from "ajv/dist/2020.js";
+import addFormats from "ajv-formats";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const contractPath = "brand-image-system/runtime/adapters/agent-adapter-contract.json";
+const contractSchemaPath = "brand-image-system/runtime/schemas/agent-adapter-contract.schema.json";
 
 function loadJson(path) {
   return JSON.parse(readFileSync(resolve(root, path), "utf8"));
+}
+
+function isInside(parent, child) {
+  const path = relative(parent, child);
+  return Boolean(path) && !path.startsWith("..") && !isAbsolute(path);
+}
+
+function validateContract(contract) {
+  const ajv = new Ajv2020({ allErrors: true, strict: false });
+  addFormats(ajv);
+  const validate = ajv.compile(loadJson(contractSchemaPath));
+  if (!validate(contract)) {
+    const errors = validate.errors.map((error) => `${error.instancePath || "/"} ${error.message}`);
+    throw new Error(`invalid adapter contract: ${errors.join("; ")}`);
+  }
 }
 
 function renderAdapter(contract, target) {
@@ -23,10 +41,17 @@ function renderAdapter(contract, target) {
 }
 
 export function generatedAdapters(contract = loadJson(contractPath)) {
-  return contract.targets.map((target) => ({
-    path: target.outputPath,
-    content: `${JSON.stringify(renderAdapter(contract, target), null, 2)}\n`
-  }));
+  validateContract(contract);
+  return contract.targets.map((target) => {
+    const destination = resolve(root, target.outputPath);
+    if (!isInside(root, destination)) {
+      throw new Error(`adapter output escapes repository root: ${target.outputPath}`);
+    }
+    return {
+      path: target.outputPath,
+      content: `${JSON.stringify(renderAdapter(contract, target), null, 2)}\n`
+    };
+  });
 }
 
 function main() {

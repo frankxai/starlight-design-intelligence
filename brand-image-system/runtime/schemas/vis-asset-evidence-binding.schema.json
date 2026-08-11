@@ -26,7 +26,7 @@
   },
   "$defs": {
     "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
-    "relativePath": { "type": "string", "minLength": 1, "pattern": "^(?!/|.*\\.\\.)[^\\\\]+$" },
+    "relativePath": { "type": "string", "minLength": 1, "pattern": "^(?![A-Za-z]:)(?!/)(?!.*\\.\\.)(?!.*\\\\)[A-Za-z0-9][A-Za-z0-9._/-]*$" },
     "assetBinding": {
       "type": "object",
       "additionalProperties": false,
@@ -39,7 +39,7 @@
         "rightsStatus": { "enum": ["owned", "generated-owned", "licensed"] },
         "approvalStatus": { "const": "approved" },
         "provenanceEventId": { "type": "string", "minLength": 3 },
-        "provenanceEventType": { "enum": ["indexed", "prompt-linked", "generated", "edited", "evaluated", "approved", "uploaded", "derivative-created"] },
+        "provenanceEventType": { "enum": ["indexed", "prompt-linked", "generated", "edited", "evaluated", "approved", "rejected", "publication-recorded", "uploaded", "derivative-created"] },
         "lineage": {
           "oneOf": [
             { "type": "object", "additionalProperties": false, "required": ["kind"], "properties": { "kind": { "const": "source" } } },

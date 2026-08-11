@@ -36,7 +36,7 @@
       "properties": {
         "targetAgent": { "enum": ["codex", "claude-code", "grok-cli", "antigravity", "hermes", "mcp"] },
         "adapterId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-        "outputPath": { "type": "string", "pattern": "^(?!/|.*\\.\\.)[^\\\\]+$" }
+        "outputPath": { "type": "string", "pattern": "^brand-image-system/runtime/adapters/[a-z0-9-]+/[a-z0-9-]+\\.json$" }
       }
     }
   }
