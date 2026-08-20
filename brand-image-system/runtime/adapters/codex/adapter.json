@@ -1,6 +1,6 @@
 {
-  "adapterId": "hermes-brand-image-runtime",
-  "targetAgent": "hermes",
+  "adapterId": "codex-brand-image-runtime",
+  "targetAgent": "codex",
   "generatedFrom": [
     "brand-image-system/runtime/adapters/agent-adapter-contract.json",
     "brand-image-system/runtime/schemas/agent-adapter-contract.schema.json",

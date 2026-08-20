@@ -1,6 +1,6 @@
 {
-  "adapterId": "hermes-brand-image-runtime",
-  "targetAgent": "hermes",
+  "adapterId": "mcp-brand-image-runtime",
+  "targetAgent": "mcp",
   "generatedFrom": [
     "brand-image-system/runtime/adapters/agent-adapter-contract.json",
     "brand-image-system/runtime/schemas/agent-adapter-contract.schema.json",

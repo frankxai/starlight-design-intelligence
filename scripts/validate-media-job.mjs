@@ -1,4 +1,5 @@
-import { existsSync, readFileSync, statSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { existsSync, readFileSync, realpathSync, statSync } from "node:fs";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import Ajv2020 from "ajv/dist/2020.js";
@@ -19,8 +20,78 @@ function isInside(parent, child) {
   return Boolean(path) && !path.startsWith("..") && !isAbsolute(path);
 }
 
+function canonicalPath(path) {
+  return realpathSync.native?.(path) ?? realpathSync(path);
+}
+
+function isCanonicallyInside(parent, child) {
+  try {
+    return isInside(canonicalPath(parent), canonicalPath(child));
+  } catch {
+    return false;
+  }
+}
+
 function resolveJobPath(jobRoot, path) {
   return resolve(jobRoot, path);
+}
+
+function sha256(path) {
+  return createHash("sha256").update(readFileSync(path)).digest("hex");
+}
+
+function validateVisReceipt(job, jobRoot, validateBinding, failures) {
+  const binding = job.visBinding;
+  if (!validateBinding(binding)) {
+    failures.push(
+      ...validateBinding.errors.map((error) => `/visBinding${formatAjvError(error)}`)
+    );
+    return;
+  }
+
+  const outputPaths = new Set(job.paths?.outputs ?? []);
+  const bindingsByPath = new Map();
+  for (const asset of binding.assets) {
+    if (bindingsByPath.has(asset.outputPath)) {
+      failures.push(`/visBinding/assets duplicates outputPath: ${asset.outputPath}`);
+    }
+    bindingsByPath.set(asset.outputPath, asset);
+  }
+  for (const outputPath of outputPaths) {
+    const asset = bindingsByPath.get(outputPath);
+    if (!asset) {
+      failures.push(`/visBinding/assets missing output binding: ${outputPath}`);
+      continue;
+    }
+    const output = resolveJobPath(jobRoot, outputPath);
+    if (
+      existsSync(output) &&
+      statSync(output).isFile() &&
+      isCanonicallyInside(jobRoot, output) &&
+      sha256(output) !== asset.sha256
+    ) {
+      failures.push(`/visBinding/assets SHA-256 mismatch for output: ${outputPath}`);
+    }
+  }
+  for (const outputPath of bindingsByPath.keys()) {
+    if (!outputPaths.has(outputPath)) {
+      failures.push(`/visBinding/assets references undeclared output: ${outputPath}`);
+    }
+  }
+
+  const release = binding.releaseEvidence;
+  if (release?.evidencePath !== job.paths?.evidence) {
+    failures.push("/visBinding/releaseEvidence/evidencePath must equal paths.evidence");
+  }
+  const evidence = resolveJobPath(jobRoot, release?.evidencePath ?? "");
+  if (
+    existsSync(evidence) &&
+    statSync(evidence).isFile() &&
+    isCanonicallyInside(jobRoot, evidence) &&
+    sha256(evidence) !== release?.evidenceSha256
+  ) {
+    failures.push("/visBinding/releaseEvidence/evidenceSha256 must match paths.evidence bytes");
+  }
 }
 
 export function validateMediaJob(
@@ -33,7 +104,12 @@ export function validateMediaJob(
   const schema = loadJson(
     resolve(root, "brand-image-system/runtime/schemas/media-job.schema.json")
   );
+  const visBindingSchema = loadJson(
+    resolve(root, "brand-image-system/runtime/schemas/vis-asset-evidence-binding.schema.json")
+  );
+  ajv.addSchema(visBindingSchema);
   const validate = ajv.compile(schema);
+  const validateBinding = ajv.getSchema(visBindingSchema.$id);
   if (!validate(job)) failures.push(...validate.errors.map(formatAjvError));
 
   const brandPath = resolve(
@@ -72,7 +148,9 @@ export function validateMediaJob(
     } else {
       const resolvedAssetRoot = resolve(assetRoot);
       const jobRoot = resolve(job.paths?.jobRoot ?? "");
-      if (!isInside(resolvedAssetRoot, jobRoot)) {
+      if (!existsSync(resolvedAssetRoot) || !existsSync(jobRoot)) {
+        failures.push("/paths/jobRoot and STARLIGHT_ASSET_ROOT must exist for approval");
+      } else if (!isCanonicallyInside(resolvedAssetRoot, jobRoot)) {
         failures.push("/paths/jobRoot must be inside the declared asset root");
       } else {
         const evidencePaths = [
@@ -85,10 +163,13 @@ export function validateMediaJob(
             failures.push(`/paths artifact escapes jobRoot: ${path}`);
           } else if (!existsSync(absolute) || !statSync(absolute).isFile()) {
             failures.push(`/paths artifact does not exist: ${path}`);
+          } else if (!isCanonicallyInside(jobRoot, absolute)) {
+            failures.push(`/paths artifact resolves outside jobRoot: ${path}`);
           } else if (statSync(absolute).size === 0) {
             failures.push(`/paths artifact is empty: ${path}`);
           }
         }
+        validateVisReceipt(job, jobRoot, validateBinding, failures);
       }
     }
   }

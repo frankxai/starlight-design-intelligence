@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/agent-adapter-contract.schema.json",
+  "title": "Brand Image System Generated Adapter Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "common", "targets", "updatedAt"],
+  "properties": {
+    "schemaVersion": { "const": "starlight.agentAdapterContract.v1" },
+    "common": { "$ref": "#/$defs/common" },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/target" }
+    },
+    "updatedAt": { "type": "string", "format": "date" }
+  },
+  "$defs": {
+    "stringList": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "common": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generatedFrom", "requiredReads", "allowedActions", "blockedActions", "handoffFields"],
+      "properties": {
+        "generatedFrom": { "$ref": "#/$defs/stringList" },
+        "requiredReads": { "$ref": "#/$defs/stringList" },
+        "allowedActions": { "$ref": "#/$defs/stringList" },
+        "blockedActions": { "$ref": "#/$defs/stringList" },
+        "handoffFields": { "$ref": "#/$defs/stringList" }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["targetAgent", "adapterId", "outputPath"],
+      "properties": {
+        "targetAgent": { "enum": ["codex", "claude-code", "grok-cli", "antigravity", "hermes", "mcp"] },
+        "adapterId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "outputPath": { "type": "string", "pattern": "^brand-image-system/runtime/adapters/[a-z0-9-]+/[a-z0-9-]+\\.json$" }
+      }
+    }
+  }
+}
