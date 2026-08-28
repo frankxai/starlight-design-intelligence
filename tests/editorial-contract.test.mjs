@@ -8,6 +8,7 @@ import test from "node:test";
 test("installer preserves host instructions and updates one managed block", () => {
   const repo = mkdtempSync(join(tmpdir(), "editorial-contract-"));
   writeFileSync(join(repo, "AGENTS.md"), "# Host rules\n\nKeep this line.\n");
+  writeFileSync(join(repo, ".prettierignore"), "dist\n");
   const sha = execFileSync("git", ["rev-parse", "HEAD"], { cwd: process.cwd(), encoding: "utf8" }).trim();
   const args = [
     "scripts/install-editorial-contract.mjs",
@@ -31,4 +32,8 @@ test("installer preserves host instructions and updates one managed block", () =
     "utf8"
   );
   assert.match(workflow, new RegExp(`editorial-contract\\.yml@${sha}`, "u"));
+  const prettierIgnore = readFileSync(join(repo, ".prettierignore"), "utf8");
+  assert.match(prettierIgnore, /^dist$/mu);
+  assert.match(prettierIgnore, /^\.starlight\/editorial-contract\.json$/mu);
+  assert.equal((prettierIgnore.match(/# STARLIGHT-EDITORIAL:START/gu) ?? []).length, 1);
 });

@@ -27,19 +27,23 @@ function sha256(text) {
   return createHash("sha256").update(text).digest("hex");
 }
 
-function inject(path, body, prefix = "") {
+function injectWithMarkers(path, body, prefix = "", startMarker = START, endMarker = END) {
   const current = existsSync(path) ? readFileSync(path, "utf8") : prefix;
-  const block = `${START}\n${body.trim()}\n${END}`;
-  const start = current.indexOf(START);
-  const end = current.indexOf(END);
+  const block = `${startMarker}\n${body.trim()}\n${endMarker}`;
+  const start = current.indexOf(startMarker);
+  const end = current.indexOf(endMarker);
   let next;
   if (start >= 0 && end > start) {
-    next = `${current.slice(0, start)}${block}${current.slice(end + END.length)}`;
+    next = `${current.slice(0, start)}${block}${current.slice(end + endMarker.length)}`;
   } else {
     next = `${current.trimEnd()}${current.trim() ? "\n\n" : ""}${block}\n`;
   }
   mkdirSync(dirname(path), { recursive: true });
   writeFileSync(path, next.endsWith("\n") ? next : `${next}\n`);
+}
+
+function inject(path, body, prefix = "") {
+  injectWithMarkers(path, body, prefix);
 }
 
 function write(path, content) {
@@ -91,12 +95,20 @@ jobs:
     uses: frankxai/starlight-design-intelligence/.github/workflows/editorial-contract.yml@${sourceRef}
 `;
 write(join(repoRoot, ".github/workflows/starlight-editorial-contract.yml"), callerWorkflow);
+injectWithMarkers(
+  join(repoRoot, ".prettierignore"),
+  ".starlight/editorial-contract.json",
+  "",
+  "# STARLIGHT-EDITORIAL:START",
+  "# STARLIGHT-EDITORIAL:END"
+);
 
 const generatedFiles = [
   ...managedFiles,
   ".cursor/rules/editorial.mdc",
   ".agents/skills/frank-brand-editor/SKILL.md",
   ".github/workflows/starlight-editorial-contract.yml",
+  ".prettierignore",
   ".starlight/editorial-contract.json"
 ];
 const contract = {
