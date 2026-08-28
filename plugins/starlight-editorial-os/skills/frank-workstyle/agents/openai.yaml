@@ -1,0 +1,6 @@
+interface:
+  display_name: "Frank Workstyle"
+  short_description: "Concise, answer-first collaboration with Frank"
+  default_prompt: "Use $frank-workstyle to answer directly and keep the handoff compact."
+policy:
+  allow_implicit_invocation: true

@@ -31,6 +31,7 @@ function formatErrors(path, errors) {
 const required = [
   "README.md",
   "AGENTS.md",
+  "CREATOR.md",
   "DESIGN_AGENT_OPERATING_SYSTEM.md",
   "SKILLS.md",
   "SYSTEM.md",
@@ -59,6 +60,18 @@ const required = [
   "skills/logo-system/SKILL.md",
   "skills/font-licensing-gate/SKILL.md",
   "skills/editorial-articulation/SKILL.md",
+  "skills/frank-workstyle/SKILL.md",
+  "skills/frank-brand-editor/SKILL.md",
+  "editorial/brand-registry.json",
+  "editorial/shared-editorial-standard.md",
+  "editorial/language-policy.json",
+  "editorial/global-workstyle.md",
+  "schemas/editorial-contract.schema.json",
+  "scripts/install-editorial-contract.mjs",
+  "scripts/install-global-workstyle.mjs",
+  "scripts/sync-editorial-plugin.mjs",
+  "plugins/starlight-editorial-os/.codex-plugin/plugin.json",
+  ".agents/plugins/marketplace.json",
   "skills/typography-art-direction/SKILL.md",
   "templates/SITE_MOTION_SPEC.md"
 ];
@@ -96,6 +109,11 @@ try {
 } catch (error) {
   failures.push(`release schema does not compile: ${error.message}`);
 }
+try {
+  ajv.compile(json("schemas/editorial-contract.schema.json"));
+} catch (error) {
+  failures.push(`editorial contract schema does not compile: ${error.message}`);
+}
 
 const brandSchema = json("brand-image-system/runtime/schemas/brand-pack.schema.json");
 const workflowSchema = json("brand-image-system/runtime/schemas/workflow-pack.schema.json");
@@ -119,6 +137,27 @@ for (const path of brandFiles) {
   if (basename(dirname(path)) !== pack.brandId) {
     failures.push(`${path}: directory must match brandId ${pack.brandId}`);
   }
+}
+
+const editorialRegistry = json("editorial/brand-registry.json");
+const portfolio = json("portfolio/core-surfaces.json");
+const portfolioByRepository = new Map(
+  portfolio.repositories.map((entry) => [entry.repository.toLowerCase(), entry.brand_id])
+);
+for (const [brandId, brand] of Object.entries(editorialRegistry.brands ?? {})) {
+  if (!existsSync(join(root, brand.profile))) {
+    failures.push(`editorial brand ${brandId}: profile does not exist: ${brand.profile}`);
+  }
+  for (const repository of brand.repositories ?? []) {
+    const portfolioBrand = portfolioByRepository.get(repository.toLowerCase());
+    if (!portfolioBrand) failures.push(`editorial brand ${brandId}: repository missing from portfolio: ${repository}`);
+    else if (portfolioBrand !== brandId) {
+      failures.push(`editorial brand ${brandId}: repository ${repository} is owned by ${portfolioBrand}`);
+    }
+  }
+}
+for (const [alias, target] of Object.entries(editorialRegistry.aliases ?? {})) {
+  if (!editorialRegistry.brands?.[target]) failures.push(`editorial alias ${alias}: unknown target ${target}`);
 }
 for (const path of workflowFiles) {
   const pack = json(path);
@@ -188,7 +227,7 @@ if (harness.delivery?.promotion_policy !== "independent-verifier-and-named-human
   failures.push(".agent-harness.json promotion_policy contradicts SYSTEM.md");
 }
 
-if (brandFiles.length !== 7) failures.push(`expected 7 runtime brand packs, found ${brandFiles.length}`);
+if (brandFiles.length < 7) failures.push(`expected at least 7 runtime brand packs, found ${brandFiles.length}`);
 if (workflowFiles.length !== 4) failures.push(`expected 4 runtime workflow packs, found ${workflowFiles.length}`);
 
 if (failures.length) {

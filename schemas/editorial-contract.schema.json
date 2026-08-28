@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/starlight-editorial-contract.json",
+  "title": "Starlight editorial contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "brand_id", "source", "content_roots", "generated_files"],
+  "properties": {
+    "schema_version": { "const": "starlight.editorial_contract.v1" },
+    "brand_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "ref", "profile", "profile_sha256"],
+      "properties": {
+        "repository": { "const": "frankxai/starlight-design-intelligence" },
+        "ref": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "profile": { "type": "string", "minLength": 1 },
+        "profile_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "content_roots": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+$" }
+    },
+    "generated_files": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+$" }
+    }
+  }
+}

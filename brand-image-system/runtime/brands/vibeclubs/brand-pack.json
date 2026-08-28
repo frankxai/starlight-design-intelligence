@@ -3,8 +3,9 @@
   "brandId": "vibeclubs",
   "displayName": "Vibeclubs",
   "operatingUnit": "vibeclubs",
-  "sourceDocs": ["brand-packs/vibeclubs/DESIGN.md"],
-  "canonicalRepos": [],
+  "sourceDocs": ["brand-packs/vibeclubs/BRAND.md", "brand-packs/vibeclubs/COPY.md", "brand-packs/vibeclubs/DESIGN.md"],
+  "canonicalRepos": ["frankxai/vibeclubs"],
+  "surfaceModes": ["community-editorial", "event-product"],
   "audiences": ["community hosts", "members", "participating creators"],
   "positioning": {
     "oneLine": "Community experiences designed around participation, shared energy, and visible belonging.",

@@ -1,0 +1,79 @@
+{
+  "schema_version": "starlight.editorial_language_policy.v1",
+  "hard_fail": [
+    {
+      "id": "negative-parallelism-slogan",
+      "pattern": "\\b(?:a|an|the)\\s+[A-Za-z][A-Za-z -]{1,70},\\s*not\\s+(?:a|an|the)\\b",
+      "reason": "Rhetorical noun-equation slogan"
+    },
+    {
+      "id": "negative-parallelism-clause",
+      "pattern": "\\b(?:this|that|it|we|you|they)\\s+(?:is|are|was|were|isn't|aren't|wasn't|weren't)\\s+not\\b.{1,120}\\b(?:but|rather)\\b",
+      "reason": "Rhetorical negative parallelism"
+    },
+    {
+      "id": "isnt-its",
+      "pattern": "\\b(?:this|that|it)\\s+(?:isn't|is not)\\b.{1,120}\\b(?:it is|it's|this is|that is)\\b",
+      "reason": "Formulaic correction construction"
+    },
+    {
+      "id": "not-just",
+      "pattern": "\\bnot\\s+just\\b",
+      "reason": "Formulaic not-just construction"
+    },
+    {
+      "id": "more-than-just",
+      "pattern": "\\bmore\\s+than\\s+just\\b",
+      "reason": "Formulaic more-than-just construction"
+    },
+    {
+      "id": "generic-marketing-frame",
+      "pattern": "\\b(?:in today's fast-paced world|unlock the power of|take (?:it|your .{1,30}) to the next level|the possibilities are endless|imagine a world where|where .{1,40} meets .{1,40})\\b",
+      "reason": "Generic marketing frame"
+    },
+    {
+      "id": "pseudo-taxonomy",
+      "pattern": "\\b(?:tool intelligence|operating-role routes|official-source records|evidence engine|decision atlas)\\b",
+      "reason": "Abstract label conceals an ordinary fact or action"
+    },
+    {
+      "id": "stacked-caps",
+      "pattern": "\\b[A-Z][A-Z0-9&-]{1,}(?:\\s+[A-Z][A-Z0-9&-]{1,}){3,}\\b",
+      "reason": "All-caps public phrase",
+      "case_sensitive": true
+    }
+  ],
+  "review": [
+    {
+      "id": "comma-contrast",
+      "pattern": ",\\s*not\\s+(?:a|an|the|just|only|merely|another|[A-Z][A-Za-z0-9_-]*)\\b",
+      "reason": "Comma contrast may be formulaic or generated"
+    },
+    {
+      "id": "slash-label",
+      "pattern": "[A-Za-z][A-Za-z -]{2,30}\\s+/\\s+[A-Za-z][A-Za-z -]{2,30}",
+      "reason": "Slash-separated label may be compressed prestige language"
+    },
+    {
+      "id": "canned-wording",
+      "pattern": "\\b(?:delve|tapestry|testament|pivotal|myriad|plethora|unleash|supercharge|best-in-class|low-hanging fruit|circle back)\\b",
+      "reason": "Common generated or corporate wording"
+    },
+    {
+      "id": "formal-transition",
+      "pattern": "^\\s*(?:furthermore|moreover|additionally|thus|hence)[,;:]",
+      "reason": "Stacked formal transition"
+    }
+  ],
+  "allow_marker": "editorial-allow",
+  "scan_directories": ["app", "components", "content", "data", "lib", "pages", "src"],
+  "scan_extensions": [".js", ".jsx", ".json", ".md", ".mdx", ".mjs", ".ts", ".tsx", ".yaml", ".yml"],
+  "exclude_path_patterns": [
+    "(^|/)node_modules/",
+    "(^|/)\\.next/",
+    "(^|/)\\.git/",
+    "(^|/)(?:test|tests|__tests__|fixtures)/",
+    "(^|/)(?:docs|skills|brand-packs|editorial)/",
+    "(^|/)(?:_archive|archive|legacy|v1-enterprise-backup)/"
+  ]
+}

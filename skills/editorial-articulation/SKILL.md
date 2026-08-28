@@ -5,8 +5,9 @@ description: "Use when writing or reviewing high-value web language, especially 
 
 # Editorial Articulation
 
-The reader should feel observed, not segmented; addressed, not processed; shown
-proof, not asked to admire architecture.
+The reader should feel accurately understood. The page should make its proof and proposition easy to inspect.
+
+Before drafting, load `../frank-brand-editor/SKILL.md`, resolve the publishing brand, and read its generated profile. This skill supplies the high-value page method; the brand editor supplies portfolio routing and language enforcement.
 
 ## Five Facts Before Drafting
 

@@ -3,8 +3,9 @@
   "brandId": "reality-architect",
   "displayName": "Reality Architect",
   "operatingUnit": "reality-architect",
-  "sourceDocs": ["brand-image-system/source-map.md"],
-  "canonicalRepos": [],
+  "sourceDocs": ["brand-packs/reality-architect/COPY.md"],
+  "canonicalRepos": ["frankxai/realityarchitect", "frankxai/realityarchitect-vault"],
+  "surfaceModes": ["reflective-editorial", "practice-product"],
   "audiences": ["reflective builders", "people designing intentional practices"],
   "positioning": {
     "oneLine": "Grounded life-design practices expressed through choices, maps, and repeatable rituals.",

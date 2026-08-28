@@ -1,0 +1,28 @@
+{
+  "name": "starlight-editorial-os",
+  "version": "0.1.0",
+  "description": "Frank's concise collaboration style and brand-routed editorial system.",
+  "author": {
+    "name": "FrankX AI",
+    "url": "https://frankx.ai"
+  },
+  "homepage": "https://github.com/frankxai/starlight-design-intelligence",
+  "repository": "https://github.com/frankxai/starlight-design-intelligence",
+  "keywords": ["editorial", "brand-voice", "writing", "frankx"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Starlight Editorial OS",
+    "shortDescription": "Frank's workstyle and portfolio brand editor",
+    "longDescription": "Keeps direct collaboration with Frank concise and routes public writing through the correct portfolio brand voice and editorial quality gate.",
+    "developerName": "FrankX AI",
+    "category": "Productivity",
+    "capabilities": ["Write", "Review"],
+    "websiteURL": "https://frankx.ai",
+    "defaultPrompt": [
+      "Rewrite this in the correct portfolio brand voice.",
+      "Audit this page for generated writing patterns.",
+      "Answer me directly and keep the handoff compact."
+    ],
+    "brandColor": "#10B981"
+  }
+}

@@ -3,8 +3,8 @@
   "brandId": "gencreator",
   "displayName": "GenCreator",
   "operatingUnit": "creator-systems",
-  "sourceDocs": ["brand-image-system/source-map.md"],
-  "canonicalRepos": ["frankxai/gencreator.ai", "frankxai/gencreator-community"],
+  "sourceDocs": ["brand-packs/gencreator/COPY.md"],
+  "canonicalRepos": ["frankxai/gencreator.ai", "frankxai/gencreator-community", "frankxai/GenCreator-Studio"],
   "surfaceModes": ["product-intelligence", "community-editorial"],
   "audiences": ["AI-native creators", "creator-operators", "cohort participants"],
   "positioning": {

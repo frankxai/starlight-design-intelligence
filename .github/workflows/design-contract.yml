@@ -16,6 +16,7 @@ jobs:
         with:
           path: downstream
           persist-credentials: false
+          fetch-depth: 0
       - name: Check out immutable design kernel
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
@@ -41,3 +42,10 @@ jobs:
           --workflow-repository "${{ job.workflow_repository }}"
           --workflow-path "${{ job.workflow_file_path }}"
           --workflow-sha "${{ job.workflow_sha }}"
+      - name: Audit changed public copy
+        run: >-
+          node kernel/skills/frank-brand-editor/scripts/editorial-audit.mjs
+          --root downstream
+          --policy kernel/editorial/language-policy.json
+          --changed-from "${{ github.event.pull_request.base.sha }}"
+          --strict

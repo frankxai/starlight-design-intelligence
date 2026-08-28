@@ -44,6 +44,20 @@ When motion, scroll, generated media, GIF/video, or premium polish matters, use
 `skills/motion-and-interaction/SKILL.md` and verify the exported result visually.
 Optional plugins may accelerate production but are not canonical dependencies.
 
+## Editorial operating system
+
+For direct communication with Frank, load `skills/frank-workstyle/SKILL.md`.
+
+For public or customer-facing copy:
+
+1. Resolve the publishing brand through `editorial/brand-registry.json`.
+2. Load `skills/frank-brand-editor/SKILL.md` and the selected `brand-packs/<brand>/COPY.md`.
+3. Apply `editorial/shared-editorial-standard.md`.
+4. Run the editorial audit on changed public copy.
+5. Require review by someone other than the drafting agent before release.
+
+Unknown brands require resolution. Public copy must not inherit FrankX by assumption.
+
 ## Generated Asset Gate
 
 Before accepting generated images, logos, posters, video stills, social crops, motion loops, or hero art, apply:

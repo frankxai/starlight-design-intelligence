@@ -18,6 +18,8 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
   - `design-audit`
   - `design-system-extractor`
   - `editorial-articulation`
+  - `frank-workstyle`
+  - `frank-brand-editor`
   - `typography-art-direction`
   - `motion-and-interaction`
   - `conversion-clarity`
