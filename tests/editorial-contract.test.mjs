@@ -26,4 +26,9 @@ test("installer preserves host instructions and updates one managed block", () =
   const contract = JSON.parse(readFileSync(join(repo, ".starlight/editorial-contract.json"), "utf8"));
   assert.equal(contract.brand_id, "frankx");
   assert.equal(contract.source.ref, sha);
+  const workflow = readFileSync(
+    join(repo, ".github/workflows/starlight-editorial-contract.yml"),
+    "utf8"
+  );
+  assert.match(workflow, new RegExp(`editorial-contract\\.yml@${sha}`, "u"));
 });

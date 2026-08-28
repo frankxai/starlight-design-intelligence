@@ -78,10 +78,25 @@ inject(
 const localSkill = `---\nname: frank-brand-editor\ndescription: Use for any public copy in this repository. Load CREATOR.md, preserve facts and search intent, and run the Starlight editorial gate.\n---\n\n# Repository brand editor\n\nRead \`CREATOR.md\` and the managed editorial block in \`AGENTS.md\`. Apply them to websites, UI labels, articles, social copy, email, sales material, and scripts. Preserve exact quotations, code, legal wording, and necessary technical terms. Run the repository's pinned editorial audit before release.\n`;
 write(join(repoRoot, ".agents/skills/frank-brand-editor/SKILL.md"), localSkill);
 
+const callerWorkflow = `name: Starlight editorial contract
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  editorial-contract:
+    uses: frankxai/starlight-design-intelligence/.github/workflows/editorial-contract.yml@${sourceRef}
+`;
+write(join(repoRoot, ".github/workflows/starlight-editorial-contract.yml"), callerWorkflow);
+
 const generatedFiles = [
   ...managedFiles,
   ".cursor/rules/editorial.mdc",
   ".agents/skills/frank-brand-editor/SKILL.md",
+  ".github/workflows/starlight-editorial-contract.yml",
   ".starlight/editorial-contract.json"
 ];
 const contract = {

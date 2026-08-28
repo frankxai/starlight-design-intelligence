@@ -52,6 +52,7 @@ const required = [
   "schemas/design-contract.schema.json",
   "portfolio/core-surfaces.json",
   ".github/workflows/design-contract.yml",
+  ".github/workflows/editorial-contract.yml",
   "scripts/validate-adoption.mjs",
   "scripts/validate-media-job.mjs",
   "skills/world-class-web-release/SKILL.md",
