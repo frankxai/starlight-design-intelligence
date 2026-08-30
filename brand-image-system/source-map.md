@@ -42,6 +42,15 @@ This map lists the current local sources agents must consult before producing cr
 | Research and Mind Intelligence | `agentic-ops-hub`, research/mind repos | Partial, needs central visual and voice pack |
 | Tooling / OSS Distribution | `agentic-ops-hub`, tooling repos | Partial, needs public OSS visual template pack |
 
+## Liked Reference Library
+
+| Source | Provides | Status |
+| --- | --- | --- |
+| `brand-image-system/liked-references/catalog.json` | Frank-liked sites, Instagram, covers. Agents must load before “make it like that”. | Required for taste imitation |
+| `C:\Users\frank\brands\image-system\liked-references\inbox` | Screenshot / export drop zone (Hermes Slack cannot read channel files on 403). | Required for ingest |
+| `runtime/adapters/hermes/liked-references.md` | Hermes Slack + local agent wiring | Required on Yogabook |
+| `runtime/adapters/codex/liked-references.md` | Codex desktop wiring | Required when Codex is the maker |
+
 ## Social And Publishing Sources
 
 | Source | Provides | Status |
