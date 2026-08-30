@@ -1,0 +1,130 @@
+{
+  "schema_version": "starlight.editorial_registry.v1",
+  "default_behavior": "brand_resolution_required",
+  "brands": {
+    "frankx": {
+      "display_name": "FrankX",
+      "state": "active",
+      "domains": ["frankx.ai"],
+      "repositories": ["frankxai/frankx.ai-vercel-website"],
+      "profile": "brand-packs/frankx/COPY.md"
+    },
+    "sis": {
+      "display_name": "Starlight Intelligence Systems",
+      "state": "active",
+      "domains": ["starlightintelligence.ai", "starlightintelligence.org"],
+      "repositories": ["frankxai/starlight-intelligence-web", "frankxai/Starlight-Intelligence-System"],
+      "profile": "brand-packs/sis/COPY.md"
+    },
+    "arcanea": {
+      "display_name": "Arcanea",
+      "state": "active",
+      "domains": ["arcanea.ai", "arcanean.org", "arcanean.dev", "arcanean.academy"],
+      "repositories": ["frankxai/arcanea", "frankxai/arcanea-ai-app"],
+      "profile": "brand-packs/arcanea/COPY.md"
+    },
+    "gencreator": {
+      "display_name": "GenCreator",
+      "state": "active",
+      "domains": ["gencreator.ai", "gencreator.community"],
+      "repositories": ["frankxai/gencreator.ai", "frankxai/gencreator-community", "frankxai/GenCreator-Studio"],
+      "profile": "brand-packs/gencreator/COPY.md"
+    },
+    "reality-architect": {
+      "display_name": "Reality Architect",
+      "state": "active",
+      "domains": ["realityarchitect.ai"],
+      "repositories": ["frankxai/realityarchitect", "frankxai/realityarchitect-vault"],
+      "profile": "brand-packs/reality-architect/COPY.md"
+    },
+    "agentic-income": {
+      "display_name": "Agentic Income",
+      "state": "active",
+      "domains": ["agenticincome.ai", "agenticpassiveincome.com"],
+      "repositories": ["frankxai/agenticincome", "frankxai/agenticpassiveincome"],
+      "profile": "brand-packs/agentic-income/COPY.md"
+    },
+    "passive-income": {
+      "display_name": "Passive Income AI",
+      "state": "active",
+      "domains": ["passiveincome.ai", "disruptivepassiveincome.com"],
+      "repositories": ["frankxai/dpi"],
+      "profile": "brand-packs/passive-income/COPY.md"
+    },
+    "ai-architect-academy": {
+      "display_name": "AI Architect Academy",
+      "state": "active",
+      "domains": ["aiarchitectacademy.com", "starlightintelligence.academy"],
+      "repositories": ["frankxai/ai-architect-academy"],
+      "profile": "brand-packs/ai-architect-academy/COPY.md"
+    },
+    "vibeclubs": {
+      "display_name": "VibeClubs",
+      "state": "active",
+      "domains": ["vibeclubs.ai"],
+      "repositories": ["frankxai/vibeclubs"],
+      "profile": "brand-packs/vibeclubs/COPY.md"
+    },
+    "anime-legends": {
+      "display_name": "Anime Legends",
+      "state": "active",
+      "domains": ["animelegends.ai"],
+      "repositories": ["frankxai/AnimeLegends", "frankxai/AnimeLegends-Skills"],
+      "profile": "brand-packs/anime-legends/COPY.md"
+    },
+    "blue-life-commons": {
+      "display_name": "Blue Life Commons",
+      "state": "active",
+      "domains": ["bluelifecommons.org"],
+      "repositories": ["frankxai/blue-life-commons"],
+      "profile": "brand-packs/blue-life-commons/COPY.md"
+    },
+    "cecilia": {
+      "display_name": "Cecilia",
+      "state": "owner-review-required",
+      "domains": ["anaceciliacancino.com", "cecilia.chat"],
+      "repositories": ["frankxai/Ana", "frankxai/cecilia-chat", "frankxai/ana-ai-business-kit"],
+      "profile": "brand-packs/cecilia/COPY.md"
+    },
+    "ai-coe": {
+      "display_name": "AI Center of Excellence",
+      "state": "active",
+      "domains": [],
+      "repositories": [],
+      "profile": "brand-packs/ai-coe/COPY.md"
+    },
+    "frankx-music": {
+      "display_name": "FrankX Music",
+      "state": "active",
+      "domains": [],
+      "repositories": [],
+      "profile": "brand-packs/frankx-music/COPY.md"
+    },
+    "starlight-table": {
+      "display_name": "Starlight Table",
+      "state": "active",
+      "domains": [],
+      "repositories": [],
+      "profile": "brand-packs/starlight-table/COPY.md"
+    },
+    "starlight-domains": {
+      "display_name": "Starlight Domains",
+      "state": "incubation",
+      "domains": ["starlight.domains"],
+      "repositories": [],
+      "profile": "brand-packs/starlight-domains/COPY.md"
+    }
+  },
+  "aliases": {
+    "arcanea-academy": "arcanea",
+    "arcanean": "arcanea",
+    "gencreator-community": "gencreator",
+    "starlight-intelligence": "sis",
+    "starlight-academy": "ai-architect-academy",
+    "agentic-passive-income": "agentic-income",
+    "reality-diffusion": "gencreator",
+    "ocean-muses": "arcanea",
+    "the-sirens": "arcanea",
+    "sacred-ocean-society": "blue-life-commons"
+  }
+}

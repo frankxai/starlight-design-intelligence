@@ -4,7 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "validate": "node scripts/validate-kernel.mjs",
+    "validate": "node scripts/sync-editorial-plugin.mjs --check && node scripts/validate-kernel.mjs",
+    "editorial:sync": "node scripts/sync-editorial-plugin.mjs",
+    "editorial:check": "node scripts/sync-editorial-plugin.mjs --check",
+    "editorial:install:global": "node scripts/install-global-workstyle.mjs",
+    "editorial:install:repo": "node scripts/install-editorial-contract.mjs",
+    "lint:editorial": "node skills/frank-brand-editor/scripts/editorial-audit.mjs --root . --policy editorial/language-policy.json --strict",
     "validate:adoption": "node scripts/validate-adoption.mjs",
     "validate:portfolio": "node scripts/validate-adoption.mjs --registry-only",
     "validate:release": "node scripts/validate-release-evidence.mjs",

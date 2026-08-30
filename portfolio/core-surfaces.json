@@ -60,6 +60,182 @@
           "claim_classes": ["availability", "capability", "testimonial"]
         }
       ]
+    },
+    {
+      "repository": "frankxai/starlight-intelligence-web",
+      "brand_id": "sis",
+      "surfaces": [
+        {
+          "id": "public-home",
+          "mode": "editorial",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/arcanea",
+      "brand_id": "arcanea",
+      "surfaces": [
+        {
+          "id": "public-lore",
+          "mode": "lore-editorial",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/GenCreator-Studio",
+      "brand_id": "gencreator",
+      "surfaces": [
+        {
+          "id": "studio",
+          "mode": "product-intelligence",
+          "claim_classes": ["availability", "capability", "pricing"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/realityarchitect",
+      "brand_id": "reality-architect",
+      "surfaces": [
+        {
+          "id": "public-home",
+          "mode": "reflective-editorial",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/realityarchitect-vault",
+      "brand_id": "reality-architect",
+      "surfaces": [
+        {
+          "id": "practice-vault",
+          "mode": "practice-product",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/agenticincome",
+      "brand_id": "agentic-income",
+      "surfaces": [
+        {
+          "id": "public-home",
+          "mode": "commercial-operator",
+          "claim_classes": ["availability", "capability", "pricing", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/agenticpassiveincome",
+      "brand_id": "agentic-income",
+      "surfaces": [
+        {
+          "id": "learning-product",
+          "mode": "product-learning",
+          "claim_classes": ["availability", "capability", "pricing"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/dpi",
+      "brand_id": "passive-income",
+      "surfaces": [
+        {
+          "id": "resource-home",
+          "mode": "resource-hub",
+          "claim_classes": ["availability", "capability", "pricing", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/ai-architect-academy",
+      "brand_id": "ai-architect-academy",
+      "surfaces": [
+        {
+          "id": "academy-home",
+          "mode": "technical-learning",
+          "claim_classes": ["availability", "capability", "pricing", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/vibeclubs",
+      "brand_id": "vibeclubs",
+      "surfaces": [
+        {
+          "id": "community-home",
+          "mode": "community-editorial",
+          "claim_classes": ["availability", "capability", "pricing", "testimonial"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/AnimeLegends",
+      "brand_id": "anime-legends",
+      "surfaces": [
+        {
+          "id": "world-home",
+          "mode": "cinematic-world",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/AnimeLegends-Skills",
+      "brand_id": "anime-legends",
+      "surfaces": [
+        {
+          "id": "creator-skills",
+          "mode": "creator-product",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/blue-life-commons",
+      "brand_id": "blue-life-commons",
+      "surfaces": [
+        {
+          "id": "public-home",
+          "mode": "civic-editorial",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/Ana",
+      "brand_id": "cecilia",
+      "surfaces": [
+        {
+          "id": "personal-home",
+          "mode": "personal-editorial",
+          "claim_classes": ["availability", "capability", "provenance", "testimonial"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/cecilia-chat",
+      "brand_id": "cecilia",
+      "surfaces": [
+        {
+          "id": "conversation-product",
+          "mode": "conversational-product",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/ana-ai-business-kit",
+      "brand_id": "cecilia",
+      "surfaces": [
+        {
+          "id": "business-kit",
+          "mode": "personal-editorial",
+          "claim_classes": ["availability", "capability", "pricing", "provenance"]
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Frank Brand Editor"
+  short_description: "Brand-routed editorial writing and review"
+  default_prompt: "Use $frank-brand-editor to write or audit this public copy in the correct brand voice."
+policy:
+  allow_implicit_invocation: true

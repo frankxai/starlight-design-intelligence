@@ -1,0 +1,29 @@
+{
+  "$schema": "../../schemas/brand-pack.schema.json",
+  "brandId": "agentic-income",
+  "displayName": "Agentic Income",
+  "operatingUnit": "agentic-income",
+  "sourceDocs": ["brand-packs/agentic-income/COPY.md"],
+  "canonicalRepos": ["frankxai/agenticincome", "frankxai/agenticpassiveincome"],
+  "surfaceModes": ["commercial-operator", "product-learning"],
+  "audiences": ["solo builders", "creator-operators", "small AI-native teams"],
+  "positioning": {
+    "oneLine": "Evidence-led economics and operating guidance for AI-enabled revenue systems.",
+    "proof": ["unit economics", "working offers", "maintenance records", "distribution evidence"],
+    "failureModes": ["effortless income claims", "affiliate-led rankings", "automation without demand"]
+  },
+  "voice": {
+    "traits": ["commercial", "candid", "analytical", "tactical"],
+    "bannedPhrases": ["passive income machine", "money while you sleep", "guaranteed revenue"]
+  },
+  "visual": {
+    "principles": ["Show the economics", "Make workload visible", "Put evidence near claims"],
+    "colors": { "ink": "#0a0f14", "paper": "#f4f1ea", "signal": "#22c55e", "risk": "#f59e0b" },
+    "typography": { "displayRole": "commercial judgment", "readingRole": "clear operational analysis" },
+    "imageDirection": ["real product flows", "revenue and cost evidence", "operator workflows"]
+  },
+  "channels": { "primary": ["website", "product", "commercial editorial"] },
+  "approvals": { "requiredBeforePublicAction": true, "route": "independent-verifier-and-named-human" },
+  "doNotUse": ["cash stock imagery", "fake dashboards", "undisclosed affiliate placement"],
+  "updatedAt": "2026-08-28"
+}

@@ -3,7 +3,8 @@
   "brandId": "ai-coe",
   "displayName": "AI Center of Excellence",
   "operatingUnit": "ai-architect-coe",
-  "sourceDocs": ["brand-image-system/source-map.md"],
+  "sourceDocs": ["brand-packs/ai-coe/COPY.md"],
+  "surfaceModes": ["enterprise-editorial", "architecture-evidence"],
   "canonicalRepos": [],
   "audiences": ["enterprise AI leaders", "architecture teams", "governance owners"],
   "positioning": {

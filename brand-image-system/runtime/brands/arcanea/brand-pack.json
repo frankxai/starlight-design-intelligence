@@ -3,7 +3,7 @@
   "brandId": "arcanea",
   "displayName": "Arcanea",
   "operatingUnit": "arcanea-product-ip",
-  "sourceDocs": ["brand-packs/arcanea/DESIGN.md"],
+  "sourceDocs": ["brand-packs/arcanea/BRAND.md", "brand-packs/arcanea/COPY.md", "brand-packs/arcanea/DESIGN.md"],
   "canonicalRepos": ["frankxai/arcanea", "frankxai/arcanea-ai-app"],
   "surfaceModes": ["mythic-world", "creator-tool", "lore-editorial"],
   "audiences": ["world-builders", "writers", "visual creators", "creative technologists"],

@@ -1,0 +1,29 @@
+{
+  "$schema": "../../schemas/brand-pack.schema.json",
+  "brandId": "anime-legends",
+  "displayName": "Anime Legends",
+  "operatingUnit": "anime-legends",
+  "sourceDocs": ["brand-packs/anime-legends/COPY.md"],
+  "canonicalRepos": ["frankxai/AnimeLegends", "frankxai/AnimeLegends-Skills"],
+  "surfaceModes": ["cinematic-world", "creator-product"],
+  "audiences": ["anime fans", "visual storytellers", "collectors", "game creators"],
+  "positioning": {
+    "oneLine": "Original character-led worlds built through cinematic scenes, emotional stakes, and creator tools.",
+    "proof": ["canonical characters", "finished scenes", "world bibles", "creator artifacts"],
+    "failureModes": ["franchise imitation", "empty power scaling", "trailer cliché"]
+  },
+  "voice": {
+    "traits": ["cinematic", "energetic", "character-led", "sincere"],
+    "bannedPhrases": ["ultimate warrior", "power beyond imagination", "destiny awaits"]
+  },
+  "visual": {
+    "principles": ["Open inside the scene", "Make character desire visible", "Protect original identity"],
+    "colors": { "void": "#09080d", "paper": "#f6efe5", "signal": "#ef4444", "aura": "#8b5cf6" },
+    "typography": { "displayRole": "cinematic title", "readingRole": "clear character and world text" },
+    "imageDirection": ["canonical character sheets", "cinematic keyframes", "original world environments"]
+  },
+  "channels": { "primary": ["world site", "social cinema", "creator product"] },
+  "approvals": { "requiredBeforePublicAction": true, "route": "rights-review-and-named-human" },
+  "doNotUse": ["copied franchise marks", "untracked style imitation", "generic anime collage"],
+  "updatedAt": "2026-08-28"
+}

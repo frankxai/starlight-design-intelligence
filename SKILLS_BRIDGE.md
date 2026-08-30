@@ -30,3 +30,11 @@ Do not copy private brand doctrine into public curation repos. If a public-safe 
 4. Agent chooses source, asset tier, typography, and motion posture.
 5. Agent creates or updates the release-evidence manifest.
 6. Agent produces, inspects, scores, independently verifies, and hands off.
+
+## Editorial distribution
+
+`CREATOR.md`, `editorial/`, `brand-packs/*/COPY.md`, `skills/frank-workstyle/`, and `skills/frank-brand-editor/` are canonical.
+
+`plugins/starlight-editorial-os/` is a generated distribution for personal Codex and ChatGPT workflows. Run `npm run editorial:sync` after changing the canonical source. CI runs `npm run editorial:check` to prevent drift.
+
+Product repositories receive thin adapters and a pinned editorial contract. Their local files declare the brand and content roots. They do not copy the full doctrine by hand.
