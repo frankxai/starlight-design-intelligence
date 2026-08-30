@@ -1,48 +1,54 @@
-# Starlight / SIS Motion
+# Starlight Intelligence Motion
 
-Starlight motion is operational intelligence made visible. It should feel calm, precise, trustworthy, and alive with evidence.
+Starlight motion shows intelligence becoming legible and possibility becoming reachable. It can feel cinematic, precise, intimate, or vast. The behavior follows the surface mode.
 
-## Personality
+## Horizon motion
 
-- Precise, not mechanical.
-- Calm, not sleepy.
-- Intelligent, not decorative.
-- Trustworthy, not theatrical.
-- Celestial as structure, not space wallpaper.
+Horizon motion creates a sense of discovery. It may reveal scale through a slow transition from a human detail to a connected system, a city, a planet, or a field of stars. Light can travel along meaningful paths. Knowledge can assemble into a navigable constellation. The motion should carry an idea, not merely announce production value.
 
-## Signature Behaviors
+Use longer sequences sparingly at moments that deserve attention: the opening of a manifesto, the reveal of a research frontier, the arrival of a guardian or cultural entity, or the transition from present reality to a possible future.
 
-| Behavior | Use | Avoid |
-| --- | --- | --- |
-| Signal sweep | Scanning, validation, proof collection | Constant shimmer or decorative light passes |
-| Trace reveal | Provenance, execution paths, audit trails | Animated lines with no information |
-| Constellation assembly | Graphs, agent networks, knowledge relationships | Random starfields |
-| Confidence settle | Uncertain state resolving into evidence | Bouncy or playful success states |
-| Escalation pulse | Risk, handoff, operator attention | Alarm-like motion for ordinary status |
+## Operator motion
 
-## Tokens
+Operator motion protects orientation. The shell remains stable while state, evidence, queues, and relationships update. A user should understand what changed and where to look next.
+
+| Behavior | Meaning |
+| --- | --- |
+| Signal sweep | A bounded scan or validation is running. |
+| Trace reveal | Provenance or execution history becomes inspectable. |
+| Constellation assembly | Relationships form from actual data or knowledge links. |
+| Confidence settle | An uncertain state resolves as support becomes stronger. |
+| Escalation pulse | Human attention is required. |
+
+## Academy motion
+
+Academy motion makes progress and understanding visible. A skill path may open as prerequisites are completed. Feedback can connect directly to the relevant part of an artifact. Mentor guidance should arrive with calm presence. Avoid reward loops that overpower the substance of learning.
+
+## Cultural motion
+
+Cultural work may use expressive camera movement, character performance, fashion detail, music synchronization, symbolic light, and cinematic transitions. Continuity of character, world, emotion, and visual grammar matters more than the number of effects.
+
+## Timing
 
 ```text
 duration.micro: 90-140ms
 duration.base: 180-260ms
 duration.system: 300-420ms
 duration.explain: 500-800ms
+duration.horizon: 900-1800ms
 stagger.signal: 20-35ms
 stagger.layer: 45-70ms
 distance.micro: 2-4px
 distance.panel: 8-14px
 ```
 
-Use soft ease-out for ordinary UI, low-bounce springs for tactile controls, and restrained timeline reveals for explainable system states.
+Longer cinematic sequences require an immediate skip path and must never delay a returning operator.
 
-## Product Surfaces
+## Reduced motion
 
-- Command center: stable shell, progressive evidence, no wandering layout.
-- Agent swarm cockpit: show work, queues, handoffs, and escalation with subtle signal motion.
-- Eval lab: animate score deltas, regression shifts, proof collection, and pass/fail transitions.
-- Knowledge graph: assemble nodes by relationship depth and evidence path.
-- Enterprise page: one signature intelligence reveal, never generic sci-fi spectacle.
+Reduced-motion experiences preserve the meaning and final connected state. Replace camera travel and spatial assembly with restrained opacity, direct state changes, and clear text. Essential status changes remain visible without pulses, parallax, or rapid movement.
 
-## Reduced Motion
+## Quality gate
 
-Show final connected state. Replace spatial transitions with opacity, instant state changes, and textual status. Keep operators oriented.
+Motion passes when it improves comprehension, emotional force, or world memory. Remove it when the same sequence could be dropped into any AI landing page without changing its meaning.
+
