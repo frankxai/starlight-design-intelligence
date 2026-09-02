@@ -1,0 +1,522 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.circle.wave-1.20260902
+target_id: circle
+snapshot_ids: &a1
+  - snapshot.circle.homepage.browser-observed.20260902t211610z
+  - snapshot.circle.product-overview.browser-observed.20260902t211622z
+  - snapshot.circle.feature.browser-observed.20260902t211624z
+  - snapshot.circle.pricing.browser-observed.20260902t211625z
+  - snapshot.circle.proof.browser-observed.20260902t211627z
+findings:
+  foundations:
+    - finding_id: circle.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(0, 0, 0)
+            count: 1672
+          - value: rgb(25, 27, 31)
+            count: 315
+          - value: rgb(10, 10, 10)
+            count: 304
+          - value: rgb(115, 115, 115)
+            count: 256
+          - value: rgb(250, 250, 250)
+            count: 205
+          - value: rgb(255, 255, 255)
+            count: 145
+          - value: rgb(38, 38, 38)
+            count: 87
+          - value: rgb(249, 250, 251)
+            count: 36
+        backgrounds:
+          - value: rgb(255, 255, 255)
+            count: 61
+          - value: rgb(115, 115, 115)
+            count: 25
+          - value: rgba(255, 255, 255, 0.1)
+            count: 9
+          - value: rgb(245, 245, 245)
+            count: 9
+          - value: rgba(255, 255, 255, 0.7)
+            count: 8
+          - value: rgba(0, 0, 0, 0.3)
+            count: 8
+          - value: rgba(255, 255, 255, 0.5)
+            count: 6
+          - value: rgb(54, 85, 229)
+            count: 6
+        fonts:
+          - value: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+              sans-serif
+            count: 2979
+          - value: interVariable, "interVariable Fallback", system-ui, -apple-system,
+              BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+            count: 285
+          - value: Inter, -apple-system, Roboto, Helvetica, sans-serif
+            count: 84
+          - value: Inter, sans-serif
+            count: 21
+          - value: Inter
+            count: 17
+        font_sizes:
+          - value: 16px
+            count: 2354
+          - value: 14px
+            count: 530
+          - value: 18px
+            count: 181
+          - value: 20px
+            count: 93
+          - value: 24px
+            count: 41
+          - value: 40px
+            count: 26
+          - value: 56px
+            count: 24
+          - value: 15px
+            count: 24
+        radii:
+          - value: 0px
+            count: 3052
+          - value: 9999px
+            count: 166
+          - value: 24px
+            count: 61
+          - value: 16px
+            count: 27
+          - value: 32px
+            count: 23
+          - value: 12px
+            count: 11
+          - value: 20px
+            count: 10
+          - value: 8px
+            count: 10
+        shadows:
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px
+            count: 34
+          - value: rgba(169, 169, 169, 0.08) 0px 4px 8px 0px
+            count: 19
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.08) 0px 0px 20px 0px
+            count: 6
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.08) 0px 4px 32px 0px
+            count: 4
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(34, 197, 94, 0.6) 0px 0px 8px 2px
+            count: 2
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 2995
+          - value: 8px 16px 8px 16px
+            count: 34
+          - value: 40px 40px 40px 40px
+            count: 14
+          - value: 0px 30px 0px 30px
+            count: 13
+          - value: 12px 16px 12px 12px
+            count: 12
+          - value: 10px 18px 10px 18px
+            count: 11
+          - value: 0px 32px 0px 32px
+            count: 11
+          - value: 24px 12px 16px 12px
+            count: 10
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: circle.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Circle; Product; Branded Apps; Resources; Discover; Pricing."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Circle
+          - Product
+          - Branded Apps
+          - Resources
+          - Discover
+          - Pricing
+          - Log in
+          - Start free trial
+          - Start for free
+          - Migrate
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: circle.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Circle | A new era for digital businesses
+            page_state: loaded
+            scroll_height: 14141
+          - surface_id: product-overview
+            title: The Complete Community Platform | Circle
+            page_state: loaded
+            scroll_height: 12717
+          - surface_id: feature
+            title: Circle Courses — Launch and grow your online course
+            page_state: loaded
+            scroll_height: 6962
+          - surface_id: pricing
+            title: Pricing | Circle
+            page_state: loaded
+            scroll_height: 5308
+          - surface_id: proof
+            title: Customer Stories | Circle
+            page_state: loaded
+            scroll_height: 5642
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: circle.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        JayShetty; JayClouse; TimFerriss; JohnnyHarris."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - JayShetty
+          - JayClouse
+          - TimFerriss
+          - JohnnyHarris
+          - Dr.Becky
+          - AliAbdaal
+          - LaraAcosta
+          - BrendonBurchard
+          - GloAtanmo
+          - PatFlynn
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: circle.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: circle.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Customer Stories | Circle” and
+        exposes 16 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.circle.proof.browser-observed.20260902t211627z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: Where leading businesses turn community into growth
+          - level: 2
+            text: Codecademy consolidates five platforms and 100K learners on Circle
+          - level: 2
+            text: Entreprenista scales a global women founders network
+          - level: 2
+            text: Upgraded from courses to a world-class learning platform
+          - level: 2
+            text: From Google Doc to $15K in two months
+          - level: 2
+            text: TroopHR gives HR leaders a place to connect
+          - level: 2
+            text: Good Inside creates safe space for 100K+ parents
+          - level: 2
+            text: How Augment Business School scaled a premium learning experience
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: circle.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: circle.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 2
+            reducedPreference: false
+            transitionedElements: 125
+          - surface_id: product-overview
+            animatedElements: 3
+            reducedPreference: false
+            transitionedElements: 93
+          - surface_id: feature
+            animatedElements: 5
+            reducedPreference: false
+            transitionedElements: 55
+          - surface_id: pricing
+            animatedElements: 2
+            reducedPreference: false
+            transitionedElements: 75
+          - surface_id: proof
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 101
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: circle.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: circle.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 125
+            landmarks:
+              footer: 1
+              header: 1
+              main: 0
+              nav: 8
+            missingAlt: 11
+            unnamedButtons: 0
+          - surface_id: product-overview
+            headings:
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 66
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 8
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: feature
+            headings:
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 37
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: pricing
+            headings:
+              - 1
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 2
+              - 4
+              - 4
+              - 4
+              - 4
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 33
+            landmarks:
+              footer: 1
+              header: 1
+              main: 0
+              nav: 8
+            missingAlt: 2
+            unnamedButtons: 0
+          - surface_id: proof
+            headings:
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 96
+            landmarks:
+              footer: 1
+              header: 1
+              main: 0
+              nav: 8
+            missingAlt: 0
+            unnamedButtons: 0
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: circle.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: circle.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

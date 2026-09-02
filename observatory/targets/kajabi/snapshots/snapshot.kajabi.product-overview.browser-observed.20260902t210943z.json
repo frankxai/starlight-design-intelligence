@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.kajabi.product-overview.browser-observed.20260902t210943z",
+  "target_id": "kajabi",
+  "surface_id": "product-overview",
+  "captured_at": "2026-09-02T21:09:43.602Z",
+  "locale": "en",
+  "url": "https://www.kajabi.com/product",
+  "route": "/product",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://www.kajabi.com/product",
+    "title": "The Operating System for Human Expertise | Kajabi",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "4d8d0058d4bfbbd63144706b0d61728f9ddfe6294e446784613143452f7c468c",
+      "bytes": 79434,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/4d/4d8d0058d4bfbbd63144706b0d61728f9ddfe6294e446784613143452f7c468c.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "b7f39332a1f29e9b80521f9b18404989fd093f23ead81d0f2ebcb3368cf12378",
+      "bytes": 200029,
+      "mime": "text/html",
+      "content_address": "sha256/b7/b7f39332a1f29e9b80521f9b18404989fd093f23ead81d0f2ebcb3368cf12378.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "b7f39332a1f29e9b80521f9b18404989fd093f23ead81d0f2ebcb3368cf12378",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Kajabi, LLC",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

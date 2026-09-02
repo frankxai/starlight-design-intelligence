@@ -1,0 +1,29 @@
+{
+  "$schema": "../../schemas/brand-pack.schema.json",
+  "brandId": "rial-energy",
+  "displayName": "Rial / Aurevia Energy",
+  "operatingUnit": "energy-intelligence",
+  "sourceDocs": ["brand-packs/rial-energy/BRAND.md", "brand-packs/rial-energy/DESIGN.md"],
+  "canonicalRepos": ["frankxai/pv-lager-agentic", "frankxai/aurevia-solar"],
+  "surfaceModes": ["local-trust", "buyer-quiz", "system-quote"],
+  "audiences": ["German homeowners", "commercial property owners", "PV Lager sales operators"],
+  "positioning": {
+    "oneLine": "Inventory-aware, subsidy-aware solar system guidance with a visible human handoff.",
+    "proof": ["stock status", "complete-system configuration", "dated subsidy inputs", "local fulfillment"],
+    "failureModes": ["guaranteed savings", "unbounded subsidy claims", "opaque calculator assumptions"]
+  },
+  "voice": {
+    "traits": ["local", "clear", "technically careful", "service-minded"],
+    "bannedPhrases": ["free solar", "guaranteed payback", "government pays 70 percent"]
+  },
+  "visual": {
+    "principles": ["Start from the building", "Expose assumptions", "Make human review obvious"],
+    "colors": { "ink": "#102018", "paper": "#f3f5ee", "solar": "#e2a814", "energy": "#198754", "uncertain": "#9a6700" },
+    "typography": { "displayRole": "local technical confidence", "readingRole": "German service clarity" },
+    "imageDirection": ["real local installations", "system diagrams", "inventory and quote evidence"]
+  },
+  "channels": { "primary": ["Wix storefront", "buyer quiz", "sales proposal"] },
+  "approvals": { "requiredBeforePublicAction": true, "route": "Rial-owner-and-named-human" },
+  "doNotUse": ["stock solar roofs", "guaranteed subsidy badges", "unverified savings", "private customer data"],
+  "updatedAt": "2026-09-02"
+}

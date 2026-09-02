@@ -26,6 +26,16 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
 - Portfolio toolchain boundary: `starlight.design_toolchain.v1`, stored in
   `portfolio/design-toolchain.json`; it contains roles, readiness, and rules but
   no private tool identifiers, credentials, or asset binaries.
+- Design research target: `starlight.design_research_target.v1`.
+- Design snapshot manifest: `starlight.design_snapshot_manifest.v1`.
+- Normalized extraction: `starlight.design_extraction.v1`.
+- Abstract pattern card: `starlight.design_pattern.v1`.
+- Domain design profile: `starlight.domain_design_profile.v1`.
+
+The five observatory schemas live in `schemas/design-*.schema.json`. Stable IDs
+are `target_id`, `snapshot_id`, `pattern_id`, `brand_id`, `domain_id`, and
+`surface_id`. Snapshot artifacts are content-addressed and raw evidence is
+never stored in Git.
 
 ### Runtime data stores
 

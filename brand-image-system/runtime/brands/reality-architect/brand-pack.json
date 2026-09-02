@@ -3,26 +3,27 @@
   "brandId": "reality-architect",
   "displayName": "Reality Architect",
   "operatingUnit": "reality-architect",
-  "sourceDocs": ["brand-image-system/source-map.md"],
-  "canonicalRepos": [],
-  "audiences": ["reflective builders", "people designing intentional practices"],
+  "sourceDocs": ["brand-packs/reality-architect/BRAND.md", "brand-packs/reality-architect/DESIGN.md"],
+  "canonicalRepos": ["frankxai/realityarchitect"],
+  "surfaceModes": ["method-editorial", "assessment", "open-standard"],
+  "audiences": ["AI tool users becoming system builders", "agent operators", "open-method adopters"],
   "positioning": {
-    "oneLine": "Grounded life-design practices expressed through choices, maps, and repeatable rituals.",
-    "proof": ["decision maps", "practice records", "before-and-after behavior"],
-    "failureModes": ["vague mysticism", "therapy claims", "aestheticized self-help"]
+    "oneLine": "Find the system gap and build the next inspectable artifact.",
+    "proof": ["the five-move Architect Loop", "reality.md", "starter templates", "acceptance tests"],
+    "failureModes": ["vague mysticism", "therapy claims", "concepts without inspectable artifacts"]
   },
   "voice": {
-    "traits": ["grounded", "reflective", "plainspoken", "careful"],
+    "traits": ["grounded", "direct", "architectural", "plainspoken"],
     "bannedPhrases": ["manifest anything", "quantum leap", "your highest self"]
   },
   "visual": {
-    "principles": ["Make reflection tangible", "Prefer lived evidence", "Use quiet hierarchy"],
+    "principles": ["Make the system gap visible", "Pair concepts with artifacts", "Use quiet hierarchy"],
     "colors": { "ink": "#171513", "paper": "#f4efe6", "earth": "#9a6f4f" },
     "typography": { "displayRole": "reflective authority", "readingRole": "slow, accessible reading" },
-    "imageDirection": ["real environments", "annotated maps", "material practice artifacts"]
+    "imageDirection": ["real system files", "annotated loops", "inspectable acceptance evidence"]
   },
-  "channels": { "primary": ["editorial", "workshops", "practice material"] },
+  "channels": { "primary": ["website", "open method", "assessment", "starter artifacts"] },
   "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
   "doNotUse": ["clinical claims", "cosmic stock imagery", "generic sacred geometry"],
-  "updatedAt": "2026-07-24"
+  "updatedAt": "2026-09-02"
 }

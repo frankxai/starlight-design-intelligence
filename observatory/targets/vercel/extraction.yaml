@@ -1,0 +1,550 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.vercel.wave-1.20260902
+target_id: vercel
+snapshot_ids: &a1
+  - snapshot.vercel.homepage.browser-observed.20260902t210111z
+  - snapshot.vercel.product-overview.browser-observed.20260902t212149z
+  - snapshot.vercel.feature.browser-observed.20260902t210128z
+  - snapshot.vercel.pricing.browser-observed.20260902t210129z
+  - snapshot.vercel.proof.browser-observed.20260902t210131z
+findings:
+  foundations:
+    - finding_id: vercel.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(23, 23, 23)
+            count: 2683
+          - value: rgb(77, 77, 77)
+            count: 956
+          - value: rgb(125, 125, 125)
+            count: 167
+          - value: rgb(143, 143, 143)
+            count: 115
+          - value: rgb(255, 255, 255)
+            count: 46
+          - value: rgb(242, 242, 242)
+            count: 25
+          - value: rgb(161, 161, 161)
+            count: 21
+          - value: rgb(237, 237, 237)
+            count: 13
+        backgrounds:
+          - value: rgb(255, 255, 255)
+            count: 58
+          - value: rgb(235, 235, 235)
+            count: 33
+          - value: rgb(23, 23, 23)
+            count: 22
+          - value: rgb(250, 250, 250)
+            count: 15
+          - value: rgba(0, 0, 0, 0.08)
+            count: 9
+          - value: rgb(69, 165, 87)
+            count: 7
+          - value: rgb(242, 242, 242)
+            count: 6
+          - value: oklab(0.984799 0.0000446141 0.0000197291 / 0.5)
+            count: 5
+        fonts:
+          - value: GeistSans, "GeistSans Fallback"
+            count: 4062
+          - value: '"Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, "Liberation
+              Mono", "DejaVu Sans Mono", "Courier New", monospace, "Apple Color
+              Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+            count: 87
+          - value: Georgia, "Times New Roman", Times, serif
+            count: 6
+        font_sizes:
+          - value: 16px
+            count: 2454
+          - value: 14px
+            count: 1500
+          - value: 12px
+            count: 41
+          - value: 11px
+            count: 39
+          - value: 13px
+            count: 29
+          - value: 24px
+            count: 26
+          - value: 18px
+            count: 16
+          - value: 56px
+            count: 15
+        radii:
+          - value: 0px
+            count: 3896
+          - value: 3.35544e+07px
+            count: 141
+          - value: 6px
+            count: 33
+          - value: 2px
+            count: 27
+          - value: 4px
+            count: 19
+          - value: 100%
+            count: 11
+          - value: 0px 8px 8px 0px
+            count: 7
+          - value: 8px 0px 0px 8px
+            count: 6
+        shadows:
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgb(235, 235, 235) 0px 0px 0px 1px
+            count: 17
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px
+              2px 2px 0px, rgb(250, 250, 250) 0px 0px 0px 1px
+            count: 9
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgb(250, 250, 250) 0px
+              0px 0px 1px
+            count: 8
+          - value: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgb(250, 250, 250) 0px 0px 0px 1px
+            count: 6
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgb(255, 255, 255) 0px 0px 0px 2px, rgb(0, 114, 245) 0px 0px
+              0px 4px
+            count: 5
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 2962
+          - value: 2px 0px 2px 0px
+            count: 320
+          - value: 2px 2px 2px 2px
+            count: 320
+          - value: 16px 2px 16px 2px
+            count: 213
+          - value: 0px 6px 0px 6px
+            count: 54
+          - value: 2px 8px 2px 8px
+            count: 36
+          - value: 0px 12px 0px 12px
+            count: 29
+          - value: 48px 48px 48px 48px
+            count: 27
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: vercel.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Skip to content; Products; Resources; Enterprise; Pricing;
+        Get a Demo."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Skip to content
+          - Products
+          - Resources
+          - Enterprise
+          - Pricing
+          - Get a Demo
+          - Log In
+          - Sign Up
+          - Add to Slack
+          - Deploy now
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: vercel.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Agentic Infrastructure - Vercel
+            page_state: loaded
+            scroll_height: 5308
+          - surface_id: product-overview
+            title: Fluid Compute - Vercel
+            page_state: loaded
+            scroll_height: 5444
+          - surface_id: feature
+            title: Deploy AI at the speed of frontend
+            page_state: loaded
+            scroll_height: 6272
+          - surface_id: pricing
+            title: "Vercel Pricing: Hobby, Pro, and Enterprise plans"
+            page_state: loaded
+            scroll_height: 14946
+          - surface_id: proof
+            title: Customers | Vercel
+            page_state: loaded
+            scroll_height: 5236
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: vercel.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        Agentic Infrastructure; Build agents on infrastructure that thinks like
+        them; Ship apps that scale from zero to millions instantly; Host
+        platforms that serve every customer."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - Agentic Infrastructure
+          - Build agents on infrastructure that thinks like them
+          - Ship apps that scale from zero to millions instantly
+          - Host platforms that serve every customer
+          - Recently shipped
+          - Built by you, or your agents
+          - Agent Stack
+          - Core Platform
+          - Security
+          - Tools
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: vercel.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: vercel.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Customers | Vercel” and exposes
+        14 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.vercel.proof.browser-observed.20260902t210131z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: Customer stories
+          - level: 2
+            text: Trusted by leading teams
+          - level: 2
+            text: Agent Stack
+          - level: 2
+            text: Core Platform
+          - level: 2
+            text: Security
+          - level: 2
+            text: Tools
+          - level: 2
+            text: Frameworks
+          - level: 2
+            text: SDKs
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: vercel.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: vercel.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 111
+          - surface_id: product-overview
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 89
+          - surface_id: feature
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 125
+          - surface_id: pricing
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 10
+          - surface_id: proof
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 121
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: vercel.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: vercel.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 17
+            landmarks:
+              footer: 1
+              header: 6
+              main: 1
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 1
+          - surface_id: product-overview
+            headings:
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 3
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 2
+            missingAlt: 0
+            unnamedButtons: 1
+          - surface_id: feature
+            headings:
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 1
+              - 2
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 45
+            landmarks:
+              footer: 4
+              header: 1
+              main: 1
+              nav: 2
+            missingAlt: 0
+            unnamedButtons: 1
+          - surface_id: pricing
+            headings:
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 1
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 3
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 2
+            missingAlt: 0
+            unnamedButtons: 1
+          - surface_id: proof
+            headings:
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 173
+            landmarks:
+              footer: 1
+              header: 6
+              main: 0
+              nav: 2
+            missingAlt: 0
+            unnamedButtons: 1
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: vercel.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: vercel.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

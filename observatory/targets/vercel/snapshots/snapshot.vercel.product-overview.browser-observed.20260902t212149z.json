@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.vercel.product-overview.browser-observed.20260902t212149z",
+  "target_id": "vercel",
+  "surface_id": "product-overview",
+  "captured_at": "2026-09-02T21:21:49.909Z",
+  "locale": "en",
+  "url": "https://vercel.com/fluid",
+  "route": "/fluid",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://vercel.com/fluid",
+    "title": "Fluid Compute - Vercel",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "8c29ee69c3ab1e0ba7a64cae19f0b6921805da2f306a55961a13638b9700eb6b",
+      "bytes": 73681,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/8c/8c29ee69c3ab1e0ba7a64cae19f0b6921805da2f306a55961a13638b9700eb6b.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "7e5663aad61ac60eb44fe51abfbe15d7966ab4873511524c80a8e531b7529c34",
+      "bytes": 200031,
+      "mime": "text/html",
+      "content_address": "sha256/7e/7e5663aad61ac60eb44fe51abfbe15d7966ab4873511524c80a8e531b7529c34.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "7e5663aad61ac60eb44fe51abfbe15d7966ab4873511524c80a8e531b7529c34",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Vercel Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

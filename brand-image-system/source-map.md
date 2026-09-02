@@ -33,12 +33,14 @@ This map lists the current local sources agents must consult before producing cr
 | FrankX Demand | `starlight-design-intelligence\brand-packs\frankx\`, `frankx.ai-vercel-website`, `agentic-ops-hub` | Strong central pack exists |
 | Arcanea Product and IP | `starlight-design-intelligence\brand-packs\arcanea\`, Arcanea repos, `agentic-ops-hub` | Strong central pack exists |
 | Starlight Substrate / SIS | `starlight-design-intelligence\brand-packs\sis\`, `_intelligence`, SIS repos | Strong central pack exists |
-| VibeClubs | `starlight-design-intelligence\brand-packs\vibeclubs\`, `gencreator.ai\strategy_v3.md` routing notes | Brand pack exists, still needs channel-specific visual pack |
-| GenCreator / Creator Systems | `gencreator.ai\strategy_v3.md`, `gencreator.ai\public\brand`, `gencreator.ai` tests | Repo-local strategy exists, central pack should be added |
-| Anime Legends / Media IP | `AnimeLegends\brand\voice.md`, `AnimeLegends\brand\visual-tokens.md`, `AnimeLegends\brand\never-say.md`, `AnimeLegends\brand\assets\` | Strong repo-local brand system exists, central pack should be mirrored |
-| Reality Architect | `agentic-ops-hub` and Reality Architect repos | Partial, needs central visual and voice pack |
-| AI-Architect / AI CoE | `agentic-ops-hub`, FrankX to GenCreator / CoE bridge docs, enterprise AI repos | Partial, needs central visual and voice pack |
-| Agentic Income Network | `agentic-ops-hub`, agentic income repos | Partial, needs central visual and voice pack |
+| VibeClubs | `brand-packs/vibeclubs/`, `frankxai/vibeclubs` | Central human/runtime pack aligned; session-state tokens remain open |
+| GenCreator / Creator Systems | `brand-packs/gencreator/`, `frankxai/gencreator.ai`, `frankxai/gencreator-community` | Central human/runtime pack aligned |
+| Anime Legends / Media IP | `brand-packs/animelegends/`, `frankxai/AnimeLegends` canon and provenance sources | Central human/runtime pack aligned with mascot rights carve-out |
+| Reality Architect | `brand-packs/reality-architect/`, `frankxai/realityarchitect` | Central human/runtime pack aligned to the open engineering method |
+| AI-Architect / AI CoE | `brand-packs/ai-coe/`, `frankxai/ai-architect-academy` | One canonical inherited pack with separate Academy and CoE modes |
+| Agentic Income Network | `brand-packs/agentic-income/`, `frankxai/agenticincome` | Central human/runtime pack aligned to evidence-safe economic claims |
+| Starlight Technology | `brand-packs/starlight-technology/`, `frankxai/starlight-technology` | Central human/runtime buying-intelligence pack aligned |
+| Rial / Aurevia Energy | `brand-packs/rial-energy/`, `frankxai/pv-lager-agentic`, `frankxai/aurevia-solar` | One canonical parent pack with local-trust, quiz, and proposal modes |
 | Research and Mind Intelligence | `agentic-ops-hub`, research/mind repos | Partial, needs central visual and voice pack |
 | Tooling / OSS Distribution | `agentic-ops-hub`, tooling repos | Partial, needs public OSS visual template pack |
 
@@ -52,7 +54,7 @@ This map lists the current local sources agents must consult before producing cr
 
 ## Current Gaps
 
-- Remote GitHub was not re-queried live in this pass; local Git-backed audits and clones were used.
 - Several operating units are portfolio lanes rather than finished brand packs.
-- Central brand packs should be added for GenCreator, AnimeLegends, Reality Architect, AI CoE, Agentic Income, Research Intelligence, and Tooling/OSS.
+- Research Intelligence and Tooling/OSS remain portfolio lanes without active-domain packs.
+- Domain profiles record unresolved token and rule gaps for every active product.
 - The image-generation tool benchmark has a plan, not completed results.

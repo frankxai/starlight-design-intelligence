@@ -1,0 +1,143 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: sis
+domains:
+  - starlightintelligence.org
+brand_id: sis
+canonical_repositories:
+  - frankxai/Starlight-Intelligence-System
+surface_ids:
+  - homepage
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.product-in-context.v1
+  - pattern.progressive-proof.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.bounded-conversion.v1
+influence_map:
+  - target_id: linear
+    pattern_id: pattern.product-in-context.v1
+    principle: Explain intelligence through the state of real work, not decorative
+      dashboards.
+  - target_id: google-deepmind
+    pattern_id: pattern.editorial-depth-break.v1
+    principle: Separate system claims, research, and current evidence into clear chapters.
+anti_references:
+  - Dark command centers whose activity visualizations imply intelligence
+    without provenance.
+forbidden_blending:
+  - Do not blend Arcanea lore, FrankX personal editorial voice, or Vibeclubs
+    celebration into SIS operational truth.
+gaps:
+  missing_tokens:
+    - provenance status
+    - memory age
+    - agent authority
+    - handoff state
+  inconsistent_rules:
+    - SIP protocol and SIS product terminology compete for first-page priority.
+directions:
+  - direction_id: sis.evidence-ledger
+    name: Evidence Ledger
+    thesis: A calm operations surface where a current decision opens into the
+      memory, provenance, agent authority, and receipt behind it.
+    source_content:
+      - Shared memory and provenance
+      - SIP handoff protocol
+      - Inspectable agent receipts
+    composition: One current decision occupies the opening; an evidence rail traces
+      source, transformation, approval, and next action.
+    typography: Technical sans with high-legibility long-form notes and compact
+      evidence labels.
+    color_posture: Light mineral canvas with deep blue operational ink and explicit
+      status colors.
+    imagery: Exact generated diagrams and owned system artifacts only.
+    motion_job: A user-controlled trace reveals how evidence moves through one decision.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: sis.protocol-map
+    name: Protocol Map
+    thesis: A standards-led explanation of SIP that lets implementers enter through
+      a handoff, schema, or verification problem.
+    source_content:
+      - SIP protocol
+      - Schemas and validators
+      - Cross-agent handoffs
+    composition: A vertical protocol map branches into schemas, examples, and
+      conformance evidence with persistent orientation.
+    typography: Monospace-forward technical hierarchy balanced by readable
+      explanatory prose.
+    color_posture: Paper, graphite, and one electric blue protocol signal.
+    imagery: Deterministic diagrams, schema fragments, and conformance output.
+    motion_job: Highlight one protocol transition at a time under user control.
+    selected_pattern_ids:
+      - pattern.editorial-depth-break.v1
+      - pattern.product-in-context.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: sis.operations-console
+    name: Operations Console
+    thesis: A dense operator view that demonstrates bounded agents, current memory,
+      queue health, and approvals without pretending simulation is live.
+    source_content:
+      - Agent registry
+      - Current memory state
+      - Approval and handoff queues
+    composition: "A compact status header leads into three operational regions:
+      memory, work, and verification."
+    typography: Compact grotesk and monospaced evidence register with strict density
+      limits.
+    color_posture: Near-black operations canvas with accessible cyan and amber state signals.
+    imagery: Real runtime outputs and deterministic status diagrams; never fake
+      telemetry.
+    motion_job: Motion only acknowledges real state changes and offers an equivalent
+      static log.
+    selected_pattern_ids:
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: sis.evidence-ledger

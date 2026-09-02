@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.google-deepmind.product-overview.browser-observed.20260902t210455z",
+  "target_id": "google-deepmind",
+  "surface_id": "product-overview",
+  "captured_at": "2026-09-02T21:04:55.973Z",
+  "locale": "en",
+  "url": "https://deepmind.google/research/",
+  "route": "/research/",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://deepmind.google/research/",
+    "title": "Research — Google DeepMind",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "1789ae9043fd6d40276f72cb75552d356c30e0d0600364d89d8728103e575e23",
+      "bytes": 108084,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/17/1789ae9043fd6d40276f72cb75552d356c30e0d0600364d89d8728103e575e23.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "cf6a17d9586252e6192800fb88ea64338ef93cfeab5bb356b90e7579d590b8dd",
+      "bytes": 200033,
+      "mime": "text/html",
+      "content_address": "sha256/cf/cf6a17d9586252e6192800fb88ea64338ef93cfeab5bb356b90e7579d590b8dd.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "cf6a17d9586252e6192800fb88ea64338ef93cfeab5bb356b90e7579d590b8dd",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Google DeepMind",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

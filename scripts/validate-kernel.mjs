@@ -49,10 +49,23 @@ const required = [
   "brand-image-system/runtime/schemas/media-job.schema.json",
   "schemas/web-release-evidence.schema.json",
   "schemas/design-contract.schema.json",
+  "schemas/design-research-target.schema.json",
+  "schemas/design-snapshot-manifest.schema.json",
+  "schemas/design-extraction.schema.json",
+  "schemas/design-pattern.schema.json",
+  "schemas/domain-design-profile.schema.json",
   "portfolio/core-surfaces.json",
+  "observatory/GOVERNANCE.md",
+  "observatory/registry/targets.yaml",
+  "observatory/source-ledger.jsonl",
+  "observatory/retrieval-index.json",
   ".github/workflows/design-contract.yml",
   "scripts/validate-adoption.mjs",
   "scripts/validate-media-job.mjs",
+  "scripts/validate-observatory.mjs",
+  "scripts/build-observatory-index.mjs",
+  "scripts/check-observatory-freshness.mjs",
+  "scripts/capture-reference.mjs",
   "skills/world-class-web-release/SKILL.md",
   "skills/brand-strategy-to-identity/SKILL.md",
   "skills/visual-research-and-direction/SKILL.md",
@@ -188,7 +201,18 @@ if (harness.delivery?.promotion_policy !== "independent-verifier-and-named-human
   failures.push(".agent-harness.json promotion_policy contradicts SYSTEM.md");
 }
 
-if (brandFiles.length !== 7) failures.push(`expected 7 runtime brand packs, found ${brandFiles.length}`);
+const humanBrandIds = readdirSync(join(root, "brand-packs"), { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name)
+  .sort();
+const runtimeBrandIds = brandFiles
+  .map((path) => basename(dirname(path)))
+  .sort();
+if (JSON.stringify(humanBrandIds) !== JSON.stringify(runtimeBrandIds)) {
+  failures.push(
+    `human/runtime brand packs differ: human=[${humanBrandIds.join(", ")}], runtime=[${runtimeBrandIds.join(", ")}]`
+  );
+}
 if (workflowFiles.length !== 4) failures.push(`expected 4 runtime workflow packs, found ${workflowFiles.length}`);
 
 if (failures.length) {

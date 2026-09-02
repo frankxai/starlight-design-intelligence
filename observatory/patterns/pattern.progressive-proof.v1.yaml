@@ -1,0 +1,42 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.progressive-proof.v1
+title: Progressive proof
+status: approved
+kind: proof
+principle: Place specific evidence beside the claim it resolves, then offer
+  deeper case material.
+mechanism: Use a short metric, named artifact, or customer outcome inline and
+  reserve the full narrative for a proof surface.
+use_when:
+  - Claims need trust without stopping the main reading flow
+  - Named evidence can be inspected more deeply
+avoid_when:
+  - Metrics cannot be sourced and dated
+  - A logo is the only available evidence
+observed_in:
+  - target_id: stripe
+    snapshot_ids:
+      - snapshot.stripe.proof.browser-observed.20260902t210058z
+    observation: Customer outcomes and quantified results are surfaced as scannable
+      proof entries.
+  - target_id: canva
+    snapshot_ids:
+      - snapshot.canva.proof.browser-observed.20260902t210839z
+    observation: Case-study cards connect named organizations to concrete
+      operational outcomes.
+  - target_id: circle
+    snapshot_ids:
+      - snapshot.circle.proof.browser-observed.20260902t211627z
+    observation: Customer stories are organized as evidence of community-led
+      business growth.
+  - target_id: reforge
+    snapshot_ids:
+      - snapshot.reforge.proof.browser-observed.20260902t212337z
+    observation: Case studies connect practitioner programs to named organizational
+      outcomes.
+saturation_risk: low
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

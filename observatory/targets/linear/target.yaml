@@ -1,0 +1,52 @@
+$schema: ../../../schemas/design-research-target.schema.json
+schema_version: starlight.design_research_target.v1
+target_id: linear
+display_name: Linear
+source_owner: Linear Orbit, Inc.
+canonical_url: https://linear.app/
+why: Product-led clarity, dense application proof, and controlled interaction.
+capture_policy:
+  locales:
+    - en-US
+  freshness_days: 90
+  viewports:
+    - name: desktop-1440
+      width: 1440
+      height: 1000
+      dpr: 1
+    - name: mobile-390
+      width: 390
+      height: 844
+      dpr: 1
+    - name: reflow-320
+      width: 320
+      height: 720
+      dpr: 1
+  raw_storage: private-r2-content-addressed
+surfaces:
+  - surface_id: homepage
+    kind: homepage
+    url: https://linear.app/
+    route: /
+  - surface_id: product-overview
+    kind: product-overview
+    url: https://linear.app/plan
+    route: /plan
+  - surface_id: feature
+    kind: feature
+    url: https://linear.app/ai
+    route: /ai
+  - surface_id: pricing
+    kind: conversion
+    url: https://linear.app/pricing
+    route: /pricing
+  - surface_id: proof
+    kind: proof
+    url: https://linear.app/customers
+    route: /customers
+rights:
+  state: third-party-reference-only
+  allowed_use: Abstract research findings and original pattern synthesis only.
+  prohibited_use: Marks, assets, font files, source code, distinctive
+    compositions, and copied components.
+  reviewed_at: 2026-09-02

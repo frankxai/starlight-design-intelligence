@@ -1,0 +1,778 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.canva.wave-1.20260902
+target_id: canva
+snapshot_ids: &a1
+  - snapshot.canva.homepage.browser-observed.20260902t210821z
+  - snapshot.canva.product-overview.browser-observed.20260902t212418z
+  - snapshot.canva.feature.browser-observed.20260902t210835z
+  - snapshot.canva.pricing.browser-observed.20260902t210837z
+  - snapshot.canva.proof.browser-observed.20260902t210839z
+findings:
+  foundations:
+    - finding_id: canva.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(0, 0, 0)
+            count: 2715
+          - value: rgb(15, 16, 21)
+            count: 1504
+          - value: rgb(139, 61, 255)
+            count: 416
+          - value: rgba(17, 23, 29, 0.6)
+            count: 260
+          - value: rgb(13, 18, 22)
+            count: 111
+          - value: rgba(19, 22, 32, 0.6)
+            count: 107
+          - value: rgb(14, 19, 24)
+            count: 84
+          - value: rgb(255, 255, 255)
+            count: 83
+        backgrounds:
+          - value: rgba(15, 16, 21, 0)
+            count: 230
+          - value: rgba(64, 79, 109, 0.06)
+            count: 102
+          - value: rgb(15, 16, 21)
+            count: 60
+          - value: rgb(255, 255, 255)
+            count: 46
+          - value: rgba(255, 255, 255, 0.898)
+            count: 30
+          - value: rgb(139, 61, 255)
+            count: 23
+          - value: rgba(255, 255, 255, 0)
+            count: 10
+          - value: rgb(204, 225, 255)
+            count: 5
+        fonts:
+          - value: '"Times New Roman"'
+            count: 3801
+          - value: '"Canva Sans", "IBM Plex Sans Arabic", "Noto Sans Variable", "Noto Sans",
+              -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+              sans-serif'
+            count: 867
+          - value: '"Canva Sans", "Noto Sans Variable", "Noto Sans", -apple-system,
+              BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif'
+            count: 654
+          - value: Arial
+            count: 157
+          - value: '"Canva Sans", "IBM Plex Sans Arabic", "Noto Sans Variable", "Noto Sans",
+              Helvetica, Arial, sans-serif'
+            count: 3
+        font_sizes:
+          - value: 10px
+            count: 3791
+          - value: 14px
+            count: 741
+          - value: 16px
+            count: 406
+          - value: 13.3333px
+            count: 157
+          - value: 12px
+            count: 134
+          - value: 18px
+            count: 114
+          - value: 24px
+            count: 40
+          - value: 32px
+            count: 39
+        radii:
+          - value: 0px
+            count: 4878
+          - value: 12px
+            count: 373
+          - value: 16px
+            count: 97
+          - value: 10px
+            count: 29
+          - value: 24px
+            count: 26
+          - value: 9999px
+            count: 21
+          - value: 8px
+            count: 19
+          - value: 50%
+            count: 9
+        shadows:
+          - value: rgba(255, 255, 255, 0.16) 0px 24px 24px -18px inset, rgba(255, 255, 255,
+              0.25) 0px 1px 0.5px 0px inset, rgba(21, 30, 130, 0.12) 0px -1px
+              0.5px 0px inset, rgba(21, 30, 130, 0.07) 0px 1px 2px 0px, rgba(21,
+              30, 130, 0.03) 0px 3px 4px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px
+              inset
+            count: 33
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px inset
+            count: 27
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(53, 65, 90, 0.2) 0px 0px 0px 1px
+              inset
+            count: 20
+          - value: rgba(255, 255, 255, 0.08) 0px 24px 24px -18px inset, rgba(255, 255, 255,
+              0.25) 0px 1px 0.5px 0px inset, rgba(0, 0, 0, 0.25) 0px -1px 0.5px
+              0px inset, rgba(0, 0, 0, 0.14) 0px 1px 2px 0px, rgba(0, 0, 0,
+              0.07) 0px 3px 4px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px inset
+            count: 15
+          - value: rgba(64, 79, 109, 0.07) 0px 0px 0px 0.5px, rgba(21, 30, 130, 0.12) 0px
+              2px 5px 0px, rgba(21, 30, 130, 0.06) 0px 6px 12px 0px
+            count: 13
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 4637
+          - value: 4px 12px 4px 12px
+            count: 148
+          - value: 0px 0px 274.656px 0px
+            count: 80
+          - value: 0px 16px 0px 16px
+            count: 72
+          - value: 4px 8px 4px 8px
+            count: 39
+          - value: 0px 0px 0px 16px
+            count: 39
+          - value: 12px 12px 12px 12px
+            count: 27
+          - value: 0px 0px 0px 24px
+            count: 26
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: canva.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: our cookie policy; Accept all cookies; Reject all cookies;
+        Manage cookies; Skip to main content; Canva home."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - our cookie policy
+          - Accept all cookies
+          - Reject all cookies
+          - Manage cookies
+          - Skip to main content
+          - Canva home
+          - Design
+          - Product
+          - Plans
+          - Business
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: canva.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: "Canva: Visual Suite for Everyone"
+            page_state: loaded
+            scroll_height: 7532
+          - surface_id: product-overview
+            title: Explore Canva Features to Unlock Your Creativity
+            page_state: loaded
+            scroll_height: 8930
+          - surface_id: feature
+            title: "Free AI Image Generator: Text to Image | Canva"
+            page_state: loaded
+            scroll_height: 9858
+          - surface_id: pricing
+            title: "Canva Pricing: Compare Free, Pro, Business and Enterprise plans"
+            page_state: loaded
+            scroll_height: 6612
+          - surface_id: proof
+            title: Canva customer case studies
+            page_state: loaded
+            scroll_height: 5482
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: canva.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        What will you design today?; Tools to power your best work; Turn your
+        image into an editable layout with Magic Layers; Clean up photos with
+        Magic Eraser."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - What will you design today?
+          - Tools to power your best work
+          - Turn your image into an editable layout with Magic Layers
+          - Clean up photos with Magic Eraser
+          - Remove image and video backgrounds in one click
+          - Elevate your writing with Magic Write
+          - Create presentations that engage and inspire
+          - Find your perfect presentation template
+          - Stay on-brand with Brand Kit
+          - Bring your presentations to life with animations
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: canva.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: canva.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Canva customer case studies”
+        and exposes 16 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.canva.proof.browser-observed.20260902t210839z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: Canva customer case studies
+          - level: 2
+            text: Hear it from our customers
+          - level: 3
+            text: How YuLife scales creative across 25+ countries with a lean design team
+          - level: 3
+            text: Keller Williams saves 300,000 hours for real estate agents — unlocking
+              more time to close deals 🔥
+          - level: 3
+            text: Stripe scales global performance marketing 20x with Canva Enterprise
+          - level: 3
+            text: Engel & Völkers keeps luxury branding consistent across 900+ locations
+              with Canva Enterprise
+          - level: 3
+            text: How The Danberry Co. unlocks 16x more content and wins the market with
+              Canva Enterprise
+          - level: 3
+            text: Virginia Department of Health drives secure, scalable design across 35
+              districts with Canva Enterprise
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: canva.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: canva.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 57
+            reducedPreference: false
+            transitionedElements: 154
+          - surface_id: product-overview
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 193
+          - surface_id: feature
+            animatedElements: 12
+            reducedPreference: false
+            transitionedElements: 154
+          - surface_id: pricing
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 58
+          - surface_id: proof
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 152
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: canva.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: canva.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 4
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 12
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 2
+          - surface_id: product-overview
+            headings:
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 1
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 287
+            landmarks:
+              footer: 1
+              header: 1
+              main: 0
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: feature
+            headings:
+              - 4
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 1
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 40
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 4
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: pricing
+            headings:
+              - 4
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 1
+              - 2
+              - 2
+              - 5
+              - 2
+              - 2
+              - 3
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 15
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 2
+          - surface_id: proof
+            headings:
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 15
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 4
+            missingAlt: 0
+            unnamedButtons: 0
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: canva.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: canva.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

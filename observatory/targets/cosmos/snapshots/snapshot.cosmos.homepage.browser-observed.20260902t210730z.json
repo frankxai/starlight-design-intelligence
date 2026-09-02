@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.cosmos.homepage.browser-observed.20260902t210730z",
+  "target_id": "cosmos",
+  "surface_id": "homepage",
+  "captured_at": "2026-09-02T21:07:30.123Z",
+  "locale": "en",
+  "url": "https://www.cosmos.so/",
+  "route": "/",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://www.cosmos.so/",
+    "title": "Cosmos",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "0b381be2f4c495b7692833cd47fa3e1a1414d210165550bfa4cc309ba2a9c97f",
+      "bytes": 15067,
+      "mime": "image/jpeg",
+      "width": 1353,
+      "height": 929,
+      "content_address": "sha256/0b/0b381be2f4c495b7692833cd47fa3e1a1414d210165550bfa4cc309ba2a9c97f.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "73e661bba4c0d0f4b31fb8256462ee3385442f3befea85333a67f82f7fa8cc0e",
+      "bytes": 200035,
+      "mime": "text/html",
+      "content_address": "sha256/73/73e661bba4c0d0f4b31fb8256462ee3385442f3befea85333a67f82f7fa8cc0e.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "73e661bba4c0d0f4b31fb8256462ee3385442f3befea85333a67f82f7fa8cc0e",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Cosmos",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

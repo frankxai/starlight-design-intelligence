@@ -1,0 +1,140 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: agenticincome-ai
+domains:
+  - agenticincome.ai
+brand_id: agentic-income
+canonical_repositories:
+  - frankxai/agenticincome
+surface_ids:
+  - income-home
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.product-in-context.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+influence_map:
+  - target_id: stripe
+    pattern_id: pattern.bounded-conversion.v1
+    principle: Keep price, availability, scope, and consequence together.
+  - target_id: reforge
+    pattern_id: pattern.progressive-proof.v1
+    principle: Build practitioner authority from named operating evidence.
+anti_references:
+  - Passive-income funnels with lifestyle imagery, earnings claims, countdowns,
+    and hidden affiliate incentives.
+forbidden_blending:
+  - Do not import GenCreator warmth, FrankX biography, or SIS command-center
+    visuals into economic evidence.
+gaps:
+  missing_tokens:
+    - claim status
+    - evidence age
+    - affiliate disclosure
+    - offer availability
+  inconsistent_rules:
+    - Open core, proposed paid offers, and the three-domain trinity need one
+      unambiguous availability model.
+directions:
+  - direction_id: agenticincome-ai.machinery-dossier
+    name: Machinery Dossier
+    thesis: "One request-to-quote system is opened like a machine: contract, agents,
+      costs, human approvals, delivery receipt, and current evidence."
+    source_content:
+      - Public agentic-income skill
+      - Request-to-quote reference system
+      - Honest costs and operating discipline
+    composition: A vertical machine cutaway pairs each operating stage with its real
+      file, cost, authority boundary, and receipt.
+    typography: Industrial editorial type with tabular economics and monospaced contracts.
+    color_posture: Warm paper, black machinery ink, amber decision points, and green
+      verified evidence.
+    imagery: Actual schemas, scaffold output, receipts, and attested case material.
+    motion_job: A user-controlled trace follows one request through the governed system.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: agenticincome-ai.economics-lab
+    name: Economics Lab
+    thesis: A simulation-first surface lets an operator test capacity, costs,
+      pricing, supervision, and break-even before choosing an income model.
+    source_content:
+      - Services to products to systems model
+      - Tool-stack costs
+      - Outcome Pack economics
+    composition: A constrained calculator anchors the page; assumptions,
+      sensitivity, and relevant public machinery remain adjacent.
+    typography: Neutral quantitative typography with readable methodological notes.
+    color_posture: Light analytical canvas with amber caution and green feasible states.
+    imagery: Deterministic charts, dated inputs, and inspectable calculation rules.
+    motion_job: Inputs update a textual and visual result together; no celebratory
+      earnings animation.
+    selected_pattern_ids:
+      - pattern.product-in-context.v1
+      - pattern.bounded-conversion.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: agenticincome-ai.case-journal
+    name: Attested Case Journal
+    thesis: A dated field journal builds trust through what was tried, what it cost,
+      what changed, and what remains unknown.
+    source_content:
+      - Attested cases
+      - Quarterly research review
+      - Honest marketing rules
+    composition: Each case is a long-form entry with an evidence rail, conflict
+      notes, economics, and a link to reusable machinery.
+    typography: Editorial reading type with compact provenance and disclosure labels.
+    color_posture: Paper, graphite, and one restrained amber annotation system.
+    imagery: Authorized case artifacts and sourced documentary evidence only.
+    motion_job: A comparison control reveals changes across dated case revisions.
+    selected_pattern_ids:
+      - pattern.editorial-depth-break.v1
+      - pattern.progressive-proof.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: agenticincome-ai.machinery-dossier

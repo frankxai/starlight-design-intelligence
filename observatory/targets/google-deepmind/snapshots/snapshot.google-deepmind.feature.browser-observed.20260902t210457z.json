@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.google-deepmind.feature.browser-observed.20260902t210457z",
+  "target_id": "google-deepmind",
+  "surface_id": "feature",
+  "captured_at": "2026-09-02T21:04:57.464Z",
+  "locale": "en",
+  "url": "https://deepmind.google/models/gemini/",
+  "route": "/models/gemini/",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://deepmind.google/models/gemini/",
+    "title": "Gemini — Google DeepMind",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "7a2e72bc9a7fff1fae6b1f373d6a772e0c9d1e0197504a5590f3160753078a5b",
+      "bytes": 61506,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/7a/7a2e72bc9a7fff1fae6b1f373d6a772e0c9d1e0197504a5590f3160753078a5b.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "c4826120a0a114e2c7bcb78d150ccc199172eefe10254db4797be9b8a70e1376",
+      "bytes": 200017,
+      "mime": "text/html",
+      "content_address": "sha256/c4/c4826120a0a114e2c7bcb78d150ccc199172eefe10254db4797be9b8a70e1376.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "c4826120a0a114e2c7bcb78d150ccc199172eefe10254db4797be9b8a70e1376",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Google DeepMind",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

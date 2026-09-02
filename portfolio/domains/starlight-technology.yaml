@@ -1,0 +1,144 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: starlight-technology
+domains:
+  - starlight.technology
+brand_id: starlight-technology
+canonical_repositories:
+  - frankxai/starlight-technology
+surface_ids:
+  - creator-studio-home
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.role-based-pathways.v1
+  - pattern.product-in-context.v1
+  - pattern.progressive-proof.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.bounded-conversion.v1
+influence_map:
+  - target_id: stripe
+    pattern_id: pattern.progressive-proof.v1
+    principle: Keep measurable evidence beside the recommendation it supports.
+  - target_id: canva
+    pattern_id: pattern.role-based-pathways.v1
+    principle: Let buyers enter through the creative workload they recognize.
+anti_references:
+  - Affiliate listicles, fake test labs, universal best-product badges, and
+    component-only comparisons.
+forbidden_blending:
+  - Do not blend SIS operations language or FrankX personal editorial identity
+    into neutral buying guidance.
+gaps:
+  missing_tokens:
+    - evidence status
+    - source age
+    - compatibility
+    - wrong-purchase severity
+  inconsistent_rules:
+    - Authority-bridge editorial and transaction-oriented buying flows lack a
+      shared disclosure hierarchy.
+directions:
+  - direction_id: starlight-technology.system-builder
+    name: Complete-System Builder
+    thesis: A workload-and-budget intake assembles a compatible creator or local-AI
+      system with total cost, evidence state, and wrong-purchase warnings.
+    source_content:
+      - AI Creator Studio launch wedge
+      - Complete-system cost
+      - Lower and higher budget alternatives
+    composition: A short intake leads to one system diagram, component rationale,
+      total cost, warnings, and alternatives.
+    typography: Neutral product sans with highly legible comparison and evidence labels.
+    color_posture: Cool light canvas, dark ink, blue action, and amber uncertainty.
+    imagery: Sourced products, owned complete-system photography, and deterministic
+      compatibility diagrams.
+    motion_job: Selections update the complete system and textual rationale together.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: starlight-technology.buyer-journal
+    name: Evidence Buyer Journal
+    thesis: Dated editorial guides show how a recommendation changed as prices,
+      models, evidence, and workloads changed.
+    source_content:
+      - Source dates
+      - Evidence status
+      - Research-only disclosure
+    composition: A long-form buying note carries an evidence rail, update history,
+      and bounded compare action.
+    typography: Editorial reading face with compact product and provenance data.
+    color_posture: Paper and graphite with blue links and explicit amber caveats.
+    imagery: Sourced product evidence and authorized complete-system scenes.
+    motion_job: A version comparison exposes changed evidence without animating the
+      reading column.
+    selected_pattern_ids:
+      - pattern.editorial-depth-break.v1
+      - pattern.progressive-proof.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: starlight-technology.wrong-purchase
+    name: Wrong-Purchase Comparator
+    thesis: A constraint-first comparison begins with failure conditions, then
+      reveals the systems that survive them.
+    source_content:
+      - Wrong-purchase conditions
+      - Workload and budget
+      - Compatibility and complete-system cost
+    composition: Constraint toggles lead; incompatible choices disappear with
+      reasons before a compact comparison table.
+    typography: Dense comparison type with strong row headings and accessible status
+      language.
+    color_posture: High-contrast neutral matrix with red reserved for true incompatibility.
+    imagery: Exact specs, source dates, and deterministic diagrams; no decorative
+      product renders.
+    motion_job: Constraint changes are immediate and announced; reduced motion is
+      identical.
+    selected_pattern_ids:
+      - pattern.product-in-context.v1
+      - pattern.bounded-conversion.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: starlight-technology.system-builder

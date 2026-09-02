@@ -1,0 +1,40 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.role-based-pathways.v1
+title: Role-based pathways
+status: approved
+kind: content
+principle: Organize a broad offer around the job a person is trying to complete.
+mechanism: Use task or role labels as entry points, then expose format, depth,
+  and commercial details inside each path.
+use_when:
+  - One platform serves materially different jobs
+  - Visitors can self-identify by task or role
+avoid_when:
+  - Roles are invented marketing personas
+  - Every path resolves to the same undifferentiated page
+observed_in:
+  - target_id: kajabi
+    snapshot_ids:
+      - snapshot.kajabi.product-overview.browser-observed.20260902t210943z
+    observation: Courses, coaching, communities, memberships, newsletters, and
+      podcasts form task-specific doors.
+  - target_id: maven
+    snapshot_ids:
+      - snapshot.maven.product-overview.browser-observed.20260902t211404z
+    observation: Course discovery is segmented by topic and learning format.
+  - target_id: beehiiv
+    snapshot_ids:
+      - snapshot.beehiiv.product-overview.browser-observed.20260902t210903z
+    observation: Feature groups connect publishing, growth, engagement, and
+      monetization jobs.
+  - target_id: canva
+    snapshot_ids:
+      - snapshot.canva.product-overview.browser-observed.20260902t212418z
+    observation: Creative capabilities are grouped by the task a broad audience
+      wants to complete.
+saturation_risk: medium
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

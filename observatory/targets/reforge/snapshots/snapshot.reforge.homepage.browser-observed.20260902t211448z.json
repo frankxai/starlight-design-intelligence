@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.reforge.homepage.browser-observed.20260902t211448z",
+  "target_id": "reforge",
+  "surface_id": "homepage",
+  "captured_at": "2026-09-02T21:14:48.899Z",
+  "locale": "en",
+  "url": "https://www.reforge.com/",
+  "route": "/",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://www.reforge.com/",
+    "title": "Reforge | Product Management Courses for Individuals & Teams",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "362af77af233b152292cb87da694a4aaed5fa3753b7294d7471a1ccd537cd539",
+      "bytes": 50244,
+      "mime": "image/jpeg",
+      "width": 1353,
+      "height": 929,
+      "content_address": "sha256/36/362af77af233b152292cb87da694a4aaed5fa3753b7294d7471a1ccd537cd539.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "79abfff8d80df2c975b435cc042600c2dd152f3ce4ddef849de750046c1022e7",
+      "bytes": 200015,
+      "mime": "text/html",
+      "content_address": "sha256/79/79abfff8d80df2c975b435cc042600c2dd152f3ce4ddef849de750046c1022e7.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "79abfff8d80df2c975b435cc042600c2dd152f3ce4ddef849de750046c1022e7",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Reforge, Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

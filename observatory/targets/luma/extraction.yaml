@@ -1,0 +1,410 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.luma.wave-1.20260902
+target_id: luma
+snapshot_ids: &a1
+  - snapshot.luma.homepage.browser-observed.20260902t211638z
+  - snapshot.luma.product-overview.browser-observed.20260902t211701z
+  - snapshot.luma.feature.browser-observed.20260902t211727z
+  - snapshot.luma.pricing.browser-observed.20260902t211756z
+  - snapshot.luma.proof.browser-observed.20260902t212405z
+findings:
+  foundations:
+    - finding_id: luma.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(21, 21, 21)
+            count: 1395
+          - value: rgba(21, 21, 21, 0.36)
+            count: 354
+          - value: rgb(243, 26, 124)
+            count: 143
+          - value: rgba(21, 21, 21, 0.64)
+            count: 122
+          - value: rgb(0, 21, 40)
+            count: 78
+          - value: rgba(0, 21, 40, 0.36)
+            count: 39
+          - value: rgba(0, 21, 40, 0.64)
+            count: 30
+          - value: rgb(255, 255, 255)
+            count: 21
+        backgrounds:
+          - value: rgba(21, 21, 21, 0.04)
+            count: 64
+          - value: rgba(255, 255, 255, 0.8)
+            count: 28
+          - value: rgb(255, 255, 255)
+            count: 25
+          - value: rgba(21, 21, 21, 0.08)
+            count: 18
+          - value: rgba(23, 48, 69, 0.04)
+            count: 17
+          - value: rgba(21, 21, 21, 0.36)
+            count: 10
+          - value: rgb(248, 248, 248)
+            count: 4
+          - value: rgba(21, 21, 21, 0.16)
+            count: 4
+        fonts:
+          - value: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", Inter, Roboto,
+              "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif
+            count: 2228
+          - value: '"SF Mono", menlo, monaco, consolas, "Courier New", Courier, monospace'
+            count: 4
+          - value: departure, -apple-system, BlinkMacSystemFont, "Apple Color Emoji", Inter,
+              Roboto, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans",
+              sans-serif
+            count: 2
+        font_sizes:
+          - value: 16px
+            count: 1568
+          - value: 14px
+            count: 563
+          - value: 20px
+            count: 32
+          - value: 13px
+            count: 22
+          - value: 80px
+            count: 19
+          - value: 18px
+            count: 16
+          - value: 40px
+            count: 8
+          - value: 12px
+            count: 1
+        radii:
+          - value: 0px
+            count: 1690
+          - value: 100%
+            count: 133
+          - value: 5px
+            count: 126
+          - value: 8px
+            count: 65
+          - value: 16px
+            count: 38
+          - value: 11px
+            count: 36
+          - value: 24px
+            count: 34
+          - value: 50%
+            count: 26
+        shadows:
+          - value: rgba(21, 21, 21, 0.08) 0px 0px 0px 0.5px inset
+            count: 17
+          - value: rgba(0, 0, 0, 0.01) 0px 0.7px 2.7px 0px, rgba(0, 0, 0, 0.016) 0px 1.7px
+              6.9px 0px, rgba(0, 0, 0, 0.02) 0px 3.5px 14.2px 0px, rgba(0, 0, 0,
+              0.024) 0px 7.3px 29.2px 0px
+            count: 4
+          - value: rgba(0, 0, 0, 0.1) 0px 1px 4px 0px
+            count: 3
+          - value: rgba(0, 0, 0, 0.03) 0px 3px 3px 0px, rgba(0, 0, 0, 0.04) 0px 8px 7px 0px,
+              rgba(0, 0, 0, 0.05) 0px 17px 14px 0px, rgba(0, 0, 0, 0.06) 0px
+              35px 29px 0px, rgba(0, 0, 0, 0.07) 0px 96px 80px 0px
+            count: 1
+          - value: rgba(0, 21, 40, 0.08) 0px 0px 0px 0.5px inset
+            count: 1
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 1755
+          - value: 2px 2px 2px 2px
+            count: 135
+          - value: 4px 0px 4px 0px
+            count: 54
+          - value: 8px 8px 8px 8px
+            count: 33
+          - value: 8px 10px 8px 10px
+            count: 26
+          - value: 7px 10px 7px 10px
+            count: 15
+          - value: 4px 8px 4px 8px
+            count: 12
+          - value: 8px 16px 8px 4px
+            count: 12
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: luma.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Sign In; run clubs; launch parties; firework shows; Create
+        Your First Event; Discover Events."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Sign In
+          - run clubs
+          - launch parties
+          - firework shows
+          - Create Your First Event
+          - Discover Events
+          - Amsterdam
+          - "Clothing Swap: Amsterdam Fashion Week Edition Friday, 6:00 PM"
+          - "Culture Sniffers x Amsterdam Art: Season Opening Tour (1) Saturday, 1:00
+            PM"
+          - Peter Wennink (former CEO of ASML) - Panel Discussion on "The Role of
+            Education in a Time of Rapid AI Change" | AISO Opening Night 2026/27
+            Tuesday, 6:30 PM
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: luma.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Luma
+            page_state: loaded
+            scroll_height: 2772
+          - surface_id: product-overview
+            title: Create Event · Luma
+            page_state: loaded
+            scroll_height: 936
+          - surface_id: feature
+            title: Discover Events · Luma
+            page_state: loaded
+            scroll_height: 2468
+          - surface_id: pricing
+            title: Pricing · Luma
+            page_state: loaded
+            scroll_height: 2199
+          - surface_id: proof
+            title: Design Buddies · Events Calendar
+            page_state: loaded
+            scroll_height: 2040
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: luma.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        Delightfuleventsstart here; Stellareventsstart here; Popular Events in
+        Amsterdam; Explore Global Communities."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - Delightfuleventsstart here
+          - Stellareventsstart here
+          - Popular Events in Amsterdam
+          - Explore Global Communities
+          - Browse by Category
+          - Your next unforgettable memory awaits.
+          - Welcome to Luma
+          - Discover Events
+          - Popular EventsAmsterdam
+          - "Clothing Swap: Amsterdam Fashion Week Edition"
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: luma.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: luma.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Design Buddies · Events
+        Calendar” and exposes 6 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.luma.proof.browser-observed.20260902t212405z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: Design Buddies
+          - level: 2
+            text: Events
+          - level: 3
+            text: How to get hired as a designer in the age of AI
+          - level: 3
+            text: Design Feedback Friday!
+          - level: 3
+            text: Design Feedback Friday!
+          - level: 3
+            text: Design Feedback Friday!
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: luma.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: luma.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 3
+            reducedPreference: false
+            transitionedElements: 96
+          - surface_id: product-overview
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 45
+          - surface_id: feature
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 118
+          - surface_id: pricing
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 26
+          - surface_id: proof
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 168
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: luma.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: luma.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 2
+              - 2
+              - 3
+            images: 27
+            landmarks:
+              footer: 1
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 12
+            unnamedButtons: 0
+          - surface_id: product-overview
+            headings:
+              - 3
+            images: 2
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 1
+            missingAlt: 2
+            unnamedButtons: 1
+          - surface_id: feature
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+            images: 64
+            landmarks:
+              footer: 1
+              header: 0
+              main: 0
+              nav: 1
+            missingAlt: 24
+            unnamedButtons: 0
+          - surface_id: pricing
+            headings:
+              - 1
+            images: 0
+            landmarks:
+              footer: 1
+              header: 0
+              main: 0
+              nav: 1
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: proof
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 5
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 1
+            missingAlt: 0
+            unnamedButtons: 2
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: luma.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: luma.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

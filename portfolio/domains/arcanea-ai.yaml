@@ -1,0 +1,148 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: arcanea-ai
+domains:
+  - arcanea.ai
+brand_id: arcanea
+canonical_repositories:
+  - frankxai/arcanea-ai-app
+surface_ids:
+  - homepage
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.low-chrome-discovery.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.product-in-context.v1
+  - pattern.role-based-pathways.v1
+  - pattern.progressive-proof.v1
+influence_map:
+  - target_id: cosmos
+    pattern_id: pattern.low-chrome-discovery.v1
+    principle: Let original worlds and artifacts dominate over platform chrome.
+  - target_id: league-universe
+    pattern_id: pattern.editorial-depth-break.v1
+    principle: Treat lore, characters, and regions as navigable world knowledge.
+anti_references:
+  - Fantasy portals assembled from generic purple gradients, particles, glass
+    cards, and borrowed game iconography.
+forbidden_blending:
+  - Do not turn Arcanea into FrankX personal authority, SIS operations software,
+    or AnimeLegends franchise-style character marketing.
+gaps:
+  missing_tokens:
+    - world depth
+    - artifact rarity
+    - creator journey state
+    - lore reading measure
+  inconsistent_rules:
+    - World, engine, and creator journey currently compete as the primary
+      product metaphor.
+directions:
+  - direction_id: arcanea-ai.living-world
+    name: Living World
+    thesis: One original world becomes the proof that Arcanea is an imagination
+      layer, with creator tools revealed through the act of making it.
+    source_content:
+      - Original Arcanea world
+      - World and engine concepts
+      - Creator journey artifacts
+    composition: A single world scene owns the opening; layered chapters reveal
+      character, place, artifact, and the creator action behind each.
+    typography: Mythic licensed display face paired with disciplined long-form
+      reading type.
+    color_posture: Deep mineral color drawn from owned world art with a restrained
+      luminous signal.
+    imagery: Only original Arcanea world art, maps, and creator artifacts with
+      provenance.
+    motion_job: User intent moves between world depth layers; the default reading
+      path remains stable.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.low-chrome-discovery.v1
+      - pattern.product-in-context.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: arcanea-ai.creator-pilgrimage
+    name: Creator Pilgrimage
+    thesis: A journey-led product surface where creators move from spark to world,
+      character, story, and released artifact.
+    source_content:
+      - Creator journey
+      - World-building engine
+      - Published creator artifacts
+    composition: Five materially different making stages alternate authored guidance
+      with one real output and one next action.
+    typography: Humanist display typography with clear workshop instructions.
+    color_posture: Warm parchment moves toward saturated world color as artifacts
+      become concrete.
+    imagery: Owned process sketches, prompts, maps, and finished world material.
+    motion_job: A progress trail explains accumulated artifacts without gamified noise.
+    selected_pattern_ids:
+      - pattern.role-based-pathways.v1
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: arcanea-ai.atlas-engine
+    name: Atlas Engine
+    thesis: A discovery-led atlas that lets visitors browse worlds first and inspect
+      the composable intelligence beneath each one.
+    source_content:
+      - World catalog
+      - Arcanea engine primitives
+      - Lore and artifact metadata
+    composition: A low-chrome visual atlas opens into structured world dossiers and
+      engine-level provenance.
+    typography: Editorial labels and readable lore text with technical metadata kept
+      subordinate.
+    color_posture: Dark neutral gallery chrome lets each owned world retain its
+      distinct palette.
+    imagery: Original world plates, maps, characters, and deterministic relationship
+      diagrams.
+    motion_job: Controlled zoom and reveal support orientation; reduced motion uses
+      discrete state changes.
+    selected_pattern_ids:
+      - pattern.low-chrome-discovery.v1
+      - pattern.editorial-depth-break.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: arcanea-ai.living-world

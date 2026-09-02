@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.linear.feature.browser-observed.20260902t205936z",
+  "target_id": "linear",
+  "surface_id": "feature",
+  "captured_at": "2026-09-02T20:59:36.514Z",
+  "locale": "en",
+  "url": "https://linear.app/ai",
+  "route": "/ai",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://linear.app/ai",
+    "title": "Linear – Agents that follow work from conversation to code",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "8654a52d345e34663e16f8d3d5e66a7aeab582dd7bddcc6d2e51e4009afe9d9e",
+      "bytes": 58947,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/86/8654a52d345e34663e16f8d3d5e66a7aeab582dd7bddcc6d2e51e4009afe9d9e.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "cbac33ffaf2ed8956ac255790a0c37e455e401e76214b5b50e26af9cbc285ed6",
+      "bytes": 200037,
+      "mime": "text/html",
+      "content_address": "sha256/cb/cbac33ffaf2ed8956ac255790a0c37e455e401e76214b5b50e26af9cbc285ed6.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "cbac33ffaf2ed8956ac255790a0c37e455e401e76214b5b50e26af9cbc285ed6",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Linear Orbit, Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

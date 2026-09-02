@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.runway.homepage.browser-observed.20260902t210514z",
+  "target_id": "runway",
+  "surface_id": "homepage",
+  "captured_at": "2026-09-02T21:05:14.208Z",
+  "locale": "en",
+  "url": "https://runway.com/",
+  "route": "/",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://runway.com/",
+    "title": "Runway | Building Real-World Intelligence",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "c049b8680edda27e90f4d3b95119e99f9f096fa5a81e90d3260de33aa4fc458c",
+      "bytes": 118198,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/c0/c049b8680edda27e90f4d3b95119e99f9f096fa5a81e90d3260de33aa4fc458c.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "c22d0a579e14ece9ac46a4138e3ffd0012069dd8059e697cc139a9bf2fa3ea26",
+      "bytes": 200061,
+      "mime": "text/html",
+      "content_address": "sha256/c2/c22d0a579e14ece9ac46a4138e3ffd0012069dd8059e697cc139a9bf2fa3ea26.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "c22d0a579e14ece9ac46a4138e3ffd0012069dd8059e697cc139a9bf2fa3ea26",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Runway AI, Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

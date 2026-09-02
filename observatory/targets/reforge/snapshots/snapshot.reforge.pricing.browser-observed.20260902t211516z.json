@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.reforge.pricing.browser-observed.20260902t211516z",
+  "target_id": "reforge",
+  "surface_id": "pricing",
+  "captured_at": "2026-09-02T21:15:16.170Z",
+  "locale": "en",
+  "url": "https://www.reforge.com/pricing",
+  "route": "/pricing",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://www.reforge.com/pricing",
+    "title": "Pricing | Reforge",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "998eddac82aae5a087c978502424b6b69b7e8878fbaf53c30ed0c3b1df5a206d",
+      "bytes": 56421,
+      "mime": "image/jpeg",
+      "width": 1353,
+      "height": 929,
+      "content_address": "sha256/99/998eddac82aae5a087c978502424b6b69b7e8878fbaf53c30ed0c3b1df5a206d.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "c8cdb9b0a182be0f25cddc97fbf7f43aaa61160f8f90abe01e038be33d758421",
+      "bytes": 200015,
+      "mime": "text/html",
+      "content_address": "sha256/c8/c8cdb9b0a182be0f25cddc97fbf7f43aaa61160f8f90abe01e038be33d758421.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "c8cdb9b0a182be0f25cddc97fbf7f43aaa61160f8f90abe01e038be33d758421",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Reforge, Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

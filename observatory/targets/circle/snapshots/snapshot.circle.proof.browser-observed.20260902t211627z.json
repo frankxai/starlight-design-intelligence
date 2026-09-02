@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.circle.proof.browser-observed.20260902t211627z",
+  "target_id": "circle",
+  "surface_id": "proof",
+  "captured_at": "2026-09-02T21:16:27.413Z",
+  "locale": "en",
+  "url": "https://circle.so/customer-stories",
+  "route": "/customer-stories",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://circle.so/customer-stories",
+    "title": "Customer Stories | Circle",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "beecafc94c5c46e4a9be60d328ae3e92048c1fed48d1668bdda5f7c5771baf5e",
+      "bytes": 127868,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/be/beecafc94c5c46e4a9be60d328ae3e92048c1fed48d1668bdda5f7c5771baf5e.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "3aff212aeeacc97792d0a354bb9b74bdf875e0499b3225746a4139cd8b798ed3",
+      "bytes": 200011,
+      "mime": "text/html",
+      "content_address": "sha256/3a/3aff212aeeacc97792d0a354bb9b74bdf875e0499b3225746a4139cd8b798ed3.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "3aff212aeeacc97792d0a354bb9b74bdf875e0499b3225746a4139cd8b798ed3",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "CircleCo, Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

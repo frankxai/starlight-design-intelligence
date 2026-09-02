@@ -1,0 +1,838 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.stripe.wave-1.20260902
+target_id: stripe
+snapshot_ids: &a1
+  - snapshot.stripe.homepage.browser-observed.20260902t210039z
+  - snapshot.stripe.product-overview.browser-observed.20260902t210053z
+  - snapshot.stripe.feature.browser-observed.20260902t210055z
+  - snapshot.stripe.pricing.browser-observed.20260902t210057z
+  - snapshot.stripe.proof.browser-observed.20260902t210058z
+findings:
+  foundations:
+    - finding_id: stripe.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(66, 84, 102)
+            count: 1785
+          - value: rgb(83, 58, 253)
+            count: 1118
+          - value: rgb(0, 0, 0)
+            count: 991
+          - value: rgb(6, 27, 49)
+            count: 402
+          - value: rgb(255, 255, 255)
+            count: 323
+          - value: rgb(10, 37, 64)
+            count: 322
+          - value: rgb(80, 97, 122)
+            count: 230
+          - value: rgb(0, 0, 238)
+            count: 170
+        backgrounds:
+          - value: rgb(255, 255, 255)
+            count: 142
+          - value: rgb(229, 237, 245)
+            count: 32
+          - value: rgb(171, 98, 255)
+            count: 31
+          - value: rgb(248, 250, 253)
+            count: 30
+          - value: rgba(66, 71, 112, 0.06)
+            count: 26
+          - value: rgb(83, 58, 253)
+            count: 14
+          - value: rgb(246, 249, 252)
+            count: 14
+          - value: rgb(97, 43, 215)
+            count: 13
+        fonts:
+          - value: sohne-var, "Helvetica Neue", Arial, sans-serif
+            count: 3577
+          - value: sohne-var, "SF Pro Display", sans-serif
+            count: 2400
+          - value: Arial
+            count: 23
+        font_sizes:
+          - value: 16px
+            count: 3046
+          - value: 14px
+            count: 1399
+          - value: 15px
+            count: 495
+          - value: 10px
+            count: 245
+          - value: 9px
+            count: 234
+          - value: 12px
+            count: 233
+          - value: 11px
+            count: 102
+          - value: 8px
+            count: 45
+        radii:
+          - value: 0px
+            count: 5669
+          - value: 6px
+            count: 98
+          - value: 4px
+            count: 74
+          - value: 2px
+            count: 20
+          - value: 8px
+            count: 19
+          - value: 16.5px
+            count: 19
+          - value: 5px
+            count: 16
+          - value: 3px
+            count: 13
+        shadows:
+          - value: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px
+              16px -8px
+            count: 9
+          - value: rgba(0, 0, 0, 0.03) 0px 1px 1.5px 0px, rgba(0, 0, 0, 0.03) 0px 2px 4px
+              0px
+            count: 8
+          - value: rgba(23, 23, 23, 0.08) 0px 15px 35px 0px
+            count: 3
+          - value: rgba(23, 23, 23, 0.06) 0px 3px 6px 0px
+            count: 3
+          - value: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px
+              36px -18px
+            count: 3
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 5306
+          - value: 0px 16px 0px 16px
+            count: 70
+          - value: 0px 32px 0px 16px
+            count: 55
+          - value: 32px 32px 48px 32px
+            count: 33
+          - value: 0px 0px 0px 24px
+            count: 32
+          - value: 0px 32px 0px 0px
+            count: 21
+          - value: 4px 0px 4px 0px
+            count: 20
+          - value: 16px 16px 16px 16px
+            count: 16
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: stripe.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Producten; Oplossingen; Developers; Bronnen; Tarieven;
+        Aanmelden Aanmelden."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Producten
+          - Oplossingen
+          - Developers
+          - Bronnen
+          - Tarieven
+          - Aanmelden Aanmelden
+          - Contact opnemen met sales
+          - Aan de slag
+          - Registreer met Google
+          - Accepteer en optimaliseer betalingen, online en persoonlijk Betaal Roastery
+            Cartsy bezahlen Showflix に支払う Betaal Roastery US$ 5,46 € 26,89 JP¥
+            5.000 US$ 5,46 Tikken, insteken of doorhalen om te betalen Zum
+            Bezahlen Karte auflegen, einführen oder durchziehen
+            タップ、挿入、またはスワイプして支払う Tikken, insteken of doorhalen om te betalen
+            Mocha latte US$ 5,50 Loyaliteit ( 10% korting) US$ -0,55 Belasting
+            US$ 0,51 Totaal US$ 5,46 Deluxe-Hemd € 22,60 VAT € 4,29 Summe €
+            26,89 ギフトカード JP¥ 5.000 合計 JP¥ 5.000 Mocha latte US$ 5,50 Loyaliteit
+            ( 10% korting) US$ -0,55 Belasting US$ 0,51 Totaal US$ 5,46 Doorgaan
+            Weiter 続行 Doorgaan roastery.com/checkout cartsy.com/checkout
+            showflixapp.com/checkout roastery.com/checkout E-mailadres E-Mail
+            メールアドレス E-mailadres julia.dijkstra@stripe.nl
+            damian.michelfelder@example.com taro.yamada@example.com
+            julia.dijkstra@stripe.nl of oder または of Betaalmethode
+            Zahlungsmethode 支払い方法 Betaalmethode Betaalkaart Karte カード
+            Betaalkaart カード番号 有効期限 セキュリティコード Klarna Zahlen Sie jetzt oder in 4
+            zinsfreien Raten zu je € 50,28. Affirm Betaal nu of in 4 rentevrije
+            betalingen van US$ 40,73. Cash App Cryptovaluta PayPay FamilyMart
+            Rechnung-betaling Amerikaanse bankrekening Doorgaan Weiter 続行
+            Doorgaan Besteloverzicht Zusammenfassung der Bestellung 注文概要
+            Besteloverzicht Waterkoker met temperatuurregeling US$ 150,00
+            Unverzichtbarer Hoodie Marineblau Mittel € 41,70 ストリーミング月次サブスクリプション
+            JP¥ 1.886 Waterkoker met temperatuurregeling US$ 150,00 Subtotaal
+            Zwischensumme 小計 Subtotaal US$ 150,00 € 41,70 JP¥ 1.886 US$ 150,00
+            Belasting VAT JCT Belasting US$ 15,38 € 7,92 JP¥ 189,00 US$ 15,38
+            Verzending Versand 消費税 Verzending Gratis Totaal Summe 合計 Totaal US$
+            165,38 € 49,62 JP¥ 2.075,00 US$ 165,38
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: stripe.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Stripe | Financiële infrastructuur voor meer omzet
+            page_state: loaded
+            scroll_height: 14900
+          - surface_id: product-overview
+            title: Stripe Payments | Platform voor wereldwijde betalingsverwerking
+            page_state: loaded
+            scroll_height: 34076
+          - surface_id: feature
+            title: Stripe Billing | Abonnements- en facturatieoplossingen
+            page_state: loaded
+            scroll_height: 10965
+          - surface_id: pricing
+            title: Tarieven en kosten
+            page_state: loaded
+            scroll_height: 21307
+          - surface_id: proof
+            title: Onze klanten | Stripe
+            page_state: loaded
+            scroll_height: 9627
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: stripe.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        Financiële infrastructuur om je omzet te laten groeien. Ontvang
+        betalingen, bied financiële diensten aan en implementeer je eigen
+        verdienmodellen, van je eerste transactie tot je miljardste.; Flexibele
+        oplossingen voor elk businessmodel.; Accepteer en optimaliseer
+        betalingen, online en persoonlijk; Gebruik elk facturatiemodel."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - Financiële infrastructuur om je omzet te laten groeien. Ontvang
+            betalingen, bied financiële diensten aan en implementeer je eigen
+            verdienmodellen, van je eerste transactie tot je miljardste.
+          - Flexibele oplossingen voor elk businessmodel.
+          - Accepteer en optimaliseer betalingen, online en persoonlijk
+          - Gebruik elk facturatiemodel
+          - Verdien geld met agentische handel
+          - Maak een programma voor kaartuitgifte
+          - Toegang tot grenzeloos geldverkeer met stablecoins en cryptovaluta
+          - Integreer betalingen op je platform
+          - De ruggengraat van wereldwijde handel
+          - De drijvende kracht achter ondernemingen van klein tot groot.
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: stripe.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: stripe.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Onze klanten | Stripe” and
+        exposes 16 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.stripe.proof.browser-observed.20260902t210058z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: Stripe logo
+          - level: 1
+            text: Betalingen
+          - level: 1
+            text: Omzet
+          - level: 1
+            text: Geldbeheer
+          - level: 1
+            text: Platforms en marktplaatsen
+          - level: 1
+            text: Meer
+          - level: 1
+            text: Betalingen voor miljoenen ondernemingen
+          - level: 1
+            text: We helpen klanten met meetbare resultaten
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: stripe.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: stripe.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 344
+          - surface_id: product-overview
+            animatedElements: 2
+            reducedPreference: false
+            transitionedElements: 0
+          - surface_id: feature
+            animatedElements: 2
+            reducedPreference: false
+            transitionedElements: 123
+          - surface_id: pricing
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 72
+          - surface_id: proof
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 103
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: stripe.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: stripe.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 1
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 4
+              - 4
+              - 4
+              - 3
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 3
+              - 4
+              - 4
+              - 4
+              - 2
+              - 3
+              - 3
+              - 4
+              - 4
+              - 4
+              - 3
+              - 4
+              - 4
+              - 4
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 4
+              - 4
+              - 4
+            images: 40
+            landmarks:
+              footer: 1
+              header: 5
+              main: 1
+              nav: 1
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: product-overview
+            headings:
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 2
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 3
+              - 3
+              - 3
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+            images: 67
+            landmarks:
+              footer: 36
+              header: 47
+              main: 0
+              nav: 19
+            missingAlt: 2
+            unnamedButtons: 10
+          - surface_id: feature
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 4
+              - 3
+              - 3
+              - 3
+              - 4
+            images: 11
+            landmarks:
+              footer: 1
+              header: 2
+              main: 1
+              nav: 4
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: pricing
+            headings:
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 3
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+            images: 55
+            landmarks:
+              footer: 18
+              header: 115
+              main: 0
+              nav: 8
+            missingAlt: 0
+            unnamedButtons: 6
+          - surface_id: proof
+            headings:
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 2
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+              - 1
+            images: 118
+            landmarks:
+              footer: 18
+              header: 49
+              main: 0
+              nav: 10
+            missingAlt: 0
+            unnamedButtons: 12
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: stripe.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: stripe.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

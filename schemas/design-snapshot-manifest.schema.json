@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/design-snapshot-manifest.schema.json",
+  "title": "Design snapshot manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "snapshot_id", "target_id", "surface_id", "captured_at", "locale", "url", "route", "viewport", "tool", "response", "artifacts", "content_hash", "rights", "provenance", "inspection"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": "starlight.design_snapshot_manifest.v1" },
+    "snapshot_id": { "$ref": "#/$defs/id" },
+    "target_id": { "$ref": "#/$defs/id" },
+    "surface_id": { "$ref": "#/$defs/id" },
+    "captured_at": { "type": "string", "format": "date-time" },
+    "locale": { "type": "string", "minLength": 2 },
+    "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "route": { "type": "string", "pattern": "^/" },
+    "viewport": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "width", "height", "dpr"],
+      "properties": {
+        "name": { "enum": ["desktop-1440", "mobile-390", "reflow-320", "browser-observed"] },
+        "width": { "type": "integer", "minimum": 240, "maximum": 3840 },
+        "height": { "type": "integer", "minimum": 480, "maximum": 2400 },
+        "dpr": { "type": "number", "minimum": 1, "maximum": 4 }
+      }
+    },
+    "tool": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "version", "method"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "method": { "enum": ["browser", "firecrawl", "hybrid"] }
+      }
+    },
+    "response": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "status_source", "final_url", "title", "observed_page_state"],
+      "properties": {
+        "status": {
+          "anyOf": [
+            { "type": "integer", "minimum": 100, "maximum": 599 },
+            { "type": "null" }
+          ]
+        },
+        "status_source": { "enum": ["network-response", "browser-api-unavailable"] },
+        "final_url": { "type": "string", "format": "uri" },
+        "title": { "type": "string" },
+        "observed_page_state": { "enum": ["loaded", "not-found-content", "empty-content"] }
+      }
+    },
+    "artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["screenshot", "html"],
+      "properties": {
+        "screenshot": { "$ref": "#/$defs/artifact" },
+        "html": { "$ref": "#/$defs/artifact" },
+        "crawler_bundle": { "$ref": "#/$defs/artifact" }
+      }
+    },
+    "content_hash": { "$ref": "#/$defs/hash" },
+    "rights": { "$ref": "design-research-target.schema.json#/$defs/rights" },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_owner", "captured_by", "capture_purpose"],
+      "properties": {
+        "source_owner": { "type": "string", "minLength": 1 },
+        "captured_by": { "type": "string", "minLength": 1 },
+        "capture_purpose": { "const": "design-research-reference-only" }
+      }
+    },
+    "inspection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["menu_state", "motion_state", "reduced_motion", "accessibility_structure"],
+      "properties": {
+        "menu_state": { "enum": ["observed", "not-tested", "not-applicable"] },
+        "motion_state": { "enum": ["observed", "not-tested", "none-observed"] },
+        "reduced_motion": { "enum": ["observed", "not-tested", "not-declared"] },
+        "accessibility_structure": { "enum": ["observed", "not-tested"] }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" },
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sha256", "bytes", "mime", "content_address", "storage_status"],
+      "properties": {
+        "sha256": { "$ref": "#/$defs/hash" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "mime": { "enum": ["image/jpeg", "image/png", "text/html", "application/json", "application/zip"] },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "content_address": { "type": "string", "pattern": "^sha256/[a-f0-9]{2}/[a-f0-9]{64}\\.[a-z0-9]+$" },
+        "storage_status": { "enum": ["stored-private", "pending-private-storage"] },
+        "storage_uri": { "type": "string", "pattern": "^r2://" }
+      }
+    }
+  }
+}

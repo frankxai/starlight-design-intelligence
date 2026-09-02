@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.beehiiv.homepage.browser-observed.20260902t210850z",
+  "target_id": "beehiiv",
+  "surface_id": "homepage",
+  "captured_at": "2026-09-02T21:08:50.451Z",
+  "locale": "en-us",
+  "url": "https://www.beehiiv.com/",
+  "route": "/",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://www.beehiiv.com/",
+    "title": "Newsletter Platform: Create Newsletters and Websites - beehiiv",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "0e7f779629b8dc72f6951ba901c0fad09695cd37fb93d33e4999a190ab12de0b",
+      "bytes": 123327,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/0e/0e7f779629b8dc72f6951ba901c0fad09695cd37fb93d33e4999a190ab12de0b.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "130c964e19e2c2446374a1cf7c1f1bf418a59346d6f2480f1847cf182931084f",
+      "bytes": 200021,
+      "mime": "text/html",
+      "content_address": "sha256/13/130c964e19e2c2446374a1cf7c1f1bf418a59346d6f2480f1847cf182931084f.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "130c964e19e2c2446374a1cf7c1f1bf418a59346d6f2480f1847cf182931084f",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "beehiiv, Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

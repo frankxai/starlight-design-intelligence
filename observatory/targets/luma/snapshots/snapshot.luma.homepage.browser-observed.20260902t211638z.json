@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.luma.homepage.browser-observed.20260902t211638z",
+  "target_id": "luma",
+  "surface_id": "homepage",
+  "captured_at": "2026-09-02T21:16:38.390Z",
+  "locale": "en",
+  "url": "https://lu.ma/",
+  "route": "/",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://luma.com/",
+    "title": "Luma",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "3db2a0e255699537424b0ee9523c1551727db002566a18ee6d6b2f25204e1022",
+      "bytes": 34454,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/3d/3db2a0e255699537424b0ee9523c1551727db002566a18ee6d6b2f25204e1022.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "0ec0b3c3a6ea42b4368479e0242dd5f94775cf81ab100bae2d6ef3560cb5861f",
+      "bytes": 103661,
+      "mime": "text/html",
+      "content_address": "sha256/0e/0ec0b3c3a6ea42b4368479e0242dd5f94775cf81ab100bae2d6ef3560cb5861f.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "0ec0b3c3a6ea42b4368479e0242dd5f94775cf81ab100bae2d6ef3560cb5861f",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Luma",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

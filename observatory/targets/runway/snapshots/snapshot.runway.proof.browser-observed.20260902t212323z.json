@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.runway.proof.browser-observed.20260902t212323z",
+  "target_id": "runway",
+  "surface_id": "proof",
+  "captured_at": "2026-09-02T21:23:23.504Z",
+  "locale": "en",
+  "url": "https://runway.com/news/customers",
+  "route": "/news/customers",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://runway.com/news/customers",
+    "title": "Customer Stories | Runway News",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "72c4c2bf811d8ac569ff865153a56bab05cc922837b12bf07859d1727137e681",
+      "bytes": 109166,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/72/72c4c2bf811d8ac569ff865153a56bab05cc922837b12bf07859d1727137e681.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "3bd974b5b6cab3f7696da126578ad5b0f8d34a29502e318664c6a59a2c4e9fa1",
+      "bytes": 200061,
+      "mime": "text/html",
+      "content_address": "sha256/3b/3bd974b5b6cab3f7696da126578ad5b0f8d34a29502e318664c6a59a2c4e9fa1.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "3bd974b5b6cab3f7696da126578ad5b0f8d34a29502e318664c6a59a2c4e9fa1",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Runway AI, Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

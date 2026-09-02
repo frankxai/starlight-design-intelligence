@@ -155,10 +155,22 @@ function createDownstream(
 test("canonical portfolio is non-vacuous and brand-owned", () => {
   const fixture = currentPortfolio();
   assert.deepEqual(validatePortfolioRegistryData(fixture), []);
-  assert.equal(fixture.registry.repositories.length, 5);
+  assert.equal(fixture.registry.repositories.length, 13);
   assert.deepEqual(
     new Set(fixture.registry.repositories.map((entry) => entry.brand_id)),
-    new Set(["frankx", "sis", "arcanea", "gencreator"])
+    new Set([
+      "frankx",
+      "sis",
+      "arcanea",
+      "gencreator",
+      "ai-coe",
+      "agentic-income",
+      "vibeclubs",
+      "animelegends",
+      "reality-architect",
+      "starlight-technology",
+      "rial-energy"
+    ])
   );
 });
 

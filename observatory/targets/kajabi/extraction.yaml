@@ -1,0 +1,455 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.kajabi.wave-1.20260902
+target_id: kajabi
+snapshot_ids: &a1
+  - snapshot.kajabi.homepage.browser-observed.20260902t210919z
+  - snapshot.kajabi.product-overview.browser-observed.20260902t210943z
+  - snapshot.kajabi.feature.browser-observed.20260902t212309z
+  - snapshot.kajabi.pricing.browser-observed.20260902t211030z
+  - snapshot.kajabi.proof.browser-observed.20260902t212321z
+findings:
+  foundations:
+    - finding_id: kajabi.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(255, 255, 255)
+            count: 1325
+          - value: rgb(10, 10, 10)
+            count: 1067
+          - value: rgb(83, 82, 80)
+            count: 168
+          - value: rgb(148, 145, 137)
+            count: 147
+          - value: rgb(188, 185, 174)
+            count: 144
+          - value: rgb(253, 253, 252)
+            count: 132
+          - value: rgb(51, 51, 51)
+            count: 79
+          - value: rgb(224, 222, 220)
+            count: 48
+        backgrounds:
+          - value: rgb(10, 10, 10)
+            count: 51
+          - value: rgb(255, 255, 255)
+            count: 36
+          - value: rgb(233, 232, 231)
+            count: 21
+          - value: rgb(229, 227, 224)
+            count: 18
+          - value: rgba(0, 0, 0, 0.063)
+            count: 15
+          - value: rgb(31, 31, 30)
+            count: 13
+          - value: rgba(255, 255, 255, 0.063)
+            count: 10
+          - value: rgba(224, 222, 220, 0.1)
+            count: 9
+        fonts:
+          - value: Haffer, Arial, sans-serif
+            count: 3093
+          - value: webflow-icons
+            count: 31
+          - value: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color
+              Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+            count: 16
+          - value: '"Geist Mono", "Times New Roman", sans-serif'
+            count: 16
+        font_sizes:
+          - value: 16px
+            count: 2483
+          - value: 14px
+            count: 149
+          - value: 12px
+            count: 95
+          - value: 27.725px
+            count: 87
+          - value: 19.725px
+            count: 83
+          - value: 39.3125px
+            count: 55
+          - value: 19.8625px
+            count: 53
+          - value: 31.175px
+            count: 46
+        radii:
+          - value: 0px
+            count: 2864
+          - value: 2px
+            count: 186
+          - value: 4px
+            count: 43
+          - value: 50%
+            count: 25
+          - value: 999px
+            count: 20
+          - value: 8px
+            count: 13
+          - value: 9px
+            count: 2
+          - value: 1363px
+            count: 2
+        shadows: []
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 2803
+          - value: 24px 0px 24px 0px
+            count: 69
+          - value: 12px 24px 12px 24px
+            count: 65
+          - value: 0px 0px 0px 32px
+            count: 30
+          - value: 40px 40px 40px 40px
+            count: 25
+          - value: 5.6px 14.4px 5.6px 5.6px
+            count: 18
+          - value: 12px 16px 12px 16px
+            count: 16
+          - value: 0px 0px 0px 26px
+            count: 15
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: kajabi.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Products; Updates; Pricing; Login; Start Free Trial; Terms."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Products
+          - Updates
+          - Pricing
+          - Login
+          - Start Free Trial
+          - Terms
+          - Privacy Policy
+          - Justin Welsh | 8-Figure Earner Content Expert & Solopreneur
+          - Roberto Blake | 6-Figure Earner Founder of Awesome Creator Academy
+          - Lacy Phillips | 7-Figure Earner Founder of To Be Magnetic
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: kajabi.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Turn What You Know Into What You’re Known For | Kajabi
+            page_state: loaded
+            scroll_height: 8499
+          - surface_id: product-overview
+            title: The Operating System for Human Expertise | Kajabi
+            page_state: loaded
+            scroll_height: 6074
+          - surface_id: feature
+            title: Kajabi Online Courses | Create, Market & Sell Courses in One System
+            page_state: loaded
+            scroll_height: 9898
+          - surface_id: pricing
+            title: Transparent Pricing for Expert Businesses | Kajabi
+            page_state: loaded
+            scroll_height: 7136
+          - surface_id: proof
+            title: How this 6-figure entrepreneur went from self-taught to self-made |
+              Kajabi Blog
+            page_state: loaded
+            scroll_height: 6914
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: kajabi.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        The all-in-one platform that turns what you know into what you earn;
+        All-in-one. Because six separate tools isn't a business plan.; See
+        exactly how it works.; Bring your entire business into one unified
+        system."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - The all-in-one platform that turns what you know into what you earn
+          - All-in-one. Because six separate tools isn't a business plan.
+          - See exactly how it works.
+          - Bring your entire business into one unified system
+          - All-in-one that actually works
+          - Sell with confidence
+          - Funnels that convert
+          - Ready to turn what you know into a business powered by Kajabi?
+          - See what’s new at Kajabi
+          - Backstage
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: kajabi.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: kajabi.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “How this 6-figure entrepreneur
+        went from self-taught to self-made | Kajabi Blog” and exposes 15 heading
+        nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.kajabi.proof.browser-observed.20260902t212321z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: "Roberto Blake: From Self-Taught to a Self-Made Six-Figure Entrepreneur"
+          - level: 2
+            text: "The Challenge: Turning skills into six figures"
+          - level: 2
+            text: "The Solution: Creating digital products with Kajabi"
+          - level: 2
+            text: "The Results: New products and growing revenue"
+          - level: 2
+            text: Diversify your revenue and own your destiny
+          - level: 3
+            text: The Author
+          - level: 3
+            text: Keep Reading
+          - level: 2
+            text: Similar articles
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: kajabi.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: kajabi.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 74
+          - surface_id: product-overview
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 54
+          - surface_id: feature
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 69
+          - surface_id: pricing
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 40
+          - surface_id: proof
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 49
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: kajabi.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: kajabi.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 1
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 50
+            landmarks:
+              footer: 1
+              header: 2
+              main: 1
+              nav: 14
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: product-overview
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 36
+            landmarks:
+              footer: 1
+              header: 2
+              main: 1
+              nav: 14
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: feature
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 27
+            landmarks:
+              footer: 1
+              header: 2
+              main: 1
+              nav: 17
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: pricing
+            headings:
+              - 2
+              - 3
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+            images: 9
+            landmarks:
+              footer: 1
+              header: 3
+              main: 0
+              nav: 21
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: proof
+            headings:
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+            images: 16
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 7
+            missingAlt: 0
+            unnamedButtons: 0
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: kajabi.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: kajabi.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

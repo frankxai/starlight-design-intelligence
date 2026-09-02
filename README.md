@@ -21,6 +21,7 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 | `examples/` | Before/after examples showing the quality delta this system should produce. |
 | `scripts/` | Deterministic validators for the kernel and release evidence. |
 | `portfolio/` | Canonical repository-to-brand, core-surface adoption, and toolchain-boundary requirements. |
+| `observatory/` | Governed target registry, hash-only evidence manifests, normalized extractions, abstract patterns, and domain selections. |
 
 ## Brand Boundaries
 
@@ -37,9 +38,16 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 - `awesome-motion-design-agent-skills`: public motion-agent curation.
 - `motion-design-studio`: optional motion-production adapter; it is not a canonical dependency until a real, installable repository exists.
 - `visual-intelligence`: tooling and GitHub Action layer for asset and visual QA.
+- `ux-design`: private historical Playwright bootstrap and proprietary license record; preserve as a read-only tooling capsule, not a design authority.
 - `starlight-agent-skills`: portable substrate skills for Starlight/SIS runtime consumption.
 
 There is no separate `starlight-design-agent-skills` authority. Creating another canonical layer would increase drift. Installations must retain a source reference to this repository and pass `npm test` before release.
+
+## Design Observatory
+
+This repository is also the single portfolio design observatory. Reference sites are separated by stable target IDs, not repositories. Raw third-party screenshots, HTML, and crawler bundles stay in private content-addressed storage; Git contains only provenance, hashes, normalized observations, explicit inferences, abstract patterns, and owned domain direction records.
+
+Every active domain resolves to exactly one matching human-readable and runtime brand pack. `observatory/retrieval-index.json` provides the deterministic path from domain to brand, selected patterns, and latest supporting snapshots. See `observatory/GOVERNANCE.md` before capture or synthesis.
 
 ## Design Contract Mesh
 

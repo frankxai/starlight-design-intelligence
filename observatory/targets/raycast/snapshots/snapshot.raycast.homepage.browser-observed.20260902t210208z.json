@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.raycast.homepage.browser-observed.20260902t210208z",
+  "target_id": "raycast",
+  "surface_id": "homepage",
+  "captured_at": "2026-09-02T21:02:08.925Z",
+  "locale": "en",
+  "url": "https://www.raycast.com/",
+  "route": "/",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://www.raycast.com/",
+    "title": "Raycast - Your shortcut to everything",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "b654c90b9bd288a510b19fc1200339db8fb347fc5146886ad46cb6f0eb2bc143",
+      "bytes": 33387,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/b6/b654c90b9bd288a510b19fc1200339db8fb347fc5146886ad46cb6f0eb2bc143.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "340eb9a21b8578c10b43d8668fcc5f9881f0b0d238c8c45ef04959b1b7354444",
+      "bytes": 200045,
+      "mime": "text/html",
+      "content_address": "sha256/34/340eb9a21b8578c10b43d8668fcc5f9881f0b0d238c8c45ef04959b1b7354444.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "340eb9a21b8578c10b43d8668fcc5f9881f0b0d238c8c45ef04959b1b7354444",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Raycast Technologies Ltd.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

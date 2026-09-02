@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/design-pattern.schema.json",
+  "title": "Abstract design pattern card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "pattern_id", "title", "status", "kind", "principle", "mechanism", "use_when", "avoid_when", "observed_in", "rights", "saturation_risk", "updated_at"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": "starlight.design_pattern.v1" },
+    "pattern_id": { "$ref": "#/$defs/id" },
+    "title": { "type": "string", "minLength": 3 },
+    "status": { "enum": ["approved", "candidate", "anti-pattern"] },
+    "kind": { "enum": ["foundation", "component", "anatomy", "content", "conversion", "proof", "responsive", "motion", "accessibility", "saturation"] },
+    "principle": { "type": "string", "minLength": 20 },
+    "mechanism": { "type": "string", "minLength": 20 },
+    "use_when": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 8 } },
+    "avoid_when": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 8 } },
+    "observed_in": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["target_id", "snapshot_ids", "observation"],
+        "properties": {
+          "target_id": { "$ref": "#/$defs/id" },
+          "snapshot_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+          "observation": { "type": "string", "minLength": 12 }
+        }
+      }
+    },
+    "rights": {
+      "type": "object", "additionalProperties": false,
+      "required": ["derivation", "production_rule"],
+      "properties": {
+        "derivation": { "const": "abstracted-from-reference-only-observations" },
+        "production_rule": { "const": "recompose-originally-never-copy-source-expression" }
+      }
+    },
+    "saturation_risk": { "enum": ["low", "medium", "high"] },
+    "updated_at": { "type": "string", "format": "date" }
+  },
+  "$defs": { "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" } }
+}

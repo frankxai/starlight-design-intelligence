@@ -1,0 +1,142 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: vibeclubs-ai
+domains:
+  - vibeclubs.ai
+brand_id: vibeclubs
+canonical_repositories:
+  - frankxai/vibeclubs
+surface_ids:
+  - format-home
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.product-in-context.v1
+  - pattern.bounded-conversion.v1
+  - pattern.progressive-proof.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.low-chrome-discovery.v1
+influence_map:
+  - target_id: luma
+    pattern_id: pattern.bounded-conversion.v1
+    principle: Make joining or creating a gathering a lightweight, legible action.
+  - target_id: othership
+    pattern_id: pattern.outcome-led-entry.v1
+    principle: Lead with the human state change before explaining the service mechanics.
+anti_references:
+  - Neon nightclub SaaS, synthetic crowds, coercive host controls, and
+    engagement dashboards.
+forbidden_blending:
+  - Do not blend GenCreator product catalog, Arcanea mythology, or FrankX
+    authority into the open social format.
+gaps:
+  missing_tokens:
+    - session phase
+    - mixer layer
+    - recap consent
+    - extension state
+  inconsistent_rules:
+    - Proposed Pro pricing is documented but not live and needs a durable
+      unavailable state.
+directions:
+  - direction_id: vibeclubs-ai.live-room-signal
+    name: Live Room Signal
+    thesis: A living but calm session surface shows the crew, timer, three-layer
+      mixer, and opt-in recap around the work being shipped.
+    source_content:
+      - Three-fader mixer
+      - Local timer
+      - Optional disclosed recap and session card
+    composition: A single room state owns the screen; participation, controls, and
+      consent remain close and human.
+    typography: Warm direct grotesk with large timer numerals and plain consent copy.
+    color_posture: Warm dusk neutrals with orange rhythm and pink social signal,
+      avoiding nightclub black.
+    imagery: Authorized participant artifacts and real session cards; no synthetic
+      crowds.
+    motion_job: Timer and mixer feedback explain state; reduced motion removes pulse
+      without losing status.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.product-in-context.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: vibeclubs-ai.format-handbook
+    name: Format Handbook
+    thesis: An open-source handbook teaches anyone to host a vibeclub on the
+      platform they already use.
+    source_content:
+      - Format-not-platform decision
+      - OSS quick start
+      - Host and participant rituals
+    composition: A printable editorial sequence moves from invite to focus to recap
+      with exact setup snippets.
+    typography: Friendly editorial display with highly legible procedural text and code.
+    color_posture: Cream paper, black ink, and warm hand-drawn annotations.
+    imagery: Real setup artifacts, session cards, and contributor material.
+    motion_job: User-controlled ritual steps; the printable path remains fully static.
+    selected_pattern_ids:
+      - pattern.editorial-depth-break.v1
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: vibeclubs-ai.session-wall
+    name: Session Artifact Wall
+    thesis: A public directory grows from what crews actually shipped, with every
+      entry linked to a session and consent state.
+    source_content:
+      - Session card generator
+      - Optional recaps
+      - Community directory
+    composition: A low-chrome artifact stream opens into concise session records and
+      a host-this-format action.
+    typography: Compact social labels with strong artifact titles and plain metadata.
+    color_posture: Light gallery canvas with per-club accents and accessible status chips.
+    imagery: Participant-approved outputs and session cards only.
+    motion_job: Filtering and detail reveal respond to intent; no infinite ambient motion.
+    selected_pattern_ids:
+      - pattern.low-chrome-discovery.v1
+      - pattern.progressive-proof.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: vibeclubs-ai.live-room-signal

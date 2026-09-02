@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.anthropic.homepage.browser-observed.20260902t210247z",
+  "target_id": "anthropic",
+  "surface_id": "homepage",
+  "captured_at": "2026-09-02T21:02:47.787Z",
+  "locale": "en",
+  "url": "https://www.anthropic.com/",
+  "route": "/",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://www.anthropic.com/",
+    "title": "Home \\ Anthropic",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "76332fcd488b22312f7a41015396088186abb7227418623fd7ff8a575ebf3e08",
+      "bytes": 91675,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/76/76332fcd488b22312f7a41015396088186abb7227418623fd7ff8a575ebf3e08.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "a5da8a6ed6ede7437dca271741bed27ed3490acb95b7450b87cf7384d0a0921d",
+      "bytes": 200051,
+      "mime": "text/html",
+      "content_address": "sha256/a5/a5da8a6ed6ede7437dca271741bed27ed3490acb95b7450b87cf7384d0a0921d.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "a5da8a6ed6ede7437dca271741bed27ed3490acb95b7450b87cf7384d0a0921d",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Anthropic PBC",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

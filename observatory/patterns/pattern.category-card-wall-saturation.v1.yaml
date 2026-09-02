@@ -1,0 +1,29 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.category-card-wall-saturation.v1
+title: Equal-card saturation
+status: anti-pattern
+kind: saturation
+principle: Do not translate a large taxonomy into an uninterrupted wall of
+  equally weighted cards.
+mechanism: Introduce a primary path, meaningful grouping, and depth changes
+  instead of repeating one container treatment.
+use_when:
+  - Auditing a marketplace, feature catalog, or portfolio grid
+avoid_when:
+  - A genuinely uniform comparison table is the user’s task
+observed_in:
+  - target_id: maven
+    snapshot_ids:
+      - snapshot.maven.homepage.browser-observed.20260902t211346z
+    observation: A large course inventory creates substantial repeated-card density.
+  - target_id: canva
+    snapshot_ids:
+      - snapshot.canva.homepage.browser-observed.20260902t210821z
+    observation: A broad tool inventory risks flattening many task types into equal
+      discovery units.
+saturation_risk: high
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

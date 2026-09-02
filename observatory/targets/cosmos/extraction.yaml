@@ -1,0 +1,401 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.cosmos.wave-1.20260902
+target_id: cosmos
+snapshot_ids: &a1
+  - snapshot.cosmos.homepage.browser-observed.20260902t210730z
+  - snapshot.cosmos.product-overview.browser-observed.20260902t210743z
+  - snapshot.cosmos.feature.browser-observed.20260902t210745z
+  - snapshot.cosmos.pricing.browser-observed.20260902t210759z
+  - snapshot.cosmos.proof.browser-observed.20260902t210810z
+findings:
+  foundations:
+    - finding_id: cosmos.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 4 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: lab(3.63782 -0.00000745058 0)
+            count: 806
+          - value: lab(62.6934 0.986487 0.930774)
+            count: 137
+          - value: lab(45.1621 1.47596 1.15491)
+            count: 68
+          - value: rgb(0, 0, 0)
+            count: 28
+          - value: lab(100 0 0)
+            count: 22
+          - value: rgb(26, 26, 26)
+            count: 10
+          - value: rgb(41, 41, 41)
+            count: 8
+        backgrounds:
+          - value: lab(100 0 0)
+            count: 98
+          - value: lab(3.63782 -0.00000745058 0)
+            count: 33
+          - value: lab(95.1978 0.212193 0.601578)
+            count: 25
+          - value: lab(98.6778 0.212163 0.601566)
+            count: 5
+          - value: oklch(0.9711 0.0034 67.78)
+            count: 3
+          - value: oklab(0 0 0 / 0.2)
+            count: 3
+          - value: oklab(0.999998 -0.00000980496 0.0000234246 / 0.25)
+            count: 3
+          - value: rgb(164, 163, 143)
+            count: 1
+        fonts:
+          - value: cosmosOracle, "cosmosOracle Fallback"
+            count: 1036
+          - value: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color
+              Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+            count: 46
+        font_sizes:
+          - value: 16px
+            count: 813
+          - value: 14px
+            count: 101
+          - value: 26px
+            count: 47
+          - value: 66px
+            count: 35
+          - value: 15px
+            count: 34
+          - value: 20px
+            count: 21
+          - value: 38px
+            count: 15
+          - value: 18px
+            count: 7
+        radii:
+          - value: 0px
+            count: 870
+          - value: 16px
+            count: 105
+          - value: 3.35544e+07px
+            count: 63
+          - value: 999px
+            count: 24
+          - value: 4px
+            count: 8
+          - value: 12px
+            count: 7
+          - value: 11px
+            count: 3
+          - value: 19px
+            count: 1
+        shadows:
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgba(0, 0, 0, 0.02) 0px 2px 12px 0px, rgba(0, 0, 0, 0.1) 0px
+              4px 16px 0px
+            count: 8
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgba(0, 0, 0, 0.05) 0px 1px 8px 0px
+            count: 3
+          - value: rgba(255, 255, 255, 0.7) 0px 1px 1.5px 0px inset, rgba(0, 0, 0, 0.03) 0px
+              -1px 1.5px 0px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0,
+              0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0,
+              0, 0, 0) 0px 0px 0px 0px
+            count: 3
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgba(0, 0, 0, 0.05) 0px 3px 12px 0px
+            count: 2
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgba(0, 0, 0, 0.15) 0px 6px 44px 0px, rgba(0, 0, 0, 0.03) 0px
+              4px 8px 0px
+            count: 1
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 994
+          - value: 10px 20px 10px 20px
+            count: 21
+          - value: 16px 24px 16px 24px
+            count: 11
+          - value: 0px 4px 0px 4px
+            count: 8
+          - value: 0px 16px 0px 16px
+            count: 5
+          - value: 4px 4px 4px 4px
+            count: 4
+          - value: 0px 24px 0px 24px
+            count: 3
+          - value: 9px 11px 9px 11px
+            count: 3
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: cosmos.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Explore; Sequence; Shop; Careers; Log in; Sign up."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Explore
+          - Sequence
+          - Shop
+          - Careers
+          - Log in
+          - Sign up
+          - Get the app
+          - Watch our new film (ft. Odessa A’zion)
+          - Show
+          - Blur
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: cosmos.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 4 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Cosmos
+            page_state: loaded
+            scroll_height: 6279
+          - surface_id: product-overview
+            title: Featured / Explore / Cosmos
+            page_state: loaded
+            scroll_height: 936
+          - surface_id: feature
+            title: Cosmos
+            page_state: loaded
+            scroll_height: 936
+          - surface_id: pricing
+            title: ""
+            page_state: empty-content
+            scroll_height: 936
+          - surface_id: proof
+            title: Careers at Cosmos / Cosmos
+            page_state: loaded
+            scroll_height: 2508
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: cosmos.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        Your spacefor inspiration; Every search opens a new world.; Search the
+        way you think.; Know what you’re looking at.."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - Your spacefor inspiration
+          - Every search opens a new world.
+          - Search the way you think.
+          - Know what you’re looking at.
+          - Inspiration for the world’s top creative teams.
+          - Selected by Cosmos
+          - Explore elements
+          - Cosmos Help Center
+          - Cosmos is where the world’s best taste comes to light.
+          - Benefits
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: cosmos.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: cosmos.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Careers at Cosmos / Cosmos” and
+        exposes 9 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.cosmos.proof.browser-observed.20260902t210810z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 2
+            text: Cosmos is where the world’s best taste comes to light.
+          - level: 2
+            text: Benefits
+          - level: 3
+            text: Focus
+          - level: 3
+            text: Culture
+          - level: 3
+            text: Care
+          - level: 2
+            text: Open Roles
+          - level: 2
+            text: Data Engineer, ML
+          - level: 2
+            text: Data Scientist, ML
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: cosmos.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: cosmos.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 5
+            reducedPreference: false
+            transitionedElements: 35
+          - surface_id: product-overview
+            animatedElements: 7
+            reducedPreference: false
+            transitionedElements: 55
+          - surface_id: feature
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 1
+          - surface_id: proof
+            animatedElements: 2
+            reducedPreference: false
+            transitionedElements: 34
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: cosmos.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: cosmos.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 205
+            landmarks:
+              footer: 1
+              header: 1
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 2
+          - surface_id: product-overview
+            headings:
+              - 2
+              - 2
+            images: 24
+            landmarks:
+              footer: 1
+              header: 2
+              main: 1
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 4
+          - surface_id: feature
+            headings:
+              - 1
+            images: 2
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 2
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: proof
+            headings:
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 8
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 2
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: cosmos.anti.unavailable-route
+    kind: observed
+    statement: "One or more selected public routes returned missing or empty
+      content: pricing."
+    confidence: 0.99
+    evidence_snapshot_ids:
+      - snapshot.cosmos.pricing.browser-observed.20260902t210759z
+    data:
+      affected_surfaces:
+        - surface_id: pricing
+          page_state: empty-content
+    rights_safe_abstraction: true
+  - finding_id: cosmos.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: cosmos.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

@@ -1,0 +1,204 @@
+schema_version: starlight.design_research_registry.v1
+updated_at: 2026-09-02
+default_capture_policy:
+  locales: [en-US]
+  freshness_days: 90
+  viewports:
+    - { name: desktop-1440, width: 1440, height: 1000, dpr: 1 }
+    - { name: mobile-390, width: 390, height: 844, dpr: 1 }
+    - { name: reflow-320, width: 320, height: 720, dpr: 1 }
+  raw_storage: private-r2-content-addressed
+targets:
+  - target_id: linear
+    display_name: Linear
+    source_owner: Linear Orbit, Inc.
+    canonical_url: https://linear.app/
+    why: Product-led clarity, dense application proof, and controlled interaction.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://linear.app/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://linear.app/plan, route: /plan }
+      - { surface_id: feature, kind: feature, url: https://linear.app/ai, route: /ai }
+      - { surface_id: pricing, kind: conversion, url: https://linear.app/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://linear.app/customers, route: /customers }
+  - target_id: stripe
+    display_name: Stripe
+    source_owner: Stripe, Inc.
+    canonical_url: https://stripe.com/
+    why: Modular product storytelling, proof density, and conversion architecture.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://stripe.com/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://stripe.com/payments, route: /payments }
+      - { surface_id: feature, kind: feature, url: https://stripe.com/billing, route: /billing }
+      - { surface_id: pricing, kind: conversion, url: https://stripe.com/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://stripe.com/customers, route: /customers }
+  - target_id: vercel
+    display_name: Vercel
+    source_owner: Vercel Inc.
+    canonical_url: https://vercel.com/
+    why: Developer conversion, technical proof, and progressive product explanation.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://vercel.com/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://vercel.com/fluid, route: /fluid }
+      - { surface_id: feature, kind: feature, url: https://vercel.com/ai, route: /ai }
+      - { surface_id: pricing, kind: conversion, url: https://vercel.com/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://vercel.com/customers, route: /customers }
+  - target_id: raycast
+    display_name: Raycast
+    source_owner: Raycast Technologies Ltd.
+    canonical_url: https://www.raycast.com/
+    why: Product-as-hero composition, keyboard interaction, and compact feature explanation.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://www.raycast.com/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://www.raycast.com/store, route: /store }
+      - { surface_id: feature, kind: feature, url: https://www.raycast.com/ai, route: /ai }
+      - { surface_id: pricing, kind: conversion, url: https://www.raycast.com/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://www.raycast.com/customers, route: /customers }
+  - target_id: anthropic
+    display_name: Anthropic
+    source_owner: Anthropic PBC
+    canonical_url: https://www.anthropic.com/
+    why: Research-led authority, restrained editorial hierarchy, and safety framing.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://www.anthropic.com/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://www.anthropic.com/claude, route: /claude }
+      - { surface_id: feature, kind: feature, url: https://www.anthropic.com/claude/sonnet, route: /claude/sonnet }
+      - { surface_id: pricing, kind: conversion, url: https://www.anthropic.com/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://www.anthropic.com/customers, route: /customers }
+  - target_id: google-deepmind
+    display_name: Google DeepMind
+    source_owner: Google DeepMind
+    canonical_url: https://deepmind.google/
+    why: Scientific editorial systems, breakthrough narratives, and high-craft media pacing.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://deepmind.google/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://deepmind.google/research/, route: /research/ }
+      - { surface_id: feature, kind: feature, url: https://deepmind.google/models/gemini/, route: /models/gemini/ }
+      - { surface_id: pricing, kind: conversion, url: https://deepmind.google/careers/, route: /careers/ }
+      - { surface_id: proof, kind: proof, url: https://deepmind.google/blog/, route: /blog/ }
+  - target_id: runway
+    display_name: Runway
+    source_owner: Runway AI, Inc.
+    canonical_url: https://runway.com/
+    why: Cinematic product storytelling, media-led proof, and restrained controls.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://runway.com/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://runway.com/product, route: /product }
+      - { surface_id: feature, kind: feature, url: https://runway.com/research, route: /research }
+      - { surface_id: pricing, kind: conversion, url: https://runway.com/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://runway.com/news/customers, route: /news/customers }
+  - target_id: cosmos
+    display_name: Cosmos
+    source_owner: Cosmos
+    canonical_url: https://www.cosmos.so/
+    why: Image-first discovery, low-chrome interaction, and collection-based navigation.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://www.cosmos.so/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://www.cosmos.so/explore, route: /explore }
+      - { surface_id: feature, kind: feature, url: https://help.cosmos.so/en/collections/9545884-getting-started, route: /en/collections/9545884-getting-started }
+      - { surface_id: pricing, kind: conversion, url: https://www.cosmos.so/signup, route: /signup }
+      - { surface_id: proof, kind: proof, url: https://www.cosmos.so/careers, route: /careers }
+  - target_id: canva
+    display_name: Canva
+    source_owner: Canva Pty Ltd
+    canonical_url: https://www.canva.com/
+    why: Broad-audience task entry, template discovery, and localized conversion.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://www.canva.com/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://www.canva.com/features/, route: /features/ }
+      - { surface_id: feature, kind: feature, url: https://www.canva.com/ai-image-generator/, route: /ai-image-generator/ }
+      - { surface_id: pricing, kind: conversion, url: https://www.canva.com/pricing/, route: /pricing/ }
+      - { surface_id: proof, kind: proof, url: https://www.canva.com/case-studies/, route: /case-studies/ }
+  - target_id: beehiiv
+    display_name: beehiiv
+    source_owner: beehiiv, Inc.
+    canonical_url: https://www.beehiiv.com/
+    why: Creator-business conversion, metric proof, and feature-to-outcome mapping.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://www.beehiiv.com/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://www.beehiiv.com/features, route: /features }
+      - { surface_id: feature, kind: feature, url: https://www.beehiiv.com/features/web-builder, route: /features/web-builder }
+      - { surface_id: pricing, kind: conversion, url: https://www.beehiiv.com/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://www.beehiiv.com/case-studies, route: /case-studies }
+  - target_id: kajabi
+    display_name: Kajabi
+    source_owner: Kajabi, LLC
+    canonical_url: https://kajabi.com/
+    why: Offer-led creator journeys, bundled-product explanation, and testimonial conversion.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://kajabi.com/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://www.kajabi.com/product, route: /product }
+      - { surface_id: feature, kind: feature, url: https://www.kajabi.com/product/online-courses, route: /product/online-courses }
+      - { surface_id: pricing, kind: conversion, url: https://kajabi.com/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://www.kajabi.com/blog/case-study-roberto-blake, route: /blog/case-study-roberto-blake }
+  - target_id: maven
+    display_name: Maven
+    source_owner: Maven Learning, Inc.
+    canonical_url: https://maven.com/
+    why: Expert-led proof, marketplace discovery, and cohort-course conversion.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://maven.com/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://maven.com/courses, route: /courses }
+      - { surface_id: feature, kind: feature, url: https://maven.com/teach, route: /teach }
+      - { surface_id: pricing, kind: conversion, url: https://maven.com/signup, route: /signup }
+      - { surface_id: proof, kind: proof, url: https://maven.com/about, route: /about }
+  - target_id: reforge
+    display_name: Reforge
+    source_owner: Reforge, Inc.
+    canonical_url: https://www.reforge.com/
+    why: Practitioner authority, program taxonomy, and membership conversion.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://www.reforge.com/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://www.reforge.com/courses, route: /courses }
+      - { surface_id: feature, kind: feature, url: https://www.reforge.com/courses/ai-productivity, route: /courses/ai-productivity }
+      - { surface_id: pricing, kind: conversion, url: https://www.reforge.com/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://www.reforge.com/case-studies, route: /case-studies }
+  - target_id: league-universe
+    display_name: League of Legends Universe
+    source_owner: Riot Games, Inc.
+    canonical_url: https://universe.leagueoflegends.com/en_US/
+    why: World-system navigation, cinematic lore, and character-led discovery.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://universe.leagueoflegends.com/en_US/, route: /en_US/ }
+      - { surface_id: product-overview, kind: product-overview, url: https://universe.leagueoflegends.com/en_US/champions/, route: /en_US/champions/ }
+      - { surface_id: feature, kind: feature, url: https://universe.leagueoflegends.com/en_US/regions/, route: /en_US/regions/ }
+      - { surface_id: pricing, kind: conversion, url: https://universe.leagueoflegends.com/en_US/comic/, route: /en_US/comic/ }
+      - { surface_id: proof, kind: proof, url: https://universe.leagueoflegends.com/en_US/explore/everything/newest/, route: /en_US/explore/everything/newest/ }
+  - target_id: circle
+    display_name: Circle
+    source_owner: CircleCo, Inc.
+    canonical_url: https://circle.so/
+    why: Community-product explanation, monetization pathways, and social proof.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://circle.so/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://circle.so/platform, route: /platform }
+      - { surface_id: feature, kind: feature, url: https://circle.so/courses, route: /courses }
+      - { surface_id: pricing, kind: conversion, url: https://circle.so/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://circle.so/customer-stories, route: /customer-stories }
+  - target_id: luma
+    display_name: Luma
+    source_owner: Luma
+    canonical_url: https://lu.ma/
+    why: Event discovery, lightweight creation flows, and trust through hosted detail pages.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://lu.ma/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://lu.ma/create, route: /create }
+      - { surface_id: feature, kind: feature, url: https://lu.ma/discover, route: /discover }
+      - { surface_id: pricing, kind: conversion, url: https://lu.ma/pricing, route: /pricing }
+      - { surface_id: proof, kind: proof, url: https://luma.com/design, route: /design }
+  - target_id: othership
+    display_name: Othership
+    source_owner: Othership
+    canonical_url: https://www.othership.us/
+    why: Immersive service storytelling, state-change framing, and place-based conversion.
+    surfaces:
+      - { surface_id: homepage, kind: homepage, url: https://www.othership.us/, route: / }
+      - { surface_id: product-overview, kind: product-overview, url: https://www.othership.us/offer, route: /offer }
+      - { surface_id: feature, kind: feature, url: https://www.othership.us/locations, route: /locations }
+      - { surface_id: pricing, kind: conversion, url: https://www.othership.us/buy-a-pass, route: /buy-a-pass }
+      - { surface_id: proof, kind: proof, url: https://www.othership.us/values, route: /values }
+rights:
+  default:
+    state: third-party-reference-only
+    allowed_use: Abstract research findings and original pattern synthesis only.
+    prohibited_use: Marks, assets, font files, source code, distinctive compositions, and copied components.
+    reviewed_at: 2026-09-02

@@ -3,8 +3,9 @@
   "brandId": "vibeclubs",
   "displayName": "Vibeclubs",
   "operatingUnit": "vibeclubs",
-  "sourceDocs": ["brand-packs/vibeclubs/DESIGN.md"],
-  "canonicalRepos": [],
+  "sourceDocs": ["brand-packs/vibeclubs/BRAND.md", "brand-packs/vibeclubs/DESIGN.md"],
+  "canonicalRepos": ["frankxai/vibeclubs"],
+  "surfaceModes": ["community", "session", "extension"],
   "audiences": ["community hosts", "members", "participating creators"],
   "positioning": {
     "oneLine": "Community experiences designed around participation, shared energy, and visible belonging.",
@@ -24,5 +25,5 @@
   "channels": { "primary": ["events", "community product", "social media"] },
   "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
   "doNotUse": ["generic festival gradients", "synthetic crowds", "glass-card community dashboards"],
-  "updatedAt": "2026-07-24"
+  "updatedAt": "2026-09-02"
 }
