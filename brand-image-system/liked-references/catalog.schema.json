@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liked-references-catalog.schema.json",
+  "title": "Liked reference catalog",
+  "type": "object",
+  "required": ["version", "updated", "entries", "blocked_ingest"],
+  "additionalProperties": true,
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "updated": { "type": "string", "minLength": 10 },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "source_class", "why"],
+        "properties": {
+          "id": { "type": "string", "minLength": 3 },
+          "status": { "enum": ["liked", "seed", "blocked", "rejected"] },
+          "source_class": {
+            "enum": ["instagram", "web-site", "product-cover", "brand-pack", "figma", "other"]
+          },
+          "url": { "type": "string" },
+          "local_path": { "type": "string" },
+          "why": { "type": "string", "minLength": 8 },
+          "use_for": { "type": "array", "items": { "type": "string" } },
+          "do_not_copy": { "type": "boolean" },
+          "brand_unit": { "type": "string" }
+        }
+      }
+    },
+    "blocked_ingest": { "type": "array" }
+  }
+}

@@ -12,6 +12,7 @@
 - Brand packs in `../brand-packs/` remain human sources.
 - Local working mirror: `C:\Users\frank\brands\image-system`
 - Governance: agent-governance.md, brand-operating-units.json, source-map.md
+- Liked reference library: `liked-references/` (catalog SSOT; working inbox under `C:\Users\frank\brands\image-system\liked-references`)
 - Routing cheat sheet: `visual-template-routing-2026-07-04.md`
 
 ## Key Foundations Now Live

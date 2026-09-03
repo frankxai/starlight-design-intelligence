@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "updated": "2026-08-30",
+  "ssot": "brand-image-system/liked-references/",
+  "working_root": "C:/Users/frank/brands/image-system/liked-references",
+  "blocked_ingest": [
+    {
+      "id": "slack-screenshot-2026-08-30-instagram",
+      "filename": "Screenshot_2026-08-30-03-26-44-54_1c337646f29875672b5a61192b9010f9.jpg",
+      "observed": "Slack HTTP 403; Android package MD5 matches com.instagram.android",
+      "status": "blocked",
+      "needed": "Drop file into working inbox or paste Instagram URLs/handles"
+    },
+    {
+      "id": "slack-agentic-coding-os-cover-2026-06-25",
+      "filename": "agentic-coding-os-cover-preview-2026-06-25-revised.png",
+      "observed": "Slack HTTP 403; filename not found on allowed local leaves",
+      "status": "blocked",
+      "needed": "Drop cover into working inbox for quality-bar ingest"
+    }
+  ],
+  "entries": [
+    {
+      "id": "pointer-popular-web-designs",
+      "status": "seed",
+      "source_class": "web-site",
+      "url": "skill:popular-web-designs",
+      "why": "Existing Hermes skill with 54 real product design systems. Pointer only — not a liked-by-Frank list until scored.",
+      "use_for": ["web-ui", "marketing-site"],
+      "do_not_copy": true,
+      "brand_unit": "portfolio"
+    },
+    {
+      "id": "pointer-brand-pack-taste",
+      "status": "seed",
+      "source_class": "brand-pack",
+      "url": "brand-image-system/runtime/brands/",
+      "why": "Brand packs already name Apple liquid glass, Vercel functional beauty, GitHub warmth as taste vectors. Keep as pointers until Frank likes specific live URLs.",
+      "use_for": ["all-visual"],
+      "do_not_copy": true,
+      "brand_unit": "portfolio"
+    }
+  ]
+}
