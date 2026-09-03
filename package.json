@@ -5,6 +5,10 @@
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate-kernel.mjs",
+    "validate:observatory": "node scripts/validate-observatory.mjs",
+    "index:observatory": "node scripts/build-observatory-index.mjs",
+    "check:freshness": "node scripts/check-observatory-freshness.mjs",
+    "capture:reference": "node scripts/capture-reference.mjs",
     "validate:adoption": "node scripts/validate-adoption.mjs",
     "validate:portfolio": "node scripts/validate-adoption.mjs --registry-only",
     "validate:release": "node scripts/validate-release-evidence.mjs",
@@ -17,6 +21,7 @@
   "devDependencies": {
     "ajv": "8.18.0",
     "ajv-formats": "3.0.1",
+    "playwright": "1.62.1",
     "pngjs": "7.0.0",
     "yaml": "2.8.3"
   }

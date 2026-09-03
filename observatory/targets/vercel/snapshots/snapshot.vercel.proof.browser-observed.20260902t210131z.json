@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.vercel.proof.browser-observed.20260902t210131z",
+  "target_id": "vercel",
+  "surface_id": "proof",
+  "captured_at": "2026-09-02T21:01:31.202Z",
+  "locale": "en",
+  "url": "https://vercel.com/customers",
+  "route": "/customers",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://vercel.com/customers",
+    "title": "Customers | Vercel",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "3e634313068985da245d8f545843ccf48f8c9d934e0a727ec78b1953491ee6cd",
+      "bytes": 41650,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/3e/3e634313068985da245d8f545843ccf48f8c9d934e0a727ec78b1953491ee6cd.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "afc69e32f639131b560eae03f08290ef205f5ff6fc89c4f2bd1b5c93da76030a",
+      "bytes": 200029,
+      "mime": "text/html",
+      "content_address": "sha256/af/afc69e32f639131b560eae03f08290ef205f5ff6fc89c4f2bd1b5c93da76030a.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "afc69e32f639131b560eae03f08290ef205f5ff6fc89c4f2bd1b5c93da76030a",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Vercel Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

@@ -1,0 +1,40 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.bounded-conversion.v1
+title: Bounded conversion
+status: approved
+kind: conversion
+principle: Make the next commitment, its cost or status, and its consequence
+  visible together.
+mechanism: Use one decision block with the action, price or availability,
+  included scope, and escape path.
+use_when:
+  - The user is choosing a plan, signup, application, or pass
+  - Availability differs across offers
+avoid_when:
+  - The offer is not actually available
+  - Material conditions would be hidden below the action
+observed_in:
+  - target_id: linear
+    snapshot_ids:
+      - snapshot.linear.pricing.browser-observed.20260902t205938z
+    observation: Plans are separated into bounded choices with a clear start or
+      contact action.
+  - target_id: stripe
+    snapshot_ids:
+      - snapshot.stripe.pricing.browser-observed.20260902t210057z
+    observation: Standard and custom pricing routes are distinguished at the decision point.
+  - target_id: luma
+    snapshot_ids:
+      - snapshot.luma.pricing.browser-observed.20260902t211756z
+    observation: Plan choices and their event-oriented value are grouped on a
+      dedicated conversion surface.
+  - target_id: beehiiv
+    snapshot_ids:
+      - snapshot.beehiiv.pricing.browser-observed.20260902t210906z
+    observation: Creator plans make the available publishing and growth commitment explicit.
+saturation_risk: low
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

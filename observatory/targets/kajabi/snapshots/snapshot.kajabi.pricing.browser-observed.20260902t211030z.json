@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.kajabi.pricing.browser-observed.20260902t211030z",
+  "target_id": "kajabi",
+  "surface_id": "pricing",
+  "captured_at": "2026-09-02T21:10:30.097Z",
+  "locale": "en",
+  "url": "https://kajabi.com/pricing",
+  "route": "/pricing",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://www.kajabi.com/pricing",
+    "title": "Transparent Pricing for Expert Businesses | Kajabi",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "dde1d7764e57cd46366075730f91716dd17a671e16f93650123b95cb53fe7118",
+      "bytes": 87527,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/dd/dde1d7764e57cd46366075730f91716dd17a671e16f93650123b95cb53fe7118.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "3e7cfa53268b0e6b14eaa26113f632ff60767a4852ddb6771e5f9c2b97626008",
+      "bytes": 200049,
+      "mime": "text/html",
+      "content_address": "sha256/3e/3e7cfa53268b0e6b14eaa26113f632ff60767a4852ddb6771e5f9c2b97626008.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "3e7cfa53268b0e6b14eaa26113f632ff60767a4852ddb6771e5f9c2b97626008",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Kajabi, LLC",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

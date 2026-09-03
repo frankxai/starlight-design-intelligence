@@ -1,0 +1,316 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.league-universe.wave-1.20260902
+target_id: league-universe
+snapshot_ids: &a1
+  - snapshot.league-universe.homepage.browser-observed.20260902t211534z
+  - snapshot.league-universe.product-overview.browser-observed.20260902t211547z
+  - snapshot.league-universe.feature.browser-observed.20260902t211548z
+  - snapshot.league-universe.pricing.browser-observed.20260902t211549z
+  - snapshot.league-universe.proof.browser-observed.20260902t211550z
+findings:
+  foundations:
+    - finding_id: league-universe.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 3 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(0, 0, 0)
+            count: 139
+          - value: rgb(249, 249, 249)
+            count: 132
+          - value: rgb(126, 126, 126)
+            count: 27
+          - value: rgb(204, 189, 147)
+            count: 12
+          - value: rgb(240, 230, 210)
+            count: 8
+          - value: rgb(239, 239, 239)
+            count: 3
+          - value: rgb(17, 17, 17)
+            count: 3
+          - value: rgb(240, 230, 211)
+            count: 3
+        backgrounds:
+          - value: rgb(17, 17, 17)
+            count: 6
+          - value: rgb(41, 41, 41)
+            count: 6
+          - value: rgb(10, 10, 12)
+            count: 5
+          - value: rgba(128, 128, 128, 0.2)
+            count: 3
+          - value: rgb(1, 9, 19)
+            count: 1
+        fonts:
+          - value: Inter, Arial, sans-serif
+            count: 270
+          - value: '"Times New Roman"'
+            count: 34
+          - value: '"Beaufort for LOL", Arial, sans-serif'
+            count: 25
+        font_sizes:
+          - value: 13px
+            count: 129
+          - value: 14px
+            count: 102
+          - value: 16px
+            count: 70
+          - value: 15px
+            count: 23
+          - value: 18px
+            count: 3
+          - value: 60px
+            count: 2
+        radii:
+          - value: 0px
+            count: 317
+          - value: 6.4px
+            count: 6
+          - value: 8px
+            count: 3
+          - value: 12px
+            count: 3
+        shadows: []
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 235
+          - value: 8px 16px 8px 16px
+            count: 30
+          - value: 7.5px 16px 7.5px 16px
+            count: 21
+          - value: 0px 6px 0px 6px
+            count: 6
+          - value: 20px 14px 20px 14px
+            count: 6
+          - value: 0px 0px 48px 0px
+            count: 2
+          - value: 24px 24px 24px 24px
+            count: 2
+          - value: 24px 0px 20px 0px
+            count: 2
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: league-universe.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: ABOUT LEAGUE OF LEGENDS; HELP US IMPROVE; SERVER STATUS;
+        SUPPORT; ESPORTS PRO SITE; Riot Games."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - ABOUT LEAGUE OF LEGENDS
+          - HELP US IMPROVE
+          - SERVER STATUS
+          - SUPPORT
+          - ESPORTS PRO SITE
+          - Riot Games
+          - PRIVACY NOTICE
+          - TERMS OF SERVICE
+          - COOKIE PREFERENCES
+          - Universe
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: league-universe.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 3 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Universe of League of Legends
+            page_state: not-found-content
+            scroll_height: 1406
+          - surface_id: product-overview
+            title: Champions - Universe of League of Legends
+            page_state: not-found-content
+            scroll_height: 1219
+          - surface_id: feature
+            title: Regions - Universe of League of Legends
+            page_state: loaded
+            scroll_height: 1470
+          - surface_id: pricing
+            title: Universe of League of Legends
+            page_state: loaded
+            scroll_height: 1470
+          - surface_id: proof
+            title: Newest - Everything - Universe of League of Legends
+            page_state: loaded
+            scroll_height: 1512
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: league-universe.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        Explore Universe."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - Explore Universe
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: league-universe.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: league-universe.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Newest - Everything - Universe
+        of League of Legends” and exposes 1 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.league-universe.proof.browser-observed.20260902t211550z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: Explore Universe
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: league-universe.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: league-universe.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: feature
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 25
+          - surface_id: pricing
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 25
+          - surface_id: proof
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 38
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: league-universe.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: league-universe.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: feature
+            headings: []
+            images: 1
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 4
+          - surface_id: pricing
+            headings: []
+            images: 1
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 4
+          - surface_id: proof
+            headings:
+              - 1
+              - 4
+              - 4
+              - 4
+            images: 2
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 4
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: league-universe.anti.unavailable-route
+    kind: observed
+    statement: "One or more selected public routes returned missing or empty
+      content: homepage, product-overview."
+    confidence: 0.99
+    evidence_snapshot_ids:
+      - snapshot.league-universe.homepage.browser-observed.20260902t211534z
+      - snapshot.league-universe.product-overview.browser-observed.20260902t211547z
+    data:
+      affected_surfaces:
+        - surface_id: homepage
+          page_state: not-found-content
+        - surface_id: product-overview
+          page_state: not-found-content
+    rights_safe_abstraction: true
+  - finding_id: league-universe.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: league-universe.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

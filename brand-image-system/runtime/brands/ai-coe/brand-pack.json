@@ -3,8 +3,9 @@
   "brandId": "ai-coe",
   "displayName": "AI Center of Excellence",
   "operatingUnit": "ai-architect-coe",
-  "sourceDocs": ["brand-image-system/source-map.md"],
-  "canonicalRepos": [],
+  "sourceDocs": ["brand-packs/ai-coe/BRAND.md", "brand-packs/ai-coe/DESIGN.md"],
+  "canonicalRepos": ["frankxai/ai-architect-academy"],
+  "surfaceModes": ["academy-lab", "coe-governance"],
   "audiences": ["enterprise AI leaders", "architecture teams", "governance owners"],
   "positioning": {
     "oneLine": "Proof-led AI operating architecture for teams that need governable execution.",
@@ -24,5 +25,5 @@
   "channels": { "primary": ["website", "presentations", "documentation"] },
   "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
   "doNotUse": ["hype science fiction", "decorative dashboards", "uncited benchmarks"],
-  "updatedAt": "2026-07-24"
+  "updatedAt": "2026-09-02"
 }

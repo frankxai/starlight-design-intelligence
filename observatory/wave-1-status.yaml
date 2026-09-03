@@ -1,0 +1,188 @@
+schema_version: starlight.observatory_wave_status.v1
+wave_id: wave-1.20260902
+generated_at: 2026-09-02T00:00:00Z
+required_viewports:
+  - 1440
+  - 390
+  - 320
+observed_viewport:
+  width: 1363
+  height: 936
+  dpr: 1
+exact_viewport_status: pending
+raw_storage_status: pending-private-storage
+targets:
+  - target_id: linear
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: stripe
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: vercel
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: raycast
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: anthropic
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 4
+    source_defect_surfaces:
+      - product-overview
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: google-deepmind
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: runway
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: cosmos
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 4
+    source_defect_surfaces:
+      - pricing
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: canva
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: beehiiv
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: kajabi
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: maven
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: reforge
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: league-universe
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 3
+    source_defect_surfaces:
+      - homepage
+      - product-overview
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: circle
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: luma
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320
+  - target_id: othership
+    selected_surfaces: 5
+    browser_observed_snapshots: 5
+    loaded_surfaces: 5
+    source_defect_surfaces: []
+    exact_viewports_captured: []
+    pending_viewports:
+      - 1440
+      - 390
+      - 320

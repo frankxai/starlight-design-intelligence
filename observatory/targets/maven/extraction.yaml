@@ -1,0 +1,587 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.maven.wave-1.20260902
+target_id: maven
+snapshot_ids: &a1
+  - snapshot.maven.homepage.browser-observed.20260902t211346z
+  - snapshot.maven.product-overview.browser-observed.20260902t211404z
+  - snapshot.maven.feature.browser-observed.20260902t211929z
+  - snapshot.maven.pricing.browser-observed.20260902t211942z
+  - snapshot.maven.proof.browser-observed.20260902t211943z
+findings:
+  foundations:
+    - finding_id: maven.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(23, 23, 23)
+            count: 1027
+          - value: rgb(255, 255, 255)
+            count: 847
+          - value: rgb(247, 251, 255)
+            count: 406
+          - value: rgb(115, 115, 115)
+            count: 252
+          - value: rgba(255, 255, 255, 0.7)
+            count: 98
+          - value: rgb(8, 12, 40)
+            count: 77
+          - value: oklab(0.999994 0.0000455677 0.0000200868 / 0.7)
+            count: 65
+          - value: rgb(51, 58, 90)
+            count: 38
+        backgrounds:
+          - value: rgb(255, 255, 255)
+            count: 108
+          - value: rgb(8, 12, 40)
+            count: 89
+          - value: oklab(0.999994 0.0000455678 0.0000200868 / 0.1)
+            count: 5
+          - value: rgb(236, 239, 245)
+            count: 5
+          - value: rgb(229, 229, 229)
+            count: 5
+          - value: rgb(16, 21, 49)
+            count: 4
+          - value: rgb(124, 190, 255)
+            count: 4
+          - value: rgb(51, 58, 90)
+            count: 3
+        fonts:
+          - value: fontBureauSans, "fontBureauSans Fallback"
+            count: 2773
+          - value: fontBureauSerif, "fontBureauSerif Fallback"
+            count: 330
+          - value: fontZenDots, "fontZenDots Fallback"
+            count: 81
+        font_sizes:
+          - value: 16px
+            count: 2185
+          - value: 14px
+            count: 514
+          - value: 18px
+            count: 131
+          - value: 20px
+            count: 90
+          - value: 30px
+            count: 81
+          - value: 24px
+            count: 79
+          - value: 32px
+            count: 48
+          - value: 40px
+            count: 20
+        radii:
+          - value: 0px
+            count: 2814
+          - value: 9999px
+            count: 128
+          - value: 8px
+            count: 75
+          - value: 7px
+            count: 60
+          - value: 14px
+            count: 48
+          - value: 12px
+            count: 42
+          - value: 10px
+            count: 6
+          - value: 4px
+            count: 5
+        shadows:
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 255, 255) 0px 0px 0px
+              2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px
+            count: 114
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px
+            count: 28
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgba(0, 0, 0, 0.05) 0px 5px 14px 0px, rgba(0, 0, 0, 0.05) 0px
+              2px 6px 0px
+            count: 5
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgba(0, 0, 0, 0.07) 0px 1px 2px 0px
+            count: 2
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px
+              0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px
+            count: 1
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 2694
+          - value: 0px 8px 0px 0px
+            count: 86
+          - value: 16px 16px 16px 16px
+            count: 82
+          - value: 1px 1px 1px 1px
+            count: 60
+          - value: 0px 12px 0px 12px
+            count: 60
+          - value: 0px 16px 0px 16px
+            count: 36
+          - value: 8px 8px 8px 8px
+            count: 26
+          - value: 0px 8px 0px 8px
+            count: 20
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: maven.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Maven for Business; Teach on Maven; Log In; Courses;
+        Workshops; Free lessons."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Maven for Business
+          - Teach on Maven
+          - Log In
+          - Courses
+          - Workshops
+          - Free lessons
+          - AI
+          - Product
+          - Engineering
+          - Design
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: maven.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Maven | Unlock your career growth
+            page_state: loaded
+            scroll_height: 3397
+          - surface_id: product-overview
+            title: Cohort-based Courses
+            page_state: loaded
+            scroll_height: 5961
+          - surface_id: feature
+            title: Teach on Maven — Build your expert business
+            page_state: loaded
+            scroll_height: 5260
+          - surface_id: pricing
+            title: Signup for Maven | Maven | Unlock your career growth
+            page_state: loaded
+            scroll_height: 936
+          - surface_id: proof
+            title: "About Maven: Helping experts make an impact teaching what they love."
+            page_state: loaded
+            scroll_height: 7475
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: maven.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        AI Evals For Engineers & PMs; Master Agentic AI for PMs and FDEs with
+        Official Anthropic Claude Certifications; Beyond Manager & IC - Break
+        into Senior Leadership Roles; Mastering Agentic AI: Certification by The
+        Gen Academy."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - AI Evals For Engineers & PMs
+          - Master Agentic AI for PMs and FDEs with Official Anthropic Claude
+            Certifications
+          - Beyond Manager & IC - Break into Senior Leadership Roles
+          - "Mastering Agentic AI: Certification by The Gen Academy"
+          - AI Product Management Bootcamp & Certification by AI Product Academy
+          - World-class Product Sense in Practice
+          - Forward Deployed Engineering Bootcamp
+          - AI Product Management Certification by Product Faculty
+          - Executive Communication & Influence for Senior ICs and Managers
+          - "The Forward-Deployed Engineer: The AI FDE Certification"
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: maven.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: maven.proof.observed
+      kind: observed
+      statement: "The selected proof surface is titled “About Maven: Helping experts
+        make an impact teaching what they love.” and exposes 3 heading nodes in
+        the loaded DOM."
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.maven.proof.browser-observed.20260902t211943z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: Help us build the university of the future.
+          - level: 2
+            text: At Maven, we believe Community is the cornerstone of learning online.
+          - level: 3
+            text: ""
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: maven.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: maven.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 203
+          - surface_id: product-overview
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 89
+          - surface_id: feature
+            animatedElements: 4
+            reducedPreference: false
+            transitionedElements: 94
+          - surface_id: pricing
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 10
+          - surface_id: proof
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 24
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: maven.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: maven.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+            images: 182
+            landmarks:
+              footer: 1
+              header: 0
+              main: 1
+              nav: 7
+            missingAlt: 0
+            unnamedButtons: 17
+          - surface_id: product-overview
+            headings:
+              - 1
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+            images: 148
+            landmarks:
+              footer: 1
+              header: 0
+              main: 1
+              nav: 6
+            missingAlt: 0
+            unnamedButtons: 17
+          - surface_id: feature
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+            images: 57
+            landmarks:
+              footer: 1
+              header: 0
+              main: 1
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 3
+          - surface_id: pricing
+            headings:
+              - 2
+            images: 9
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 2
+            missingAlt: 0
+            unnamedButtons: 11
+          - surface_id: proof
+            headings:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 4
+              - 4
+            images: 30
+            landmarks:
+              footer: 1
+              header: 0
+              main: 1
+              nav: 3
+            missingAlt: 11
+            unnamedButtons: 11
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: maven.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: maven.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

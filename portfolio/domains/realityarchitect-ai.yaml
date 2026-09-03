@@ -1,0 +1,140 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: realityarchitect-ai
+domains:
+  - realityarchitect.ai
+brand_id: reality-architect
+canonical_repositories:
+  - frankxai/realityarchitect
+surface_ids:
+  - method-home
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.product-in-context.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.bounded-conversion.v1
+  - pattern.progressive-proof.v1
+influence_map:
+  - target_id: linear
+    pattern_id: pattern.outcome-led-entry.v1
+    principle: Turn a broad system into one next action with a visible outcome.
+  - target_id: anthropic
+    pattern_id: pattern.editorial-depth-break.v1
+    principle: Use measured editorial depth for consequential system ideas.
+anti_references:
+  - Manifestation funnels, cosmic self-help imagery, personality quizzes without
+    artifacts, and vague transformation promises.
+forbidden_blending:
+  - Do not blend FrankX personal biography, SIS infrastructure, or Arcanea
+    mythic language into the open engineering method.
+gaps:
+  missing_tokens:
+    - five-move state
+    - assessment confidence
+    - artifact completeness
+    - acceptance result
+  inconsistent_rules:
+    - The assessment, method, standard, and starter templates need one obvious
+      next-artifact relationship.
+directions:
+  - direction_id: realityarchitect-ai.system-gap
+    name: Find the System Gap
+    thesis: The assessment identifies one missing system and immediately hands the
+      visitor its next inspectable starter artifact.
+    source_content:
+      - Architect Assessment
+      - See–Design–Build–Automate–Compound loop
+      - Starter templates and acceptance tests
+    composition: One diagnostic question opens into a short evidence-backed gap
+      result, one artifact preview, and one export action.
+    typography: Grounded editorial sans with clear diagnostic labels and readable
+      method notes.
+    color_posture: Quiet paper, charcoal, and one earthy signal for the current move.
+    imagery: Real templates, exported architecture briefs, and annotated system files.
+    motion_job: Question-to-result motion explains progress; reduced motion swaps
+      discrete states.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.product-in-context.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: realityarchitect-ai.loop-manual
+    name: Architect Loop Manual
+    thesis: A rigorous field manual explains each of the five moves through what to
+      build, what it buys, and how to verify it.
+    source_content:
+      - Five Architect Loop moves
+      - Method pages
+      - Acceptance tests
+    composition: Five long-form chapters each pair one claim with a starter file, a
+      completed example, and a review gate.
+    typography: Book-like editorial reading with restrained technical annotations.
+    color_posture: Warm paper, dark brown-black ink, and one move-specific accent sequence.
+    imagery: Actual files, filled examples, and deterministic loop diagrams.
+    motion_job: A manual index tracks the reader’s chosen move without gamification.
+    selected_pattern_ids:
+      - pattern.editorial-depth-break.v1
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: realityarchitect-ai.reality-inspector
+    name: reality.md Inspector
+    thesis: The open standard becomes an interactive, local-first inspector that
+      makes identity, intent, authority, and maintained state legible.
+    source_content:
+      - reality.md eight-section contract
+      - ~/.reality state directory
+      - Five protocol verbs
+    composition: A split artifact view pairs the human-owned contract with
+      agent-maintained state and a validation report.
+    typography: Monospace artifact text supported by calm explanatory prose.
+    color_posture: Light neutral inspector with precise pass, caution, and owner-only signals.
+    imagery: Real example files, schema output, and local privacy explanations.
+    motion_job: Validation changes are user-triggered and announced textually.
+    selected_pattern_ids:
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: realityarchitect-ai.system-gap

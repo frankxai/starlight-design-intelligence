@@ -1,0 +1,150 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: rial-aurevia-energy
+domains:
+  - pvlager.com
+  - aurevia.solar
+brand_id: rial-energy
+canonical_repositories:
+  - frankxai/pv-lager-agentic
+  - frankxai/aurevia-solar
+surface_ids:
+  - buyer-quiz
+  - energy-home
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.role-based-pathways.v1
+  - pattern.product-in-context.v1
+  - pattern.bounded-conversion.v1
+  - pattern.progressive-proof.v1
+influence_map:
+  - target_id: canva
+    pattern_id: pattern.role-based-pathways.v1
+    principle: Let a broad audience enter through the task and system type they recognize.
+  - target_id: stripe
+    pattern_id: pattern.bounded-conversion.v1
+    principle: Keep costs, conditions, and the human commitment legible at the
+      decision point.
+anti_references:
+  - Generic green solar stock sites, guaranteed savings calculators, false
+    scarcity, and subsidy badges without dates.
+forbidden_blending:
+  - Do not import Starlight Technology’s global creator-buying voice into local
+    German service, or expose private SIS energy data.
+gaps:
+  missing_tokens:
+    - inventory status
+    - subsidy confidence
+    - estimate range
+    - human review
+  inconsistent_rules:
+    - PV Lager, Rial, Aurevia, and Zola naming requires a governed endorsement
+      and surface hierarchy.
+directions:
+  - direction_id: rial-aurevia-energy.guided-buyer-quiz
+    name: Guided Buyer Quiz
+    thesis: A short German-language intake turns location, building, consumption,
+      climate, budget, and priorities into a reviewable complete-system brief.
+    source_content:
+      - PV Lager intake quiz
+      - Modules, battery, structure, and hybrid climate
+      - Dated subsidy and ROI assumptions
+    composition: One question per state leads to a transparent recommendation with
+      assumptions, range, inventory status, and human handoff.
+    typography: Plain German service typography with strong numeric and form legibility.
+    color_posture: Warm local neutrals, solar amber, energy green, and explicit
+      caution states.
+    imagery: Real local installations, stocked products, and deterministic system
+      diagrams.
+    motion_job: Progress and recommendation changes explain cause; a static summary
+      is always available.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.product-in-context.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: rial-aurevia-energy.local-showroom
+    name: Local Inventory Showroom
+    thesis: A trust-led PV Lager surface starts from what is actually stocked in
+      Seesen and builds compatible systems around it.
+    source_content:
+      - Stocked local inventory
+      - Zola Car Pods and PV structures
+      - Pickup, delivery, and sales handoff
+    composition: Real inventory and installation evidence opens the page; task-based
+      system paths and current stock follow.
+    typography: Robust service sans with clear German product metadata and
+      availability labels.
+    color_posture: Light industrial neutrals with amber and green operational signals.
+    imagery: Current warehouse, team, products, and installed systems with permission.
+    motion_job: Filters and inventory states respond to intent; no showroom carousel
+      autoplay.
+    selected_pattern_ids:
+      - pattern.role-based-pathways.v1
+      - pattern.progressive-proof.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: rial-aurevia-energy.system-proposal
+    name: Total-System Proposal
+    thesis: A proposal-first surface lets buyers inspect one complete solar,
+      storage, structure, and climate configuration before speaking with sales.
+    source_content:
+      - System configuration
+      - Complete cost and ROI range
+      - Subsidy inputs and quote workflow
+    composition: An architectural system diagram anchors a proposal with costs,
+      assumptions, alternatives, and approval steps.
+    typography: Technical proposal typography balanced by plain-language explanation.
+    color_posture: Paper-white proposal with charcoal structure, solar amber totals,
+      and green validated inputs.
+    imagery: Customer-specific material remains private; public examples use
+      consented or synthetic data clearly labeled.
+    motion_job: A user-controlled system trace reveals dependencies; printable
+      output is fully static.
+    selected_pattern_ids:
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: rial-aurevia-energy.guided-buyer-quiz

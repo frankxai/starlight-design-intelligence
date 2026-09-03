@@ -1,0 +1,36 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.outcome-led-entry.v1
+title: Outcome-led entry
+status: approved
+kind: content
+principle: State the user-visible change before exposing the product taxonomy.
+mechanism: Pair one concrete outcome sentence with one primary action and defer
+  the full system map.
+use_when:
+  - A broad portfolio needs one clear first decision
+  - A complex product has a legible first outcome
+avoid_when:
+  - The claimed outcome lacks present evidence
+  - Several audiences truly require separate entry doors
+observed_in:
+  - target_id: linear
+    snapshot_ids:
+      - snapshot.linear.homepage.browser-observed.20260902t205932z
+    observation: The opening frames one product-development outcome before the
+      deeper product inventory.
+  - target_id: circle
+    snapshot_ids:
+      - snapshot.circle.product-overview.browser-observed.20260902t211622z
+    observation: The platform overview leads with the job of running and growing a
+      community.
+  - target_id: othership
+    snapshot_ids:
+      - snapshot.othership.homepage.browser-observed.20260902t211854z
+    observation: The opening names the intended felt change before explaining
+      locations and passes.
+saturation_risk: medium
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

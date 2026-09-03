@@ -1,0 +1,220 @@
+# Wave 1 Exact Changeset
+
+This generated manifest lists every file changed by the design-observatory branch before commit.
+
+Total files: 197.
+
+## Counts by top-level area
+
+- `EADME.md/`: 1
+- `SCHEMA.md/`: 1
+- `TESTING.md/`: 1
+- `brand-image-system/`: 10
+- `brand-packs/`: 14
+- `observatory/`: 141
+- `package-lock.json/`: 1
+- `package.json/`: 1
+- `portfolio/`: 12
+- `schemas/`: 5
+- `scripts/`: 7
+- `tests/`: 3
+
+## Files
+
+- `EADME.md`
+- `SCHEMA.md`
+- `TESTING.md`
+- `brand-image-system/brand-operating-units.json`
+- `brand-image-system/runtime/brands/agentic-income/brand-pack.json`
+- `brand-image-system/runtime/brands/ai-coe/brand-pack.json`
+- `brand-image-system/runtime/brands/animelegends/brand-pack.json`
+- `brand-image-system/runtime/brands/gencreator/brand-pack.json`
+- `brand-image-system/runtime/brands/reality-architect/brand-pack.json`
+- `brand-image-system/runtime/brands/rial-energy/brand-pack.json`
+- `brand-image-system/runtime/brands/starlight-technology/brand-pack.json`
+- `brand-image-system/runtime/brands/vibeclubs/brand-pack.json`
+- `brand-image-system/source-map.md`
+- `brand-packs/agentic-income/BRAND.md`
+- `brand-packs/agentic-income/DESIGN.md`
+- `brand-packs/ai-coe/BRAND.md`
+- `brand-packs/ai-coe/DESIGN.md`
+- `brand-packs/animelegends/BRAND.md`
+- `brand-packs/animelegends/DESIGN.md`
+- `brand-packs/gencreator/BRAND.md`
+- `brand-packs/gencreator/DESIGN.md`
+- `brand-packs/reality-architect/BRAND.md`
+- `brand-packs/reality-architect/DESIGN.md`
+- `brand-packs/rial-energy/BRAND.md`
+- `brand-packs/rial-energy/DESIGN.md`
+- `brand-packs/starlight-technology/BRAND.md`
+- `brand-packs/starlight-technology/DESIGN.md`
+- `observatory/CHANGESET.md`
+- `observatory/GOVERNANCE.md`
+- `observatory/OPERATIONS.md`
+- `observatory/README.md`
+- `observatory/REPOSITORY-ASSESSMENT.md`
+- `observatory/WAVE-1-REPORT.md`
+- `observatory/patterns/pattern.bounded-conversion.v1.yaml`
+- `observatory/patterns/pattern.broken-canonical-route.v1.yaml`
+- `observatory/patterns/pattern.category-card-wall-saturation.v1.yaml`
+- `observatory/patterns/pattern.editorial-depth-break.v1.yaml`
+- `observatory/patterns/pattern.logo-wall-without-context.v1.yaml`
+- `observatory/patterns/pattern.low-chrome-discovery.v1.yaml`
+- `observatory/patterns/pattern.motion-state-explanation.v1.yaml`
+- `observatory/patterns/pattern.outcome-led-entry.v1.yaml`
+- `observatory/patterns/pattern.product-in-context.v1.yaml`
+- `observatory/patterns/pattern.progressive-proof.v1.yaml`
+- `observatory/patterns/pattern.role-based-pathways.v1.yaml`
+- `observatory/registry/targets.yaml`
+- `observatory/retrieval-index.json`
+- `observatory/selection-packet.md`
+- `observatory/source-ledger.jsonl`
+- `observatory/targets/anthropic/extraction.yaml`
+- `observatory/targets/anthropic/snapshots/snapshot.anthropic.feature.browser-observed.20260902t210315z.json`
+- `observatory/targets/anthropic/snapshots/snapshot.anthropic.homepage.browser-observed.20260902t210247z.json`
+- `observatory/targets/anthropic/snapshots/snapshot.anthropic.pricing.browser-observed.20260902t210328z.json`
+- `observatory/targets/anthropic/snapshots/snapshot.anthropic.product-overview.browser-observed.20260902t210300z.json`
+- `observatory/targets/anthropic/snapshots/snapshot.anthropic.proof.browser-observed.20260902t210346z.json`
+- `observatory/targets/anthropic/target.yaml`
+- `observatory/targets/beehiiv/extraction.yaml`
+- `observatory/targets/beehiiv/snapshots/snapshot.beehiiv.feature.browser-observed.20260902t212451z.json`
+- `observatory/targets/beehiiv/snapshots/snapshot.beehiiv.homepage.browser-observed.20260902t210850z.json`
+- `observatory/targets/beehiiv/snapshots/snapshot.beehiiv.pricing.browser-observed.20260902t210906z.json`
+- `observatory/targets/beehiiv/snapshots/snapshot.beehiiv.product-overview.browser-observed.20260902t210903z.json`
+- `observatory/targets/beehiiv/snapshots/snapshot.beehiiv.proof.browser-observed.20260902t210908z.json`
+- `observatory/targets/beehiiv/target.yaml`
+- `observatory/targets/canva/extraction.yaml`
+- `observatory/targets/canva/snapshots/snapshot.canva.feature.browser-observed.20260902t210835z.json`
+- `observatory/targets/canva/snapshots/snapshot.canva.homepage.browser-observed.20260902t210821z.json`
+- `observatory/targets/canva/snapshots/snapshot.canva.pricing.browser-observed.20260902t210837z.json`
+- `observatory/targets/canva/snapshots/snapshot.canva.product-overview.browser-observed.20260902t212418z.json`
+- `observatory/targets/canva/snapshots/snapshot.canva.proof.browser-observed.20260902t210839z.json`
+- `observatory/targets/canva/target.yaml`
+- `observatory/targets/circle/extraction.yaml`
+- `observatory/targets/circle/snapshots/snapshot.circle.feature.browser-observed.20260902t211624z.json`
+- `observatory/targets/circle/snapshots/snapshot.circle.homepage.browser-observed.20260902t211610z.json`
+- `observatory/targets/circle/snapshots/snapshot.circle.pricing.browser-observed.20260902t211625z.json`
+- `observatory/targets/circle/snapshots/snapshot.circle.product-overview.browser-observed.20260902t211622z.json`
+- `observatory/targets/circle/snapshots/snapshot.circle.proof.browser-observed.20260902t211627z.json`
+- `observatory/targets/circle/target.yaml`
+- `observatory/targets/cosmos/extraction.yaml`
+- `observatory/targets/cosmos/snapshots/snapshot.cosmos.feature.browser-observed.20260902t210745z.json`
+- `observatory/targets/cosmos/snapshots/snapshot.cosmos.homepage.browser-observed.20260902t210730z.json`
+- `observatory/targets/cosmos/snapshots/snapshot.cosmos.pricing.browser-observed.20260902t210759z.json`
+- `observatory/targets/cosmos/snapshots/snapshot.cosmos.product-overview.browser-observed.20260902t210743z.json`
+- `observatory/targets/cosmos/snapshots/snapshot.cosmos.proof.browser-observed.20260902t210810z.json`
+- `observatory/targets/cosmos/target.yaml`
+- `observatory/targets/google-deepmind/extraction.yaml`
+- `observatory/targets/google-deepmind/snapshots/snapshot.google-deepmind.feature.browser-observed.20260902t210457z.json`
+- `observatory/targets/google-deepmind/snapshots/snapshot.google-deepmind.homepage.browser-observed.20260902t210441z.json`
+- `observatory/targets/google-deepmind/snapshots/snapshot.google-deepmind.pricing.browser-observed.20260902t210459z.json`
+- `observatory/targets/google-deepmind/snapshots/snapshot.google-deepmind.product-overview.browser-observed.20260902t210455z.json`
+- `observatory/targets/google-deepmind/snapshots/snapshot.google-deepmind.proof.browser-observed.20260902t210503z.json`
+- `observatory/targets/google-deepmind/target.yaml`
+- `observatory/targets/kajabi/extraction.yaml`
+- `observatory/targets/kajabi/snapshots/snapshot.kajabi.feature.browser-observed.20260902t212309z.json`
+- `observatory/targets/kajabi/snapshots/snapshot.kajabi.homepage.browser-observed.20260902t210919z.json`
+- `observatory/targets/kajabi/snapshots/snapshot.kajabi.pricing.browser-observed.20260902t211030z.json`
+- `observatory/targets/kajabi/snapshots/snapshot.kajabi.product-overview.browser-observed.20260902t210943z.json`
+- `observatory/targets/kajabi/snapshots/snapshot.kajabi.proof.browser-observed.20260902t212321z.json`
+- `observatory/targets/kajabi/target.yaml`
+- `observatory/targets/league-universe/extraction.yaml`
+- `observatory/targets/league-universe/snapshots/snapshot.league-universe.feature.browser-observed.20260902t211548z.json`
+- `observatory/targets/league-universe/snapshots/snapshot.league-universe.homepage.browser-observed.20260902t211534z.json`
+- `observatory/targets/league-universe/snapshots/snapshot.league-universe.pricing.browser-observed.20260902t211549z.json`
+- `observatory/targets/league-universe/snapshots/snapshot.league-universe.product-overview.browser-observed.20260902t211547z.json`
+- `observatory/targets/league-universe/snapshots/snapshot.league-universe.proof.browser-observed.20260902t211550z.json`
+- `observatory/targets/league-universe/target.yaml`
+- `observatory/targets/linear/extraction.yaml`
+- `observatory/targets/linear/snapshots/snapshot.linear.feature.browser-observed.20260902t205936z.json`
+- `observatory/targets/linear/snapshots/snapshot.linear.homepage.browser-observed.20260902t205932z.json`
+- `observatory/targets/linear/snapshots/snapshot.linear.pricing.browser-observed.20260902t205938z.json`
+- `observatory/targets/linear/snapshots/snapshot.linear.product-overview.browser-observed.20260902t205934z.json`
+- `observatory/targets/linear/snapshots/snapshot.linear.proof.browser-observed.20260902t205939z.json`
+- `observatory/targets/linear/target.yaml`
+- `observatory/targets/luma/extraction.yaml`
+- `observatory/targets/luma/snapshots/snapshot.luma.feature.browser-observed.20260902t211727z.json`
+- `observatory/targets/luma/snapshots/snapshot.luma.homepage.browser-observed.20260902t211638z.json`
+- `observatory/targets/luma/snapshots/snapshot.luma.pricing.browser-observed.20260902t211756z.json`
+- `observatory/targets/luma/snapshots/snapshot.luma.product-overview.browser-observed.20260902t211701z.json`
+- `observatory/targets/luma/snapshots/snapshot.luma.proof.browser-observed.20260902t212405z.json`
+- `observatory/targets/luma/target.yaml`
+- `observatory/targets/maven/extraction.yaml`
+- `observatory/targets/maven/snapshots/snapshot.maven.feature.browser-observed.20260902t211929z.json`
+- `observatory/targets/maven/snapshots/snapshot.maven.homepage.browser-observed.20260902t211346z.json`
+- `observatory/targets/maven/snapshots/snapshot.maven.pricing.browser-observed.20260902t211942z.json`
+- `observatory/targets/maven/snapshots/snapshot.maven.product-overview.browser-observed.20260902t211404z.json`
+- `observatory/targets/maven/snapshots/snapshot.maven.proof.browser-observed.20260902t211943z.json`
+- `observatory/targets/maven/target.yaml`
+- `observatory/targets/othership/extraction.yaml`
+- `observatory/targets/othership/snapshots/snapshot.othership.feature.browser-observed.20260902t211914z.json`
+- `observatory/targets/othership/snapshots/snapshot.othership.homepage.browser-observed.20260902t211854z.json`
+- `observatory/targets/othership/snapshots/snapshot.othership.pricing.browser-observed.20260902t211916z.json`
+- `observatory/targets/othership/snapshots/snapshot.othership.product-overview.browser-observed.20260902t211912z.json`
+- `observatory/targets/othership/snapshots/snapshot.othership.proof.browser-observed.20260902t211917z.json`
+- `observatory/targets/othership/target.yaml`
+- `observatory/targets/raycast/extraction.yaml`
+- `observatory/targets/raycast/snapshots/snapshot.raycast.feature.browser-observed.20260902t210224z.json`
+- `observatory/targets/raycast/snapshots/snapshot.raycast.homepage.browser-observed.20260902t210208z.json`
+- `observatory/targets/raycast/snapshots/snapshot.raycast.pricing.browser-observed.20260902t210225z.json`
+- `observatory/targets/raycast/snapshots/snapshot.raycast.product-overview.browser-observed.20260902t212202z.json`
+- `observatory/targets/raycast/snapshots/snapshot.raycast.proof.browser-observed.20260902t210227z.json`
+- `observatory/targets/raycast/target.yaml`
+- `observatory/targets/reforge/extraction.yaml`
+- `observatory/targets/reforge/snapshots/snapshot.reforge.feature.browser-observed.20260902t212404z.json`
+- `observatory/targets/reforge/snapshots/snapshot.reforge.homepage.browser-observed.20260902t211448z.json`
+- `observatory/targets/reforge/snapshots/snapshot.reforge.pricing.browser-observed.20260902t211516z.json`
+- `observatory/targets/reforge/snapshots/snapshot.reforge.product-overview.browser-observed.20260902t212403z.json`
+- `observatory/targets/reforge/snapshots/snapshot.reforge.proof.browser-observed.20260902t212337z.json`
+- `observatory/targets/reforge/target.yaml`
+- `observatory/targets/runway/extraction.yaml`
+- `observatory/targets/runway/snapshots/snapshot.runway.feature.browser-observed.20260902t210603z.json`
+- `observatory/targets/runway/snapshots/snapshot.runway.homepage.browser-observed.20260902t210514z.json`
+- `observatory/targets/runway/snapshots/snapshot.runway.pricing.browser-observed.20260902t210626z.json`
+- `observatory/targets/runway/snapshots/snapshot.runway.product-overview.browser-observed.20260902t210540z.json`
+- `observatory/targets/runway/snapshots/snapshot.runway.proof.browser-observed.20260902t212323z.json`
+- `observatory/targets/runway/target.yaml`
+- `observatory/targets/stripe/extraction.yaml`
+- `observatory/targets/stripe/snapshots/snapshot.stripe.feature.browser-observed.20260902t210055z.json`
+- `observatory/targets/stripe/snapshots/snapshot.stripe.homepage.browser-observed.20260902t210039z.json`
+- `observatory/targets/stripe/snapshots/snapshot.stripe.pricing.browser-observed.20260902t210057z.json`
+- `observatory/targets/stripe/snapshots/snapshot.stripe.product-overview.browser-observed.20260902t210053z.json`
+- `observatory/targets/stripe/snapshots/snapshot.stripe.proof.browser-observed.20260902t210058z.json`
+- `observatory/targets/stripe/target.yaml`
+- `observatory/targets/vercel/extraction.yaml`
+- `observatory/targets/vercel/snapshots/snapshot.vercel.feature.browser-observed.20260902t210128z.json`
+- `observatory/targets/vercel/snapshots/snapshot.vercel.homepage.browser-observed.20260902t210111z.json`
+- `observatory/targets/vercel/snapshots/snapshot.vercel.pricing.browser-observed.20260902t210129z.json`
+- `observatory/targets/vercel/snapshots/snapshot.vercel.product-overview.browser-observed.20260902t212149z.json`
+- `observatory/targets/vercel/snapshots/snapshot.vercel.proof.browser-observed.20260902t210131z.json`
+- `observatory/targets/vercel/target.yaml`
+- `observatory/wave-1-status.yaml`
+- `package-lock.json`
+- `package.json`
+- `portfolio/core-surfaces.json`
+- `portfolio/domains/agenticincome-ai.yaml`
+- `portfolio/domains/aiarchitect-academy.yaml`
+- `portfolio/domains/animelegends-ai.yaml`
+- `portfolio/domains/arcanea-ai.yaml`
+- `portfolio/domains/frankx-ai.yaml`
+- `portfolio/domains/gencreator-ai.yaml`
+- `portfolio/domains/realityarchitect-ai.yaml`
+- `portfolio/domains/rial-aurevia-energy.yaml`
+- `portfolio/domains/sis.yaml`
+- `portfolio/domains/starlight-technology.yaml`
+- `portfolio/domains/vibeclubs-ai.yaml`
+- `schemas/design-extraction.schema.json`
+- `schemas/design-pattern.schema.json`
+- `schemas/design-research-target.schema.json`
+- `schemas/design-snapshot-manifest.schema.json`
+- `schemas/domain-design-profile.schema.json`
+- `scripts/build-observatory-index.mjs`
+- `scripts/capture-reference.mjs`
+- `scripts/check-observatory-freshness.mjs`
+- `scripts/import-browser-observations.mjs`
+- `scripts/observatory-lib.mjs`
+- `scripts/validate-kernel.mjs`
+- `scripts/validate-observatory.mjs`
+- `tests/adoption.test.mjs`
+- `tests/kernel.test.mjs`
+- `tests/observatory.test.mjs`

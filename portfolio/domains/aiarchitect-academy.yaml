@@ -1,0 +1,145 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: aiarchitect-academy
+domains:
+  - aiarchitect.academy
+brand_id: ai-coe
+canonical_repositories:
+  - frankxai/ai-architect-academy
+surface_ids:
+  - academy-home
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.product-in-context.v1
+  - pattern.progressive-proof.v1
+  - pattern.role-based-pathways.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.bounded-conversion.v1
+influence_map:
+  - target_id: linear
+    pattern_id: pattern.product-in-context.v1
+    principle: Teach through a real task state and the next concrete action.
+  - target_id: maven
+    pattern_id: pattern.role-based-pathways.v1
+    principle: Make learning paths legible by job, format, and current commitment.
+anti_references:
+  - Video-course funnels with credential theater, stock instructors, and no
+    runnable work.
+forbidden_blending:
+  - Do not blend SIS infrastructure authority or FrankX personal brand into the
+    Academy instructor experience.
+gaps:
+  missing_tokens:
+    - lab state
+    - hint depth
+    - review result
+    - progress checkpoint
+  inconsistent_rules:
+    - Academy and enterprise CoE share a pack but require separate surface modes
+      and conversion language.
+directions:
+  - direction_id: aiarchitect-academy.live-lab
+    name: Live Lab
+    thesis: "A broken RAG test becomes the homepage lesson: inspect it, enter the
+      terminal, receive a Socratic hint, and pass the review."
+    source_content:
+      - Lab 01 broken RAG pipeline
+      - /academy and /start-lab commands
+      - Pass/fail test and architect review
+    composition: A terminal artifact owns the opening; the learning contract, three
+      labs, and quick-start follow in one executable path.
+    typography: Technical grotesk with a monospaced lab voice and generous
+      explanatory prose.
+    color_posture: Light technical canvas with cyan action, red failing state, and
+      green verified state.
+    imagery: Actual lab code, tests, command output, and review artifacts.
+    motion_job: Step through one hint-and-review transition while preserving a
+      static transcript.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: aiarchitect-academy.fieldbook
+    name: Architecture Fieldbook
+    thesis: An editorial fieldbook teaches architecture concepts through diagrams,
+      annotated failures, and links into runnable labs.
+    source_content:
+      - Three interactive labs
+      - Architecture skills library
+      - Learning paths
+    composition: Long-form chapters alternate exact diagrams, failure notes, and a
+      bounded run-this-lab action.
+    typography: Editorial reading face with concise technical labels and code specimens.
+    color_posture: Paper, graphite, and cyan annotations with restrained severity states.
+    imagery: Deterministic diagrams, real code excerpts, and reviewed student artifacts.
+    motion_job: User-triggered diagram steps explain causality without continuous
+      animation.
+    selected_pattern_ids:
+      - pattern.editorial-depth-break.v1
+      - pattern.product-in-context.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: aiarchitect-academy.progress-studio
+    name: Progress Studio
+    thesis: A mastery dashboard makes labs, attempts, hints, reviews, and next
+      skills visible as inspectable learning evidence.
+    source_content:
+      - 0/3 lab progress
+      - Checkpoint files
+      - /review and /next commands
+    composition: A compact progress header leads into lab dossiers and an evidence
+      timeline for completed work.
+    typography: Dense but accessible interface type with monospace reserved for
+      commands and tests.
+    color_posture: Near-black studio with high-contrast cyan, amber, and green states.
+    imagery: Only actual progress files, test output, and submitted artifacts.
+    motion_job: Progress changes only after real commands and always has a textual
+      equivalent.
+    selected_pattern_ids:
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+      - pattern.role-based-pathways.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: aiarchitect-academy.live-lab

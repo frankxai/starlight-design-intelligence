@@ -1,0 +1,36 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.product-in-context.v1
+title: Product in context
+status: approved
+kind: component
+principle: Use a real product state to explain capability and consequence at the
+  same time.
+mechanism: Anchor each feature claim to an inspectable state, workflow, prompt,
+  or before-and-after artifact.
+use_when:
+  - A working interface or artifact is available
+  - Capability claims benefit from procedural proof
+avoid_when:
+  - The depicted interface would be fabricated
+  - A third-party screenshot would become production decoration
+observed_in:
+  - target_id: linear
+    snapshot_ids:
+      - snapshot.linear.feature.browser-observed.20260902t205936z
+    observation: Agent workflows are explained through concrete planning and
+      issue-management tasks.
+  - target_id: raycast
+    snapshot_ids:
+      - snapshot.raycast.feature.browser-observed.20260902t210224z
+    observation: AI capability is organized around operating-system actions and commands.
+  - target_id: runway
+    snapshot_ids:
+      - snapshot.runway.product-overview.browser-observed.20260902t210540z
+    observation: Models and creative tools are introduced through named production
+      capabilities.
+saturation_risk: low
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

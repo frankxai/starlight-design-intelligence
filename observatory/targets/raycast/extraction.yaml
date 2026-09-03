@@ -1,0 +1,438 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.raycast.wave-1.20260902
+target_id: raycast
+snapshot_ids: &a1
+  - snapshot.raycast.homepage.browser-observed.20260902t210208z
+  - snapshot.raycast.product-overview.browser-observed.20260902t212202z
+  - snapshot.raycast.feature.browser-observed.20260902t210224z
+  - snapshot.raycast.pricing.browser-observed.20260902t210225z
+  - snapshot.raycast.proof.browser-observed.20260902t210227z
+findings:
+  foundations:
+    - finding_id: raycast.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(255, 255, 255)
+            count: 2367
+          - value: rgb(156, 156, 157)
+            count: 791
+          - value: rgb(106, 107, 108)
+            count: 415
+          - value: rgba(255, 255, 255, 0.4)
+            count: 55
+          - value: rgb(230, 230, 230)
+            count: 51
+          - value: rgb(67, 67, 69)
+            count: 51
+          - value: rgba(255, 255, 255, 0.6)
+            count: 42
+          - value: rgb(47, 48, 49)
+            count: 33
+        backgrounds:
+          - value: rgb(7, 8, 10)
+            count: 148
+          - value: rgba(255, 255, 255, 0.1)
+            count: 48
+          - value: rgba(49, 49, 49, 0.26)
+            count: 37
+          - value: rgba(27, 27, 27, 0.3)
+            count: 36
+          - value: rgb(27, 27, 31)
+            count: 24
+          - value: rgba(255, 255, 255, 0.05)
+            count: 21
+          - value: rgb(67, 67, 69)
+            count: 18
+          - value: rgb(230, 230, 230)
+            count: 11
+        fonts:
+          - value: Inter, "Inter Fallback", sans-serif
+            count: 3660
+          - value: '"SF Pro Text", "SF Pro Icons", Inter, "Inter Fallback"'
+            count: 362
+          - value: GeistMono, ui-monospace, SFMono-Regular, "Roboto Mono", Menlo, Monaco,
+              "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace
+            count: 48
+          - value: '"JetBrains Mono", "JetBrains Mono Fallback", Menlo, Monaco, Courier,
+              monospace'
+            count: 26
+          - value: Inter, "Inter Fallback"
+            count: 9
+        font_sizes:
+          - value: 16px
+            count: 1687
+          - value: 14px
+            count: 1577
+          - value: 13px
+            count: 211
+          - value: 23.75px
+            count: 147
+          - value: 24px
+            count: 129
+          - value: 32px
+            count: 78
+          - value: 20px
+            count: 69
+          - value: 18px
+            count: 63
+        radii:
+          - value: 0px
+            count: 3428
+          - value: 20px
+            count: 191
+          - value: 11px
+            count: 103
+          - value: 6px
+            count: 103
+          - value: 12px
+            count: 73
+          - value: 8px
+            count: 73
+          - value: 16px
+            count: 38
+          - value: 99999px
+            count: 37
+        shadows:
+          - value: rgb(27, 28, 30) 0px 0px 0px 1px, rgb(7, 8, 10) 0px 0px 0px 1px inset
+            count: 198
+          - value: rgba(255, 255, 255, 0.2) 0px 0px 1px 0px inset
+            count: 112
+          - value: rgba(0, 0, 0, 0.4) 0px 1.5px 0.5px 2.5px, rgb(0, 0, 0) 0px 0px 0.5px 1px,
+              rgba(0, 0, 0, 0.25) 0px 2px 1px 1px inset, rgba(255, 255, 255,
+              0.2) 0px 1px 1px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px inset
+            count: 103
+          - value: rgba(255, 255, 255, 0.05) 0px 1px 0px 0px inset, rgba(255, 255, 255,
+              0.25) 0px 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset
+            count: 35
+          - value: rgba(255, 255, 255, 0.05) 0px 1px 0px 0px inset
+            count: 24
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 3436
+          - value: 24px 16px 24px 16px
+            count: 144
+          - value: 14.5px 15px 14.5px 15px
+            count: 103
+          - value: 12px 8px 12px 8px
+            count: 47
+          - value: 3px 5px 3px 5px
+            count: 43
+          - value: 8px 8px 8px 8px
+            count: 39
+          - value: 24px 24px 24px 24px
+            count: 37
+          - value: 20px 20px 20px 20px
+            count: 37
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: raycast.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Store; Pro; AI; iOS; Windows; Teams."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Store
+          - Pro
+          - AI
+          - iOS
+          - Windows
+          - Teams
+          - Enterprise
+          - Blog
+          - Pricing
+          - Download for Mac
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: raycast.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Raycast - Your shortcut to everything
+            page_state: loaded
+            scroll_height: 14314
+          - surface_id: product-overview
+            title: Raycast - Store
+            page_state: loaded
+            scroll_height: 4330
+          - surface_id: feature
+            title: AI that works with your OS - Raycast AI
+            page_state: loaded
+            scroll_height: 16758
+          - surface_id: pricing
+            title: "Raycast Pricing: Free and Pro Plans with AI"
+            page_state: loaded
+            scroll_height: 7285
+          - surface_id: proof
+            title: Raycast Customers
+            page_state: loaded
+            scroll_height: 2140
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: raycast.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        Your shortcut to everything.; It’s not about saving time.; There’s an
+        extension for that.; Plus thousands more...."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - Your shortcut to everything.
+          - It’s not about saving time.
+          - There’s an extension for that.
+          - Plus thousands more...
+          - Your Mac just got smarter.
+          - Built for professionals like you.
+          - Don't repeat yourself.
+          - Stay in the loop.
+          - Build the perfect tools.
+          - Take the short way.
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: raycast.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: raycast.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Raycast Customers” and exposes
+        4 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.raycast.proof.browser-observed.20260902t210227z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: Customers
+          - level: 3
+            text: How Resend Uses Raycast to Scale Developer Productivity
+          - level: 3
+            text: How incident.io responds to incidents faster with Raycast
+          - level: 3
+            text: How Restream Keeps Marketing and Support On-Brand with Raycast
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: raycast.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: raycast.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 20
+            reducedPreference: false
+            transitionedElements: 283
+          - surface_id: product-overview
+            animatedElements: 2
+            reducedPreference: false
+            transitionedElements: 134
+          - surface_id: feature
+            animatedElements: 19
+            reducedPreference: false
+            transitionedElements: 170
+          - surface_id: pricing
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 118
+          - surface_id: proof
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 102
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: raycast.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: raycast.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 1
+              - 2
+              - 2
+              - 3
+              - 2
+              - 2
+              - 2
+              - 5
+              - 5
+              - 5
+              - 2
+              - 5
+              - 5
+              - 3
+              - 4
+              - 4
+              - 4
+              - 4
+              - 2
+              - 5
+            images: 97
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 3
+          - surface_id: product-overview
+            headings:
+              - 1
+              - 2
+              - 3
+              - 2
+              - 2
+              - 2
+              - 3
+              - 5
+            images: 42
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 1
+            missingAlt: 0
+            unnamedButtons: 10
+          - surface_id: feature
+            headings:
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 5
+            images: 172
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 2
+          - surface_id: pricing
+            headings:
+              - 2
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 4
+              - 5
+            images: 2
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: proof
+            headings:
+              - 1
+              - 3
+              - 3
+              - 3
+              - 5
+            images: 4
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 0
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: raycast.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: raycast.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

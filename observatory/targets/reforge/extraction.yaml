@@ -1,0 +1,493 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.reforge.wave-1.20260902
+target_id: reforge
+snapshot_ids: &a1
+  - snapshot.reforge.homepage.browser-observed.20260902t211448z
+  - snapshot.reforge.product-overview.browser-observed.20260902t212403z
+  - snapshot.reforge.feature.browser-observed.20260902t212404z
+  - snapshot.reforge.pricing.browser-observed.20260902t211516z
+  - snapshot.reforge.proof.browser-observed.20260902t212337z
+findings:
+  foundations:
+    - finding_id: reforge.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(0, 0, 0)
+            count: 1738
+          - value: rgb(0, 0, 238)
+            count: 1629
+          - value: rgb(225, 225, 225)
+            count: 702
+          - value: rgba(255, 255, 255, 0.5)
+            count: 72
+          - value: rgba(255, 255, 255, 0.7)
+            count: 27
+          - value: rgb(136, 136, 136)
+            count: 9
+          - value: rgb(255, 255, 255)
+            count: 6
+          - value: rgb(105, 105, 105)
+            count: 4
+        backgrounds:
+          - value: rgba(255, 255, 255, 0)
+            count: 202
+          - value: rgba(10, 11, 13, 0.4)
+            count: 81
+          - value: rgb(225, 225, 225)
+            count: 56
+          - value: rgba(255, 255, 255, 0.12)
+            count: 37
+          - value: rgba(245, 192, 60, 0.24)
+            count: 31
+          - value: rgba(251, 251, 251, 0)
+            count: 25
+          - value: rgba(10, 11, 13, 0.9)
+            count: 22
+          - value: rgba(10, 11, 13, 0.64)
+            count: 22
+        fonts:
+          - value: sans-serif
+            count: 3378
+          - value: '"ABC Diatype Regular", "ABC Diatype Regular Placeholder", sans-serif'
+            count: 543
+          - value: '"ABC Diatype Medium", "ABC Diatype Medium Placeholder", sans-serif'
+            count: 143
+          - value: '"ABC Diatype Mono Regular", "ABC Diatype Mono Regular Placeholder",
+              monospace'
+            count: 122
+          - value: '"ABC Diatype", Inter, Arial, Helvetica'
+            count: 4
+        font_sizes:
+          - value: 12px
+            count: 3348
+          - value: 13.3328px
+            count: 472
+          - value: 16px
+            count: 213
+          - value: 23.04px
+            count: 62
+          - value: 11.1104px
+            count: 52
+          - value: 27.648px
+            count: 10
+          - value: 19.2px
+            count: 10
+          - value: 13.008px
+            count: 8
+        radii:
+          - value: 0px
+            count: 3540
+          - value: 2px
+            count: 320
+          - value: 4px
+            count: 272
+          - value: 6px
+            count: 29
+          - value: 10px
+            count: 16
+          - value: 1024px
+            count: 15
+          - value: 12px
+            count: 1
+          - value: 20px
+            count: 1
+        shadows:
+          - value: rgba(0, 0, 0, 0.08) 0px 2.76923px 11.0769px 0px
+            count: 22
+          - value: rgba(10, 11, 13, 0.64) 0px 0px 16px 8px inset
+            count: 3
+          - value: rgba(10, 11, 13, 0.72) 0px 6px 96px 12px
+            count: 2
+          - value: rgba(0, 0, 0, 0.2) 0px 0px 18px 0px
+            count: 2
+          - value: rgba(10, 11, 13, 0.16) 0px 4px 16px 0px
+            count: 1
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 3613
+          - value: 0px 16px 0px 16px
+            count: 160
+          - value: 4px 12px 4px 12px
+            count: 91
+          - value: 24px 24px 24px 24px
+            count: 43
+          - value: 8px 12px 7px 12px
+            count: 25
+          - value: 24px 16px 24px 16px
+            count: 23
+          - value: 8px 8px 8px 8px
+            count: 22
+          - value: 2px 8px 2px 8px
+            count: 22
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: reforge.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Courses; Teams; Pricing; Blog; Login; Book a demo."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Courses
+          - Teams
+          - Pricing
+          - Blog
+          - Login
+          - Book a demo
+          - Get in touch
+          - Start free trial
+          - AI Transformation Live Learn the emerging playbook for transforming your
+            product team into an AI native organization Hosted by Sachin Rekhi
+          - AI Evals Live Gain a practical playbook for defining, measuring, and
+            improving the quality of AI agents Hosted by Justin Bauer & Sandhya
+            Hegde
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: reforge.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Reforge | Product Management Courses for Individuals & Teams
+            page_state: loaded
+            scroll_height: 8242
+          - surface_id: product-overview
+            title: Courses on Product Management & AI | Reforge
+            page_state: loaded
+            scroll_height: 7853
+          - surface_id: feature
+            title: AI Productivity Course | Reforge
+            page_state: loaded
+            scroll_height: 6923
+          - surface_id: pricing
+            title: Pricing | Reforge
+            page_state: loaded
+            scroll_height: 3090
+          - surface_id: proof
+            title: Case Studies | Reforge
+            page_state: loaded
+            scroll_height: 2094
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: reforge.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        AI is rewriting product. Learn from operators who are leading the
+        change.; Top courses; Make your team unstoppable — whether crushing
+        daily tasks or growing key competencies; Reforge for Teams."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - AI is rewriting product. Learn from operators who are leading the
+            change.
+          - Top courses
+          - Make your team unstoppable — whether crushing daily tasks or growing
+            key competencies
+          - Reforge for Teams
+          - Vetted operators—not influencers
+          - Key features
+          - Maximize product team performance
+          - Online courses taught by leading operators
+          - Unique benefits of live courses
+          - AI Productivity
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: reforge.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: reforge.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Case Studies | Reforge” and
+        exposes 1 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.reforge.proof.browser-observed.20260902t212337z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: Case studies
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: reforge.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: reforge.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 1
+          - surface_id: product-overview
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 1
+          - surface_id: feature
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 2
+          - surface_id: pricing
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 1
+          - surface_id: proof
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 1
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: reforge.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: reforge.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 1
+              - 3
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 2
+              - 4
+              - 4
+              - 2
+              - 4
+              - 6
+              - 6
+              - 6
+              - 2
+              - 2
+              - 2
+              - 4
+              - 4
+            images: 82
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: product-overview
+            headings:
+              - 1
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 2
+            images: 192
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: feature
+            headings:
+              - 1
+              - 6
+              - 6
+              - 6
+              - 6
+              - 6
+              - 3
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 2
+              - 2
+              - 3
+              - 4
+              - 4
+              - 4
+              - 4
+              - 3
+            images: 41
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 4
+          - surface_id: pricing
+            headings:
+              - 1
+              - 4
+              - 4
+              - 4
+              - 4
+              - 2
+              - 2
+              - 2
+              - 2
+              - 3
+              - 4
+              - 4
+              - 4
+              - 4
+              - 3
+            images: 2
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 4
+          - surface_id: proof
+            headings:
+              - 1
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 5
+              - 4
+              - 4
+            images: 10
+            landmarks:
+              footer: 0
+              header: 0
+              main: 0
+              nav: 0
+            missingAlt: 0
+            unnamedButtons: 0
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: reforge.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: reforge.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

@@ -1,0 +1,32 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.motion-state-explanation.v1
+title: Motion explains state
+status: candidate
+kind: motion
+principle: Motion should explain causality, progress, or state change and remain
+  stable under reduced motion.
+mechanism: Bind a short transition to a user action, define its resting state,
+  and supply an equivalent reduced-motion state.
+use_when:
+  - A state transition would otherwise be ambiguous
+  - The static composition already works
+avoid_when:
+  - Motion is ambient decoration
+  - Reduced-motion behavior has not been verified
+observed_in:
+  - target_id: raycast
+    snapshot_ids:
+      - snapshot.raycast.feature.browser-observed.20260902t210224z
+    observation: Resting DOM styles expose multiple transition declarations, but
+      interaction and reduced-motion behavior remain unverified.
+  - target_id: runway
+    snapshot_ids:
+      - snapshot.runway.product-overview.browser-observed.20260902t210540z
+    observation: Resting DOM styles expose motion capability, but choreography was
+      not exercised.
+saturation_risk: high
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

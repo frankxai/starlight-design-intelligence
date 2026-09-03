@@ -1,0 +1,29 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.broken-canonical-route.v1
+title: Broken canonical route
+status: anti-pattern
+kind: accessibility
+principle: Primary navigation and indexed category routes must not resolve to
+  missing-content states.
+mechanism: Run route and canonical checks on every governed surface and retain
+  failures as evidence until resolved.
+use_when:
+  - Operating a long-lived content system
+  - Canonical routes move during a redesign
+avoid_when:
+  - A deliberate retired route returns a documented permanent status
+observed_in:
+  - target_id: league-universe
+    snapshot_ids:
+      - snapshot.league-universe.homepage.browser-observed.20260902t211534z
+    observation: The canonical locale homepage rendered explicit 404 content during capture.
+  - target_id: league-universe
+    snapshot_ids:
+      - snapshot.league-universe.product-overview.browser-observed.20260902t211547z
+    observation: The champions category rendered explicit 404 content during capture.
+saturation_risk: low
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

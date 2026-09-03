@@ -1,0 +1,461 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.othership.wave-1.20260902
+target_id: othership
+snapshot_ids: &a1
+  - snapshot.othership.homepage.browser-observed.20260902t211854z
+  - snapshot.othership.product-overview.browser-observed.20260902t211912z
+  - snapshot.othership.feature.browser-observed.20260902t211914z
+  - snapshot.othership.pricing.browser-observed.20260902t211916z
+  - snapshot.othership.proof.browser-observed.20260902t211917z
+findings:
+  foundations:
+    - finding_id: othership.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(55, 35, 56)
+            count: 1247
+          - value: rgb(255, 255, 255)
+            count: 1178
+          - value: rgb(162, 78, 43)
+            count: 340
+          - value: rgb(203, 114, 196)
+            count: 133
+          - value: rgb(34, 34, 34)
+            count: 36
+          - value: rgb(51, 51, 51)
+            count: 5
+          - value: rgb(236, 232, 227)
+            count: 5
+          - value: rgb(219, 245, 114)
+            count: 2
+        backgrounds:
+          - value: rgb(219, 245, 114)
+            count: 68
+          - value: rgb(55, 35, 56)
+            count: 57
+          - value: rgb(236, 232, 227)
+            count: 32
+          - value: rgb(167, 207, 201)
+            count: 26
+          - value: rgb(203, 114, 196)
+            count: 12
+          - value: rgb(162, 78, 43)
+            count: 8
+          - value: rgb(0, 0, 0)
+            count: 4
+          - value: rgb(155, 161, 123)
+            count: 2
+        fonts:
+          - value: '"Founders Grotesk", Arial, sans-serif'
+            count: 2888
+          - value: '"Lido Condensed", Arial, sans-serif'
+            count: 31
+          - value: Georgia, "Times New Roman", serif
+            count: 21
+          - value: Arial, Helvetica, sans-serif
+            count: 8
+        font_sizes:
+          - value: 16px
+            count: 2181
+          - value: 12px
+            count: 280
+          - value: 14px
+            count: 124
+          - value: 13px
+            count: 119
+          - value: 20px
+            count: 93
+          - value: 40px
+            count: 35
+          - value: 21px
+            count: 32
+          - value: 68px
+            count: 25
+        radii:
+          - value: 0px
+            count: 2708
+          - value: 30px
+            count: 66
+          - value: 16px
+            count: 63
+          - value: 5px
+            count: 37
+          - value: 50%
+            count: 34
+          - value: 10px
+            count: 15
+          - value: 32px
+            count: 12
+          - value: 80px
+            count: 5
+        shadows: []
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 2553
+          - value: 16px 16px 16px 16px
+            count: 104
+          - value: 12px 15.6745px 12px 15.6745px
+            count: 37
+          - value: 0px 67.6406px 0px 67.6406px
+            count: 36
+          - value: 8px 24px 8px 24px
+            count: 28
+          - value: 4px 4px 4px 4px
+            count: 19
+          - value: 32px 24px 48px 24px
+            count: 18
+          - value: 48px 0px 48px 0px
+            count: 16
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: othership.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Accessibility Screen-Reader Guide, Feedback, and Issue
+        Reporting | New window; SHOP; EXPERIENCE; LOCATIONS; BREATHWORK APP;
+        CONTACT."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Accessibility Screen-Reader Guide, Feedback, and Issue Reporting | New
+            window
+          - SHOP
+          - EXPERIENCE
+          - LOCATIONS
+          - BREATHWORK APP
+          - CONTACT
+          - BOOK A CLASS
+          - BUY A PASS
+          - BOOK A SESSION
+          - EXPLORE LOCATIONS
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: othership.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Othership | Immersive Sauna + Ice Bath
+            page_state: loaded
+            scroll_height: 10283
+          - surface_id: product-overview
+            title: Offer | Othership
+            page_state: loaded
+            scroll_height: 7122
+          - surface_id: feature
+            title: Locations | Othership
+            page_state: loaded
+            scroll_height: 3929
+          - surface_id: pricing
+            title: Buy a Pass | Othership
+            page_state: loaded
+            scroll_height: 1667
+          - surface_id: proof
+            title: Values | Othership
+            page_state: loaded
+            scroll_height: 4111
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: othership.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        Otherworldly sauna and ice bath experiences for human beings to feel
+        good now; Othership is a modern bathhouse to regulate your nervous
+        system, process emotions and connect meaningfully with other human
+        beings.; Class Types; Through music-driven sauna sessions and guided ice
+        bath experiences we help people feel better—together.."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - Otherworldly sauna and ice bath experiences for human beings to feel
+            good now
+          - Othership is a modern bathhouse to regulate your nervous system,
+            process emotions and connect meaningfully with other human beings.
+          - Class Types
+          - Through music-driven sauna sessions and guided ice bath experiences
+            we help people feel better—together.
+          - free flow
+          - quieter free flow
+          - evening social
+          - "guided class: up"
+          - "guided class: down"
+          - "guided class: all around"
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: othership.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: othership.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Values | Othership” and exposes
+        12 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.othership.proof.browser-observed.20260902t211917z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: Our Values
+          - level: 2
+            text: Creating space to shift states through peak experiences
+          - level: 2
+            text: Launchpad
+          - level: 3
+            text: sense of awe
+          - level: 3
+            text: cellular commitment
+          - level: 3
+            text: building belonging
+          - level: 2
+            text: Your ship, your journey
+          - level: 3
+            text: Othership:Booking App
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: othership.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: othership.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 5
+            reducedPreference: false
+            transitionedElements: 31
+          - surface_id: product-overview
+            animatedElements: 8
+            reducedPreference: false
+            transitionedElements: 43
+          - surface_id: feature
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 31
+          - surface_id: pricing
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 25
+          - surface_id: proof
+            animatedElements: 4
+            reducedPreference: false
+            transitionedElements: 23
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: othership.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: othership.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 1
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 51
+            landmarks:
+              footer: 1
+              header: 2
+              main: 1
+              nav: 4
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: product-overview
+            headings:
+              - 1
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 3
+              - 2
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 45
+            landmarks:
+              footer: 1
+              header: 2
+              main: 1
+              nav: 4
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: feature
+            headings:
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 1
+            landmarks:
+              footer: 1
+              header: 2
+              main: 0
+              nav: 4
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: pricing
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 1
+            landmarks:
+              footer: 1
+              header: 2
+              main: 0
+              nav: 4
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: proof
+            headings:
+              - 1
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 22
+            landmarks:
+              footer: 1
+              header: 2
+              main: 1
+              nav: 4
+            missingAlt: 0
+            unnamedButtons: 0
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: othership.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: othership.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

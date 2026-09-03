@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/design-extraction.schema.json",
+  "title": "Normalized design extraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "extraction_id", "target_id", "snapshot_ids", "findings", "anti_patterns", "category_saturation", "pattern_candidates", "reviewed_at"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": "starlight.design_extraction.v1" },
+    "extraction_id": { "$ref": "#/$defs/id" },
+    "target_id": { "$ref": "#/$defs/id" },
+    "snapshot_ids": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+    "findings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["foundations", "components", "page_anatomy", "content_hierarchy", "cta_behavior", "proof_patterns", "responsive_transformations", "motion", "reduced_motion", "accessibility"],
+      "properties": {
+        "foundations": { "$ref": "#/$defs/findings" },
+        "components": { "$ref": "#/$defs/findings" },
+        "page_anatomy": { "$ref": "#/$defs/findings" },
+        "content_hierarchy": { "$ref": "#/$defs/findings" },
+        "cta_behavior": { "$ref": "#/$defs/findings" },
+        "proof_patterns": { "$ref": "#/$defs/findings" },
+        "responsive_transformations": { "$ref": "#/$defs/findings" },
+        "motion": { "$ref": "#/$defs/findings" },
+        "reduced_motion": { "$ref": "#/$defs/findings" },
+        "accessibility": { "$ref": "#/$defs/findings" }
+      }
+    },
+    "anti_patterns": { "$ref": "#/$defs/findings" },
+    "category_saturation": { "$ref": "#/$defs/findings" },
+    "pattern_candidates": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+    "reviewed_at": { "type": "string", "format": "date" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" },
+    "findings": { "type": "array", "items": { "$ref": "#/$defs/finding" } },
+    "finding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["finding_id", "kind", "statement", "confidence", "evidence_snapshot_ids", "rights_safe_abstraction"],
+      "properties": {
+        "finding_id": { "$ref": "#/$defs/id" },
+        "kind": { "enum": ["observed", "inferred"] },
+        "statement": { "type": "string", "minLength": 12 },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "evidence_snapshot_ids": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "data": { "type": "object", "additionalProperties": true },
+        "rights_safe_abstraction": { "type": "boolean" }
+      }
+    }
+  }
+}

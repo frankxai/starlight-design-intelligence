@@ -1,0 +1,30 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.logo-wall-without-context.v1
+title: Contextless logo wall
+status: anti-pattern
+kind: proof
+principle: A mark alone does not explain what changed, whether the relationship
+  is current, or why it matters.
+mechanism: Require a named outcome, artifact, testimonial, or case link adjacent
+  to every consequential trust claim.
+use_when:
+  - Reviewing enterprise or creator proof sections
+avoid_when:
+  - The marks are merely a factual client index with separate accessible details
+observed_in:
+  - target_id: vercel
+    snapshot_ids:
+      - snapshot.vercel.proof.browser-observed.20260902t210131z
+    observation: The customer surface demonstrates the category’s heavy reliance on
+      brand-name recognition.
+  - target_id: runway
+    snapshot_ids:
+      - snapshot.runway.proof.browser-observed.20260902t212323z
+    observation: "Customer-story organization shows the stronger alternative: named
+      work and narrative context."
+saturation_risk: high
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

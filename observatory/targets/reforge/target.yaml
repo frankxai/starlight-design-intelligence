@@ -1,0 +1,52 @@
+$schema: ../../../schemas/design-research-target.schema.json
+schema_version: starlight.design_research_target.v1
+target_id: reforge
+display_name: Reforge
+source_owner: Reforge, Inc.
+canonical_url: https://www.reforge.com/
+why: Practitioner authority, program taxonomy, and membership conversion.
+capture_policy:
+  locales:
+    - en-US
+  freshness_days: 90
+  viewports:
+    - name: desktop-1440
+      width: 1440
+      height: 1000
+      dpr: 1
+    - name: mobile-390
+      width: 390
+      height: 844
+      dpr: 1
+    - name: reflow-320
+      width: 320
+      height: 720
+      dpr: 1
+  raw_storage: private-r2-content-addressed
+surfaces:
+  - surface_id: homepage
+    kind: homepage
+    url: https://www.reforge.com/
+    route: /
+  - surface_id: product-overview
+    kind: product-overview
+    url: https://www.reforge.com/courses
+    route: /courses
+  - surface_id: feature
+    kind: feature
+    url: https://www.reforge.com/courses/ai-productivity
+    route: /courses/ai-productivity
+  - surface_id: pricing
+    kind: conversion
+    url: https://www.reforge.com/pricing
+    route: /pricing
+  - surface_id: proof
+    kind: proof
+    url: https://www.reforge.com/case-studies
+    route: /case-studies
+rights:
+  state: third-party-reference-only
+  allowed_use: Abstract research findings and original pattern synthesis only.
+  prohibited_use: Marks, assets, font files, source code, distinctive
+    compositions, and copied components.
+  reviewed_at: 2026-09-02

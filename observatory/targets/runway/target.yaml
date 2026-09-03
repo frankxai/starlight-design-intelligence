@@ -1,0 +1,52 @@
+$schema: ../../../schemas/design-research-target.schema.json
+schema_version: starlight.design_research_target.v1
+target_id: runway
+display_name: Runway
+source_owner: Runway AI, Inc.
+canonical_url: https://runway.com/
+why: Cinematic product storytelling, media-led proof, and restrained controls.
+capture_policy:
+  locales:
+    - en-US
+  freshness_days: 90
+  viewports:
+    - name: desktop-1440
+      width: 1440
+      height: 1000
+      dpr: 1
+    - name: mobile-390
+      width: 390
+      height: 844
+      dpr: 1
+    - name: reflow-320
+      width: 320
+      height: 720
+      dpr: 1
+  raw_storage: private-r2-content-addressed
+surfaces:
+  - surface_id: homepage
+    kind: homepage
+    url: https://runway.com/
+    route: /
+  - surface_id: product-overview
+    kind: product-overview
+    url: https://runway.com/product
+    route: /product
+  - surface_id: feature
+    kind: feature
+    url: https://runway.com/research
+    route: /research
+  - surface_id: pricing
+    kind: conversion
+    url: https://runway.com/pricing
+    route: /pricing
+  - surface_id: proof
+    kind: proof
+    url: https://runway.com/news/customers
+    route: /news/customers
+rights:
+  state: third-party-reference-only
+  allowed_use: Abstract research findings and original pattern synthesis only.
+  prohibited_use: Marks, assets, font files, source code, distinctive
+    compositions, and copied components.
+  reviewed_at: 2026-09-02

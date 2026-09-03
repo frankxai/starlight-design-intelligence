@@ -1,0 +1,146 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: animelegends-ai
+domains:
+  - animelegends.ai
+brand_id: animelegends
+canonical_repositories:
+  - frankxai/AnimeLegends
+surface_ids:
+  - world-home
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.low-chrome-discovery.v1
+  - pattern.product-in-context.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+influence_map:
+  - target_id: league-universe
+    pattern_id: pattern.low-chrome-discovery.v1
+    principle: Make character, region, and story knowledge browseable as a world.
+  - target_id: runway
+    pattern_id: pattern.product-in-context.v1
+    principle: Connect finished media to the actual creative capability and process
+      behind it.
+anti_references:
+  - Lookalike anime franchise portals, copied character poses, generic red-black
+    manga skins, and unlabeled AI media.
+forbidden_blending:
+  - Do not blend Arcanea’s multi-world engine into AnimeLegends canon or let
+    Forge tooling overtake the original world.
+gaps:
+  missing_tokens:
+    - canon status
+    - media release state
+    - character-safe crop
+    - Atlas citation
+  inconsistent_rules:
+    - Studio, Atlas, and Forge need distinct modes while remaining recognizably
+      one world.
+directions:
+  - direction_id: animelegends-ai.akashi-threshold
+    name: AKASHI — The Threshold
+    thesis: The existing AKASHI character study opens one original story threshold,
+      then Studio, Atlas, and Forge deepen that same artifact.
+    source_content:
+      - AKASHI 1368×768 character study
+      - AKASHI character sheet
+      - Short 002 script-draft status
+    composition: One canonical character scene owns the opening; three chapter doors
+      reveal story, scholarship, and inspectable making evidence.
+    typography: Cinematic chapter display with a sober editorial Atlas voice and
+      technical Forge labels.
+    color_posture: Palette derives only from approved AKASHI canon art over deep neutral ink.
+    imagery: Owned character studies and released original media with visible
+      provenance and status.
+    motion_job: A short threshold transition reveals the three doors; reduced motion
+      uses a static chapter change.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.editorial-depth-break.v1
+      - pattern.product-in-context.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: animelegends-ai.atlas-compendium
+    name: Atlas Compendium
+    thesis: A text-led original scholarship surface organizes archetypes,
+      philosophies, and scene patterns around canonical character evidence.
+    source_content:
+      - Atlas scholarship
+      - Original archetype studies
+      - Character and scene canon
+    composition: A scholarly reading column is interrupted by annotated character
+      plates, citations, and related canon routes.
+    typography: Distinctive but licensed editorial serif with compact citation and
+      canon labels.
+    color_posture: Parchment and graphite with character-specific accent colors.
+    imagery: Original annotated plates, diagrams, and cited text artifacts.
+    motion_job: Cross-references highlight related canon without moving the reading
+      surface.
+    selected_pattern_ids:
+      - pattern.editorial-depth-break.v1
+      - pattern.progressive-proof.v1
+      - pattern.low-chrome-discovery.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: animelegends-ai.forge-workbench
+    name: Forge Workbench
+    thesis: An inspectable creator workbench shows how original worlds move from
+      canon to prompt, composition, render, review, and release.
+    source_content:
+      - Open Forge skills and commands
+      - Remotion templates
+      - Media provenance ledger
+    composition: A technical pipeline anchors the page; each stage opens the real
+      owned source artifact and rights state.
+    typography: Monospaced technical register with restrained cinematic headings.
+    color_posture: Near-black workbench with explicit draft, reviewed, and released
+      status colors.
+    imagery: Actual source files, deterministic diagrams, and inspected exports only.
+    motion_job: A user-controlled pipeline trace explains state and approval boundaries.
+    selected_pattern_ids:
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: animelegends-ai.akashi-threshold

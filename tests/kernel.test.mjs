@@ -408,7 +408,7 @@ test("canonical kernel validates all skills, brand packs, workflows, and schemas
   const output = execFileSync(process.execPath, ["scripts/validate-kernel.mjs"], {
     encoding: "utf8"
   });
-  assert.match(output, /7 brand packs, 4 workflows/);
+  assert.match(output, /11 brand packs, 4 workflows/);
 });
 
 function approvedMediaJob(assetRoot, score = 28) {

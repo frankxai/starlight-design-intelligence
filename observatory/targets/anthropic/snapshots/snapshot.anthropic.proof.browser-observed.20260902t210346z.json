@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.anthropic.proof.browser-observed.20260902t210346z",
+  "target_id": "anthropic",
+  "surface_id": "proof",
+  "captured_at": "2026-09-02T21:03:46.978Z",
+  "locale": "en-US",
+  "url": "https://www.anthropic.com/customers",
+  "route": "/customers",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://claude.com/customers?fcdaa149_sort_date=desc&38d7aa68_sort_date=desc",
+    "title": "Customer Stories | Claude by Anthropic",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "f352e3c456add4a413eef3d72ca3b5c690f52ed763709c315cb339c3c9b25a63",
+      "bytes": 69873,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/f3/f352e3c456add4a413eef3d72ca3b5c690f52ed763709c315cb339c3c9b25a63.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "9e2deba571490bada97090409eda1367cbc55555701fcf9d7d3b06a521a6d8e8",
+      "bytes": 200016,
+      "mime": "text/html",
+      "content_address": "sha256/9e/9e2deba571490bada97090409eda1367cbc55555701fcf9d7d3b06a521a6d8e8.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "9e2deba571490bada97090409eda1367cbc55555701fcf9d7d3b06a521a6d8e8",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Anthropic PBC",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

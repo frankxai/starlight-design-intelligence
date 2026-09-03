@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/domain-design-profile.schema.json",
+  "title": "Domain design profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "domain_id", "domains", "active", "status", "owner", "brand_id", "canonical_repositories", "surface_ids", "approved_pattern_ids", "influence_map", "anti_references", "forbidden_blending", "gaps", "directions", "nominated_direction_id", "decision_owner", "updated_at"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": "starlight.domain_design_profile.v1" },
+    "domain_id": { "$ref": "#/$defs/id" },
+    "domains": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z0-9.-]+$" } },
+    "active": { "type": "boolean" },
+    "status": { "enum": ["decision-ready", "blocked-evidence", "inactive"] },
+    "owner": { "type": "string", "minLength": 1 },
+    "brand_id": { "$ref": "#/$defs/id" },
+    "canonical_repositories": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[^/]+/[^/]+$" } },
+    "surface_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+    "approved_pattern_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+    "influence_map": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["target_id", "pattern_id", "principle"],
+        "properties": {
+          "target_id": { "$ref": "#/$defs/id" },
+          "pattern_id": { "$ref": "#/$defs/id" },
+          "principle": { "type": "string", "minLength": 12 }
+        }
+      }
+    },
+    "anti_references": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 12 } },
+    "forbidden_blending": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 12 } },
+    "gaps": {
+      "type": "object", "additionalProperties": false,
+      "required": ["missing_tokens", "inconsistent_rules"],
+      "properties": {
+        "missing_tokens": { "type": "array", "items": { "type": "string" } },
+        "inconsistent_rules": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "directions": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": { "$ref": "#/$defs/direction" }
+    },
+    "nominated_direction_id": { "$ref": "#/$defs/id" },
+    "decision_owner": { "const": "Frank" },
+    "updated_at": { "type": "string", "format": "date" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" },
+    "direction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["direction_id", "name", "thesis", "source_content", "composition", "typography", "color_posture", "imagery", "motion_job", "selected_pattern_ids", "originality_boundary", "scores", "total"],
+      "properties": {
+        "direction_id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 3 },
+        "thesis": { "type": "string", "minLength": 24 },
+        "source_content": { "type": "array", "minItems": 2, "items": { "type": "string", "minLength": 8 } },
+        "composition": { "type": "string", "minLength": 24 },
+        "typography": { "type": "string", "minLength": 12 },
+        "color_posture": { "type": "string", "minLength": 12 },
+        "imagery": { "type": "string", "minLength": 12 },
+        "motion_job": { "type": "string", "minLength": 12 },
+        "selected_pattern_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "originality_boundary": { "type": "string", "minLength": 24 },
+        "scores": {
+          "type": "object", "additionalProperties": false,
+          "required": ["clarity", "distinctiveness", "brand_fit", "extensibility", "accessibility", "feasibility", "rights_safety", "conversion"],
+          "properties": {
+            "clarity": { "$ref": "#/$defs/score" }, "distinctiveness": { "$ref": "#/$defs/score" },
+            "brand_fit": { "$ref": "#/$defs/score" }, "extensibility": { "$ref": "#/$defs/score" },
+            "accessibility": { "$ref": "#/$defs/score" }, "feasibility": { "$ref": "#/$defs/score" },
+            "rights_safety": { "$ref": "#/$defs/score" }, "conversion": { "$ref": "#/$defs/score" }
+          }
+        },
+        "total": { "type": "integer", "minimum": 8, "maximum": 40 }
+      }
+    },
+    "score": { "type": "integer", "minimum": 1, "maximum": 5 }
+  }
+}

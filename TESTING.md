@@ -9,6 +9,10 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
 - health: `git status --short`
 - lint: `npm run validate`
 - portfolio contract: `npm run validate:portfolio`
+- observatory integrity: `npm run validate:observatory`
+- exact capture coverage: `npm run validate:observatory -- --strict-coverage`
+- observatory retrieval index: `npm run index:observatory`
+- observatory freshness: `npm run check:freshness`
 - downstream adoption: `npm run validate:adoption -- --downstream-root <repo> --kernel-root <kernel> --caller-repository <owner/repo> --workflow-repository frankxai/starlight-design-intelligence --workflow-path .github/workflows/design-contract.yml --workflow-sha <full-sha>`
 - typecheck: not applicable
 - test: `npm test`

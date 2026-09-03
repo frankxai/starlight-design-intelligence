@@ -60,6 +60,94 @@
           "claim_classes": ["availability", "capability", "testimonial"]
         }
       ]
+    },
+    {
+      "repository": "frankxai/ai-architect-academy",
+      "brand_id": "ai-coe",
+      "surfaces": [
+        {
+          "id": "academy-home",
+          "mode": "academy-lab",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/agenticincome",
+      "brand_id": "agentic-income",
+      "surfaces": [
+        {
+          "id": "income-home",
+          "mode": "machinery-editorial",
+          "claim_classes": ["availability", "capability", "pricing", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/vibeclubs",
+      "brand_id": "vibeclubs",
+      "surfaces": [
+        {
+          "id": "format-home",
+          "mode": "community",
+          "claim_classes": ["availability", "capability", "pricing"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/AnimeLegends",
+      "brand_id": "animelegends",
+      "surfaces": [
+        {
+          "id": "world-home",
+          "mode": "studio-cinematic",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/realityarchitect",
+      "brand_id": "reality-architect",
+      "surfaces": [
+        {
+          "id": "method-home",
+          "mode": "method-editorial",
+          "claim_classes": ["availability", "capability", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/starlight-technology",
+      "brand_id": "starlight-technology",
+      "surfaces": [
+        {
+          "id": "creator-studio-home",
+          "mode": "buying-guide",
+          "claim_classes": ["availability", "capability", "pricing", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/pv-lager-agentic",
+      "brand_id": "rial-energy",
+      "surfaces": [
+        {
+          "id": "buyer-quiz",
+          "mode": "buyer-quiz",
+          "claim_classes": ["availability", "capability", "pricing", "provenance"]
+        }
+      ]
+    },
+    {
+      "repository": "frankxai/aurevia-solar",
+      "brand_id": "rial-energy",
+      "surfaces": [
+        {
+          "id": "energy-home",
+          "mode": "local-trust",
+          "claim_classes": ["availability", "capability", "pricing", "provenance"]
+        }
+      ]
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "version": "2026-07-02",
-  "canonical_source": "C:\\Users\\frank\\starlight\\repos\\agentic-ops-hub\\docs\\MULTI_BRAND_AGENT_OPERATING_SYSTEM_2026-06-19.md",
-  "local_working_mirror": "C:\\Users\\frank\\brands\\image-system",
+  "version": "2026-09-02",
+  "canonical_source": "starlight-design-intelligence/observatory/GOVERNANCE.md",
+  "local_working_mirror": "starlight-design-intelligence/brand-image-system/runtime",
   "operating_units": [
     {
       "id": "frankx-demand",
@@ -41,33 +41,33 @@
       "name": "AI-Architect / AI CoE",
       "command_channel": "#brand-ai-coe",
       "support_channels": ["#social-command", "#social-approvals"],
-      "primary_repos": ["enterprise-ai-kit", "enterprise-ai-coe-ops", "gencreator.ai", "frankx.ai-vercel-website"],
-      "brand_sources": ["agentic-ops-hub", "gencreator.ai/strategy_v3.md"],
+      "primary_repos": ["ai-architect-academy"],
+      "brand_sources": ["starlight-design-intelligence/brand-packs/ai-coe"],
       "voice": "Enterprise credible, architectural, practical, proof-led.",
       "visual_direction": "Center of excellence diagrams, governance systems, operating-model maps, real proof and implementation artifacts.",
-      "prompt_guardrails": ["Avoid AI hype", "Use exact diagrams for frameworks", "Treat claims as proof-gated", "Needs a central brand pack"]
+      "prompt_guardrails": ["Avoid AI hype", "Use exact diagrams for frameworks", "Treat claims as proof-gated", "Keep Academy and CoE surface modes distinct"]
     },
     {
       "id": "agentic-income-network",
       "name": "Agentic Income Network",
       "command_channel": "#brand-agentic-income",
       "support_channels": ["#social-command", "#social-approvals"],
-      "primary_repos": ["agentic-income-network", "creator-revenue-engine", "checkout-revenue-ops"],
-      "brand_sources": ["agentic-ops-hub"],
+      "primary_repos": ["agenticincome", "agentic-income-skills"],
+      "brand_sources": ["starlight-design-intelligence/brand-packs/agentic-income"],
       "voice": "Pragmatic conversion, trusted tools, fast path from attention to action.",
       "visual_direction": "Revenue engines, offer paths, proof ladders, automation maps, dashboards with real metrics when available.",
-      "prompt_guardrails": ["No get-rich-quick aesthetics", "No unverifiable income claims", "Use exact overlays for numbers", "Needs a central brand pack"]
+      "prompt_guardrails": ["No get-rich-quick aesthetics", "No unverifiable income claims", "Use exact overlays for numbers", "Expose offer availability and affiliate status"]
     },
     {
       "id": "reality-architect",
       "name": "Reality Architect",
       "command_channel": "#brand-reality-architect",
       "support_channels": ["#social-command", "#social-approvals"],
-      "primary_repos": ["reality-architect-ops", "RealityArchitect"],
-      "brand_sources": ["agentic-ops-hub"],
-      "voice": "Transformational, structured, reflective, grounded in practices and systems.",
-      "visual_direction": "Life design maps, intentional systems, timeline architectures, reflective but concrete visual language.",
-      "prompt_guardrails": ["No vague mystical self-help", "No generic journal imagery", "Use diagrams for processes", "Needs a central brand pack"]
+      "primary_repos": ["realityarchitect"],
+      "brand_sources": ["starlight-design-intelligence/brand-packs/reality-architect"],
+      "voice": "Grounded, direct, architectural, and tied to inspectable artifacts.",
+      "visual_direction": "System-gap assessments, the five-move Architect Loop, reality.md, starter files, and acceptance evidence.",
+      "prompt_guardrails": ["No vague mystical self-help", "No generic journal imagery", "Use exact artifacts for processes", "No concept without an acceptance test"]
     },
     {
       "id": "creator-systems-acos",
@@ -75,10 +75,10 @@
       "command_channel": "#brand-creator-systems",
       "support_channels": ["#social-command", "#social-approvals"],
       "primary_repos": ["agentic-creator-os", "gencreator.ai", "creator-product-kit", "creator-cohort-ops"],
-      "brand_sources": ["gencreator.ai/strategy_v3.md", "gencreator.ai/public/brand", "agentic-creator-os/modules/social-media-engine/README.md"],
+      "brand_sources": ["starlight-design-intelligence/brand-packs/gencreator", "gencreator.ai", "agentic-creator-os/modules/social-media-engine/README.md"],
       "voice": "Creator-operating-system clarity: applied research, cohort outcomes, artifacts shipped publicly.",
       "visual_direction": "Architecture-warm, creator stack maps, cohort rituals, artifact thresholds, practical operator visuals.",
-      "prompt_guardrails": ["Do not blend with AnimeLegends mascots", "No productivity-tool sameness", "Make outputs and artifacts visible", "Needs a central brand pack"]
+      "prompt_guardrails": ["Do not blend with AnimeLegends mascots", "No productivity-tool sameness", "Make outputs and artifacts visible", "Mark unavailable products explicitly"]
     },
     {
       "id": "research-mind-intelligence",
@@ -108,10 +108,32 @@
       "command_channel": "#brand-anime-legends",
       "support_channels": ["#social-command", "#social-approvals"],
       "primary_repos": ["AnimeLegends"],
-      "brand_sources": ["AnimeLegends/brand/voice.md", "AnimeLegends/brand/visual-tokens.md", "AnimeLegends/brand/never-say.md", "AnimeLegends/brand/assets"],
+      "brand_sources": ["starlight-design-intelligence/brand-packs/animelegends", "AnimeLegends/brand", "AnimeLegends/docs/site"],
       "voice": "Mythic precision. Ancient knowledge. No hype.",
       "visual_direction": "Anime-mythic media IP with reserved mascots, sigils, and lore systems; strong channel-specific assets.",
       "prompt_guardrails": ["Respect reserved mascot IP", "No recap-channel tone", "No bro-gym energy", "No unlicensed character likenesses"]
+    },
+    {
+      "id": "starlight-technology",
+      "name": "Starlight Technology",
+      "command_channel": "#brand-starlight-technology",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["starlight-technology"],
+      "brand_sources": ["starlight-design-intelligence/brand-packs/starlight-technology"],
+      "voice": "Practical, transparent, comparative, and buyer-aligned.",
+      "visual_direction": "Evidence-led buying guides, complete-system comparisons, compatibility maps, and wrong-purchase conditions.",
+      "prompt_guardrails": ["No affiliate-first rankings", "No fake hands-on proof", "Date every source", "Show complete-system cost"]
+    },
+    {
+      "id": "rial-energy",
+      "name": "Rial / Aurevia Energy",
+      "command_channel": "#brand-rial-energy",
+      "support_channels": ["#social-command", "#social-approvals"],
+      "primary_repos": ["pv-lager-agentic", "aurevia-solar"],
+      "brand_sources": ["starlight-design-intelligence/brand-packs/rial-energy"],
+      "voice": "Local, clear, technically careful, and service-minded.",
+      "visual_direction": "Real installations, inventory-aware system choices, dated subsidy inputs, cost ranges, and human review.",
+      "prompt_guardrails": ["No guaranteed savings", "No undated subsidy claims", "Keep customer data private", "Separate modeled estimates from stocked facts"]
     }
   ],
   "incubator_lanes": [

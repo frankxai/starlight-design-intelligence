@@ -1,0 +1,423 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.runway.wave-1.20260902
+target_id: runway
+snapshot_ids: &a1
+  - snapshot.runway.homepage.browser-observed.20260902t210514z
+  - snapshot.runway.product-overview.browser-observed.20260902t210540z
+  - snapshot.runway.feature.browser-observed.20260902t210603z
+  - snapshot.runway.pricing.browser-observed.20260902t210626z
+  - snapshot.runway.proof.browser-observed.20260902t212323z
+findings:
+  foundations:
+    - finding_id: runway.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(0, 0, 0)
+            count: 822
+          - value: rgb(64, 64, 64)
+            count: 816
+          - value: rgb(255, 255, 255)
+            count: 771
+          - value: rgb(12, 12, 12)
+            count: 547
+          - value: rgb(20, 20, 20)
+            count: 410
+          - value: rgb(156, 163, 175)
+            count: 390
+          - value: rgb(102, 110, 122)
+            count: 77
+          - value: rgb(124, 124, 124)
+            count: 74
+        backgrounds:
+          - value: rgb(255, 255, 255)
+            count: 74
+          - value: rgb(246, 246, 246)
+            count: 24
+          - value: rgb(12, 12, 12)
+            count: 23
+          - value: rgb(38, 38, 38)
+            count: 15
+          - value: rgb(20, 20, 20)
+            count: 15
+          - value: rgba(64, 64, 64, 0.05)
+            count: 13
+          - value: rgb(87, 91, 107)
+            count: 12
+          - value: rgb(238, 241, 245)
+            count: 10
+        fonts:
+          - value: abcNormal, "abcNormal Fallback"
+            count: 3753
+          - value: sans-serif
+            count: 440
+        font_sizes:
+          - value: 16px
+            count: 2850
+          - value: 15px
+            count: 440
+          - value: 13px
+            count: 383
+          - value: 14px
+            count: 265
+          - value: 12px
+            count: 81
+          - value: 24px
+            count: 49
+          - value: 11px
+            count: 36
+          - value: 36px
+            count: 20
+        radii:
+          - value: 0px
+            count: 3940
+          - value: 6px
+            count: 71
+          - value: 8px
+            count: 67
+          - value: 4px
+            count: 40
+          - value: 32px
+            count: 20
+          - value: 9999px
+            count: 20
+          - value: 3.75px
+            count: 15
+          - value: 3px
+            count: 9
+        shadows:
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.05) 0px 4px 8px 0px
+            count: 9
+          - value: rgba(0, 0, 0, 0.3) 0px 30px 70px 0px
+            count: 5
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px
+              6px -4px
+            count: 1
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.05) 0px 1px 2px 0px
+            count: 1
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 3711
+          - value: 12px 24px 12px 24px
+            count: 51
+          - value: 0px 20px 0px 20px
+            count: 36
+          - value: 14px 0px 14px 0px
+            count: 35
+          - value: 8px 10px 8px 10px
+            count: 35
+          - value: 4px 8px 4px 8px
+            count: 35
+          - value: 6px 10px 6px 10px
+            count: 22
+          - value: 4px 4px 4px 4px
+            count: 13
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: runway.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Privacy Policy; Show details; Allow all; Allow selection;
+        Deny; Creative."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Privacy Policy
+          - Show details
+          - Allow all
+          - Allow selection
+          - Deny
+          - Creative
+          - Dev
+          - Robotics
+          - Research
+          - Resources
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: runway.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: Runway | Building Real-World Intelligence
+            page_state: loaded
+            scroll_height: 5059
+          - surface_id: product-overview
+            title: Runway | AI Image and Video Generator
+            page_state: loaded
+            scroll_height: 7887
+          - surface_id: feature
+            title: AI Video Research & Innovation | Runway AI
+            page_state: loaded
+            scroll_height: 4094
+          - surface_id: pricing
+            title: AI Image and Video Pricing from $12/month | Runway AI
+            page_state: loaded
+            scroll_height: 4387
+          - surface_id: proof
+            title: Customer Stories | Runway News
+            page_state: loaded
+            scroll_height: 3603
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: runway.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        Building Real-World Intelligence; Three platforms built on-top of the
+        same Real-World Intelligence models; Runway Creative; Runway Dev."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - Building Real-World Intelligence
+          - Three platforms built on-top of the same Real-World Intelligence
+            models
+          - Runway Creative
+          - Runway Dev
+          - Runway Robotics
+          - A new frontier for video generation.
+          - Every model you need to make anything you want.
+          - A new kind of creative toolkit with everything you need to generate
+            any video, image or piece of content you want.
+          - Our latest models and tools
+          - Runway MCP
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: runway.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: runway.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Customer Stories | Runway News”
+        and exposes 14 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.runway.proof.browser-observed.20260902t212323z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: News/Customer Stories
+          - level: 2
+            text: How Miro Produced Its Keynote Video for Four Global Markets with Runway
+          - level: 3
+            text: How Populous Brings the World's Most Iconic Venue Designs to Life with
+              Runway
+          - level: 3
+            text: How Chime Used Runway to Produce Their Latest National TV Spot
+          - level: 3
+            text: Edelman, Le Truc and WHY Brands on Why AI Rewards a Point of View
+          - level: 3
+            text: Paramount's CTO on Closing the Gap Between Vision and Screen
+          - level: 3
+            text: At Nvidia, the Story Is Becoming the Interface
+          - level: 3
+            text: How Skyscanner Eliminated Pre-Production Guesswork with Runway
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: runway.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: runway.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 61
+          - surface_id: product-overview
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 112
+          - surface_id: feature
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 51
+          - surface_id: pricing
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 52
+          - surface_id: proof
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 72
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: runway.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: runway.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 4
+              - 4
+              - 4
+            images: 22
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 1
+            missingAlt: 5
+            unnamedButtons: 0
+          - surface_id: product-overview
+            headings:
+              - 1
+              - 3
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 42
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 1
+            missingAlt: 4
+            unnamedButtons: 2
+          - surface_id: feature
+            headings:
+              - 1
+              - 4
+              - 4
+              - 4
+            images: 17
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 1
+            missingAlt: 1
+            unnamedButtons: 0
+          - surface_id: pricing
+            headings:
+              - 1
+              - 3
+            images: 21
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 1
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: proof
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+            images: 25
+            landmarks:
+              footer: 1
+              header: 2
+              main: 1
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 0
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: runway.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: runway.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

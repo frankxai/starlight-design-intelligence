@@ -1,0 +1,478 @@
+$schema: ../../../schemas/design-extraction.schema.json
+schema_version: starlight.design_extraction.v1
+extraction_id: extraction.beehiiv.wave-1.20260902
+target_id: beehiiv
+snapshot_ids: &a1
+  - snapshot.beehiiv.homepage.browser-observed.20260902t210850z
+  - snapshot.beehiiv.product-overview.browser-observed.20260902t210903z
+  - snapshot.beehiiv.feature.browser-observed.20260902t212451z
+  - snapshot.beehiiv.pricing.browser-observed.20260902t210906z
+  - snapshot.beehiiv.proof.browser-observed.20260902t210908z
+findings:
+  foundations:
+    - finding_id: beehiiv.foundations.observed
+      kind: observed
+      statement: Computed styles were normalized across 5 loaded public surfaces; the
+        values are observations, not reusable source tokens.
+      confidence: 0.95
+      evidence_snapshot_ids: *a1
+      data:
+        colors:
+          - value: rgb(0, 0, 0)
+            count: 4037
+          - value: rgb(6, 4, 25)
+            count: 342
+          - value: rgb(111, 111, 138)
+            count: 197
+          - value: rgb(2, 1, 10)
+            count: 152
+          - value: rgb(255, 255, 255)
+            count: 88
+          - value: rgb(78, 78, 108)
+            count: 55
+          - value: rgb(47, 57, 186)
+            count: 35
+          - value: rgb(147, 147, 169)
+            count: 19
+        backgrounds:
+          - value: rgb(255, 94, 196)
+            count: 205
+          - value: rgb(255, 255, 255)
+            count: 43
+          - value: rgb(240, 146, 221)
+            count: 13
+          - value: rgb(255, 200, 235)
+            count: 13
+          - value: rgb(251, 250, 255)
+            count: 13
+          - value: rgb(47, 57, 186)
+            count: 12
+          - value: rgb(6, 4, 25)
+            count: 9
+          - value: rgb(247, 245, 255)
+            count: 5
+        fonts:
+          - value: SatoshiFont, "SatoshiFont Fallback", system-ui, -apple-system, "Segoe
+              UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+              "Segoe UI Emoji"
+            count: 4971
+          - value: ClashGroteskFont, "ClashGroteskFont Fallback", sans-serif
+            count: 49
+          - value: -apple-system, sans-serif
+            count: 17
+        font_sizes:
+          - value: 16px
+            count: 4626
+          - value: 14px
+            count: 239
+          - value: 18px
+            count: 60
+          - value: 20px
+            count: 36
+          - value: 36px
+            count: 34
+          - value: 12px
+            count: 22
+          - value: 48px
+            count: 7
+          - value: 60px
+            count: 6
+        radii:
+          - value: 0px
+            count: 4576
+          - value: 9999px
+            count: 228
+          - value: 6px
+            count: 142
+          - value: 8px
+            count: 48
+          - value: 4px
+            count: 13
+          - value: 7px
+            count: 13
+          - value: 12px
+            count: 6
+          - value: 16px
+            count: 4
+        shadows:
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(17, 24, 39, 0.1) 2px 2px 10px 0px
+            count: 4
+          - value: rgba(0, 0, 0, 0.15) 0px 8px 48px 0px
+            count: 1
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px
+              6px -4px
+            count: 1
+          - value: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.05) 0px 1px 2px 0px
+            count: 1
+        spacing:
+          - value: 0px 0px 0px 0px
+            count: 4798
+          - value: 8px 12px 8px 12px
+            count: 45
+          - value: 16px 16px 16px 16px
+            count: 18
+          - value: 20px 20px 20px 20px
+            count: 16
+          - value: 4px 12px 4px 12px
+            count: 15
+          - value: 1px 1px 1px 1px
+            count: 13
+          - value: 32px 32px 32px 32px
+            count: 13
+          - value: 12px 0px 0px 0px
+            count: 13
+        grid: not measured
+        density: surface element counts retained in snapshot observations
+        breakpoints: not established from one fixed viewport
+      rights_safe_abstraction: true
+  components:
+    - finding_id: beehiiv.components.observed
+      kind: observed
+      statement: "Public surfaces exposed repeated navigation and action labels
+        including: Product; Solutions; Resources; Enterprise; Ad Network;
+        Pricing."
+      confidence: 0.86
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: &a2
+          - Product
+          - Solutions
+          - Resources
+          - Enterprise
+          - Ad Network
+          - Pricing
+          - Log in
+          - Get a demo
+          - Sign up for free
+          - Sign up with Google
+      rights_safe_abstraction: true
+  page_anatomy:
+    - finding_id: beehiiv.anatomy.observed
+      kind: observed
+      statement: The selected set covers homepage, product/category overview, feature,
+        conversion, and proof roles; 5 of five returned usable page content.
+      confidence: 0.98
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            title: "Newsletter Platform: Create Newsletters and Websites - beehiiv"
+            page_state: loaded
+            scroll_height: 9665
+          - surface_id: product-overview
+            title: Powerful Features for Newsletter Growth & Monetization - beehiiv
+            page_state: loaded
+            scroll_height: 3166
+          - surface_id: feature
+            title: AI Website Builder - beehiiv
+            page_state: loaded
+            scroll_height: 6324
+          - surface_id: pricing
+            title: Pricing - beehiiv — The newsletter platform built for growth
+            page_state: loaded
+            scroll_height: 9485
+          - surface_id: proof
+            title: Case Studies - beehiiv
+            page_state: loaded
+            scroll_height: 4680
+      rights_safe_abstraction: true
+  content_hierarchy:
+    - finding_id: beehiiv.hierarchy.observed
+      kind: observed
+      statement: "The captured hierarchy starts from explicit page headings such as:
+        NEWSLETTERS.PODCASTS.COMMUNITY.ONE PLATFORM.; STAND OUT IN THE INBOX; NO
+        CODE. NO LIMITS.; Monetize your content."
+      confidence: 0.9
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_headings:
+          - NEWSLETTERS.PODCASTS.COMMUNITY.ONE PLATFORM.
+          - STAND OUT IN THE INBOX
+          - NO CODE. NO LIMITS.
+          - Monetize your content
+          - BUILD YOUR CONTENT YOUR WAY
+          - What's included...
+          - Everything on Launch +
+          - Everything on Scale +
+          - MORE THAN JUST NEWSLETTERS
+          - Create
+      rights_safe_abstraction: true
+  cta_behavior:
+    - finding_id: beehiiv.cta.inferred
+      kind: inferred
+      statement: Repeated action labels suggest a persistent path from explanation
+        toward a bounded signup, purchase, or sales action; click outcomes were
+        not exercised in this pass.
+      confidence: 0.66
+      evidence_snapshot_ids: *a1
+      data:
+        sampled_action_labels: *a2
+      rights_safe_abstraction: true
+  proof_patterns:
+    - finding_id: beehiiv.proof.observed
+      kind: observed
+      statement: The selected proof surface is titled “Case Studies - beehiiv” and
+        exposes 7 heading nodes in the loaded DOM.
+      confidence: 0.9
+      evidence_snapshot_ids:
+        - snapshot.beehiiv.proof.browser-observed.20260902t210908z
+      data:
+        page_state: loaded
+        sampled_headings:
+          - level: 1
+            text: How 130,000 businesses run newsletters & grow on beehiiv.
+          - level: 2
+            text: Featured stories
+          - level: 3
+            text: Why TIME Moved Their 2M+ Subscribers to beehiiv
+          - level: 3
+            text: How The LA Raver Turned TikTok Fame Into a $100K Newsletter Business
+          - level: 3
+            text: "Milk Road: From 0 to Acquisition in 10 Months"
+          - level: 2
+            text: Ready to write your growth story?
+          - level: 2
+            text: Cookie Consent
+      rights_safe_abstraction: true
+  responsive_transformations:
+    - finding_id: beehiiv.responsive.pending
+      kind: inferred
+      statement: "Responsive transformations are not established: the cloud browser
+        exposed one fixed desktop viewport and exact 390 px and 320 px evidence
+        remains pending."
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        required_widths:
+          - 1440
+          - 390
+          - 320
+        observed_width: 1363
+      rights_safe_abstraction: true
+  motion:
+    - finding_id: beehiiv.motion.observed
+      kind: observed
+      statement: DOM inspection counted active CSS animation and transition
+        declarations at rest; this does not establish interaction choreography.
+      confidence: 0.72
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 17
+          - surface_id: product-overview
+            animatedElements: 0
+            reducedPreference: false
+            transitionedElements: 64
+          - surface_id: feature
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 16
+          - surface_id: pricing
+            animatedElements: 1
+            reducedPreference: false
+            transitionedElements: 31
+          - surface_id: proof
+            animatedElements: 4
+            reducedPreference: false
+            transitionedElements: 268
+      rights_safe_abstraction: true
+  reduced_motion:
+    - finding_id: beehiiv.reduced-motion.pending
+      kind: inferred
+      statement: Reduced-motion behavior was not emulated and must be verified before
+        any motion observation can become implementation guidance.
+      confidence: 0.01
+      evidence_snapshot_ids: []
+      data:
+        status: not-tested
+      rights_safe_abstraction: true
+  accessibility:
+    - finding_id: beehiiv.accessibility.observed
+      kind: observed
+      statement: DOM structure was inspected for headings, landmarks, image
+        alternative text presence, and unnamed buttons; this is a structural
+        sample, not a full accessibility audit.
+      confidence: 0.88
+      evidence_snapshot_ids: *a1
+      data:
+        surfaces:
+          - surface_id: homepage
+            headings:
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+            images: 19
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: product-overview
+            headings:
+              - 1
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+            images: 4
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: feature
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+            images: 13
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: pricing
+            headings:
+              - 1
+              - 3
+              - 3
+              - 3
+              - 3
+              - 3
+              - 4
+              - 4
+              - 4
+              - 4
+              - 2
+              - 2
+              - 3
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+            images: 6
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 3
+            missingAlt: 0
+            unnamedButtons: 0
+          - surface_id: proof
+            headings:
+              - 1
+              - 2
+              - 3
+              - 3
+              - 3
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+              - 2
+            images: 49
+            landmarks:
+              footer: 1
+              header: 1
+              main: 1
+              nav: 4
+            missingAlt: 0
+            unnamedButtons: 0
+      rights_safe_abstraction: true
+anti_patterns:
+  - finding_id: beehiiv.anti.density-risk
+    kind: inferred
+    statement: Large inventories of equal-weight links or cards can obscure the
+      primary decision when hierarchy does not visibly narrow the next action.
+    confidence: 0.55
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+category_saturation:
+  - finding_id: beehiiv.saturation.category
+    kind: inferred
+    statement: Dark gradients, oversized declarative headlines, pill controls, logo
+      walls, and undifferentiated feature-card grids are highly saturated across
+      the reference category.
+    confidence: 0.63
+    evidence_snapshot_ids: *a1
+    rights_safe_abstraction: true
+pattern_candidates:
+  - pattern.outcome-led-entry.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.category-card-wall-saturation.v1
+reviewed_at: 2026-09-02

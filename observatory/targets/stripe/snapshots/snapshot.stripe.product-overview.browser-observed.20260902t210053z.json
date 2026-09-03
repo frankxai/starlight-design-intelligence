@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.stripe.product-overview.browser-observed.20260902t210053z",
+  "target_id": "stripe",
+  "surface_id": "product-overview",
+  "captured_at": "2026-09-02T21:00:53.647Z",
+  "locale": "nl-NL",
+  "url": "https://stripe.com/payments",
+  "route": "/payments",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://stripe.com/nl/payments",
+    "title": "Stripe Payments | Platform voor wereldwijde betalingsverwerking",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "706df18dce6efdb699cea4b151e50323efa62f83f8e9fba3fc4cb89bbbd5474f",
+      "bytes": 79452,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/70/706df18dce6efdb699cea4b151e50323efa62f83f8e9fba3fc4cb89bbbd5474f.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "cdb06b6ba6407ac7cfaa53e1f071b55de6b381b2c23a52a06ce519381e26a13c",
+      "bytes": 200017,
+      "mime": "text/html",
+      "content_address": "sha256/cd/cdb06b6ba6407ac7cfaa53e1f071b55de6b381b2c23a52a06ce519381e26a13c.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "cdb06b6ba6407ac7cfaa53e1f071b55de6b381b2c23a52a06ce519381e26a13c",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Stripe, Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.runway.product-overview.browser-observed.20260902t210540z",
+  "target_id": "runway",
+  "surface_id": "product-overview",
+  "captured_at": "2026-09-02T21:05:40.185Z",
+  "locale": "en",
+  "url": "https://runway.com/product",
+  "route": "/product",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://runway.com/product",
+    "title": "Runway | AI Image and Video Generator",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "60ca82a4b187c3a3b46fbaf3264aaf013eea7b4da0008c34cef250116dc0888a",
+      "bytes": 117175,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/60/60ca82a4b187c3a3b46fbaf3264aaf013eea7b4da0008c34cef250116dc0888a.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "ec5a10d3e5a5bf012856b2d53d5199c987a4d22fee572a486c19d40b47c0ec2f",
+      "bytes": 200067,
+      "mime": "text/html",
+      "content_address": "sha256/ec/ec5a10d3e5a5bf012856b2d53d5199c987a4d22fee572a486c19d40b47c0ec2f.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "ec5a10d3e5a5bf012856b2d53d5199c987a4d22fee572a486c19d40b47c0ec2f",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Runway AI, Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

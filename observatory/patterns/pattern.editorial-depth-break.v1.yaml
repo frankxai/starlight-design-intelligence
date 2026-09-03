@@ -1,0 +1,36 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.editorial-depth-break.v1
+title: Editorial depth break
+status: approved
+kind: anatomy
+principle: Interrupt a broad narrative with one deep, authored explanation
+  rather than another equal card.
+mechanism: Change measure, pacing, or media role around a consequential research
+  claim while preserving reading order.
+use_when:
+  - A research claim needs context and intellectual weight
+  - Long-form authority is part of the product
+avoid_when:
+  - The section contains only marketing language
+  - The visual break would obscure the next action
+observed_in:
+  - target_id: anthropic
+    snapshot_ids:
+      - snapshot.anthropic.homepage.browser-observed.20260902t210247z
+    observation: Research, safety, product, and institutional material are paced as
+      distinct editorial chapters.
+  - target_id: google-deepmind
+    snapshot_ids:
+      - snapshot.google-deepmind.product-overview.browser-observed.20260902t210455z
+    observation: Breakthroughs and current research are separated into navigable
+      editorial groupings.
+  - target_id: league-universe
+    snapshot_ids:
+      - snapshot.league-universe.feature.browser-observed.20260902t211548z
+    observation: World regions are treated as a distinct navigable knowledge chapter.
+saturation_risk: low
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

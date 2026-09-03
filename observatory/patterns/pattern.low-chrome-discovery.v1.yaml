@@ -1,0 +1,37 @@
+$schema: ../../schemas/design-pattern.schema.json
+schema_version: starlight.design_pattern.v1
+pattern_id: pattern.low-chrome-discovery.v1
+title: Low-chrome discovery
+status: approved
+kind: anatomy
+principle: Let a high-variance catalog carry visual priority while controls
+  remain predictable and quiet.
+mechanism: Keep search, filters, and metadata stable around an expressive
+  collection; reveal details on intent.
+use_when:
+  - The content inventory is the primary value
+  - Items are meaningfully browsable by visual or event signal
+avoid_when:
+  - Items require comparison before recognition
+  - Quiet controls would hide important constraints
+observed_in:
+  - target_id: cosmos
+    snapshot_ids:
+      - snapshot.cosmos.product-overview.browser-observed.20260902t210743z
+    observation: The discovery surface lets selected visual elements dominate over
+      application chrome.
+  - target_id: luma
+    snapshot_ids:
+      - snapshot.luma.feature.browser-observed.20260902t211727z
+    observation: Event cards and local discovery carry priority while filtering
+      remains secondary.
+  - target_id: league-universe
+    snapshot_ids:
+      - snapshot.league-universe.proof.browser-observed.20260902t211550z
+    observation: The newest-content explorer organizes story and world entries
+      around the content itself.
+saturation_risk: medium
+rights:
+  derivation: abstracted-from-reference-only-observations
+  production_rule: recompose-originally-never-copy-source-expression
+updated_at: 2026-09-02

@@ -1,0 +1,149 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: frankx-ai
+domains:
+  - frankx.ai
+brand_id: frankx
+canonical_repositories:
+  - frankxai/frankx.ai-vercel-website
+surface_ids:
+  - homepage
+  - ai-architecture
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.product-in-context.v1
+  - pattern.progressive-proof.v1
+  - pattern.bounded-conversion.v1
+influence_map:
+  - target_id: anthropic
+    pattern_id: pattern.editorial-depth-break.v1
+    principle: Give authored research enough editorial space to become understandable.
+  - target_id: linear
+    pattern_id: pattern.product-in-context.v1
+    principle: Let a real working artifact resolve each capability claim.
+  - target_id: stripe
+    pattern_id: pattern.progressive-proof.v1
+    principle: Place specific evidence adjacent to consequential claims.
+anti_references:
+  - Generic AI-founder authority sites with interchangeable gradients and
+    unverified scale claims.
+forbidden_blending:
+  - Do not import Arcanea mythic-world language, SIS operations chrome, or
+    Vibeclubs social-night energy into FrankX.
+gaps:
+  missing_tokens:
+    - mode-specific editorial measure
+    - artifact annotation
+    - proof status
+    - portrait crop
+  inconsistent_rules:
+    - Current pack permits three modes but does not define transitions between
+      them.
+directions:
+  - direction_id: frankx-ai.authored-field-notes
+    name: Authored Field Notes
+    thesis: A living editorial front door where one current build, one precise
+      belief, and its inspectable artifact establish authority.
+    source_content:
+      - Current AI architecture work
+      - Working products and source repositories
+      - Frank’s authored research and creator output
+    composition: A narrow authored opening expands into one full-width artifact,
+      then returns to a measured reading column with proof beside each claim.
+    typography: Expressive licensed display voice with a highly legible prose face
+      and monospace only for evidence.
+    color_posture: Warm paper and near-black ink with one emerald technical signal.
+    imagery: Owned portraits, working screens, source documents, and released
+      creative artifacts.
+    motion_job: Reveal the relationship between a claim and its artifact; otherwise
+      keep the page still.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.editorial-depth-break.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: frankx-ai.working-system
+    name: Working System
+    thesis: A product-led map of Frank’s operating architecture that starts with one
+      live workflow and lets visitors inspect its parts.
+    source_content:
+      - AI architecture workflow
+      - Starlight and product repositories
+      - Specific system outputs
+    composition: A large working-state panel anchors the page; compact chapters
+      explain inputs, decisions, outputs, and source links.
+    typography: Neutral grotesk with dense but disciplined evidence labels.
+    color_posture: Dark technical canvas with accessible emerald state signals and
+      restrained warm interruptions.
+    imagery: Only real product states, architecture diagrams, and commit-linked
+      evidence.
+    motion_job: User-controlled step progression explains how one system run changes state.
+    selected_pattern_ids:
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: frankx-ai.soul-catalog
+    name: Soul Catalog
+    thesis: A culture-led portfolio that opens through released music and creative
+      work, then reveals the systems that made the work possible.
+    source_content:
+      - Released music catalog
+      - Creator practice
+      - The AI systems behind published work
+    composition: A cinematic authored sequence alternates one released work with a
+      concise making note and an inspectable system artifact.
+    typography: Editorial serif-led reading with restrained utility labels.
+    color_posture: Deep ink, warm amber, and paper; no universal neon-tech treatment.
+    imagery: Owned album art, performance or studio evidence, and authorized process
+      material.
+    motion_job: One user-triggered transition connects a finished work to its making
+      artifact.
+    selected_pattern_ids:
+      - pattern.editorial-depth-break.v1
+      - pattern.product-in-context.v1
+      - pattern.progressive-proof.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: frankx-ai.authored-field-notes

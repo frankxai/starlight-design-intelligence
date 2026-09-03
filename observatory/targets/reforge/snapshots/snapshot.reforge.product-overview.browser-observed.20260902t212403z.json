@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.reforge.product-overview.browser-observed.20260902t212403z",
+  "target_id": "reforge",
+  "surface_id": "product-overview",
+  "captured_at": "2026-09-02T21:24:03.050Z",
+  "locale": "en",
+  "url": "https://www.reforge.com/courses",
+  "route": "/courses",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://www.reforge.com/courses",
+    "title": "Courses on Product Management & AI | Reforge",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "b20734796262ef514418afa59272f8648241e99d29c0f112a34c95d24501322a",
+      "bytes": 48241,
+      "mime": "image/jpeg",
+      "width": 1353,
+      "height": 929,
+      "content_address": "sha256/b2/b20734796262ef514418afa59272f8648241e99d29c0f112a34c95d24501322a.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "e5497da2591b6eb83cf20bb38f56303b0fba001594060a672b1b22e636f7c9c1",
+      "bytes": 200015,
+      "mime": "text/html",
+      "content_address": "sha256/e5/e5497da2591b6eb83cf20bb38f56303b0fba001594060a672b1b22e636f7c9c1.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "e5497da2591b6eb83cf20bb38f56303b0fba001594060a672b1b22e636f7c9c1",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Reforge, Inc.",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

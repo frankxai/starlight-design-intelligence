@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/design-snapshot-manifest.schema.json",
+  "schema_version": "starlight.design_snapshot_manifest.v1",
+  "snapshot_id": "snapshot.anthropic.pricing.browser-observed.20260902t210328z",
+  "target_id": "anthropic",
+  "surface_id": "pricing",
+  "captured_at": "2026-09-02T21:03:28.163Z",
+  "locale": "en-US",
+  "url": "https://www.anthropic.com/pricing",
+  "route": "/pricing",
+  "viewport": {
+    "name": "browser-observed",
+    "width": 1363,
+    "height": 936,
+    "dpr": 1
+  },
+  "tool": {
+    "name": "codex-cloud-browser",
+    "version": "2026-09-02",
+    "method": "browser"
+  },
+  "response": {
+    "status": null,
+    "status_source": "browser-api-unavailable",
+    "final_url": "https://claude.com/pricing",
+    "title": "Plans & Pricing | Claude by Anthropic",
+    "observed_page_state": "loaded"
+  },
+  "artifacts": {
+    "screenshot": {
+      "sha256": "76da8bc58b89030d6e37780f31b5d8e419ed046906a8d492c4e68faaa24ba7c4",
+      "bytes": 65757,
+      "mime": "image/jpeg",
+      "width": 1348,
+      "height": 926,
+      "content_address": "sha256/76/76da8bc58b89030d6e37780f31b5d8e419ed046906a8d492c4e68faaa24ba7c4.jpg",
+      "storage_status": "pending-private-storage"
+    },
+    "html": {
+      "sha256": "b143d308b5811239917cdc6d017aaded60f39554e23fa65b0e436d2f301f8547",
+      "bytes": 200016,
+      "mime": "text/html",
+      "content_address": "sha256/b1/b143d308b5811239917cdc6d017aaded60f39554e23fa65b0e436d2f301f8547.html",
+      "storage_status": "pending-private-storage"
+    }
+  },
+  "content_hash": "b143d308b5811239917cdc6d017aaded60f39554e23fa65b0e436d2f301f8547",
+  "rights": {
+    "state": "third-party-reference-only",
+    "allowed_use": "Abstract research findings and original pattern synthesis only.",
+    "prohibited_use": "Marks, assets, font files, source code, distinctive compositions, and copied components.",
+    "reviewed_at": "2026-09-02"
+  },
+  "provenance": {
+    "source_owner": "Anthropic PBC",
+    "captured_by": "Codex design-research operator",
+    "capture_purpose": "design-research-reference-only"
+  },
+  "inspection": {
+    "menu_state": "not-tested",
+    "motion_state": "observed",
+    "reduced_motion": "not-tested",
+    "accessibility_structure": "observed"
+  }
+}

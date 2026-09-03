@@ -1,0 +1,147 @@
+$schema: ../../schemas/domain-design-profile.schema.json
+schema_version: starlight.domain_design_profile.v1
+active: true
+status: decision-ready
+owner: Frank
+decision_owner: Frank
+updated_at: 2026-09-02
+domain_id: gencreator-ai
+domains:
+  - gencreator.ai
+brand_id: gencreator
+canonical_repositories:
+  - frankxai/gencreator.ai
+  - frankxai/gencreator-community
+surface_ids:
+  - product-home
+  - community-home
+approved_pattern_ids:
+  - pattern.outcome-led-entry.v1
+  - pattern.role-based-pathways.v1
+  - pattern.product-in-context.v1
+  - pattern.bounded-conversion.v1
+  - pattern.low-chrome-discovery.v1
+  - pattern.editorial-depth-break.v1
+  - pattern.progressive-proof.v1
+influence_map:
+  - target_id: kajabi
+    pattern_id: pattern.role-based-pathways.v1
+    principle: Route creators by the outcome they are building rather than by
+      internal product names.
+  - target_id: beehiiv
+    pattern_id: pattern.bounded-conversion.v1
+    principle: Connect creator-business capability to an explicit available next step.
+anti_references:
+  - Creator-tool marketplaces that promise effortless growth through an
+    undifferentiated wall of AI products.
+forbidden_blending:
+  - Do not blend FrankX biography, Vibeclubs live-session energy, or Arcanea
+    lore into the GenCreator product ladder.
+gaps:
+  missing_tokens:
+    - availability state
+    - entitlement tier
+    - artifact type
+    - cohort status
+  inconsistent_rules:
+    - The product catalog, Studio application, VibeOS, and community each imply
+      a different primary entry.
+directions:
+  - direction_id: gencreator-ai.outcome-ladder
+    name: Outcome Ladder
+    thesis: A single creator ladder moves from a free diagnostic to one artifact, a
+      reusable stack, a cohort, and an owned creator system.
+    source_content:
+      - ONE ladder
+      - 14-product catalog
+      - Studio application and creator stacks
+    composition: A vertical outcome sequence gives each stage one real output, one
+      availability label, and one next action.
+    typography: Warm practical sans with an authored display accent and compact
+      status labels.
+    color_posture: Paper and ink with green completion signal and restrained warm
+      cohort accents.
+    imagery: Real creator artifacts, stack registries, and guided-install outputs.
+    motion_job: Progressively reveal what each stage adds to the creator’s owned system.
+    selected_pattern_ids:
+      - pattern.outcome-led-entry.v1
+      - pattern.product-in-context.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 5
+      distinctiveness: 5
+      brand_fit: 5
+      extensibility: 5
+      accessibility: 5
+      feasibility: 4
+      rights_safety: 5
+      conversion: 5
+    total: 39
+  - direction_id: gencreator-ai.artifact-market
+    name: Artifact Market
+    thesis: A task-first catalog lets creators choose the artifact they need now and
+      inspect the framework, status, and entitlement behind it.
+    source_content:
+      - MCP packs and quizzes
+      - Stack registries
+      - Factory-built products
+    composition: A filterable catalog is interrupted by authored recommendations and
+      concrete output previews.
+    typography: Compact marketplace typography with strong product titles and calm
+      metadata.
+    color_posture: Light neutral catalog with functional category colors and no
+      marketplace neon.
+    imagery: Actual pack outputs, quiz briefs, registries, and documentation thumbnails.
+    motion_job: Filtering changes the catalog instantly; no ambient card motion.
+    selected_pattern_ids:
+      - pattern.role-based-pathways.v1
+      - pattern.low-chrome-discovery.v1
+      - pattern.product-in-context.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 5
+      accessibility: 4
+      feasibility: 4
+      rights_safety: 5
+      conversion: 4
+    total: 35
+  - direction_id: gencreator-ai.cohort-workshop
+    name: Cohort Workshop
+    thesis: A human-led workshop narrative shows creators shipping together, with
+      product access explained as support for the practice.
+    source_content:
+      - Cohort rituals
+      - Studio application
+      - Published creator outputs
+    composition: A session sequence alternates facilitator notes, participant
+      artifacts, and the next cohort boundary.
+    typography: Friendly editorial type with highly legible schedules and instructions.
+    color_posture: Warm workshop neutrals with green action and analog material accents.
+    imagery: Authorized working sessions and participant-owned artifacts only.
+    motion_job: A user-controlled session timeline connects practice to output.
+    selected_pattern_ids:
+      - pattern.editorial-depth-break.v1
+      - pattern.progressive-proof.v1
+      - pattern.bounded-conversion.v1
+    originality_boundary: Use only owned product content and assets; borrow the
+      abstract principle, never a source layout, mark, font, asset, or component
+      expression.
+    scores:
+      clarity: 4
+      distinctiveness: 5
+      brand_fit: 4
+      extensibility: 4
+      accessibility: 4
+      feasibility: 3
+      rights_safety: 5
+      conversion: 4
+    total: 33
+nominated_direction_id: gencreator-ai.outcome-ladder
