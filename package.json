@@ -7,6 +7,7 @@
     "validate": "node scripts/validate-kernel.mjs",
     "validate:observatory": "node scripts/validate-observatory.mjs",
     "index:observatory": "node scripts/build-observatory-index.mjs",
+    "check:observatory-index": "node scripts/build-observatory-index.mjs --check",
     "check:freshness": "node scripts/check-observatory-freshness.mjs",
     "capture:reference": "node scripts/capture-reference.mjs",
     "validate:adoption": "node scripts/validate-adoption.mjs",
