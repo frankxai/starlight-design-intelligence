@@ -9,12 +9,15 @@
   "mode": "product-intelligence",
   "decision_owner": "GenCreator product owner",
   "audience_situation": "A creator has owned source material and needs work they can review and use.",
-  "current_promise": "Create a browser-local draft, inspect its proof gaps and export a working packet.",
+  "current_promise": "Candidate pending task verification: create a browser-local draft, inspect its proof gaps and export a working packet.",
   "future_capability_boundary": "Do not claim persistent CreatorPack storage from a browser-local demo.",
   "voluntary_identity": "I finish and take responsibility for my creative work.",
   "cue": {
     "reference": "Use the approved current GenCreator identity and the source-to-review-to-export sequence.",
-    "state": "Existing identity; no new mark selected by this brief."
+    "state": "Existing identity reference to be resolved and approved for this task; no new mark selected.",
+    "asset_id": null,
+    "source_version": null,
+    "approval_reference": null
   },
   "first_value": {
     "action": "Review the draft and complete an export.",
@@ -23,7 +26,9 @@
   },
   "proof": {
     "required": "A real exported specimen and current product demonstration.",
-    "state": "Needs task-specific verification."
+    "state": "Needs task-specific verification.",
+    "specimen_version": null,
+    "observed_product_revision": null
   },
   "next_action": "Create a second artifact from the same source when useful.",
   "cross_brand_handoff": {
@@ -35,12 +40,21 @@
     "return": "Second meaningful completed artifact within 14 days.",
     "baseline": null,
     "assignment": "Declare before starting any experiment.",
-    "status": "not-running"
+    "status": "not-running",
+    "primary_observation_window": null,
+    "assignment_unit": null,
+    "stop_rule": "Stop on a broken task, misleading capability claim or unintended publication; declare statistical stopping rule before launch."
   },
   "release": {
     "status": "planning-only",
     "reviewer": null,
     "approval": null,
     "production_receipt": null
+  },
+  "promise_evidence_state": "observed-public-surface; successful export journey unverified",
+  "product_specification": {
+    "source": "frankxai/gencreator.ai/docs/strategy/2026-07-25-gencreator-v1-convergence.md",
+    "version": "ADR-007",
+    "precedence": "Current product decision governs proposition and availability; approved identity references govern visual identity."
   }
 }
