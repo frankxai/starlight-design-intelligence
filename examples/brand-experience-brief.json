@@ -1,0 +1,46 @@
+{
+  "format": "starlight.brand_experience_brief.proposal.v1",
+  "status": "example-not-runtime",
+  "brand_id": "gencreator",
+  "brand_pack": "brand-packs/gencreator/BRAND.md",
+  "product_id": "creatorpack",
+  "repository": "frankxai/gencreator.ai",
+  "surface": "product-home",
+  "mode": "product-intelligence",
+  "decision_owner": "GenCreator product owner",
+  "audience_situation": "A creator has owned source material and needs work they can review and use.",
+  "current_promise": "Create a browser-local draft, inspect its proof gaps and export a working packet.",
+  "future_capability_boundary": "Do not claim persistent CreatorPack storage from a browser-local demo.",
+  "voluntary_identity": "I finish and take responsibility for my creative work.",
+  "cue": {
+    "reference": "Use the approved current GenCreator identity and the source-to-review-to-export sequence.",
+    "state": "Existing identity; no new mark selected by this brief."
+  },
+  "first_value": {
+    "action": "Review the draft and complete an export.",
+    "event": "artifact_export_completed",
+    "instrumentation_status": "proposed-not-verified"
+  },
+  "proof": {
+    "required": "A real exported specimen and current product demonstration.",
+    "state": "Needs task-specific verification."
+  },
+  "next_action": "Create a second artifact from the same source when useful.",
+  "cross_brand_handoff": {
+    "destination": null,
+    "condition": "Only after a relevant user need; do not force a portfolio detour."
+  },
+  "measurement": {
+    "primary": "Reviewed artifact export completion among assigned eligible users.",
+    "return": "Second meaningful completed artifact within 14 days.",
+    "baseline": null,
+    "assignment": "Declare before starting any experiment.",
+    "status": "not-running"
+  },
+  "release": {
+    "status": "planning-only",
+    "reviewer": null,
+    "approval": null,
+    "production_receipt": null
+  }
+}
