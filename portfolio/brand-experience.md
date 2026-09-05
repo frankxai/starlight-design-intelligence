@@ -1,6 +1,6 @@
 # Brand experience protocol
 
-Status: proposed extension. Existing brand packs and product contracts remain authoritative.
+Status: proposed extension. Current product decisions govern proposition and availability; approved brand references govern identity. Record conflicts explicitly when older pack copy describes a superseded product model. This protocol does not revise those source decisions.
 
 A brand should help a person anticipate a useful experience and recognise it when it happens. Define what the person will do, the evidence that it worked, and the cue that lets them remember the brand at the next relevant moment.
 
