@@ -85,3 +85,7 @@ flag.
 - Production proof is emitted after deployment as an external CI artifact or a
   later receipts commit; it is never embedded in the production commit whose SHA
   it records.
+
+## Brand experience planning
+
+Use [the proposed brand experience protocol](portfolio/brand-experience.md) to connect a brand cue with a useful product action, evidence and measurement. The [brief example](examples/brand-experience-brief.json) is planning data; current brand packs and release contracts retain authority.
