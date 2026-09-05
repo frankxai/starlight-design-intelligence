@@ -64,3 +64,16 @@ Starlight loses its identity when it becomes cold compliance language, generic c
 
 The desired feeling is rare: a trusted intelligence laboratory, a beautiful future institution, and a living invitation to help humanity go further.
 
+## Make the horizon tangible
+
+The brand's distinctive move is to connect a large possibility with a contribution a person can make today. One research question, a tested system, a learning artifact, or a documented collaboration should give the horizon substance.
+
+Proposed institutional line: **A future worth contributing to.** Support it with a specific frontier and a real way to participate. This is an invitation and an ambition; it is not evidence of institutional scale or scientific impact.
+
+Operator expression: “See the evidence. Make the decision. Keep the record.” An operational surface earns that line by showing source, uncertainty, accountable owner, and decision history. A failed task must remain visible and recoverable.
+
+Academy expression: “Build something that changes what you understand.” Support it with the exercise, the review, and the learner's resulting work.
+
+The recurring public format is a frontier paired with a contribution: the question, the people working on it, the evidence so far, and the next useful step. Scientific findings need primary sources; speculative futures need explicit framing. Human presence and intellectual ambition must survive the institutional precision.
+
+Measure whether people can name the frontier, understand the work, and enter a meaningful contribution path. Reach and spectacle alone do not establish trust. SIS remains the operational expression; it must not flatten every Starlight surface into a control room.
