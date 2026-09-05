@@ -28,7 +28,8 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 | Brand | Visual Mode | Motion Mode | Copy Mode |
 | --- | --- | --- | --- |
 | FrankX | clear, founder-led, commercially sharp | direct, fast, useful | practical, strategic, no mythic language |
-| Starlight / SIS | calm operational intelligence | precise, evidence-driven, command-center motion | trustworthy, systems-literate, enterprise-ready |
+| Starlight Intelligence | Horizon, Operator, Academy, and Cultural modes | scale and discovery in Horizon; precise state in Operator | human possibility connected to evidence and contribution |
+| GenCreator | authored work, visible source, concentrated product control | deliberate source, edit, and approval relationships | generative culture with a point of view |
 | Arcanea | mythic creative intelligence | cinematic, ritual, luminous transformation | poetic but concrete, never generic fantasy fog |
 | Vibeclubs | embodied creator/social energy | warm, rhythmic, sensory | inviting, participatory, culture-forward |
 
@@ -85,3 +86,7 @@ flag.
 - Production proof is emitted after deployment as an external CI artifact or a
   later receipts commit; it is never embedded in the production commit whose SHA
   it records.
+
+## Brand experience planning
+
+Use [the proposed brand experience protocol](portfolio/brand-experience.md) to connect cultural ambition, a distinct point of view, the current product promise, and signature work. It maps eleven existing brand packs to their different reasons to matter and routes the direction into product decisions, agent instructions, wording, behavior, and verification. The [brief example](examples/brand-experience-brief.json) is planning data; approved identity and immutable adoption contracts retain authority.

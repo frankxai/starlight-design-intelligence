@@ -3,27 +3,101 @@
   "brandId": "sis",
   "displayName": "Starlight Intelligence Systems",
   "operatingUnit": "starlight-substrate",
-  "sourceDocs": ["brand-packs/sis/DESIGN.md"],
-  "canonicalRepos": ["frankxai/starlight-intelligence-system"],
-  "surfaceModes": ["operations", "evidence", "editorial"],
-  "audiences": ["AI platform leaders", "operators", "evaluation and governance teams"],
+  "sourceDocs": [
+    "brand-packs/sis/BRAND.md",
+    "brand-packs/sis/DESIGN.md",
+    "brand-packs/sis/PRODUCT.md"
+  ],
+  "canonicalRepos": [
+    "frankxai/starlight-intelligence-system"
+  ],
+  "surfaceModes": [
+    "operations",
+    "evidence",
+    "editorial",
+    "horizon",
+    "academy",
+    "cultural"
+  ],
+  "audiences": [
+    "builders and researchers",
+    "creators and educators",
+    "AI platform leaders and operators",
+    "institutions and people seeking meaningful contribution"
+  ],
   "positioning": {
-    "oneLine": "Calm operational intelligence that makes agent work, evidence, and decisions legible.",
-    "proof": ["agent traces", "evaluation deltas", "provenance records", "governed handoffs"],
-    "failureModes": ["hype science fiction", "generic dashboard filler", "black-box intelligence"]
+    "oneLine": "Connect human possibility to intelligence, useful systems, and a meaningful contribution people can make now.",
+    "proof": [
+      "sourced research and explicit open questions",
+      "tested systems and provenance records",
+      "learning artifacts and reviewed decisions",
+      "documented human contributions"
+    ],
+    "failureModes": [
+      "civilizational impact claimed without work",
+      "generic cosmic spectacle",
+      "black-box intelligence",
+      "every surface flattened into a control room"
+    ]
   },
   "voice": {
-    "traits": ["calm", "operational", "evidence-led", "trustworthy"],
-    "bannedPhrases": ["sentient system", "autonomous revolution", "magic intelligence"]
+    "traits": [
+      "intellectually ambitious",
+      "human and generous",
+      "precise about evidence",
+      "expansive when the surface serves possibility"
+    ],
+    "bannedPhrases": [
+      "sentient system",
+      "autonomous revolution",
+      "magic intelligence"
+    ],
+    "modes": {
+      "horizon": "Vivid, warm invitation grounded in a real frontier and contribution path.",
+      "operations": "Calm account of state, evidence, ownership, and decisions.",
+      "academy": "Generous teaching that increases learner independence.",
+      "cultural": "Expressive, coherent cultural work without fictional authority claims."
+    }
   },
   "visual": {
-    "principles": ["Show the trace", "Make confidence inspectable", "Keep operational reading stable"],
-    "colors": { "void": "#0a0a0b", "space": "#111113", "signal": "#6366f1", "evidence": "#a5b4fc" },
-    "typography": { "displayRole": "operational authority", "readingRole": "dense but calm UI" },
-    "imageDirection": ["real product states", "evidence stacks", "agent and evaluation traces"]
+    "principles": [
+      "Connect a frontier to a human contribution",
+      "Make evidence and uncertainty inspectable",
+      "Choose the surface mode before composition"
+    ],
+    "colors": {
+      "void": "#0a0a0b",
+      "space": "#111113",
+      "signal": "#6366f1",
+      "evidence": "#a5b4fc"
+    },
+    "typography": {
+      "displayRole": "operational authority",
+      "readingRole": "dense but calm UI"
+    },
+    "imageDirection": [
+      "real product states",
+      "evidence stacks",
+      "agent and evaluation traces"
+    ]
   },
-  "channels": { "primary": ["product", "enterprise website", "technical documentation"] },
-  "approvals": { "requiredBeforePublicAction": true, "route": "independent-verifier-and-named-human" },
-  "doNotUse": ["radiant particle fields", "moving dashboards during reading", "uncited confidence claims"],
-  "updatedAt": "2026-07-24"
+  "channels": {
+    "primary": [
+      "institutional website",
+      "research",
+      "operator products",
+      "learning",
+      "cultural work"
+    ]
+  },
+  "approvals": {
+    "requiredBeforePublicAction": true,
+    "route": "independent-verifier-and-named-human"
+  },
+  "doNotUse": [
+    "radiant particle fields",
+    "moving dashboards during reading",
+    "uncited confidence claims"
+  ],
+  "updatedAt": "2026-09-05"
 }

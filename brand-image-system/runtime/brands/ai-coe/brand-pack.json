@@ -3,27 +3,87 @@
   "brandId": "ai-coe",
   "displayName": "AI Center of Excellence",
   "operatingUnit": "ai-architect-coe",
-  "sourceDocs": ["brand-packs/ai-coe/BRAND.md", "brand-packs/ai-coe/DESIGN.md"],
-  "canonicalRepos": ["frankxai/ai-architect-academy"],
-  "surfaceModes": ["academy-lab", "coe-governance"],
-  "audiences": ["enterprise AI leaders", "architecture teams", "governance owners"],
+  "sourceDocs": [
+    "brand-packs/ai-coe/BRAND.md",
+    "brand-packs/ai-coe/DESIGN.md"
+  ],
+  "canonicalRepos": [
+    "frankxai/ai-architect-academy"
+  ],
+  "surfaceModes": [
+    "academy-lab",
+    "coe-governance"
+  ],
+  "audiences": [
+    "people learning AI architecture",
+    "practicing architects",
+    "architecture teams and enterprise capability owners"
+  ],
   "positioning": {
-    "oneLine": "Proof-led AI operating architecture for teams that need governable execution.",
-    "proof": ["operating models", "decision records", "architecture evidence"],
-    "failureModes": ["AI hype", "fake proof", "innovation-theater diagrams"]
+    "oneLine": "Develop architecture judgment through systems people build, test, explain, and improve.",
+    "proof": [
+      "runnable labs and failure cases",
+      "reviewed design decisions",
+      "transfer to a changed scenario",
+      "organizational operating outcomes"
+    ],
+    "failureModes": [
+      "certification theater",
+      "answer repetition without understanding",
+      "affiliation or accreditation implied without evidence",
+      "enterprise language obscuring the learner's task"
+    ]
   },
   "voice": {
-    "traits": ["precise", "evidence-led", "calm", "architectural"],
-    "bannedPhrases": ["revolutionary AI", "transform everything", "future-proof"]
+    "traits": [
+      "exact",
+      "generous",
+      "demanding",
+      "evidence-led"
+    ],
+    "bannedPhrases": [
+      "revolutionary AI",
+      "transform everything",
+      "future-proof"
+    ]
   },
   "visual": {
-    "principles": ["Show governed work", "Prefer exact diagrams", "Keep executive hierarchy legible"],
-    "colors": { "ink": "#0a0a0b", "paper": "#f8fafc", "signal": "#3b82f6" },
-    "typography": { "displayRole": "technical authority", "readingRole": "operational clarity" },
-    "imageDirection": ["real architecture artifacts", "sourced diagrams", "decision and evaluation evidence"]
+    "principles": [
+      "Show the learner's work and decisions",
+      "Make alternatives and failure cases legible",
+      "Keep Academy learning and CoE operating contexts distinct"
+    ],
+    "colors": {
+      "ink": "#0a0a0b",
+      "paper": "#f8fafc",
+      "signal": "#3b82f6"
+    },
+    "typography": {
+      "displayRole": "technical confidence",
+      "readingRole": "clear learning and review"
+    },
+    "imageDirection": [
+      "real architecture artifacts",
+      "sourced diagrams",
+      "decision and evaluation evidence"
+    ]
   },
-  "channels": { "primary": ["website", "presentations", "documentation"] },
-  "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
-  "doNotUse": ["hype science fiction", "decorative dashboards", "uncited benchmarks"],
-  "updatedAt": "2026-09-02"
+  "channels": {
+    "primary": [
+      "academy labs",
+      "reviewed portfolios",
+      "CoE operating documentation",
+      "website"
+    ]
+  },
+  "approvals": {
+    "requiredBeforePublicAction": true,
+    "route": "named-human"
+  },
+  "doNotUse": [
+    "hype science fiction",
+    "decorative dashboards",
+    "uncited benchmarks"
+  ],
+  "updatedAt": "2026-09-05"
 }

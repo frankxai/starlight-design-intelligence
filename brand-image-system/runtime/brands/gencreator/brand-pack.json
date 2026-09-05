@@ -3,27 +3,88 @@
   "brandId": "gencreator",
   "displayName": "GenCreator",
   "operatingUnit": "creator-systems",
-  "sourceDocs": ["brand-packs/gencreator/BRAND.md", "brand-packs/gencreator/DESIGN.md"],
-  "canonicalRepos": ["frankxai/gencreator.ai", "frankxai/gencreator-community"],
-  "surfaceModes": ["product-intelligence", "community-editorial"],
-  "audiences": ["AI-native creators", "creator-operators", "cohort participants"],
+  "sourceDocs": [
+    "brand-packs/gencreator/BRAND.md",
+    "brand-packs/gencreator/DESIGN.md"
+  ],
+  "canonicalRepos": [
+    "frankxai/gencreator.ai",
+    "frankxai/gencreator-community"
+  ],
+  "surfaceModes": [
+    "product-intelligence",
+    "community-editorial"
+  ],
+  "audiences": [
+    "expert-led creators with owned source material",
+    "authors and educators",
+    "founders with a distinct body of work"
+  ],
   "positioning": {
-    "oneLine": "Practical creator architecture that turns practice into visible, reusable artifacts.",
-    "proof": ["creator stacks", "published artifacts", "cohort rituals"],
-    "failureModes": ["productivity-tool sameness", "faceless automation", "frameworks without output"]
+    "oneLine": "Generative culture with a point of view: help creators give their own sources a deliberate, recognizable expression.",
+    "proof": [
+      "a permitted source beside its finished expression",
+      "creator choices and reviewed revisions",
+      "approved useful work with attribution"
+    ],
+    "failureModes": [
+      "generic AI voice",
+      "output volume without authorship",
+      "cohort or tool catalog replacing the product promise",
+      "unavailable capability presented as live"
+    ]
   },
   "voice": {
-    "traits": ["warm", "practical", "encouraging", "artifact-led"],
-    "bannedPhrases": ["10x your content", "effortless growth", "creator revolution"]
+    "traits": [
+      "editorial judgment",
+      "cultural curiosity",
+      "practical command",
+      "human warmth"
+    ],
+    "bannedPhrases": [
+      "10x your content",
+      "effortless growth",
+      "creator revolution"
+    ]
   },
   "visual": {
-    "principles": ["Show the maker", "Make outputs visible", "Use architecture to clarify practice"],
-    "colors": { "ink": "#0f0f11", "paper": "#f6f1e8", "signal": "#22c55e", "warm": "#f4a261" },
-    "typography": { "displayRole": "human confidence", "readingRole": "guided practice" },
-    "imageDirection": ["real creator artifacts", "working sessions", "clear system maps"]
+    "principles": [
+      "Make the creator's authorship visible",
+      "Connect source, creative decision, and finished expression",
+      "Protect concentration in product and give finished work room in editorial"
+    ],
+    "colors": {
+      "ink": "#0f0f11",
+      "paper": "#f6f1e8",
+      "signal": "#22c55e",
+      "warm": "#f4a261"
+    },
+    "typography": {
+      "displayRole": "authored confidence",
+      "readingRole": "clear creation and review"
+    },
+    "imageDirection": [
+      "real creator work with attribution",
+      "annotated edits and source studies",
+      "consented creative process"
+    ]
   },
-  "channels": { "primary": ["product", "cohort material", "creator media"] },
-  "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
-  "doNotUse": ["generic creator desk", "mascot substitution for proof", "empty automation diagrams"],
-  "updatedAt": "2026-09-02"
+  "channels": {
+    "primary": [
+      "product",
+      "creator editorial",
+      "community critique",
+      "source-to-work demonstrations"
+    ]
+  },
+  "approvals": {
+    "requiredBeforePublicAction": true,
+    "route": "named-human"
+  },
+  "doNotUse": [
+    "generic creator desk",
+    "mascot substitution for proof",
+    "empty automation diagrams"
+  ],
+  "updatedAt": "2026-09-05"
 }
