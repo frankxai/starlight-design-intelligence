@@ -1,8 +1,14 @@
 #!/usr/bin/env node
-import { writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { OBSERVATORY, digest, loadObservatory } from "./observatory-lib.mjs";
 
+const args = process.argv.slice(2);
+if (args.some((arg) => arg !== "--check")) {
+  console.error("Usage: node scripts/build-observatory-index.mjs [--check]");
+  process.exit(2);
+}
+const checkOnly = args.includes("--check");
 const data = loadObservatory();
 const snapshots = new Map(data.snapshots.map((item) => [item.value.snapshot_id, item.value]));
 const patterns = new Map(data.patterns.map((item) => [item.value.pattern_id, item.value]));
@@ -66,7 +72,16 @@ const index = {
 };
 const canonical = JSON.stringify(index);
 const output = { ...index, index_sha256: digest(canonical) };
-writeFileSync(join(OBSERVATORY, "retrieval-index.json"), JSON.stringify(output, null, 2) + "\n");
+const outputPath = join(OBSERVATORY, "retrieval-index.json");
+const serialized = JSON.stringify(output, null, 2) + "\n";
+if (checkOnly) {
+  if (!existsSync(outputPath) || readFileSync(outputPath, "utf8") !== serialized) {
+    console.error("Observatory retrieval index is missing or stale. Run npm run index:observatory and commit the result.");
+    process.exit(1);
+  }
+} else {
+  writeFileSync(outputPath, serialized);
+}
 console.log(
-  `Retrieval index written for ${Object.keys(domains).length} domains (${output.index_sha256.slice(0, 12)}).`
+  `Retrieval index ${checkOnly ? "verified" : "written"} for ${Object.keys(domains).length} domains (${output.index_sha256.slice(0, 12)}).`
 );

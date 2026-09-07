@@ -36,6 +36,17 @@ validateAll(data.extractions, validators.extraction);
 validateAll(data.patterns, validators.pattern);
 validateAll(data.domains, validators.domain);
 
+// Cross-record checks rely on schema-valid shapes. Report the contract failures
+// before dereferencing malformed input, rather than losing them to a TypeError.
+function exitOnFailures() {
+  if (!failures.length) return;
+  console.error(`Observatory validation failed (${failures.length}):`);
+  for (const failure of failures) console.error(`- ${failure}`);
+  if (warnings.length) console.error(`Warnings: ${warnings.length} (exact viewport captures pending)`);
+  process.exit(1);
+}
+exitOnFailures();
+
 function duplicateValues(values) {
   const seen = new Set();
   return [...new Set(values.filter((value) => seen.size === seen.add(value).size))];
@@ -47,6 +58,8 @@ function uniqueBy(items, key, label) {
 
 uniqueBy(data.targets, (item) => item.value.target_id, "target_id");
 uniqueBy(data.snapshots, (item) => item.value.snapshot_id, "snapshot_id");
+uniqueBy(data.extractions, (item) => item.value.extraction_id, "extraction_id");
+uniqueBy(data.extractions, (item) => item.value.target_id, "extraction target_id");
 uniqueBy(data.patterns, (item) => item.value.pattern_id, "pattern_id");
 uniqueBy(data.domains, (item) => item.value.domain_id, "domain_id");
 
@@ -106,6 +119,9 @@ for (const item of data.snapshots) {
   if (snapshot.route !== new URL(snapshot.url).pathname) {
     failures.push(`${snapshot.snapshot_id}: route does not match captured URL pathname`);
   }
+  if (snapshot.content_hash !== snapshot.artifacts.html.sha256) {
+    failures.push(`${snapshot.snapshot_id}: content_hash does not match HTML artifact`);
+  }
   for (const [name, artifact] of Object.entries(snapshot.artifacts ?? {})) {
     if (!artifact.sha256 || !artifact.content_address || !artifact.bytes) {
       failures.push(`${snapshot.snapshot_id}/${name}: capture hash metadata incomplete`);
@@ -127,9 +143,17 @@ for (const item of data.snapshots) {
 
 for (const item of data.extractions) {
   const extraction = item.value;
+  if (basename(dirname(item.path)) !== extraction.target_id) {
+    failures.push(`${relativePath(item.path)}: directory must match extraction target_id`);
+  }
   if (!targetById.has(extraction.target_id)) failures.push(`${extraction.extraction_id}: unknown target`);
+  const declaredSnapshots = new Set(extraction.snapshot_ids);
   for (const snapshotId of extraction.snapshot_ids) {
-    if (!snapshotById.has(snapshotId)) failures.push(`${extraction.extraction_id}: unknown snapshot ${snapshotId}`);
+    const snapshot = snapshotById.get(snapshotId);
+    if (!snapshot) failures.push(`${extraction.extraction_id}: unknown snapshot ${snapshotId}`);
+    else if (snapshot.target_id !== extraction.target_id) {
+      failures.push(`${extraction.extraction_id}: snapshot ${snapshotId} belongs to another target`);
+    }
   }
   const groups = [
     ...Object.values(extraction.findings),
@@ -143,6 +167,9 @@ for (const item of data.extractions) {
     }
     for (const snapshotId of finding.evidence_snapshot_ids) {
       if (!snapshotById.has(snapshotId)) failures.push(`${finding.finding_id}: unknown evidence ${snapshotId}`);
+      if (!declaredSnapshots.has(snapshotId)) {
+        failures.push(`${finding.finding_id}: evidence ${snapshotId} is not declared by its extraction`);
+      }
     }
   }
 }
@@ -241,7 +268,14 @@ const ledgerPath = join(OBSERVATORY, "source-ledger.jsonl");
 if (!existsSync(ledgerPath)) failures.push("observatory/source-ledger.jsonl is missing");
 else {
   const rows = readFileSync(ledgerPath, "utf8").trim().split("\n").filter(Boolean).map((line, index) => {
-    try { return JSON.parse(line); } catch (error) {
+    try {
+      const row = JSON.parse(line);
+      if (!row || typeof row !== "object" || Array.isArray(row)) {
+        failures.push(`source-ledger.jsonl line ${index + 1}: entry must be an object`);
+        return null;
+      }
+      return row;
+    } catch (error) {
       failures.push(`source-ledger.jsonl line ${index + 1}: invalid JSON`);
       return null;
     }
@@ -253,18 +287,42 @@ else {
     if (!row.source_owner || !row.capture_date || !row.rights_state || !row.allowed_use || !row.content_hash) {
       failures.push(`${row.snapshot_id}: ledger provenance incomplete`);
     }
+    const snapshot = snapshotById.get(row.snapshot_id);
+    if (!snapshot) {
+      failures.push(`${row.snapshot_id}: ledger entry references unknown snapshot`);
+      continue;
+    }
+    const expected = {
+      target_id: snapshot.target_id,
+      surface_id: snapshot.surface_id,
+      source_owner: snapshot.provenance.source_owner,
+      capture_date: snapshot.captured_at,
+      rights_state: snapshot.rights.state,
+      allowed_use: snapshot.rights.allowed_use,
+      content_hash: snapshot.content_hash
+    };
+    for (const [field, value] of Object.entries(expected)) {
+      if (row[field] !== value) failures.push(`${row.snapshot_id}: ledger ${field} does not match snapshot`);
+    }
+    const artifactNames = Object.keys(snapshot.artifacts).sort();
+    const ledgerHashes = row.artifact_hashes;
+    if (!ledgerHashes || typeof ledgerHashes !== "object" || Array.isArray(ledgerHashes)
+      || JSON.stringify(Object.keys(ledgerHashes).sort()) !== JSON.stringify(artifactNames)) {
+      failures.push(`${row.snapshot_id}: ledger artifact_hashes must cover exactly the snapshot artifacts`);
+    } else {
+      for (const name of artifactNames) {
+        if (ledgerHashes[name] !== snapshot.artifacts[name].sha256) {
+          failures.push(`${row.snapshot_id}: ledger ${name} hash does not match snapshot`);
+        }
+      }
+    }
   }
 }
 
 const prohibitedRaw = listFiles(OBSERVATORY, /\.(png|jpe?g|webp|gif|html?|zip)$/iu);
 for (const path of prohibitedRaw) failures.push(`raw evidence must not be committed: ${relativePath(path)}`);
 
-if (failures.length) {
-  console.error(`Observatory validation failed (${failures.length}):`);
-  for (const failure of failures) console.error(`- ${failure}`);
-  if (warnings.length) console.error(`Warnings: ${warnings.length} (exact viewport captures pending)`);
-  process.exit(1);
-}
+exitOnFailures();
 console.log(
   `Observatory valid: ${data.targets.length} targets, ${data.snapshots.length} manifests, ${data.patterns.length} patterns, ${data.domains.length} domains.`
 );

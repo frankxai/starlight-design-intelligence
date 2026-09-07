@@ -2,33 +2,6 @@ name: Design kernel
 
 on:
   pull_request:
-    paths:
-      - ".agent-harness.json"
-      - ".github/workflows/design-contract.yml"
-      - ".github/workflows/design-kernel.yml"
-      - "brand-image-system/**"
-      - "brand-packs/**"
-      - "evals/**"
-      - "playbooks/**"
-      - "portfolio/**"
-      - "schemas/**"
-      - "scripts/**"
-      - "skills/**"
-      - "templates/**"
-      - "tests/**"
-      - "AGENTS.md"
-      - "DESIGN.md"
-      - "DESIGN_AGENT_OPERATING_SYSTEM.md"
-      - "README.md"
-      - "RUNBOOK.md"
-      - "SECURITY.md"
-      - "SKILLS.md"
-      - "SKILLS_BRIDGE.md"
-      - "SYSTEM.md"
-      - "SCHEMA.md"
-      - "TESTING.md"
-      - "package.json"
-      - "package-lock.json"
   push:
     branches:
       - main
@@ -53,4 +26,6 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm audit --audit-level=moderate
       - run: npm run validate
+      - run: npm run validate:observatory
+      - run: npm run check:observatory-index
       - run: npm test
