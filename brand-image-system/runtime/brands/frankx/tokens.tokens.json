@@ -1,6 +1,7 @@
 {
   "brandId": "frankx",
   "version": "2026-07-02",
+  "typographyStatus": "Legacy technical-surface compatibility. Resolve new work through brand-packs/frankx/TYPOGRAPHY.md; do not use Poppins by reflex.",
   "tokens": {
     "color": {
       "void": { "value": "#0a0a0b", "type": "color" },

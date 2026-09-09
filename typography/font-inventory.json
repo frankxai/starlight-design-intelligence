@@ -1,0 +1,177 @@
+{
+  "schema_version": "starlight.typography_inventory.v1",
+  "audited_on": "2026-09-09",
+  "scope": "Repository source inspection. No claim of computed production-font verification or portfolio-wide migration.",
+  "policy": "../TYPOGRAPHY.md",
+  "families": [
+    {
+      "family": "Instrument Sans",
+      "role": "Primary sans for Starlight, GenCreator editorial territory; proposed for new FrankX editorial work",
+      "source": "https://github.com/Instrument/instrument-sans",
+      "status": "existing-family",
+      "evidence": [
+        {
+          "repository": "frankxai/starlight-intelligence-web",
+          "path": "app/layout.tsx",
+          "blob_sha": "295f60829fc983c01e3abd2af239c03e19d54cc3",
+          "source_url": "https://github.com/frankxai/starlight-intelligence-web/blob/main/app/layout.tsx"
+        },
+        {
+          "repository": "frankxai/gencreator.ai",
+          "path": "app/layout.tsx",
+          "blob_sha": "93502bd4464773b0c09b80ae6f1957b5995d17d0",
+          "source_url": "https://github.com/frankxai/gencreator.ai/blob/main/app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "family": "Instrument Serif",
+      "role": "Short editorial display accents; never the automatic long-form body face",
+      "source": "https://github.com/Instrument/instrument-serif",
+      "status": "existing-family",
+      "evidence": [
+        {
+          "repository": "frankxai/starlight-intelligence-web",
+          "path": "app/layout.tsx",
+          "blob_sha": "295f60829fc983c01e3abd2af239c03e19d54cc3",
+          "source_url": "https://github.com/frankxai/starlight-intelligence-web/blob/main/app/layout.tsx"
+        },
+        {
+          "repository": "frankxai/gencreator.ai",
+          "path": "app/layout.tsx",
+          "blob_sha": "93502bd4464773b0c09b80ae6f1957b5995d17d0",
+          "source_url": "https://github.com/frankxai/gencreator.ai/blob/main/app/layout.tsx"
+        },
+        {
+          "repository": "frankxai/arcanea-ai-app",
+          "path": "apps/web/app/layout.tsx",
+          "blob_sha": "ee907d388197d14f3de7c12255d694612f735615",
+          "source_url": "https://github.com/frankxai/arcanea-ai-app/blob/main/apps/web/app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "family": "Geist",
+      "role": "Arcanea product/display; GenCreator product territory",
+      "source": "https://vercel.com/font",
+      "status": "existing-family",
+      "evidence": [
+        {
+          "repository": "frankxai/arcanea-ai-app",
+          "path": "apps/web/app/layout.tsx",
+          "blob_sha": "ee907d388197d14f3de7c12255d694612f735615",
+          "source_url": "https://github.com/frankxai/arcanea-ai-app/blob/main/apps/web/app/layout.tsx"
+        },
+        {
+          "repository": "frankxai/gencreator.ai",
+          "path": "app/layout.tsx",
+          "blob_sha": "93502bd4464773b0c09b80ae6f1957b5995d17d0",
+          "source_url": "https://github.com/frankxai/gencreator.ai/blob/main/app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "family": "Fraunces",
+      "role": "GenCreator product territory editorial accents",
+      "source": "https://github.com/undercasetype/Fraunces",
+      "status": "existing-family",
+      "evidence": [
+        {
+          "repository": "frankxai/gencreator.ai",
+          "path": "app/layout.tsx",
+          "blob_sha": "93502bd4464773b0c09b80ae6f1957b5995d17d0",
+          "source_url": "https://github.com/frankxai/gencreator.ai/blob/main/app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "family": "Newsreader",
+      "role": "Arcanea reading serif",
+      "source": "https://github.com/productiontype/Newsreader",
+      "status": "existing-family",
+      "evidence": [
+        {
+          "repository": "frankxai/arcanea-ai-app",
+          "path": "apps/web/app/layout.tsx",
+          "blob_sha": "ee907d388197d14f3de7c12255d694612f735615",
+          "source_url": "https://github.com/frankxai/arcanea-ai-app/blob/main/apps/web/app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "family": "Inter",
+      "role": "Retained FrankX technical UI",
+      "source": "https://github.com/rsms/inter",
+      "status": "existing-family",
+      "evidence": [
+        {
+          "repository": "frankxai/frankx.ai-vercel-website",
+          "path": "app/layout.tsx",
+          "blob_sha": "bf54de68fbc723141c10e87da386e5645ad4da93",
+          "source_url": "https://github.com/frankxai/frankx.ai-vercel-website/blob/main/app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "family": "Source Serif 4",
+      "role": "FrankX long-form candidate; development/production mismatch",
+      "source": "https://github.com/adobe-fonts/source-serif",
+      "status": "existing-development-family",
+      "evidence": [
+        {
+          "repository": "frankxai/FrankX",
+          "path": "app/layout.tsx",
+          "blob_sha": "d43e2bc30245efaf837cbc20dc1c30d6563af0e6",
+          "source_url": "https://github.com/frankxai/FrankX/blob/main/app/layout.tsx"
+        },
+        {
+          "repository": "frankxai/frankx.ai-vercel-website",
+          "path": "app/layout.tsx",
+          "blob_sha": "bf54de68fbc723141c10e87da386e5645ad4da93",
+          "source_url": "https://github.com/frankxai/frankx.ai-vercel-website/blob/main/app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "family": "Playfair Display",
+      "role": "Existing FrankX display/editorial; compare against proposed Instrument pairing",
+      "source": "https://github.com/clauseggers/Playfair",
+      "status": "existing-family",
+      "evidence": [
+        {
+          "repository": "frankxai/frankx.ai-vercel-website",
+          "path": "app/layout.tsx",
+          "blob_sha": "bf54de68fbc723141c10e87da386e5645ad4da93",
+          "source_url": "https://github.com/frankxai/frankx.ai-vercel-website/blob/main/app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "family": "Poppins",
+      "role": "Existing FrankX display compatibility; avoid as unexamined new flagship default",
+      "source": "https://github.com/itfoundry/Poppins",
+      "status": "legacy-compatibility",
+      "evidence": [
+        {
+          "repository": "frankxai/frankx.ai-vercel-website",
+          "path": "app/layout.tsx",
+          "blob_sha": "bf54de68fbc723141c10e87da386e5645ad4da93",
+          "source_url": "https://github.com/frankxai/frankx.ai-vercel-website/blob/main/app/layout.tsx"
+        }
+      ]
+    }
+  ],
+  "utility_families": [
+    "JetBrains Mono",
+    "IBM Plex Mono",
+    "Geist Mono"
+  ],
+  "rights_status": "Source identification only. This audit distributes no font binaries and does not approve exact deployment files. Record file identity, hash, license, weights, style, use rights, fallback and specimen in release evidence.",
+  "findings": [
+    "Shared Arcanea DESIGN.md recommended wide-tracked all caps and Inter, conflicting with the current app and the user's preference.",
+    "Starlight web layout loads Instrument Sans/Serif; design/tokens.json still names Manrope.",
+    "GenCreator has distinct Geist/Fraunces and Instrument territories; brand/design-tokens.json mixes roles and retains 0.14em wide tracking.",
+    "FrankX development imports Source Serif 4; production source substitutes a second Playfair Display instance.",
+    "Legacy Arcanea repository layout still imports Cinzel although its typography document marks it superseded."
+  ]
+}

@@ -4,6 +4,10 @@ Owned methodology, reusable skill system, premium taste layer.
 
 This repo is the source of truth for how FrankX, Starlight Intelligence Systems, Arcanea, and related products should look, move, explain themselves, and earn release approval.
 
+## Typography standard
+
+Start with [the typography standard](TYPOGRAPHY.md), [the source inventory](typography/font-inventory.json), and [the responsive specimen](typography/specimen.html). Sentence case is the portfolio default. Each of the four core brand packs now has a `TYPOGRAPHY.md` defining font roles and adoption status.
+
 ## Operating Thesis
 
 AI can generate interfaces quickly. The scarce layer is judgment: hierarchy, restraint, interaction quality, motion, brand memory, visual proof, and the ability to make every product feel like it belongs to a coherent world.

@@ -3,7 +3,7 @@
   "brandId": "arcanea",
   "displayName": "Arcanea",
   "operatingUnit": "arcanea-product-ip",
-  "sourceDocs": ["brand-packs/arcanea/DESIGN.md"],
+  "sourceDocs": ["brand-packs/arcanea/DESIGN.md", "TYPOGRAPHY.md", "brand-packs/arcanea/TYPOGRAPHY.md"],
   "canonicalRepos": ["frankxai/arcanea", "frankxai/arcanea-ai-app"],
   "surfaceModes": ["mythic-world", "creator-tool", "lore-editorial"],
   "audiences": ["world-builders", "writers", "visual creators", "creative technologists"],
@@ -25,5 +25,5 @@
   "channels": { "primary": ["product", "editorial", "cinematic media"] },
   "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
   "doNotUse": ["purple cliché", "generic generated texture", "mythology without product consequence"],
-  "updatedAt": "2026-07-24"
+  "updatedAt": "2026-09-09"
 }

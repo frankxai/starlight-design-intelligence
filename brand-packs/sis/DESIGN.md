@@ -1,5 +1,7 @@
 # Starlight Intelligence Design
 
+Typography authority: [TYPOGRAPHY.md](TYPOGRAPHY.md). Apply the [portfolio casing standard](../../TYPOGRAPHY.md).
+
 Starlight should feel like a future institution that already deserves to exist. Its design combines scientific clarity, human warmth, and a sense of scale that reaches from one person's work to cities, oceans, laboratories, and the stars.
 
 ## Visual idea

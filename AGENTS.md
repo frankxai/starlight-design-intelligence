@@ -8,6 +8,10 @@ This repo is the owned premium design-intelligence layer for FrankX, Starlight I
 - Feed installable skills/plugins, public curation repos, site redesigns, launch pages, product UI, and visual QA.
 - Keep public curation in `awesome-design-agent-skills` and `awesome-motion-design-agent-skills`; keep day-to-day Codex invocation in plugins such as `motion-design-studio`.
 
+## Typography and casing
+
+Read `TYPOGRAPHY.md` and `brand-packs/<brand>/TYPOGRAPHY.md` before typography or visual-output work. Apply sentence case to authored headings, labels, buttons, captions, slides, documents, and media. Reject decorative all caps, small caps, all-cap typefaces, wide tracking, and synthetic styles. Preserve acronyms, proper names, code, and source quotations. Existing app loaders are evidence; outdated token files are not automatically authoritative.
+
 ## Quality Bar
 
 - Write with taste and specificity. Avoid generic "premium, sleek, modern" unless it is translated into concrete behavior.
