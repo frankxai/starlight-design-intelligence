@@ -74,6 +74,10 @@ flag.
 
 ## Standards
 
+Recent evidence: [brand-kit architecture](portfolio/brand-kit-architecture.md),
+[exact font-file audit](typography/audits/2026-09-09/README.md), and
+[global-brand identity benchmark](observatory/benchmarks/2026-09-09/identity-evolution.md).
+
 - Replace vague taste language with implementation guidance.
 - Include motion and reduced-motion rules for every high-value product surface.
 - Prefer real product screenshots, workflows, and before/after examples over abstract decoration.

@@ -12,3 +12,7 @@ link-checker-report.txt
 .starlight/
 .gemini/
 node_modules/
+
+# Python evidence tooling
+__pycache__/
+*.py[cod]

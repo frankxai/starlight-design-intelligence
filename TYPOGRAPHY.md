@@ -102,3 +102,17 @@ reviewable change, including its existing design-contract digest and workflow pi
 where applicable. Record the repository, revision, surface, and verification
 result. Installed skills improve future generation; they cannot guarantee that
 every unrelated chat loads the policy or that an older site is already fixed.
+
+## Exact-file evidence and kit architecture
+
+Use [the font audit tooling](scripts/font-audit/README.md) for reproducible
+metadata, outline, glyph and license-source inspection. The
+[9 September evidence](typography/audits/2026-09-09/README.md) covers 54 upstream
+font files across 14 families; it does not approve differently versioned app,
+desktop, Figma or Canva copies. Inventory those actual bytes independently.
+
+Follow [the brand-kit architecture decision](portfolio/brand-kit-architecture.md)
+before creating another repository or treating a design-tool kit as canonical.
+The [top-100 benchmark](observatory/benchmarks/2026-09-09/identity-evolution.md)
+separates source-verified identity cases from indexed brands and website CSS
+observations. Reference-brand typography never overrides the sentence-case rule.

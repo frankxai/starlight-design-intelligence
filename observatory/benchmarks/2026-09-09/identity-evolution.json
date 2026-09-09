@@ -1,0 +1,712 @@
+{
+  "method": "Corporate guides and commissioned designers/foundries only. Historical launch, project period, current guidance and portfolio inference are distinct. No raw third-party assets are stored.",
+  "observed_on": "2026-09-09",
+  "records": [
+    {
+      "brand": "Google",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Geometric wordmark, compact G and animated dots.",
+          "before": "Serif logotype",
+          "kind": "dated-change",
+          "period": "2015",
+          "source": "google-identity"
+        },
+        {
+          "after": "Text-specific refinement, then open-source Google Sans/Flex.",
+          "before": "Display-focused Google Sans",
+          "kind": "dated-change",
+          "period": "2018 → 2020 → 2025",
+          "source": "google-type-evolution"
+        }
+      ],
+      "gaps": [
+        "No downloaded Google font binary or exact license file was inspected in this benchmark."
+      ],
+      "marks": {
+        "finding": "Optically corrected small mark; canonical SVG assets generate distributed variants.",
+        "source": "google-identity"
+      },
+      "portfolio_inference": "Develop custom type only against a demonstrated role-specific failure. Give logos their own small-size artwork and use one versioned distribution source.",
+      "rights": {
+        "classification": "mixed-open-font-and-protected-identity",
+        "finding": "Google states Sans and Sans Flex became open source in 2025. This does not grant its logo or Product Sans. Exact font release/license still needs file-level verification.",
+        "source": "google-type-evolution"
+      },
+      "target_id": "google",
+      "typography": {
+        "finding": "Product Sans served lockups; Google Sans Text addressed small text; Code addressed ambiguous programming glyphs; Flex adds six axes.",
+        "source": "google-type-evolution"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 1
+    },
+    {
+      "brand": "Apple",
+      "evidence_status": "primary-current-guidance-reviewed",
+      "evolution": [],
+      "gaps": [
+        "Historical before/after type rollout not verified here.",
+        "SF Symbols license text was not extracted; no redistribution approval."
+      ],
+      "marks": {
+        "finding": "SF Symbols aligns symbol weights and scales with text and supports localized and motion variants.",
+        "source": "apple-symbols"
+      },
+      "portfolio_inference": "Use platform-native system typography in platform context; never package downloaded Apple fonts or SF Symbols as a universal portfolio asset.",
+      "rights": {
+        "classification": "platform-restricted",
+        "finding": "The San Francisco license displayed on Apple’s font page limits the downloaded font to specified Apple-platform UI mock-ups; it is not a general website or brand-kit license. SF Symbols needs its own applicable license review.",
+        "source": "apple-fonts"
+      },
+      "target_id": "apple",
+      "typography": {
+        "finding": "San Francisco uses size-specific outlines and dynamic tracking; current platform families serve interface roles.",
+        "source": "apple-fonts"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 2
+    },
+    {
+      "brand": "Microsoft",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Aptos selected after five commissioned candidates and user feedback.",
+          "before": "Calibri as Office default",
+          "kind": "dated-change",
+          "period": "2023",
+          "source": "microsoft-aptos"
+        }
+      ],
+      "gaps": [
+        "Aptos is an Office type decision, not evidence of Microsoft’s entire corporate font stack.",
+        "2012 corporate-logo announcement could not be fetched."
+      ],
+      "marks": {
+        "finding": "Guidance distinguishes company logo, flagship lockups, product icons and certification badges.",
+        "source": "microsoft-marks"
+      },
+      "portfolio_inference": "Compare candidates in actual documents and interfaces. Separate parent identity, product identity and compatibility badges in each kit.",
+      "rights": {
+        "classification": "proprietary-font-and-marks",
+        "finding": "Aptos metadata links separate licensing/redistribution guidance. Microsoft brand assets are governed by explicit permissions; product availability is not a portable webfont license.",
+        "source": "microsoft-aptos-license"
+      },
+      "target_id": "microsoft",
+      "typography": {
+        "finding": "Aptos has body, display and narrower roles; its italic outlines were individually drawn.",
+        "source": "microsoft-aptos-license"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 3
+    },
+    {
+      "brand": "Amazon",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Ember Modern and a shared system across over 50 sub-brands.",
+          "before": "Ember applied beyond its original Kindle purpose; fragmented sub-brands",
+          "kind": "dated-change",
+          "period": "2025",
+          "source": "amazon-koto"
+        }
+      ],
+      "gaps": [
+        "Designer case-study account; independent live adoption across all sub-brands not measured."
+      ],
+      "marks": {
+        "finding": "Refined smile, unified palette and standardized icons connect parent and grouped sub-brands.",
+        "source": "amazon-koto"
+      },
+      "portfolio_inference": "Define invariant foundations and deliberate per-brand variation. A parent system can support many brands without identical compositions or independent authority repos.",
+      "rights": {
+        "classification": "reference-only",
+        "finding": "No production reuse is granted by the case study. Keep this brand’s type binaries, marks and distinctive artwork outside our kits.",
+        "source": "amazon-koto"
+      },
+      "target_id": "amazon",
+      "typography": {
+        "finding": "Text and expressive marketing needs informed the custom family; Koto collaborated with NaN across scripts.",
+        "source": "amazon-koto"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 4
+    },
+    {
+      "brand": "NVIDIA",
+      "evidence_status": "primary-current-guidance-reviewed",
+      "evolution": [],
+      "gaps": [
+        "No reliable type family or dated redesign established from the reviewed source."
+      ],
+      "marks": {
+        "finding": "Vertical is preferred; horizontal is defined. Eyemark and wordmark cannot be separated or scaled independently; retired versions are disallowed.",
+        "source": "nvidia-brand"
+      },
+      "portfolio_inference": "Define lockups, clear space, permitted backgrounds, retired versions and partner usage explicitly. An attractive symbol is not automatically an approved standalone mark.",
+      "rights": {
+        "classification": "written-permission-required",
+        "finding": "NVIDIA’s guide requires express written authorization and prohibits imitating its branding or implying an unapproved relationship.",
+        "source": "nvidia-brand"
+      },
+      "target_id": "nvidia",
+      "typography": {
+        "finding": "Font-family specification was not provided by the reviewed public logo guide.",
+        "source": "nvidia-brand"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 5
+    },
+    {
+      "brand": "McDonald's",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Partnership began in 2017; new identity assets debuted at the 2018 worldwide convention.",
+          "before": "Earlier brand applications",
+          "kind": "dated-change",
+          "period": "2017 → 2018",
+          "source": "mcdonalds-system"
+        }
+      ],
+      "gaps": [
+        "Exact font name, files and license were not specified in the reviewed text."
+      ],
+      "marks": {
+        "finding": "System extends to sub-brands, loyalty, retail and headquarters; digital hub distributes guidance globally.",
+        "source": "mcdonalds-system"
+      },
+      "portfolio_inference": "Connect type, symbols, environment and templates to one recognizable owned motif. Build an adoption hub and local examples, not only a logo sheet.",
+      "rights": {
+        "classification": "reference-only",
+        "finding": "No production reuse is granted by the case study. Keep this brand’s type binaries, marks and distinctive artwork outside our kits.",
+        "source": "mcdonalds-system"
+      },
+      "target_id": "mcdonalds",
+      "typography": {
+        "finding": "Custom-font curves derive from the Golden Arches.",
+        "source": "mcdonalds-system"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 10
+    },
+    {
+      "brand": "IBM",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Basic eight-bar design retained; positive and reversed artworks receive distinct optical adjustments.",
+          "before": "Earlier IBM marks",
+          "kind": "documented-continuity",
+          "period": "1972 → current guide",
+          "source": "ibm-logo"
+        }
+      ],
+      "gaps": [
+        "Plex launch/replacement date not reverified in this benchmark.",
+        "Font binary audit belongs to the separate font-testing work."
+      ],
+      "marks": {
+        "finding": "Separate positive/reversed geometry, spacing, colors and third-party request rules.",
+        "source": "ibm-logo"
+      },
+      "portfolio_inference": "An open font can carry a strong identity. Preserve successful marks while improving applications; test reversed artwork optically rather than recoloring mechanically.",
+      "rights": {
+        "classification": "open-font-protected-mark",
+        "finding": "IBM identifies Plex as OFL; inspect the downloaded release’s notices. The open font does not license IBM’s eight-bar mark.",
+        "source": "ibm-type"
+      },
+      "target_id": "ibm",
+      "typography": {
+        "finding": "Plex is the corporate family, with Sans/Serif/Mono/Condensed roles; Mono is directed to coding contexts. IBM recommends GitHub for latest versions.",
+        "source": "ibm-type"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 16
+    },
+    {
+      "brand": "Mastercard",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Name removed in selected contexts after reported spontaneous recognition above 80%.",
+          "before": "Symbol accompanied by name",
+          "kind": "dated-change",
+          "period": "2019-01-07",
+          "source": "mastercard-symbol"
+        }
+      ],
+      "gaps": [
+        "Retail-font license terms and exact files not audited here.",
+        "Recognition percentage is the company’s reported study, not independently replicated."
+      ],
+      "marks": {
+        "finding": "Interlocking-circle geometry drives graphics, with contextual full-mark and symbol usage.",
+        "source": "mastercard-system"
+      },
+      "portfolio_inference": "A well-chosen licensed family can support a leading brand. Earn symbol-only recognition before dropping our names; test context and contrast across applications.",
+      "rights": {
+        "classification": "reference-only",
+        "finding": "FF Mark requires its own commercial license. A font license does not permit the Mastercard mark, partner badge or distinctive identity to be reused.",
+        "source": "mastercard-system"
+      },
+      "target_id": "mastercard",
+      "typography": {
+        "finding": "Pentagram identifies FF Mark, a named retail family, as the typographic basis rather than claiming a full bespoke font.",
+        "source": "mastercard-system"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 12
+    },
+    {
+      "brand": "Coca-Cola",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Distinctive contour bottle patented in 1915 and selected for production in 1916.",
+          "before": "Straight-sided bottles and imitated labels",
+          "kind": "dated-change",
+          "period": "1915 → 1916",
+          "source": "coca-cola-bottle"
+        },
+        {
+          "after": "Turner Duckworth reduced the system to color, script, bottle and ribbon.",
+          "before": "Complex brand-asset library",
+          "kind": "dated-application-not-launch",
+          "period": "By 2010 campaign example",
+          "source": "coca-cola-system"
+        }
+      ],
+      "gaps": [
+        "Exact simplification launch date is not supplied by the reviewed case-study text."
+      ],
+      "marks": {
+        "finding": "A small set of recognizable assets supports varied campaigns without replacing the identity.",
+        "source": "coca-cola-system"
+      },
+      "portfolio_inference": "Identify which few owned elements already have recognition before commissioning replacements. A symbol system can include shape and motion, beyond an alphabet.",
+      "rights": {
+        "classification": "reference-only",
+        "finding": "No production reuse is granted by the case study. Keep this brand’s type binaries, marks and distinctive artwork outside our kits.",
+        "source": "coca-cola-system"
+      },
+      "target_id": "coca-cola",
+      "typography": {
+        "finding": "The preserved script is wordmark artwork; reviewed sources do not establish a reusable body typeface.",
+        "source": "coca-cola-system"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 20
+    },
+    {
+      "brand": "Spotify",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Bespoke variable Spotify Mix began rollout across product and brand contexts.",
+          "before": "Prior app and desktop typeface",
+          "kind": "dated-change",
+          "period": "2024-05-22",
+          "source": "spotify-type"
+        }
+      ],
+      "gaps": [
+        "Predecessor font family is not named in the reviewed announcement; no invented attribution."
+      ],
+      "marks": {
+        "finding": "Partner guide defines full logo/icon contexts, minimum sizes and exclusion space; wordmark never stands alone.",
+        "source": "spotify-partner"
+      },
+      "portfolio_inference": "Keep internal brand typography separate from external integration rules. Stage language support explicitly, and test creator content as well as marketing copy.",
+      "rights": {
+        "classification": "exclusive-font-and-limited-partner-assets",
+        "finding": "Spotify calls Mix exclusive. Partner guidance recommends platform sans defaults and forbids incorporating Spotify’s identity into our own logo.",
+        "source": "spotify-partner"
+      },
+      "target_id": "spotify",
+      "typography": {
+        "finding": "Dinamo collaborated on Spotify Mix; initial rollout covered Latin-script languages and Vietnamese.",
+        "source": "spotify-type"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 78
+    },
+    {
+      "brand": "Pepsi",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Reunited globe and wordmark, custom type, updated palette and a motion pulse.",
+          "before": "Identity unchanged for 14 years",
+          "kind": "dated-change",
+          "period": "2023",
+          "source": "pepsi-system"
+        }
+      ],
+      "gaps": [
+        "Supplemental case: Pepsi is not a name in the supplied Kantar2026 cohort.",
+        "Exact family name, font files and external-use license not verified."
+      ],
+      "marks": {
+        "finding": "Globe, wordmark and pulse operate across packaging, equipment and apparel.",
+        "source": "pepsi-system"
+      },
+      "portfolio_inference": "Preserve recognizable equity while improving the full system. Borrow its disciplined coordination, while retaining our sentence-case policy.",
+      "rights": {
+        "classification": "reference-only",
+        "finding": "No production reuse is granted by the case study. Keep this brand’s type binaries, marks and distinctive artwork outside our kits.",
+        "source": "pepsi-system"
+      },
+      "target_id": "pepsi",
+      "typography": {
+        "finding": "Custom type is one component of a physical-and-digital identity refresh.",
+        "source": "pepsi-system"
+      },
+      "cohort_membership": "supplemental",
+      "cohort_rank": null
+    },
+    {
+      "brand": "Netflix",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Netflix Sans custom-family project unifies billboard-to-subtitle use.",
+          "before": "Varied typography needs across marketing and product",
+          "kind": "commission-period-not-single-launch",
+          "period": "2017–2023",
+          "source": "netflix-type"
+        }
+      ],
+      "gaps": [
+        "Logo-governance page was not readable in this session.",
+        "Foundry project span must not be reported as one public launch date."
+      ],
+      "marks": {
+        "finding": null,
+        "source": null
+      },
+      "portfolio_inference": "Specify the extremes before commissioning: smallest captions, longest titles and largest display. A family must reduce complexity across real use cases.",
+      "rights": {
+        "classification": "exclusive-custom-font",
+        "finding": "Dalton Maag explicitly lists the family as exclusive to Netflix.",
+        "source": "netflix-type"
+      },
+      "target_id": "netflix",
+      "typography": {
+        "finding": "Foundry lists normal, condensed and extended expressions for varied scales and contexts.",
+        "source": "netflix-type"
+      },
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 17
+    },
+    {
+      "brand": "Vodafone",
+      "evidence_status": "primary-history-reviewed",
+      "evolution": [
+        {
+          "after": "Licensed modification created a Vodafone-exclusive family with expanded script coverage.",
+          "before": "Foundry’s existing InterFace family",
+          "kind": "commission-period-not-single-launch",
+          "period": "2009–2022",
+          "source": "vodafone-type"
+        }
+      ],
+      "gaps": [
+        "Supplemental case: Vodafone is not a name in the supplied Kantar2026 cohort.",
+        "Mark evolution was not researched in this bounded type case."
+      ],
+      "marks": {
+        "finding": null,
+        "source": null
+      },
+      "portfolio_inference": "Consider a foundry-authorized modification between stock licensing and a full custom family, with explicit derivative rights and maintenance ownership.",
+      "rights": {
+        "classification": "exclusive-authorized-modification",
+        "finding": "The foundry lists Vodafone’s modified family as exclusive. Buying InterFace does not imply owning Vodafone’s modifications.",
+        "source": "vodafone-type"
+      },
+      "target_id": "vodafone",
+      "typography": {
+        "finding": "Modification, rather than a wholly new family, serves global communications.",
+        "source": "vodafone-type"
+      },
+      "cohort_membership": "supplemental",
+      "cohort_rank": null
+    },
+    {
+      "attempted_url": "https://design.facebook.com/stories/redefining-facebooks-brand-identity/",
+      "brand": "Facebook",
+      "evidence_status": "primary-evidence-gap",
+      "limitation": "Primary design page returned a temporary-block response; no history or font claims accepted.",
+      "next_action": "Read an accessible official brand guide or commissioned designer’s case; verify publication date and current status.",
+      "rights": {
+        "classification": "reference-only-unverified",
+        "finding": "No production asset or font rights established."
+      },
+      "target_id": "facebook",
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 6
+    },
+    {
+      "attempted_url": "https://about.instagram.com/blog/announcements/instagram-visual-refresh",
+      "brand": "Instagram",
+      "evidence_status": "primary-evidence-gap",
+      "limitation": "Primary page returned HTTP429. A recent2026 refresh was surfaced by secondary search, so the2022 system must not be assumed current; primary confirmation remains required.",
+      "next_action": "Read an accessible official brand guide or commissioned designer’s case; verify publication date and current status.",
+      "rights": {
+        "classification": "reference-only-unverified",
+        "finding": "No production asset or font rights established."
+      },
+      "target_id": "instagram",
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 7
+    },
+    {
+      "attempted_url": "https://www.tencent.com/en-us/about.html",
+      "brand": "Tencent",
+      "evidence_status": "primary-evidence-gap",
+      "limitation": "Official page timed out; no type family, logo chronology or license claim accepted.",
+      "next_action": "Read an accessible official brand guide or commissioned designer’s case; verify publication date and current status.",
+      "rights": {
+        "classification": "reference-only-unverified",
+        "finding": "No production asset or font rights established."
+      },
+      "target_id": "tencent",
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 8
+    },
+    {
+      "attempted_url": "https://www.oracle.com/redwood/",
+      "brand": "Oracle",
+      "evidence_status": "primary-evidence-gap",
+      "limitation": "Official page fetch disabled; no Redwood type or corporate identity chronology claim accepted.",
+      "next_action": "Read an accessible official brand guide or commissioned designer’s case; verify publication date and current status.",
+      "rights": {
+        "classification": "reference-only-unverified",
+        "finding": "No production asset or font rights established."
+      },
+      "target_id": "oracle",
+      "cohort_membership": "Kantar BrandZ2026",
+      "cohort_rank": 9
+    },
+    {
+      "attempted_url": "https://design.airbnb.com/",
+      "brand": "Airbnb",
+      "evidence_status": "primary-evidence-gap",
+      "limitation": "Official design site could not be read; Cereal and Bélo history require accessible primary evidence before being used as a verified comparison.",
+      "next_action": "Read an accessible official brand guide or commissioned designer’s case; verify publication date and current status.",
+      "rights": {
+        "classification": "reference-only-unverified",
+        "finding": "No production asset or font rights established."
+      },
+      "target_id": "airbnb",
+      "cohort_membership": "supplemental",
+      "cohort_rank": null
+    }
+  ],
+  "schema_version": "1.0.0",
+  "scope": "Primary-source identity and type case studies; not a completed audit of all100 brands.",
+  "sources": [
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "google-identity",
+      "kind": "corporate-design",
+      "observed_on": "2026-09-09",
+      "publisher": "Google Design",
+      "url": "https://design.google/library/evolving-google-identity"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "google-type-evolution",
+      "kind": "corporate-design",
+      "observed_on": "2026-09-09",
+      "publisher": "Google Design",
+      "url": "https://design.google/library/google-sans-flex-font"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "apple-fonts",
+      "kind": "corporate-guidance-and-license",
+      "observed_on": "2026-09-09",
+      "publisher": "Apple Developer",
+      "url": "https://developer.apple.com/fonts/"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "apple-symbols",
+      "kind": "corporate-guidance",
+      "observed_on": "2026-09-09",
+      "publisher": "Apple Developer",
+      "url": "https://developer.apple.com/sf-symbols/"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "microsoft-aptos",
+      "kind": "corporate-design",
+      "observed_on": "2026-09-09",
+      "publisher": "Microsoft Design",
+      "url": "https://microsoft.design/articles/a-change-of-typeface-microsoft-s-new-default-font-has-arrived/"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "microsoft-aptos-license",
+      "kind": "corporate-font-metadata",
+      "observed_on": "2026-09-09",
+      "publisher": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/typography/font-list/aptos"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "microsoft-marks",
+      "kind": "corporate-rights-guidance",
+      "observed_on": "2026-09-09",
+      "publisher": "Microsoft Legal",
+      "url": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "amazon-koto",
+      "kind": "commissioned-design-studio",
+      "observed_on": "2026-09-09",
+      "publisher": "Koto",
+      "url": "https://koto.com/projects/amazon"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "nvidia-brand",
+      "kind": "corporate-rights-guidance",
+      "observed_on": "2026-09-09",
+      "publisher": "NVIDIA",
+      "url": "https://www.nvidia.com/en-us/about-nvidia/legal-info/logo-brand-usage/"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "mcdonalds-system",
+      "kind": "commissioned-design-studio",
+      "observed_on": "2026-09-09",
+      "publisher": "Turner Duckworth",
+      "url": "https://turnerduckworth.com/work/mcdonalds"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "ibm-type",
+      "kind": "corporate-design",
+      "observed_on": "2026-09-09",
+      "publisher": "IBM Design Language",
+      "url": "https://www.ibm.com/design/language/typography/typeface/"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "ibm-logo",
+      "kind": "corporate-rights-guidance",
+      "observed_on": "2026-09-09",
+      "publisher": "IBM Design Language",
+      "url": "https://www.ibm.com/design/language/ibm-logos/8-bar/"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "mastercard-system",
+      "kind": "commissioned-design-studio",
+      "observed_on": "2026-09-09",
+      "publisher": "Pentagram",
+      "url": "https://www.pentagram.com/work/mastercard/story"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "mastercard-symbol",
+      "kind": "corporate-announcement",
+      "observed_on": "2026-09-09",
+      "publisher": "Mastercard",
+      "url": "https://www.mastercard.com/us/en/news-and-trends/press/2019/january/mastercard-evolves-its-brand-mark-by-dropping-its-name.html"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "coca-cola-bottle",
+      "kind": "corporate-history",
+      "observed_on": "2026-09-09",
+      "publisher": "The Coca-Cola Company",
+      "url": "https://www.coca-colacompany.com/about-us/history/the-history-of-the-coca-cola-contour-bottle"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "coca-cola-system",
+      "kind": "commissioned-design-studio",
+      "observed_on": "2026-09-09",
+      "publisher": "Turner Duckworth",
+      "url": "https://turnerduckworth.com/work/coca-cola"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "pepsi-system",
+      "kind": "corporate-design",
+      "observed_on": "2026-09-09",
+      "publisher": "PepsiCo Design",
+      "url": "https://design.pepsico.com/case-studies/pepsi-global-redesign"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "spotify-type",
+      "kind": "corporate-announcement",
+      "observed_on": "2026-09-09",
+      "publisher": "Spotify Newsroom",
+      "url": "https://newsroom.spotify.com/2024-05-22/introducing-spotify-mix-our-new-and-exclusive-font/"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "spotify-partner",
+      "kind": "corporate-partner-guidance",
+      "observed_on": "2026-09-09",
+      "publisher": "Spotify for Developers",
+      "url": "https://developer.spotify.com/documentation/design"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "netflix-type",
+      "kind": "commissioned-type-foundry",
+      "observed_on": "2026-09-09",
+      "publisher": "Dalton Maag",
+      "url": "https://www.daltonmaag.com/portfolio/custom-fonts/netflix-sans.html"
+    },
+    {
+      "access": "readable-primary-source",
+      "asset_rights": "third-party-reference-only",
+      "id": "vodafone-type",
+      "kind": "commissioned-type-foundry",
+      "observed_on": "2026-09-09",
+      "publisher": "Dalton Maag",
+      "url": "https://www.daltonmaag.com/portfolio/font-modification/vodafone-interface.html"
+    }
+  ],
+  "coverage": {
+    "cohort_total": 100,
+    "cohort_primary_sources_reviewed": 11,
+    "supplemental_primary_sources_reviewed": 2,
+    "dated_evolution_or_continuity_cases": 11,
+    "current_guidance_only_cases": 2,
+    "cohort_primary_evidence_gaps": 4,
+    "supplemental_primary_evidence_gaps": 1
+  }
+}
