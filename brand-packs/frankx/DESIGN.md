@@ -1,5 +1,7 @@
 # FrankX Brand Design System
 
+Typography authority: [TYPOGRAPHY.md](TYPOGRAPHY.md). Apply the [portfolio casing standard](../../TYPOGRAPHY.md).
+
 > Source of truth for FrankX surfaces. FrankX does not have one visual costume.
 > Choose the surface mode before choosing color, type, imagery, or motion.
 

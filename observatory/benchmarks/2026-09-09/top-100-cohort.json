@@ -1,0 +1,710 @@
+{
+  "schema_version": "1.0.0",
+  "cohort": "Kantar BrandZ Most Valuable Global Brands 2026",
+  "ranking_source": "https://www.kantar.com/campaigns/brandz/global",
+  "ranking_infographic": "https://www.kantar.com/campaigns/brandz/-/media/F03FA9E897544FCD954CFE2814E82C6C.ashx",
+  "observed_on": "2026-09-09",
+  "method": "Rank and names visually transcribed from official one-page infographic. Ranking measures brand value, not design quality. URL candidates and identity evidence require separate verification.",
+  "brands": [
+    {
+      "rank": 1,
+      "brand": "Google",
+      "candidate_official_url": "https://about.google/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 2,
+      "brand": "Apple",
+      "candidate_official_url": "https://www.apple.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 3,
+      "brand": "Microsoft",
+      "candidate_official_url": "https://www.microsoft.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 4,
+      "brand": "Amazon",
+      "candidate_official_url": "https://www.aboutamazon.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 5,
+      "brand": "NVIDIA",
+      "candidate_official_url": "https://www.nvidia.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 6,
+      "brand": "Facebook",
+      "candidate_official_url": "https://about.fb.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 7,
+      "brand": "Instagram",
+      "candidate_official_url": "https://about.instagram.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 8,
+      "brand": "Tencent",
+      "candidate_official_url": "https://www.tencent.com/en-us/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 9,
+      "brand": "Oracle",
+      "candidate_official_url": "https://www.oracle.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 10,
+      "brand": "McDonald's",
+      "candidate_official_url": "https://www.mcdonalds.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 11,
+      "brand": "Visa",
+      "candidate_official_url": "https://usa.visa.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 12,
+      "brand": "Mastercard",
+      "candidate_official_url": "https://www.mastercard.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 13,
+      "brand": "Walmart",
+      "candidate_official_url": "https://corporate.walmart.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 14,
+      "brand": "YouTube",
+      "candidate_official_url": "https://www.youtube.com/about/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 15,
+      "brand": "ChatGPT",
+      "candidate_official_url": "https://openai.com/chatgpt/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 16,
+      "brand": "IBM",
+      "candidate_official_url": "https://www.ibm.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 17,
+      "brand": "Netflix",
+      "candidate_official_url": "https://about.netflix.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 18,
+      "brand": "Telekom/T-Mobile",
+      "candidate_official_url": "https://www.telekom.com/en",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 19,
+      "brand": "Alibaba",
+      "candidate_official_url": "https://www.alibabagroup.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 20,
+      "brand": "Coca-Cola",
+      "candidate_official_url": "https://www.coca-colacompany.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 21,
+      "brand": "Costco",
+      "candidate_official_url": "https://www.costco.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 22,
+      "brand": "Hermès",
+      "candidate_official_url": "https://www.hermes.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 23,
+      "brand": "Tesla",
+      "candidate_official_url": "https://www.tesla.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 24,
+      "brand": "AT&T",
+      "candidate_official_url": "https://www.att.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 25,
+      "brand": "TikTok",
+      "candidate_official_url": "https://www.tiktok.com/about",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 26,
+      "brand": "SAP",
+      "candidate_official_url": "https://www.sap.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 27,
+      "brand": "Claude",
+      "candidate_official_url": "https://www.anthropic.com/claude",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 28,
+      "brand": "AMD",
+      "candidate_official_url": "https://www.amd.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 29,
+      "brand": "Verizon",
+      "candidate_official_url": "https://www.verizon.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 30,
+      "brand": "Cisco",
+      "candidate_official_url": "https://www.cisco.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 31,
+      "brand": "The Home Depot",
+      "candidate_official_url": "https://corporate.homedepot.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 32,
+      "brand": "Louis Vuitton",
+      "candidate_official_url": "https://www.louisvuitton.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 33,
+      "brand": "VMware",
+      "candidate_official_url": "https://www.vmware.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 34,
+      "brand": "Aramco",
+      "candidate_official_url": "https://www.aramco.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 35,
+      "brand": "American Express",
+      "candidate_official_url": "https://www.americanexpress.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 36,
+      "brand": "J.P. Morgan",
+      "candidate_official_url": "https://www.jpmorgan.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 37,
+      "brand": "LinkedIn",
+      "candidate_official_url": "https://about.linkedin.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 38,
+      "brand": "Moutai",
+      "candidate_official_url": "https://www.moutaichina.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 39,
+      "brand": "Marlboro",
+      "candidate_official_url": "https://www.pmi.com/our-business/combustible-products",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 40,
+      "brand": "Intel",
+      "candidate_official_url": "https://www.intel.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 41,
+      "brand": "Huawei",
+      "candidate_official_url": "https://www.huawei.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 42,
+      "brand": "Starbucks",
+      "candidate_official_url": "https://about.starbucks.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 43,
+      "brand": "Chase",
+      "candidate_official_url": "https://www.chase.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 44,
+      "brand": "Siemens",
+      "candidate_official_url": "https://www.siemens.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 45,
+      "brand": "Uber",
+      "candidate_official_url": "https://www.uber.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 46,
+      "brand": "Salesforce",
+      "candidate_official_url": "https://www.salesforce.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 47,
+      "brand": "Intuit",
+      "candidate_official_url": "https://www.intuit.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 48,
+      "brand": "ADP",
+      "candidate_official_url": "https://www.adp.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 49,
+      "brand": "Mercado Libre",
+      "candidate_official_url": "https://www.mercadolibre.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 50,
+      "brand": "Texas Instruments",
+      "candidate_official_url": "https://www.ti.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 51,
+      "brand": "Chanel",
+      "candidate_official_url": "https://www.chanel.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 52,
+      "brand": "Disney",
+      "candidate_official_url": "https://thewaltdisneycompany.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 53,
+      "brand": "Haier",
+      "candidate_official_url": "https://www.haier.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 54,
+      "brand": "Wells Fargo",
+      "candidate_official_url": "https://www.wellsfargo.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 55,
+      "brand": "RBC",
+      "candidate_official_url": "https://www.rbc.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 56,
+      "brand": "Snapdragon",
+      "candidate_official_url": "https://www.snapdragon.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 57,
+      "brand": "ICBC",
+      "candidate_official_url": "https://www.icbc-ltd.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 58,
+      "brand": "Adobe",
+      "candidate_official_url": "https://www.adobe.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 59,
+      "brand": "China Mobile",
+      "candidate_official_url": "https://www.chinamobileltd.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 60,
+      "brand": "ServiceNow",
+      "candidate_official_url": "https://www.servicenow.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 61,
+      "brand": "Samsung",
+      "candidate_official_url": "https://www.samsung.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 62,
+      "brand": "Airtel",
+      "candidate_official_url": "https://www.airtel.in/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 63,
+      "brand": "HDFC Bank",
+      "candidate_official_url": "https://www.hdfcbank.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 64,
+      "brand": "Accenture",
+      "candidate_official_url": "https://www.accenture.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 65,
+      "brand": "UPS",
+      "candidate_official_url": "https://www.ups.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 66,
+      "brand": "Zara",
+      "candidate_official_url": "https://www.zara.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 67,
+      "brand": "Xbox",
+      "candidate_official_url": "https://www.xbox.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 68,
+      "brand": "CommBank",
+      "candidate_official_url": "https://www.commbank.com.au/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 69,
+      "brand": "Nike",
+      "candidate_official_url": "https://www.nike.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 70,
+      "brand": "Stripe",
+      "candidate_official_url": "https://stripe.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 71,
+      "brand": "Ping An",
+      "candidate_official_url": "https://group.pingan.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 72,
+      "brand": "Dell Technologies",
+      "candidate_official_url": "https://www.dell.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 73,
+      "brand": "L'Oréal Paris",
+      "candidate_official_url": "https://www.lorealparisusa.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 74,
+      "brand": "IQOS",
+      "candidate_official_url": "https://www.pmi.com/our-business/smoke-free-products/iqos-our-tobacco-heating-system",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 75,
+      "brand": "Morgan Stanley",
+      "candidate_official_url": "https://www.morganstanley.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 76,
+      "brand": "Agricultural Bank of China",
+      "candidate_official_url": "https://www.abchina.com/en/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 77,
+      "brand": "Bank of America",
+      "candidate_official_url": "https://www.bankofamerica.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 78,
+      "brand": "Spotify",
+      "candidate_official_url": "https://www.spotify.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 79,
+      "brand": "Spectrum",
+      "candidate_official_url": "https://www.spectrum.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 80,
+      "brand": "Booking.com",
+      "candidate_official_url": "https://www.booking.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 81,
+      "brand": "Xiaomi",
+      "candidate_official_url": "https://www.mi.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 82,
+      "brand": "Tata Consultancy Services",
+      "candidate_official_url": "https://www.tcs.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 83,
+      "brand": "KFC",
+      "candidate_official_url": "https://www.kfc.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 84,
+      "brand": "Toyota",
+      "candidate_official_url": "https://global.toyota/en/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 85,
+      "brand": "China Construction Bank",
+      "candidate_official_url": "https://www.ccb.com/en/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 86,
+      "brand": "Lowe's",
+      "candidate_official_url": "https://www.lowes.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 87,
+      "brand": "China Life",
+      "candidate_official_url": "https://www.e-chinalife.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 88,
+      "brand": "Xfinity",
+      "candidate_official_url": "https://www.xfinity.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 89,
+      "brand": "HSBC",
+      "candidate_official_url": "https://www.hsbc.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 90,
+      "brand": "Sony",
+      "candidate_official_url": "https://www.sony.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 91,
+      "brand": "ExxonMobil",
+      "candidate_official_url": "https://corporate.exxonmobil.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 92,
+      "brand": "Hilton",
+      "candidate_official_url": "https://www.hilton.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 93,
+      "brand": "Aldi",
+      "candidate_official_url": "https://www.aldi.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 94,
+      "brand": "Uniqlo",
+      "candidate_official_url": "https://www.uniqlo.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 95,
+      "brand": "TD",
+      "candidate_official_url": "https://www.td.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 96,
+      "brand": "DoorDash",
+      "candidate_official_url": "https://www.doordash.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 97,
+      "brand": "UnitedHealthcare",
+      "candidate_official_url": "https://www.uhc.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 98,
+      "brand": "Charles Schwab",
+      "candidate_official_url": "https://www.schwab.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 99,
+      "brand": "FedEx",
+      "candidate_official_url": "https://www.fedex.com/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    },
+    {
+      "rank": 100,
+      "brand": "BCA",
+      "candidate_official_url": "https://www.bca.co.id/en/",
+      "url_status": "candidate-unverified",
+      "identity_status": "indexed-only"
+    }
+  ]
+}

@@ -33,9 +33,13 @@ colors:
 ---
 
 ## 3 · Typography
-- **Display & Lore:** High-contrast elegant serif (Playfair Display / Serif). 72px – 140px. Generous tracking on all-caps; lowercase for intimate narratives.
-- **UI / Modern Data:** Inter or JetBrains Mono. 28px – 42px. Used for code readouts, numbers, and nodes.
-- **Voice / Captions:** Inter, slightly tightened, 22px – 28px. High legibility on dark backgrounds with subtle glow.
+
+Read [TYPOGRAPHY.md](TYPOGRAPHY.md) and the [portfolio standard](../../TYPOGRAPHY.md).
+Geist carries display and UI; Instrument Serif carries brief narrative accents;
+Newsreader is the long-form reading option. Technical mono stays in code and
+identifiers. Use sentence case with true lowercase, normal tracking for reading,
+and responsive sizes verified against the actual output. Cinematic video sizes
+are not web interface defaults. Earlier all-cap and Inter guidance is superseded.
 
 ---
 

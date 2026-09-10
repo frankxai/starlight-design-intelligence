@@ -4,6 +4,10 @@ Owned methodology, reusable skill system, premium taste layer.
 
 This repo is the source of truth for how FrankX, Starlight Intelligence Systems, Arcanea, and related products should look, move, explain themselves, and earn release approval.
 
+## Typography standard
+
+Start with [the typography standard](TYPOGRAPHY.md), [the source inventory](typography/font-inventory.json), and [the responsive specimen](typography/specimen.html). Sentence case is the portfolio default. Each of the four core brand packs now has a `TYPOGRAPHY.md` defining font roles and adoption status.
+
 ## Operating Thesis
 
 AI can generate interfaces quickly. The scarce layer is judgment: hierarchy, restraint, interaction quality, motion, brand memory, visual proof, and the ability to make every product feel like it belongs to a coherent world.
@@ -70,6 +74,10 @@ flag.
 
 ## Standards
 
+Recent evidence: [brand-kit architecture](portfolio/brand-kit-architecture.md),
+[exact font-file audit](typography/audits/2026-09-09/README.md), and
+[global-brand identity benchmark](observatory/benchmarks/2026-09-09/identity-evolution.md).
+
 - Replace vague taste language with implementation guidance.
 - Include motion and reduced-motion rules for every high-value product surface.
 - Prefer real product screenshots, workflows, and before/after examples over abstract decoration.
@@ -85,3 +93,7 @@ flag.
 - Production proof is emitted after deployment as an external CI artifact or a
   later receipts commit; it is never embedded in the production commit whose SHA
   it records.
+
+## Applied brand studio
+
+The [three-brand visual studio](typography/brand-studio/README.md) compares typography in context, provides reproducible HTML and PDF review exports, and adds a DOM-observation preflight. The [brand-kit release contract](portfolio/brand-kit-release-contract.md) separates identity selection, exact asset acceptance and platform release.

@@ -1,0 +1,183 @@
+{
+  "source": {
+    "repository": "https://github.com/google/fonts",
+    "commit": "334b789e33413f3aba4264d9aa6c97f7b94c5a2f",
+    "scope": "Review export subset: nine exact files across seven families, selected from the 2026-09-09 fourteen-family audit."
+  },
+  "files": [
+    {
+      "filename": "Inter[opsz,wght].ttf",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "size_bytes": 876576,
+      "family": "Inter",
+      "style": "normal",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 14.0,
+          "default": 14.0,
+          "max": 32.0
+        },
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "license_sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "license_file": "inter-OFL.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/inter/OFL.txt"
+    },
+    {
+      "filename": "InstrumentSans[wdth,wght].ttf",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/instrumentsans/InstrumentSans%5Bwdth%2Cwght%5D.ttf",
+      "sha256": "b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efdde389b33b1",
+      "size_bytes": 194336,
+      "family": "Instrument Sans",
+      "style": "normal",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 75.0,
+          "default": 100.0,
+          "max": 100.0
+        },
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 700.0
+        }
+      ],
+      "license_sha256": "9e27a72ed30eb49a08678f6a5d6ed98ec7ba5368f541637ee0683ec9134ef966",
+      "license_file": "instrumentsans-OFL.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/instrumentsans/OFL.txt"
+    },
+    {
+      "filename": "InstrumentSerif-Regular.ttf",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/instrumentserif/InstrumentSerif-Regular.ttf",
+      "sha256": "498efd461f6ddfcb7a111bf9a565709d2085d48201d501ead960d93e84ffbb88",
+      "size_bytes": 70012,
+      "family": "Instrument Serif",
+      "style": "normal",
+      "axes": [],
+      "license_sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
+      "license_file": "instrumentserif-OFL.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/instrumentserif/OFL.txt"
+    },
+    {
+      "filename": "InstrumentSerif-Italic.ttf",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/instrumentserif/InstrumentSerif-Italic.ttf",
+      "sha256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385",
+      "size_bytes": 71592,
+      "family": "Instrument Serif",
+      "style": "italic",
+      "axes": [],
+      "license_sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
+      "license_file": "instrumentserif-OFL.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/instrumentserif/OFL.txt"
+    },
+    {
+      "filename": "Geist[wght].ttf",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/geist/Geist%5Bwght%5D.ttf",
+      "sha256": "73894e0448cae90a92b6c2f8732b7bb9acb7b94c418bff559dad4a18e1de9659",
+      "size_bytes": 169056,
+      "family": "Geist",
+      "style": "normal",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "license_sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+      "license_file": "geist-OFL.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/geist/OFL.txt"
+    },
+    {
+      "filename": "Newsreader[opsz,wght].ttf",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/newsreader/Newsreader%5Bopsz%2Cwght%5D.ttf",
+      "sha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1",
+      "size_bytes": 451664,
+      "family": "Newsreader",
+      "style": "normal",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 400.0,
+          "max": 800.0
+        },
+        {
+          "tag": "opsz",
+          "min": 6.0,
+          "default": 18.0,
+          "max": 72.0
+        }
+      ],
+      "license_sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8",
+      "license_file": "newsreader-OFL.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/newsreader/OFL.txt"
+    },
+    {
+      "filename": "Newsreader-Italic[opsz,wght].ttf",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/newsreader/Newsreader-Italic%5Bopsz%2Cwght%5D.ttf",
+      "sha256": "796668611f80b64d5adf182fde3b6f29ed83b4e7cbec7b96937e84ac01364792",
+      "size_bytes": 495684,
+      "family": "Newsreader",
+      "style": "italic",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 400.0,
+          "max": 800.0
+        },
+        {
+          "tag": "opsz",
+          "min": 6.0,
+          "default": 18.0,
+          "max": 72.0
+        }
+      ],
+      "license_sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8",
+      "license_file": "newsreader-OFL.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/newsreader/OFL.txt"
+    },
+    {
+      "filename": "IBMPlexMono-Regular.ttf",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/ibmplexmono/IBMPlexMono-Regular.ttf",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "size_bytes": 135580,
+      "family": "IBM Plex Mono",
+      "style": "normal",
+      "axes": [],
+      "license_sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "license_file": "ibmplexmono-OFL.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/ibmplexmono/OFL.txt"
+    },
+    {
+      "filename": "PlayfairDisplay[wght].ttf",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf",
+      "sha256": "c40f2293766a503bc70cce9e512ef844a4ccb7cbcde792fe2ea31d191917d8d6",
+      "size_bytes": 300724,
+      "family": "Playfair Display",
+      "style": "normal",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "license_sha256": "566be814f8e96e93dfa16101331557eb6b5467e9e03f627c0910fe93ca12300e",
+      "license_file": "playfairdisplay-OFL.txt",
+      "license_source_url": "https://raw.githubusercontent.com/google/fonts/334b789e33413f3aba4264d9aa6c97f7b94c5a2f/ofl/playfairdisplay/OFL.txt"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # GenCreator Design
 
+Typography authority: [TYPOGRAPHY.md](TYPOGRAPHY.md). Apply the [portfolio casing standard](../../TYPOGRAPHY.md).
+
 - Warm paper, clear green action, and visible maker artifacts.
 - Organize the 14-product catalog into an outcome ladder rather than an equal card wall.
 - Community surfaces may be warmer and more social; product surfaces remain practical.
