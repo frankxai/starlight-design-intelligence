@@ -32,15 +32,18 @@ copy, websites, apps, documents, slides, social graphics, and video titles.
 
 ## Brand decisions
 
-Font selection status is distinct from implementation status. The following
-directions govern new specimens; they do not claim every existing site has been
-migrated or visually verified.
+Font selection status is distinct from implementation status. A recorded owner
+selection for a named surface governs identity. Kits and dated research establish
+source evidence; candidates remain candidates. App loaders and computed fonts
+establish implementation evidence, not approval. Resolve conflicts explicitly;
+neither the newest draft nor the deployed loader silently replaces a selected kit.
+The following directions govern new specimens, not production migrations.
 
 | Brand and surface | Primary | Editorial role | Utility | Status |
 | --- | --- | --- | --- | --- |
 | FrankX, new editorial and personal surfaces | Instrument Sans | Instrument Serif for short display accents | JetBrains Mono for code only | Recommended direction; compare with existing Inter + Playfair before a flagship migration |
 | FrankX, existing technical interfaces | Inter | None by default | JetBrains Mono | Retain until a scoped redesign; Poppins is legacy display compatibility |
-| Starlight Intelligence, institutional and product | Instrument Sans | Instrument Serif, brief accents | IBM Plex Mono | Matches inspected web layout; old Manrope tokens need downstream reconciliation |
+| Starlight Intelligence, institutional and product | Instrument Sans | Newsreader for editorial reading and selected display | IBM Plex Mono | Kit-based recommendation from v3 and the v5 candidate; owner selection and application proof remain open. Instrument Serif in the inspected loader and older Manrope tokens are implementation drift |
 | Arcanea, product and world navigation | Geist | Instrument Serif, brief narrative display | JetBrains Mono | Matches the current app's principal families |
 | Arcanea, sustained book or lore reading | Newsreader | Newsreader | None by default | Present in current app; verify route use and real italic files |
 | GenCreator, editorial territory | Instrument Sans | Instrument Serif | Geist Mono | Existing territory in app; preserve territory selection |
@@ -113,6 +116,10 @@ desktop, Figma or Canva copies. Inventory those actual bytes independently.
 
 Follow [the brand-kit architecture decision](portfolio/brand-kit-architecture.md)
 before creating another repository or treating a design-tool kit as canonical.
+Use [the release manifest contract](portfolio/brand-kit-release-contract.md) to
+record selected files, text roles, assets, owner decisions and adapter evidence.
 The [top-100 benchmark](observatory/benchmarks/2026-09-09/identity-evolution.md)
 separates source-verified identity cases from indexed brands and website CSS
 observations. Reference-brand typography never overrides the sentence-case rule.
+
+Use the [applied brand studio](typography/brand-studio/README.md) to compare actual content and run its supplied-observation preflight. Its static PDF review is distinct from the browser and design-tool checks that remain pending.

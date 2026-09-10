@@ -35,13 +35,15 @@ This is a dated selection snapshot, not a claim of universal deployment.
 | Brand | Direction |
 | --- | --- |
 | FrankX | Propose Instrument Sans + Instrument Serif for new editorial work; compare with existing Inter + Playfair before flagship migration. Retain Inter in existing technical UI and JetBrains Mono for code. |
-| Starlight Intelligence | Instrument Sans for primary text; Instrument Serif for brief accents; IBM Plex Mono for identifiers and code. |
+| Starlight Intelligence | Instrument Sans for primary text; Newsreader for the kit-based editorial recommendation; IBM Plex Mono for identifiers and code. Recovered kit roles and current web-loader drift are separate evidence; final selection remains owner-scoped. |
 | Arcanea | Geist for product/display, Instrument Serif for short accents, Newsreader for dedicated lore reading; scope families by surface. No Cinzel or caps-only fantasy default. |
 | GenCreator | Preserve territory: Instrument Sans + Instrument Serif for editorial; Geist + Fraunces for product/editorial accents. Geist Mono is utility only. |
 
-Do not load every brand font on every route. Verify actual styles: Starlight's
-inspected serif loader was italic-only; GenCreator's editorial serif loader was
-normal-only. Reconcile current source before requesting a missing style.
+Do not load every brand font on every route. Starlight's inspected Instrument
+Serif loader was italic-only and conflicts with the recovered Newsreader kit role;
+do not promote that implementation detail into brand-selection authority.
+GenCreator's editorial serif loader was normal-only. Reconcile current source
+before requesting a missing style.
 Canonical authority: `frankxai/starlight-design-intelligence`, `TYPOGRAPHY.md` and
 `brand-packs/<brand>/TYPOGRAPHY.md`. Font inventories are evidence, not licenses.
 
@@ -59,6 +61,12 @@ Canonical authority: `frankxai/starlight-design-intelligence`, `TYPOGRAPHY.md` a
 Show the actual headline, longest paragraph, CTA, names, numerals, punctuation,
 italics, every used weight, fallback state, and mobile wrap. Compare at least two
 qualified pairings when changing a flagship surface.
+
+The canonical repository's `typography/brand-studio/` provides controlled
+comparisons and `scripts/check-typography-specimen.mjs` checks supplied DOM
+observations. Use it when actual browser reports are available. Unit tests and
+static PDF specimens do not prove browser reflow or design-tool exports; keep
+unrun targets explicitly pending.
 
 ## Defaults
 

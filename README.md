@@ -93,3 +93,7 @@ Recent evidence: [brand-kit architecture](portfolio/brand-kit-architecture.md),
 - Production proof is emitted after deployment as an external CI artifact or a
   later receipts commit; it is never embedded in the production commit whose SHA
   it records.
+
+## Applied brand studio
+
+The [three-brand visual studio](typography/brand-studio/README.md) compares typography in context, provides reproducible HTML and PDF review exports, and adds a DOM-observation preflight. The [brand-kit release contract](portfolio/brand-kit-release-contract.md) separates identity selection, exact asset acceptance and platform release.
