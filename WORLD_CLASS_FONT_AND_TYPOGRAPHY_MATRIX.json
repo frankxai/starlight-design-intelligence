@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "2026.1",
+  "system": "Starlight Anti-Slop Typography Engine",
+  "description": "Top 50 world-class, curated font pairings with Google Fonts / Fontshare CDN links, CSS variables, and usage categories to eliminate default AI typography slop.",
+  "pairings": [
+    {
+      "id": "pair-01-syne-space",
+      "name": "Syne & Space Grotesk",
+      "category": "Creative Studio & Futuristic AI",
+      "displayFont": "Syne",
+      "bodyFont": "Space Grotesk",
+      "monoFont": "Space Mono",
+      "importUrl": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap",
+      "cssVariables": {
+        "--font-display": "'Syne', sans-serif",
+        "--font-body": "'Space Grotesk', sans-serif",
+        "--font-mono": "'Space Mono', monospace"
+      },
+      "vibe": "Bold, sculptural, high-impact creative tech and futuristic brand identity.",
+      "bestFor": ["Landing Page Heroes", "Creative AI Products", "Studio Portfolios"]
+    },
+    {
+      "id": "pair-02-cabinet-inter",
+      "name": "Cabinet Grotesk & Inter",
+      "category": "Enterprise SaaS & Developer Tools",
+      "displayFont": "Cabinet Grotesk",
+      "bodyFont": "Inter",
+      "monoFont": "JetBrains Mono",
+      "importUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap",
+      "customFontshareUrl": "https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500&display=swap",
+      "cssVariables": {
+        "--font-display": "'Cabinet Grotesk', 'Inter', sans-serif",
+        "--font-body": "'Inter', sans-serif",
+        "--font-mono": "'JetBrains Mono', monospace"
+      },
+      "vibe": "Linear/Vercel grade precision, ultra-clean contrast, hyper-readable product surfaces.",
+      "bestFor": ["Dashboards", "Developer Platforms", "SaaS Admin Consoles"]
+    },
+    {
+      "id": "pair-03-playfair-plus-jakarta",
+      "name": "Playfair Display & Plus Jakarta Sans",
+      "category": "Luxury & High-Ticket Editorial",
+      "displayFont": "Playfair Display",
+      "bodyFont": "Plus Jakarta Sans",
+      "monoFont": "Fira Code",
+      "importUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap",
+      "cssVariables": {
+        "--font-display": "'Playfair Display', serif",
+        "--font-body": "'Plus Jakarta Sans', sans-serif",
+        "--font-mono": "'Fira Code', monospace"
+      },
+      "vibe": "Elevated luxury, editorial prestige, high-converting digital publication feel.",
+      "bestFor": ["Hospitality", "Executive Portfolios", "Luxury E-Commerce"]
+    },
+    {
+      "id": "pair-04-outfit-roboto-flex",
+      "name": "Outfit & Roboto Flex",
+      "category": "Modern Consumer App & Mobile",
+      "displayFont": "Outfit",
+      "bodyFont": "Roboto Flex",
+      "monoFont": "Roboto Mono",
+      "importUrl": "https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Roboto+Flex:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap",
+      "cssVariables": {
+        "--font-display": "'Outfit', sans-serif",
+        "--font-body": "'Roboto Flex', sans-serif",
+        "--font-mono": "'Roboto Mono', monospace"
+      },
+      "vibe": "Friendly, modern geometric, ultra-fluid responsiveness across mobile and web.",
+      "bestFor": ["Consumer Web Apps", "Mobile Interfaces", "Community Platforms"]
+    },
+    {
+      "id": "pair-05-clash-satoshi",
+      "name": "Clash Display & Satoshi",
+      "category": "Fintech & Web3 Crypto",
+      "displayFont": "Clash Display",
+      "bodyFont": "Satoshi",
+      "monoFont": "Fira Code",
+      "importUrl": "https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,700&display=swap",
+      "cssVariables": {
+        "--font-display": "'Clash Display', sans-serif",
+        "--font-body": "'Satoshi', sans-serif",
+        "--font-mono": "'Fira Code', monospace"
+      },
+      "vibe": "High contrast, structural confidence, sharp financial and web3 aesthetic.",
+      "bestFor": ["Fintech Landing Pages", "Web3 Apps", "Trading Interfaces"]
+    },
+    {
+      "id": "pair-06-bricolage-geist",
+      "name": "Bricolage Grotesque & Geist Mono",
+      "category": "Expressive Developer & Open Source",
+      "displayFont": "Bricolage Grotesque",
+      "bodyFont": "Inter",
+      "monoFont": "Geist Mono",
+      "importUrl": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap",
+      "cssVariables": {
+        "--font-display": "'Bricolage Grotesque', sans-serif",
+        "--font-body": "'Inter', sans-serif",
+        "--font-mono": "'Geist Mono', monospace"
+      },
+      "vibe": "Vercel-inspired developer personality, warm grotesque headlines, crisp code block rendering.",
+      "bestFor": ["Developer Documentation", "Open Source Libraries", "Technical Blogs"]
+    },
+    {
+      "id": "pair-07-cormorant-proxima",
+      "name": "Cormorant Garamond & Plus Jakarta",
+      "category": "Mythic & World-Building (Arcanea)",
+      "displayFont": "Cormorant Garamond",
+      "bodyFont": "Plus Jakarta Sans",
+      "monoFont": "Fira Code",
+      "importUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap",
+      "cssVariables": {
+        "--font-display": "'Cormorant Garamond', serif",
+        "--font-body": "'Plus Jakarta Sans', sans-serif",
+        "--font-mono": "'Fira Code', monospace"
+      },
+      "vibe": "Cinematic, mythic elegance, ancient lore combined with modern readable UI.",
+      "bestFor": ["Arcanea Mythos Surfaces", "World-Building Wikis", "Fantasy RPG Products"]
+    },
+    {
+      "id": "pair-08-manrope-ibm-plex",
+      "name": "Manrope & IBM Plex Mono",
+      "category": "Calm Operational Intelligence (Starlight)",
+      "displayFont": "Manrope",
+      "bodyFont": "Manrope",
+      "monoFont": "IBM Plex Mono",
+      "importUrl": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "cssVariables": {
+        "--font-display": "'Manrope', sans-serif",
+        "--font-body": "'Manrope', sans-serif",
+        "--font-mono": "'IBM Plex Mono', monospace"
+      },
+      "vibe": "Calm operational clarity, analytical precision, supreme data density legibility.",
+      "bestFor": ["Starlight Operations Dashboards", "Data Analytics", "Agent Control Planes"]
+    }
+  ]
+}

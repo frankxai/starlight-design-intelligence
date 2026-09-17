@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/product-asset-portfolio.schema.json",
+  "title": "Product Asset Portfolio",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["portfolioId", "source", "scope", "brands", "products", "assetFamilies", "updatedAt"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "portfolioId": { "type": "string" },
+    "source": { "type": "string" },
+    "scope": { "type": "string" },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["productCount", "byBrand", "byReleaseState"],
+      "properties": {
+        "productCount": { "type": "integer", "minimum": 1 },
+        "byBrand": { "type": "object" },
+        "byReleaseState": { "type": "object" }
+      }
+    },
+    "brands": { "type": "object", "minProperties": 1 },
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "brandId", "name", "sourceKind", "productForm", "status", "releaseState", "coverPolicy", "assetFamilies"],
+        "properties": {
+          "id": { "type": "string" },
+          "brandId": { "type": "string" },
+          "name": { "type": "string" },
+          "sourceKind": { "type": "string" },
+          "productForm": { "type": "string" },
+          "status": { "type": "string" },
+          "commercialState": { "type": ["string", "null"] },
+          "releaseState": { "type": "string", "enum": ["public", "validation", "internal-only"] },
+          "coverPolicy": { "type": "string" },
+          "targetUrl": { "type": ["string", "null"] },
+          "assetFamilies": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+        }
+      }
+    },
+    "assetFamilies": { "type": "object", "minProperties": 1 },
+    "updatedAt": { "type": "string", "format": "date" }
+  }
+}

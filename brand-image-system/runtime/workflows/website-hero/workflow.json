@@ -1,14 +1,46 @@
 {
+  "$schema": "../../schemas/workflow-pack.schema.json",
   "workflowId": "website-hero",
-  "version": "2026-07-02",
-  "description": "First viewport visuals for brand sites. Prioritize real product proof or high-craft generated with liquid glass depth. Deterministic elements for text/claims.",
-  "allowedRoutes": ["browser-capture-real-proof", "premium-generated-with-deterministic-overlay", "hybrid-liquid-glass-render"],
-  "outputs": [
-    {"format": "png", "width": 1920, "height": 1080, "name": "desktop"},
-    {"format": "png", "width": 1080, "height": 1920, "name": "mobile"}
+  "displayName": "Website Hero",
+  "version": "2026-08-17",
+  "purpose": "Build a first-viewport product or brand visual from real proof, an art-directed source frame, and deterministic public copy.",
+  "surfaces": [
+    "website first viewport",
+    "campaign landing page",
+    "product route hero"
   ],
-  "qaGate": {
-    "requiredScore": 27,
-    "checks": ["responsive", "textSafeAreas", "provenance", "premiumTaste", "insightful"]
-  }
+  "allowedProductionRoutes": [
+    "real product capture",
+    "browser capture of verified UI",
+    "premium generated source frame with deterministic overlay",
+    "HTML/CSS or Figma composition"
+  ],
+  "requiredOutputs": [
+    { "kind": "source brief", "pathHint": "brief.md" },
+    { "kind": "media job", "pathHint": "media-job.json" },
+    { "kind": "desktop", "pathHint": "crops/desktop.png", "dimensions": "1920x1080" },
+    { "kind": "mobile", "pathHint": "crops/mobile.png", "dimensions": "1080x1920" },
+    { "kind": "evidence", "pathHint": "evidence.json" }
+  ],
+  "qaGates": [
+    "active taste constitution and founder-approved brand territory loaded",
+    "logo approval status recorded; canonical does not imply approved",
+    "sentence case used except for established acronyms",
+    "real proof preferred when the product exists",
+    "copy and claims rendered deterministically",
+    "desktop and mobile inspected",
+    "logo-off recognition and color-swap tests passed",
+    "diagnostic score plus independent critique recorded",
+    "explicit human decision recorded before publication"
+  ],
+  "blockedRoutes": [
+    "fake product UI",
+    "generic abstract filler as primary asset",
+    "generated public text",
+    "uninspected generated media"
+  ],
+  "scoreThreshold": 26,
+  "scoreScale": 30,
+  "approvalRequired": true,
+  "updatedAt": "2026-08-17"
 }

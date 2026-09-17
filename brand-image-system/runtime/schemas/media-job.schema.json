@@ -29,6 +29,32 @@
     "workflowId": {
       "type": "string"
     },
+    "productId": {
+      "type": "string"
+    },
+    "productForm": {
+      "type": "string",
+      "enum": [
+        "book",
+        "course",
+        "diagnostic",
+        "guide",
+        "implementation",
+        "kit",
+        "pack",
+        "platform",
+        "saas",
+        "sprint",
+        "community",
+        "retainer",
+        "workbook",
+        "internal-hold"
+      ]
+    },
+    "assetRole": {
+      "type": "string",
+      "enum": ["source-art", "cover-master", "launch-kit", "portfolio-overview"]
+    },
     "surface": {
       "type": "string"
     },
@@ -45,6 +71,62 @@
     },
     "sourceMethod": {
       "type": "string"
+    },
+    "stylePackId": {
+      "type": "string"
+    },
+    "rail": {
+      "type": "string",
+      "enum": ["product", "world", "none"]
+    },
+    "brandAssets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonicalPack", "logoDecision", "fonts", "colors"],
+      "properties": {
+        "canonicalPack": { "type": "string" },
+        "logoDecision": { "type": "string" },
+        "logos": { "type": "array", "items": { "type": "string" } },
+        "fonts": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "colors": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+      }
+    },
+    "exactCopy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "subtitle": { "type": "string" },
+        "eyebrow": { "type": "string" },
+        "statusLabel": { "type": "string" },
+        "claims": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "generation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["modelLane", "modelKnown", "capabilityReceipt", "promptVersion", "sourceRole"],
+      "properties": {
+        "modelLane": { "type": "string" },
+        "declaredModel": { "type": ["string", "null"] },
+        "modelKnown": { "type": "boolean" },
+        "capabilityReceipt": { "type": "string" },
+        "promptVersion": { "type": "string" },
+        "sourceRole": { "type": "string" },
+        "settings": { "type": "object" }
+      }
+    },
+    "experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["experimentId", "candidateId", "hypothesis"],
+      "properties": {
+        "experimentId": { "type": "string" },
+        "candidateId": { "type": "string" },
+        "baselineId": { "type": ["string", "null"] },
+        "hypothesis": { "type": "string" }
+      }
     },
     "promptLog": {
       "type": "string"
@@ -94,6 +176,22 @@
         },
         "notes": {
           "type": "string"
+        },
+        "dimensionScores": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "brandFit": { "type": "integer", "minimum": 0, "maximum": 5 },
+            "formFit": { "type": "integer", "minimum": 0, "maximum": 5 },
+            "craft": { "type": "integer", "minimum": 0, "maximum": 5 },
+            "legibility": { "type": "integer", "minimum": 0, "maximum": 5 },
+            "truthfulness": { "type": "integer", "minimum": 0, "maximum": 5 },
+            "campaignUsefulness": { "type": "integer", "minimum": 0, "maximum": 5 }
+          }
+        },
+        "exportInspections": {
+          "type": "array",
+          "items": { "type": "string" }
         }
       }
     },

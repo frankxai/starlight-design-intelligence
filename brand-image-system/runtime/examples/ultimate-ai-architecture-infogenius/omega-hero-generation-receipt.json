@@ -1,0 +1,60 @@
+{
+  "contractVersion": "image-generation-receipt.v1",
+  "receiptId": "2026-08-21-frank-omega-systems-atelier-v1",
+  "surface": "FrankX.AI Ultimate AI Architecture Guide 16:9 editorial hero",
+  "modelLane": "Codex built-in image generation",
+  "modelStatus": "runtime-best-available",
+  "capabilityReceipt": "The built-in image generation tool returned one 1672x941 PNG. The harness did not expose a public model identifier.",
+  "promptPath": "prompts/omega-systems-atelier-v1.txt",
+  "references": [
+    {
+      "path": "C:/Users/frank/starlight/repos/frankx.ai-vercel-website/public/images/mascot/frank-omega-hero-v1.png",
+      "role": "locked FRANK-Ω identity",
+      "lockLevel": "preserve-identity",
+      "rightsStatus": "owned"
+    },
+    {
+      "path": "C:/Users/frank/starlight/repos/frankx.ai-vercel-website/public/images/mascot/frank-omega-thinking-v1.png",
+      "role": "locked FRANK-Ω proportions, materials, and expression language",
+      "lockLevel": "preserve-identity",
+      "rightsStatus": "owned"
+    },
+    {
+      "path": "source/ai-architecture-source-v2.png",
+      "role": "inspected tactile architecture and material reference",
+      "lockLevel": "inspiration",
+      "rightsStatus": "generated"
+    }
+  ],
+  "outputs": [
+    {
+      "role": "generated-source-layer",
+      "path": "source/frank-omega-systems-atelier-source.png",
+      "sha256": "bf83775e40a3a1f01198d2fb3cee314bb23500e96115fac44ffba6eaca8161f0",
+      "inspected": true
+    },
+    {
+      "role": "exact-publication-master",
+      "path": "masters/frank-omega-systems-atelier-hero.png",
+      "sha256": "01c58b69f029b6c7cc3b7f152a809cf810270236ffc0da4e37398b4e23cb43b2",
+      "inspected": true
+    },
+    {
+      "role": "optimized-web-hero",
+      "path": "release/hero/frank-omega-systems-atelier-1672x941.webp",
+      "sha256": "13e0fb874ae9e7f934d577f626a77676dee9b6bd904a4de4887760fbf8a0b2e6",
+      "inspected": true
+    },
+    {
+      "role": "optimized-1200-wide-hero",
+      "path": "release/hero/frank-omega-systems-atelier-1200x675.webp",
+      "sha256": "0e646ad4621d9e6de462bf4c4cc5594813b484b04964871fa8b015de876af176",
+      "inspected": true
+    }
+  ],
+  "identityVerdict": "pass",
+  "identityNotes": "FRANK-Ω remains recognizably the owned black/purple/cyan companion with luminous eyes and violet core. No external mascot or third-party mark was generated.",
+  "publicationDecision": "eligible-for-human-review",
+  "humanDecision": "pending",
+  "checkedAt": "2026-08-21"
+}

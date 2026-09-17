@@ -1,0 +1,137 @@
+{
+  "$schema": "../../runtime/schemas/experiment-ledger.schema.json",
+  "experimentId": "2026-08-17-product-cover-overhaul",
+  "objective": "Replace the generic Hermes cover pass with form-specific, brand-locked, model-receipted product assets and an inspectable portfolio overview.",
+  "hypothesis": "Canonical identity plus a product-form mechanism and deterministic semantic layers will improve brand fit, truth, and campaign usefulness more than generating generic product objects and applying one sparse template.",
+  "baseline": {
+    "agent": "Hermes",
+    "reasoningModel": "grok-4.6 via xai-oauth",
+    "imageModel": "grok-imagine-image-quality at 2K",
+    "method": "Four atmospheric source frames and ten generic no-text/no-logo product-object images followed by an independent 57-cover PIL template.",
+    "evidence": [
+      "runtime/adapters/hermes/AUDIT-2026-08-17.md",
+      "C:/Users/frank/starlight/repos/frankx-strategy/09-evidence/product-funnel-os-2026-08-17/command-center/assets/covers/fx-sprint.webp",
+      "C:/Users/frank/starlight/repos/frankx-strategy/09-evidence/product-funnel-os-2026-08-17/command-center/assets/covers/gc-creatorpack.webp",
+      "C:/Users/frank/starlight/repos/frankx-strategy/09-evidence/product-funnel-os-2026-08-17/command-center/assets/covers/ar-bible.webp"
+    ],
+    "score30": 15
+  },
+  "candidates": [
+    {
+      "candidateId": "fx-sprint-cover-v2",
+      "productId": "fx-sprint",
+      "route": "canonical FrankX logo + deterministic evidence-signal instrument",
+      "modelLane": "deterministic-only",
+      "declaredModel": null,
+      "promptVersion": "frankx-sprint-render-v2",
+      "outputs": [
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/frankx-venture-signal-sprint.png",
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/frankx-venture-signal-sprint-og.png"
+      ],
+      "score30": 29,
+      "scoreValidity": "invalidated",
+      "humanVerdict": "reject",
+      "decision": "restart",
+      "notes": "The original 29/30 was a maker self-score and is invalidated by founder review. The cover repeats the rejected dark dashboard grammar, uppercase microcopy, status chrome, and technical abstraction."
+    },
+    {
+      "candidateId": "gc-creatorpack-cover-v2",
+      "productId": "gc-creatorpack",
+      "route": "canonical GenCreator wordmark + deterministic owned-work mechanism",
+      "modelLane": "deterministic-only",
+      "declaredModel": null,
+      "promptVersion": "gencreator-creatorpack-render-v2",
+      "outputs": [
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/gencreator-creatorpack.png",
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/gencreator-creatorpack-og.png"
+      ],
+      "score30": 29,
+      "scoreValidity": "invalidated",
+      "humanVerdict": "reject",
+      "decision": "restart",
+      "notes": "The original 29/30 was a maker self-score and is invalidated by founder review. The constellation and dark system treatment feel like generic AI/productivity language rather than an authored creator brand."
+    },
+    {
+      "candidateId": "sis-starter-kit-cover-v2",
+      "productId": "sis-kit",
+      "route": "existing inspected sovereignty proof media + deterministic kit composition",
+      "modelLane": "existing-proof-plus-deterministic",
+      "declaredModel": null,
+      "promptVersion": "sis-starter-kit-hybrid-v2",
+      "outputs": [
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/sis-sovereign-intelligence-starter-kit.png",
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/sis-sovereign-intelligence-starter-kit-og.png"
+      ],
+      "score30": 29,
+      "scoreValidity": "invalidated",
+      "humanVerdict": "reject",
+      "decision": "restart",
+      "notes": "The original 29/30 was a maker self-score and is invalidated by founder review. Avoiding an invented mark was correct, but the uppercase signature, dark prestige treatment, and status chrome are not an approved identity."
+    },
+    {
+      "candidateId": "arcanea-world-bible-cover-v2",
+      "productId": "ar-bible",
+      "route": "premium generated codex source + canonical Arcanea wordmark + deterministic product chrome",
+      "modelLane": "codex-imagegen",
+      "declaredModel": null,
+      "promptVersion": "arcanea-world-bible-source-v2",
+      "outputs": [
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/assets/source/arcanea-world-bible-source.png",
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/arcanea-world-bible.png",
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/arcanea-world-bible-og.png"
+      ],
+      "score30": 29,
+      "scoreValidity": "invalidated",
+      "humanVerdict": "reject",
+      "decision": "restart",
+      "notes": "The original 29/30 was a maker self-score and is invalidated by founder review. Model provenance was handled honestly, but generic dark fantasy/tech chrome and uppercase system labels flattened Arcanea into the same house aesthetic."
+    },
+    {
+      "candidateId": "portfolio-overview-v2",
+      "productId": "portfolio-47",
+      "route": "manifest-derived deterministic overview using four benchmark masters",
+      "modelLane": "deterministic-only",
+      "declaredModel": null,
+      "promptVersion": "portfolio-overview-v2",
+      "outputs": [
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/portfolio-overview-1920x1080.png",
+        "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/portfolio-matrix-all-47-2560x1800.png"
+      ],
+      "score30": 29,
+      "scoreValidity": "invalidated",
+      "humanVerdict": "reject",
+      "decision": "restart",
+      "notes": "The inventory facts remain useful, but the visual overview inherits the same dark panel system and falsely suggests cross-brand coherence. Preserve the data; replace the presentation after identities are approved."
+    }
+  ],
+  "humanReview": {
+    "reviewedAt": "2026-08-17",
+    "reviewer": "founder",
+    "verdict": "reject",
+    "supersedesDecision": "ship",
+    "reasons": [
+      "the visual branding is not good enough from the foundation",
+      "the brands share an unwanted dark technical aesthetic",
+      "all-caps treatments conflict with explicit founder preference",
+      "logos and fonts were preserved without earning approval",
+      "the quality system over-rewarded technical compliance and under-measured taste"
+    ],
+    "nextAction": "Restart from brand strategy, black-and-white territories, typography specimens, and founder approval before new asset generation."
+  },
+  "decisionHistory": [
+    {
+      "date": "2026-08-17",
+      "actor": "maker",
+      "decision": "ship",
+      "notes": "Local validation candidate; publication still required human approval."
+    },
+    {
+      "date": "2026-08-17",
+      "actor": "founder",
+      "decision": "restart",
+      "notes": "Rejected the overall visual foundation, all-caps language, type/logo assumptions, and shared AI-dashboard aesthetic."
+    }
+  ],
+  "decision": "restart",
+  "updatedAt": "2026-08-17"
+}

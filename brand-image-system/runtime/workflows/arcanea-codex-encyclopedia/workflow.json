@@ -3,7 +3,7 @@
   "workflowId": "arcanea-codex-encyclopedia",
   "displayName": "Arcanea Codex Encyclopedia Still + Loop",
   "version": "2026-07-16",
-  "purpose": "Flagship world-media still (cast portrait bible or godbeast hero) plus optional I2V loop. Design card → Grok quality 2k → score30 → human approve. Not product chrome.",
+  "purpose": "Create a canon-locked flagship world-media still plus an optional I2V loop inside a founder-approved Arcanea territory. Compare suitable premium models; no model owns the style by default.",
   "surfaces": [
     "Codex encyclopedia page",
     "World social source frame",
@@ -11,6 +11,8 @@
     "Trailer still candidate"
   ],
   "allowedProductionRoutes": [
+    "Codex image generation as a benchmark candidate",
+    "Google/Nano Banana Pro as a benchmark candidate when verified available",
     "xAI Grok Imagine quality 2k (XAIImageGenProvider)",
     "xAI Grok Imagine video 1.5 I2V",
     "Higgsfield Soul after face approve",
@@ -26,20 +28,24 @@
     { "kind": "evidence", "pathHint": "evidence.json" }
   ],
   "qaGates": [
-    "stylePackId house-myth-tech (or labeled secondary)",
+    "active taste constitution, approved Arcanea territory, and canon reference pack loaded",
     "rail=world",
     "VISUAL_DOCTRINE materials whitelist",
     "design card completed before generate",
     "paths on disk not CDN-only",
-    "score30 recorded with ship bar >= 28",
+    "sentence case used for any deterministic caption or title",
+    "blind pairwise model review completed when more than one lane is used",
+    "diagnostic score plus independent critique recorded",
     "human approval before public",
     "no gen text UI watermark"
   ],
-  "scoreThreshold": 28,
+  "scoreThreshold": 26,
   "scoreScale": 30,
   "blockedRoutes": [
     "product chrome placement without Codex frame",
     "anime house unlabeled",
+    "generic portal, sigil, purple software, or dark fantasy-tech chrome used as the main idea",
+    "maker self-score used as approval",
     "prompt soup without design card",
     "raw image_generate FAL thrash without xAI route-switch",
     "invent-a-verse entities outside CANON_LOCKED"

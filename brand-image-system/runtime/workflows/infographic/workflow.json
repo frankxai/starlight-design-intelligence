@@ -1,16 +1,49 @@
 {
+  "$schema": "../../schemas/workflow-pack.schema.json",
   "workflowId": "infographic",
-  "version": "2026-07-02",
-  "description": "Insightful systems, architectures, diagrams. Hybrid: premium image gen (Grok/Infogenius) for creative artistic bases where text excels, deterministic renderer for precision facts/labels.",
-  "allowedRoutes": ["premium-creative-infographic", "deterministic-svg-code", "figma-canva-renderer"],
-  "blockedRoutes": ["raw-image-gen-for-exact-text"],
-  "outputs": [
-    { "format": "png", "width": 1920, "height": 1080, "name": "main" },
-    { "format": "png", "width": 1200, "height": 630, "name": "og" }
+  "displayName": "Evidence-led Infographic",
+  "version": "2026-08-17",
+  "purpose": "Explain a sourced system, architecture, comparison, or sequence with deterministic labels and an optional generated source layer.",
+  "surfaces": [
+    "website explainer",
+    "social infographic",
+    "deck architecture slide",
+    "product overview visualization"
   ],
-  "qaGate": {
-    "requiredScore": 28,
-    "checks": ["factualAccuracy", "sourceLabels", "textLegibility", "brandFit", "insightfulMeaningful", "noFakeText"]
-  },
-  "tasteStandard": "World-class: Apple liquid glass depth where applicable, Vercel clean craft, GitHub insightful approachability. Every element earns its place."
+  "allowedProductionRoutes": [
+    "deterministic SVG or HTML/CSS",
+    "Figma or Canva with exact source labels",
+    "browser capture of verified data",
+    "premium image generation for illustration layer only"
+  ],
+  "requiredOutputs": [
+    { "kind": "source ledger", "pathHint": "sources.json" },
+    { "kind": "media job", "pathHint": "media-job.json" },
+    { "kind": "master", "pathHint": "master.png", "dimensions": "1920x1080" },
+    { "kind": "open graph crop", "pathHint": "crops/og.png", "dimensions": "1200x630" },
+    { "kind": "evidence", "pathHint": "evidence.json" }
+  ],
+  "qaGates": [
+    "active taste constitution and founder-approved brand territory loaded",
+    "sentence case used except for established acronyms",
+    "every public fact resolves to a source",
+    "all labels and numbers are deterministic text",
+    "hierarchy remains legible at delivery size",
+    "generated material is non-semantic illustration only",
+    "diagnostic score plus independent critique recorded",
+    "explicit human decision recorded before publication"
+  ],
+  "blockedRoutes": [
+    "generated final labels or charts",
+    "decorative node cloud without explanatory meaning",
+    "all-caps decorative labels or status chrome",
+    "shared dark AI-dashboard styling used as a brand shortcut",
+    "maker self-score used as approval",
+    "invented metrics, customers, or product status",
+    "uninspected exports"
+  ],
+  "scoreThreshold": 26,
+  "scoreScale": 30,
+  "approvalRequired": true,
+  "updatedAt": "2026-08-17"
 }

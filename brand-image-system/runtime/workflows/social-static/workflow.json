@@ -31,20 +31,25 @@
     { "kind": "evidence", "pathHint": "evidence.json" }
   ],
   "qaGates": [
-    "brand pack loaded",
+    "active taste constitution and founder-approved brand territory loaded",
+    "sentence case used except for established acronyms",
     "exact text rendered deterministically unless premium creative-infographic exception is explicit and fully inspected",
     "actual output path exists for all four crops",
     "square, portrait, og, and story crops inspected",
-    "30 point score recorded with ship bar score30 >= 28",
+    "logo-off recognition and color-swap tests passed",
+    "diagnostic score plus independent critique recorded",
     "human approval required before public posting"
   ],
-  "scoreThreshold": 28,
+  "scoreThreshold": 26,
   "scoreScale": 30,
   "blockedRoutes": [
     "raw image generation containing final public text without creative-infographic exception + character QA",
     "fake UI",
     "uncited claims",
     "generic gradient filler as primary asset",
+    "all-caps decorative copy or status chrome",
+    "shared dark AI-dashboard styling used as a brand shortcut",
+    "maker self-score used as approval",
     "Hermes image_generate until backend and first output path are verified"
   ],
   "approvalRequired": true,

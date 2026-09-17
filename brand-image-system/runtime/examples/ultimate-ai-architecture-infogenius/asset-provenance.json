@@ -1,0 +1,74 @@
+{
+  "artifactId": "ultimate-ai-architecture-2026",
+  "checkedAt": "2026-08-21",
+  "identityPolicy": "FRANK-Ω uses locked owned references. Third-party marks are deterministic exact assets or exact plain-text fallbacks. No third-party mark or mascot was generated.",
+  "assets": [
+    {
+      "id": "frank-omega-owned-identity",
+      "owner": "FrankX",
+      "officialSource": "C:/Users/frank/starlight/repos/frankx.ai-vercel-website/public/images/mascot/",
+      "referencePaths": [
+        "frank-omega-hero-v1.png",
+        "frank-omega-thinking-v1.png"
+      ],
+      "renderPath": "source/frank-omega-systems-atelier-source.png",
+      "rightsStatus": "owned",
+      "normalization": "Identity-preserving image generation from locked local references; exact public typography added outside generated pixels."
+    },
+    {
+      "id": "openai-wordmark",
+      "owner": "OpenAI",
+      "officialSource": "https://openai.com/brand/",
+      "downloadUrl": "https://images.ctfassets.net/kftzwdyauwt9/2fkAIT3PbTRytKTBx9cx8o/229bc28cb338565fe735d8935abc801f/OpenAI_Wordmark_Gif.gif?fm=webp&q=90&w=3840",
+      "originalPath": "assets/official/openai-wordmark.webp",
+      "renderPath": "assets/official/openai-wordmark-trim.png",
+      "rightsStatus": "official-use-permitted",
+      "normalization": "Transparent/blank canvas was trimmed and the unchanged mark rasterized to PNG for renderer compatibility; no recolor, deformation, effect, or redrawing."
+    },
+    {
+      "id": "google-gemini-icon",
+      "owner": "Google",
+      "officialSource": "https://about.google/brand-resource-center/guidance/",
+      "downloadUrl": "https://play-lh.googleusercontent.com/C64IqPWyFoCZzXVxXVl0Y6mliiNlG_sZJsqul-SBvk9ZL0wJHlU0Eho2wvsBHhho0FT5XQtH55RVGerIwXF_MA=s512",
+      "originalPath": "assets/official/gemini-app-icon.png",
+      "renderPath": "assets/official/gemini-app-icon.png",
+      "rightsStatus": "official-use-permitted",
+      "normalization": "Scaled proportionally only; no alteration."
+    },
+    {
+      "id": "mistral-emblem",
+      "owner": "Mistral AI",
+      "officialSource": "https://mistral.ai/brand/",
+      "downloadUrl": "https://mistral.ai/_astro/cover-logo-icon-gradient_Z1vzKon.webp?dpl=6a8709da922de5449f69f9a3",
+      "originalPath": "assets/official/mistral-icon.webp",
+      "renderPath": "assets/official/mistral-icon-trim.png",
+      "rightsStatus": "official-use-permitted",
+      "normalization": "Blank canvas was trimmed and the unchanged emblem rasterized to PNG for renderer compatibility; no recolor, deformation, effect, or redrawing.",
+      "terminology": "Official Mistral documentation calls this pixel cat an emblem, not a mascot."
+    },
+    {
+      "id": "anthropic-text",
+      "owner": "Anthropic",
+      "officialSource": "https://www.anthropic.com/news",
+      "renderPath": null,
+      "rightsStatus": "plain-text-only",
+      "reason": "The official press-kit download required an unavailable signed asset in this run."
+    },
+    {
+      "id": "meta-llama-text",
+      "owner": "Meta",
+      "officialSource": "https://ai.meta.com/llama/get-started/",
+      "renderPath": null,
+      "rightsStatus": "plain-text-only",
+      "reason": "No suitable public Llama identity asset was verified for this educational plate."
+    },
+    {
+      "id": "xai-text",
+      "owner": "xAI",
+      "officialSource": "https://x.ai/legal/brand-guidelines",
+      "renderPath": null,
+      "rightsStatus": "plain-text-only",
+      "reason": "The exact official logo package was blocked by the public download route in this run."
+    }
+  ]
+}

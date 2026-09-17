@@ -1,0 +1,214 @@
+{
+  "$schema": "../../../../../../design-agent-standards/schemas/design-loop-evidence.schema.json",
+  "version": "2026-08-21",
+  "task": "Research, design, generate, and package a reusable Infogenius social infographic system plus an ultimate AI architecture pilot.",
+  "surface": "1440x1800 reference plate, 1080x1350 feed export, and five 1080x1350 carousel slides",
+  "audience": "AI architects, technical founders, agent-system builders, enterprise AI leaders, and sophisticated creators",
+  "first_read": "Build the production system, not just the model list; the cutaway reveals orchestration, context, action, recovery, trust, and evaluation.",
+  "standards": [
+    "design-agent-standards/OUTCOMES.md",
+    "design-agent-standards/PREMIUM_ASSET_STANDARD.md",
+    "design-agent-standards/AGENTIC_DESIGN_LOOP.md",
+    "starlight-design-intelligence/brand-image-system/standards/PREMIUM_IMAGE_PROMPT_STANDARD.md",
+    "starlight-design-intelligence/brand-image-system/standards/PREMIUM_INFOGRAPHIC_STANDARD.md",
+    "starlight-design-intelligence/brand-image-system/standards/INFOGENIUS_ADAPTER.md",
+    "starlight-design-intelligence/evals/generated-asset-quality-gate.md"
+  ],
+  "references": [
+    {
+      "label": "Canonical FRANK-Ω identity",
+      "source": "frankx.ai-vercel-website/public/images/mascot/frank-omega-hero-v1.png and frank-omega-thinking-v1.png",
+      "reason": "Locks the likeable black, purple, and cyan FrankX protagonist and prevents a generic replacement robot."
+    },
+    {
+      "label": "Official and primary research ledger",
+      "source": "brand-image-system/runtime/examples/ultimate-ai-architecture-infogenius/sources.json",
+      "reason": "Binds every architecture and ecosystem claim to current source material."
+    },
+    {
+      "label": "Semantic architecture",
+      "source": "brand-image-system/runtime/examples/ultimate-ai-architecture-infogenius/semantic-model.json",
+      "reason": "Defines nodes, controls, data relationships, and feedback before styling."
+    },
+    {
+      "label": "Official identity provenance",
+      "source": "brand-image-system/runtime/examples/ultimate-ai-architecture-infogenius/asset-provenance.json",
+      "reason": "Prevents generated marks, altered logos, and unsupported mascot claims."
+    },
+    {
+      "label": "Generated source prompt",
+      "source": "brand-image-system/runtime/examples/ultimate-ai-architecture-infogenius/prompts/source-layer-v2.txt",
+      "reason": "Makes the illustration role and exclusions reproducible."
+    }
+  ],
+  "direction": {
+    "keep": [
+      "canonical FRANK-Ω as the brand-owned hero protagonist",
+      "one memorable tactile cutaway",
+      "exact deterministic callouts and source rails",
+      "provider, protocol, and runtime separation",
+      "sentence-case editorial typography",
+      "one-sheet plus carousel from the same contract"
+    ],
+    "avoid": [
+      "generic replacement robots or invented external mascots",
+      "dark AI dashboard chrome",
+      "glowing brain and orbit-node clichés",
+      "generated labels, arrows, logos, UI, or pseudo-copy",
+      "provider rankings without shared evidence",
+      "fabricated official mascots",
+      "tiny mobile copy as the primary release"
+    ],
+    "signature": "One system, two roles: FRANK-Ω inside an obsidian systems atelier for the brand hero; a bright mineral-paper cutaway for the evidence-rich infographic.",
+    "system": [
+      "locked FRANK-Ω identity references for the brand hero",
+      "Codex built-in image generation for the non-semantic source layer",
+      "JSON Schema semantic/publication contract",
+      "SVG exact-text renderers",
+      "Sharp raster exports",
+      "first-party identity assets or plain-text fallback",
+      "long description and text equivalent",
+      "diagnostic scoring with human approval pending"
+    ]
+  },
+  "asset_quality": {
+    "tier": "B",
+    "source_method": "generated-media",
+    "provenance": "generated",
+    "why_premium": "The generated source supplies exceptional material and depth while deterministic composition preserves factual, typographic, identity, and accessibility control.",
+    "shortcut_risk": "low",
+    "context_tested": true
+  },
+  "artifacts": [
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/source/frank-omega-systems-atelier-source.png",
+      "kind": "FRANK-Ω generated hero source",
+      "inspected": true,
+      "notes": "Canonical identity, architecture integrity, four blank annotation surfaces, and subtle guardian aura inspected before overlay."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/masters/frank-omega-systems-atelier-hero.png",
+      "kind": "FRANK-Ω 16:9 editorial hero",
+      "inspected": true,
+      "notes": "Exact sentence-case headline, four integrated labels, quiet provider rail, no generated marks, and no-endorsement note inspected."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/source/ai-architecture-source-v2.png",
+      "kind": "generated source illustration",
+      "inspected": true,
+      "notes": "Inspected after an image edit removed generated callout boxes, lines, text, and divider artifacts."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/masters/master.png",
+      "kind": "1440x1800 social reference infographic",
+      "inspected": true,
+      "notes": "All eight callouts, six provider identities, two ecosystem lenses, source rail, and no-endorsement note were inspected."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/crops/social-1080x1350.png",
+      "kind": "1080x1350 feed infographic",
+      "inspected": true,
+      "notes": "Primary hierarchy and exact copy remain intact at the target feed export."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/crops/carousel/01-cover.png",
+      "kind": "social carousel cover",
+      "inspected": true,
+      "notes": "Three-second headline, focal architecture, thesis band, and swipe cue inspected."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/crops/carousel/02-orchestration.png",
+      "kind": "social carousel architecture slide",
+      "inspected": true,
+      "notes": "Model gateway, agent control plane, multi-agent workshop, and operating rule are mobile-readable."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/crops/carousel/03-context-action-runtime.png",
+      "kind": "social carousel architecture slide",
+      "inspected": true,
+      "notes": "Context, capability, runtime, and protocol boundary are mobile-readable."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/crops/carousel/04-trust-learning.png",
+      "kind": "social carousel architecture slide",
+      "inspected": true,
+      "notes": "Trust, human approval, observability, and reviewed feedback are visually distinct and readable."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/crops/carousel/05-ecosystem-map.png",
+      "kind": "social carousel ecosystem slide",
+      "inspected": true,
+      "notes": "Provider cards, exact allowed marks, plain-text fallbacks, protocol/runtime distinction, and CTA inspected."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot/accessibility/long-description.md",
+      "kind": "long description",
+      "inspected": true,
+      "notes": "Communicates the thesis, reading order, architecture, ecosystem lenses, and independent-editorial status."
+    }
+  ],
+  "checks": [
+    {
+      "name": "frankx-identity",
+      "status": "pass",
+      "evidence": "The 16:9 hero uses canonical FRANK-Ω and the requested cyan, purple, graphite, ivory, and gold atelier direction."
+    },
+    {
+      "name": "asset-tier",
+      "status": "pass",
+      "evidence": "Tier B generated media is used only for the tactile illustration; Tier C deterministic SVG is the semantic publication layer."
+    },
+    {
+      "name": "claim-ledger",
+      "status": "pass",
+      "evidence": "Every public architecture and ecosystem claim resolves to sources.json."
+    },
+    {
+      "name": "semantic-grammar",
+      "status": "pass",
+      "evidence": "The bounded-system grammar keeps providers, protocols, runtimes, controls, and feedback in distinct roles."
+    },
+    {
+      "name": "identity-integrity",
+      "status": "pass",
+      "evidence": "Only exact first-party assets or exact text fallbacks are used; no model-generated logo or unsupported mascot claim appears."
+    },
+    {
+      "name": "deterministic-overlay",
+      "status": "pass",
+      "evidence": "All words, callouts, connectors, sources, marks, and accessibility hooks are code-rendered."
+    },
+    {
+      "name": "export-inspection",
+      "status": "pass",
+      "evidence": "The source, master, 1080 feed export, 360 preview, and all five carousel PNGs were inspected from actual files."
+    },
+    {
+      "name": "mobile-release",
+      "status": "pass",
+      "evidence": "The dense plate is explicitly secondary on mobile; the five-slide carousel supplies the no-tap readable release."
+    },
+    {
+      "name": "accessibility",
+      "status": "pass",
+      "evidence": "Short identification, long description, text equivalent, contrast, reading order, and source ledger are present."
+    },
+    {
+      "name": "human-approval",
+      "status": "blocked",
+      "evidence": "The maker score is diagnostic only; explicit human approval and independent semantic review are still pending."
+    }
+  ],
+  "score": {
+    "total": 28,
+    "max": 30,
+    "notes": "Diagnostic only: hierarchy 5, ownability 5, craft 5, accessibility 4, accuracy/provenance 5, usefulness 4. It is eligible for human review, not automatically approved."
+  },
+  "decision": "iterate",
+  "known_risks": [
+    "Human approval and an independent semantic review remain required before publication or series-scale reuse.",
+    "The one-sheet is a save/open artifact at 360 pixels; use the carousel as the primary mobile release.",
+    "Third-party mark permission remains use-context dependent; plain text is the mandatory fallback when the publication context changes.",
+    "The current direction should be compared with one meaningfully different human-reviewed direction before becoming a frozen series template."
+  ]
+}

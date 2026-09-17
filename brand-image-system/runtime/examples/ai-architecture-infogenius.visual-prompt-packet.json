@@ -1,0 +1,359 @@
+{
+  "$schema": "../schemas/visual-prompt-packet.schema.json",
+  "contractVersion": "visual-prompt-packet.v1",
+  "packetId": "2026-08-21-ai-architecture-infogenius-pilot",
+  "brand": {
+    "operatingUnit": "ai-architect-coe",
+    "brandPack": "pending-central-pack; use repo-local AI CoE sources",
+    "mode": "universal-premium",
+    "arcaneaGate": null,
+    "canonSource": null,
+    "recognitionTests": [
+      "Reads as an evidence-led architecture publication without a logo",
+      "Cannot be mistaken for Arcanea or a generic dark AI dashboard after a color swap"
+    ]
+  },
+  "outcome": {
+    "audience": "Technical leaders evaluating a premium AI architecture visual workflow",
+    "surface": "Editorial article architecture plate and Open Graph derivative",
+    "dimensions": {
+      "width": 1920,
+      "height": 1080,
+      "unit": "px"
+    },
+    "aspectRatio": "16:9",
+    "firstRead": "A semantic-first production flow separates researched truth from generated illustration and exact publication design",
+    "evidence": [
+      "Dated primary-source ledger",
+      "Explicit claim, node, and edge model",
+      "Deterministic overlay and accessibility plan"
+    ],
+    "assetTier": "B",
+    "productionLane": "deterministic-composite",
+    "publicationState": "draft",
+    "failureModes": [
+      "Generated pseudo-copy or invented arrows",
+      "False linearity that hides semantic revision",
+      "Generated or altered AI-lab marks",
+      "Unreadable article-width labels",
+      "Visual score used to approve unverified architecture"
+    ],
+    "acceptanceGate": [
+      "Independent semantic review passes",
+      "Final composite is inspected at master, article, and mobile widths",
+      "30-point diagnostic score is at least 26",
+      "Human approval is explicit"
+    ]
+  },
+  "research": {
+    "currentAsOf": "2026-08-21",
+    "sources": [
+      {
+        "id": "openai-image-guide",
+        "title": "Image generation",
+        "url": "https://developers.openai.com/api/docs/guides/image-generation",
+        "publisher": "OpenAI",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "google-image-guide",
+        "title": "Gemini API image generation",
+        "url": "https://ai.google.dev/gemini-api/docs/image-generation",
+        "publisher": "Google",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "w3c-complex-images",
+        "title": "Complex Images",
+        "url": "https://www.w3.org/WAI/tutorials/images/complex/",
+        "publisher": "W3C Web Accessibility Initiative",
+        "kind": "standard",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "openai-brand",
+        "title": "OpenAI Design Guidelines",
+        "url": "https://openai.com/brand/",
+        "publisher": "OpenAI",
+        "kind": "official-brand",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "starlight-visual-standard",
+        "title": "Premium Infographic Standard",
+        "url": "https://github.com/frankxai/starlight-design-intelligence/blob/main/brand-image-system/standards/PREMIUM_INFOGRAPHIC_STANDARD.md",
+        "publisher": "Starlight Design Intelligence",
+        "kind": "repository",
+        "status": "source-linked",
+        "checkedAt": "2026-08-21"
+      }
+    ]
+  },
+  "semantic": {
+    "required": true,
+    "artifactClass": "infographic",
+    "thesis": "Image generation is one controlled source layer inside a sourced, deterministic, and independently reviewed infographic workflow.",
+    "claims": [
+      {
+        "id": "claim-openai-limitations",
+        "text": "Current GPT Image models may still struggle with precise text placement and layout-sensitive composition.",
+        "type": "fact",
+        "sourceIds": ["openai-image-guide"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Risk note beside the generated source layer"
+      },
+      {
+        "id": "claim-google-text-first",
+        "text": "For text in generated imagery, current Gemini guidance recommends preparing the text first and then requesting the image with that text.",
+        "type": "recommendation",
+        "sourceIds": ["google-image-guide"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Exact-copy handoff into the publication layer"
+      },
+      {
+        "id": "claim-accessible-description",
+        "text": "Complex diagrams and infographics require a short identification and an equivalent long description.",
+        "type": "fact",
+        "sourceIds": ["w3c-complex-images"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Accessibility output attached to the publication state"
+      },
+      {
+        "id": "claim-generated-layer-role",
+        "text": "Generated imagery is an optional illustration layer; the semantic model and deterministic composite remain authoritative.",
+        "type": "recommendation",
+        "sourceIds": ["starlight-visual-standard", "openai-image-guide"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Three-layer hierarchy and labeled state transitions"
+      }
+    ],
+    "diagram": {
+      "grammar": "state-machine",
+      "readingOrder": [
+        "node-research",
+        "node-semantic-model",
+        "node-generated-source",
+        "node-deterministic-master",
+        "node-dual-review",
+        "node-publication"
+      ],
+      "nodes": [
+        {
+          "id": "node-research",
+          "label": "Primary-source research",
+          "type": "state",
+          "sourceIds": ["starlight-visual-standard"]
+        },
+        {
+          "id": "node-semantic-model",
+          "label": "Claim and relationship model",
+          "type": "artifact",
+          "sourceIds": ["starlight-visual-standard"]
+        },
+        {
+          "id": "node-generated-source",
+          "label": "Optional generated illustration",
+          "type": "artifact",
+          "sourceIds": ["openai-image-guide", "google-image-guide"]
+        },
+        {
+          "id": "node-deterministic-master",
+          "label": "Exact publication composite",
+          "type": "artifact",
+          "sourceIds": ["starlight-visual-standard"]
+        },
+        {
+          "id": "node-dual-review",
+          "label": "Semantic and visual review",
+          "type": "control",
+          "sourceIds": ["starlight-visual-standard"]
+        },
+        {
+          "id": "node-publication",
+          "label": "Accessible publication packet",
+          "type": "outcome",
+          "sourceIds": ["w3c-complex-images", "starlight-visual-standard"]
+        }
+      ],
+      "edges": [
+        {
+          "id": "edge-research-to-model",
+          "from": "node-research",
+          "to": "node-semantic-model",
+          "relationship": "data-flow",
+          "condition": "Material claims have resolvable sources",
+          "sourceIds": ["starlight-visual-standard"]
+        },
+        {
+          "id": "edge-model-to-generation",
+          "from": "node-semantic-model",
+          "to": "node-generated-source",
+          "relationship": "control",
+          "condition": "Semantic review permits a non-semantic illustration role",
+          "sourceIds": ["starlight-visual-standard"]
+        },
+        {
+          "id": "edge-generation-to-master",
+          "from": "node-generated-source",
+          "to": "node-deterministic-master",
+          "relationship": "data-flow",
+          "condition": "Generated source passes artifact and crop inspection",
+          "sourceIds": ["openai-image-guide", "google-image-guide"]
+        },
+        {
+          "id": "edge-master-to-review",
+          "from": "node-deterministic-master",
+          "to": "node-dual-review",
+          "relationship": "control",
+          "condition": "Exact copy, data, relationships, and identity assets are present",
+          "sourceIds": ["starlight-visual-standard"]
+        },
+        {
+          "id": "edge-review-to-publication",
+          "from": "node-dual-review",
+          "to": "node-publication",
+          "relationship": "control",
+          "condition": "Both reviews pass, score is at least 26, and a human approves",
+          "sourceIds": ["w3c-complex-images", "starlight-visual-standard"]
+        },
+        {
+          "id": "edge-review-to-model",
+          "from": "node-dual-review",
+          "to": "node-semantic-model",
+          "relationship": "feedback",
+          "condition": "Semantic review returns revise or hold",
+          "sourceIds": ["starlight-visual-standard"]
+        }
+      ]
+    }
+  },
+  "composition": {
+    "subject": "A tactile cutaway of an editorial AI architecture studio with six clearly separated production states",
+    "context": "A calm, light-led technical publishing environment rather than a dark command center",
+    "layout": "Central horizontal state-machine composition with a visible feedback loop, reserved title zone, exact-label zones, source rail, and long-description reference",
+    "artDirection": "Institutional editorial clarity, warm technical paper, precise graphite structures, restrained cobalt and amber signals, physical depth without sci-fi spectacle",
+    "paletteRoles": [
+      "Warm paper for information surfaces",
+      "Graphite for system boundaries",
+      "Cobalt for verified forward flow",
+      "Amber for review and revision",
+      "Neutral gray for optional illustration"
+    ],
+    "safeZones": [
+      "Upper-left title and thesis",
+      "Six deterministic node labels",
+      "Lower source and accessibility rail",
+      "Right-side publication outcome"
+    ]
+  },
+  "identity": {
+    "thirdPartyBrands": [
+      {
+        "name": "OpenAI",
+        "use": "Plain-text source attribution only",
+        "assetSource": "https://openai.com/brand/",
+        "rightsStatus": "plain-text-only",
+        "transformation": "none"
+      },
+      {
+        "name": "Google",
+        "use": "Plain-text source attribution only",
+        "assetSource": "https://about.google/brand-resource-center/guidance/",
+        "rightsStatus": "plain-text-only",
+        "transformation": "none"
+      }
+    ],
+    "characters": []
+  },
+  "generation": {
+    "modelLane": "Codex image generation or the verified best available premium still-image lane",
+    "modelStatus": "runtime-best-available",
+    "capabilityReceipt": "At execution, store the tool-returned model receipt; do not infer a model name from the harness",
+    "sourceRole": "illustration-layer",
+    "promptVersion": "v1",
+    "prompt": "Create a cinematic but restrained 16:9 editorial source layer for an AI architecture infographic. Show a tactile cutaway of a professional publishing studio where research becomes a semantic model, optional generated illustration, an exact publication master, dual review, and an accessible release packet. Use warm technical paper, graphite structures, restrained cobalt signal paths, and amber review light. Reserve clean surfaces for six later deterministic labels, one thesis, a source rail, and an accessibility note. The feedback path from review to the semantic model must have physical space but no generated arrow. No text, numbers, diagrams, logos, lab mascots, fake UI, dark command-center chrome, glowing brains, node-cloud filler, or all-caps poster styling. This is an illustration layer only; do not invent architecture relationships.",
+    "constraints": [
+      "No generated public text",
+      "No generated arrows or causal connectors",
+      "No generated third-party marks or mascots",
+      "No dark AI-dashboard or generic neon-node aesthetic",
+      "Preserve clean negative space for exact publication overlays"
+    ],
+    "references": [],
+    "settings": {
+      "aspectRatio": "16:9",
+      "qualityIntent": "high-fidelity source still",
+      "variantCount": 1
+    }
+  },
+  "deterministic": {
+    "required": true,
+    "route": "HTML/CSS or Figma master exported to PNG and WebP",
+    "exactText": true,
+    "exactData": true,
+    "exactLogos": true,
+    "overlayPlan": [
+      "Render title, thesis, six node labels, and conditions from semantic-model.json",
+      "Render every edge from the declared edge list with relationship-specific styling",
+      "Use plain-text source names; do not place lab logos in this plate",
+      "Export article, Open Graph, and mobile crops from one exact master"
+    ]
+  },
+  "accessibility": {
+    "alt": "State-machine infographic showing a sourced semantic model, optional generated illustration, deterministic publication design, dual review, and accessible release.",
+    "longDescriptionPath": "accessibility/long-description.md",
+    "textEquivalentPath": "accessibility/process-table.md",
+    "deliveryChecks": [
+      "Master 1920 by 1080",
+      "Article width at 680 CSS pixels",
+      "Mobile width at 360 CSS pixels",
+      "Open Graph crop at 1200 by 630"
+    ]
+  },
+  "output": {
+    "jobRoot": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ai-architecture-infogenius-pilot",
+    "artifacts": [
+      {
+        "role": "generated-source-layer",
+        "path": "source/generated-layer.png",
+        "sha256": null,
+        "inspected": false
+      },
+      {
+        "role": "publication-master",
+        "path": "masters/master.png",
+        "sha256": null,
+        "inspected": false
+      },
+      {
+        "role": "long-description",
+        "path": "accessibility/long-description.md",
+        "sha256": null,
+        "inspected": false
+      }
+    ]
+  },
+  "qa": {
+    "semanticReview": {
+      "reviewer": "Independent architecture or research reviewer required before candidate state",
+      "status": "pending",
+      "notes": "This example defines the review contract but does not claim that a production artifact exists."
+    },
+    "visualReview": {
+      "reviewer": "Independent visual-quality reviewer required after export",
+      "status": "pending",
+      "notes": "Inspect actual source and composite at every declared delivery size."
+    },
+    "score30": 0,
+    "inspected": false,
+    "decision": "draft",
+    "humanDecision": "pending"
+  },
+  "updatedAt": "2026-08-21"
+}

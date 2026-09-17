@@ -1,0 +1,610 @@
+{
+  "$schema": "../../schemas/visual-prompt-packet.schema.json",
+  "contractVersion": "visual-prompt-packet.v1",
+  "packetId": "2026-08-21-ultimate-ai-architecture-infogenius",
+  "brand": {
+    "operatingUnit": "ai-architect-coe",
+    "brandPack": "universal-premium AI architecture editorial system",
+    "mode": "universal-premium",
+    "arcaneaGate": null,
+    "canonSource": null,
+    "recognitionTests": [
+      "Without logos, the bright mineral-paper cutaway still reads as a premium AI architecture field guide",
+      "A color swap cannot turn the system into a generic dark AI dashboard"
+    ]
+  },
+  "outcome": {
+    "audience": "AI architects, technical founders, agent-system builders, enterprise AI leaders, and sophisticated creators",
+    "surface": "1440x1800 reference infographic plus five 1080x1350 social carousel slides",
+    "dimensions": {
+      "width": 1440,
+      "height": 1800,
+      "unit": "px"
+    },
+    "aspectRatio": "4:5",
+    "firstRead": "Build the production system, not just the model list",
+    "evidence": [
+      "Official lab, protocol, OSS runtime, brand, and social-platform source ledger",
+      "Claim ledger plus bounded-system nodes and relationships",
+      "Exact deterministic public copy, connectors, identity, and citations",
+      "Inspected 4:5 master, feed export, five carousel slides, and 360-pixel previews"
+    ],
+    "assetTier": "B",
+    "publicationState": "draft",
+    "failureModes": [
+      "Generated public copy, arrows, logos, or pseudo-UI",
+      "Provider ranking without shared performance evidence",
+      "MCP, A2A, providers, and runtimes flattened into one taxonomy",
+      "Unsupported official mascot claims",
+      "Dense one-sheet used as the primary no-tap mobile release",
+      "Maker score treated as human approval"
+    ],
+    "acceptanceGate": [
+      "Every material claim resolves to sources.json",
+      "Independent semantic review passes",
+      "Actual exports pass visual and mobile inspection",
+      "Diagnostic score remains at least 26 out of 30",
+      "Human approval is explicit before publication or series freeze"
+    ]
+  },
+  "research": {
+    "currentAsOf": "2026-08-21",
+    "sources": [
+      {
+        "id": "openai-agents",
+        "title": "Agents",
+        "url": "https://openai.github.io/openai-agents-python/agents/",
+        "publisher": "OpenAI",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "openai-orchestration",
+        "title": "Orchestrating multiple agents",
+        "url": "https://openai.github.io/openai-agents-python/multi_agent/",
+        "publisher": "OpenAI",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "openai-tracing",
+        "title": "Tracing",
+        "url": "https://openai.github.io/openai-agents-python/tracing/",
+        "publisher": "OpenAI",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "anthropic-agents",
+        "title": "Building effective agents",
+        "url": "https://www.anthropic.com/engineering/building-effective-agents",
+        "publisher": "Anthropic",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "anthropic-mcp",
+        "title": "Introducing the Model Context Protocol",
+        "url": "https://www.anthropic.com/research/model-context-protocol",
+        "publisher": "Anthropic",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "anthropic-trust",
+        "title": "Building trustworthy agents",
+        "url": "https://www.anthropic.com/research/trustworthy-agents",
+        "publisher": "Anthropic",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "google-a2a",
+        "title": "A2A: A new era of agent interoperability",
+        "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
+        "publisher": "Google",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "a2a-spec",
+        "title": "A2A Protocol specification 0.3.0",
+        "url": "https://a2a-protocol.org/v0.3.0/specification/",
+        "publisher": "A2A Project",
+        "kind": "standard",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "microsoft-framework",
+        "title": "Microsoft Agent Framework overview",
+        "url": "https://learn.microsoft.com/en-us/agent-framework/overview/",
+        "publisher": "Microsoft",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "mistral-agents",
+        "title": "Agents and conversations",
+        "url": "https://docs.mistral.ai/studio/agents/agents-api",
+        "publisher": "Mistral AI",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "xai-multi-agent",
+        "title": "Multi-agent",
+        "url": "https://docs.x.ai/developers/model-capabilities/text/multi-agent",
+        "publisher": "xAI",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "xai-tools",
+        "title": "Collections search",
+        "url": "https://docs.x.ai/developers/tools/collections-search",
+        "publisher": "xAI",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "meta-llama",
+        "title": "Llama: Get started",
+        "url": "https://ai.meta.com/llama/get-started/",
+        "publisher": "Meta",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "meta-responsible",
+        "title": "Llama responsible use guide",
+        "url": "https://ai.meta.com/llama/responsible-use-guide/",
+        "publisher": "Meta",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "langgraph-docs",
+        "title": "LangGraph documentation",
+        "url": "https://langchain-ai.github.io/langgraph/",
+        "publisher": "LangChain",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "crewai-docs",
+        "title": "CrewAI documentation",
+        "url": "https://docs.crewai.com/",
+        "publisher": "CrewAI",
+        "kind": "primary",
+        "status": "checked",
+        "checkedAt": "2026-08-21"
+      },
+      {
+        "id": "premium-infographic-standard",
+        "title": "Premium Infographic Standard",
+        "url": "https://github.com/frankxai/starlight-design-intelligence/blob/main/brand-image-system/standards/PREMIUM_INFOGRAPHIC_STANDARD.md",
+        "publisher": "Starlight Design Intelligence",
+        "kind": "repository",
+        "status": "source-linked",
+        "checkedAt": "2026-08-21"
+      }
+    ]
+  },
+  "semantic": {
+    "required": true,
+    "artifactClass": "infographic",
+    "thesis": "Model choice matters. The durable advantage is orchestration, context, trusted action, recovery, and evaluation.",
+    "claims": [
+      {
+        "id": "claim-model-gateway",
+        "text": "A model gateway should route work by capability, risk, latency, cost, and modality.",
+        "type": "recommendation",
+        "sourceIds": ["openai-agents", "mistral-agents", "xai-multi-agent"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Six equally weighted provider chambers behind one shared gateway"
+      },
+      {
+        "id": "claim-agent-control-plane",
+        "text": "A production agent control plane declares roles, instructions, routing, handoffs, budgets, permissions, and stop conditions.",
+        "type": "recommendation",
+        "sourceIds": ["openai-orchestration", "anthropic-agents", "microsoft-framework"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Central operator and orchestration table"
+      },
+      {
+        "id": "claim-context-memory",
+        "text": "Context and memory should be retrieved, scoped, and persisted deliberately.",
+        "type": "recommendation",
+        "sourceIds": ["anthropic-mcp", "langgraph-docs", "crewai-docs"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Left context-and-memory library"
+      },
+      {
+        "id": "claim-capability-mesh",
+        "text": "Tools and connectors should use typed contracts, least privilege, provenance, and validation.",
+        "type": "recommendation",
+        "sourceIds": ["anthropic-mcp", "openai-agents", "xai-tools"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Left capability workbench"
+      },
+      {
+        "id": "claim-durable-runtime",
+        "text": "Long-running production work needs explicit state, retries, checkpoints, idempotency, and compensation paths.",
+        "type": "recommendation",
+        "sourceIds": ["microsoft-framework", "langgraph-docs", "a2a-spec"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Lower runtime engine"
+      },
+      {
+        "id": "claim-human-trust",
+        "text": "High-impact actions require policy gates, scoped permissions, human approval, and audit evidence.",
+        "type": "recommendation",
+        "sourceIds": ["anthropic-trust", "microsoft-framework", "meta-responsible"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Right trust and approval chamber"
+      },
+      {
+        "id": "claim-observability",
+        "text": "Traces, evaluations, cost, latency, and incident evidence must be first-class runtime outputs.",
+        "type": "recommendation",
+        "sourceIds": ["openai-tracing", "microsoft-framework", "crewai-docs"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Front evaluation and observability studio"
+      },
+      {
+        "id": "claim-mcp-a2a-distinction",
+        "text": "MCP connects an AI system to tools and context; A2A coordinates work between independent agents.",
+        "type": "comparison",
+        "sourceIds": ["anthropic-mcp", "google-a2a", "a2a-spec"],
+        "verificationStatus": "source-linked",
+        "visualEncoding": "Separate protocol boundary callout"
+      }
+    ],
+    "diagram": {
+      "grammar": "bounded-system",
+      "readingOrder": [
+        "node-model-gateway",
+        "node-agent-control-plane",
+        "node-multi-agent-workshop",
+        "node-context-memory",
+        "node-capability-mesh",
+        "node-durable-runtime",
+        "node-trust-human-approval",
+        "node-evals-observability"
+      ],
+      "nodes": [
+        {
+          "id": "node-model-gateway",
+          "label": "Model gateway",
+          "type": "component",
+          "sourceIds": ["openai-agents", "mistral-agents", "xai-multi-agent"]
+        },
+        {
+          "id": "node-agent-control-plane",
+          "label": "Agent control plane",
+          "type": "control",
+          "sourceIds": ["openai-orchestration", "anthropic-agents", "microsoft-framework"]
+        },
+        {
+          "id": "node-multi-agent-workshop",
+          "label": "Multi-agent workshop",
+          "type": "actor",
+          "sourceIds": ["openai-orchestration", "xai-multi-agent", "google-a2a"]
+        },
+        {
+          "id": "node-context-memory",
+          "label": "Context and memory",
+          "type": "component",
+          "sourceIds": ["anthropic-mcp", "langgraph-docs"]
+        },
+        {
+          "id": "node-capability-mesh",
+          "label": "Capability mesh",
+          "type": "component",
+          "sourceIds": ["anthropic-mcp", "openai-agents", "xai-tools"]
+        },
+        {
+          "id": "node-durable-runtime",
+          "label": "Durable runtime",
+          "type": "component",
+          "sourceIds": ["microsoft-framework", "langgraph-docs", "crewai-docs"]
+        },
+        {
+          "id": "node-trust-human-approval",
+          "label": "Trust and human approval",
+          "type": "control",
+          "sourceIds": ["anthropic-trust", "microsoft-framework", "meta-responsible"]
+        },
+        {
+          "id": "node-evals-observability",
+          "label": "Evals and observability",
+          "type": "control",
+          "sourceIds": ["openai-tracing", "microsoft-framework", "crewai-docs"]
+        }
+      ],
+      "edges": [
+        {
+          "id": "edge-gateway-control",
+          "from": "node-model-gateway",
+          "to": "node-agent-control-plane",
+          "relationship": "dependency",
+          "condition": "The control plane requests a model route for a declared task.",
+          "sourceIds": ["openai-agents", "mistral-agents"]
+        },
+        {
+          "id": "edge-control-agents",
+          "from": "node-agent-control-plane",
+          "to": "node-multi-agent-workshop",
+          "relationship": "control",
+          "condition": "Delegation fits the task and remains inside the active budget and policy.",
+          "sourceIds": ["openai-orchestration", "anthropic-agents", "xai-multi-agent"]
+        },
+        {
+          "id": "edge-context-agents",
+          "from": "node-context-memory",
+          "to": "node-multi-agent-workshop",
+          "relationship": "data-flow",
+          "condition": "Retrieved context passes provenance and access checks.",
+          "sourceIds": ["anthropic-mcp", "langgraph-docs"]
+        },
+        {
+          "id": "edge-agents-tools",
+          "from": "node-multi-agent-workshop",
+          "to": "node-capability-mesh",
+          "relationship": "dependency",
+          "condition": "A typed tool contract and scoped permission are available.",
+          "sourceIds": ["openai-agents", "anthropic-mcp", "xai-tools"]
+        },
+        {
+          "id": "edge-runtime-control",
+          "from": "node-durable-runtime",
+          "to": "node-agent-control-plane",
+          "relationship": "containment",
+          "condition": "Long-running work records state and recovery behavior.",
+          "sourceIds": ["microsoft-framework", "langgraph-docs"]
+        },
+        {
+          "id": "edge-trust-action",
+          "from": "node-trust-human-approval",
+          "to": "node-capability-mesh",
+          "relationship": "control",
+          "condition": "High-impact or irreversible actions require an explicit gate.",
+          "sourceIds": ["anthropic-trust", "microsoft-framework"]
+        },
+        {
+          "id": "edge-observe-system",
+          "from": "node-agent-control-plane",
+          "to": "node-evals-observability",
+          "relationship": "observation",
+          "condition": "Every run emits trace, quality, cost, latency, and failure evidence.",
+          "sourceIds": ["openai-tracing", "microsoft-framework", "crewai-docs"]
+        },
+        {
+          "id": "edge-eval-improve",
+          "from": "node-evals-observability",
+          "to": "node-agent-control-plane",
+          "relationship": "feedback",
+          "condition": "Reviewed evidence changes prompts, routes, tools, policies, or models.",
+          "sourceIds": ["openai-tracing", "anthropic-trust"]
+        }
+      ]
+    }
+  },
+  "composition": {
+    "subject": "A photorealistic axonometric cutaway of one coherent multi-agent production atelier",
+    "context": "An independent technical field guide for modern AI architecture",
+    "layout": "Bounded central system, eight exact side callouts, provider gateway, protocol/runtime rail, provider lens, and five-slide mobile decomposition",
+    "artDirection": "Bright mineral paper, ivory ceramic, graphite and brushed metal, restrained cobalt, violet, teal, amber, and vermilion; tactile editorial illustration rather than sci-fi dashboard spectacle",
+    "paletteRoles": [
+      "Warm mineral paper for editorial authority",
+      "Graphite for system boundaries and type",
+      "Cobalt for routing and protocol emphasis",
+      "Violet and teal for context and capability",
+      "Amber and vermilion for runtime, trust, and review"
+    ],
+    "safeZones": [
+      "Upper title and thesis field",
+      "Six blank provider plaques",
+      "Left and right callout margins",
+      "Lower protocol, runtime, provider, source, and accessibility rails"
+    ]
+  },
+  "identity": {
+    "thirdPartyBrands": [
+      {
+        "name": "OpenAI",
+        "use": "Exact official wordmark as a small educational identity accent",
+        "assetSource": "https://openai.com/brand/",
+        "rightsStatus": "official-use-permitted",
+        "transformation": "none"
+      },
+      {
+        "name": "Google Gemini",
+        "use": "Exact official product icon as a small educational identity accent",
+        "assetSource": "https://about.google/brand-resource-center/guidance/",
+        "rightsStatus": "official-use-permitted",
+        "transformation": "none"
+      },
+      {
+        "name": "Mistral AI",
+        "use": "Exact official pixel-cat emblem as a small educational identity accent",
+        "assetSource": "https://mistral.ai/brand/",
+        "rightsStatus": "official-use-permitted",
+        "transformation": "none"
+      },
+      {
+        "name": "Anthropic",
+        "use": "Exact company name only",
+        "assetSource": "https://www.anthropic.com/news",
+        "rightsStatus": "plain-text-only",
+        "transformation": "none"
+      },
+      {
+        "name": "Meta Llama",
+        "use": "Exact ecosystem name only",
+        "assetSource": "https://ai.meta.com/llama/get-started/",
+        "rightsStatus": "plain-text-only",
+        "transformation": "none"
+      },
+      {
+        "name": "xAI",
+        "use": "Exact company name only",
+        "assetSource": "https://x.ai/legal/brand-guidelines",
+        "rightsStatus": "plain-text-only",
+        "transformation": "none"
+      }
+    ],
+    "characters": [
+      {
+        "name": "Original specialist workshop figures",
+        "status": "editorial-original",
+        "source": "prompts/source-layer-v2.txt; subordinate human archetypes, not official mascots or public figures"
+      }
+    ]
+  },
+  "generation": {
+    "modelLane": "Codex built-in image generation",
+    "modelStatus": "runtime-best-available",
+    "capabilityReceipt": "Built-in image generation returned a 4:5 source image and one instructed edit; the harness did not expose a public model identifier.",
+    "sourceRole": "illustration-layer",
+    "promptVersion": "v2",
+    "prompt": "Create a premium 4:5 portrait editorial source illustration for a sophisticated AI-architecture infographic: an axonometric photorealistic cutaway of one coherent multi-agent production atelier with six equal model chambers, a central orchestration control plane, original specialist figures, context and memory, a capability workbench, trust and approval, a durable runtime, and an observability studio. Use mineral paper, warm ivory ceramic, graphite, brushed metal, and restrained cobalt, violet, teal, amber, and vermilion. Reserve exact-overlay space at the title, six blank provider plaques, side callout margins, and lower source rail. No words, numbers, logos, mascots, pseudo-copy, charts, arrows, callout boxes, leader lines, UI, node clouds, glowing brains, generic neon, or invented architecture labels.",
+    "constraints": [
+      "Generated pixels are non-semantic illustration only",
+      "No generated public text, arrows, diagrams, logos, or mascot identity",
+      "No dark AI-dashboard, orbit-node, glowing-brain, or outer-space cliché",
+      "Preserve six blank provider plaques plus title, callout, and source safe zones",
+      "Original figures remain subordinate to the architecture"
+    ],
+    "references": [],
+    "settings": {
+      "aspectRatio": "4:5",
+      "qualityIntent": "premium high-fidelity editorial cutaway",
+      "variantCount": 1,
+      "editIterations": 1
+    }
+  },
+  "deterministic": {
+    "required": true,
+    "route": "Reusable SVG one-sheet and carousel renderers rasterized with Sharp",
+    "exactText": true,
+    "exactData": true,
+    "exactLogos": true,
+    "overlayPlan": [
+      "Render the headline, thesis, eight callout cards, connectors, source IDs, and checked date from template-data.json",
+      "Place exact official identity assets only from asset-provenance.json; use plain text when unavailable",
+      "Keep provider, protocol, runtime, and governance lenses visually distinct",
+      "Export a dense reference plate and a separate five-slide no-tap mobile carousel",
+      "Attach long description, text equivalent, hashes, and human-review status"
+    ]
+  },
+  "accessibility": {
+    "alt": "Infographic of a multi-agent AI production system with a model gateway, orchestration, memory, tools, durable runtime, human approval, and evaluation.",
+    "longDescriptionPath": "accessibility/long-description.md",
+    "textEquivalentPath": "accessibility/text-equivalent.md",
+    "deliveryChecks": [
+      "1440 by 1800 reference plate",
+      "1080 by 1350 feed export",
+      "Five 1080 by 1350 carousel slides",
+      "Five 360 by 450 mobile previews",
+      "Short alt identification and full long description"
+    ]
+  },
+  "output": {
+    "jobRoot": "C:/Users/frank/brands/image-system/ai-architect-coe/2026-08-21-ultimate-ai-architecture-infogenius-pilot",
+    "artifacts": [
+      {
+        "role": "generated-source-layer",
+        "path": "source/ai-architecture-source-v2.png",
+        "sha256": "01b14854f052771c826e85d760bc94849bed2838c4c53124d302cd0ceb7fc579",
+        "inspected": true
+      },
+      {
+        "role": "publication-master",
+        "path": "masters/master.png",
+        "sha256": "d3e1b51dd0117fe87c8824ff9bd4e2c9bdc9aaeeff3fc8d2581e415fff216c8e",
+        "inspected": true
+      },
+      {
+        "role": "feed-export",
+        "path": "crops/social-1080x1350.png",
+        "sha256": "ab681effefc23d262cd897e7d6e1805c15426df985a2d382f2c3c2da20db36a1",
+        "inspected": true
+      },
+      {
+        "role": "carousel-cover",
+        "path": "crops/carousel/01-cover.png",
+        "sha256": "ed29f978c92dbf0491fdc2f24798028d6370b05055800f03ba95aafba769fb16",
+        "inspected": true
+      },
+      {
+        "role": "carousel-orchestration",
+        "path": "crops/carousel/02-orchestration.png",
+        "sha256": "6c708465d043cf2062fe8e76717d4a2e68f0027cae2aad7a7b28d9c87682d799",
+        "inspected": true
+      },
+      {
+        "role": "carousel-context-runtime",
+        "path": "crops/carousel/03-context-action-runtime.png",
+        "sha256": "74baa7d3c63ce1fc2be5ef94fbb639aa66ef2fb4aaf6c77d604e353edd3532f3",
+        "inspected": true
+      },
+      {
+        "role": "carousel-trust-learning",
+        "path": "crops/carousel/04-trust-learning.png",
+        "sha256": "96d4754f6e1fb5af3e1594193c375f3c8f0ee0edf8b4738f58272e304217c54e",
+        "inspected": true
+      },
+      {
+        "role": "carousel-ecosystem-map",
+        "path": "crops/carousel/05-ecosystem-map.png",
+        "sha256": "8f5620aca9321256cc3007202cb10b15c251faa39931b636ca0720eebad37152",
+        "inspected": true
+      },
+      {
+        "role": "long-description",
+        "path": "accessibility/long-description.md",
+        "sha256": "83423a1fcf0c6588a0ff70e6801cb023dc75830111e4b367f72c00b588103ede",
+        "inspected": true
+      },
+      {
+        "role": "text-equivalent",
+        "path": "accessibility/text-equivalent.md",
+        "sha256": "58525f45694ef3e82893b8b7261a11c4e8fb8469ee26e27e8ce12fee4c9d0bd2",
+        "inspected": true
+      }
+    ]
+  },
+  "qa": {
+    "semanticReview": {
+      "reviewer": "Independent architecture or research reviewer required",
+      "status": "pending",
+      "notes": "The source resolution and diagram invariants validate, but the maker is not the final semantic approver."
+    },
+    "visualReview": {
+      "reviewer": "Codex export inspection; human taste review still required",
+      "status": "pass",
+      "notes": "Actual master, feed, carousel, and 360-pixel exports were inspected; the carousel resolves the dense one-sheet mobile limitation."
+    },
+    "score30": 27,
+    "inspected": true,
+    "decision": "eligible-for-human-review",
+    "humanDecision": "pending"
+  },
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "../../schemas/workflow-pack.schema.json",
+  "workflowId": "product-cover",
+  "displayName": "Product Cover System",
+  "version": "2026-08-17",
+  "purpose": "Create a product cover inside a founder-approved brand territory; reflect the offer form while keeping identity, title, claims, and proof exact.",
+  "surfaces": [
+    "product catalog card",
+    "launch page",
+    "storefront cover",
+    "PDF or book cover",
+    "social announcement",
+    "portfolio overview"
+  ],
+  "allowedProductionRoutes": [
+    "real product or proof capture with deterministic composition",
+    "brand-locked HTML/CSS or SVG renderer",
+    "Figma or Canva using canonical brand assets",
+    "premium image generation for a source illustration or physical-artifact layer only",
+    "channel crops derived from one approved master"
+  ],
+  "requiredOutputs": [
+    { "kind": "product truth brief", "pathHint": "product-brief.json" },
+    { "kind": "prompt and model receipt", "pathHint": "prompt-log.json" },
+    { "kind": "media job", "pathHint": "media-job.json" },
+    { "kind": "editable master", "pathHint": "master.html" },
+    { "kind": "portrait cover", "pathHint": "exports/cover-1080x1440.png", "dimensions": "1080x1440" },
+    { "kind": "catalog webp", "pathHint": "exports/cover-1080x1440.webp", "dimensions": "1080x1440" },
+    { "kind": "open graph crop", "pathHint": "exports/cover-1200x630.png", "dimensions": "1200x630" },
+    { "kind": "evidence", "pathHint": "evidence.json" }
+  ],
+  "qaGates": [
+    "active visual foundation reset and taste constitution loaded",
+    "founder-approved brand territory exists before cover production or family fanout",
+    "product form chosen before visual route",
+    "logo or wordmark approval status recorded; canonical does not imply approved",
+    "approved type specimen, visual grammar, voice, and prohibited motifs loaded",
+    "sentence case used except for established acronyms",
+    "title, subtitle, claims, UI, diagrams, prices, and status are deterministic",
+    "generated source contains no final public copy or fake UI",
+    "portrait and open graph crops inspected",
+    "logo-off recognition and color-swap tests passed",
+    "diagnostic score recorded but not used as approval",
+    "independent critique and explicit human decision recorded"
+  ],
+  "blockedRoutes": [
+    "one template reused across unrelated product forms",
+    "typed approximation of an existing logo",
+    "random product-object photography disconnected from the offer",
+    "public cover for hold, rights-blocked, or unverified product without an explicit internal-only label",
+    "model name claimed without a capability receipt",
+    "first-pass generated image treated as final",
+    "all-caps decorative labels or status chrome",
+    "shared dark AI-dashboard styling used as a brand shortcut",
+    "maker self-score used as a ship decision",
+    "batch generation before the application quartet is approved"
+  ],
+  "scoreThreshold": 26,
+  "scoreScale": 30,
+  "approvalRequired": true,
+  "updatedAt": "2026-08-17"
+}

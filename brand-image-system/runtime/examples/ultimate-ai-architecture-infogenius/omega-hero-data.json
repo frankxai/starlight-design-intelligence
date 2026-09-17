@@ -1,0 +1,51 @@
+{
+  "$schema": "../../templates/infogenius-social/hero.schema.json",
+  "contractVersion": "infogenius-hero.v1",
+  "canvas": {
+    "width": 1672,
+    "height": 941,
+    "ink": "#1A1715",
+    "paper": "#F8F2E8"
+  },
+  "sourceImage": "source/frank-omega-systems-atelier-source.png",
+  "header": {
+    "eyebrow": "FrankX.AI · AI architecture field guide · August 2026",
+    "title": "The ultimate AI architecture",
+    "subtitle": "Build the system, not just the model list"
+  },
+  "callouts": [
+    {
+      "title": "Model gateway",
+      "x": 246,
+      "y": 336,
+      "width": 135,
+      "fontSize": 16
+    },
+    {
+      "title": "Context + memory",
+      "x": 18,
+      "y": 724,
+      "width": 236,
+      "fontSize": 17
+    },
+    {
+      "title": "Trust + human approval",
+      "x": 1116,
+      "y": 650,
+      "width": 280,
+      "fontSize": 18
+    },
+    {
+      "title": "Evals + observability",
+      "x": 1149,
+      "y": 742,
+      "width": 342,
+      "fontSize": 20
+    }
+  ],
+  "providers": ["OpenAI", "Anthropic", "Google", "Mistral AI", "Meta Llama", "xAI"],
+  "footer": {
+    "railLabel": "Reference ecosystems · not ranked",
+    "identityLine": "Independent guide · marks omitted here · no endorsement"
+  }
+}

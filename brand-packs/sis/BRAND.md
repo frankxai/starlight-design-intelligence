@@ -15,4 +15,4 @@ Make agentic systems observable, governable, evaluable, and useful.
 
 ## Visual Memory
 
-Command center, constellation, signal, trace, proof, operator, intelligence field. Use these as structure, not decoration.
+Accountability, calm under pressure, visible provenance, legible structure, and human operators making informed decisions. Command centers, constellations, signals, and intelligence fields are legacy metaphors and are not identity defaults during the 2026-08-17 foundation reset.

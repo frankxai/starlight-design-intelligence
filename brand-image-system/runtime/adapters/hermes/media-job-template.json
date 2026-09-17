@@ -1,33 +1,77 @@
 {
   "hermes": {
-    "version": "1.0",
-    "description": "Hermes adapter for brand-image-system runtime. Use this template to generate media-job.json files that Hermes can orchestrate.",
-    "requiredSkills": ["brand-image-system", "todo-discipline"],
-    "recommendedProfiles": ["arcanea", "starlight"],
-    "blockedTools": [],
-    "enforcedRoutes": ["hybrid-declared"],
-    "routeSwitch": "If Hermes image_generate FAL fails, use XAIImageGenProvider (grok-imagine-image-quality@2k). Do not thrice-retry FAL."
+    "version": "2.0",
+    "description": "Fail-closed Hermes adapter for brand-locked, form-specific product media.",
+    "requiredRuntime": ["brand pack", "workflow pack", "product truth", "experiment ledger"],
+    "enforcedRoutes": ["brand-locked", "form-specific", "deterministic-public-copy", "receipt-backed-generation"],
+    "routeSwitch": "Probe first. If the selected image lane fails once, record the failure and switch to another verified lane. Never import an internal provider as an undocumented fallback and never claim the reasoning model generated the image."
   },
   "jobTemplate": {
-    "jobId": "{{date}}-{{brand}}-{{workflow}}",
+    "jobId": "{{date}}-{{brand}}-{{product}}-cover",
     "brandId": "{{brandId}}",
-    "workflowId": "{{workflowId}}",
-    "surface": "",
-    "audience": "",
-    "brief": "",
-    "assetTier": "A",
-    "sourceMethod": "hybrid-or-renderer",
-    "stylePackId": "",
-    "rail": "product|world",
+    "workflowId": "product-cover",
+    "productId": "{{productId}}",
+    "productForm": "{{productForm}}",
+    "assetRole": "cover-master",
+    "surface": "product catalog and launch",
+    "audience": "{{audience}}",
+    "brief": "{{brief}}",
+    "assetTier": "C",
+    "sourceMethod": "brand-locked deterministic composition",
+    "stylePackId": "{{stylePackId}}",
+    "rail": "product",
+    "brandAssets": {
+      "canonicalPack": "runtime/brands/{{brandId}}/brand-pack.json",
+      "logoDecision": "canonical asset or explicit no-logo decision",
+      "logos": [],
+      "fonts": [],
+      "colors": []
+    },
+    "exactCopy": {
+      "title": "{{title}}",
+      "subtitle": "",
+      "eyebrow": "",
+      "statusLabel": "",
+      "claims": []
+    },
+    "generation": {
+      "modelLane": "none-until-probed",
+      "declaredModel": null,
+      "modelKnown": false,
+      "capabilityReceipt": "pending",
+      "promptVersion": "product-cover-v2",
+      "sourceRole": "none unless justified",
+      "settings": {}
+    },
+    "experiment": {
+      "experimentId": "{{experimentId}}",
+      "candidateId": "{{candidateId}}",
+      "baselineId": "hermes-product-cover-v1",
+      "hypothesis": "Form-specific art direction plus canonical identity will outperform the generic cover baseline."
+    },
+    "promptLog": "prompt-log.json",
     "paths": {
-      "jobRoot": "C:/Users/frank/brands/image-system/jobs/{{date}}/{{jobId}}"
+      "jobRoot": "C:/Users/frank/brands/image-system/jobs/{{date}}/{{jobId}}",
+      "source": [],
+      "outputs": [],
+      "evidence": "evidence.json"
     },
     "qa": {
       "inspected": false,
       "score30": 0,
-      "notes": ""
+      "notes": "",
+      "dimensionScores": {
+        "brandFit": 0,
+        "formFit": 0,
+        "craft": 0,
+        "legibility": 0,
+        "truthfulness": 0,
+        "campaignUsefulness": 0
+      },
+      "exportInspections": []
     },
-    "decision": "draft"
+    "decision": "draft",
+    "updatedAt": "{{date}}"
   },
-  "instructions": "Load brand pack + workflow pack first. Declare rail + stylePackId. Exact public text/claims → deterministic. Flagship creative bases → premium gen (Grok 2k). Hybrid OK. Arcanea world: ARCANEA_VISUAL_OS_OPERATING_MODEL.md + arcanea-codex-encyclopedia workflow. score30>=28 + human approve before public."
+  "instructions": "Load product truth, canonical brand assets, and the product-cover workflow first. Generate only source material. Logos, public copy, diagrams, UI, claims, and crops are deterministic. Inspect the exports and require score30 >= 28 plus human approval before public use."
 }

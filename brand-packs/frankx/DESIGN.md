@@ -1,5 +1,7 @@
 # FrankX Brand Design System & Visual Guidelines
 
+> **Foundation reset — 2026-08-17:** This pack is a legacy hypothesis, not an approved identity. Do not use its obsidian, tech-spectrum, font, grid, glow, or production rules for new work. The active source is `brand-image-system/foundation-reset/2026-08-17/`; begin with the Working Intelligence territory and a founder-reviewed black-and-white specimen. Sentence case is mandatory.
+
 > Source of truth for FrankX's visual identity. Dual-spectrum: Tech (emerald/cyan) and Soul (amber/gold).
 > Designed for restraint, technical rigor, and clean editorial long-form content.
 
@@ -37,10 +39,12 @@ colors:
 ---
 
 ## 3 · Typography
-- **Headings & Display:** Poppins/Outfit (bold, clean geometric). Size perfect-fourth scaled (1.333 ratio). 24px - 90px. Tight letter spacing.
+- **Headings & Display:** Poppins, 600–800. Size perfect-fourth scaled (1.333 ratio). 24px–90px. Tight letter spacing. Use only at 18px and above.
 - **Body & Captions:** Inter (clean readability). 14px - 18px. line-height: 1.6 - 1.7. Body text must remain highly legible over void backgrounds.
 - **Data & Readouts:** JetBrains Mono. 12px - 14px. Tabular numbers for console readouts and metrics.
-- **Contemplative Register (Slow-reading):** Source Serif 4/Playfair. Warmer cream ink (`#e8ddd0`). Used only on /canon/ and editorial pathways.
+- **Contemplative Register (Slow-reading):** Playfair Display, normal or italic, 400–600. Warmer cream ink (`#e8ddd0`). Use for essays, thesis language, quotations, and reflective passages.
+
+This is the FrankX production web stack and the portfolio reference implementation. Other brands may inherit Inter and JetBrains Mono as support fonts, but they should not automatically inherit Poppins or Playfair as their identity voice.
 
 ---
 

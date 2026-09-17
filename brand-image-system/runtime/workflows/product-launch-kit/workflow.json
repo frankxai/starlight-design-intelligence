@@ -1,0 +1,56 @@
+{
+  "$schema": "../../schemas/workflow-pack.schema.json",
+  "workflowId": "product-launch-kit",
+  "displayName": "Product Launch Asset Kit",
+  "version": "2026-08-17",
+  "purpose": "Expand one approved product master into the minimum coherent asset family required to validate or launch the offer.",
+  "surfaces": [
+    "product page",
+    "email and newsletter",
+    "LinkedIn and Instagram",
+    "open graph",
+    "sales or application deck",
+    "buyer delivery portal"
+  ],
+  "allowedProductionRoutes": [
+    "approved product-cover master",
+    "real proof screenshots",
+    "deterministic channel crops",
+    "Remotion motion derivative from approved stills",
+    "Figma or Canva production templates"
+  ],
+  "requiredOutputs": [
+    { "kind": "launch truth brief", "pathHint": "launch-brief.json" },
+    { "kind": "cover master", "pathHint": "cover/master.html" },
+    { "kind": "website hero desktop", "pathHint": "website/hero-desktop.png", "dimensions": "1920x1080" },
+    { "kind": "website hero mobile", "pathHint": "website/hero-mobile.png", "dimensions": "1080x1920" },
+    { "kind": "open graph", "pathHint": "social/og.png", "dimensions": "1200x630" },
+    { "kind": "social portrait", "pathHint": "social/portrait.png", "dimensions": "1080x1350" },
+    { "kind": "social square", "pathHint": "social/square.png", "dimensions": "1080x1080" },
+    { "kind": "proof frame", "pathHint": "proof/proof-01.png" },
+    { "kind": "evidence", "pathHint": "evidence.json" }
+  ],
+  "qaGates": [
+    "founder-approved brand territory and application quartet exist",
+    "product is approved for its stated release state",
+    "one message and one next action govern every derivative",
+    "all crops preserve the approved hierarchy",
+    "sentence case used except for established acronyms",
+    "proof is real and status is truthful",
+    "diagnostic score plus independent critique recorded",
+    "explicit human decision recorded before publication"
+  ],
+  "blockedRoutes": [
+    "launch theater for queued or unverified products",
+    "fake testimonials, metrics, customers, or urgency",
+    "new visual language invented per channel",
+    "color-swapped template shared with another owned brand",
+    "batch expansion before the application quartet is approved",
+    "maker self-score used as approval",
+    "public distribution without human approval"
+  ],
+  "scoreThreshold": 26,
+  "scoreScale": 30,
+  "approvalRequired": true,
+  "updatedAt": "2026-08-17"
+}

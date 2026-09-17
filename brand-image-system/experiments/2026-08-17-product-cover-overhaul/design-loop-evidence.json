@@ -1,0 +1,182 @@
+{
+  "$schema": "../../../../design-agent-standards/schemas/design-loop-evidence.schema.json",
+  "version": "2026-08-17",
+  "task": "Overhaul the Hermes product cover and portfolio visualization system across FrankX, GenCreator, Starlight Intelligence, and Arcanea.",
+  "surface": "1080x1440 product covers, 1200x630 open graph crops, and 1920x1080 portfolio overview",
+  "audience": "Founder-operators, AI-native creators, sovereign-system builders, and worldbuilders evaluating distinct product offers.",
+  "first_read": "The covers are legible, but founder review found that the four brands still read as variants of one dark technical house style.",
+  "standards": [
+    "design-agent-standards/OUTCOMES.md",
+    "design-agent-standards/AGENTIC_DESIGN_LOOP.md",
+    "design-agent-standards/PREMIUM_ASSET_STANDARD.md",
+    "design-agent-standards/VISUAL_QA_GATE.md",
+    "starlight-design-intelligence/DESIGN_AGENT_OPERATING_SYSTEM.md",
+    "starlight-design-intelligence/evals/generated-asset-quality-gate.md"
+  ],
+  "references": [
+    {
+      "label": "Audited Hermes baseline",
+      "source": "runtime/adapters/hermes/AUDIT-2026-08-17.md",
+      "reason": "Defines the failure modes that the new system must remove."
+    },
+    {
+      "label": "Canonical product slate",
+      "source": "frankx-strategy/09-evidence/product-funnel-os-2026-08-17/catalog/overlay.json",
+      "reason": "Supplies product names, types, status, and URLs without inventing market truth."
+    },
+    {
+      "label": "Canonical identity assets",
+      "source": "FrankX, GenCreator, and Arcanea production-repo public brand folders",
+      "reason": "Prevents typed logo approximations."
+    },
+    {
+      "label": "SIS sovereignty proof source",
+      "source": "starlightintelligence.ai/public/media/gallery/batch-10-encyclopedia-masters/b10-097-seven-sovereignty-guarantees.png",
+      "reason": "Reuses an inspected, locally owned premium proof visual."
+    },
+    {
+      "label": "Founder visual review",
+      "source": "brand-image-system/foundation-reset/2026-08-17/README.md",
+      "reason": "Supersedes the maker self-score and records the foundation-level rejection."
+    }
+  ],
+  "direction": {
+    "keep": [
+      "truthful release-state data",
+      "known provenance",
+      "editable deterministic masters",
+      "the complete 47-item inventory as information, not as an approved visual system"
+    ],
+    "avoid": [
+      "one sparse template across unrelated product forms",
+      "typed fake logos",
+      "generic product-object photography",
+      "generated public text or fake UI",
+      "launch theater for validation or internal products",
+      "all-caps decorative labels",
+      "status pills and mono readouts as marketing chrome",
+      "a shared dark AI-dashboard aesthetic",
+      "treating canonical logos and fonts as approved by default"
+    ],
+    "signature": "Rejected. Product mechanisms were made visible, but the shared rendering grammar overwhelmed the intended brand distinctions.",
+    "system": [
+      "canonical identity assets copied from production repos",
+      "bundled local fonts with no remote dependency",
+      "deterministic HTML/CSS/SVG masters",
+      "headless Edge raster capture",
+      "PNG and WebP exports",
+      "prompt/model/output ledger"
+    ]
+  },
+  "asset_quality": {
+    "tier": "C",
+    "source_method": "vector-diagram",
+    "provenance": "owned",
+    "why_premium": "The semantic layer is exact and editable, but technical correctness did not produce an approved identity or premium brand result.",
+    "shortcut_risk": "high",
+    "context_tested": true
+  },
+  "artifacts": [
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/frankx-venture-signal-sprint.png",
+      "kind": "product cover",
+      "inspected": true,
+      "notes": "Canonical cropped wordmark, clean title, evidence signal, decision gate, and deliverables checked at 1080×1440."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/gencreator-creatorpack.png",
+      "kind": "product cover",
+      "inspected": true,
+      "notes": "Canonical wordmark and mark, exact owned-work loop diagram, legible hierarchy, and no fake UI."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/sis-sovereign-intelligence-starter-kit.png",
+      "kind": "product cover",
+      "inspected": true,
+      "notes": "No invented logo; local proof asset, title, validation status, and four kit actions inspected."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/arcanea-world-bible.png",
+      "kind": "product cover",
+      "inspected": true,
+      "notes": "Generated codex source, canonical wordmark, product/world rail distinction, title, and mechanism inspected."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/portfolio-overview-1920x1080.png",
+      "kind": "portfolio overview",
+      "inspected": true,
+      "notes": "All cover examples display intact; manifest-derived 14/23/10 release-state counts and labels are legible."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/portfolio-matrix-all-47-2560x1800.png",
+      "kind": "complete product portfolio matrix",
+      "inspected": true,
+      "notes": "All 47 supplied product names, forms, source statuses, brands, and public/validation/internal classifications are visible in one deterministic inventory."
+    },
+    {
+      "path_or_url": "C:/Users/frank/brands/image-system/jobs/2026-08-17/product-cover-overhaul-v2/exports/*-og.png",
+      "kind": "open graph crops",
+      "inspected": true,
+      "notes": "All four 1200×630 exports were visually inspected for crop, title wrapping, accent, and thumbnail legibility."
+    }
+  ],
+  "checks": [
+    {
+      "name": "asset-tier",
+      "status": "pass",
+      "evidence": "Tier C deterministic masters are the correct primary medium; Arcanea adds a Tier B generated source and SIS reuses owned Tier A/B proof media."
+    },
+    {
+      "name": "canonical-identity",
+      "status": "pass",
+      "evidence": "FrankX, GenCreator, and Arcanea use production-repo assets. SIS records the absence of a verified logo and does not invent one."
+    },
+    {
+      "name": "product-form-fit",
+      "status": "pass",
+      "evidence": "Sprint, pack, kit, and world-context kit use distinct mechanisms and compositions."
+    },
+    {
+      "name": "export-inspection",
+      "status": "pass",
+      "evidence": "Four portrait covers, four OG crops, the hero overview, and the complete 47-product matrix were inspected from actual PNG exports."
+    },
+    {
+      "name": "visual-qa",
+      "status": "pass",
+      "evidence": "No clipped titles, fake UI, generated public copy, missing logo assets, or unreadable primary hierarchy found."
+    },
+    {
+      "name": "founder-taste-review",
+      "status": "fail",
+      "evidence": "Founder rejected the complete visual foundation and requested a ground-up rethink of logos, fonts, capitalization, taste, and brand separation."
+    },
+    {
+      "name": "cross-brand-distinctiveness",
+      "status": "fail",
+      "evidence": "Dark fields, technical annotations, panel systems, glow accents, and system diagrams recur across all four brands."
+    },
+    {
+      "name": "capitalization-preference",
+      "status": "fail",
+      "evidence": "The renderer hard-codes uppercase eyebrows, statuses, brand labels, and metadata despite the founder's preference against all caps."
+    },
+    {
+      "name": "truth-and-release-state",
+      "status": "pass",
+      "evidence": "All four products are labeled Validation concept; no price, customer, availability, or deployment claim was added."
+    }
+  ],
+  "score": {
+    "total": 17,
+    "max": 30,
+    "notes": "The original maker self-score of 29/30 is invalidated. The post-review diagnostic keeps credit for legibility, accuracy, provenance, and editable production, but fails brand distinctiveness, typography preference, authorship, and usefulness as an identity system."
+  },
+  "decision": "restart",
+  "known_risks": [
+    "None of the four benchmark covers or overview visuals is approved for publication or reuse as a style reference.",
+    "FrankX, GenCreator, and Arcanea logos and type choices need comparative reassessment; SIS needs a wordmark-first identity decision.",
+    "The 47-item inventory data may be reused, but only after each brand has an approved visual territory.",
+    "Automated quality checks remain capable of false-positive approval until human-first gates are propagated to canonical design standards."
+  ]
+}

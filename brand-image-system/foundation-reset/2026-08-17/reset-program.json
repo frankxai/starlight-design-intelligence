@@ -1,0 +1,72 @@
+{
+  "programId": "2026-08-17-visual-foundation-reset",
+  "status": "foundation-reset",
+  "humanDirective": {
+    "verdict": "reject-current-system",
+    "preferences": [
+      "no all-caps styling",
+      "rethink logos and fonts rather than preserving them by default",
+      "raise the foundation, taste, and intelligence of the system",
+      "do not repeat a shared dark AI aesthetic across brands"
+    ]
+  },
+  "quarantinedExperiments": [
+    "2026-08-17-product-cover-overhaul"
+  ],
+  "foundationAudit": {
+    "status": "complete-with-browser-qa-deferred",
+    "method": [
+      "local-svg-source-inspection",
+      "local-raster-export-inspection",
+      "font-and-token-source-inspection",
+      "representative-application-inspection"
+    ],
+    "files": [
+      "EXISTING-ASSET-AUDIT.md",
+      "SKILL-STACK-AND-PROMPTS.md"
+    ],
+    "portfolioFinding": "preserve selected source material and production discipline; rebuild all four primary identity marks"
+  },
+  "globalGates": [
+    "strategy-card",
+    "black-and-white-territory",
+    "typography-specimen",
+    "wordmark-and-symbol",
+    "application-quartet",
+    "founder-approval",
+    "image-world-benchmark",
+    "product-family-scale"
+  ],
+  "brands": [
+    {
+      "id": "frankx",
+      "identityStatus": "reassess",
+      "bestSurvivingSeed": "human founder perspective and warmer editorial typography experiments",
+      "recommendedFirstTerritory": "working-intelligence",
+      "nextArtifact": "black-and-white-territory-proof"
+    },
+    {
+      "id": "gencreator",
+      "identityStatus": "reassess-and-build-missing-pack",
+      "bestSurvivingSeed": "vector packaging and mono-first asset discipline",
+      "recommendedFirstTerritory": "open-studio",
+      "nextArtifact": "black-and-white-territory-proof"
+    },
+    {
+      "id": "sis",
+      "identityStatus": "no-verified-approved-mark",
+      "bestSurvivingSeed": "human authority and proof language with warm mineral materiality",
+      "recommendedFirstTerritory": "civic-intelligence",
+      "nextArtifact": "wordmark-led-black-and-white-territory-proof"
+    },
+    {
+      "id": "arcanea",
+      "identityStatus": "reassess-with-canon-preserved",
+      "bestSurvivingSeed": "locked canon and functional material cosmology",
+      "recommendedFirstTerritory": "living-codex",
+      "nextArtifact": "black-and-white-territory-proof"
+    }
+  ],
+  "scaleBlockedUntil": "founder approval of one territory and one application quartet per brand",
+  "updatedAt": "2026-08-17"
+}

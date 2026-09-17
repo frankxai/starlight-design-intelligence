@@ -1,0 +1,78 @@
+{
+  "artifactId": "ultimate-ai-architecture-2026",
+  "checkedAt": "2026-08-21",
+  "claims": [
+    {
+      "id": "claim-model-gateway",
+      "text": "A model gateway should route work by capability, risk, latency, cost, and modality rather than hard-code one provider into every task.",
+      "type": "recommendation",
+      "sourceIds": ["openai-agents", "mistral-agents", "xai-multi-agent"],
+      "status": "source-linked",
+      "visualEncoding": "Top gateway spanning six equally weighted provider chambers"
+    },
+    {
+      "id": "claim-agent-control-plane",
+      "text": "A production agent control plane declares roles, instructions, routing, handoffs, budgets, permissions, and stop conditions.",
+      "type": "recommendation",
+      "sourceIds": ["openai-agents", "openai-orchestration", "anthropic-agents", "microsoft-patterns"],
+      "status": "source-linked",
+      "visualEncoding": "Central operator and orchestration table"
+    },
+    {
+      "id": "claim-context-memory",
+      "text": "Context and memory should be scoped, retrieved, and persisted deliberately rather than treated as an unlimited prompt.",
+      "type": "recommendation",
+      "sourceIds": ["anthropic-mcp", "microsoft-framework", "langgraph-docs", "crewai-docs"],
+      "status": "source-linked",
+      "visualEncoding": "Left-side retrieval library"
+    },
+    {
+      "id": "claim-capability-mesh",
+      "text": "Tools and connectors should use typed contracts, least privilege, provenance, and result validation.",
+      "type": "recommendation",
+      "sourceIds": ["anthropic-mcp", "openai-agents", "xai-tools"],
+      "status": "source-linked",
+      "visualEncoding": "Lower-left capability workbench"
+    },
+    {
+      "id": "claim-durable-runtime",
+      "text": "Long-running production work needs explicit state, retries, checkpoints, idempotency, and compensation paths.",
+      "type": "recommendation",
+      "sourceIds": ["microsoft-framework", "langgraph-docs", "a2a-spec"],
+      "status": "source-linked",
+      "visualEncoding": "Lower runtime engine with recovery loop"
+    },
+    {
+      "id": "claim-human-trust",
+      "text": "High-impact actions require policy gates, scoped permissions, human approval, and a durable audit trail.",
+      "type": "recommendation",
+      "sourceIds": ["anthropic-trust", "microsoft-framework", "meta-responsible"],
+      "status": "source-linked",
+      "visualEncoding": "Right-side trust and approval chamber"
+    },
+    {
+      "id": "claim-observability",
+      "text": "Traces, evaluations, cost, latency, and incident evidence must be first-class runtime outputs.",
+      "type": "recommendation",
+      "sourceIds": ["openai-tracing", "microsoft-framework", "crewai-docs"],
+      "status": "source-linked",
+      "visualEncoding": "Front observability studio"
+    },
+    {
+      "id": "claim-mcp-a2a-distinction",
+      "text": "MCP connects an AI system to tools and context; A2A coordinates work between independent agents.",
+      "type": "comparison",
+      "sourceIds": ["anthropic-mcp", "google-a2a", "a2a-spec"],
+      "status": "source-linked",
+      "visualEncoding": "Two-line protocol callout below the architecture"
+    },
+    {
+      "id": "claim-social-master",
+      "text": "A 1440 by 1800 4:5 master is a practical portrait pilot for LinkedIn, Instagram Feed, and X.",
+      "type": "recommendation",
+      "sourceIds": ["linkedin-images", "x-creative-specs", "meta-social"],
+      "status": "source-linked",
+      "visualEncoding": "Master canvas contract"
+    }
+  ]
+}

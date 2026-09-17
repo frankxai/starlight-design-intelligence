@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/infogenius-hero.v1.json",
+  "title": "Infogenius editorial hero",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "canvas", "sourceImage", "header", "callouts", "providers", "footer"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "contractVersion": { "const": "infogenius-hero.v1" },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height", "ink", "paper"],
+      "properties": {
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "ink": { "type": "string" },
+        "paper": { "type": "string" }
+      }
+    },
+    "sourceImage": { "type": "string", "minLength": 1 },
+    "header": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eyebrow", "title", "subtitle"],
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" }
+      }
+    },
+    "callouts": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "x", "y", "width", "fontSize"],
+        "properties": {
+          "title": { "type": "string" },
+          "x": { "type": "number" },
+          "y": { "type": "number" },
+          "width": { "type": "number" },
+          "fontSize": { "type": "number" }
+        }
+      }
+    },
+    "providers": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "type": "string" }
+    },
+    "footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["railLabel", "identityLine"],
+      "properties": {
+        "railLabel": { "type": "string" },
+        "identityLine": { "type": "string" }
+      }
+    }
+  }
+}

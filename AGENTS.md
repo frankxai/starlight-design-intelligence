@@ -53,6 +53,21 @@ Before accepting generated images, logos, posters, video stills, social crops, m
 
 Do not accept first-pass generated visual media unless it passes the 26/30 gate after actual export inspection. Logos are vector-first; 3D logo renders are applications, not the identity. Motion must name the hierarchy, state, causality, progress, spatial relationship, or brand memory it improves.
 
+## Anti-Default And Human Taste Gate
+
+For every new site, subdomain, identity, campaign, or visual UI component:
+
+- Sentence case is the default. Do not use all-caps styling for headlines, labels, buttons, navigation, covers, or decorative metadata. Established acronyms remain unchanged.
+- Do not mandate glass, grain, glows, ambient spotlights, hover scaling, dark mode, or a preselected font pairing. These are optional materials and behaviors, not proof of taste.
+- Do not reuse the dark AI-dashboard grammar across brands: black glass, command-center chrome, neon signals, status pills, mono readouts, nodes, orbits, and generic card grids are prohibited as identity defaults.
+- Typography must be selected through comparative specimens using real copy. The font matrix is a research input, not an automatic choice.
+- A technically clean export or automated score cannot approve taste. Explicit founder rejection sets the work to `restart`.
+- Multi-brand work must pass logo-off recognition and color-swap tests. If a brand can be mistaken for another after a color change, the direction fails.
+- Read `brand-image-system/foundation-reset/2026-08-17/TASTE-CONSTITUTION.md` and follow the identity rebuild protocol while the reset is active.
+
+The anti-slop scanner may still be run as a hygiene check. Its score cannot be used as a ship decision.
+
+
 
 <!-- PREMIUM-WEB-OS:START -->
 ## Premium Intelligence Web OS Adoption

@@ -16,9 +16,15 @@
     "updatedAt"
   ],
   "properties": {
+    "$schema": {
+      "type": "string"
+    },
     "workflowId": {
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "string"
     },
     "displayName": {
       "type": "string"
@@ -75,6 +81,21 @@
     "approvalRequired": {
       "type": "boolean",
       "default": true
+    },
+    "scoreThreshold": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 30
+    },
+    "scoreScale": {
+      "type": "integer",
+      "const": 30
+    },
+    "jobRootHint": {
+      "type": "string"
+    },
+    "relatedOperatingModel": {
+      "type": "string"
     },
     "updatedAt": {
       "type": "string",

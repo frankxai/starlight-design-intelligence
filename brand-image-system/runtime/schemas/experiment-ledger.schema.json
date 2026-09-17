@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/experiment-ledger.schema.json",
+  "title": "Brand Image System Experiment Ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["experimentId", "objective", "hypothesis", "baseline", "candidates", "decision", "updatedAt"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "experimentId": { "type": "string" },
+    "objective": { "type": "string", "minLength": 1 },
+    "hypothesis": { "type": "string", "minLength": 1 },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent", "reasoningModel", "imageModel", "method", "evidence", "score30"],
+      "properties": {
+        "agent": { "type": "string" },
+        "reasoningModel": { "type": "string" },
+        "imageModel": { "type": "string" },
+        "method": { "type": "string" },
+        "evidence": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "score30": { "type": "integer", "minimum": 0, "maximum": 30 }
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidateId", "productId", "route", "modelLane", "promptVersion", "outputs", "score30", "decision"],
+        "properties": {
+          "candidateId": { "type": "string" },
+          "productId": { "type": "string" },
+          "route": { "type": "string" },
+          "modelLane": { "type": "string" },
+          "declaredModel": { "type": ["string", "null"] },
+          "promptVersion": { "type": "string" },
+          "outputs": { "type": "array", "items": { "type": "string" } },
+          "score30": { "type": "integer", "minimum": 0, "maximum": 30 },
+          "scoreValidity": { "type": "string", "enum": ["valid", "invalidated"] },
+          "humanVerdict": { "type": "string", "enum": ["approve", "iterate", "combine", "reject", "not-reviewed"] },
+          "decision": { "type": "string", "enum": ["draft", "ship", "iterate", "restart", "blocked"] },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "humanReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewedAt", "reviewer", "verdict", "supersedesDecision", "reasons", "nextAction"],
+      "properties": {
+        "reviewedAt": { "type": "string", "format": "date" },
+        "reviewer": { "type": "string" },
+        "verdict": { "type": "string", "enum": ["approve", "iterate", "combine", "reject"] },
+        "supersedesDecision": { "type": "string", "enum": ["draft", "ship", "iterate", "restart", "blocked"] },
+        "reasons": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "nextAction": { "type": "string" }
+      }
+    },
+    "decisionHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date", "actor", "decision", "notes"],
+        "properties": {
+          "date": { "type": "string", "format": "date" },
+          "actor": { "type": "string" },
+          "decision": { "type": "string", "enum": ["draft", "ship", "iterate", "restart", "blocked"] },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "decision": { "type": "string", "enum": ["draft", "ship", "iterate", "restart", "blocked"] },
+    "updatedAt": { "type": "string", "format": "date" }
+  }
+}

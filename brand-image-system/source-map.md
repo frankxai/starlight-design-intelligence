@@ -24,6 +24,10 @@ This map lists the current local sources agents must consult before producing cr
 | `C:\Users\frank\starlight\repos\design-agent-standards\best-practices\image-logo-visual-generation.md` | Image, logo, motion, and generated media best practices. | Required |
 | `C:\Users\frank\starlight\repos\starlight-design-intelligence\DESIGN_AGENT_OPERATING_SYSTEM.md` | Design-agent loop and tool choices for owned brands. | Required |
 | `C:\Users\frank\starlight\repos\starlight-design-intelligence\evals\generated-asset-quality-gate.md` | Generated asset scoring gate. | Required |
+| `brand-image-system/standards/PREMIUM_IMAGE_PROMPT_STANDARD.md` | Model-agnostic prompt-packet contract, reference rules, exact-content boundary, iteration, and crop gates. | Required for generated or edited imagery |
+| `brand-image-system/standards/PREMIUM_INFOGRAPHIC_STANDARD.md` | Claim ledger, semantic grammar, node/edge integrity, deterministic publication layer, brand rights, and accessibility. | Required for infographics, diagrams, charts, and architecture plates |
+| `brand-image-system/standards/INFOGENIUS_ADAPTER.md` | Infogenius execution order and separation of universal semantic rules from optional Arcanea Gate art direction. | Required for Infogenius jobs |
+| `brand-image-system/runtime/schemas/visual-prompt-packet.schema.json` | Machine-readable prompt, semantics, generation, deterministic overlay, accessibility, and review contract. | Required for significant Infogenius and premium visual jobs |
 | `C:\Users\frank\starlight\repos\_intelligence\brand-worlds.md` | Cross-brand worlds for Starlight, Arcanea, and FrankX. | Required |
 
 ## Brand Packs And Repo-Local Brand Sources
@@ -52,7 +56,8 @@ This map lists the current local sources agents must consult before producing cr
 
 ## Current Gaps
 
-- Remote GitHub was not re-queried live in this pass; local Git-backed audits and clones were used.
+- GitHub repository discovery was re-queried on 2026-08-21; a full remote visual-asset inventory was not performed.
 - Several operating units are portfolio lanes rather than finished brand packs.
 - Central brand packs should be added for GenCreator, AnimeLegends, Reality Architect, AI CoE, Agentic Income, Research Intelligence, and Tooling/OSS.
 - The image-generation tool benchmark has a plan, not completed results.
+- Infogenius implementations must still adopt the visual-prompt packet and validator in their own runtime repositories; this repo owns the canonical design-intelligence contract.

@@ -6,18 +6,25 @@
 1. Load the brand pack from `runtime/brands/<brand>/`
 2. Load the workflow pack from `runtime/workflows/<workflow>/`
 3. Create or validate a `media-job.json` against the schema
-4. Use only allowed production routes (HTML/Satori renderer preferred)
-5. Never use raw `image_gen` tool for final public text or claims
-6. Write all outputs to the local mirror: `C:\Users\frank\brands\image-system\`
-7. Record QA score (30-point gate) and decision in the media-job
+4. Classify the product form before choosing a visual route
+5. Probe the current image capability and record the actual model receipt before generation
+6. Use only allowed production routes (HTML/Satori renderer preferred)
+7. Never use a generated image for final public text, logos, claims, charts, or product UI
+8. Never type an approximation when a canonical logo asset exists
+9. Keep generated media as an optional source layer; render the final composition deterministically
+10. Write all outputs to the local mirror: `C:\Users\frank\brands\image-system\`
+11. Record prompt version, route, model receipt, outputs, crop inspections, QA score, and decision in the media-job
 
-## Profile Recommendations
-- Use `arcanea` profile for creative execution
-- Use `starlight` profile for orchestration
-- Load `brand-image-system` and `todo-discipline` skills
+## Execution Context
+- Stay in the canonical project and default Hermes environment unless the operator explicitly selects another supported context.
+- Load the brand-image-system runtime and the relevant brand/workflow packs.
+- Do not claim a named profile, backend, or model merely because it appears in old instructions.
 
 ## Blocked Actions
 - Direct generative overlays with exact text
+- Bypassing canonical logo assets
+- One generic cover template for multiple product forms
+- Retrying a failed image route without switching or recording the failure
 - Bypassing the renderer for Tier A assets
 
 This fragment should be included in any Hermes AGENTS.md or profile instructions related to visual work.

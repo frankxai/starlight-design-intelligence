@@ -1,5 +1,7 @@
 # Arcanea Brand Design System & Cinematic Guidelines
 
+> **Foundation reset — 2026-08-17:** This pack is a legacy hypothesis, not an approved identity. Preserve canon, but do not use its dark-void palette, portal/sigil language, glows, current font defaults, or cinematic effects as automatic brand rules. The active source is `brand-image-system/foundation-reset/2026-08-17/`; begin with the Living Codex territory and a founder-reviewed black-and-white specimen. Sentence case is mandatory.
+
 > Source of truth for Arcanea's visual universe. "Weaving cosmic threads."
 > Designed for an immersive, soulful, and epic world-building experience.
 
@@ -33,9 +35,10 @@ colors:
 ---
 
 ## 3 · Typography
-- **Display & Lore:** High-contrast elegant serif (Playfair Display / Serif). 72px – 140px. Generous tracking on all-caps; lowercase for intimate narratives.
-- **UI / Modern Data:** Inter or JetBrains Mono. 28px – 42px. Used for code readouts, numbers, and nodes.
-- **Voice / Captions:** Inter, slightly tightened, 22px – 28px. High legibility on dark backgrounds with subtle glow.
+- **Display & Lore:** Arcanea must keep a distinct literary voice. Use Cormorant Garamond as the open production baseline while Canela, GT Alpina, and ABC Arizona Flare remain founder-gated trial candidates. Use sentence case; never default to all-caps fantasy titling.
+- **Long-form Reading:** Lora is the open baseline for lore, dialogue, codex entries, and crafted editions. It may be replaced only after a real-language specimen and licensing review.
+- **UI / Modern Data:** Inter for controls and compact interface copy. JetBrains Mono only for actual code, aligned data, coordinates, or canonical identifiers.
+- **Portfolio Boundary:** Arcanea does not inherit Poppins as its display face or Playfair as its default editorial face. Its typography should feel like living publishing, not FrankX or Starlight in different colors.
 
 ---
 
@@ -53,10 +56,10 @@ colors:
 
 ---
 
-## 6 · Higgsfield Production Notes
+## 6 · Video & Motion Generation Production Notes
 
-- Use the shared workspace at `C:\Users\frank\starlight\higgsfield\`.
-- Reuse `assets\arcanea\dashboard_hero_premium_upscaled.png` and `assets\arcanea\dashboard_hero_premium.mp4` before spending new credits.
+- Use the shared asset workspace at `C:\Users\frank\starlight\assets\arcanea\`.
+- Reuse `assets\arcanea\dashboard_hero_premium_upscaled.png` and `assets\arcanea\dashboard_hero_premium.mp4` before generating new visual assets.
 - Arcanea prompts must inherit the cinematic language from `repos\arcanea-ecosystem\videos\arcanea-cinematic-hero\design.md`.
-- Cinematic stills route to Nano Banana Pro, Soul Cinematic, or Cinema Studio Image depending on whether text/diagrams, character fidelity, or filmic lighting is primary.
-- 9:16 motion proofs route to Seedance 2.0 or Kling 3.0 only after cost preflight.
+- Cinematic stills route to Antigravity Native (`generate_image`) and Nano Banana Pro (`nb-image` / `nb-generate.mjs`), prioritizing text/diagram accuracy, character fidelity, and filmic lighting.
+- 9:16 motion proofs route to Veo native pipelines and Seedance / Kling after cost preflight.

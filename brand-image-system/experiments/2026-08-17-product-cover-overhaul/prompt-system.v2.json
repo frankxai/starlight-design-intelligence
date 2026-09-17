@@ -1,0 +1,95 @@
+{
+  "promptSystemId": "product-cover-v2",
+  "version": "2026-08-17",
+  "principle": "Generated media is source material. Canonical identity, public copy, product truth, diagrams, UI, and crops are deterministic.",
+  "requiredInputs": [
+    "product id and source truth",
+    "product form",
+    "release state",
+    "audience and expensive transition",
+    "canonical brand pack",
+    "canonical logo decision",
+    "asset tier",
+    "surface and crop",
+    "proof source",
+    "model capability receipt"
+  ],
+  "globalNegative": [
+    "no logos",
+    "no final public typography",
+    "no readable labels or charts",
+    "no fake UI",
+    "no watermark",
+    "no generic orbit or node cloud",
+    "no decorative filler as the primary subject",
+    "no invented product state or proof"
+  ],
+  "promptOrder": [
+    "asset role and crop",
+    "product mechanism made tangible",
+    "composition and negative-space plan",
+    "brand materials and palette",
+    "lighting and camera",
+    "quality bar",
+    "explicit exclusions"
+  ],
+  "formStrategies": {
+    "sprint": "Show decision pressure, timebox, evidence gate, and resulting artifact—not a generic dossier.",
+    "pack": "Show the transformation mechanism and owned components—not a sealed mystery box.",
+    "kit": "Show inspectable contents, sovereignty/proof, and delivery logic—not gadget photography.",
+    "book": "Use editorial hierarchy and a meaningful central metaphor; distinguish reading object from workbook or kit.",
+    "guide": "Make information architecture and interior proof visible.",
+    "saas": "Use verified UI or an exact product-state diagram; never generate fake UI.",
+    "course": "Make curriculum path and learner outcome tangible; avoid generic laptop mockups.",
+    "implementation": "Show governed intervention and real deliverables; avoid agency stock photography.",
+    "internal-hold": "No public cover. Render a quiet internal registry tile with the blocking reason."
+  },
+  "brandLocks": {
+    "frankx": {
+      "identity": "Use the canonical cyan FrankX wordmark/mark; never type a replacement.",
+      "materials": ["obsidian navy", "technical cyan", "restrained signal amber", "editorial white"],
+      "voice": "precise founder architecture, practical edge, quiet authority",
+      "avoid": ["mythology", "generic luxury gold", "AI circuit head", "unearned hype"]
+    },
+    "gencreator": {
+      "identity": "Use the canonical GenCreator wordmark and blue-cyan-green mark.",
+      "materials": ["near-black", "ice white", "electric blue", "cyan", "mint green"],
+      "voice": "owned work, source-linked, creator-operated, resumable",
+      "avoid": ["marketplace framing", "enterprise CoE promise", "content confetti", "generic creator desk"]
+    },
+    "sis": {
+      "identity": "No canonical logo was verified for this experiment; use a restrained typographic brand signature and do not invent a mark.",
+      "materials": ["graphite", "smoke glass", "warm titanium", "evidence gold", "calm white"],
+      "voice": "sovereign, inspectable, evidence-led, operationally calm",
+      "avoid": ["space dashboard", "fake live agents", "unreadable holograms", "claims of autonomy"]
+    },
+    "arcanea": {
+      "identity": "Use the canonical Arcanea wordmark; keep product chrome separate from world media.",
+      "materials": ["near-black", "deep indigo", "aurora mint", "amethyst", "restrained gold"],
+      "voice": "living creative continuity, elegant magic, portable world context",
+      "avoid": ["invented canon", "generic castle", "portal ring cliché", "world art used as raw UI chrome"]
+    }
+  },
+  "benchmarkPrompts": {
+    "arcanea-world-bible-source-v2": {
+      "route": "codex-imagegen",
+      "role": "source-art",
+      "prompt": "Premium portrait source image for an Arcanea product-cover composition, 3:4. An open hand-bound codex on a dark obsidian drafting table inside a refined archive studio. Non-readable cartographic linework, abstract constellation geometry, material swatches, and miniature terrain reliefs rise subtly from pearlescent vellum. Controlled aurora-mint and quiet violet light trace continuity links. Blackened brass, charcoal leather, smoke glass, restrained gold edge. Codex centered in the lower two-thirds with generous dark negative space above for deterministic title and canonical wordmark. Crisp editorial product photography, physically plausible cinematic lighting. No characters, planets, castle, portal ring, floating UI, logos, typography, legible writing, watermark, border, or mockup frame."
+    },
+    "frankx-sprint-render-v2": {
+      "route": "deterministic-only",
+      "role": "cover-master",
+      "prompt": "No generated source required. Render a five-day decision instrument: evidence signal, decision gate, source ledger, decision memo, and kill criteria with the canonical FrankX logo."
+    },
+    "gencreator-creatorpack-render-v2": {
+      "route": "deterministic-only",
+      "role": "cover-master",
+      "prompt": "No generated source required. Render the owned-work mechanism as source inputs flowing into a constellation member, one approved artifact, proof, and a next mission with the canonical GenCreator wordmark."
+    },
+    "sis-starter-kit-hybrid-v2": {
+      "route": "existing-proof-plus-deterministic",
+      "role": "cover-master",
+      "prompt": "Reuse an inspected Starlight sovereignty proof visual. Compose it as a kit with explicit ownership, memory, eval, export, receipt, boundary, and recovery proof categories. Do not invent a logo or fake live system state."
+    }
+  }
+}

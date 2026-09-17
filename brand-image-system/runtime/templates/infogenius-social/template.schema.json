@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/infogenius-social.v1.json",
+  "title": "Infogenius social infographic",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "canvas",
+    "meta",
+    "header",
+    "sourceImage",
+    "callouts",
+    "gateway",
+    "interoperability",
+    "providers",
+    "footer"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "contractVersion": { "const": "infogenius-social.v1" },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height", "background", "ink", "paper"],
+      "properties": {
+        "width": { "const": 1440 },
+        "height": { "const": 1800 },
+        "background": { "type": "string" },
+        "ink": { "type": "string" },
+        "paper": { "type": "string" }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifactId", "grammar", "checkedAt", "sourceLedger"],
+      "properties": {
+        "artifactId": { "type": "string", "minLength": 1 },
+        "grammar": { "const": "bounded-system" },
+        "checkedAt": { "type": "string", "format": "date" },
+        "sourceLedger": { "type": "string", "minLength": 1 }
+      }
+    },
+    "header": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eyebrow", "title", "subtitle", "thesis"],
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string", "minLength": 1 },
+        "subtitle": { "type": "string", "minLength": 1 },
+        "thesis": { "type": "string", "minLength": 1 }
+      }
+    },
+    "sourceImage": { "type": "string", "minLength": 1 },
+    "callouts": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "body", "side", "y", "anchor", "color", "sourceIds"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "body": { "type": "string" },
+          "side": { "enum": ["left", "right"] },
+          "y": { "type": "number" },
+          "anchor": {
+            "type": "array",
+            "prefixItems": [{ "type": "number" }, { "type": "number" }],
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "color": { "type": "string" },
+          "sourceIds": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+        }
+      }
+    },
+    "gateway": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "note", "slots"],
+      "properties": {
+        "label": { "type": "string" },
+        "note": { "type": "string" },
+        "slots": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["providerId", "x"],
+            "properties": {
+              "providerId": { "type": "string" },
+              "x": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "interoperability": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "body", "sourceIds"],
+        "properties": {
+          "title": { "type": "string" },
+          "body": { "type": "string" },
+          "sourceIds": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+        }
+      }
+    },
+    "providers": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "trait", "assetState", "sourceIds"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "trait": { "type": "string" },
+          "asset": { "type": ["string", "null"] },
+          "assetState": { "enum": ["official-use-permitted", "plain-text-only", "blocked"] },
+          "sourceIds": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+        }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceLine", "identityLine", "cta"],
+      "properties": {
+        "sourceLine": { "type": "string" },
+        "identityLine": { "type": "string" },
+        "cta": { "type": "string" }
+      }
+    }
+  }
+}

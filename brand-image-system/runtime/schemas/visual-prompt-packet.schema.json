@@ -1,0 +1,591 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/brand-image-system/visual-prompt-packet.schema.json",
+  "title": "Brand Image System Visual Prompt Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "packetId",
+    "brand",
+    "outcome",
+    "research",
+    "semantic",
+    "composition",
+    "identity",
+    "generation",
+    "deterministic",
+    "accessibility",
+    "output",
+    "qa",
+    "updatedAt"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "contractVersion": { "const": "visual-prompt-packet.v1" },
+    "packetId": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$"
+    },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operatingUnit", "brandPack", "mode"],
+      "properties": {
+        "operatingUnit": { "type": "string", "minLength": 1 },
+        "brandPack": { "type": "string", "minLength": 1 },
+        "mode": {
+          "type": "string",
+          "enum": ["universal-premium", "arcanea"]
+        },
+        "arcaneaGate": { "type": ["string", "null"] },
+        "canonSource": { "type": ["string", "null"] },
+        "recognitionTests": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audience",
+        "surface",
+        "dimensions",
+        "aspectRatio",
+        "firstRead",
+        "evidence",
+        "assetTier",
+        "productionLane",
+        "publicationState",
+        "failureModes",
+        "acceptanceGate"
+      ],
+      "properties": {
+        "audience": { "type": "string", "minLength": 1 },
+        "surface": { "type": "string", "minLength": 1 },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["width", "height", "unit"],
+          "properties": {
+            "width": { "type": "integer", "minimum": 1 },
+            "height": { "type": "integer", "minimum": 1 },
+            "unit": { "const": "px" }
+          }
+        },
+        "aspectRatio": { "type": "string", "pattern": "^[0-9]+:[0-9]+$" },
+        "firstRead": { "type": "string", "minLength": 1 },
+        "evidence": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        },
+        "assetTier": {
+          "type": "string",
+          "enum": ["A", "B", "C", "D", "blocked"]
+        },
+        "productionLane": {
+          "type": "string",
+          "enum": ["native-imagegen", "deterministic-composite"]
+        },
+        "publicationState": {
+          "type": "string",
+          "enum": ["draft", "candidate", "published"]
+        },
+        "failureModes": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        },
+        "acceptanceGate": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        }
+      }
+    },
+    "research": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["currentAsOf", "sources"],
+      "properties": {
+        "currentAsOf": { "type": "string", "format": "date" },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "title", "url", "publisher", "kind", "status", "checkedAt"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+              "title": { "type": "string", "minLength": 1 },
+              "url": { "type": "string", "format": "uri" },
+              "publisher": { "type": "string", "minLength": 1 },
+              "kind": {
+                "type": "string",
+                "enum": ["primary", "official-brand", "standard", "repository", "licensed-reference"]
+              },
+              "status": {
+                "type": "string",
+                "enum": ["checked", "source-linked", "blocked"]
+              },
+              "checkedAt": { "type": "string", "format": "date" }
+            }
+          }
+        }
+      }
+    },
+    "semantic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "artifactClass", "thesis", "claims", "diagram"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "artifactClass": {
+          "type": "string",
+          "enum": [
+            "illustration",
+            "editorial",
+            "infographic",
+            "diagram",
+            "chart",
+            "logo-exploration",
+            "product-proof"
+          ]
+        },
+        "thesis": { "type": "string", "minLength": 1 },
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "text", "type", "sourceIds", "verificationStatus", "visualEncoding"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^claim-[a-z0-9-]+$" },
+              "text": { "type": "string", "minLength": 1 },
+              "type": {
+                "type": "string",
+                "enum": ["fact", "interpretation", "recommendation", "version", "comparison", "example"]
+              },
+              "sourceIds": {
+                "type": "array",
+                "items": { "type": "string" },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "verificationStatus": {
+                "type": "string",
+                "enum": ["proposed", "source-linked", "independently-verified", "disputed", "blocked"]
+              },
+              "visualEncoding": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "diagram": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["grammar", "readingOrder", "nodes", "edges"],
+          "properties": {
+            "grammar": {
+              "type": "string",
+              "enum": ["none", "bounded-system", "sequence", "state-machine", "matrix", "taxonomy", "decision-tree", "comparison", "timeline"]
+            },
+            "readingOrder": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "nodes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["id", "label", "type", "sourceIds"],
+                "properties": {
+                  "id": { "type": "string", "pattern": "^node-[a-z0-9-]+$" },
+                  "label": { "type": "string", "minLength": 1 },
+                  "type": {
+                    "type": "string",
+                    "enum": ["component", "property", "control", "actor", "artifact", "state", "outcome"]
+                  },
+                  "sourceIds": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            "edges": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["id", "from", "to", "relationship", "condition", "sourceIds"],
+                "properties": {
+                  "id": { "type": "string", "pattern": "^edge-[a-z0-9-]+$" },
+                  "from": { "type": "string" },
+                  "to": { "type": "string" },
+                  "relationship": {
+                    "type": "string",
+                    "enum": ["sequence", "data-flow", "control", "dependency", "containment", "feedback", "fallback", "retry", "compensation", "observation"]
+                  },
+                  "condition": { "type": "string", "minLength": 1 },
+                  "sourceIds": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "composition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "context", "layout", "artDirection", "paletteRoles", "safeZones"],
+      "properties": {
+        "subject": { "type": "string", "minLength": 1 },
+        "context": { "type": "string", "minLength": 1 },
+        "layout": { "type": "string", "minLength": 1 },
+        "artDirection": { "type": "string", "minLength": 1 },
+        "paletteRoles": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        },
+        "safeZones": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["thirdPartyBrands", "characters"],
+      "properties": {
+        "thirdPartyBrands": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "use", "assetSource", "rightsStatus", "transformation"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "use": { "type": "string", "minLength": 1 },
+              "assetSource": { "type": "string", "minLength": 1 },
+              "rightsStatus": {
+                "type": "string",
+                "enum": ["official-use-permitted", "licensed", "plain-text-only", "blocked"]
+              },
+              "transformation": { "const": "none" }
+            }
+          }
+        },
+        "characters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "status", "source"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "status": {
+                "type": "string",
+                "enum": ["owned-original", "official-first-party-verified", "editorial-original", "not-used", "blocked"]
+              },
+              "source": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+    "generation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["modelLane", "modelStatus", "capabilityReceipt", "sourceRole", "promptVersion", "prompt", "constraints", "references", "settings"],
+      "properties": {
+        "modelLane": { "type": "string", "minLength": 1 },
+        "modelStatus": {
+          "type": "string",
+          "enum": ["verified", "runtime-best-available", "unknown", "blocked"]
+        },
+        "capabilityReceipt": { "type": "string", "minLength": 1 },
+        "sourceRole": {
+          "type": "string",
+          "enum": ["illustration-layer", "draft-composition", "final-native-infographic", "final-nonsemantic-art", "final-semantic-layer"]
+        },
+        "promptVersion": { "type": "string", "minLength": 1 },
+        "prompt": { "type": "string", "minLength": 1 },
+        "constraints": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "pathOrUrl", "role", "rightsStatus", "lockLevel"],
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "pathOrUrl": { "type": "string", "minLength": 1 },
+              "role": {
+                "type": "string",
+                "enum": ["identity", "object", "composition", "material", "style", "product-proof", "canonical-mark"]
+              },
+              "rightsStatus": {
+                "type": "string",
+                "enum": ["owned", "licensed", "official-use-permitted", "public-domain", "source-linked-review", "blocked"]
+              },
+              "lockLevel": {
+                "type": "string",
+                "enum": ["inspiration", "preserve-silhouette", "preserve-identity", "preserve-layout", "exact-asset"]
+              }
+            }
+          }
+        },
+        "settings": { "type": "object" }
+      }
+    },
+    "deterministic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "route", "exactText", "exactData", "exactLogos", "overlayPlan"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "route": { "type": "string", "minLength": 1 },
+        "exactText": { "type": "boolean" },
+        "exactData": { "type": "boolean" },
+        "exactLogos": { "type": "boolean" },
+        "overlayPlan": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alt", "longDescriptionPath", "textEquivalentPath", "deliveryChecks"],
+      "properties": {
+        "alt": { "type": "string", "minLength": 1 },
+        "longDescriptionPath": { "type": ["string", "null"] },
+        "textEquivalentPath": { "type": ["string", "null"] },
+        "deliveryChecks": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["jobRoot", "artifacts"],
+      "properties": {
+        "jobRoot": { "type": "string", "minLength": 1 },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["role", "path", "inspected"],
+            "properties": {
+              "role": { "type": "string", "minLength": 1 },
+              "path": { "type": "string", "minLength": 1 },
+              "sha256": {
+                "type": ["string", "null"],
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "inspected": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semanticReview", "visualReview", "score30", "inspected", "decision", "humanDecision"],
+      "properties": {
+        "semanticReview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reviewer", "status", "notes"],
+          "properties": {
+            "reviewer": { "type": "string", "minLength": 1 },
+            "status": { "type": "string", "enum": ["pending", "pass", "revise", "hold"] },
+            "notes": { "type": "string" }
+          }
+        },
+        "visualReview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reviewer", "status", "notes"],
+          "properties": {
+            "reviewer": { "type": "string", "minLength": 1 },
+            "status": { "type": "string", "enum": ["pending", "pass", "revise", "hold"] },
+            "notes": { "type": "string" }
+          }
+        },
+        "score30": { "type": "integer", "minimum": 0, "maximum": 30 },
+        "inspected": { "type": "boolean" },
+        "decision": {
+          "type": "string",
+          "enum": ["draft", "eligible-for-human-review", "approved", "iterate", "restart", "blocked", "published"]
+        },
+        "humanDecision": {
+          "type": "string",
+          "enum": ["pending", "approve", "iterate", "restart", "blocked"]
+        }
+      }
+    },
+    "updatedAt": { "type": "string", "format": "date" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "semantic": {
+            "properties": {
+              "artifactClass": { "enum": ["infographic", "diagram", "chart"] }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "semantic": {
+            "properties": {
+              "required": { "const": true },
+              "claims": { "minItems": 1 },
+              "diagram": { "type": "object" }
+            }
+          },
+          "accessibility": {
+            "properties": {
+              "longDescriptionPath": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "properties": {
+              "productionLane": { "const": "native-imagegen" }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "generation": {
+            "properties": {
+              "sourceRole": { "const": "final-native-infographic" }
+            }
+          },
+          "deterministic": {
+            "properties": {
+              "required": { "const": false },
+              "exactText": { "const": false },
+              "exactData": { "const": false },
+              "exactLogos": { "const": false },
+              "route": { "const": "none-native-raster" },
+              "overlayPlan": { "maxItems": 0 }
+            }
+          },
+          "identity": {
+            "properties": {
+              "thirdPartyBrands": { "maxItems": 0 }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "properties": {
+              "productionLane": { "const": "deterministic-composite" }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "generation": {
+            "properties": {
+              "sourceRole": { "enum": ["illustration-layer", "draft-composition"] }
+            }
+          },
+          "deterministic": {
+            "properties": {
+              "required": { "const": true },
+              "exactText": { "const": true },
+              "exactData": { "const": true }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "identity": {
+            "properties": {
+              "thirdPartyBrands": { "minItems": 1 }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "deterministic": {
+            "properties": {
+              "exactLogos": { "const": true }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "properties": {
+              "publicationState": { "enum": ["candidate", "published"] }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "qa": {
+            "properties": {
+              "inspected": { "const": true },
+              "score30": { "minimum": 26 },
+              "semanticReview": {
+                "properties": { "status": { "const": "pass" } }
+              },
+              "visualReview": {
+                "properties": { "status": { "const": "pass" } }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

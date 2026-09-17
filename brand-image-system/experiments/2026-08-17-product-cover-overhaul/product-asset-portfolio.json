@@ -1,0 +1,1024 @@
+{
+  "$schema": "../../runtime/schemas/product-asset-portfolio.schema.json",
+  "portfolioId": "hermes-product-slate-2026-08-17",
+  "source": "C:/Users/frank/starlight/repos/frankx-strategy/09-evidence/product-funnel-os-2026-08-17/catalog/overlay.json",
+  "scope": "Complete classification of the 47-item slate supplied to the audited Hermes Product Funnel OS; not an exhaustive claim over every estate idea.",
+  "summary": {
+    "productCount": 47,
+    "byBrand": {
+      "frankx": 27,
+      "gencreator": 8,
+      "sis": 6,
+      "arcanea": 6
+    },
+    "byReleaseState": {
+      "public": 14,
+      "validation": 23,
+      "internal-only": 10
+    }
+  },
+  "brands": {
+    "frankx": {
+      "name": "FrankX",
+      "brandPack": "brand-image-system/runtime/brands/frankx/brand-pack.json",
+      "canonicalLogos": [
+        "frankx.ai-vercel-website/public/images/brand/logo-full-v2.png",
+        "frankx.ai-vercel-website/public/images/brand/logo-mark-v2.png"
+      ],
+      "fonts": [
+        "Outfit",
+        "Inter",
+        "IBM Plex Mono"
+      ],
+      "colors": [
+        "#050914",
+        "#00D4FF",
+        "#F6FAFF",
+        "#F2B84B"
+      ],
+      "identityRule": "Use the actual cyan FrankX assets; never type a substitute wordmark."
+    },
+    "gencreator": {
+      "name": "GenCreator",
+      "brandPack": "brand-image-system/runtime/brands/gencreator/brand-pack.json",
+      "canonicalLogos": [
+        "gencreator.ai/public/brand/gencreator-wordmark.svg",
+        "gencreator.ai/public/brand/gencreator-mark.svg"
+      ],
+      "fonts": [
+        "Inter",
+        "Sora"
+      ],
+      "colors": [
+        "#05060A",
+        "#F1F7FF",
+        "#6EA8FE",
+        "#38BDF8",
+        "#34D399"
+      ],
+      "identityRule": "Use the canonical wordmark and mark; center the owned-work mechanism."
+    },
+    "sis": {
+      "name": "Starlight Intelligence",
+      "brandPack": "brand-image-system/runtime/brands/sis/brand-pack.json",
+      "canonicalLogos": [],
+      "fonts": [
+        "IBM Plex Sans",
+        "IBM Plex Mono"
+      ],
+      "colors": [
+        "#07090B",
+        "#E7E0D2",
+        "#B89A5A",
+        "#8EA6A0"
+      ],
+      "identityRule": "No canonical logo was verified in this experiment. Use a typographic signature; do not invent a mark."
+    },
+    "arcanea": {
+      "name": "Arcanea",
+      "brandPack": "brand-image-system/runtime/brands/arcanea/brand-pack.json",
+      "canonicalLogos": [
+        "arcanea-ai-app/apps/web/public/brand/arcanea-wordmark.svg",
+        "arcanea-ai-app/apps/web/public/brand/arcanea-logo.svg"
+      ],
+      "fonts": [
+        "Plus Jakarta Sans",
+        "Georgia"
+      ],
+      "colors": [
+        "#05040A",
+        "#7FFFD4",
+        "#A78BFA",
+        "#9B59FF",
+        "#C7A86B"
+      ],
+      "identityRule": "Use canonical product chrome; generated world media remains a source layer."
+    }
+  },
+  "products": [
+    {
+      "id": "fx-atlas",
+      "brandId": "frankx",
+      "name": "AI Architecture Atlas",
+      "sourceKind": "platform",
+      "productForm": "platform",
+      "status": "live",
+      "commercialState": "free-public",
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://frankx.ai/ai-architecture",
+      "assetFamilies": [
+        "product-card",
+        "verified-ui-proof",
+        "mechanism-diagram",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "fx-decision-kit",
+      "brandId": "frankx",
+      "name": "Architecture Decision Kit",
+      "sourceKind": "kit",
+      "productForm": "kit",
+      "status": "building",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/decision-kit",
+      "assetFamilies": [
+        "kit-cover",
+        "contents-card",
+        "mechanism-infographic",
+        "delivery-preview"
+      ]
+    },
+    {
+      "id": "fx-coe-workspace",
+      "brandId": "frankx",
+      "name": "AI CoE Blueprint Workspace",
+      "sourceKind": "saas",
+      "productForm": "saas",
+      "status": "queued",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/coe",
+      "assetFamilies": [
+        "product-card",
+        "desktop-proof",
+        "mobile-proof",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "fx-sprint",
+      "brandId": "frankx",
+      "name": "Venture Signal Sprint",
+      "sourceKind": "sprint",
+      "productForm": "sprint",
+      "status": "building",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/sprint",
+      "assetFamilies": [
+        "offer-cover",
+        "process-strip",
+        "deliverable-stack",
+        "scope-page-open-graph"
+      ]
+    },
+    {
+      "id": "fx-foundry",
+      "brandId": "frankx",
+      "name": "Foundry / Personal AI CoE Install",
+      "sourceKind": "implementation",
+      "productForm": "implementation",
+      "status": "queued",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/foundry",
+      "assetFamilies": [
+        "offer-cover",
+        "scope-map",
+        "deliverable-stack",
+        "application-card"
+      ]
+    },
+    {
+      "id": "fx-academy",
+      "brandId": "frankx",
+      "name": "AI Architect Academy",
+      "sourceKind": "course",
+      "productForm": "course",
+      "status": "live",
+      "commercialState": null,
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://frankx.ai/academy",
+      "assetFamilies": [
+        "course-card",
+        "curriculum-map",
+        "lesson-proof",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "fx-coe-lab",
+      "brandId": "frankx",
+      "name": "AI CoE Architect Lab",
+      "sourceKind": "course",
+      "productForm": "course",
+      "status": "queued",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://aiarchitectacademy.com/",
+      "assetFamilies": [
+        "course-card",
+        "curriculum-map",
+        "lesson-proof",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "fx-diagnostic",
+      "brandId": "frankx",
+      "name": "Founder OS Diagnostic",
+      "sourceKind": "diagnostic",
+      "productForm": "diagnostic",
+      "status": "queued",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/assess",
+      "assetFamilies": [
+        "instrument-cover",
+        "process-strip",
+        "output-preview",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "fx-primer",
+      "brandId": "frankx",
+      "name": "Six Primitives Primer",
+      "sourceKind": "lead-magnet",
+      "productForm": "guide",
+      "status": "planned-in-repo",
+      "commercialState": "free-public",
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/products",
+      "assetFamilies": [
+        "document-cover",
+        "interior-preview",
+        "download-card",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "fx-pack",
+      "brandId": "frankx",
+      "name": "Six Primitives Pack",
+      "sourceKind": "pack",
+      "productForm": "pack",
+      "status": "planned-in-repo",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/products",
+      "assetFamilies": [
+        "pack-cover",
+        "contents-card",
+        "owned-work-mechanism",
+        "delivery-preview"
+      ]
+    },
+    {
+      "id": "fx-toolkit",
+      "brandId": "frankx",
+      "name": "Six Primitives Toolkit",
+      "sourceKind": "toolkit",
+      "productForm": "kit",
+      "status": "planned-in-repo",
+      "commercialState": "planned-in-repo",
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/products",
+      "assetFamilies": [
+        "kit-cover",
+        "contents-card",
+        "mechanism-infographic",
+        "delivery-preview"
+      ]
+    },
+    {
+      "id": "fx-founders",
+      "brandId": "frankx",
+      "name": "Founders Circle",
+      "sourceKind": "retainer",
+      "productForm": "retainer",
+      "status": "planned-in-repo",
+      "commercialState": "application-reviewed",
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/products",
+      "assetFamilies": [
+        "program-card",
+        "cadence-map",
+        "deliverable-proof",
+        "application-card"
+      ]
+    },
+    {
+      "id": "book-golden-age",
+      "brandId": "frankx",
+      "name": "Golden Age",
+      "sourceKind": "book",
+      "productForm": "book",
+      "status": "live",
+      "commercialState": null,
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://frankx.ai/books/golden-age.pdf",
+      "assetFamilies": [
+        "editorial-cover",
+        "thumbnail",
+        "sample-spread",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "book-hoffnung",
+      "brandId": "frankx",
+      "name": "Hoffnung",
+      "sourceKind": "book",
+      "productForm": "book",
+      "status": "live",
+      "commercialState": null,
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://frankx.ai/books/hoffnung.pdf",
+      "assetFamilies": [
+        "editorial-cover",
+        "thumbnail",
+        "sample-spread",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "book-imagination",
+      "brandId": "frankx",
+      "name": "Imagination",
+      "sourceKind": "book",
+      "productForm": "book",
+      "status": "unverified",
+      "commercialState": null,
+      "releaseState": "internal-only",
+      "coverPolicy": "Internal registry tile only; show the blocking state and do not create launch theater.",
+      "targetUrl": "https://frankx.ai/books/imagination.pdf",
+      "assetFamilies": [
+        "editorial-cover",
+        "thumbnail",
+        "sample-spread",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "book-love",
+      "brandId": "frankx",
+      "name": "Love and Poetry",
+      "sourceKind": "book",
+      "productForm": "book",
+      "status": "unverified",
+      "commercialState": null,
+      "releaseState": "internal-only",
+      "coverPolicy": "Internal registry tile only; show the blocking state and do not create launch theater.",
+      "targetUrl": "https://frankx.ai/books/love-and-poetry.pdf",
+      "assetFamilies": [
+        "editorial-cover",
+        "thumbnail",
+        "sample-spread",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "book-manifestation",
+      "brandId": "frankx",
+      "name": "Manifestation",
+      "sourceKind": "book",
+      "productForm": "book",
+      "status": "unverified",
+      "commercialState": null,
+      "releaseState": "internal-only",
+      "coverPolicy": "Internal registry tile only; show the blocking state and do not create launch theater.",
+      "targetUrl": "https://frankx.ai/books/manifestation.pdf",
+      "assetFamilies": [
+        "editorial-cover",
+        "thumbnail",
+        "sample-spread",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "book-self",
+      "brandId": "frankx",
+      "name": "Self Development",
+      "sourceKind": "book",
+      "productForm": "book",
+      "status": "unverified",
+      "commercialState": null,
+      "releaseState": "internal-only",
+      "coverPolicy": "Internal registry tile only; show the blocking state and do not create launch theater.",
+      "targetUrl": "https://frankx.ai/books/self-development.pdf",
+      "assetFamilies": [
+        "editorial-cover",
+        "thumbnail",
+        "sample-spread",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "book-spartan",
+      "brandId": "frankx",
+      "name": "Spartan Mindset",
+      "sourceKind": "book",
+      "productForm": "book",
+      "status": "unverified",
+      "commercialState": null,
+      "releaseState": "internal-only",
+      "coverPolicy": "Internal registry tile only; show the blocking state and do not create launch theater.",
+      "targetUrl": "https://frankx.ai/books/spartan-mindset.pdf",
+      "assetFamilies": [
+        "editorial-cover",
+        "thumbnail",
+        "sample-spread",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "pdf-acos",
+      "brandId": "frankx",
+      "name": "ACOS Product Guide",
+      "sourceKind": "pdf",
+      "productForm": "guide",
+      "status": "live",
+      "commercialState": "public-reference",
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://frankx.ai/products/ACOS-Product-Guide.pdf",
+      "assetFamilies": [
+        "document-cover",
+        "interior-preview",
+        "download-card",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "pdf-soulbook",
+      "brandId": "frankx",
+      "name": "Soulbook 7 Pillars",
+      "sourceKind": "pdf",
+      "productForm": "guide",
+      "status": "live",
+      "commercialState": "public-reference",
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://frankx.ai/products/soulbook-7-pillars-framework.pdf",
+      "assetFamilies": [
+        "document-cover",
+        "interior-preview",
+        "download-card",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "gc-snapshot",
+      "brandId": "gencreator",
+      "name": "Creator OS Snapshot",
+      "sourceKind": "diagnostic",
+      "productForm": "diagnostic",
+      "status": "building",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://gencreator.ai/snapshot",
+      "assetFamilies": [
+        "instrument-cover",
+        "process-strip",
+        "output-preview",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "gc-os",
+      "brandId": "gencreator",
+      "name": "GenCreator OS",
+      "sourceKind": "saas",
+      "productForm": "saas",
+      "status": "building",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://gencreator.ai/loop",
+      "assetFamilies": [
+        "product-card",
+        "desktop-proof",
+        "mobile-proof",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "gc-creatorpack",
+      "brandId": "gencreator",
+      "name": "CreatorPack / owned-work loop",
+      "sourceKind": "pack",
+      "productForm": "pack",
+      "status": "building",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://gencreator.ai/loop",
+      "assetFamilies": [
+        "pack-cover",
+        "contents-card",
+        "owned-work-mechanism",
+        "delivery-preview"
+      ]
+    },
+    {
+      "id": "gc-teams",
+      "brandId": "gencreator",
+      "name": "GenCreator OS Teams / Studio",
+      "sourceKind": "saas",
+      "productForm": "saas",
+      "status": "later",
+      "commercialState": null,
+      "releaseState": "internal-only",
+      "coverPolicy": "Internal registry tile only; show the blocking state and do not create launch theater.",
+      "targetUrl": "https://gencreator.ai/studio",
+      "assetFamilies": [
+        "product-card",
+        "desktop-proof",
+        "mobile-proof",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "gc-community",
+      "brandId": "gencreator",
+      "name": "GenCreator Community",
+      "sourceKind": "community",
+      "productForm": "community",
+      "status": "hold",
+      "commercialState": null,
+      "releaseState": "internal-only",
+      "coverPolicy": "Internal registry tile only; show the blocking state and do not create launch theater.",
+      "targetUrl": "https://gencreator.community/",
+      "assetFamilies": [
+        "program-card",
+        "cadence-map",
+        "audience-card",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "acos",
+      "brandId": "gencreator",
+      "name": "Agentic Creator OS (ACOS)",
+      "sourceKind": "substrate",
+      "productForm": "platform",
+      "status": "open-core",
+      "commercialState": null,
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://gencreator.ai/acos",
+      "assetFamilies": [
+        "product-card",
+        "verified-ui-proof",
+        "mechanism-diagram",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "sis-open",
+      "brandId": "sis",
+      "name": "SIP Starter / public vault",
+      "sourceKind": "open-core",
+      "productForm": "platform",
+      "status": "live",
+      "commercialState": "free-public",
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://starlightintelligence.org/",
+      "assetFamilies": [
+        "product-card",
+        "verified-ui-proof",
+        "mechanism-diagram",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "sis-kit",
+      "brandId": "sis",
+      "name": "Sovereign Intelligence Starter Kit",
+      "sourceKind": "kit",
+      "productForm": "kit",
+      "status": "building",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://starlightintelligence.ai/kit",
+      "assetFamilies": [
+        "kit-cover",
+        "contents-card",
+        "mechanism-infographic",
+        "delivery-preview"
+      ]
+    },
+    {
+      "id": "sis-estate",
+      "brandId": "sis",
+      "name": "Sovereign Estate Blueprint",
+      "sourceKind": "blueprint",
+      "productForm": "kit",
+      "status": "queued",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://starlightintelligence.ai/estate",
+      "assetFamilies": [
+        "kit-cover",
+        "contents-card",
+        "mechanism-infographic",
+        "delivery-preview"
+      ]
+    },
+    {
+      "id": "sis-commission",
+      "brandId": "sis",
+      "name": "Estate Commission / Steward",
+      "sourceKind": "high-touch",
+      "productForm": "implementation",
+      "status": "scarce",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://starlightintelligence.ai/steward",
+      "assetFamilies": [
+        "offer-cover",
+        "scope-map",
+        "deliverable-stack",
+        "application-card"
+      ]
+    },
+    {
+      "id": "ar-seed",
+      "brandId": "arcanea",
+      "name": "World Seed / Sovereign Engine",
+      "sourceKind": "platform",
+      "productForm": "platform",
+      "status": "live",
+      "commercialState": "free-public",
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://arcanea.ai/",
+      "assetFamilies": [
+        "product-card",
+        "verified-ui-proof",
+        "mechanism-diagram",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "ar-bible",
+      "brandId": "arcanea",
+      "name": "World Bible / Project Context Kit",
+      "sourceKind": "kit",
+      "productForm": "kit",
+      "status": "queued",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://arcanea.ai/bible",
+      "assetFamilies": [
+        "kit-cover",
+        "contents-card",
+        "mechanism-infographic",
+        "delivery-preview"
+      ]
+    },
+    {
+      "id": "ar-cloud",
+      "brandId": "arcanea",
+      "name": "Arcanea Cloud Sync / Studio Bench",
+      "sourceKind": "saas",
+      "productForm": "saas",
+      "status": "waitlist",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://arcanea.ai/studio",
+      "assetFamilies": [
+        "product-card",
+        "desktop-proof",
+        "mobile-proof",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "ar-academy",
+      "brandId": "arcanea",
+      "name": "Arcanea Academy",
+      "sourceKind": "course",
+      "productForm": "course",
+      "status": "live",
+      "commercialState": null,
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://arcanea.ai/academy",
+      "assetFamilies": [
+        "course-card",
+        "curriculum-map",
+        "lesson-proof",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "ar-music-dna",
+      "brandId": "arcanea",
+      "name": "Arcanea Music DNA Pack",
+      "sourceKind": "pack",
+      "productForm": "pack",
+      "status": "hold-rights",
+      "commercialState": null,
+      "releaseState": "internal-only",
+      "coverPolicy": "Internal registry tile only; show the blocking state and do not create launch theater.",
+      "targetUrl": "https://arcanea.academy/",
+      "assetFamilies": [
+        "pack-cover",
+        "contents-card",
+        "owned-work-mechanism",
+        "delivery-preview"
+      ]
+    },
+    {
+      "id": "hold-income",
+      "brandId": "frankx",
+      "name": "AgenticIncome Systems Library",
+      "sourceKind": "hold",
+      "productForm": "internal-hold",
+      "status": "hold-claims",
+      "commercialState": null,
+      "releaseState": "internal-only",
+      "coverPolicy": "Internal registry tile only; show the blocking state and do not create launch theater.",
+      "targetUrl": "https://agenticincome.ai/",
+      "assetFamilies": [
+        "internal-registry-tile"
+      ]
+    },
+    {
+      "id": "hold-ocean",
+      "brandId": "sis",
+      "name": "Ocean Intelligence Field Kit",
+      "sourceKind": "commons",
+      "productForm": "platform",
+      "status": "queued",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://oceanintelligence.app/",
+      "assetFamilies": [
+        "product-card",
+        "verified-ui-proof",
+        "mechanism-diagram",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "hold-reality",
+      "brandId": "frankx",
+      "name": "Reality Architect Workbook",
+      "sourceKind": "workbook",
+      "productForm": "workbook",
+      "status": "queued",
+      "commercialState": null,
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://realityarchitect.ai/",
+      "assetFamilies": [
+        "workbook-cover",
+        "exercise-preview",
+        "completion-artifact",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "fx-mastery",
+      "brandId": "frankx",
+      "name": "Six Primitives Mastery",
+      "sourceKind": "mastery",
+      "productForm": "course",
+      "status": "planned-in-repo",
+      "commercialState": "planned-in-repo",
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/products",
+      "assetFamilies": [
+        "course-card",
+        "curriculum-map",
+        "lesson-proof",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "fx-architect",
+      "brandId": "frankx",
+      "name": "Six Primitives Architect",
+      "sourceKind": "architect",
+      "productForm": "course",
+      "status": "planned-in-repo",
+      "commercialState": "planned-in-repo",
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://frankx.ai/products",
+      "assetFamilies": [
+        "course-card",
+        "curriculum-map",
+        "lesson-proof",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "sis-blueprint",
+      "brandId": "sis",
+      "name": "Blueprint Studio",
+      "sourceKind": "free-proof",
+      "productForm": "guide",
+      "status": "building",
+      "commercialState": "free-proof",
+      "releaseState": "validation",
+      "coverPolicy": "Concept/validation cover allowed with exact status; no price, availability, customer, or launch claim.",
+      "targetUrl": "https://starlightintelligence.ai/blueprint",
+      "assetFamilies": [
+        "document-cover",
+        "interior-preview",
+        "download-card",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "pdf-acos-quick",
+      "brandId": "frankx",
+      "name": "ACOS Quickstart Guide",
+      "sourceKind": "pdf",
+      "productForm": "guide",
+      "status": "live",
+      "commercialState": "public-reference",
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://frankx.ai/products/ACOS-Quickstart-Guide.pdf",
+      "assetFamilies": [
+        "document-cover",
+        "interior-preview",
+        "download-card",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "pdf-acos-ref",
+      "brandId": "frankx",
+      "name": "ACOS Complete Reference",
+      "sourceKind": "pdf",
+      "productForm": "guide",
+      "status": "live",
+      "commercialState": "public-reference",
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://frankx.ai/products/ACOS-Complete-Reference.pdf",
+      "assetFamilies": [
+        "document-cover",
+        "interior-preview",
+        "download-card",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "pdf-gc-os",
+      "brandId": "gencreator",
+      "name": "GenCreator OS Guide",
+      "sourceKind": "pdf",
+      "productForm": "guide",
+      "status": "live",
+      "commercialState": "public-reference",
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://gencreator.ai/guide",
+      "assetFamilies": [
+        "document-cover",
+        "interior-preview",
+        "download-card",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "pdf-vibe",
+      "brandId": "gencreator",
+      "name": "Vibe OS Guide",
+      "sourceKind": "pdf",
+      "productForm": "guide",
+      "status": "live",
+      "commercialState": "public-reference",
+      "releaseState": "public",
+      "coverPolicy": "Proof-first public cover; use verified product state and approved public copy.",
+      "targetUrl": "https://gencreator.ai/vibe",
+      "assetFamilies": [
+        "document-cover",
+        "interior-preview",
+        "download-card",
+        "open-graph"
+      ]
+    },
+    {
+      "id": "ar-storyworld",
+      "brandId": "arcanea",
+      "name": "Arcanea storyworld drops",
+      "sourceKind": "hold",
+      "productForm": "internal-hold",
+      "status": "hold-rights",
+      "commercialState": "hold",
+      "releaseState": "internal-only",
+      "coverPolicy": "Internal registry tile only; show the blocking state and do not create launch theater.",
+      "targetUrl": "https://arcanea.ai/",
+      "assetFamilies": [
+        "internal-registry-tile"
+      ]
+    }
+  ],
+  "assetFamilies": {
+    "book": [
+      "editorial-cover",
+      "thumbnail",
+      "sample-spread",
+      "open-graph"
+    ],
+    "community": [
+      "program-card",
+      "cadence-map",
+      "audience-card",
+      "open-graph"
+    ],
+    "course": [
+      "course-card",
+      "curriculum-map",
+      "lesson-proof",
+      "open-graph"
+    ],
+    "diagnostic": [
+      "instrument-cover",
+      "process-strip",
+      "output-preview",
+      "open-graph"
+    ],
+    "guide": [
+      "document-cover",
+      "interior-preview",
+      "download-card",
+      "open-graph"
+    ],
+    "implementation": [
+      "offer-cover",
+      "scope-map",
+      "deliverable-stack",
+      "application-card"
+    ],
+    "kit": [
+      "kit-cover",
+      "contents-card",
+      "mechanism-infographic",
+      "delivery-preview"
+    ],
+    "pack": [
+      "pack-cover",
+      "contents-card",
+      "owned-work-mechanism",
+      "delivery-preview"
+    ],
+    "platform": [
+      "product-card",
+      "verified-ui-proof",
+      "mechanism-diagram",
+      "open-graph"
+    ],
+    "retainer": [
+      "program-card",
+      "cadence-map",
+      "deliverable-proof",
+      "application-card"
+    ],
+    "saas": [
+      "product-card",
+      "desktop-proof",
+      "mobile-proof",
+      "open-graph"
+    ],
+    "sprint": [
+      "offer-cover",
+      "process-strip",
+      "deliverable-stack",
+      "scope-page-open-graph"
+    ],
+    "workbook": [
+      "workbook-cover",
+      "exercise-preview",
+      "completion-artifact",
+      "open-graph"
+    ],
+    "internal-hold": [
+      "internal-registry-tile"
+    ]
+  },
+  "updatedAt": "2026-08-17"
+}

@@ -1,5 +1,7 @@
 # FrankX Tokens
 
+> **Foundation reset — 2026-08-17:** These tokens are frozen legacy inputs and must not seed new brand or marketing work. Re-establish type, monochrome hierarchy, palette, spacing, and motion after the Working Intelligence territory is founder-approved.
+
 Starter token posture for FrankX product and content surfaces.
 
 ```text

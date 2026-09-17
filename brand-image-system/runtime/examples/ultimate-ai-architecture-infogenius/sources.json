@@ -1,0 +1,199 @@
+{
+  "artifactId": "ultimate-ai-architecture-2026",
+  "checkedAt": "2026-08-21",
+  "method": "Primary and official documentation was preferred. Product claims are framed as documented capabilities, not performance rankings. Brand assets are optional and never model-generated.",
+  "sources": [
+    {
+      "id": "openai-agents",
+      "publisher": "OpenAI",
+      "title": "Agents",
+      "url": "https://openai.github.io/openai-agents-python/agents/",
+      "kind": "primary",
+      "supports": ["Agents can be configured with instructions, models, tools, guardrails, handoffs, and structured outputs."]
+    },
+    {
+      "id": "openai-orchestration",
+      "publisher": "OpenAI",
+      "title": "Orchestrating multiple agents",
+      "url": "https://openai.github.io/openai-agents-python/multi_agent/",
+      "kind": "primary",
+      "supports": ["The SDK documents manager-style orchestration and decentralized handoffs."]
+    },
+    {
+      "id": "openai-tracing",
+      "publisher": "OpenAI",
+      "title": "Tracing",
+      "url": "https://openai.github.io/openai-agents-python/tracing/",
+      "kind": "primary",
+      "supports": ["Agent runs can emit traces for generations, tool calls, handoffs, and guardrails."]
+    },
+    {
+      "id": "openai-brand",
+      "publisher": "OpenAI",
+      "title": "OpenAI Design Guidelines",
+      "url": "https://openai.com/brand/",
+      "kind": "official-brand",
+      "supports": ["Use official assets without modification and avoid implying endorsement."]
+    },
+    {
+      "id": "anthropic-agents",
+      "publisher": "Anthropic",
+      "title": "Building effective agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "kind": "primary",
+      "supports": ["Start with simple, composable workflow patterns and add autonomy only when it improves outcomes."]
+    },
+    {
+      "id": "anthropic-mcp",
+      "publisher": "Anthropic",
+      "title": "Introducing the Model Context Protocol",
+      "url": "https://www.anthropic.com/research/model-context-protocol",
+      "kind": "primary",
+      "supports": ["MCP is an open protocol for connecting AI systems to data sources and tools."]
+    },
+    {
+      "id": "anthropic-trust",
+      "publisher": "Anthropic",
+      "title": "Building trustworthy agents",
+      "url": "https://www.anthropic.com/research/trustworthy-agents",
+      "kind": "primary",
+      "supports": ["Trustworthy agent design includes human control, values, secure interactions, transparency, and privacy."]
+    },
+    {
+      "id": "google-a2a",
+      "publisher": "Google",
+      "title": "A2A: A new era of agent interoperability",
+      "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
+      "kind": "primary",
+      "supports": ["A2A enables independent agents to discover capabilities, coordinate tasks, and exchange artifacts."]
+    },
+    {
+      "id": "a2a-spec",
+      "publisher": "A2A Project",
+      "title": "A2A Protocol specification 0.3.0",
+      "url": "https://a2a-protocol.org/v0.3.0/specification/",
+      "kind": "standard",
+      "supports": ["The protocol defines Agent Cards, messages, tasks, artifacts, and long-running interaction patterns."]
+    },
+    {
+      "id": "google-brand",
+      "publisher": "Google",
+      "title": "Brand Resource Center guidance",
+      "url": "https://about.google/brand-resource-center/guidance/",
+      "kind": "official-brand",
+      "supports": ["Educational use must preserve official assets and must not imply sponsorship or endorsement."]
+    },
+    {
+      "id": "microsoft-framework",
+      "publisher": "Microsoft",
+      "title": "Microsoft Agent Framework overview",
+      "url": "https://learn.microsoft.com/en-us/agent-framework/overview/",
+      "kind": "primary",
+      "supports": ["The framework combines agents with graph-based workflows, state, middleware, checkpoints, telemetry, and human-in-the-loop patterns."]
+    },
+    {
+      "id": "microsoft-patterns",
+      "publisher": "Microsoft",
+      "title": "AI agent orchestration patterns",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns",
+      "kind": "primary",
+      "supports": ["Architecture should distinguish an agentic decision from a deterministic workflow and choose an orchestration pattern deliberately."]
+    },
+    {
+      "id": "mistral-agents",
+      "publisher": "Mistral AI",
+      "title": "Agents and conversations",
+      "url": "https://docs.mistral.ai/studio/agents/agents-api",
+      "kind": "primary",
+      "supports": ["Mistral documents persistent conversations, agent tools, and agent handoffs."]
+    },
+    {
+      "id": "mistral-brand",
+      "publisher": "Mistral AI",
+      "title": "Mistral AI brand guidelines",
+      "url": "https://mistral.ai/brand/",
+      "kind": "official-brand",
+      "supports": ["The pixel cat is documented as an emblem; the mark must not be recolored or deformed."]
+    },
+    {
+      "id": "xai-multi-agent",
+      "publisher": "xAI",
+      "title": "Multi-agent",
+      "url": "https://docs.x.ai/developers/model-capabilities/text/multi-agent",
+      "kind": "primary",
+      "supports": ["xAI documents server-side multi-agent execution in which a leader synthesizes specialist work."]
+    },
+    {
+      "id": "xai-tools",
+      "publisher": "xAI",
+      "title": "Collections search",
+      "url": "https://docs.x.ai/developers/tools/collections-search",
+      "kind": "primary",
+      "supports": ["The xAI tool surface includes collection search alongside web, X, and code-oriented capabilities."]
+    },
+    {
+      "id": "xai-brand",
+      "publisher": "xAI",
+      "title": "xAI brand guidelines",
+      "url": "https://x.ai/legal/brand-guidelines",
+      "kind": "official-brand",
+      "supports": ["Use exact provided marks without alteration and do not imply sponsorship or endorsement."]
+    },
+    {
+      "id": "meta-llama",
+      "publisher": "Meta",
+      "title": "Llama: Get started",
+      "url": "https://ai.meta.com/llama/get-started/",
+      "kind": "primary",
+      "supports": ["Llama is positioned as an open model ecosystem with downloadable models and ecosystem integrations."]
+    },
+    {
+      "id": "meta-responsible",
+      "publisher": "Meta",
+      "title": "Llama responsible use guide",
+      "url": "https://ai.meta.com/llama/responsible-use-guide/",
+      "kind": "primary",
+      "supports": ["Responsible deployment requires system-level evaluation and safeguards around the model."]
+    },
+    {
+      "id": "langgraph-docs",
+      "publisher": "LangChain",
+      "title": "LangGraph documentation",
+      "url": "https://langchain-ai.github.io/langgraph/",
+      "kind": "primary",
+      "supports": ["LangGraph emphasizes durable execution, persistence, streaming, and human-in-the-loop control."]
+    },
+    {
+      "id": "crewai-docs",
+      "publisher": "CrewAI",
+      "title": "CrewAI documentation",
+      "url": "https://docs.crewai.com/",
+      "kind": "primary",
+      "supports": ["CrewAI separates crews from event-driven flows and provides memory, knowledge, guardrails, and observability features."]
+    },
+    {
+      "id": "linkedin-images",
+      "publisher": "LinkedIn",
+      "title": "Share photos or videos",
+      "url": "https://www.linkedin.com/help/linkedin/answer/a527229",
+      "kind": "primary",
+      "supports": ["LinkedIn accepts portrait images up to a 4:5 aspect ratio and recommends a 1080-pixel width."]
+    },
+    {
+      "id": "x-creative-specs",
+      "publisher": "X",
+      "title": "Creative ad specifications",
+      "url": "https://business.x.com/en/help/campaign-setup/creative-ad-specifications",
+      "kind": "primary",
+      "supports": ["X documents 4:5 portrait creative, including 1440 by 1800 pixels."]
+    },
+    {
+      "id": "meta-social",
+      "publisher": "Meta",
+      "title": "Creative best practices",
+      "url": "https://www.facebook.com/business/ads/automation/tailored-campaigns",
+      "kind": "primary",
+      "supports": ["Meta recommends 4:5 for Feed and 9:16 for Stories and Reels, with a clear focal point and restrained text."]
+    }
+  ]
+}
