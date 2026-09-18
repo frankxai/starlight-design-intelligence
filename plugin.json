@@ -1,0 +1,53 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/plugin.v1.json",
+  "name": "starlight-design",
+  "version": "1.0.0",
+  "description": "Owned methodology, anti-slop frontend engineering, brand constitution, motion rubrics, and design system intelligence across Claude Code, OpenAI Codex, Grok Build, Google Antigravity, and Cursor.",
+  "author": {
+    "name": "Frank Riemer",
+    "url": "https://frankx.ai",
+    "github": "frankxai"
+  },
+  "homepage": "https://github.com/frankxai/starlight-design-intelligence",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankxai/starlight-design-intelligence.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "design-intelligence",
+    "anti-slop",
+    "frontend",
+    "brand-constitution",
+    "motion-design",
+    "agent-skills",
+    "agent-plugins",
+    "claude-code",
+    "codex",
+    "grok",
+    "antigravity"
+  ],
+  "skills": "./skills",
+  "runtimes": {
+    "codex": {
+      "supported": true,
+      "skills_dir": "./skills"
+    },
+    "claude": {
+      "supported": true,
+      "skills_dir": "./skills"
+    },
+    "grok": {
+      "supported": true,
+      "skills_dir": "./skills"
+    },
+    "antigravity": {
+      "supported": true,
+      "skills_dir": "./skills"
+    },
+    "cursor": {
+      "supported": true,
+      "skills_dir": "./skills"
+    }
+  }
+}
