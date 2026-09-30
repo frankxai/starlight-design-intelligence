@@ -14,7 +14,9 @@
     "validate:portfolio": "node scripts/validate-adoption.mjs --registry-only",
     "validate:release": "node scripts/validate-release-evidence.mjs",
     "validate:media": "node scripts/validate-media-job.mjs",
-    "test": "node --test"
+    "test": "node --test",
+    "validate:experience": "node scripts/validate-experience.mjs",
+    "export:brand": "node scripts/export-brand-handoff.mjs"
   },
   "engines": {
     "node": ">=24.14.0 <25"

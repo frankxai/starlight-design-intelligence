@@ -54,7 +54,7 @@
       ]
     },
     "figma": {
-      "status": "foundation-v1-established",
+      "status": "foundation-only-in-inspected-files",
       "role": "Per-brand visual projection, component design, flow review, and design QA.",
       "known_workspaces": [
         "FrankX",
@@ -65,7 +65,7 @@
         "cross-brand mega-library",
         "re-publishing third-party reference kits as owned design"
       ],
-      "next_gate": "Commit a generated projection and provenance record, then validate a named desktop and mobile flow before components or library publishing.",
+      "next_gate": "Reconcile source decisions, export a committed handoff, generate the product-owned projection and validate a real desktop and phone flow before the first component family; further inspection is quota-blocked.",
       "required_pipeline": [
         "central brand pack plus local contract",
         "committed generated token projection",
@@ -74,23 +74,28 @@
         "visual regression evidence"
       ],
       "observed": [
-        "The existing FrankX workspace now has four deliberate one-mode collections, 60 local variables, 14 text styles, and five effect styles.",
-        "The bootstrap passed collection, mode, alias, scope, WEB code-syntax, and style-coverage validation.",
-        "Arcanea remains a separate overlay with no mutation in this execution."
-      ]
+        "The inspected FrankX foundation contains four one-mode collections, 60 local variables, 14 text styles and five effect styles.",
+        "No local components were found on inspected FrankX pages; the overview was not a usable specimen.",
+        "The inspected Arcanea master and two GenCreator files lacked owned local system content."
+      ],
+      "last_reviewed": "2026-09-30",
+      "review_scope": "Seven scoped files; an additional file hit the tool quota and two boards remain unverified. No account-wide or production claim.",
+      "mapping_boundary": "Code Connect eligibility requires a separate plan decision. Pilot an explicit component/code-prop map without claiming Code Connect is enabled."
     },
     "canva": {
       "status": "partial",
       "role": "Brand Kits, locked content templates, decks, campaign variants, and reusable social production.",
       "observed": [
-        "Arcanea Brand Kit exists",
-        "content folder taxonomy exists"
+        "Scoped audit returned 337 unique designs, 1454 images, 68 folders including 28 empty folders, six kits and one published Brand Template.",
+        "Folder spines exist; selected material contains dated claims or placeholder copy requiring review."
       ],
       "prohibited": [
         "product UI source of truth",
         "canonical product tokens"
       ],
-      "next_gate": "Create or validate Brand Kits only for active brands with an approved central brand pack."
+      "next_gate": "Privately resolve kit-to-brand relationships; pilot one approved kit and two locked templates with actual export inspection and separate fillable-field proof.",
+      "last_reviewed": "2026-09-30",
+      "review_scope": "Read-only inventory plus selected text samples; kit contents, rights, template automation and export quality remain unverified."
     },
     "google_drive": {
       "status": "active-human-operation",
@@ -170,5 +175,6 @@
       "unlicensed assets",
       "third-party reference kits published as owned components"
     ]
-  }
-}\n
+  },
+  "experience_standard": "portfolio/experience-standard.json"
+}

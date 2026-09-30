@@ -26,6 +26,14 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
 - Portfolio toolchain boundary: `starlight.design_toolchain.v1`, stored in
   `portfolio/design-toolchain.json`; it contains roles, readiness, and rules but
   no private tool identifiers, credentials, or asset binaries.
+- Portfolio experience standard and bounded upgrade queue: `starlight.experience_standard.v1`,
+  stored in `portfolio/experience-standard.json`, defined in
+  `schemas/experience-standard.schema.json` and checked by `scripts/validate-experience.mjs`.
+  It cross-references existing authorities and records proposed jobs and dated observations,
+  never adoption, identity approval or a production pass.
+- Read-only brand handoff: `starlight.brand_handoff.v1`, emitted by
+  `scripts/export-brand-handoff.mjs` from committed Git blobs with revision and raw-byte hashes.
+  This is an export format, not a new brand authority or release validator.
 - Design research target: `starlight.design_research_target.v1`.
 - Design snapshot manifest: `starlight.design_snapshot_manifest.v1`.
 - Normalized extraction: `starlight.design_extraction.v1`.

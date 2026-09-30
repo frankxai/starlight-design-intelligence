@@ -85,3 +85,13 @@ flag.
 - Production proof is emitted after deployment as an external CI artifact or a
   later receipts commit; it is never embedded in the production commit whose SHA
   it records.
+
+## Experience coherence
+
+Use [the portfolio experience standard](portfolio/experience-standard.md) to turn
+reference mechanisms into original brand-specific user journeys. The dated
+[contract and upgrade queue](portfolio/experience-standard.json) covers all
+registered surfaces without claiming identity approval or production adoption.
+Run `npm run validate:experience`; export an exact source bundle with
+`npm run export:brand -- --brand frankx --out /tmp/frankx-handoff`. Existing
+release and adoption validators remain authoritative.
