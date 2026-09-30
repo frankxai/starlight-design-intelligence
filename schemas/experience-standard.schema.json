@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankx.ai/schemas/experience-standard.schema.json",
+  "title": "Portfolio experience standard and bounded upgrade queue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "reviewed_at", "scope", "policy", "checks", "tool_reviews", "references", "flows", "upgrades"],
+  "properties": {
+    "schema_version": { "const": "starlight.experience_standard.v1" },
+    "reviewed_at": { "$ref": "#/$defs/date" },
+    "scope": { "$ref": "#/$defs/text" },
+    "policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["identity_authority", "reference_rights", "production_claim", "typography_dependency"],
+      "properties": {
+        "identity_authority": { "const": "existing-brand-packs-and-recorded-owner-decisions" },
+        "reference_rights": { "const": "third-party-reference-only" },
+        "production_claim": { "const": "none" },
+        "typography_dependency": { "type": "string", "format": "uri" }
+      }
+    },
+    "checks": { "type": "array", "minItems": 8, "items": { "$ref": "#/$defs/check" } },
+    "tool_reviews": { "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/toolReview" } },
+    "references": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/reference" } },
+    "flows": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/flow" } },
+    "upgrades": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/upgrade" } }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" },
+    "text": { "type": "string", "minLength": 12 },
+    "texts": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/text" } },
+    "ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+    "date": { "type": "string", "format": "date" },
+    "check": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "requirement", "acceptance", "evidence", "gate_paths"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "requirement": { "$ref": "#/$defs/text" },
+        "acceptance": { "$ref": "#/$defs/texts" }, "evidence": { "$ref": "#/$defs/texts" },
+        "gate_paths": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^evals/[a-z0-9-]+\\.md$" } }
+      }
+    },
+    "toolReview": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "tool", "reviewed_at", "evidence_kind", "scope", "observations", "limitations", "next_action"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "tool": { "enum": ["github", "figma", "canva"] },
+        "reviewed_at": { "$ref": "#/$defs/date" }, "evidence_kind": { "enum": ["repository-inspection", "private-read-only-audit"] },
+        "scope": { "$ref": "#/$defs/text" }, "observations": { "$ref": "#/$defs/texts" },
+        "limitations": { "$ref": "#/$defs/texts" }, "next_action": { "$ref": "#/$defs/text" }
+      }
+    },
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "target_id", "source_url", "reviewed_at", "evidence_kind", "rights", "observed", "inference", "applications"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "target_id": { "$ref": "#/$defs/id" },
+        "source_url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "reviewed_at": { "$ref": "#/$defs/date" }, "evidence_kind": { "const": "primary-page-text" },
+        "rights": { "const": "third-party-reference-only" },
+        "observed": { "$ref": "#/$defs/text" }, "inference": { "$ref": "#/$defs/text" },
+        "applications": { "type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false, "required": ["domain_id", "pattern_id"],
+          "properties": { "domain_id": { "$ref": "#/$defs/id" }, "pattern_id": { "$ref": "#/$defs/id" } }
+        } }
+      }
+    },
+    "flow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["domain_id", "brand_id", "repository", "surface_id", "mode", "recipient", "job", "primary_action", "first_useful_outcome", "proof", "failure_recovery", "pattern_ids"],
+      "properties": {
+        "domain_id": { "$ref": "#/$defs/id" }, "brand_id": { "$ref": "#/$defs/id" },
+        "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+        "surface_id": { "$ref": "#/$defs/id" }, "mode": { "$ref": "#/$defs/id" },
+        "recipient": { "$ref": "#/$defs/text" }, "job": { "$ref": "#/$defs/text" },
+        "primary_action": { "$ref": "#/$defs/text" }, "first_useful_outcome": { "$ref": "#/$defs/text" },
+        "proof": { "$ref": "#/$defs/text" }, "failure_recovery": { "$ref": "#/$defs/text" },
+        "pattern_ids": { "$ref": "#/$defs/ids" }
+      }
+    },
+    "upgrade": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "priority", "domain_ids", "state", "action", "basis", "depends_on", "exit_criteria", "blocker"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "priority": { "enum": ["P0", "P1", "P2"] },
+        "domain_ids": { "$ref": "#/$defs/ids" }, "state": { "enum": ["queued", "blocked"] },
+        "action": { "$ref": "#/$defs/text" }, "basis": { "$ref": "#/$defs/text" },
+        "depends_on": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "exit_criteria": { "$ref": "#/$defs/texts" }, "blocker": { "type": ["string", "null"] }
+      },
+      "allOf": [{ "if": { "properties": { "state": { "const": "blocked" } } }, "then": { "properties": { "blocker": { "$ref": "#/$defs/text" } } }, "else": { "properties": { "blocker": { "type": "null" } } } }]
+    }
+  }
+}
