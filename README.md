@@ -28,7 +28,7 @@ Starlight Design Intelligence turns that judgment into reusable brand packs, ski
 | Brand | Visual Mode | Motion Mode | Copy Mode |
 | --- | --- | --- | --- |
 | FrankX | clear, founder-led, commercially sharp | direct, fast, useful | practical, strategic, no mythic language |
-| Starlight / SIS | calm operational intelligence | precise, evidence-driven, command-center motion | trustworthy, systems-literate, enterprise-ready |
+| Starlight / SIS | open, beautiful intelligence with visible agent teamwork | purposeful, legible, responsive to real work | curious, confident, warm, playful; exact about facts |
 | Arcanea | mythic creative intelligence | cinematic, ritual, luminous transformation | poetic but concrete, never generic fantasy fog |
 | Vibeclubs | embodied creator/social energy | warm, rhythmic, sensory | inviting, participatory, culture-forward |
 
@@ -85,3 +85,8 @@ flag.
 - Production proof is emitted after deployment as an external CI artifact or a
   later receipts commit; it is never embedded in the production commit whose SHA
   it records.
+
+
+## Starlight voice across agents and chats
+
+`brand-packs/sis/COPY.md` owns the writing guidance; `VOICE.json` carries the portable rules and proposed examples; `CHAT_CONTEXT.md` is the short chat/project export. These are one brand pack, not a separate brand authority. Cross-agent loading and managed instruction projections belong to `frankxai/starlight-agent-config`. Reviewed source commits must accompany exports and delegated tasks.

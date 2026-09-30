@@ -3,27 +3,98 @@
   "brandId": "sis",
   "displayName": "Starlight Intelligence Systems",
   "operatingUnit": "starlight-substrate",
-  "sourceDocs": ["brand-packs/sis/DESIGN.md"],
-  "canonicalRepos": ["frankxai/starlight-intelligence-system"],
-  "surfaceModes": ["operations", "evidence", "editorial"],
-  "audiences": ["AI platform leaders", "operators", "evaluation and governance teams"],
+  "sourceDocs": [
+    "brand-packs/sis/BRAND.md",
+    "brand-packs/sis/COPY.md",
+    "brand-packs/sis/VOICE.json",
+    "brand-packs/sis/DESIGN.md"
+  ],
+  "canonicalRepos": [
+    "frankxai/starlight-intelligence-system"
+  ],
+  "surfaceModes": [
+    "operations",
+    "evidence",
+    "editorial"
+  ],
+  "audiences": [
+    "builders",
+    "researchers",
+    "creators",
+    "founders",
+    "educators",
+    "operators",
+    "AI platform teams"
+  ],
   "positioning": {
-    "oneLine": "Calm operational intelligence that makes agent work, evidence, and decisions legible.",
-    "proof": ["agent traces", "evaluation deltas", "provenance records", "governed handoffs"],
-    "failureModes": ["hype science fiction", "generic dashboard filler", "black-box intelligence"]
+    "oneLine": "An open home for curious people and capable agents to explore, discover, and build together.",
+    "proof": [
+      "agent traces",
+      "evaluation deltas",
+      "provenance records",
+      "governed handoffs"
+    ],
+    "failureModes": [
+      "hype science fiction",
+      "generic dashboard filler",
+      "black-box intelligence"
+    ]
   },
   "voice": {
-    "traits": ["calm", "operational", "evidence-led", "trustworthy"],
-    "bannedPhrases": ["sentient system", "autonomous revolution", "magic intelligence"]
+    "traits": [
+      "curious",
+      "confident",
+      "warm",
+      "playful",
+      "precise about facts"
+    ],
+    "bannedPhrases": [
+      "sentient system",
+      "autonomous revolution",
+      "magic intelligence"
+    ],
+    "contract": "brand-packs/sis/VOICE.json",
+    "writingGuide": "brand-packs/sis/COPY.md"
   },
   "visual": {
-    "principles": ["Show the trace", "Make confidence inspectable", "Keep operational reading stable"],
-    "colors": { "void": "#0a0a0b", "space": "#111113", "signal": "#6366f1", "evidence": "#a5b4fc" },
-    "typography": { "displayRole": "operational authority", "readingRole": "dense but calm UI" },
-    "imageDirection": ["real product states", "evidence stacks", "agent and evaluation traces"]
+    "principles": [
+      "Show the trace",
+      "Make confidence inspectable",
+      "Keep operational reading stable"
+    ],
+    "colors": {
+      "void": "#0a0a0b",
+      "space": "#111113",
+      "signal": "#6366f1",
+      "evidence": "#a5b4fc"
+    },
+    "typography": {
+      "displayRole": "operational authority",
+      "readingRole": "dense but calm UI"
+    },
+    "imageDirection": [
+      "real product states",
+      "evidence stacks",
+      "agent and evaluation traces"
+    ]
   },
-  "channels": { "primary": ["product", "enterprise website", "technical documentation"] },
-  "approvals": { "requiredBeforePublicAction": true, "route": "independent-verifier-and-named-human" },
-  "doNotUse": ["radiant particle fields", "moving dashboards during reading", "uncited confidence claims"],
-  "updatedAt": "2026-07-24"
+  "channels": {
+    "primary": [
+      "product",
+      "public website",
+      "research",
+      "learning",
+      "technical documentation"
+    ]
+  },
+  "approvals": {
+    "requiredBeforePublicAction": true,
+    "route": "independent-verifier-and-named-human"
+  },
+  "doNotUse": [
+    "radiant particle fields",
+    "moving dashboards during reading",
+    "uncited confidence claims"
+  ],
+  "updatedAt": "2026-10-01"
 }

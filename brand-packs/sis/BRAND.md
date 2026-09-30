@@ -2,11 +2,11 @@
 
 Starlight Intelligence helps people and organizations use advanced intelligence to build a more capable, creative, and far-reaching civilization.
 
-The brand carries two truths at once. It is a serious intelligence institution with operational discipline. It is also an invitation to imagine what humanity can become across generations. Public work should feel alive with possibility. Product work should make that possibility usable.
+Starlight is a place for curious people and capable agents to explore, discover, and build together. Its intelligence should feel powerful, its tools beautiful, and its invitation open. Public work makes possibility vivid. Product work gives people a clear way to act on it.
 
 ## Promise
 
-Starlight gives people the intelligence, systems, and shared worlds they need to contribute meaningfully to the future.
+Starlight brings agents, tools, and context together so people can turn a question into a discovery and an idea into something real.
 
 ## Audience
 
@@ -24,11 +24,11 @@ Starlight exists to help more people see themselves inside that story. It turns 
 
 ### Horizon
 
-Use Horizon mode for the public institution, manifesto, movement, research frontiers, cultural work, and major launches. The voice is expansive, vivid, warm, and future-facing. Every vision should still reveal a path people can enter.
+Use Horizon mode for public stories, open experiments, research frontiers, cultural work, and major launches. The voice is expansive, vivid, warm, and future-facing. Every vision should still reveal a path people can enter.
 
 ### Operator
 
-Use Operator mode for SIS, governance, enterprise architecture, agent operations, evaluation, and command surfaces. The voice is calm, precise, and direct. Explain capability through visible systems, decisions, and outcomes.
+Use Operator mode for SIS, governance, enterprise architecture, agent operations, evaluation, and command surfaces. The voice is precise, direct, warm, and human. Explain capability through visible work, clear decisions, and outcomes.
 
 ### Academy
 
@@ -39,6 +39,9 @@ Use Academy mode for learning, skill progression, mentors, and student portfolio
 Use Cultural mode for music, characters, stories, gatherings, and Starlight rituals. The voice may become poetic and emotionally charged. It remains coherent with the canon and never borrows authority from fictional experience.
 
 ## Voice
+
+Read `COPY.md` and `VOICE.json` for the shared voice contract. Curiosity, confidence, warmth, and occasional wit apply to every mode. A mode changes emphasis, not personality.
+
 
 Write like a brilliant human who has spent time with the problem. Use complete sentences, natural rhythm, and concrete consequences. Let luminous language appear where the thought earns it.
 
@@ -62,5 +65,6 @@ Horizon claims are framed as vision. Product claims show the mechanism. Scientif
 
 Starlight loses its identity when it becomes cold compliance language, generic cosmic decoration, artificial spiritual certainty, or another collection of AI features. It also loses credibility when it claims civilizational impact without showing any meaningful work beneath the claim.
 
-The desired feeling is rare: a trusted intelligence laboratory, a beautiful future institution, and a living invitation to help humanity go further.
+The desired feeling is a beautiful workshop of capable minds: a place to explore a frontier, find brilliant company, and make something worth sharing.
+
 
