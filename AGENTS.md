@@ -13,9 +13,9 @@ This repo is the owned premium design-intelligence layer for FrankX, Starlight I
 - Write with taste and specificity. Avoid generic "premium, sleek, modern" unless it is translated into concrete behavior.
 - Every brand rule should guide an implementer: color, type, space, motion, image, copy, interaction, and QA implications.
 - Distinguish Starlight and Arcanea clearly:
-  - Starlight: calm operational intelligence, trust, systems, evidence, command centers.
+  - Starlight: curious, powerful intelligence; warm agents, visible teamwork, beautiful tools, and work people can inspect and own.
   - Arcanea: mythic creative intelligence, worlds, rituals, cinematic reveal, creator magic.
-- Do not leak Arcanea mythic language into FrankX or enterprise Starlight surfaces unless explicitly requested.
+- Keep Arcanea canon distinct from Starlight imagination. Before Starlight-facing copy or agent dialogue, read `brand-packs/sis/COPY.md` and `VOICE.json`; technical and operator surfaces keep this human voice while preserving precision.
 
 ## Safety
 
@@ -64,3 +64,4 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
 - Required handoff: artifacts, checks, verifier verdict, risks, approvals, rollback, and next bounded action.
 - Human-gated actions: DNS, secrets, billing, spend, migrations, destructive operations, permissions, legal/IP, brand identity, external sends, and high-risk production changes.
 <!-- STARLIGHT-REPO-CONTRACT:END -->
+

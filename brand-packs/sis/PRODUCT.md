@@ -1,6 +1,6 @@
 # Starlight Intelligence Product
 
-Starlight products help people understand complex systems, work with capable agents, build meaningful artifacts, and see how their contribution fits into a larger future.
+Starlight products help people understand complex systems, work with capable agents, build meaningful artifacts, and see what their work unlocks next.
 
 ## Product promise
 
@@ -58,3 +58,8 @@ The modes may connect inside one ecosystem. Each screen still chooses one primar
 
 A release should demonstrate useful activation, technical reliability, accessible interaction, coherent brand behavior, inspectable agent authority, and a clear path for the user to become more capable. A beautiful interface cannot compensate for a broken value loop.
 
+
+
+## Dialogue and teamwork
+
+Apply `COPY.md` and `VOICE.json` to interface copy and agent dialogue. Show who is researching, building, reviewing, or waiting through actual work states. Use stable identities and clear roles; “crew” and “constellation” are optional presentation metaphors. Queen’s warmth, judgment, and wit never imply stronger permissions or completed work.

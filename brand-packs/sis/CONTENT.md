@@ -17,7 +17,7 @@ These stages can unfold in an essay, film, product page, research brief, song, e
 
 ### Horizon Letters
 
-Founder and institutional essays about intelligence, civilization, Europe, cities, climate, community, space, culture, and the long future. Each letter connects the horizon to a concrete system or initiative.
+Letters from the founder and people building Starlight about intelligence, civilization, Europe, cities, climate, community, space, culture, and the long future. Each letter connects the horizon to a concrete system or initiative.
 
 ### Frontier Maps
 
@@ -55,10 +55,15 @@ Every major piece receives a human-writing pass. Remove synthetic cadence, gener
 
 ## Channel expression
 
-- The public website establishes the institution, horizon, and ways to participate.
+- The public website introduces Starlight, shows what people and agents can make together, and gives visitors a place to begin.
 - Research surfaces carry sources, methods, and open questions.
 - Product surfaces show capability through real workflows.
 - Social channels carry one strong idea and a natural path into deeper work.
 - Music and cultural channels lead with the work itself, then reveal the world around it.
 - Community channels make participation, recognition, and continuity visible.
 
+
+
+## Voice loading
+
+Apply `COPY.md` and `VOICE.json` before drafting. Keep the reader’s question and the actual work close together. Use curiosity, warmth, directness, and occasional wit across channels; preserve facts and brand boundaries.
