@@ -28,7 +28,7 @@ export function exportBrandHandoff({ root = process.cwd(), brand, out, revision 
   for (const owner of owners) if (!pack.canonicalRepos.some((r) => r.toLowerCase() === owner.repository.toLowerCase())) throw new Error("Runtime pack and registry ownership disagree.");
   const flows = standard.flows.filter((f) => f.brand_id === brand);
   const domainIds = new Set(flows.map((f) => f.domain_id));
-  const paths = new Set([packPath, "portfolio/design-toolchain.json"]);
+  const paths = new Set([packPath, "portfolio/design-toolchain.json", "playbooks/figma-template-pipeline.md", "templates/app-factory/README.md"]);
   const list = (prefix) => git(["ls-tree", "-r", "--name-only", sha, prefix]).trim().split("\n").filter(Boolean);
   for (const path of list(`brand-packs/${brand}/`)) if (path.endsWith(".md")) paths.add(path);
   for (const path of list("portfolio/domains/")) {
@@ -81,7 +81,7 @@ export function exportBrandHandoff({ root = process.cwd(), brand, out, revision 
     flows, checks: standard.checks,
     reference_applications: standard.references.map((r) => ({ ...r, applications: r.applications.filter((a) => domainIds.has(a.domain_id)) })).filter((r) => r.applications.length),
     upgrade_queue: standard.upgrades.filter((u) => u.domain_ids.some((id) => domainIds.has(id))),
-    figma: ["Reconcile the local product contract and owner decision with this pinned pack.", "Generate semantic aliases and named text styles in the product repository; do not infer a full token API from this pack.", "Validate a desktop and phone flow, then its component API and states before publishing."],
+    figma: ["Reconcile the local product contract and owner decision with this pinned pack.", "Generate semantic aliases and named text styles in the product repository; do not infer a full token API from this pack.", "Use the included Figma template pipeline and existing App Factory pointers; ship a native implementation and explicit component/state/asset map with the editable design.", "Validate a desktop and phone flow, then its component API and states before publishing."],
     canva: ["Resolve the kit-to-brand relationship without automatic rename.", "Use the approved type roles, logo assets and contrast pairs; lock identity fields in two pilot templates.", "Inspect actual exports and prove fillable fields separately before automating."]
   };
   for (const [name, value] of [["manifest.json", manifest], ["adapter-plan.json", adapterPlan]]) writeFileSync(join(destination, name), `${JSON.stringify(value, null, 2)}\n`);

@@ -95,3 +95,8 @@ registered surfaces without claiming identity approval or production adoption.
 Run `npm run validate:experience`; export an exact source bundle with
 `npm run export:brand -- --brand frankx --out /tmp/frankx-handoff`. Existing
 release and adoption validators remain authoritative.
+
+Use [the Figma template pipeline](playbooks/figma-template-pipeline.md) to pair
+editable collections with native implementations, explicit component/state maps
+and rights-cleared asset subsets. It extends the existing App Factory contract
+and the current Template Studio pilot rather than creating another catalogue.

@@ -34,6 +34,9 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
 - Read-only brand handoff: `starlight.brand_handoff.v1`, emitted by
   `scripts/export-brand-handoff.mjs` from committed Git blobs with revision and raw-byte hashes.
   This is an export format, not a new brand authority or release validator.
+  The bundle includes `playbooks/figma-template-pipeline.md` and the existing
+  App Factory source pointers. Template implementation manifests and asset
+  validators remain owned by their implementation package/repository.
 - Design research target: `starlight.design_research_target.v1`.
 - Design snapshot manifest: `starlight.design_snapshot_manifest.v1`.
 - Normalized extraction: `starlight.design_extraction.v1`.

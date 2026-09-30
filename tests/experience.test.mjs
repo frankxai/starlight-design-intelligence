@@ -48,7 +48,7 @@ test("review dates and blockers cannot imply unperformed future work", () => {
 });
 test("bundle hashes committed bytes and excludes subsequent working-tree edits", () => {
   const fixture = mkdtempSync(join(tmpdir(), "brand-handoff-test-"));
-  for (const path of ["brand-packs", "brand-image-system/runtime/brands", "portfolio", "evals"]) cpSync(join(root, path), join(fixture, path), { recursive: true });
+  for (const path of ["brand-packs", "brand-image-system/runtime/brands", "portfolio", "evals", "playbooks", "templates/app-factory"]) cpSync(join(root, path), join(fixture, path), { recursive: true });
   const git = (args) => execFileSync("git", args, { cwd: fixture, encoding: "utf8" }).trim();
   git(["init", "-q"]); git(["config", "user.name", "Handoff test"]); git(["config", "user.email", "tests@frankx.ai"]);
   git(["remote", "add", "origin", "https://github.com/frankxai/starlight-design-intelligence.git"]);
@@ -62,6 +62,10 @@ test("bundle hashes committed bytes and excludes subsequent working-tree edits",
   assert.equal(manifest.kernel_commit_sha, sha);
   assert.equal(manifest.brand_pack_sha256, createHash("sha256").update(bytes).digest("hex"));
   assert.deepEqual(readFileSync(join(out, "sources", path)), bytes);
+  for (const path of ["playbooks/figma-template-pipeline.md", "templates/app-factory/README.md"]) {
+    const exported = readFileSync(join(out, "sources", path));
+    assert.equal(createHash("sha256").update(exported).digest("hex"), manifest.sources.find(s => s.path === path).sha256);
+  }
   const plan = JSON.parse(readFileSync(join(out, "adapter-plan.json"), "utf8"));
   assert.ok(plan.flows.every((f) => f.brand_id === "frankx"));
   assert.ok(plan.reference_applications.every((r) => r.applications.every((a) => a.domain_id === "frankx-ai")));
