@@ -23,6 +23,10 @@ This repo is the owned premium design-intelligence layer for FrankX, Starlight I
 - Mark internal-only strategy if a file should not be mirrored into public repos.
 - Use owned or clearly licensed assets only.
 
+## Product outcome evaluation
+
+For product-quality audits and release recommendations, read `evals/product-outcome-release-standard.md` alongside the existing web release gate. Keep availability, functional behavior, user value, design distinction and commercial sustainability as separate verdicts. Do not infer downstream enforcement from this document's presence.
+
 ## Verification
 
 - Run placeholder scans before handoff.

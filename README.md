@@ -85,3 +85,7 @@ flag.
 - Production proof is emitted after deployment as an external CI artifact or a
   later receipts commit; it is never embedded in the production commit whose SHA
   it records.
+
+## Product outcome evaluation
+
+[Product outcome release standard](evals/product-outcome-release-standard.md) connects the existing design contract to complete customer journeys, deployment-bound verification, portable agent instructions, and accepted-output economics. It is a proposed operational standard; product repositories retain their decisions and require their own verified adoption.
