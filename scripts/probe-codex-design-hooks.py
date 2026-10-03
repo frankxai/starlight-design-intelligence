@@ -29,6 +29,23 @@ def private_directory(path):
     return root
 
 
+def write_private_fixture(path, root, text):
+    if path.parent != root or path.resolve().parent != root:
+        raise ValueError("Private artifact path escaped its admitted directory")
+    with path.open('x', encoding='utf-8') as file:
+        file.write(text)
+
+
+def fixture_request_size(length, path):
+    try:
+        size = int(length)
+    except (TypeError, ValueError):
+        raise ValueError("Invalid fixture body size") from None
+    if not 0 < size <= 2_000_000 or path != "/v1/responses":
+        raise ValueError("Fixture request boundary")
+    return size
+
+
 def skill_scope(native):
     names = {"emil-design-eng", "apple-design", "animate", "review-animations",
              "improve-animations", "find-animation-opportunities", "animation-vocabulary",
@@ -77,10 +94,14 @@ def verdict(receipt):
     routing = bool(receipt["observations"] and all(
         observation["routingContextPresent"] and observation["skillDescriptionPresent"]
         for observation in receipt["observations"]))
+    unexpected_auth = any(observation.get("authorizationHeaderPresent", False)
+                          for observation in receipt["observations"])
     return {"nativeToolBoundaryVerified": bool(boundary),
             "nativeRoutingVerified": routing,
             "impeccableLifecycle": design,
-            "hostProbePassed": bool(boundary and routing and design == "verified"),
+            "unexpectedFixtureAuthentication": unexpected_auth,
+            "hostProbePassed": bool(boundary and routing and not unexpected_auth
+                                    and design == "verified"),
             "scope": "Native lifecycle fixture; no model skill application or visual approval"}
 
 
@@ -103,6 +124,8 @@ def main():
     tag = "native-design-" + uuid.uuid4().hex
     OUTPUT, BLOCKED_OUTPUT = ROOT / (tag + "-allow.txt"), ROOT / (tag + "-deny.txt")
     config = tomllib.loads(CONFIG.read_text(encoding="utf-8-sig"))
+    if "starlight_native_fixture" in config.get("model_providers", {}):
+        raise ValueError("Existing fixture provider would inherit configuration; scope not attempted")
     protected = [path for path in (CONFIG, HOOKS) if path.is_file()]
     before = {str(path): digest(path) for path in protected}
     native, entries, preserved = [], [], []
@@ -114,22 +137,27 @@ def main():
             pass
 
         def do_POST(self):
-            size = int(self.headers.get("Content-Length", "0"))
-            if size > 2_000_000 or self.path != "/v1/responses":
+            try:
+                size = fixture_request_size(self.headers.get("Content-Length"), self.path)
+            except ValueError:
                 self.send_error(400, "Fixture boundary")
                 return
+            self.connection.settimeout(5)
             raw = self.rfile.read(size)
             try:
                 request = json.loads(raw)
             except (UnicodeDecodeError, ValueError):
                 self.send_error(400, "Fixture expects plain JSON")
                 return
-            content = json.dumps(request.get("input", []))
+            if len(raw) != size or not isinstance(request, dict):
+                self.send_error(400, "Fixture expects a complete JSON object")
+                return
             state["responses"] += 1
-            observations.append({"case": state["case"], "response": state["responses"], "requestSha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw), "routingContextPresent": "Design skill routing: read these SKILL.md" in content, "skillDescriptionPresent": "Select installed design and motion expertise for UI implementation and review." in content, "tools": [{"type": t.get("type"), "name": t.get("name")} for t in request.get("tools", [])], "authorizationHeaderPresent": bool(self.headers.get("Authorization")), "externalInference": False})
             if state["responses"] > 4:
                 self.send_error(400, "Fixture response budget")
                 return
+            content = json.dumps(request.get("input", []))
+            observations.append({"case": state["case"], "response": state["responses"], "requestSha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw), "routingContextPresent": "Design skill routing: read these SKILL.md" in content, "skillDescriptionPresent": "Select installed design and motion expertise for UI implementation and review." in content, "tools": [{"type": t.get("type"), "name": t.get("name")} for t in request.get("tools", [])], "authorizationHeaderPresent": bool(self.headers.get("Authorization")), "externalInference": False})
             rid = state["case"] + "-" + str(state["responses"])
             if state["responses"] == 1:
                 target = OUTPUT if state["case"] == "allow" else BLOCKED_OUTPUT
@@ -145,7 +173,7 @@ def main():
             self.end_headers()
             self.wfile.write(body)
 
-    server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+    server = http.server.HTTPServer(("127.0.0.1", 0), Handler)
     server_thread = threading.Thread(target=server.serve_forever, daemon=True)
     server_thread.start()
     overrides = ['model_provider="starlight_native_fixture"', 'model_providers.starlight_native_fixture.name="Model-free native fixture"', 'model_providers.starlight_native_fixture.base_url="http://127.0.0.1:' + str(server.server_port) + '/v1"', 'model_providers.starlight_native_fixture.wire_api="responses"', 'model_providers.starlight_native_fixture.requires_openai_auth=false', 'model_providers.starlight_native_fixture.supports_websockets=false', 'model_providers.starlight_native_fixture.request_max_retries=0', 'model_providers.starlight_native_fixture.stream_max_retries=0', 'features.enable_request_compression=false']
@@ -203,7 +231,7 @@ def main():
             if state["case"] != "allow" or params.get("tool") != "Write" or Path(args.get("file_path", "")).resolve() != OUTPUT.resolve() or args.get("content") != SAFE:
                 send({"id": message["id"], "result": {"contentItems": [{"type": "inputText", "text": "Private fixture boundary rejected execution."}], "success": False}})
             else:
-                OUTPUT.write_text(SAFE, encoding="utf-8")
+                write_private_fixture(OUTPUT, ROOT, SAFE)
                 send({"id": message["id"], "result": {"contentItems": [{"type": "inputText", "text": "Private fixture written."}], "success": True}})
         elif "id" in message and "method" in message:
             raise RuntimeError("Unexpected server request: " + method)
@@ -287,7 +315,7 @@ def main():
     receipt = {"at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "probeSourceSha256": digest(Path(__file__)), "probe": "native synchronous lifecycle and dynamic tool dispatch", "failure": failure, "durationSeconds": round(time.monotonic() - started, 3), "nativeRows": len(native), "sessionEnabledRows": sum(e["enabled"] for e in entries), "preservedSkills": preserved, "sharedConfigUnchanged": before == after, "sharedConfigHashes": after, "skillScope": "thread/start runtime override only", "cases": cases, "observations": observations, "notifications": notifications, "allowFilePresent": OUTPUT.is_file(), "allowContentMatches": OUTPUT.is_file() and OUTPUT.read_text(encoding="utf-8") == SAFE, "denyFileAbsent": not BLOCKED_OUTPUT.exists(), "serverClosed": not server_thread.is_alive(), "nativeProcessExit": process.returncode, "externalInferenceCalls": 0, "limits": ["Local dynamic Write fixture only", "No product design quality or native shell/MCP execution acceptance", "Default native catalog not changed", "No hook trust bypass"]}
     receipt["verdict"] = verdict(receipt)
     receipt_path = ROOT / (tag + ".json")
-    receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_private_fixture(receipt_path, ROOT, json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps({"receipt": str(receipt_path), "durationSeconds": receipt["durationSeconds"],
                       "cases": cases, "verdict": receipt["verdict"], "failure": failure}, indent=2))
     return 0 if receipt["verdict"]["hostProbePassed"] else 2

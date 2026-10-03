@@ -53,6 +53,12 @@ class NativeProofTests(unittest.TestCase):
             self.assertFalse(probe.verdict(value)['nativeRoutingVerified'])
             self.assertFalse(probe.verdict(value)['hostProbePassed'])
 
+    def test_unexpected_fixture_authentication_cannot_pass(self):
+        value = receipt()
+        value['observations'][0]['authorizationHeaderPresent'] = True
+        self.assertTrue(probe.verdict(value)['unexpectedFixtureAuthentication'])
+        self.assertFalse(probe.verdict(value)['hostProbePassed'])
+
     def test_client_rejection_is_not_native_denial(self):
         value = receipt()
         value['cases'][1]['clientToolCalls'] = 1
@@ -99,7 +105,7 @@ class NativeProofTests(unittest.TestCase):
 
     def test_native_launch_failure_closes_real_http_server_and_preserves_error(self):
         created = []
-        original_server = probe.http.server.ThreadingHTTPServer
+        original_server = probe.http.server.HTTPServer
 
         def record_server(*args, **kwargs):
             server = original_server(*args, **kwargs)
@@ -116,7 +122,7 @@ class NativeProofTests(unittest.TestCase):
             try:
                 with patch.dict(os.environ, {'CODEX_HOME': str(root)}), \
                      patch('sys.argv', argv), \
-                     patch.object(probe.http.server, 'ThreadingHTTPServer', record_server), \
+                     patch.object(probe.http.server, 'HTTPServer', record_server), \
                      patch.object(probe.subprocess, 'Popen', side_effect=OSError('native launch refused')):
                     with self.assertRaisesRegex(OSError, 'native launch refused'):
                         probe.main()
@@ -125,6 +131,39 @@ class NativeProofTests(unittest.TestCase):
             finally:
                 for server in created:
                     server.server_close()
+
+    def test_existing_private_fixture_cannot_be_overwritten(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            path = root / 'allow.txt'
+            probe.write_private_fixture(path, root, 'original')
+            with self.assertRaises(FileExistsError):
+                probe.write_private_fixture(path, root, 'replacement')
+            self.assertEqual(path.read_text(encoding='utf-8'), 'original')
+
+    def test_redirected_private_fixture_cannot_touch_external_sentinel(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory).resolve()
+            root = base / 'evidence'
+            root.mkdir()
+            sentinel = base / 'sentinel.txt'
+            sentinel.write_text('preserved', encoding='utf-8')
+            path = root / 'allow.txt'
+            try:
+                path.symlink_to(sentinel)
+            except OSError:
+                self.skipTest('Platform does not admit unprivileged symlinks')
+            with self.assertRaises(ValueError):
+                probe.write_private_fixture(path, root, 'replacement')
+            self.assertEqual(sentinel.read_text(encoding='utf-8'), 'preserved')
+
+    def test_invalid_body_sizes_and_paths_are_rejected_before_read(self):
+        self.assertEqual(probe.fixture_request_size('2000000', '/v1/responses'), 2000000)
+        for size in (None, '', 'bad', '-1', '0', '2000001'):
+            with self.assertRaises(ValueError):
+                probe.fixture_request_size(size, '/v1/responses')
+        with self.assertRaises(ValueError):
+            probe.fixture_request_size('10', '/other')
 
 
 if __name__ == '__main__':

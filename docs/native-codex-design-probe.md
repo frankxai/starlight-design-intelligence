@@ -37,6 +37,11 @@ bounded error summaries. Request hashes, routing markers and source hashes are
 recorded; raw prompts, response bodies, request headers and credentials are not.
 Outputs remain private. Do not attach a raw receipt to a public issue.
 
+Fixture and receipt files use exclusive creation and must resolve inside the
+admitted directory. Existing files and redirected targets are refused. The local
+HTTP server processes requests serially, rejects invalid or excessive body sizes
+before reading, and bounds both socket waits and recorded request counts.
+
 This is a native lifecycle simulation. It does not establish model skill
 application, shell/MCP coverage, bounded refinement under real defects, visual
 quality, legal rights, production acceptance or adoption by other harnesses.
