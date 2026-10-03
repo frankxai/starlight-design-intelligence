@@ -36,6 +36,16 @@ try {
   await detects("unnamed-control", '<h1>Editor</h1><input placeholder="Project title">');
   await detects("unnamed-control", '<h1>Editor</h1><button><span aria-hidden="true">Save</span></button>');
   await detects("uppercase-interface", "<h1>Review your project</h1>", "h1{text-transform:uppercase}");
+  await detects("uppercase-interface", '<label for="title">Artifact title</label><input id="title">', "label{text-transform:uppercase}");
+  await detects("uppercase-interface", '<span class="badge">Runs in this tab</span>', ".badge{text-transform:uppercase}");
+  await detects("uppercase-interface", '<p class="caption">A practical review tool</p>', ".caption{text-transform:uppercase}");
+  await detects("uppercase-interface", '<fieldset><legend>Evidence available</legend></fieldset>', "fieldset{text-transform:uppercase}");
+  await detects("uppercase-interface", '<button>Save</button>', 'button::before{content:"Ready";text-transform:uppercase}');
+  await detects("uppercase-interface", '<h1>Reference</h1><span class="counter-label"></span>', 'body{counter-reset:step 1}.counter-label::before{content:counter(step,lower-alpha);text-transform:uppercase}');
+  await detects("uppercase-interface", '<h1>Reference</h1><span class="marker"></span>', '.marker::before{content:linear-gradient(red,blue) "Ready";text-transform:uppercase}');
+  assert.deepEqual((await inspect('<h1>Reference</h1><span class="marker"></span>', '.marker::before{content:linear-gradient(red,blue);display:inline-block;width:8px;height:8px;text-transform:uppercase}')).failures, []); checks += 1;
+  assert.deepEqual((await inspect('<h1>Reference</h1><code>API_KEY</code><pre>SELECT</pre><div contenteditable>USER DRAFT</div><p hidden>Hidden text</p>', 'code,pre,[contenteditable],p{text-transform:uppercase}')).failures, []); checks += 1;
+  assert.deepEqual((await inspect('<h1>Reference</h1><pre>Code example</pre><div contenteditable>User draft</div>', 'pre::before,[contenteditable]::after{content:"SELECT";text-transform:uppercase}')).failures, []); checks += 1;
   for (const href of ["", "#", "javascript:void(0)"]) await detects("placeholder-link", `<h1>Editor</h1><a href="${href}">Start</a>`);
   await detects("icon-semantics", '<h1>Editor</h1><svg><path d="M2 2h4"/></svg>');
   await detects("focusable-decoration", '<h1>Editor</h1><svg aria-hidden="true" tabindex="0"><path d="M2 2h4"/></svg>');
@@ -49,6 +59,7 @@ try {
   await detects("unnamed-control", shadow("<h1>Editor</h1><button></button>"));
   await detects("placeholder-copy", shadow("<h1>Your brand name</h1>"));
   await detects("uppercase-interface", shadow("<style>button{text-transform:uppercase}</style><button>Save</button>"));
+  await detects("uppercase-interface", shadow('<style>label{text-transform:uppercase}</style><label for="draft">Artifact title</label><input id="draft">'));
   await detects("emoji-interface", shadow('<style>button::after{content:"🚀"}</style><button>Save</button>'));
   await detects("icon-semantics", shadow('<h1>Editor</h1><svg><path d="M2 2h4"/></svg>'));
   await detects("inspection-limit", shadow(`<h1>Editor</h1>${"<span></span>".repeat(20001)}`));

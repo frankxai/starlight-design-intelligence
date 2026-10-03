@@ -44,6 +44,27 @@ export function inspectInterfaceFoundations() {
     }
     return null;
   };
+  // Inspect top-level text tokens, not quoted URLs nested inside image functions.
+  const hasPseudoText = (content) => {
+    const textFunction = /(?:counters?|attr)\(/uy;
+    let depth = 0;
+    for (let index = 0; index < content.length; index += 1) {
+      const character = content[index];
+      if (character === '"' || character === "'") {
+        const start = index + 1;
+        for (index += 1; index < content.length && content[index] !== character; index += 1) {
+          if (content[index] === "\\") index += 1;
+        }
+        if (depth === 0 && /\p{L}/u.test(content.slice(start, index))) return true;
+      } else if (character === "(") depth += 1;
+      else if (character === ")") depth = Math.max(0, depth - 1);
+      else if (depth === 0) {
+        textFunction.lastIndex = index;
+        if (textFunction.test(content)) return true;
+      }
+    }
+    return false;
+  };
   const name = (element) => {
     const labelledBy = element.getAttribute("aria-labelledby");
     if (labelledBy) {
@@ -93,6 +114,11 @@ export function inspectInterfaceFoundations() {
       if (!parent || closest(parent, "script,style,template,noscript") || !visible(parent)) continue;
       if (node.textContent.trim()) hasVisibleText = true;
       if (closest(parent, "pre,code,kbd,samp,textarea,[contenteditable]")) continue;
+      // Labels, badges and captions are visible interface text too. Restricting
+      // this rule to headings/controls missed real product uppercase styling.
+      if (/\p{L}/u.test(node.textContent) && getComputedStyle(parent).textTransform === "uppercase") {
+        fail("uppercase-interface", parent, "Use sentence case; remove forced uppercase styling.");
+      }
       if (hasEmoji(node.textContent)) {
         fail("emoji-interface", parent, "Replace interface emoji with intentional text or a licensed vector icon.");
       }
@@ -110,9 +136,15 @@ export function inspectInterfaceFoundations() {
     const style = getComputedStyle(element);
     for (const pseudo of ["::before", "::after"]) {
       const pseudoStyle = getComputedStyle(element, pseudo);
-      if (pseudoStyle.display !== "none" && pseudoStyle.visibility !== "hidden" &&
-        Number(pseudoStyle.opacity) > 0 && hasEmoji(pseudoStyle.content)) {
+      if (pseudoStyle.display === "none" || pseudoStyle.visibility === "hidden" ||
+        Number(pseudoStyle.opacity) <= 0) continue;
+      if (hasEmoji(pseudoStyle.content)) {
         fail("emoji-interface", element, "Replace CSS-generated emoji with a licensed vector icon.");
+      }
+      if (!closest(element, "pre,code,kbd,samp,textarea,[contenteditable]") &&
+        hasPseudoText(pseudoStyle.content) &&
+        pseudoStyle.textTransform === "uppercase") {
+        fail("uppercase-interface", element, "Use sentence case; remove forced uppercase styling.");
       }
     }
     const interactive = element.matches(
