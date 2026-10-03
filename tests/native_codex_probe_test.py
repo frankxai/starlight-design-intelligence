@@ -1,9 +1,11 @@
 """Prevent fixture success from concealing failed/missing native design hooks."""
 import copy
 import importlib.util
+import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 source = Path(__file__).resolve().parents[1] / 'scripts/probe-codex-design-hooks.py'
 spec = importlib.util.spec_from_file_location('native_probe', source)
@@ -94,6 +96,35 @@ class NativeProofTests(unittest.TestCase):
             (root / '.git').write_text('gitdir: elsewhere', encoding='utf-8')
             with self.assertRaises(ValueError):
                 probe.private_directory(child)
+
+    def test_native_launch_failure_closes_real_http_server_and_preserves_error(self):
+        created = []
+        original_server = probe.http.server.ThreadingHTTPServer
+
+        def record_server(*args, **kwargs):
+            server = original_server(*args, **kwargs)
+            created.append(server)
+            return server
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            executable = root / 'native-fixture.exe'
+            executable.touch()
+            (root / 'config.toml').write_text('[mcp_servers]\n', encoding='utf-8')
+            argv = ['probe', '--codex-exe', str(executable), '--cwd', str(root),
+                    '--output-dir', str(root)]
+            try:
+                with patch.dict(os.environ, {'CODEX_HOME': str(root)}), \
+                     patch('sys.argv', argv), \
+                     patch.object(probe.http.server, 'ThreadingHTTPServer', record_server), \
+                     patch.object(probe.subprocess, 'Popen', side_effect=OSError('native launch refused')):
+                    with self.assertRaisesRegex(OSError, 'native launch refused'):
+                        probe.main()
+                self.assertEqual(len(created), 1)
+                self.assertEqual(created[0].fileno(), -1)
+            finally:
+                for server in created:
+                    server.server_close()
 
 
 if __name__ == '__main__':
