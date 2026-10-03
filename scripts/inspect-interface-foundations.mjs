@@ -44,6 +44,27 @@ export function inspectInterfaceFoundations() {
     }
     return null;
   };
+  // Inspect top-level text tokens, not quoted URLs nested inside image functions.
+  const hasPseudoText = (content) => {
+    const textFunction = /(?:counters?|attr)\(/uy;
+    let depth = 0;
+    for (let index = 0; index < content.length; index += 1) {
+      const character = content[index];
+      if (character === '"' || character === "'") {
+        const start = index + 1;
+        for (index += 1; index < content.length && content[index] !== character; index += 1) {
+          if (content[index] === "\\") index += 1;
+        }
+        if (depth === 0 && /\p{L}/u.test(content.slice(start, index))) return true;
+      } else if (character === "(") depth += 1;
+      else if (character === ")") depth = Math.max(0, depth - 1);
+      else if (depth === 0) {
+        textFunction.lastIndex = index;
+        if (textFunction.test(content)) return true;
+      }
+    }
+    return false;
+  };
   const name = (element) => {
     const labelledBy = element.getAttribute("aria-labelledby");
     if (labelledBy) {
@@ -121,7 +142,7 @@ export function inspectInterfaceFoundations() {
         fail("emoji-interface", element, "Replace CSS-generated emoji with a licensed vector icon.");
       }
       if (!closest(element, "pre,code,kbd,samp,textarea,[contenteditable]") &&
-        /^['"]/u.test(pseudoStyle.content) && /\p{L}/u.test(pseudoStyle.content) &&
+        hasPseudoText(pseudoStyle.content) &&
         pseudoStyle.textTransform === "uppercase") {
         fail("uppercase-interface", element, "Use sentence case; remove forced uppercase styling.");
       }
