@@ -3,7 +3,9 @@ import copy
 import importlib.util
 import os
 from pathlib import Path
+import socket
 import tempfile
+import threading
 import unittest
 from unittest.mock import patch
 
@@ -127,6 +129,54 @@ class NativeProofTests(unittest.TestCase):
                     with self.assertRaisesRegex(OSError, 'native launch refused'):
                         probe.main()
                 self.assertEqual(len(created), 1)
+                self.assertEqual(created[0].fileno(), -1)
+            finally:
+                for server in created:
+                    server.server_close()
+
+    def test_header_reads_are_bounded_before_native_launch_failure(self):
+        created, socket_timeouts = [], []
+        accepted = threading.Event()
+        original_server = probe.http.server.HTTPServer
+
+        def record_server(*args, **kwargs):
+            server = original_server(*args, **kwargs)
+            original_setup = server.RequestHandlerClass.setup
+
+            def record_setup(handler):
+                original_setup(handler)
+                socket_timeouts.append(handler.connection.gettimeout())
+                accepted.set()
+
+            server.RequestHandlerClass.setup = record_setup
+            # The deliberately disconnected header fixture can reset its socket.
+            server.handle_error = lambda *_args: None
+            created.append(server)
+            return server
+
+        def refuse_launch(*_args, **_kwargs):
+            with socket.create_connection(created[0].server_address, timeout=1) as client:
+                client.sendall(b'POST /v1/responses HTTP/1.1\r\n')
+                self.assertTrue(accepted.wait(1), 'The real server did not accept the connection')
+                self.assertIsNotNone(socket_timeouts[0], 'Header reads could stall shutdown forever')
+                self.assertGreater(socket_timeouts[0], 0)
+                self.assertLessEqual(socket_timeouts[0], 5)
+            raise OSError('native launch refused with stalled headers')
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            executable = root / 'native-fixture.exe'
+            executable.touch()
+            (root / 'config.toml').write_text('[mcp_servers]\n', encoding='utf-8')
+            argv = ['probe', '--codex-exe', str(executable), '--cwd', str(root),
+                    '--output-dir', str(root)]
+            try:
+                with patch.dict(os.environ, {'CODEX_HOME': str(root)}), \
+                     patch('sys.argv', argv), \
+                     patch.object(probe.http.server, 'HTTPServer', record_server), \
+                     patch.object(probe.subprocess, 'Popen', side_effect=refuse_launch):
+                    with self.assertRaisesRegex(OSError, 'native launch refused with stalled headers'):
+                        probe.main()
                 self.assertEqual(created[0].fileno(), -1)
             finally:
                 for server in created:

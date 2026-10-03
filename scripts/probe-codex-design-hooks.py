@@ -133,6 +133,10 @@ def main():
     state = {"case": "allow", "responses": 0, "clientToolCalls": 0}
 
     class Handler(http.server.BaseHTTPRequestHandler):
+        def setup(self):
+            self.request.settimeout(5)
+            super().setup()
+
         def log_message(self, *_args):
             pass
 
@@ -142,7 +146,6 @@ def main():
             except ValueError:
                 self.send_error(400, "Fixture boundary")
                 return
-            self.connection.settimeout(5)
             raw = self.rfile.read(size)
             try:
                 request = json.loads(raw)
