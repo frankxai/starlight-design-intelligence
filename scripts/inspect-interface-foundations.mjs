@@ -3,20 +3,24 @@
 export function inspectInterfaceFoundations() {
   const failures = [];
   const seen = new Set();
-  const elements = [...document.body.querySelectorAll("*")];
+  const elements = [];
+  const roots = [document.body];
   const emoji = /\p{Extended_Pictographic}|\p{Regional_Indicator}|[0-9#*]\uFE0F?\u20E3/u;
   const filler = /\blorem ipsum\b|\byour (?:brand|company|product) (?:name|here)\b/iu;
   const location = (element) => {
     const parts = [];
     let current = element;
     while (current && current !== document.body && parts.length < 6) {
-      const siblings = current.parentElement
-        ? [...current.parentElement.children].filter((item) => item.localName === current.localName)
+      const siblings = current.parentNode?.children
+        ? [...current.parentNode.children].filter((item) => item.localName === current.localName)
         : [current];
       parts.unshift(`${current.localName}:nth-of-type(${siblings.indexOf(current) + 1})`);
-      current = current.parentElement;
+      if (!current.parentElement && current.getRootNode().host) {
+        parts.unshift("#shadow-root");
+        current = current.getRootNode().host;
+      } else current = current.parentElement;
     }
-    return `body > ${parts.join(" > ")}`;
+    return `body > ${parts.join(" > ")}`.replaceAll(" > #shadow-root > ", " >>> ");
   };
   const fail = (code, element, message) => {
     const selector = element === document.body ? "body" : location(element);
@@ -29,12 +33,22 @@ export function inspectInterfaceFoundations() {
     checkOpacity: true,
     checkVisibilityCSS: true
   }) && element.getClientRects().length > 0;
-  const hasEmoji = (text) => emoji.test(text.replace(/[\u00A9\u00AE\u2122]/gu, ""));
+  // Plain directional arrows are text. An explicit emoji presentation selector
+  // still rejects them. Do not exempt pictographic symbols or arbitrary spans.
+  const hasEmoji = (text) => emoji.test(text.replace(/[\u00A9\u00AE\u2122]/gu, "")
+    .replace(/[\u2194-\u2199\u21A9\u21AA](?!\uFE0F)/gu, ""));
+  const closest = (element, selector) => {
+    for (let current = element; current; current = current.getRootNode().host) {
+      const match = current.closest(selector);
+      if (match) return match;
+    }
+    return null;
+  };
   const name = (element) => {
     const labelledBy = element.getAttribute("aria-labelledby");
     if (labelledBy) {
       const value = labelledBy.split(/\s+/u)
-        .map((id) => document.getElementById(id)?.textContent ?? "").join(" ").trim();
+        .map((id) => element.getRootNode().getElementById(id)?.textContent ?? "").join(" ").trim();
       if (value) return value;
     }
     const explicit = element.getAttribute("aria-label")?.trim();
@@ -48,40 +62,50 @@ export function inspectInterfaceFoundations() {
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
     while (walker.nextNode()) {
       const parent = walker.currentNode.parentElement;
-      if (!parent.closest('[aria-hidden="true"],script,style,template') && visible(parent)) {
+      if (!closest(parent, '[aria-hidden="true"],script,style,template') && visible(parent)) {
         text.push(walker.currentNode.textContent);
       }
     }
     const image = [...element.querySelectorAll("img[alt]")]
-      .find((item) => !item.closest('[aria-hidden="true"]') && visible(item));
+      .find((item) => !closest(item, '[aria-hidden="true"]') && visible(item));
     const svgTitle = element.localName === "svg" ? element.querySelector("title")?.textContent : "";
     return (text.join(" ").trim() || svgTitle || image?.getAttribute("alt") ||
       element.getAttribute("title") || "").trim();
   };
-  if (!document.body.innerText.trim()) {
-    fail("empty-surface", document.body, "The rendered surface has no visible text.");
-  }
-  if (elements.length > 20000) {
-    fail("inspection-limit", document.body, "Surface exceeds the bounded 20,000-element inspection limit.");
-    return { failures, inspected_elements: 0, complete: false };
-  }
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-  while (walker.nextNode()) {
-    const node = walker.currentNode;
-    const parent = node.parentElement;
-    if (!parent || parent.closest("script,style,template,noscript,pre,code,kbd,samp,textarea,[contenteditable]") ||
-      !visible(parent)) continue;
-    if (hasEmoji(node.textContent)) {
-      fail("emoji-interface", parent, "Replace interface emoji with intentional text or a licensed vector icon.");
-    }
-    if (filler.test(node.textContent)) {
-      fail("placeholder-copy", parent, "Replace placeholder copy with source-backed product content.");
+  // Collect reachable open roots iteratively. The one budget covers light DOM
+  // and every nested open shadow root; closed roots remain outside our scope.
+  for (let index = 0; index < roots.length; index += 1) {
+    for (const element of roots[index].querySelectorAll("*")) {
+      elements.push(element);
+      if (elements.length > 20000) {
+        fail("inspection-limit", document.body, "Surface exceeds the bounded 20,000-element inspection limit.");
+        return { failures, inspected_elements: 0, complete: false };
+      }
+      if (element.shadowRoot) roots.push(element.shadowRoot);
     }
   }
+  let hasVisibleText = false;
+  for (const root of roots) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const parent = node.parentElement ?? root.host;
+      if (!parent || closest(parent, "script,style,template,noscript") || !visible(parent)) continue;
+      if (node.textContent.trim()) hasVisibleText = true;
+      if (closest(parent, "pre,code,kbd,samp,textarea,[contenteditable]")) continue;
+      if (hasEmoji(node.textContent)) {
+        fail("emoji-interface", parent, "Replace interface emoji with intentional text or a licensed vector icon.");
+      }
+      if (filler.test(node.textContent)) {
+        fail("placeholder-copy", parent, "Replace placeholder copy with source-backed product content.");
+      }
+    }
+  }
+  if (!hasVisibleText) fail("empty-surface", document.body, "The rendered surface has no visible text.");
   for (const element of elements) {
     if (!visible(element)) continue;
-    if (element.matches("iframe,object,embed") || element.shadowRoot) {
-      fail("uninspected-subtree", element, "Inspect this embedded or shadow-DOM surface in its owning journey before accepting coverage.");
+    if (element.matches("iframe,object,embed")) {
+      fail("uninspected-subtree", element, "Inspect this embedded surface in its owning journey before accepting coverage.");
     }
     const style = getComputedStyle(element);
     for (const pseudo of ["::before", "::after"]) {
@@ -108,7 +132,7 @@ export function inspectInterfaceFoundations() {
       }
     }
     if (element.localName === "svg") {
-      const hidden = element.closest('[aria-hidden="true"]');
+      const hidden = closest(element, '[aria-hidden="true"]');
       if (hidden && element.matches('[tabindex]:not([tabindex="-1"])')) {
         fail("focusable-decoration", element, "A decorative icon must not receive keyboard focus.");
       } else if (!hidden && !(element.getAttribute("role") === "img" && name(element))) {
@@ -119,5 +143,5 @@ export function inspectInterfaceFoundations() {
   if (document.documentElement.scrollWidth > window.innerWidth + 1) {
     fail("horizontal-overflow", document.body, "The surface overflows the CSS viewport horizontally.");
   }
-  return { failures, inspected_elements: elements.length, complete: true };
+  return { failures, inspected_elements: elements.length, inspected_open_shadow_roots: roots.length - 1, complete: true };
 }
