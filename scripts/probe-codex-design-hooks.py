@@ -110,13 +110,17 @@ def verdict(receipt):
     path = receipt.get("toolPath", "dynamic-write")
     dynamic = (path == "dynamic-write"
                and cases.get("allow", {}).get("clientToolCalls") == 1
-               and cases.get("deny", {}).get("clientToolCalls") == 0)
+               and cases.get("deny", {}).get("clientToolCalls") == 0
+               and all(case.get("nativeFileChanges", 0) == 0
+                       and case.get("nativeShellCommands", 0) == 0 for case in cases.values()))
     native = (path == "native-apply-patch"
               and all(case.get("clientToolCalls") == 0 for case in cases.values())
+              and all(case.get("nativeShellCommands", 0) == 0 for case in cases.values())
               and cases.get("allow", {}).get("nativeFileChanges") == 1
               and cases.get("deny", {}).get("nativeFileChanges") == 0)
     shell = (path == "native-shell"
              and all(case.get("clientToolCalls") == 0 for case in cases.values())
+             and all(case.get("nativeFileChanges", 0) == 0 for case in cases.values())
              and cases.get("allow", {}).get("nativeShellCommands") == 1
              and cases.get("deny", {}).get("nativeShellCommands") == 0)
     boundary = (not receipt["failure"] and receipt["sharedConfigUnchanged"]

@@ -55,6 +55,25 @@ class NativeProofTests(unittest.TestCase):
             value['toolPath'] = path
             self.assertFalse(probe.verdict(value)['hostProbePassed'])
 
+    def test_unselected_native_side_effects_cannot_pass_any_tool_path(self):
+        for selected in probe.TOOL_PATHS:
+            value = receipt()
+            value['toolPath'] = selected
+            for case in value['cases']:
+                case.update(nativeFileChanges=0, nativeShellCommands=0)
+            if selected != 'dynamic-write':
+                value['cases'][0]['clientToolCalls'] = 0
+                expected = 'nativeFileChanges' if selected == 'native-apply-patch' else 'nativeShellCommands'
+                value['cases'][0][expected] = 1
+            self.assertTrue(probe.verdict(value)['hostProbePassed'])
+            other = ['nativeFileChanges', 'nativeShellCommands'] if selected == 'dynamic-write' else [
+                'nativeShellCommands' if selected == 'native-apply-patch' else 'nativeFileChanges']
+            for field in other:
+                for index in (0, 1):
+                    mixed = copy.deepcopy(value)
+                    mixed['cases'][index][field] = 1
+                    self.assertFalse(probe.verdict(mixed)['hostProbePassed'], (selected, field, index))
+
     def test_shell_write_without_native_denial_fails_even_with_completed_turns(self):
         value = receipt()
         value['toolPath'] = 'native-shell'
