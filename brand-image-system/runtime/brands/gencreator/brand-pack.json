@@ -20,6 +20,7 @@
     "territory": "B: new creative publishing",
     "principles": ["Make authorship and source evidence visible", "Treat each release as an authored edition", "Use light paper, ink and one meaningful spot color"],
     "colors": { "ink": "#221f1b", "paper": "#fbf9f5", "signal": "#c8322a" },
+    "colorRoles": { "background": "paper", "text": "ink", "spotRed": "signal" },
     "colorRules": ["Paper and ink carry at least 90% of a composition", "Spot red registers edition, source, state or signature once per object", "Brand color alone must not communicate state"],
     "typography": {
       "displayFamily": "Instrument Serif",
@@ -51,6 +52,7 @@
       "sourceRepository": "frankxai/gencreator.ai",
       "sourceCommit": "1ca14c197830d577c4d290535b9fe10ef089edbd",
       "decision": "docs/DECISIONS.md#adr-011",
+      "sourceScope": "owning-product decision and exploration records, not a deployed asset revision",
       "decisionBlob": "02ef5c0601bdde94079b5271ba0db5afeb47b324",
       "territory": "approved in owning product decision log",
       "territoryApprovedAt": "2026-08-22",
