@@ -93,6 +93,11 @@ export function inspectInterfaceFoundations() {
       if (!parent || closest(parent, "script,style,template,noscript") || !visible(parent)) continue;
       if (node.textContent.trim()) hasVisibleText = true;
       if (closest(parent, "pre,code,kbd,samp,textarea,[contenteditable]")) continue;
+      // Labels, badges and captions are visible interface text too. Restricting
+      // this rule to headings/controls missed real product uppercase styling.
+      if (/\p{L}/u.test(node.textContent) && getComputedStyle(parent).textTransform === "uppercase") {
+        fail("uppercase-interface", parent, "Use sentence case; remove forced uppercase styling.");
+      }
       if (hasEmoji(node.textContent)) {
         fail("emoji-interface", parent, "Replace interface emoji with intentional text or a licensed vector icon.");
       }
@@ -113,6 +118,12 @@ export function inspectInterfaceFoundations() {
       if (pseudoStyle.display !== "none" && pseudoStyle.visibility !== "hidden" &&
         Number(pseudoStyle.opacity) > 0 && hasEmoji(pseudoStyle.content)) {
         fail("emoji-interface", element, "Replace CSS-generated emoji with a licensed vector icon.");
+      }
+      if (pseudoStyle.display !== "none" && pseudoStyle.visibility !== "hidden" &&
+        Number(pseudoStyle.opacity) > 0 && /^['"]/u.test(pseudoStyle.content) &&
+        /\p{L}/u.test(pseudoStyle.content) && pseudoStyle.textTransform === "uppercase" &&
+        !closest(element, "pre,code,kbd,samp,textarea,[contenteditable]")) {
+        fail("uppercase-interface", element, "Use sentence case; remove forced uppercase styling.");
       }
     }
     const interactive = element.matches(

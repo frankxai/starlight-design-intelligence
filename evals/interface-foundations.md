@@ -19,8 +19,9 @@ It refuses to overwrite evidence. Store receipts in the existing evidence store.
 - Interface emoji, including numeric entities, script-inserted text and CSS
   pseudo-elements. Use intentional text or a coherent vector icon family.
 - Lorem ipsum and explicit brand/company/product name placeholders.
-- Controls without a basic accessible name, forced uppercase styling on controls
-  or headings, placeholder navigation links and horizontal viewport overflow.
+- Controls without a basic accessible name, forced uppercase styling on visible
+  authored text (including labels, badges, captions and CSS text pseudo-elements),
+  placeholder navigation links and horizontal viewport overflow.
 - SVGs without explicit decorative or meaningful semantics, or keyboard-focusable
   decorative SVGs. Meaningful graphics have `role="img"` and a name. Decorative
   graphics use `aria-hidden="true"` and never receive focus.
