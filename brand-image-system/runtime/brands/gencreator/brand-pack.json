@@ -32,7 +32,7 @@
       "sourceCommit": "1ca14c197830d577c4d290535b9fe10ef089edbd",
       "sourceDirectory": "docs/brand/explorations/2026-08-27-identity-core/fonts",
       "fontFiles": [
-        { "path": "InstrumentSans[wdth,wght].ttf", "blob": "3589b81b22d3defc725dfdcdf16b5da7c9adc691", "sha256": "b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efddde389b33b1", "licensePath": "OFL-Instrument-Sans.txt", "licenseBlob": "d41633cc1209e83ba21211954b1b9f356758e5e6" },
+        { "path": "InstrumentSans[wdth,wght].ttf", "blob": "3589b81b22d3defc725dfdcdf16b5da7c9adc691", "sha256": "b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efdde389b33b1", "licensePath": "OFL-Instrument-Sans.txt", "licenseBlob": "d41633cc1209e83ba21211954b1b9f356758e5e6" },
         { "path": "InstrumentSerif-Regular.otf", "blob": "1f0366b115a935d2e6c9109e56d76522766eb9da", "sha256": "8299613dc56e9530d6a416cf8b9b24c209457f9ea66a7c118a024c7714c01cd6", "licensePath": "OFL-Instrument-Serif.txt", "licenseBlob": "e1801b959d17c62ffc42ed6ca650328e1a2f95d2" },
         { "path": "InstrumentSerif-Italic.otf", "blob": "d2dba206264a3ebb387c9f65b39e79a6d55cf5b1", "sha256": "6d9d11705e3e81be42696d2d4be56f551ae29bcba41ed10c7d9a2d725859b874", "licensePath": "OFL-Instrument-Serif.txt", "licenseBlob": "e1801b959d17c62ffc42ed6ca650328e1a2f95d2" }
       ],

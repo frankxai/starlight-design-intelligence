@@ -37,7 +37,7 @@ the exploration fonts; they do not establish which files a deployed page uses.
 
 | File | Git blob | SHA-256 for font files |
 |---|---|---|
-| `InstrumentSans[wdth,wght].ttf` | `3589b81b22d3defc725dfdcdf16b5da7c9adc691` | `b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efddde389b33b1` |
+| `InstrumentSans[wdth,wght].ttf` | `3589b81b22d3defc725dfdcdf16b5da7c9adc691` | `b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efdde389b33b1` |
 | `InstrumentSerif-Regular.otf` | `1f0366b115a935d2e6c9109e56d76522766eb9da` | `8299613dc56e9530d6a416cf8b9b24c209457f9ea66a7c118a024c7714c01cd6` |
 | `InstrumentSerif-Italic.otf` | `d2dba206264a3ebb387c9f65b39e79a6d55cf5b1` | `6d9d11705e3e81be42696d2d4be56f551ae29bcba41ed10c7d9a2d725859b874` |
 | `OFL-Instrument-Sans.txt` | `d41633cc1209e83ba21211954b1b9f356758e5e6` | License file |
