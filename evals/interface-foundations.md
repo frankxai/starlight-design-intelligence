@@ -26,12 +26,16 @@ It refuses to overwrite evidence. Store receipts in the existing evidence store.
   graphics use `aria-hidden="true"` and never receive focus.
 - Empty visible surfaces or an incomplete inspection beyond the 20,000-element
   resource ceiling. A readiness failure cannot become a pass.
-- Visible embedded surfaces or open shadow roots that need their own inspection.
-  The inspector covers the current document; closed shadow roots require separate
-  product testing and cannot be discovered reliably by this DOM check.
+- Visible embedded surfaces that need their own inspection. Reachable open shadow
+  roots are traversed under the same 20,000-element budget, including nested roots,
+  root-local labels, text, CSS pseudo-elements and controls. Closed shadow roots
+  require separate product testing and cannot be discovered reliably by this check.
 
 Hidden branches, literal code examples and editable user content are excluded from
-text checks. Copyright, registered and trademark marks are allowed. Published user
+text checks. Copyright, registered and trademark marks are allowed. Plain text
+directional arrows are allowed; an explicit emoji presentation selector on an
+arrow is rejected. This is a bounded text-symbol exception, not a tag-name waiver.
+Published user
 content and editorial emoji need an explicit product-specific decision; inspect
 the application chrome separately in that journey. There is no arbitrary DOM
 attribute that waives the findings. Repair findings or document a reviewed,
@@ -54,7 +58,7 @@ existing gates. This check deliberately adds no universal visual theme.
 
 ## Evidence boundary and adoption
 
-The receipt records DOM hashes, viewport, motion preference, resolved URL,
+The receipt records DOM hashes including reachable open shadow markup, viewport, motion preference, resolved URL,
 timestamp and findings. The source SHA is caller supplied; this inspector does
 not resolve deployment identity. Bind it to the verified preview/deployment using
 the existing release evidence process. It creates no screenshots or generated

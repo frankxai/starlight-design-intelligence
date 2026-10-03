@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { chromium } from "playwright";
 import { inspectInterfaceFoundations } from "../scripts/inspect-interface-foundations.mjs";
-import { inspectRenderedSurface } from "../scripts/validate-interface-foundations.mjs";
+import { hashRenderedDom, inspectRenderedSurface } from "../scripts/validate-interface-foundations.mjs";
 
 const browser = await chromium.launch({ headless: true });
 let checks = 0;
@@ -43,7 +43,36 @@ try {
   await detects("empty-surface", "");
   await detects("inspection-limit", `<h1>Editor</h1>${"<span></span>".repeat(20001)}`);
   await detects("uninspected-subtree", '<h1>Editor</h1><iframe title="Embedded editor" srcdoc="<p>Content</p>"></iframe>');
-  await detects("uninspected-subtree", '<h1>Editor</h1><div id="host"></div><script>document.getElementById("host").attachShadow({mode:"open"}).innerHTML="<button>🚀</button>"</script>');
+  const shadow = (markup) => `<div id="host"></div><script>document.getElementById("host").attachShadow({mode:"open"}).innerHTML=${JSON.stringify(markup)}</script>`;
+  await detects("emoji-interface", shadow("<button>🚀</button>"));
+  await detects("emoji-interface", '<h1>Editor</h1>' + shadow("🚀"));
+  await detects("unnamed-control", shadow("<h1>Editor</h1><button></button>"));
+  await detects("placeholder-copy", shadow("<h1>Your brand name</h1>"));
+  await detects("uppercase-interface", shadow("<style>button{text-transform:uppercase}</style><button>Save</button>"));
+  await detects("emoji-interface", shadow('<style>button::after{content:"🚀"}</style><button>Save</button>'));
+  await detects("icon-semantics", shadow('<h1>Editor</h1><svg><path d="M2 2h4"/></svg>'));
+  await detects("inspection-limit", shadow(`<h1>Editor</h1>${"<span></span>".repeat(20001)}`));
+  const shadowOnly = await inspect(shadow('<h1>Project editor</h1><label id="label">Project title</label><input aria-labelledby="label"><button>Save</button>'));
+  assert.deepEqual(shadowOnly.failures, []);
+  assert.equal(shadowOnly.inspected_open_shadow_roots, 1); checks += 1;
+  const nested = await inspect(shadow('<h1>Project editor</h1><div id="nested"></div>') + '<script>document.getElementById("host").shadowRoot.getElementById("nested").attachShadow({mode:"open"}).innerHTML="<button>🚀</button>"</script>');
+  assert(nested.failures.some((finding) => finding.code === "emoji-interface" && finding.selector.includes(" >>> ")));
+  assert.equal(nested.inspected_open_shadow_roots, 2); checks += 1;
+  // The navigation announcer must be inspected, not waived by tag name.
+  assert.deepEqual((await inspect('<h1>Project</h1><next-route-announcer id="announcer"></next-route-announcer><script>document.getElementById("announcer").attachShadow({mode:"open"}).innerHTML="<div role=alert>Project</div>"</script>')).failures, []); checks += 1;
+  assert.deepEqual((await inspect('<h1>Project</h1><button>Continue ↗</button><a href="/projects">Open projects ↘</a>')).failures, []); checks += 1;
+  assert.deepEqual((await inspect('<h1>Project</h1><button>Continue ↗︎</button>')).failures, []); checks += 1;
+  await detects("emoji-interface", '<h1>Project</h1><button>Continue ↗️</button>');
+  await detects("emoji-interface", '<h1>Project</h1><button>Continue</button>', 'button::after{content:"↗️"}');
+  const hashPage = await browser.newPage();
+  try {
+    await hashPage.setContent(base(shadow('<h1>Editor</h1><button>Save</button>')));
+    const before = await hashRenderedDom(hashPage);
+    await hashPage.evaluate(() => { document.getElementById("host").shadowRoot.querySelector("button").textContent = "Publish"; });
+    const after = await hashRenderedDom(hashPage);
+    assert.notEqual(before.dom_sha256, after.dom_sha256);
+    assert.equal(after.dom_snapshot_complete, true); checks += 1;
+  } finally { await hashPage.close(); }
   // Hidden branches, editable user text, examples and legal marks do not become interface findings.
   assert.deepEqual((await inspect('<h1>Reference</h1><p>Copyright © 2026. Registered ®. Trademark ™.</p><pre>🚀 example</pre><code>🚀</code><div hidden>🚀 Lorem ipsum</div><div style="display:none">🚀</div><div contenteditable>🚀 a user draft</div>')).failures, []); checks += 1;
   assert.deepEqual((await inspect('<h1>Energy</h1><svg role="img" aria-labelledby="graphic-title"><title id="graphic-title">Energy use</title><path d="M2 2h4"/></svg><button aria-label="Save"><svg aria-hidden="true"><path d="M2 2h4"/></svg></button>')).failures, []); checks += 1;

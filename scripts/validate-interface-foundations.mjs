@@ -5,6 +5,30 @@ import { pathToFileURL } from "node:url";
 import { parseArgs } from "node:util";
 import { inspectInterfaceFoundations } from "./inspect-interface-foundations.mjs";
 
+export async function hashRenderedDom(page) {
+  const snapshot = await page.evaluate(() => {
+    const roots = [document.body];
+    const shadows = [];
+    let count = 0;
+    for (let index = 0; index < roots.length; index += 1) {
+      for (const element of roots[index].querySelectorAll("*")) {
+        count += 1;
+        if (count > 20000) return { document: document.documentElement.outerHTML, shadows, complete: false };
+        if (element.shadowRoot) {
+          roots.push(element.shadowRoot);
+          shadows.push({ host: element.localName, markup: element.shadowRoot.innerHTML });
+        }
+      }
+    }
+    return { document: document.documentElement.outerHTML, shadows, complete: true };
+  });
+  return {
+    dom_sha256: createHash("sha256").update(JSON.stringify(snapshot)).digest("hex"),
+    dom_hash_scope: "document and reachable open shadow markup; computed styles are represented by inspector findings",
+    dom_snapshot_complete: snapshot.complete
+  };
+}
+
 export async function inspectRenderedSurface({ browser, url, html, readySelector }) {
   const samples = [];
   for (const width of [390, 1440]) {
@@ -28,7 +52,7 @@ export async function inspectRenderedSurface({ browser, url, html, readySelector
         samples.push({
           viewport: { width, height: 900 }, reduced_motion: reducedMotion,
           resolved_url: page.url(),
-          dom_sha256: createHash("sha256").update(await page.content()).digest("hex"),
+          ...await hashRenderedDom(page),
           ...result
         });
       } finally {
