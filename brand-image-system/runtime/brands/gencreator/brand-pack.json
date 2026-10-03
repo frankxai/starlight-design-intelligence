@@ -21,9 +21,27 @@
     "principles": ["Make authorship and source evidence visible", "Treat each release as an authored edition", "Use light paper, ink and one meaningful spot color"],
     "colors": { "ink": "#221f1b", "paper": "#fbf9f5", "signal": "#c8322a" },
     "colorRules": ["Paper and ink carry at least 90% of a composition", "Spot red registers edition, source, state or signature once per object", "Brand color alone must not communicate state"],
-    "typography": { "displayFamily": "Instrument Serif", "readingFamily": "Instrument Sans", "displayRole": "releases and editorial display", "readingRole": "reading, product controls and evidence", "license": "SIL Open Font License 1.1", "case": "sentence", "monoUse": "source IDs, timestamps and hashes", "deploymentProof": "required before release" },
+    "typography": {
+      "displayFamily": "Instrument Serif",
+      "readingFamily": "Instrument Sans",
+      "displayRole": "releases and editorial display",
+      "readingRole": "reading, product controls and evidence",
+      "license": "SIL Open Font License 1.1",
+      "sourceEvidence": "brand-packs/gencreator/SOURCE_AUTHORITY.md#font-source-evidence",
+      "sourceRepository": "frankxai/gencreator.ai",
+      "sourceCommit": "1ca14c197830d577c4d290535b9fe10ef089edbd",
+      "sourceDirectory": "docs/brand/explorations/2026-08-27-identity-core/fonts",
+      "fontFiles": [
+        { "path": "InstrumentSans[wdth,wght].ttf", "blob": "3589b81b22d3defc725dfdcdf16b5da7c9adc691", "sha256": "b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efddde389b33b1", "licensePath": "OFL-Instrument-Sans.txt", "licenseBlob": "d41633cc1209e83ba21211954b1b9f356758e5e6" },
+        { "path": "InstrumentSerif-Regular.otf", "blob": "1f0366b115a935d2e6c9109e56d76522766eb9da", "sha256": "8299613dc56e9530d6a416cf8b9b24c209457f9ea66a7c118a024c7714c01cd6", "licensePath": "OFL-Instrument-Serif.txt", "licenseBlob": "e1801b959d17c62ffc42ed6ca650328e1a2f95d2" },
+        { "path": "InstrumentSerif-Italic.otf", "blob": "d2dba206264a3ebb387c9f65b39e79a6d55cf5b1", "sha256": "6d9d11705e3e81be42696d2d4be56f551ae29bcba41ed10c7d9a2d725859b874", "licensePath": "OFL-Instrument-Serif.txt", "licenseBlob": "e1801b959d17c62ffc42ed6ca650328e1a2f95d2" }
+      ],
+      "case": "sentence",
+      "monoUse": "source IDs, timestamps and hashes",
+      "deploymentProof": "required before release"
+    },
     "imageDirection": ["authored portraits with evidence of practice", "tools and working material", "source fragments transformed through crop, scale or sequence"],
-    "migration": { "productScope": "data-territory=b", "method": "surface by surface with owning-repository application QA", "modeIdsAreApproval": false, "downstreamPinsUpdated": false }
+    "migration": { "productScope": "data-territory=b", "method": "surface by surface with owning-repository application QA", "modeIdsAreApproval": false, "downstreamAdoption": "requires an owning-repository pin change and application QA" }
   },
   "channels": { "primary": ["product", "cohort material", "creator media"] },
   "approvals": {

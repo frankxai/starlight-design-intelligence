@@ -12,7 +12,9 @@ These references use its verified main revision
 
 ## Resolution
 
-The September shared pack's green action palette and catalog ladder conflict with
+The [prior shared pack](https://github.com/frankxai/starlight-design-intelligence/blob/f90a3a31f4dca5feafd9f9f427848ec42330fe3f/brand-image-system/runtime/brands/gencreator/brand-pack.json),
+updated 2026-09-02, is Git blob `0e60722b7cac5a867d221b1395548eaaf7643d2e`.
+Its green action palette and catalog ladder conflict with
 the product's accepted identity and brand kernel. The owning product's accepted
 decision takes precedence for these facts. This pack now carries its Territory B
 colors, font roles and authorship direction. It preserves the existing adoption
@@ -21,8 +23,33 @@ mode IDs and both canonical repositories.
 The August reset's GenCreator territory gate is satisfied at gate 6 by ADR-011.
 That decision explicitly leaves the Territory B application quartet, gate 7 image
 world and gate 8 family scale pending. The old reset program is absent from current
-kernel main; this reconciliation records GenCreator's status here and in its
+kernel baseline `f90a3a31f4dca5feafd9f9f427848ec42330fe3f` (its Git tree has no
+`brand-image-system/foundation-reset/` entries). This reconciliation records
+GenCreator's status here and in its
 runtime pack without recreating other brands' stale reset states.
+
+## Font source evidence
+
+The owning product revision above pins the following files under
+`docs/brand/explorations/2026-08-27-identity-core/fonts/`. The font SHA-256 values
+were checked against the actual files and the pinned Git contents. These identify
+the exploration fonts; they do not establish which files a deployed page uses.
+
+| File | Git blob | SHA-256 for font files |
+|---|---|---|
+| `InstrumentSans[wdth,wght].ttf` | `3589b81b22d3defc725dfdcdf16b5da7c9adc691` | `b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efddde389b33b1` |
+| `InstrumentSerif-Regular.otf` | `1f0366b115a935d2e6c9109e56d76522766eb9da` | `8299613dc56e9530d6a416cf8b9b24c209457f9ea66a7c118a024c7714c01cd6` |
+| `InstrumentSerif-Italic.otf` | `d2dba206264a3ebb387c9f65b39e79a6d55cf5b1` | `6d9d11705e3e81be42696d2d4be56f551ae29bcba41ed10c7d9a2d725859b874` |
+| `OFL-Instrument-Sans.txt` | `d41633cc1209e83ba21211954b1b9f356758e5e6` | License file |
+| `OFL-Instrument-Serif.txt` | `e1801b959d17c62ffc42ed6ca650328e1a2f95d2` | License file |
+
+Both local license texts identify OFL 1.1, consistent with the official
+[Instrument Sans license](https://github.com/Instrument/instrument-sans/blob/master/OFL.txt)
+and [Instrument Serif license](https://github.com/Instrument/instrument-serif/blob/main/OFL.txt)
+read on 2026-10-03. An upstream font snapshot commit was not recorded by the
+exploration; the owning product commit and the concrete blob/hash identify the
+files verified here. Preserve license notices when distributing fonts. Font
+licensing does not approve a wordmark or provide trademark clearance.
 
 ## Approval limits
 
