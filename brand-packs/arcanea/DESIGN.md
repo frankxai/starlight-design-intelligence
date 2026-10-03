@@ -29,15 +29,18 @@ the agreed roles and remaining gaps; it grants no new identity or release approv
 
 The product's `TASTE.md` and `packages/design-system/src/tokens.ts` agree on
 teal, blue and gold. Aquamarine is an additional declared package token.
-Use the owning application's named tokens:
+These are source references, not a new runtime palette. Resolve actual application
+tokens and acceptance before a new placement:
 
 ```yaml
 colors:
   atlanteanTeal: "#00bcd4"
   cosmicBlue: "#0d47a1"
   arcaneanGold: "#ffd700"
-  aquamarine: "#7fffd4"
 ```
+
+Additional source token: package `brand.aquamarine` is `#7fffd4`. It remains a
+reference outside the agreed palette block; no new placement is approved here.
 
 Background remains unresolved: `TASTE.md` names `#09090b`, the package's
 `cosmic.void` is `#0b0e14`, and the older cinematic `DESIGN.md` names `#05070f`.
@@ -56,8 +59,11 @@ Realm and character colors remain governed by locked canon and the selected scen
   use. These family references establish no font distribution or embedding rights.
 
 For product icons, the owning `TASTE.md` specifies Phosphor duotone and SVG brand
-references for third-party tools. Verify exact packages, rights and rendering;
-emoji and Unicode glyphs do not substitute for interface icons.
+references for third-party tools. Before a new adoption, record the exact package
+and version, upstream license/file and artifact hash. Verify the exported SVG,
+optical size, stroke/weight, accessible label and actual states; keep the required
+public-action approval record. No package version, rights or rendered icon was
+verified here. Emoji and Unicode glyphs do not substitute for interface icons.
 
 ---
 
@@ -86,6 +92,8 @@ composed crystalline mark/wordmark application. The two public SVGs have differe
 symbol geometry, and the wordmark uses live system text. Their existence supplies
 no approved vector family or small-size/export proof. Preserve the current product
 asset; follow the source audit before reconstruction or new placement approval.
+The assets have distinct constructions; neither SVG supersedes or validates the
+other or the product-selected raster. The owner must reconcile the intended family.
 
 Higgsfield tools and skills are prohibited by Frank's current instruction. Older
 source paths and generation records remain historical evidence. Do not execute

@@ -18,8 +18,10 @@
   },
   "visual": {
     "principles": ["Creator artifacts carry the mythology", "Product chrome follows its owning token contract", "Stillness stages a selected world"],
-    "colors": {"atlanteanTeal": "#00bcd4", "cosmicBlue": "#0d47a1", "arcaneanGold": "#ffd700", "aquamarine": "#7fffd4"},
-    "colorScope": "Teal/blue/gold references agree between pinned product taste and code; aquamarine comes from its package token. Background and document conflicts require owner reconciliation before a new product application.",
+    "colors": {"atlanteanTeal": "#00bcd4", "cosmicBlue": "#0d47a1", "arcaneanGold": "#ffd700"},
+    "additionalSourceToken": {"name": "brand.aquamarine", "value": "#7fffd4", "source": "Owning product packages/design-system/src/tokens.ts at 79f3fb25; reference only, new placement unapproved"},
+    "colorScope": "Teal/blue/gold references agree between pinned product taste and code. No new palette placement or product adoption is approved here. Background and document conflicts require owner reconciliation before a new product application.",
+    "mediaExecutionScope": "Higgsfield tools and skills are prohibited; older source paths and records remain historical audit evidence.",
     "typography": {"displayRole": "product clarity", "displayFamily": "Geist", "readingRole": "creator work and long-form reading", "readingFamily": "Geist", "editorialFamily": "Instrument Serif", "codeFamily": "Geist Mono", "sourceStatus": "Declared owning-product roles; exact files, rights and computed-font adoption unverified"},
     "imageDirection": ["canonical characters", "visitable worlds", "working creator artifacts"]
   },

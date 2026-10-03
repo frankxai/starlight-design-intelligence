@@ -70,7 +70,9 @@ no replacement, changes no product asset and performs no legal clearance.
 
 ## Consumer boundary
 
-The runtime pack lists declared roles and agreed accent references. Its family
+The runtime pack lists declared roles and three agreed accent references, with
+aquamarine in a separate package-source reference. None is a new application
+approval. Its family
 and color metadata is guidance. It does not establish deployed fonts, product token
 integration, usable navigation, native harness use or enforcement of this audit.
 New product adoption needs an owner-approved pin/update, actual application QA
