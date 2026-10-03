@@ -3,7 +3,7 @@
   "brandId": "arcanea",
   "displayName": "Arcanea",
   "operatingUnit": "arcanea-product-ip",
-  "sourceDocs": ["brand-packs/arcanea/DESIGN.md"],
+  "sourceDocs": ["brand-packs/arcanea/DESIGN.md", "brand-packs/arcanea/SOURCE_AUTHORITY.md"],
   "canonicalRepos": ["frankxai/arcanea", "frankxai/arcanea-ai-app"],
   "surfaceModes": ["mythic-world", "creator-tool", "lore-editorial"],
   "audiences": ["world-builders", "writers", "visual creators", "creative technologists"],
@@ -17,13 +17,14 @@
     "bannedPhrases": ["generic magic", "limitless possibilities", "AI-powered fantasy"]
   },
   "visual": {
-    "principles": ["World first, tool revealed", "Symbols carry meaning", "Stillness stages spectacle"],
-    "colors": { "void": "#05070f", "parchment": "#f0e9d9", "gold": "#c5a26f", "indigo": "#3f2a6b" },
-    "typography": { "displayRole": "mythic culture", "readingRole": "immersive long-form" },
+    "principles": ["Creator artifacts carry the mythology", "Product chrome follows its owning token contract", "Stillness stages a selected world"],
+    "colors": {"atlanteanTeal": "#00bcd4", "cosmicBlue": "#0d47a1", "arcaneanGold": "#ffd700", "aquamarine": "#7fffd4"},
+    "colorScope": "Teal/blue/gold references agree between pinned product taste and code; aquamarine comes from its package token. Background and document conflicts require owner reconciliation before a new product application.",
+    "typography": {"displayRole": "product clarity", "displayFamily": "Geist", "readingRole": "creator work and long-form reading", "readingFamily": "Geist", "editorialFamily": "Instrument Serif", "codeFamily": "Geist Mono", "sourceStatus": "Declared owning-product roles; exact files, rights and computed-font adoption unverified"},
     "imageDirection": ["canonical characters", "visitable worlds", "working creator artifacts"]
   },
   "channels": { "primary": ["product", "editorial", "cinematic media"] },
   "approvals": { "requiredBeforePublicAction": true, "route": "named-human" },
-  "doNotUse": ["purple cliché", "generic generated texture", "mythology without product consequence"],
-  "updatedAt": "2026-07-24"
+  "doNotUse": ["purple cliché", "generic generated texture", "mythology without product consequence", "Higgsfield tools or skills", "Emoji or Unicode glyphs as product icons", "Cinematic reference colors substituted for unresolved product tokens", "Unverified raster or system-font SVG promoted as an approved vector identity master"],
+  "updatedAt": "2026-10-03"
 }
