@@ -29,6 +29,8 @@ jobs:
       - run: npm run validate:observatory
       - run: npm run check:observatory-index
       - run: npm test
+      - name: Reject incomplete native hook proof
+        run: python3 -B -m unittest discover -s tests -p native_codex_probe_test.py
       - name: Install Chromium for rendered foundation checks
         run: npx playwright install --with-deps chromium
       - name: Exercise rendered interface defects and CLI failure behavior
