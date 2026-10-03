@@ -41,6 +41,7 @@ try {
   await detects("uppercase-interface", '<p class="caption">A practical review tool</p>', ".caption{text-transform:uppercase}");
   await detects("uppercase-interface", '<fieldset><legend>Evidence available</legend></fieldset>', "fieldset{text-transform:uppercase}");
   await detects("uppercase-interface", '<button>Save</button>', 'button::before{content:"Ready";text-transform:uppercase}');
+  await detects("uppercase-interface", '<span class="counter-label"></span>', 'body{counter-reset:step 1}.counter-label::before{content:counter(step,lower-alpha);text-transform:uppercase}');
   assert.deepEqual((await inspect('<h1>Reference</h1><code>API_KEY</code><pre>SELECT</pre><div contenteditable>USER DRAFT</div><p hidden>Hidden text</p>', 'code,pre,[contenteditable],p{text-transform:uppercase}')).failures, []); checks += 1;
   assert.deepEqual((await inspect('<h1>Reference</h1><pre>Code example</pre><div contenteditable>User draft</div>', 'pre::before,[contenteditable]::after{content:"SELECT";text-transform:uppercase}')).failures, []); checks += 1;
   for (const href of ["", "#", "javascript:void(0)"]) await detects("placeholder-link", `<h1>Editor</h1><a href="${href}">Start</a>`);
