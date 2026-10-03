@@ -40,10 +40,10 @@ def write_private_fixture(path, root, text):
 
 
 def new_fixture_target(path, root):
+    if any(ord(char) < 32 or ord(char) == 127 for char in str(path)):
+        raise ValueError("Native fixture target cannot contain control characters")
     if path.parent != root or path.resolve().parent != root or path.exists() or path.is_symlink():
         raise ValueError("Native fixture target must be new and contained")
-    if any(char in str(path) for char in "\r\n"):
-        raise ValueError("Native fixture target cannot contain line breaks")
 
 
 def fixture_patch(path, root, text):

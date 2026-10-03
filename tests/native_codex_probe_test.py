@@ -61,6 +61,10 @@ class NativeProofTests(unittest.TestCase):
         value['cases'][0].update(clientToolCalls=0, nativeShellCommands=1)
         value['cases'][1]['nativeShellCommands'] = 0
         self.assertTrue(probe.verdict(value)['hostProbePassed'])
+        retained = copy.deepcopy(value)
+        retained['denyFileAbsent'] = False
+        self.assertFalse(probe.verdict(retained)['hostProbePassed'],
+                         'A blocked hook cannot conceal a retained denied file')
         value['cases'][1]['nativeShellCommands'] = 1
         value['denyFileAbsent'] = False
         self.assertFalse(probe.verdict(value)['hostProbePassed'])
@@ -90,7 +94,8 @@ class NativeProofTests(unittest.TestCase):
                           probe.fixture_patch(path, root, probe.SAFE))
             self.assertFalse(path.exists(), 'Patch construction must not emulate execution')
             path.write_text('preserved', encoding='utf-8')
-            for target in (path, root.parent / 'outside.txt', root / 'bad\n*** Delete File: victim'):
+            for target in (path, root.parent / 'outside.txt', root / 'bad\n*** Delete File: victim',
+                           root / 'tab\ttarget.txt', root / 'delete\x7ftarget.txt'):
                 with self.assertRaises(ValueError):
                     probe.fixture_patch(target, root, probe.SAFE)
             self.assertEqual(path.read_text(encoding='utf-8'), 'preserved')
