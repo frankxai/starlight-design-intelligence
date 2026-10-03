@@ -1,7 +1,21 @@
 # Arcanea Brand Design System & Cinematic Guidelines
 
-> Source of truth for Arcanea's visual universe. "Weaving cosmic threads."
-> Designed for an immersive, soulful, and epic world-building experience.
+> Shared guidance for Arcanea world content and creator surfaces.
+> Read [SOURCE_AUTHORITY.md](SOURCE_AUTHORITY.md) before applying this pack.
+
+## Authority and surface
+
+The owning product is `frankxai/arcanea-ai-app`. Its pinned main `79f3fb25`
+names `AGENTS.md`, `TASTE.md`, `DESIGN.md` and the product token package as visual
+sources. Those documents contain unresolved conflicts. The shared pack records
+the agreed roles and remaining gaps; it grants no new identity or release approval.
+
+- Creator-tool chrome follows the product's restrained interface contract. Keep
+  mythic characters, worlds and lore in the work the creator makes.
+- World and lore compositions follow the selected canonical subject and its
+  actual references. A cinematic scene does not dictate application chrome.
+- Resolve current product tokens and desktop/mobile specimens before adoption.
+  The product's background references differ and need owner reconciliation.
 
 ---
 
@@ -11,52 +25,83 @@
 
 ---
 
-## 2 · Color Palette (Dark Premium Arcane)
-All neutrals are tinted toward the indigo and gold accent families. Avoid pure grays or unshaded blacks.
+## 2 · Color roles
+
+The product's `TASTE.md` and `packages/design-system/src/tokens.ts` agree on
+teal, blue and gold. Aquamarine is an additional declared package token.
+These are source references, not a new runtime palette. Resolve actual application
+tokens and acceptance before a new placement:
 
 ```yaml
 colors:
-  bg: "#05070f"              # Deep void, black with indigo bias
-  bg-alt: "#0a0f1f"          # Lifted void layer
-  surface: "#121826"         # Dashboard cards and panels
-  fg: "#f0e9d9"              # Starlight cream / warm parchment (never pure white)
-  fg-muted: "#a8a39a"        # Body copy and captions
-  
-  # Brand Accents
-  accent-gold: "#c5a26f"     # Arcane gold — cosmic threads, sovereignty
-  accent-gold-bright: "#e8d5a3" # specularity, specular highlights
-  accent-indigo: "#3f2a6b"   # Void-violet — the Fabric, mystery
-  accent-crimson: "#6b2a2a"  # Spark of creation, living blood of worlds
-  accent-teal: "#2a5c5c"     # Star-teal — memory connections, network graph
+  atlanteanTeal: "#00bcd4"
+  cosmicBlue: "#0d47a1"
+  arcaneanGold: "#ffd700"
 ```
+
+Additional source token: package `brand.aquamarine` is `#7fffd4`. It remains a
+reference outside the agreed palette block; no new placement is approved here.
+
+Background remains unresolved: `TASTE.md` names `#09090b`, the package's
+`cosmic.void` is `#0b0e14`, and the older cinematic `DESIGN.md` names `#05070f`.
+Preserve existing product behavior until the owner reconciles the references.
+Realm and character colors remain governed by locked canon and the selected scene.
 
 ---
 
 ## 3 · Typography
-- **Display & Lore:** High-contrast elegant serif (Playfair Display / Serif). 72px – 140px. Generous tracking on all-caps; lowercase for intimate narratives.
-- **UI / Modern Data:** Inter or JetBrains Mono. 28px – 42px. Used for code readouts, numbers, and nodes.
-- **Voice / Captions:** Inter, slightly tightened, 22px – 28px. High legibility on dark backgrounds with subtle glow.
+- Display and interface body: Geist, following the owning product's declared roles.
+- Editorial accent: Instrument Serif; code and data: Geist Mono.
+- Use sentence case in interface labels and headings. Preserve existing identity
+  artwork until its own approval; interface casing does not redraw a wordmark.
+- Select sizes from real copy, hierarchy and mobile specimens. Record exact font
+  files, rights, weights, fallbacks and computed-font proof before a new production
+  use. These family references establish no font distribution or embedding rights.
+
+For product icons, the owning `TASTE.md` specifies Phosphor duotone and SVG brand
+references for third-party tools. Before a new adoption, record the exact package
+and version, upstream license/file and artifact hash. Verify the exported SVG,
+optical size, stroke/weight, accessible label and actual states; keep the required
+public-action approval record. No package version, rights or rendered icon was
+verified here. Emoji and Unicode glyphs do not substitute for interface icons.
 
 ---
 
 ## 4 · Depth, Elevation, and Atmosphere
-- **Multi-plane Parallax:** Simulated 3D layering (foreground sharp, mid-ground characters, background nebulae/void moving at slower speeds).
-- **Lighting:** radial gold/indigo glows breathing slowly, god rays, and floating embers/stars.
-- **Forbidden Elements:** Sci-fi neon grids, cyan/magenta overload, flat drop shadows, and default AI-generated textures.
+- World imagery may use spatial layers and subject-specific lighting when they
+  make the selected world readable. Inspect the exported result and small crops.
+- Creator-tool controls use the owning token system, clear hierarchy, keyboard
+  focus and explicit working/error/recovery states.
+- Reject generated filler, ornamental chrome and lighting required to read text.
 
 ---
 
 ## 5 · Motion Signature
-- **Cinematic Pacing:** Deliberate, slow reveals (0.8s – 2.0s entrances) with long breathing holds.
-- **Transitions:** Domain-warp, gravitational lens, and cosmic thread weaving.
-- **Camera Movement:** Dolly push, pan, and Three.js orbital sweeps on the World Graph.
+- Read `MOTION.md` with the owning product's current motion contract. Name the
+  task improved by each transition; repeated creator actions must remain quick.
+- Cinematic world reveals need a static/reduced-motion equivalent, interruption
+  recovery and measured performance. Long entrances are not an interface default.
+- Lore animations must preserve navigation, focus and legible final states.
 
 ---
 
-## 6 · Higgsfield Production Notes
+## 6 · Existing identity and media execution
 
-- Use the shared workspace at `C:\Users\frank\starlight\higgsfield\`.
-- Reuse `assets\arcanea\dashboard_hero_premium_upscaled.png` and `assets\arcanea\dashboard_hero_premium.mp4` before spending new credits.
-- Arcanea prompts must inherit the cinematic language from `repos\arcanea-ecosystem\videos\arcanea-cinematic-hero\design.md`.
-- Cinematic stills route to Nano Banana Pro, Soul Cinematic, or Cinema Studio Image depending on whether text/diagrams, character fidelity, or filmic lighting is primary.
-- 9:16 motion proofs route to Seedance 2.0 or Kling 3.0 only after cost preflight.
+The product currently imports `apps/web/assets/brand/arcanea-mark.jpg`. It is a
+composed crystalline mark/wordmark application. The two public SVGs have different
+symbol geometry, and the wordmark uses live system text. Their existence supplies
+no approved vector family or small-size/export proof. Preserve the current product
+asset; follow the source audit before reconstruction or new placement approval.
+The assets have distinct constructions; neither SVG supersedes or validates the
+other or the product-selected raster. The owner must reconcile the intended family.
+
+Higgsfield tools and skills are prohibited by Frank's current instruction. Older
+source paths and generation records remain historical evidence. Do not execute
+their pipelines or fabricate missing provenance.
+
+For new authorized visual work, select an available native image, Nano Banana or
+Veo pipeline only after current model/cost and machine admission checks. Preserve
+locked canon, use existing approved assets where appropriate, and write the exact
+prompt/model/provider/seed/session sidecar beside each new image plus both required
+ledgers. Verify the exported artifact and required independent/human approval.
+No generator, asset, production font or new identity was approved by this correction.
