@@ -115,14 +115,14 @@ export function inspectInterfaceFoundations() {
     const style = getComputedStyle(element);
     for (const pseudo of ["::before", "::after"]) {
       const pseudoStyle = getComputedStyle(element, pseudo);
-      if (pseudoStyle.display !== "none" && pseudoStyle.visibility !== "hidden" &&
-        Number(pseudoStyle.opacity) > 0 && hasEmoji(pseudoStyle.content)) {
+      if (pseudoStyle.display === "none" || pseudoStyle.visibility === "hidden" ||
+        Number(pseudoStyle.opacity) <= 0) continue;
+      if (hasEmoji(pseudoStyle.content)) {
         fail("emoji-interface", element, "Replace CSS-generated emoji with a licensed vector icon.");
       }
-      if (pseudoStyle.display !== "none" && pseudoStyle.visibility !== "hidden" &&
-        Number(pseudoStyle.opacity) > 0 && /^['"]/u.test(pseudoStyle.content) &&
-        /\p{L}/u.test(pseudoStyle.content) && pseudoStyle.textTransform === "uppercase" &&
-        !closest(element, "pre,code,kbd,samp,textarea,[contenteditable]")) {
+      if (!closest(element, "pre,code,kbd,samp,textarea,[contenteditable]") &&
+        /^['"]/u.test(pseudoStyle.content) && /\p{L}/u.test(pseudoStyle.content) &&
+        pseudoStyle.textTransform === "uppercase") {
         fail("uppercase-interface", element, "Use sentence case; remove forced uppercase styling.");
       }
     }

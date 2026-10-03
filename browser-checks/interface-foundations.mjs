@@ -42,6 +42,7 @@ try {
   await detects("uppercase-interface", '<fieldset><legend>Evidence available</legend></fieldset>', "fieldset{text-transform:uppercase}");
   await detects("uppercase-interface", '<button>Save</button>', 'button::before{content:"Ready";text-transform:uppercase}');
   assert.deepEqual((await inspect('<h1>Reference</h1><code>API_KEY</code><pre>SELECT</pre><div contenteditable>USER DRAFT</div><p hidden>Hidden text</p>', 'code,pre,[contenteditable],p{text-transform:uppercase}')).failures, []); checks += 1;
+  assert.deepEqual((await inspect('<h1>Reference</h1><pre>Code example</pre><div contenteditable>User draft</div>', 'pre::before,[contenteditable]::after{content:"SELECT";text-transform:uppercase}')).failures, []); checks += 1;
   for (const href of ["", "#", "javascript:void(0)"]) await detects("placeholder-link", `<h1>Editor</h1><a href="${href}">Start</a>`);
   await detects("icon-semantics", '<h1>Editor</h1><svg><path d="M2 2h4"/></svg>');
   await detects("focusable-decoration", '<h1>Editor</h1><svg aria-hidden="true" tabindex="0"><path d="M2 2h4"/></svg>');
