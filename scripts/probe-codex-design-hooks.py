@@ -11,13 +11,16 @@ import json
 import os
 from pathlib import Path
 import queue
+import shlex
 import subprocess
+import sys
 import threading
 import time
 import tomllib
 import uuid
 
 SAFE = "Native model-free lifecycle fixture. No product implementation.\n"
+TOOL_PATHS = ("dynamic-write", "native-apply-patch", "native-shell")
 
 
 def private_directory(path):
@@ -34,6 +37,36 @@ def write_private_fixture(path, root, text):
         raise ValueError("Private artifact path escaped its admitted directory")
     with path.open('x', encoding='utf-8') as file:
         file.write(text)
+
+
+def new_fixture_target(path, root):
+    if path.parent != root or path.resolve().parent != root or path.exists() or path.is_symlink():
+        raise ValueError("Native fixture target must be new and contained")
+    if any(char in str(path) for char in "\r\n"):
+        raise ValueError("Native fixture target cannot contain line breaks")
+
+
+def fixture_patch(path, root, text):
+    """Construct only a new, contained fixture; never accept a model-supplied patch."""
+    new_fixture_target(path, root)
+    return ("*** Begin Patch\n*** Add File: " + path.as_posix() + "\n"
+            + "\n".join("+" + line for line in text.splitlines())
+            + "\n*** End Patch")
+
+
+def fixture_shell(path, root, text):
+    """The actual native shell runs only this exclusive, contained text write."""
+    new_fixture_target(path, root)
+    if os.name == "nt":
+        quote = lambda value: "'" + value.replace("'", "''") + "'"
+        return ("$starlightFixtureBytes = [Text.Encoding]::UTF8.GetBytes(" + quote(text) + ")\n"
+                "$starlightFixtureStream = [IO.File]::Open(" + quote(str(path))
+                + ", [IO.FileMode]::CreateNew, [IO.FileAccess]::Write)\n"
+                "try { $starlightFixtureStream.Write($starlightFixtureBytes, 0, $starlightFixtureBytes.Length) }\n"
+                "finally { $starlightFixtureStream.Dispose() }")
+    code = ("from pathlib import Path\nwith Path(" + repr(str(path))
+            + ").open('x', encoding='utf-8') as file:\n    file.write(" + repr(text) + ")")
+    return shlex.quote(sys.executable) + " -c " + shlex.quote(code)
 
 
 def fixture_request_size(length, path):
@@ -74,13 +107,24 @@ def verdict(receipt):
     cases = {case["case"]: case for case in receipt["cases"]}
     runs = [event for event in receipt["notifications"]
             if event.get("method") == "hook/completed"]
+    path = receipt.get("toolPath", "dynamic-write")
+    dynamic = (path == "dynamic-write"
+               and cases.get("allow", {}).get("clientToolCalls") == 1
+               and cases.get("deny", {}).get("clientToolCalls") == 0)
+    native = (path == "native-apply-patch"
+              and all(case.get("clientToolCalls") == 0 for case in cases.values())
+              and cases.get("allow", {}).get("nativeFileChanges") == 1
+              and cases.get("deny", {}).get("nativeFileChanges") == 0)
+    shell = (path == "native-shell"
+             and all(case.get("clientToolCalls") == 0 for case in cases.values())
+             and cases.get("allow", {}).get("nativeShellCommands") == 1
+             and cases.get("deny", {}).get("nativeShellCommands") == 0)
     boundary = (not receipt["failure"] and receipt["sharedConfigUnchanged"]
                 and receipt["serverClosed"] and receipt["nativeProcessExit"] == 0
                 and set(cases) == {"allow", "deny"}
                 and all(case["completed"] and case.get("turnStatus") == "completed"
                         for case in cases.values())
-                and cases["allow"]["clientToolCalls"] == 1
-                and cases["deny"]["clientToolCalls"] == 0
+                and (dynamic or native or shell)
                 and receipt["allowContentMatches"] and receipt["denyFileAbsent"]
                 and any(event["case"] == "deny"
                         and event["run"]["eventName"] == "preToolUse"
@@ -97,6 +141,7 @@ def verdict(receipt):
     unexpected_auth = any(observation.get("authorizationHeaderPresent", False)
                           for observation in receipt["observations"])
     return {"nativeToolBoundaryVerified": bool(boundary),
+            "toolPath": path,
             "nativeRoutingVerified": routing,
             "impeccableLifecycle": design,
             "unexpectedFixtureAuthentication": unexpected_auth,
@@ -114,7 +159,9 @@ def main():
     parser.add_argument("--codex-exe", type=Path, required=True)
     parser.add_argument("--cwd", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--tool-path", choices=TOOL_PATHS, default="dynamic-write")
     args = parser.parse_args()
+    tool_path = args.tool_path
     ROOT = private_directory(args.output_dir)
     EXE, CWD = args.codex_exe.resolve(), args.cwd.resolve()
     if not EXE.is_file() or not CWD.is_dir():
@@ -130,7 +177,8 @@ def main():
     before = {str(path): digest(path) for path in protected}
     native, entries, preserved = [], [], []
     observations, notifications, cases = [], [], []
-    state = {"case": "allow", "responses": 0, "clientToolCalls": 0}
+    state = {"case": "allow", "responses": 0, "clientToolCalls": 0,
+             "nativeFileChanges": 0, "nativeShellCommands": 0}
 
     class Handler(http.server.BaseHTTPRequestHandler):
         def setup(self):
@@ -165,7 +213,12 @@ def main():
             if state["responses"] == 1:
                 target = OUTPUT if state["case"] == "allow" else BLOCKED_OUTPUT
                 content_text = SAFE if state["case"] == "allow" else "sk-" + "syntheticfixture" + "A" * 30
-                item = {"type": "function_call", "call_id": "fixture-write-" + state["case"], "name": "Write", "arguments": json.dumps({"file_path": str(target), "content": content_text})}
+                if args.tool_path == "native-apply-patch":
+                    item = {"type": "custom_tool_call", "call_id": "fixture-patch-" + state["case"], "name": "apply_patch", "input": fixture_patch(target, ROOT, content_text)}
+                elif args.tool_path == "native-shell":
+                    item = {"type": "function_call", "call_id": "fixture-shell-" + state["case"], "name": "exec_command", "arguments": json.dumps({"cmd": fixture_shell(target, ROOT, content_text), "workdir": str(ROOT), "yield_time_ms": 1000, "max_output_tokens": 200})}
+                else:
+                    item = {"type": "function_call", "call_id": "fixture-write-" + state["case"], "name": "Write", "arguments": json.dumps({"file_path": str(target), "content": content_text})}
             else:
                 item = {"type": "message", "role": "assistant", "id": "fixture-done", "content": [{"type": "output_text", "text": "Native lifecycle fixture completed. No design acceptance is claimed."}]}
             events = [{"type": "response.created", "response": {"id": rid}}, {"type": "response.output_item.done", "item": item}, {"type": "response.completed", "response": {"id": rid, "usage": {"input_tokens": 0, "input_tokens_details": None, "output_tokens": 0, "output_tokens_details": None, "total_tokens": 0}}}]
@@ -231,7 +284,7 @@ def main():
             args = params.get("arguments", {})
             if isinstance(args, str):
                 args = json.loads(args)
-            if state["case"] != "allow" or params.get("tool") != "Write" or Path(args.get("file_path", "")).resolve() != OUTPUT.resolve() or args.get("content") != SAFE:
+            if tool_path != "dynamic-write" or state["case"] != "allow" or params.get("tool") != "Write" or Path(args.get("file_path", "")).resolve() != OUTPUT.resolve() or args.get("content") != SAFE:
                 send({"id": message["id"], "result": {"contentItems": [{"type": "inputText", "text": "Private fixture boundary rejected execution."}], "success": False}})
             else:
                 write_private_fixture(OUTPUT, ROOT, SAFE)
@@ -248,8 +301,14 @@ def main():
             notifications.append({"case": state["case"], "method": method, "message": str(params.get("error", {}).get("message", ""))[:1000]})
         elif method in ("turn/completed", "item/completed"):
             item = params.get("item", {})
-            if method == "turn/completed" or item.get("type") == "dynamicToolCall":
-                notifications.append({"case": state["case"], "method": method, "itemType": item.get("type"), "status": params.get("turn", item).get("status")})
+            if method == "item/completed" and item.get("type") == "fileChange" and item.get("status") == "completed":
+                state["nativeFileChanges"] += 1
+            if method == "item/completed" and item.get("type") == "commandExecution" and item.get("status") == "completed" and item.get("exitCode") == 0:
+                state["nativeShellCommands"] += 1
+            if method == "turn/completed" or item.get("type") in ("dynamicToolCall", "fileChange", "commandExecution"):
+                notifications.append({"case": state["case"], "method": method, "itemType": item.get("type"), "status": params.get("turn", item).get("status"), "exitCode": item.get("exitCode")})
+                if item.get("type") == "commandExecution" and item.get("status") == "failed":
+                    notifications[-1]["failureOutput"] = str(item.get("aggregatedOutput", ""))[:2000]
 
     def call(method, params):
         nonlocal sequence
@@ -280,10 +339,16 @@ def main():
             raise RuntimeError("Native skill inventory has errors; scope not attempted")
         entries, preserved = skill_scope(native)
         for case in ("allow", "deny"):
-            state.update(case=case, responses=0, clientToolCalls=0)
-            result = call("thread/start", {"cwd": str(CWD), "approvalPolicy": "never", "sandbox": "read-only", "ephemeral": True, "config": {"skills.config": entries}, "dynamicTools": [{"type": "function", "name": "Write", "description": "Write only the bounded private native fixture.", "inputSchema": {"type": "object", "properties": {"file_path": {"type": "string"}, "content": {"type": "string"}}, "required": ["file_path", "content"], "additionalProperties": False}}]})
+            state.update(case=case, responses=0, clientToolCalls=0, nativeFileChanges=0, nativeShellCommands=0)
+            thread_params = {"cwd": str(CWD), "approvalPolicy": "never", "sandbox": "read-only", "ephemeral": True, "config": {"skills.config": entries}}
+            if args.tool_path == "dynamic-write":
+                thread_params["dynamicTools"] = [{"type": "function", "name": "Write", "description": "Write only the bounded private native fixture.", "inputSchema": {"type": "object", "properties": {"file_path": {"type": "string"}, "content": {"type": "string"}}, "required": ["file_path", "content"], "additionalProperties": False}}]
+            result = call("thread/start", thread_params)
             tid = result["thread"]["id"]
-            started_turn = call("turn/start", {"threadId": tid, "input": [{"type": "text", "text": "Review a product interface for icons, keyboard focus, reduced motion and recovery. Model-free native hook fixture, no product edits."}]})
+            turn_params = {"threadId": tid, "input": [{"type": "text", "text": "Review a product interface for icons, keyboard focus, reduced motion and recovery. Model-free native hook fixture, no product edits."}]}
+            if args.tool_path in ("native-apply-patch", "native-shell"):
+                turn_params["sandboxPolicy"] = {"type": "workspaceWrite", "writableRoots": [str(ROOT)], "networkAccess": False}
+            started_turn = call("turn/start", turn_params)
             turn_id = started_turn["turn"]["id"]
             deadline = time.monotonic() + 45
             done = False
@@ -298,7 +363,7 @@ def main():
                     done = True
                     turn_status = message.get("params", {}).get("turn", {}).get("status")
                     break
-            cases.append({"case": case, "completed": done, "turnStatus": turn_status, "clientToolCalls": state["clientToolCalls"], "responses": state["responses"]})
+            cases.append({"case": case, "completed": done, "turnStatus": turn_status, "clientToolCalls": state["clientToolCalls"], "nativeFileChanges": state["nativeFileChanges"], "nativeShellCommands": state["nativeShellCommands"], "responses": state["responses"]})
             if not done:
                 call("turn/interrupt", {"threadId": tid, "turnId": turn_id})
                 raise TimeoutError("Native fixture turn")
@@ -315,7 +380,7 @@ def main():
         server.server_close()
         server_thread.join(timeout=2)
     after = {str(path): digest(path) for path in protected}
-    receipt = {"at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "probeSourceSha256": digest(Path(__file__)), "probe": "native synchronous lifecycle and dynamic tool dispatch", "failure": failure, "durationSeconds": round(time.monotonic() - started, 3), "nativeRows": len(native), "sessionEnabledRows": sum(e["enabled"] for e in entries), "preservedSkills": preserved, "sharedConfigUnchanged": before == after, "sharedConfigHashes": after, "skillScope": "thread/start runtime override only", "cases": cases, "observations": observations, "notifications": notifications, "allowFilePresent": OUTPUT.is_file(), "allowContentMatches": OUTPUT.is_file() and OUTPUT.read_text(encoding="utf-8") == SAFE, "denyFileAbsent": not BLOCKED_OUTPUT.exists(), "serverClosed": not server_thread.is_alive(), "nativeProcessExit": process.returncode, "externalInferenceCalls": 0, "limits": ["Local dynamic Write fixture only", "No product design quality or native shell/MCP execution acceptance", "Default native catalog not changed", "No hook trust bypass"]}
+    receipt = {"at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "probeSourceSha256": digest(Path(__file__)), "probe": "native synchronous lifecycle and selected tool dispatch", "toolPath": args.tool_path, "failure": failure, "durationSeconds": round(time.monotonic() - started, 3), "nativeRows": len(native), "sessionEnabledRows": sum(e["enabled"] for e in entries), "preservedSkills": preserved, "sharedConfigUnchanged": before == after, "sharedConfigHashes": after, "skillScope": "thread/start runtime override only", "cases": cases, "observations": observations, "notifications": notifications, "allowFilePresent": OUTPUT.is_file(), "allowContentMatches": OUTPUT.is_file() and OUTPUT.read_text(encoding="utf-8") == SAFE, "denyFileAbsent": not BLOCKED_OUTPUT.exists(), "serverClosed": not server_thread.is_alive(), "nativeProcessExit": process.returncode, "externalInferenceCalls": 0, "limits": ["Selected deterministic fixture tool path only", "No product design quality or native MCP/code-mode execution acceptance", "Shell mode may retain a nonfunctional denied-payload fixture when hook coverage fails", "Default native catalog not changed", "No hook trust bypass"]}
     receipt["verdict"] = verdict(receipt)
     receipt_path = ROOT / (tag + ".json")
     write_private_fixture(receipt_path, ROOT, json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")

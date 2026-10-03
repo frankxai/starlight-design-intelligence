@@ -34,6 +34,67 @@ class NativeProofTests(unittest.TestCase):
     def test_full_boundary_and_lifecycle_are_required(self):
         self.assertTrue(probe.verdict(receipt())['hostProbePassed'])
 
+    def test_native_patch_requires_native_changes_and_no_client_emulation(self):
+        value = receipt()
+        value['toolPath'] = 'native-apply-patch'
+        value['cases'][0].update(clientToolCalls=0, nativeFileChanges=1)
+        value['cases'][1]['nativeFileChanges'] = 0
+        self.assertTrue(probe.verdict(value)['hostProbePassed'])
+        for index, field, bad in [(0, 'nativeFileChanges', 0),
+                                  (0, 'nativeFileChanges', 2),
+                                  (1, 'nativeFileChanges', 1),
+                                  (0, 'clientToolCalls', 1),
+                                  (1, 'clientToolCalls', 1)]:
+            failed = copy.deepcopy(value)
+            failed['cases'][index][field] = bad
+            self.assertFalse(probe.verdict(failed)['hostProbePassed'], (index, field))
+
+    def test_unknown_tool_path_and_cross_path_evidence_cannot_pass(self):
+        value = receipt()
+        for path in ('unsupported', 'native-apply-patch'):
+            value['toolPath'] = path
+            self.assertFalse(probe.verdict(value)['hostProbePassed'])
+
+    def test_shell_write_without_native_denial_fails_even_with_completed_turns(self):
+        value = receipt()
+        value['toolPath'] = 'native-shell'
+        value['cases'][0].update(clientToolCalls=0, nativeShellCommands=1)
+        value['cases'][1]['nativeShellCommands'] = 0
+        self.assertTrue(probe.verdict(value)['hostProbePassed'])
+        value['cases'][1]['nativeShellCommands'] = 1
+        value['denyFileAbsent'] = False
+        self.assertFalse(probe.verdict(value)['hostProbePassed'])
+        value['denyFileAbsent'] = True
+        self.assertFalse(probe.verdict(value)['hostProbePassed'])
+
+    def test_shell_fixture_round_trip_preserves_metacharacters_and_refuses_overwrite(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            path = root / "fixture '$ value.txt"
+            text = "Literal '$(), backticks `, quotes \" and Unicode é.\n"
+            command = probe.fixture_shell(path, root, text)
+            shell = ['pwsh', '-NoProfile', '-NonInteractive', '-Command', command] if os.name == 'nt' else ['/bin/sh', '-c', command]
+            result = probe.subprocess.run(shell, capture_output=True, timeout=10)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(path.read_text(encoding='utf-8'), text)
+            with self.assertRaises(ValueError):
+                probe.fixture_shell(path, root, 'replacement')
+            with self.assertRaises(ValueError):
+                probe.fixture_shell(root.parent / 'outside.txt', root, text)
+
+    def test_native_patch_refuses_existing_escaped_and_injected_targets(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            path = root / 'native.txt'
+            self.assertIn('*** Add File: ' + path.as_posix(),
+                          probe.fixture_patch(path, root, probe.SAFE))
+            self.assertFalse(path.exists(), 'Patch construction must not emulate execution')
+            path.write_text('preserved', encoding='utf-8')
+            for target in (path, root.parent / 'outside.txt', root / 'bad\n*** Delete File: victim'):
+                with self.assertRaises(ValueError):
+                    probe.fixture_patch(target, root, probe.SAFE)
+            self.assertEqual(path.read_text(encoding='utf-8'), 'preserved')
+
     def test_native_secret_denial_cannot_conceal_failed_design_stop(self):
         value = receipt()
         value['notifications'][2]['run']['status'] = 'failed'
