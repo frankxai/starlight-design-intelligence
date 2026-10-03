@@ -16,6 +16,10 @@ Use this skill before shipping any AI-generated website, app, dashboard, landing
 5. Color: avoid one-note purple/blue, beige, slate, or gradient-heavy sameness.
 6. Motion: use motion to clarify state or focus, not to prove the page has animation.
 7. Evidence: use real screenshots, product states, diagrams, data, or generated assets with clear purpose.
+8. Foundations: apply `evals/interface-foundations.md` in the rendered state. Replace
+   emoji chrome and placeholder copy, use a coherent licensed icon family, name
+   controls, fix navigation and inspect responsive overflow. Keep design judgment
+   separate from the deterministic findings.
 
 ## Output
 

@@ -8,6 +8,8 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
 
 - health: `git status --short`
 - lint: `npm run validate`
+- rendered foundations: `npm run test:interface` (requires installed Playwright Chromium)
+- preview/artifact foundations: `npm run validate:interface -- --help`
 - portfolio contract: `npm run validate:portfolio`
 - observatory integrity: `npm run validate:observatory`
 - exact capture coverage: `npm run validate:observatory -- --strict-coverage`

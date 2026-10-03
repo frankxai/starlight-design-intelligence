@@ -32,6 +32,9 @@ evidence tell one coherent story.
 8. **Compare and verify.** Capture desktop, mobile, interactions, and reduced
    motion. Test accessibility, reflow, loading, performance, links, claims,
    privacy, analytics, and failure states as applicable.
+   Apply `evals/interface-foundations.md` to the rendered product state. Inspect
+   intentional vector icons, real copy, named controls and live navigation.
+   The foundation receipt supplements the existing visual and release evidence.
 9. **Separate responsibility.** Maker, verifier, and approver are distinct for
    public flagship releases.
 10. **Prove production.** Record commit, checks, preview, production URL,
