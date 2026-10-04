@@ -1,0 +1,82 @@
+name: Verify compiled Protocol typography
+
+on:
+  pull_request:
+    paths:
+      - browser-checks/starlight-live-typography.mjs
+      - .github/workflows/protocol-compiled-typography.yml
+      - evals/starlight-live-typography.md
+      - evals/protocol-typography-repair-12d794a.patch
+
+permissions:
+  contents: read
+
+concurrency:
+  group: protocol-compiled-typography-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compiled:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PROBE_SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          repository: frankxai/Starlight-Intelligence-System
+          ref: 12d794a389959a2360bd4c920689510f0949f02b
+          path: protocol-candidate
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 24.14.0
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: npm ci
+        working-directory: protocol-candidate/site
+      - name: Build baseline, apply pinned patch, build candidate and observe
+        shell: bash
+        run: |
+          set -euo pipefail
+          server_pid=""
+          cleanup() {
+            if [ -n "$server_pid" ]; then
+              kill -TERM "$server_pid" 2>/dev/null || true
+              wait "$server_pid" 2>/dev/null || true
+              server_pid=""
+            fi
+          }
+          trap cleanup EXIT
+          observe() {
+            phase="$1"
+            (cd protocol-candidate/site && exec node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 4173) > "$RUNNER_TEMP/protocol-$phase-server.log" 2>&1 &
+            server_pid=$!
+            ready=0
+            for attempt in $(seq 1 30); do
+              if curl --fail --silent --max-time 2 http://127.0.0.1:4173/ > /dev/null; then ready=1; break; fi
+              sleep 1
+            done
+            test "$ready" = 1
+            PROTOCOL_COMPILED_ROOT="$GITHUB_WORKSPACE/protocol-candidate" PROTOCOL_COMPILED_PHASE="$phase" node browser-checks/starlight-live-typography.mjs
+            cleanup
+          }
+          (cd protocol-candidate/site && npm run build)
+          observe baseline
+          cp protocol-candidate/site/src/app/page.tsx "$RUNNER_TEMP/protocol-page-baseline.tsx"
+          printf '\n// Deliberate source-drift denial fixture\n' >> protocol-candidate/site/src/app/page.tsx
+          if PROTOCOL_COMPILED_ROOT="$GITHUB_WORKSPACE/protocol-candidate" PROTOCOL_COMPILED_PHASE=baseline node browser-checks/starlight-live-typography.mjs > "$RUNNER_TEMP/protocol-drift-denial.log" 2>&1; then
+            echo "Source drift unexpectedly passed"
+            exit 1
+          fi
+          rg --fixed-strings "Compiled source mismatch: site/src/app/page.tsx" "$RUNNER_TEMP/protocol-drift-denial.log"
+          cp "$RUNNER_TEMP/protocol-page-baseline.tsx" protocol-candidate/site/src/app/page.tsx
+          echo "PINNED_COMPILED_SOURCE_DRIFT_DENIED"
+          git -C protocol-candidate apply --check "$GITHUB_WORKSPACE/evals/protocol-typography-repair-12d794a.patch"
+          git -C protocol-candidate apply "$GITHUB_WORKSPACE/evals/protocol-typography-repair-12d794a.patch"
+          (cd protocol-candidate/site && npm run build)
+          observe candidate
