@@ -21,6 +21,14 @@ aggregates two layout levels, so summing every nested element would duplicate
 glyph counts. Pseudo-generated text, canvas text and other subtrees remain outside
 the typography sample; the separate foundation inspector covers its own scope.
 Only five desktop Tab steps are sampled; no clicks, form submissions or signups.
+The action sample is the first visible link/button in `main`, with its destination
+recorded; it does not infer which action the product owner considers primary.
+Light-DOM diagnostics include full paths, classes and clipping/scroll ancestors
+for up to 64 elements outside the viewport and up to 64 uppercase text elements.
+Their total counts and truncation flags remain explicit. An overflowing element
+may be clipped or decorative; its geometry alone does not establish the cause
+of document overflow. These diagnostics omit shadow and pseudo text; the separate
+foundation inspector retains its existing coverage and shorter location labels.
 No screenshots, videos, traces or generated visuals are exported. Existing
 production designs and font choices are unchanged.
 
@@ -29,11 +37,12 @@ Read the JSON between `STARLIGHT_TYPOGRAPHY_REPORT_BEGIN` and
 actual receipt before relying on any observation. Exit zero means all
 eighteen observations completed. Foundation defects, page errors and fallback
 findings are still present in that report; job success is not a site PASS.
-Missing text/font samples, blocked-font scenarios without an intercepted request,
+Missing rendered headline font samples, blocked-font scenarios without an intercepted request,
 navigation/CDP errors or incomplete observations produce a nonzero exit.
 
 CSS zoom is a reflow stress proxy, not native browser zoom. Early-load layout
-shift entries are a raw sum over a bounded observation, not session-window CLS,
+shift entries include the browser's up to five impacted source nodes and a raw sum
+over a bounded observation, not session-window CLS,
 Lighthouse or field performance. Sampled text does not cover every used style,
 language, component, viewport, browser or application. Platform font evidence
 does not establish readability, taste, rights or accessible focus visibility.

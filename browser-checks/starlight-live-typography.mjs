@@ -27,13 +27,15 @@ function sampleText() {
   const first = (selector) => elements.find((e) => e.matches(selector) && text(e));
   const longest = elements.filter((e) => e.matches("p") && text(e)).sort((a, b) => text(b).length - text(a).length)[0];
   const picks = [
-    ["headline", first("h1")], ["reading", longest], ["action", first("a,button")],
+    ["headline", first("h1")], ["reading", longest],
+    ["action", elements.find((e) => e.matches("a[href],button") && e.closest("main") && text(e))],
     ["secondary-heading", first("h2")],
     ["mono", elements.find((e) => text(e) && /Plex|JetBrains|Mono/iu.test(getComputedStyle(e).fontFamily))],
     ["italic", elements.find((e) => text(e) && getComputedStyle(e).fontStyle === "italic")],
     ["numerals", elements.find((e) => text(e).length < 120 && /\d/u.test(text(e)))]
   ].filter(([, e]) => e);
   const selector = (e) => {
+    if (e === document.body) return "body";
     const parts = [];
     for (let p = e; p && p !== document.body; p = p.parentElement) {
       const siblings = [...p.parentElement.children].filter((s) => s.localName === p.localName);
@@ -42,28 +44,58 @@ function sampleText() {
     return `body > ${parts.join(" > ")}`;
   };
   const rect = (r) => ({ x: r.x, y: r.y, width: r.width, height: r.height });
+  const clipping = (e) => {
+    const ancestors = [];
+    for (let p = e; p; p = p.parentElement) {
+      const s = getComputedStyle(p);
+      if (/hidden|clip|auto|scroll/u.test(`${s.overflowX} ${s.overflowY}`)) {
+        ancestors.push({ selector: p === document.documentElement ? "html" : selector(p),
+          bounds: rect(p.getBoundingClientRect()), overflowX: s.overflowX, overflowY: s.overflowY });
+      }
+      if (p === document.documentElement) break;
+    }
+    return ancestors;
+  };
+  const lightDom = [...document.body.querySelectorAll("*")];
+  if (lightDom.length > 20000) throw new Error("Geometry diagnostic element limit exceeded");
+  const overflowing = [], uppercase = [];
+  for (const e of lightDom) {
+    if (!visible(e)) continue;
+    const s = getComputedStyle(e), bounds = e.getBoundingClientRect();
+    if (bounds.width > 0 && (bounds.x < -1 || bounds.right > innerWidth + 1)) {
+      overflowing.push({ selector: selector(e), class: e.getAttribute("class"), bounds: rect(bounds),
+        text: text(e).slice(0, 160), display: s.display, position: s.position,
+        minWidth: s.minWidth, maxWidth: s.maxWidth, whiteSpace: s.whiteSpace,
+        overflowX: s.overflowX, clippingAncestors: clipping(e) });
+    }
+    if (s.textTransform === "uppercase" && !e.closest("pre,code,kbd,samp,textarea,[contenteditable],script,style,template,noscript") &&
+      [...e.childNodes].some((n) => n.nodeType === Node.TEXT_NODE && /\p{L}/u.test(n.textContent))) {
+      uppercase.push({ selector: selector(e), class: e.getAttribute("class"), text: text(e).slice(0, 160), fontFamily: s.fontFamily });
+    }
+  }
   return {
     viewport: { width: innerWidth, height: innerHeight, dpr: devicePixelRatio },
     documentWidth: document.documentElement.scrollWidth,
     documentHeight: document.documentElement.scrollHeight,
     rootCssZoom: getComputedStyle(document.documentElement).zoom,
     fontStatus: document.fonts.status,
+    rootFontTokens: Object.fromEntries(["--font-sans", "--font-serif", "--font-mono", "--font-inter", "--font-jbmono", "--font-newsreader"]
+      .map((k) => [k, getComputedStyle(document.documentElement).getPropertyValue(k).trim()])),
+    diagnostics: { inspectedLightDomElements: lightDom.length,
+      overflowCandidateCount: overflowing.length, overflowCandidates: overflowing.slice(0, 64),
+      overflowCandidatesTruncated: overflowing.length > 64,
+      uppercaseCount: uppercase.length, uppercaseText: uppercase.slice(0, 64), uppercaseTextTruncated: uppercase.length > 64,
+      scope: "Bounded light-DOM candidates with full paths; clipped/decorative elements can extend beyond the viewport without causing document overflow. No cause or visual verdict." },
     fontFaces: [...document.fonts].slice(0, 64).map((f) => ({ family: f.family, weight: f.weight, style: f.style, status: f.status })),
     samples: picks.map(([role, e]) => {
       const s = getComputedStyle(e);
       const range = document.createRange(); range.selectNodeContents(e);
       const lines = [...range.getClientRects()].slice(0, 160).map(rect);
-      const clippingAncestors = [];
-      for (let p = e; p && p !== document.body; p = p.parentElement) {
-        const ps = getComputedStyle(p);
-        if (/hidden|clip/u.test(`${ps.overflowX} ${ps.overflowY}`)) {
-          clippingAncestors.push({ selector: selector(p), bounds: rect(p.getBoundingClientRect()), overflowX: ps.overflowX, overflowY: ps.overflowY });
-        }
-      }
       return { role, selector: selector(e), text: text(e).slice(0, 700), textLength: text(e).length,
         familyStack: s.fontFamily, size: s.fontSize, weight: s.fontWeight, style: s.fontStyle,
         lineHeight: s.lineHeight, letterSpacing: s.letterSpacing, textTransform: s.textTransform,
-        bounds: rect(e.getBoundingClientRect()), textRects: lines, clippingAncestors };
+        bounds: rect(e.getBoundingClientRect()), textRects: lines, clippingAncestors: clipping(e),
+        ...(role === "action" ? { href: e.getAttribute("href"), tag: e.localName } : {}) };
     })
   };
 }
@@ -91,9 +123,16 @@ async function observe(browser, site, state) {
     });
     await context.addInitScript(() => {
       window.__starlightFontProbe = { shifts: [], truncated: false, supported: PerformanceObserver.supportedEntryTypes.includes("layout-shift") };
+      const rect = (r) => ({ x: r.x, y: r.y, width: r.width, height: r.height });
       if (window.__starlightFontProbe.supported) new PerformanceObserver((list) => {
         for (const e of list.getEntries()) if (!e.hadRecentInput) {
-          if (window.__starlightFontProbe.shifts.length < 256) window.__starlightFontProbe.shifts.push({ value: e.value, startTime: e.startTime });
+          if (window.__starlightFontProbe.shifts.length < 256) window.__starlightFontProbe.shifts.push({ value: e.value, startTime: e.startTime,
+            sources: (e.sources ?? []).slice(0, 5).map((source) => {
+              const node = source.node?.nodeType === Node.TEXT_NODE ? source.node.parentElement : source.node;
+              return { tag: node?.localName ?? null, id: node?.id ?? null, class: node?.getAttribute?.("class") ?? null,
+                text: (node?.textContent ?? "").replace(/\s+/gu, " ").trim().slice(0, 160),
+                previousRect: rect(source.previousRect), currentRect: rect(source.currentRect) };
+            }) });
           else window.__starlightFontProbe.truncated = true;
         }
       }).observe({ type: "layout-shift", buffered: true });
