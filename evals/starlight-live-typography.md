@@ -4,6 +4,33 @@ This probe gathers Chromium evidence from the existing lab, Academy and protocol
 public roots. It uses the existing pinned Playwright and interface inspector.
 It runs in a bounded cloud CI job; no local browser/dependency install is required.
 
+The stacked protocol repair trial sets `PROTOCOL_REPAIR_TRIAL=1`. This selects only
+the protocol root, with the six original baseline states and four additional
+fresh repair contexts: normal 390 px, blocked fonts at 390 px and 320 px, and
+blocked fonts with 2× CSS zoom. Its expected count is ten, not eighteen.
+Without that flag the original three-site, eighteen-state observation remains.
+
+The companion [four-file product patch](protocol-typography-repair-12d794a.patch)
+targets protocol main `12d794a389959a2360bd4c920689510f0949f02b`, issue 197. It adds
+fallback tails to the existing Inter/JetBrains Mono/Newsreader roles, replaces
+fourteen source `uppercase` utilities, capitalizes four CensusStat labels, and
+removes forced uppercase from four global CSS rules. It is a prepared integration
+artifact, not applied product source. Existing product checkouts and PRs retain
+their ownership.
+
+The trial validates the patch SHA-256, derives its three family values and exact
+class/label migrations, then adds a utility-layer stylesheet and migrates only
+matching homepage class strings after fonts settle. Every applied change is
+recorded beside the actual platform fonts and foundation findings. There is no
+blanket uppercase override. The four global CSS selectors are outside this trial.
+This is a runtime hypothesis on the current homepage, not a compiled preview of
+the pinned product source. Initial loading and shift behavior are not simulated;
+the raw early-load shift receipt precedes the intervention. Other routes, missing
+source styles, deployed revision, visual craft and product acceptance stay open.
+Use the matched normal-phone and blocked-phone baseline/trial pairs for causal
+font comparisons; the additional blocked 320 px/zoom rows are separate stress
+observations, without matching blocked baselines.
+
 Each site receives fresh desktop, 390 px phone, 320 px phone, 2× CSS zoom,
 blocked-webfont and fresh normal recovery contexts. The probe reads actual
 headline/paragraph/action/secondary/mono/italic/numeral samples when present,
@@ -34,8 +61,8 @@ production designs and font choices are unchanged.
 
 Read the JSON between `STARLIGHT_TYPOGRAPHY_REPORT_BEGIN` and
 `STARLIGHT_TYPOGRAPHY_REPORT_END` in the CI log. Require both markers and parse the
-actual receipt before relying on any observation. Exit zero means all
-eighteen observations completed. Foundation defects, page errors and fallback
+actual receipt before relying on any observation. Exit zero means all expected
+observations completed. Foundation defects, page errors and fallback
 findings are still present in that report; job success is not a site PASS.
 Missing rendered headline font samples, blocked-font scenarios without an intercepted request,
 navigation/CDP errors or incomplete observations produce a nonzero exit.

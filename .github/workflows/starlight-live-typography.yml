@@ -6,6 +6,7 @@ on:
       - browser-checks/starlight-live-typography.mjs
       - .github/workflows/starlight-live-typography.yml
       - evals/starlight-live-typography.md
+      - evals/protocol-typography-repair-12d794a.patch
 
 permissions:
   contents: read
@@ -20,6 +21,7 @@ jobs:
     timeout-minutes: 6
     env:
       PROBE_SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+      PROTOCOL_REPAIR_TRIAL: "1"
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0

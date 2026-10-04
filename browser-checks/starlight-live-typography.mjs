@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { chromium } from "playwright";
 import { inspectInterfaceFoundations } from "../scripts/inspect-interface-foundations.mjs";
 import { hashRenderedDom } from "../scripts/validate-interface-foundations.mjs";
@@ -19,6 +20,50 @@ const states = [
   { id: "fresh-recovery", width: 390, height: 844 }
 ];
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
+const repairMode = process.env.PROTOCOL_REPAIR_TRIAL ?? "0";
+if (!["0", "1"].includes(repairMode)) throw new Error("Invalid protocol repair trial mode");
+
+function loadRepairTrial() {
+  const patch = readFileSync(new URL("../evals/protocol-typography-repair-12d794a.patch", import.meta.url), "utf8");
+  const sha256 = digest(patch);
+  if (sha256 !== "d69fc72051351ffc1702c9f6cd6b9cc0a0ca1001604184bd235824b75057ef67") throw new Error("Product patch hash mismatch");
+  const lines = patch.split("\n"), classChanges = [], labelChanges = [], families = {};
+  for (let i = 0; i < lines.length; i += 1) {
+    const font = lines[i].match(/^\+  --font-(sans|mono|serif): (.+);$/u);
+    if (font) families[font[1]] = font[2];
+    const beforeClass = lines[i].match(/^-.*className="([^"]*\buppercase\b[^"]*)"/u);
+    if (beforeClass) {
+      const afterClass = lines[i + 1]?.match(/^\+.*className="([^"]+)"/u)?.[1];
+      if (afterClass !== beforeClass[1].replace(/\buppercase\b/u, "normal-case")) throw new Error("Unsupported class repair");
+      classChanges.push({ before: beforeClass[1], after: afterClass });
+    }
+    const beforeLabel = lines[i].match(/^-.*<CensusStat .*label="([^"]+)"/u);
+    if (beforeLabel) {
+      // The four label deletions are followed by four additions in this exact patch.
+      const after = lines.slice(i + 1).find((line) => line.startsWith("+") && line.includes(`label="${beforeLabel[1][0].toUpperCase() + beforeLabel[1].slice(1)}"`));
+      if (!after) throw new Error("Unsupported label repair");
+      labelChanges.push({ before: beforeLabel[1], after: beforeLabel[1][0].toUpperCase() + beforeLabel[1].slice(1) });
+    }
+  }
+  if (classChanges.length !== 14 || labelChanges.length !== 4 || Object.keys(families).length !== 3) throw new Error("Incomplete repair specification");
+  // Tailwind @theme inline emits the value directly in the family utility.
+  // Use the same layer and specificity, without overriding unrelated classes.
+  const css = `@layer utilities {\n${Object.entries(families).map(([role, stack]) => `.font-${role} { font-family: ${stack}; }`).join("\n")}\n.normal-case { text-transform: none; }\n}`;
+  return { productRepo: "frankxai/Starlight-Intelligence-System", issue: 197,
+    productBase: "12d794a389959a2360bd4c920689510f0949f02b", patchPath: "evals/protocol-typography-repair-12d794a.patch", patchSha256: sha256,
+    css, cssSha256: digest(css), classChanges, labelChanges,
+    scope: "After-settlement CSS/class/text hypothesis on the existing public homepage, not a compiled product preview. The four global selector edits in the patch are not exercised. Product deployment SHA, initial loading/shift, other routes, visual, rights and release acceptance remain unverified." };
+}
+
+const repair = repairMode === "1" ? loadRepairTrial() : null;
+const selectedSites = repair ? sites.filter((site) => site.id === "protocol") : sites;
+const repairStates = [
+  { id: "repair-normal-phone", width: 390, height: 844, repair: true },
+  { id: "repair-blocked-phone", width: 390, height: 844, blockFonts: true, repair: true },
+  { id: "repair-blocked-narrow-phone", width: 320, height: 812, blockFonts: true, repair: true },
+  { id: "repair-blocked-css-zoom-2x", width: 1440, height: 900, blockFonts: true, cssZoom: 2, repair: true }
+];
+const selectedStates = repair ? [...states, ...repairStates] : states;
 
 function sampleText() {
   const visible = (e) => e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true }) && e.getClientRects().length;
@@ -162,6 +207,32 @@ async function observe(browser, site, state) {
     await page.waitForTimeout(1500);
     const shifts = await page.evaluate(() => ({ ...window.__starlightFontProbe, observedThroughMs: performance.now() }));
     if (shifts.truncated) throw new Error("Layout-shift observation cap reached");
+    let intervention = null;
+    if (state.repair) {
+      stage = "repair-hypothesis";
+      await page.addStyleTag({ content: repair.css });
+      intervention = await page.evaluate(({ classChanges, labelChanges }) => {
+        const elements = [...document.querySelectorAll("main [class]")];
+        if (elements.length > 20000) throw new Error("Repair element limit exceeded");
+        const changedClasses = [], changedLabels = [];
+        for (const e of elements) {
+          const before = e.classList.value.trim().replace(/\s+/gu, " ");
+          const change = classChanges.find((item) => item.before === before);
+          if (change) {
+            e.setAttribute("class", change.after);
+            changedClasses.push({ tag: e.localName, text: e.textContent.trim().slice(0, 160), ...change });
+            if (e.matches("dt")) {
+              const label = labelChanges.find((item) => item.before === e.textContent.trim());
+              if (label) { e.textContent = label.after; changedLabels.push(label); }
+            }
+          }
+        }
+        if (!changedClasses.length || changedClasses.length > 128 || changedLabels.length !== 4) throw new Error("Missing, drifted or oversized homepage repair targets");
+        return { changedClasses, changedLabels, appliedThroughMs: performance.now() };
+      }, repair);
+      await page.waitForFunction(() => document.fonts.status === "loaded");
+      await page.waitForTimeout(300);
+    }
     // CSS zoom stresses reflow; this is explicitly not native browser zoom.
     if (state.cssZoom) {
       await page.evaluate((zoom) => { document.documentElement.style.zoom = String(zoom); }, state.cssZoom);
@@ -218,7 +289,7 @@ async function observe(browser, site, state) {
     return { site: site.id, requestedUrl: site.url, resolvedUrl: page.url(), state, started,
       finished: new Date().toISOString(), complete: true, httpStatus: response.status(),
       responseMetadata: Object.fromEntries(["date", "etag", "x-vercel-id", "x-matched-path"].filter((k) => headers[k]).map((k) => [k, headers[k]])),
-      ...dom, typography, foundations, focus, pageErrors, fontResponses, blockedFontRequests: blocked,
+      ...dom, typography, foundations, focus, pageErrors, fontResponses, blockedFontRequests: blocked, intervention,
       layoutShifts: { supported: shifts.supported, settlementWaitMs: 1500, observedThroughMs: shifts.observedThroughMs, entries: shifts.shifts,
         rawSum: shifts.shifts.reduce((n, e) => n + e.value, 0), scope: "Early-load raw shift sum, excludes recent input; not CLS session-window/Lighthouse/field performance" } };
   } catch (e) {
@@ -230,7 +301,7 @@ async function observe(browser, site, state) {
 const browser = await chromium.launch({ headless: true });
 const rows = [];
 try {
-  for (const site of sites) for (const state of states) rows.push(await observe(browser, site, state));
+  for (const site of selectedSites) for (const state of selectedStates) rows.push(await observe(browser, site, state));
 } finally { await browser.close(); }
 const report = {
   format: "starlight-live-typography-observation-v1",
@@ -241,7 +312,8 @@ const report = {
   browser: browser.version(),
   scope: "Anonymous public-root text/font/layout observations. No screenshots, visual/rights/human approval, native zoom, complete type inventory, WCAG or product-value verdict.",
   rows,
-  fallbackComparisons: sites.map((site) => {
+  repairTrial: repair,
+  fallbackComparisons: selectedSites.map((site) => {
     const row = (id) => rows.find((r) => r.site === site.id && r.state.id === id);
     const faces = (r) => r?.complete ? [...new Set(r.typography.samples.flatMap((s) => s.usedFonts.map((f) => `${f.family} / ${f.postscriptName}`)))].sort() : null;
     const normal = row("phone"), blocked = row("blocked-webfonts"), recovery = row("fresh-recovery");
@@ -254,7 +326,7 @@ const report = {
       scope: "Rendered-name comparison, not proof of all font sources, weight availability or fallback readability" };
   }),
   completeSamples: rows.filter((r) => r.complete).length,
-  expectedSamples: sites.length * states.length
+  expectedSamples: selectedSites.length * selectedStates.length
 };
 // Keep log lines bounded: large single-line reports can disappear in log readers.
 console.log("STARLIGHT_TYPOGRAPHY_REPORT_BEGIN");
