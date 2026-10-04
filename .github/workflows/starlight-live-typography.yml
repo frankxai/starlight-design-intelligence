@@ -1,0 +1,31 @@
+name: Observe live Starlight typography
+
+on:
+  pull_request:
+    paths:
+      - browser-checks/starlight-live-typography.mjs
+      - .github/workflows/starlight-live-typography.yml
+      - evals/starlight-live-typography.md
+
+permissions:
+  contents: read
+
+concurrency:
+  group: starlight-live-typography-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    env:
+      PROBE_SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 24.14.0
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: node browser-checks/starlight-live-typography.mjs
