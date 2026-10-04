@@ -19,9 +19,27 @@ missing mobile specimen, or materially broken fallback.
 ## Font artifact checks
 
 `validate:release` decodes each supplied WOFF, WOFF2 or SFNT font with pinned
-Fontkit 2.0.4. Use `file_check: decoded-font-metadata` in font records. Replace
-older `container-signature` records only after rerunning the validator against
-their original content-addressed files; renaming the field is not evidence.
+Fontkit 2.0.4. Use `file_check: decoded-font-metadata` in font records. Older
+`container-signature` records fail the schema intentionally. The schema version
+remains v1; upgrading to this kernel revision tightens its font evidence contract.
+
+Before moving a downstream kernel pin, migrate its supplied font records:
+
+1. Preserve the original manifest and font artifacts as historical evidence.
+2. Make a separate candidate manifest beside the original, for example
+   `release.font-decoded.json`, so the existing relative artifact paths still resolve.
+3. In that candidate, change only font records' `file_check` to
+   `decoded-font-metadata`. Keep file paths, hashes, bytes and all other evidence.
+4. Run `npm run validate:release -- <candidate-path> --repo-root <product-checkout>`
+   with this kernel and its pinned decoder installed. The validator decodes the
+   original files and checks the whole candidate. A missing decoder or malformed
+   font blocks migration. Relabeling a four-byte header still fails.
+5. Keep the candidate, exact kernel SHA and validation receipt for review. Update
+   the downstream pin only under its owning release/approval contract. A successful
+   technical migration does not renew prior production checks or grant new approval.
+
+The release-validator regression tests exercise both a valid synthetic font migration
+without changing its artifact hash and a relabeled signature-only file that stays denied.
 
 The check requires readable internal family/PostScript names, metrics, character
 mapping and variation axes, and decodes a bounded sample of glyph outlines. It
