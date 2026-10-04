@@ -217,6 +217,9 @@ const report = {
   completeSamples: rows.filter((r) => r.complete).length,
   expectedSamples: sites.length * states.length
 };
-console.log(`STARLIGHT_TYPOGRAPHY_REPORT=${JSON.stringify(report)}`);
+// Keep log lines bounded: large single-line reports can disappear in log readers.
+console.log("STARLIGHT_TYPOGRAPHY_REPORT_BEGIN");
+console.log(JSON.stringify(report, null, 2));
+console.log("STARLIGHT_TYPOGRAPHY_REPORT_END");
 // A green observation job means complete observations, including actual defects.
 process.exitCode = report.completeSamples === report.expectedSamples ? 0 : 1;

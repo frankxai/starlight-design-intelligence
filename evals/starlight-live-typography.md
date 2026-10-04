@@ -24,7 +24,9 @@ Only five desktop Tab steps are sampled; no clicks, form submissions or signups.
 No screenshots, videos, traces or generated visuals are exported. Existing
 production designs and font choices are unchanged.
 
-Read the `STARLIGHT_TYPOGRAPHY_REPORT` JSON in the CI log. Exit zero means all
+Read the JSON between `STARLIGHT_TYPOGRAPHY_REPORT_BEGIN` and
+`STARLIGHT_TYPOGRAPHY_REPORT_END` in the CI log. Require both markers and parse the
+actual receipt before relying on any observation. Exit zero means all
 eighteen observations completed. Foundation defects, page errors and fallback
 findings are still present in that report; job success is not a site PASS.
 Missing text/font samples, blocked-font scenarios without an intercepted request,
