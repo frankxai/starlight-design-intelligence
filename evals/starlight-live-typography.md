@@ -16,6 +16,10 @@ make fallback observable. Recovery uses a fresh navigation, not an in-page retry
 CDP's custom-font flag also includes locally resolved CSS faces, such as Next's
 `local()` fallback faces. The receipt compares rendered names and intercepted
 requests; it does not treat that flag as proof of a downloaded webfont.
+Font queries target individual nonblank TextNodes. Chromium's element query
+aggregates two layout levels, so summing every nested element would duplicate
+glyph counts. Pseudo-generated text, canvas text and other subtrees remain outside
+the typography sample; the separate foundation inspector covers its own scope.
 Only five desktop Tab steps are sampled; no clicks, form submissions or signups.
 No screenshots, videos, traces or generated visuals are exported. Existing
 production designs and font choices are unchanged.

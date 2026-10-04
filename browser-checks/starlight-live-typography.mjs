@@ -137,11 +137,20 @@ async function observe(browser, site, state) {
       await cdp.send("DOM.enable"); await cdp.send("CSS.enable");
       const { root } = await cdp.send("DOM.getDocument", { depth: 0 });
       for (const sample of typography.samples) {
-        // CDP reports a node's child TextNodes, so include each nested element once.
+        // Chromium aggregates two layout levels for an element. Query individual
+        // TextNodes to cover deeper spans without double-counting nested glyphs.
         const { nodeIds } = await cdp.send("DOM.querySelectorAll", { nodeId: root.nodeId, selector: `${sample.selector}, ${sample.selector} *` });
         if (!nodeIds.length || nodeIds.length > 128) throw new Error("Missing or oversized font sample subtree");
         const used = new Map();
+        const backendTextNodes = new Set();
         for (const nodeId of nodeIds) {
+          const { node } = await cdp.send("DOM.describeNode", { nodeId, depth: 1 });
+          for (const child of node.children ?? []) if (child.nodeType === 3 && child.nodeValue.trim()) backendTextNodes.add(child.backendNodeId);
+        }
+        if (backendTextNodes.size > 256) throw new Error("Font TextNode sample limit exceeded");
+        const { nodeIds: textNodeIds } = await cdp.send("DOM.pushNodesByBackendIdsToFrontend", { backendNodeIds: [...backendTextNodes] });
+        for (const nodeId of textNodeIds) {
+          if (!nodeId) throw new Error("Text sample detached during font inspection");
           const { fonts } = await cdp.send("CSS.getPlatformFontsForNode", { nodeId });
           for (const f of fonts.filter((f) => f.glyphCount > 0)) {
             const key = JSON.stringify([f.familyName, f.postScriptName, f.isCustomFont]);
@@ -151,6 +160,7 @@ async function observe(browser, site, state) {
           }
         }
         sample.inspectedFontElements = nodeIds.length;
+        sample.inspectedNonblankTextNodes = textNodeIds.length;
         sample.usedFonts = [...used.values()];
       }
     } finally { await cdp.detach(); }
