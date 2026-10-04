@@ -7,6 +7,7 @@ import { isDeepStrictEqual } from "node:util";
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 import { PNG } from "pngjs";
+import { FONT_LIMITS, inspectFontArtifact, isFontMime } from "./inspect-font-artifact.mjs";
 
 const scriptRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -46,12 +47,6 @@ function hasValidMediaSignature(buffer, mime) {
     }
   }
   if (mime.startsWith("text/")) return !buffer.includes(0);
-  if (mime === "font/woff") return buffer.subarray(0, 4).toString("ascii") === "wOFF";
-  if (mime === "font/woff2") return buffer.subarray(0, 4).toString("ascii") === "wOF2";
-  if (mime === "font/ttf") {
-    const signature = buffer.subarray(0, 4).toString("hex");
-    return signature === "00010000" || buffer.subarray(0, 4).toString("ascii") === "OTTO";
-  }
   return false;
 }
 
@@ -91,6 +86,10 @@ function inspectArtifact(artifact, label, evidenceRoot, failures) {
     return;
   }
 
+  if (isFontMime(artifact.mime) && statSync(absolute).size > FONT_LIMITS.fileBytes) {
+    failures.push(`${label}: font-file-too-large (limit ${FONT_LIMITS.fileBytes} bytes)`);
+    return;
+  }
   const buffer = readFileSync(absolute);
   if (buffer.length === 0) failures.push(`${label}: evidence file is empty`);
   if (buffer.length !== artifact.bytes) {
@@ -98,7 +97,10 @@ function inspectArtifact(artifact, label, evidenceRoot, failures) {
   }
   const digest = createHash("sha256").update(buffer).digest("hex");
   if (digest !== artifact.sha256) failures.push(`${label}: sha256 mismatch`);
-  if (!hasValidMediaSignature(buffer, artifact.mime)) {
+  if (isFontMime(artifact.mime)) {
+    const inspection = inspectFontArtifact(buffer, artifact.mime);
+    if (!inspection.ok) failures.push(`${label}: font artifact rejected: ${inspection.reason}`);
+  } else if (!hasValidMediaSignature(buffer, artifact.mime)) {
     failures.push(`${label}: content does not match declared MIME ${artifact.mime}`);
   }
   if (artifact.mime.startsWith("image/")) {
