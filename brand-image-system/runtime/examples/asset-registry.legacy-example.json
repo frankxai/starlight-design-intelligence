@@ -1,0 +1,28 @@
+{
+  "version": "2026-07-02",
+  "description": "Central registry of approved, publication-ready assets. Tracks origin job, brand, quality, and real usage across sites/profiles.",
+  "assets": [
+    {
+      "id": "frankx-2026-07-02-platform-command-v1",
+      "brand": "frankx",
+      "workflow": "social-static",
+      "jobId": "example-20260702-001",
+      "approvedAt": "2026-07-02T16:00:00Z",
+      "score": 29,
+      "files": {
+        "square": "approved/frankx/2026-07-02-platform-variants/frankx-command-layer-linkedin-square.png",
+        "og": "..."
+      },
+      "usedIn": [
+        {
+          "site": "frankx.ai",
+          "location": "public/assets/frankx/2026-07-command",
+          "profile": "linkedin/frankx",
+          "date": "2026-07-03",
+          "context": "Command Layer launch post"
+        }
+      ],
+      "registryNotes": "Liquid glass + deterministic text overlay. Premium creative base allowed."
+    }
+  ]
+}
