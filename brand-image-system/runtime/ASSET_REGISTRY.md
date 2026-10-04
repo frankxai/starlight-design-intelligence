@@ -22,10 +22,10 @@ Run from the owning assigned checkout after its routing and ownership checks:
 ```sh
 node scripts/register-media-asset.mjs --job /assets/jobs/edition/media-job.json \
   --binding /assets/jobs/edition/vis-receipt.json --asset-root /assets
-# Use the exact expectedRegistrySha256 returned by the preview:
+# Use the exact expectedRegistrySha256 and fingerprint returned by preview:
 node scripts/register-media-asset.mjs --job /assets/jobs/edition/media-job.json \
   --binding /assets/jobs/edition/vis-receipt.json --asset-root /assets \
-  --apply --expected-registry-sha256 <preview-hash>
+  --apply --expected-registry-sha256 <preview-hash> --expected-fingerprint <preview-fingerprint>
 node scripts/register-media-asset.mjs --audit --asset-root /assets
 ```
 
@@ -37,7 +37,8 @@ Audit re-reads all job, receipt, evidence, output and sidecar bytes. Kernel CI u
 the same check: a nonempty registry without the declared asset root fails rather
 than claiming verification over inaccessible assets.
 
-Apply acquires an exclusive cooperative writer lock, checks expected registry
+Apply binds both the registry and selected artifact proof to preview. It acquires
+an exclusive cooperative writer lock, checks expected registry
 bytes, flushes a new file, rechecks sources and registry, renames, and verifies
 readback. Normal error paths remove only this operation's lock/temp file. A crash
 may leave its lock; inspect the owning operation before recovery. Never remove

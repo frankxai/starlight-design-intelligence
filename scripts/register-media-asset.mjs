@@ -57,6 +57,7 @@ function artifact(base, path, budget, maximum = MAX_FILE) {
   if (!inside(base, full)) throw new Error("Artifact path escapes its declared root");
   const canonical = noLinks(full);
   if (!inside(base, canonical)) throw new Error("Artifact resolves outside its declared root");
+  if (!lstatSync(canonical).isFile()) throw new Error("Artifact is not a regular file");
   const fd = openSync(canonical, "r");
   try {
     const stat = fstatSync(fd);
@@ -163,7 +164,7 @@ export function validateAssetRegistry(registry, { assetRoot } = {}) {
   } catch (error) { return [error.message]; }
 }
 
-export function registerMediaAsset({ registryPath = REGISTRY, apply = false, expectedRegistrySha256, ...input }) {
+export function registerMediaAsset({ registryPath = REGISTRY, apply = false, expectedRegistrySha256, expectedFingerprint, ...input }) {
   const before = readRegistry(registryPath);
   if (apply && expectedRegistrySha256 !== before.sha256) throw new Error("Apply requires the current --expected-registry-sha256 from preview");
   const run = randomUUID();
@@ -180,6 +181,7 @@ export function registerMediaAsset({ registryPath = REGISTRY, apply = false, exp
       if (!readFileSync(before.path).equals(before.raw)) throw new Error("Registry changed after lock acquisition");
     }
     const proof = prepareRegistration(input);
+    if (apply && proof.fingerprint !== expectedFingerprint) throw new Error("Apply requires the preview artifact fingerprint; inspect changed evidence before retrying");
     const failures = validateAssetRegistry(before.registry, { assetRoot: input.assetRoot });
     if (failures.length) throw new Error(failures.join("; "));
     const existing = before.registry.assets.find(asset => asset.id === proof.id);
@@ -223,7 +225,7 @@ function main() {
     const { values } = parseArgs({ options: {
       job: { type: "string" }, binding: { type: "string" }, "asset-root": { type: "string" },
       registry: { type: "string" }, apply: { type: "boolean" }, audit: { type: "boolean" },
-      "expected-registry-sha256": { type: "string" }
+      "expected-registry-sha256": { type: "string" }, "expected-fingerprint": { type: "string" }
     } });
     if (values.audit) {
       if (values.apply || values.job || values.binding) throw new Error("Audit cannot be combined with registration");
@@ -233,13 +235,13 @@ function main() {
       console.log(JSON.stringify({ mode: "audit", entries: current.registry.assets.length, scope: "Current local bytes and exported assertions; no creative/publication acceptance" }));
     } else {
       if (!values.job || !values.binding || !values["asset-root"]) {
-        console.error("Usage: node scripts/register-media-asset.mjs --job <media-job.json> --binding <vis-receipt.json> --asset-root <absolute-root> [--registry <json>] [--apply --expected-registry-sha256 <preview-hash>]; or --audit");
+        console.error("Usage: node scripts/register-media-asset.mjs --job <media-job.json> --binding <vis-receipt.json> --asset-root <absolute-root> [--registry <json>] [--apply --expected-registry-sha256 <preview-hash> --expected-fingerprint <preview-fingerprint>]; or --audit");
         process.exitCode = 2;
         return;
       }
       console.log(JSON.stringify(registerMediaAsset({ jobPath: values.job, bindingPath: values.binding,
         assetRoot: values["asset-root"], registryPath: values.registry, apply: values.apply,
-        expectedRegistrySha256: values["expected-registry-sha256"] })));
+        expectedRegistrySha256: values["expected-registry-sha256"], expectedFingerprint: values["expected-fingerprint"] })));
     }
   } catch (error) {
     console.error(`Asset registration failed: ${error.message}`);

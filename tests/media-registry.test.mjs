@@ -58,7 +58,7 @@ function fixture(t) {
 
 function apply(f) {
   const preview = registerMediaAsset(f);
-  return registerMediaAsset({ ...f, apply: true, expectedRegistrySha256: preview.expectedRegistrySha256 });
+  return registerMediaAsset({ ...f, apply: true, expectedRegistrySha256: preview.expectedRegistrySha256, expectedFingerprint: preview.fingerprint });
 }
 
 test("the fabricated legacy approval/usage sample fails the runtime gate", () => {
@@ -163,6 +163,18 @@ test("apply refuses a stale preview and preserves another writer's exact lock", 
   assert.deepEqual(readFileSync(f.registryPath), current);
 });
 
+test("apply is bound to the asset proof that was shown in preview", t => {
+  const f = fixture(t);
+  const preview = registerMediaAsset(f);
+  const before = readFileSync(f.registryPath);
+  f.job.brief = "Different proposed artifact after preview";
+  json(f.jobPath, f.job);
+  assert.throws(() => registerMediaAsset({ ...f, apply: true,
+    expectedRegistrySha256: preview.expectedRegistrySha256,
+    expectedFingerprint: preview.fingerprint }), /preview.*fingerprint/);
+  assert.deepEqual(readFileSync(f.registryPath), before);
+});
+
 test("validation failure after acquiring our lock cleans only our lock and leaves registry untouched", t => {
   const f = fixture(t);
   const preview = registerMediaAsset(f); const before = readFileSync(f.registryPath);
@@ -187,7 +199,8 @@ test("native CLI performs preview/apply/audit and reports failures with nonzero 
   assert.equal(cli([]).status, 2);
   const args = ["--job", f.jobPath, "--binding", f.bindingPath, "--asset-root", f.assetRoot, "--registry", f.registryPath];
   const preview = cli(args); assert.equal(preview.status, 0, preview.stderr);
-  const written = cli([...args, "--apply", "--expected-registry-sha256", JSON.parse(preview.stdout).expectedRegistrySha256]);
+  const shown = JSON.parse(preview.stdout);
+  const written = cli([...args, "--apply", "--expected-registry-sha256", shown.expectedRegistrySha256, "--expected-fingerprint", shown.fingerprint]);
   assert.equal(written.status, 0, written.stderr); assert.equal(JSON.parse(written.stdout).outcome, "registered");
   const audit = cli(["--audit", "--asset-root", f.assetRoot, "--registry", f.registryPath]);
   assert.equal(audit.status, 0, audit.stderr); assert.equal(JSON.parse(audit.stdout).entries, 1);
