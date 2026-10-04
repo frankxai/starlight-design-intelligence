@@ -16,6 +16,7 @@
     "validate:media": "node scripts/validate-media-job.mjs",
     "validate:interface": "node scripts/validate-interface-foundations.mjs",
     "test:interface": "node browser-checks/interface-foundations.mjs",
+    "test:fonts": "node --test tests/font-artifact.test.mjs",
     "test": "node --test"
   },
   "engines": {
@@ -24,6 +25,7 @@
   "devDependencies": {
     "ajv": "8.18.0",
     "ajv-formats": "3.0.1",
+    "fontkit": "2.0.4",
     "playwright": "1.62.1",
     "pngjs": "7.0.0",
     "yaml": "2.8.3"
