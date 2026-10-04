@@ -88,6 +88,29 @@ test("preview is read-only; apply reads back one exact registration; repeat is a
   assert.equal(readdirSync(f.directory).some(name => name.endsWith(".tmp") || name.endsWith(".lock")), false);
 });
 
+test("selected input paths use native canonical identity before containment checks", t => {
+  const f = fixture(t);
+  let selectedRoot = f.assetRoot;
+  if (process.platform === "win32") {
+    const escaped = f.directory.replaceAll("'", "''");
+    const result = spawnSync("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command",
+      `(New-Object -ComObject Scripting.FileSystemObject).GetFolder('${escaped}').ShortPath`],
+      { encoding: "utf8", timeout: 10000 });
+    assert.equal(result.status, 0, result.stderr);
+    const shortDirectory = result.stdout.trim();
+    assert.equal(realpathSync.native(shortDirectory), realpathSync.native(f.directory));
+    selectedRoot = join(shortDirectory, "assets");
+    t.diagnostic(`Native short path differs from canonical spelling: ${shortDirectory !== realpathSync.native(f.directory)}`);
+  }
+  const selectedJobRoot = join(selectedRoot, "jobs", "edition");
+  json(f.jobPath, { ...f.job, paths: { ...f.job.paths, jobRoot: selectedJobRoot } });
+  const input = { ...f, assetRoot: selectedRoot,
+    jobPath: join(selectedJobRoot, "media-job.json"), bindingPath: join(selectedJobRoot, "vis-receipt.json") };
+  assert.equal(registerMediaAsset(input).outcome, "ready-to-register");
+  assert.equal(apply(input).outcome, "registered");
+  assert.deepEqual(validateAssetRegistry(JSON.parse(readFileSync(f.registryPath)), { assetRoot: selectedRoot }), []);
+});
+
 test("a changed output or evidence fails against the original VIS hashes", t => {
   const f = fixture(t);
   writeFileSync(join(f.jobRoot, "output.txt"), "modified");

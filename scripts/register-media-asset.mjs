@@ -93,7 +93,7 @@ export function prepareRegistration({ jobPath, bindingPath, assetRoot }) {
   const root = noLinks(assetRoot);
   if (!lstatSync(root).isDirectory()) throw new Error("Asset root must be a directory");
   const budget = { bytes: 0 };
-  const jobFile = artifact(root, relative(root, resolve(jobPath)).split(sep).join("/"), budget, MAX_JSON);
+  const jobFile = artifact(root, relative(root, noLinks(resolve(jobPath))).split(sep).join("/"), budget, MAX_JSON);
   const job = decode(jobFile.bytes);
   check("job", job);
   if (job?.decision !== "approved") throw new Error("Registration requires an approved media-job assertion; published claims need a separate publication verifier");
@@ -103,9 +103,9 @@ export function prepareRegistration({ jobPath, bindingPath, assetRoot }) {
   if (!isAbsolute(job.paths.jobRoot)) throw new Error("jobRoot must be absolute");
   const jobRoot = noLinks(job.paths.jobRoot);
   if (!inside(root, jobRoot) || !inside(jobRoot, jobFile.canonical)) throw new Error("Job and artifacts must be inside the declared job root and asset root");
-  const failures = validateMediaJob(job, { root: ROOT, assetRoot: root });
+  const failures = validateMediaJob({ ...job, paths: { ...job.paths, jobRoot } }, { root: ROOT, assetRoot: root });
   if (failures.length) throw new Error(`Media job invalid: ${failures.join("; ")}`);
-  const bindingFile = artifact(root, relative(root, resolve(bindingPath)).split(sep).join("/"), budget, MAX_JSON);
+  const bindingFile = artifact(root, relative(root, noLinks(resolve(bindingPath))).split(sep).join("/"), budget, MAX_JSON);
   if (!inside(jobRoot, bindingFile.canonical)) throw new Error("VIS binding must be inside jobRoot");
   const binding = decode(bindingFile.bytes);
   check("binding", binding);

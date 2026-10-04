@@ -45,7 +45,9 @@ may leave its lock; inspect the owning operation before recovery. Never remove
 a foreign lock by age. This is optimistic protection against noncooperating
 writers, not a filesystem-wide transaction or a power-loss durability guarantee.
 
-Selected paths reject links/junctions and containment escapes. Each file is bounded
+Selected paths reject links/junctions and containment escapes. Root, job, receipt
+and job-root paths use native canonical identity, including Windows short aliases.
+The original job bytes remain bound. Each file is bounded
 to 64 MiB, JSON to 1 MiB, a job to 32 outputs and 128 MiB of read data. No upload,
 inference, database query, publication, asset deletion or deployment occurs.
 Assets remain in the declared existing asset mirror.
