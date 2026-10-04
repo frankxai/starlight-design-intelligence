@@ -1,11 +1,12 @@
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { chromium } from "playwright";
 import { inspectInterfaceFoundations } from "../scripts/inspect-interface-foundations.mjs";
 import { hashRenderedDom } from "../scripts/validate-interface-foundations.mjs";
 
-// Anonymous observations of owned public roots. No forms, clicks, images or artifacts.
+// Public roots are observed without interactions; compiled mode can navigate locally.
 const sites = [
   { id: "lab", url: "https://starlightintelligence.ai/" },
   { id: "academy", url: "https://starlightintelligence.academy/" },
@@ -22,6 +23,38 @@ const states = [
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const repairMode = process.env.PROTOCOL_REPAIR_TRIAL ?? "0";
 if (!["0", "1"].includes(repairMode)) throw new Error("Invalid protocol repair trial mode");
+const compiledPhase = process.env.PROTOCOL_COMPILED_PHASE ?? null;
+if (compiledPhase && !["baseline", "candidate"].includes(compiledPhase)) throw new Error("Invalid compiled phase");
+if (Boolean(compiledPhase) !== Boolean(process.env.PROTOCOL_COMPILED_ROOT)) throw new Error("Incomplete compiled configuration");
+if (compiledPhase && repairMode !== "0") throw new Error("Compiled observation cannot inject a runtime repair");
+
+function bindCompiledSource() {
+  const root = resolve(process.env.PROTOCOL_COMPILED_ROOT ?? "");
+  if (root !== resolve("protocol-candidate")) throw new Error("Unexpected compiled checkout path");
+  const base = "12d794a389959a2360bd4c920689510f0949f02b";
+  if (execFileSync("git", ["-C", root, "rev-parse", "HEAD"], { encoding: "utf8" }).trim() !== base) throw new Error("Compiled base revision drift");
+  const patchSha256 = digest(readFileSync(new URL("../evals/protocol-typography-repair-12d794a.patch", import.meta.url)));
+  if (patchSha256 !== "d69fc72051351ffc1702c9f6cd6b9cc0a0ca1001604184bd235824b75057ef67") throw new Error("Compiled patch hash drift");
+  const pins = [
+    ["site/src/app/globals.css", "8278d88a44879a5c6879907321d33a935066cc646353b42832243714a4c5aac8", "6185aee430e7248898de50f2c4d09e55d3cb14fb734799df83415f6c89037999"],
+    ["site/src/app/page.tsx", "c8aa2cded59b972b50de40142c88c296fd43c6644522944dd89039e678f03cef", "2658f32f2f8ab9b4c0fcf71d8ab49c43672059b3cc23a88ca49e4eaffea878b6"],
+    ["site/src/components/EntryCard.tsx", "3d243c39430d5afbda80b8149d3172d90629b2cd79349fac323e9fbb4271a70a", "08c9ae1ccbb1a47bde16838f43b42ac496b917868ed55c05f6f812d3efb6cd0c"],
+    ["site/src/components/OperationalProofConsole.tsx", "67d268a72614893410b7dce3766029ef3ae755236178c36da4ecae3e5b0fcf4e", "1dc2ec3e9397ffb28004e9d0918f2b875f1de5d8e66f0b86ca196b562a071925"]
+  ];
+  const sources = pins.map(([path, before, after]) => {
+    const sha256 = digest(readFileSync(resolve(root, path)));
+    if (sha256 !== (compiledPhase === "baseline" ? before : after)) throw new Error(`Compiled source mismatch: ${path}`);
+    return { path, sha256 };
+  });
+  const changedPaths = execFileSync("git", ["-C", root, "diff", "--name-only"], { encoding: "utf8" }).trim().split("\n").filter(Boolean).sort();
+  const expected = compiledPhase === "baseline" ? [] : pins.map(([path]) => path).sort();
+  if (JSON.stringify(changedPaths) !== JSON.stringify(expected)) throw new Error("Unexpected compiled source changes");
+  const buildId = readFileSync(resolve(root, "site/.next/BUILD_ID"), "utf8").trim();
+  if (!buildId || buildId.length > 256) throw new Error("Missing compiled build ID");
+  return { phase: compiledPhase, productRepo: "frankxai/Starlight-Intelligence-System", base, patchSha256, sources, changedPaths, buildId,
+    scope: "Actual isolated compiled baseline/candidate; not a product commit, Vercel preview or production deployment." };
+}
+const compiled = compiledPhase ? bindCompiledSource() : null;
 
 function loadRepairTrial() {
   const patch = readFileSync(new URL("../evals/protocol-typography-repair-12d794a.patch", import.meta.url), "utf8");
@@ -56,14 +89,45 @@ function loadRepairTrial() {
 }
 
 const repair = repairMode === "1" ? loadRepairTrial() : null;
-const selectedSites = repair ? sites.filter((site) => site.id === "protocol") : sites;
+const selectedSites = compiled ? [{ id: "protocol", url: "http://127.0.0.1:4173/" }] : repair ? sites.filter((site) => site.id === "protocol") : sites;
 const repairStates = [
   { id: "repair-normal-phone", width: 390, height: 844, repair: true },
   { id: "repair-blocked-phone", width: 390, height: 844, blockFonts: true, repair: true },
   { id: "repair-blocked-narrow-phone", width: 320, height: 812, blockFonts: true, repair: true },
   { id: "repair-blocked-css-zoom-2x", width: 1440, height: 900, blockFonts: true, cssZoom: 2, repair: true }
 ];
-const selectedStates = repair ? [...states, ...repairStates] : states;
+const selectedStates = compiled ? compiledPhase === "baseline" ? states.filter((s) => ["phone", "blocked-webfonts"].includes(s.id)) : [
+  ...states, { id: "blocked-narrow-phone", width: 320, height: 812, blockFonts: true },
+  { id: "blocked-css-zoom-2x", width: 1440, height: 900, blockFonts: true, cssZoom: 2 },
+  { id: "interrupted-motion-desktop", width: 1440, height: 900, interruptMotion: true }
+] : repair ? [...states, ...repairStates] : states;
+
+function inspectCompiledCss() {
+  const selectors = [".explainer-prose h4", ".console-display", ".console-md h1", ".console-md h2", ".console-md h3", ".console-md h4", ".console-md th"];
+  const rules = [];
+  const visit = (list) => {
+    for (const rule of list) {
+      if (rule.selectorText && rule.style?.textTransform) rules.push({ selector: rule.selectorText, textTransform: rule.style.textTransform });
+      if (rule.cssRules) visit(rule.cssRules);
+    }
+  };
+  for (const sheet of document.styleSheets) visit(sheet.cssRules);
+  // Probe actual compiled declarations on explicit fixture nodes. These are not
+  // application-route or visual evidence; the page itself is never restyled.
+  const fixture = document.createElement("section");
+  fixture.hidden = true;
+  fixture.innerHTML = '<div class="explainer-prose"><h4>Reading label</h4></div><div class="console-display">Console label</div><div class="console-md"><h1>First heading</h1><h2>Second heading</h2><h3>Third heading</h3><h4>Fourth heading</h4><table><thead><tr><th>Column label</th></tr></thead></table></div>';
+  document.body.append(fixture);
+  try {
+    const matched = selectors.map((selector) => {
+      const node = fixture.querySelector(selector);
+      const owner = selector.split(" ")[0];
+      return { selector, declarations: rules.filter((r) => r.selector.includes(owner) && node.matches(r.selector)) };
+    });
+    return { matched, fixtureTextTransforms: selectors.map((selector) => ({ selector, value: getComputedStyle(fixture.querySelector(selector)).textTransform })),
+      scope: "Compiled CSSOM plus hidden diagnostic nodes; no claim that all owning application routes were exercised." };
+  } finally { fixture.remove(); }
+}
 
 function sampleText() {
   const visible = (e) => e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true }) && e.getClientRects().length;
@@ -149,7 +213,8 @@ async function observe(browser, site, state) {
   const started = new Date().toISOString();
   const context = await browser.newContext({
     viewport: { width: state.width, height: state.height },
-    locale: "en-GB", reducedMotion: "reduce", serviceWorkers: "block"
+    locale: "en-GB", reducedMotion: state.interruptMotion ? "no-preference" : "reduce", serviceWorkers: "block",
+    ...(compiled ? { isMobile: state.width < 500, hasTouch: state.width < 500 } : {})
   });
   const blocked = [];
   const fontResponses = [];
@@ -202,6 +267,27 @@ async function observe(browser, site, state) {
     const response = await page.goto(site.url, { waitUntil: "domcontentloaded", timeout: 20000 });
     if (!response || response.status() !== 200 || new URL(page.url()).origin !== new URL(site.url).origin) throw new Error("Unexpected root response/origin");
     await page.locator("h1").first().waitFor({ state: "visible" });
+    let motionInterruption = null;
+    if (compiled && state.interruptMotion) {
+      stage = "interrupt-entrance";
+      const selector = 'figure[aria-label^="Starlight release room console"]';
+      await page.waitForFunction((s) => {
+        const element = document.querySelector(s);
+        if (!element) return false;
+        const opacity = Number(getComputedStyle(element).opacity);
+        return opacity > 0 && opacity < 0.98;
+      }, selector);
+      const before = await page.locator(selector).evaluate((e) => ({ opacity: getComputedStyle(e).opacity, transform: getComputedStyle(e).transform }));
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      await page.waitForFunction((s) => {
+        const style = getComputedStyle(document.querySelector(s));
+        const matrix = new DOMMatrixReadOnly(style.transform);
+        return Number(style.opacity) === 1 && Math.abs(matrix.m41) < 0.01 && Math.abs(matrix.m42) < 0.01 && Math.abs(matrix.a - 1) < 0.001;
+      }, selector);
+      motionInterruption = { selector, before, after: await page.locator(selector).evaluate((e) => ({ opacity: getComputedStyle(e).opacity,
+        transform: getComputedStyle(e).transform, reducedMotion: matchMedia("(prefers-reduced-motion: reduce)").matches })),
+        scope: "One actual entrance interrupted by a reduced-motion change; no frame sequence, gesture or full motion acceptance." };
+    }
     stage = "font-settlement";
     await page.waitForFunction(() => document.fonts.status === "loaded");
     await page.waitForTimeout(1500);
@@ -242,6 +328,7 @@ async function observe(browser, site, state) {
     const dom = await hashRenderedDom(page);
     const typography = await page.evaluate(sampleText);
     const foundations = await page.evaluate(inspectInterfaceFoundations);
+    const compiledCss = compiled ? await page.evaluate(inspectCompiledCss) : null;
     const cdp = await context.newCDPSession(page);
     try {
       await cdp.send("DOM.enable"); await cdp.send("CSS.enable");
@@ -286,10 +373,22 @@ async function observe(browser, site, state) {
     if (!typography.samples.some((s) => s.role === "headline" && s.usedFonts.length)) throw new Error("No rendered headline font sample");
     if (state.blockFonts && !blocked.length) throw new Error("Fallback scenario blocked no font request");
     const headers = response.headers();
+    let touchNavigation = null;
+    if (compiled && state.id === "fresh-recovery") {
+      const action = page.locator('main a[href="/quickstart"]').first();
+      await action.tap();
+      await page.waitForURL("http://127.0.0.1:4173/quickstart");
+      await page.locator("h1").first().waitFor({ state: "visible" });
+      await page.goBack();
+      await page.waitForURL("http://127.0.0.1:4173/");
+      await page.locator("h1").first().waitFor({ state: "visible" });
+      touchNavigation = { target: "/quickstart", returnedToRoot: true, touchEmulation: true,
+        scope: "One local compiled navigation/back recovery; not physical-device or interrupted-animation verification." };
+    }
     return { site: site.id, requestedUrl: site.url, resolvedUrl: page.url(), state, started,
       finished: new Date().toISOString(), complete: true, httpStatus: response.status(),
       responseMetadata: Object.fromEntries(["date", "etag", "x-vercel-id", "x-matched-path"].filter((k) => headers[k]).map((k) => [k, headers[k]])),
-      ...dom, typography, foundations, focus, pageErrors, fontResponses, blockedFontRequests: blocked, intervention,
+      ...dom, typography, foundations, focus, pageErrors, fontResponses, blockedFontRequests: blocked, intervention, compiledCss, touchNavigation, motionInterruption,
       layoutShifts: { supported: shifts.supported, settlementWaitMs: 1500, observedThroughMs: shifts.observedThroughMs, entries: shifts.shifts,
         rawSum: shifts.shifts.reduce((n, e) => n + e.value, 0), scope: "Early-load raw shift sum, excludes recent input; not CLS session-window/Lighthouse/field performance" } };
   } catch (e) {
@@ -308,11 +407,12 @@ const report = {
   at: new Date().toISOString(),
   probeCommit: execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim(),
   candidateSourceCommit: process.env.PROBE_SOURCE_SHA ?? null,
-  sourceBinding: "Probe revision only; live product deployment SHAs are unverified",
+  sourceBinding: compiled ? compiled.scope : "Probe revision only; live product deployment SHAs are unverified",
   browser: browser.version(),
-  scope: "Anonymous public-root text/font/layout observations. No screenshots, visual/rights/human approval, native zoom, complete type inventory, WCAG or product-value verdict.",
+  scope: compiled ? "Isolated compiled source-bound text/font/layout observations, CSS diagnostic nodes and limited local keyboard/touch navigation. No screenshots, visual/rights/human approval, native zoom, interrupted-animation, complete type inventory, WCAG or product-value verdict." : "Anonymous public-root text/font/layout observations. No screenshots, visual/rights/human approval, native zoom, complete type inventory, WCAG or product-value verdict.",
   rows,
   repairTrial: repair,
+  compiledProduct: compiled,
   fallbackComparisons: selectedSites.map((site) => {
     const row = (id) => rows.find((r) => r.site === site.id && r.state.id === id);
     const faces = (r) => r?.complete ? [...new Set(r.typography.samples.flatMap((s) => s.usedFonts.map((f) => `${f.family} / ${f.postscriptName}`)))].sort() : null;
@@ -328,9 +428,20 @@ const report = {
   completeSamples: rows.filter((r) => r.complete).length,
   expectedSamples: selectedSites.length * selectedStates.length
 };
+// Public-root observation completion still preserves defects. A compiled candidate
+// additionally fails on the concrete repair regressions, never on visual taste.
+const compiledChecks = compiledPhase !== "candidate" || rows.every((r) => r.complete &&
+  r.typography.documentWidth <= r.typography.viewport.width && r.typography.diagnostics.uppercaseCount === 0 &&
+  r.compiledCss.matched.every((m) => m.declarations.length && m.declarations.every((d) => d.textTransform === "none")) &&
+  r.compiledCss.fixtureTextTransforms.every((m) => m.value === "none") &&
+  (!r.state.blockFonts || ["reading", "action", "mono"].every((role) => {
+    const sample = r.typography.samples.find((s) => s.role === role);
+    return sample && sample.usedFonts.length && sample.usedFonts.every((f) => !/Serif/iu.test(f.family));
+  }))) &&
+  report.fallbackComparisons.every((c) => c.recoveredFaceSetEqualsNormal === true);
+report.compiledRepairChecks = compiledPhase === "candidate" ? compiledChecks : null;
 // Keep log lines bounded: large single-line reports can disappear in log readers.
 console.log("STARLIGHT_TYPOGRAPHY_REPORT_BEGIN");
 console.log(JSON.stringify(report, null, 2));
 console.log("STARLIGHT_TYPOGRAPHY_REPORT_END");
-// A green observation job means complete observations, including actual defects.
-process.exitCode = report.completeSamples === report.expectedSamples ? 0 : 1;
+process.exitCode = report.completeSamples === report.expectedSamples && compiledChecks ? 0 : 1;

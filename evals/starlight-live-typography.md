@@ -79,3 +79,35 @@ release acceptance, bind each product to its actual deployed SHA and collect
 desktop/mobile/fallback/native zoom visual specimens, rights and independent
 review under its owning contract. Do not use this diagnostic log as the full
 web release evidence bundle or close broader brand/product requirements with it.
+## Isolated compiled Protocol verification
+
+`protocol-compiled-typography.yml` checks out the public product at exact base
+`12d794a389959a2360bd4c920689510f0949f02b`, uses its locked dependencies and full
+build command, observes a compiled baseline, applies the immutable four-file
+patch, rebuilds and observes nine candidate contexts. This work runs on an
+ephemeral CI runner, with no local product checkout/dependency/build writes.
+
+The observer verifies all four before/after source hashes, changed paths, patch
+hash and actual Next build ID. Compiled mode cannot inject runtime repair CSS.
+Baseline phone and blocked-phone states supply matched conditions. Candidate
+states include desktop,390,320,CSS2x,blocked390,blocked320,blockedCSS2x and fresh
+recovery, with reduced motion, plus one desktop entrance interrupted by enabling
+reduced motion while opacity is between0 and0.98. Phone contexts emulate touch; fresh recovery
+taps the local quickstart link and returns to root. Desktop records five actual
+keyboard focus positions. Font-block interruption and a new context test recovery.
+
+The compiled CSSOM and explicit hidden diagnostic nodes exercise the four changed
+global text-transform declarations. They do not establish actual owning-route
+coverage. Candidate exit fails on incomplete samples, root overflow, observed
+forced uppercase, missing/incorrect compiled declarations, serif fallback in the
+sampled sans/mono roles or failed fresh font recovery. It grants no visual, rights,
+human, native-zoom, physical-device, complete motion, performance-budget,
+Vercel or production acceptance. Early raw layout shifts now come from the
+compiled source at initial load, but remain distinct from CLS and field metrics.
+After the baseline build, deliberate source drift must fail before any browser
+launch. The original file is restored before applying the patch. Failure is not
+waived or counted as a passing observation.
+
+No product commit, deployment, settings, secrets or approvals are changed. The
+prepared patch still needs an assigned product lane, exact-artifact independent
+and human release approval, and supported rendered production verification.
