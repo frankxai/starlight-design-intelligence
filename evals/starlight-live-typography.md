@@ -13,6 +13,9 @@ All contexts request reduced motion; normal-motion behavior is outside this run.
 
 Font response hashes bind observed bytes; blocked requests and platform fonts
 make fallback observable. Recovery uses a fresh navigation, not an in-page retry.
+CDP's custom-font flag also includes locally resolved CSS faces, such as Next's
+`local()` fallback faces. The receipt compares rendered names and intercepted
+requests; it does not treat that flag as proof of a downloaded webfont.
 Only five desktop Tab steps are sampled; no clicks, form submissions or signups.
 No screenshots, videos, traces or generated visuals are exported. Existing
 production designs and font choices are unchanged.

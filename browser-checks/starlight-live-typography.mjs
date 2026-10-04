@@ -137,10 +137,21 @@ async function observe(browser, site, state) {
       await cdp.send("DOM.enable"); await cdp.send("CSS.enable");
       const { root } = await cdp.send("DOM.getDocument", { depth: 0 });
       for (const sample of typography.samples) {
-        const { nodeId } = await cdp.send("DOM.querySelector", { nodeId: root.nodeId, selector: sample.selector });
-        if (!nodeId) throw new Error("Text sample disappeared");
-        const { fonts } = await cdp.send("CSS.getPlatformFontsForNode", { nodeId });
-        sample.usedFonts = fonts.map((f) => ({ family: f.familyName, postscriptName: f.postScriptName, custom: f.isCustomFont, glyphCount: f.glyphCount }));
+        // CDP reports a node's child TextNodes, so include each nested element once.
+        const { nodeIds } = await cdp.send("DOM.querySelectorAll", { nodeId: root.nodeId, selector: `${sample.selector}, ${sample.selector} *` });
+        if (!nodeIds.length || nodeIds.length > 128) throw new Error("Missing or oversized font sample subtree");
+        const used = new Map();
+        for (const nodeId of nodeIds) {
+          const { fonts } = await cdp.send("CSS.getPlatformFontsForNode", { nodeId });
+          for (const f of fonts.filter((f) => f.glyphCount > 0)) {
+            const key = JSON.stringify([f.familyName, f.postScriptName, f.isCustomFont]);
+            const row = used.get(key) ?? { family: f.familyName, postscriptName: f.postScriptName,
+              customOrLocallyResolvedFace: f.isCustomFont, glyphCount: 0 };
+            row.glyphCount += f.glyphCount; used.set(key, row);
+          }
+        }
+        sample.inspectedFontElements = nodeIds.length;
+        sample.usedFonts = [...used.values()];
       }
     } finally { await cdp.detach(); }
     const focus = [];
@@ -154,7 +165,6 @@ async function observe(browser, site, state) {
     await Promise.allSettled(fontReads);
     if (!typography.samples.some((s) => s.role === "headline" && s.usedFonts.length)) throw new Error("No rendered headline font sample");
     if (state.blockFonts && !blocked.length) throw new Error("Fallback scenario blocked no font request");
-    if (state.blockFonts && typography.samples.some((s) => s.usedFonts.some((f) => f.custom && f.glyphCount > 0))) throw new Error("Custom face still rendered in blocked-webfont scenario");
     const headers = response.headers();
     return { site: site.id, requestedUrl: site.url, resolvedUrl: page.url(), state, started,
       finished: new Date().toISOString(), complete: true, httpStatus: response.status(),
@@ -182,6 +192,18 @@ const report = {
   browser: browser.version(),
   scope: "Anonymous public-root text/font/layout observations. No screenshots, visual/rights/human approval, native zoom, complete type inventory, WCAG or product-value verdict.",
   rows,
+  fallbackComparisons: sites.map((site) => {
+    const row = (id) => rows.find((r) => r.site === site.id && r.state.id === id);
+    const faces = (r) => r?.complete ? [...new Set(r.typography.samples.flatMap((s) => s.usedFonts.map((f) => `${f.family} / ${f.postscriptName}`)))].sort() : null;
+    const normal = row("phone"), blocked = row("blocked-webfonts"), recovery = row("fresh-recovery");
+    const normalFaces = faces(normal), blockedFaces = faces(blocked), recoveredFaces = faces(recovery);
+    return { site: site.id, normalFaces, blockedFaces, recoveredFaces,
+      blockedRequests: blocked?.blockedFontRequests.length ?? 0,
+      normalFontResponses: normal?.fontResponses.length ?? 0,
+      recoveredFontResponses: recovery?.fontResponses.length ?? 0,
+      recoveredFaceSetEqualsNormal: normalFaces && recoveredFaces ? JSON.stringify(normalFaces) === JSON.stringify(recoveredFaces) : null,
+      scope: "Rendered-name comparison, not proof of all font sources, weight availability or fallback readability" };
+  }),
   completeSamples: rows.filter((r) => r.complete).length,
   expectedSamples: sites.length * states.length
 };
