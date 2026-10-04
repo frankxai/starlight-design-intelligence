@@ -3,9 +3,9 @@
   "brandId": "sis",
   "displayName": "Starlight Intelligence Systems",
   "operatingUnit": "starlight-substrate",
-  "sourceDocs": ["brand-packs/sis/DESIGN.md"],
-  "canonicalRepos": ["frankxai/starlight-intelligence-system"],
-  "surfaceModes": ["operations", "evidence", "editorial"],
+  "sourceDocs": ["brand-packs/sis/DESIGN.md", "brand-packs/sis/BRAND.md", "brand-packs/sis/SOURCE_AUTHORITY.md"],
+  "canonicalRepos": ["frankxai/starlight-intelligence-system", "frankxai/starlightintelligence.ai", "frankxai/starlight-intelligence-academy"],
+  "surfaceModes": ["operations", "evidence", "editorial", "horizon", "operator", "academy", "cultural"],
   "audiences": ["AI platform leaders", "operators", "evaluation and governance teams"],
   "positioning": {
     "oneLine": "Calm operational intelligence that makes agent work, evidence, and decisions legible.",
@@ -13,17 +13,60 @@
     "failureModes": ["hype science fiction", "generic dashboard filler", "black-box intelligence"]
   },
   "voice": {
+    "scope": "Existing traits describe Operator mode; use brand-packs/sis/BRAND.md for Horizon, Academy and Cultural mode voice.",
     "traits": ["calm", "operational", "evidence-led", "trustworthy"],
     "bannedPhrases": ["sentient system", "autonomous revolution", "magic intelligence"]
   },
   "visual": {
     "principles": ["Show the trace", "Make confidence inspectable", "Keep operational reading stable"],
     "colors": { "void": "#0a0a0b", "space": "#111113", "signal": "#6366f1", "evidence": "#a5b4fc" },
+    "colorsScope": "Legacy operator references; current site adoption is unverified. Use the selected site's profile and local contract; do not apply these keys to every Starlight site.",
     "typography": { "displayRole": "operational authority", "readingRole": "dense but calm UI" },
-    "imageDirection": ["real product states", "evidence stacks", "agent and evaluation traces"]
+    "imageDirection": ["real product states", "evidence stacks", "agent and evaluation traces"],
+    "identity": {
+      "sourceDoc": "brand-packs/sis/SOURCE_AUTHORITY.md",
+      "referenceUrl": "https://starlightintelligence.ai/brand",
+      "canonicalRepository": "frankxai/starlightintelligence.ai",
+      "historicalRepositoryAlias": "frankxai/starlight-intelligence-web",
+      "sourceRevision": "854357b89d6c160df6d7cb51d7bfdf92f96422e9",
+      "manifestPath": "public/brand/identity.json",
+      "manifestSha256": "d10b13577f43186b90b086a56baa19f0c670c7487d9de6419b7d9710c205a6d3",
+      "directionRecordedAt": "2026-09-16",
+      "geometry": "Recovered Academy four-point star and companion dot; preserve the vector geometry.",
+      "colorUrl": "https://starlightintelligence.ai/brand/starlight-star.svg",
+      "monochromeOnPaperUrl": "https://starlightintelligence.ai/brand/starlight-star-monochrome.svg",
+      "monochromeOnInkUrl": "https://starlightintelligence.ai/brand/starlight-star-on-ink.svg",
+      "minimumColorSizePx": 24,
+      "monochromeSizePx": 16,
+      "clearSpaceRatio": 0.25,
+      "retainedVariant": "Protocol orbit-star; consolidation requires a separately reviewed change.",
+      "sourceProvenanceStatus": "Historical sidecar preserved; current VIS schema validation unverified.",
+      "verificationScope": "Pinned owning sources and matching HTTP manifest/SVG bytes; rendered, rights, product adoption and synchronization proof remain open."
+    },
+    "siteProfiles": {
+      "lab": {
+        "url": "https://starlightintelligence.ai",
+        "scope": "Observed lab implementation values; not a global Starlight palette.",
+        "colors": { "ink": "#070A10", "paper": "#EFEDE7", "ivory": "#EDE6D8", "gold": "#C9A15C", "goldBright": "#F0C87E", "starlight": "#E8C98C", "companion": "#82D8E6", "starCore": "#FBF6EB" },
+        "typography": { "interface": "Instrument Sans", "accent": "Instrument Serif italic", "code": "IBM Plex Mono", "verification": "Declared owning roles; font files, licenses, embedding and computed browser fonts unverified in this slice." }
+      },
+      "academy": {
+        "url": "https://starlightintelligence.academy",
+        "canonicalRepository": "frankxai/starlight-intelligence-academy",
+        "sourceRevision": "abaf24b2a09c53c8b9c0e132f09fb866b3670d7b",
+        "sourcePath": "docs/design/BRAND_REFERENCE.md",
+        "sourceSha256": "18b16d87ba1245adbe33bd03a48b315f18baddee1e5b8433390962a430cfdd8b",
+        "scope": "Shared recovered star; preserve Academy reading palette and local design contract. Current rendered application unverified."
+      },
+      "protocol": {
+        "url": "https://starlightintelligence.org",
+        "canonicalRepository": "frankxai/starlight-intelligence-system",
+        "scope": "Retain protocol orbit-star and local reading palette; owning lab brief records retention, protocol implementation not inspected in this slice."
+      }
+    }
   },
   "channels": { "primary": ["product", "enterprise website", "technical documentation"] },
   "approvals": { "requiredBeforePublicAction": true, "route": "independent-verifier-and-named-human" },
   "doNotUse": ["radiant particle fields", "moving dashboards during reading", "uncited confidence claims"],
-  "updatedAt": "2026-07-24"
+  "updatedAt": "2026-10-04"
 }

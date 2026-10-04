@@ -53,6 +53,32 @@ Exact tokens belong in the machine-readable brand pack. This document defines th
 - gradients describe energy, distance, or transition and never serve as filler;
 - accessibility contrast holds across every surface mode.
 
+## Current identity and site scope
+
+Use the recovered four-point star and companion dot described by the owning
+[Starlight kit](https://starlightintelligence.ai/brand). Its pinned sources,
+repository alias, variants and verification limits are in
+[SOURCE_AUTHORITY.md](SOURCE_AUTHORITY.md). Frank's 16 September 2026 direction
+restored this mark; older blanket star exclusions are superseded for that mark.
+
+Use the color mark from 24px, monochrome at 16px, and clear space equal to one
+quarter of the mark width. Preserve its geometry. The protocol orbit-star remains
+a named variant; consolidation requires a separately reviewed change.
+
+The machine pack's `visual.siteProfiles.lab` contains the observed `.ai` colors
+and type roles: Instrument Sans for interfaces and reading, Instrument Serif
+italic for brief accents, and IBM Plex Mono for code and aligned data. These
+values apply to the lab reference. Academy and protocol retain their own reading
+palettes and local contracts. The existing `visual.colors` keys are legacy
+operator references, with no claim of current site adoption. Select a site and
+surface mode before using tokens; a schema pass does not enforce that selection.
+
+Horizon, Operator, Academy and Cultural are the modes in this design and the
+brand constitution. Existing `operations`, `evidence` and `editorial` contract
+identifiers remain supported. Adding the lab and Academy to pack ownership
+permits a future adoption proposal; it does not register a downstream surface,
+update a pinned workflow, or verify its runtime.
+
 ## Imagery
 
 Preferred imagery has a human or environmental subject, an authored point of view, and a reason to exist in the story. Use original generation, commissioned work, licensed photography, product capture, and diagrams with recorded provenance.
@@ -70,4 +96,3 @@ A Starlight release should answer three visual questions:
 1. Does this feel unmistakably connected to the larger Starlight world?
 2. Does the chosen surface mode serve the person's actual task?
 3. Is there enough authored detail and craft that a competent team could not replace the work with a template in an afternoon?
-
