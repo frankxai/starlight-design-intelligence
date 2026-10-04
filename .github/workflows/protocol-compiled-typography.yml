@@ -73,7 +73,7 @@ jobs:
             echo "Source drift unexpectedly passed"
             exit 1
           fi
-          rg --fixed-strings "Compiled source mismatch: site/src/app/page.tsx" "$RUNNER_TEMP/protocol-drift-denial.log"
+          node -e "const fs = require('node:fs'); if (!fs.readFileSync(process.argv[1], 'utf8').includes('Compiled source mismatch: site/src/app/page.tsx')) process.exit(1)" "$RUNNER_TEMP/protocol-drift-denial.log"
           cp "$RUNNER_TEMP/protocol-page-baseline.tsx" protocol-candidate/site/src/app/page.tsx
           echo "PINNED_COMPILED_SOURCE_DRIFT_DENIED"
           git -C protocol-candidate apply --check "$GITHUB_WORKSPACE/evals/protocol-typography-repair-12d794a.patch"
