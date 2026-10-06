@@ -2,9 +2,18 @@
 async function runProjection(p) {
   const namespace = p.name + ' / ' + p.revision + ' / ' + p.manifest_sha256.slice(0, 8);
   const existing = figma.root.children.find(n => n.name === namespace);
-  if (existing) return { status: 'EXISTS_UNVERIFIED', page_id: existing.id, manifest_sha256: p.manifest_sha256, message: 'Existing projection preserved. Inspect it before accepting or replacing it.' };
-  const receipt = { schema_version: 'starlight.figma_execution.v1', status: 'NOT_STARTED', repository: p.repository, commit: p.commit, manifest_sha256: p.manifest_sha256, readiness: p.readiness, created_node_ids: [], variable_ids: [], collection_ids: [], style_ids: [], component_mappings: [], font_resolution: [], parity: 'NOT_RENDERED_OR_RUNTIME_VERIFIED' };
+  if (existing) return { status: 'EXISTS_UNVERIFIED', page_id: existing.id, manifest_sha256: p.manifest_sha256, created_node_ids: [], mutated_node_ids: [], safeToRetryWithoutCanvasRead: false, message: 'Existing projection preserved. Inspect it before accepting or replacing it.' };
+  // Execution state belongs in the caller's receipt store, never in plugin data.
+  const receipt = { schema_version: 'starlight.figma_execution.v1', status: 'NOT_STARTED', repository: p.repository, commit: p.commit, manifest_sha256: p.manifest_sha256, readiness: p.readiness, created_node_ids: [], mutated_node_ids: [], variable_ids: [], collection_ids: [], style_ids: [], component_mappings: [], font_resolution: [], parity: 'NOT_RENDERED_OR_RUNTIME_VERIFIED' };
   let page;
+  function collectAffectedNodes() {
+    // Instances implicitly create descendants. Collect on failure as well as success.
+    if (page && typeof page.findAll === 'function') {
+      for (const n of page.findAll(() => true)) receipt.created_node_ids.push(n.id);
+    }
+    receipt.created_node_ids = [...new Set(receipt.created_node_ids)];
+    receipt.mutated_node_ids = [...receipt.created_node_ids];
+  }
   try {
     const available = await figma.listAvailableFontsAsync();
     const fonts = [...new Map(p.text_styles.map(s => [JSON.stringify([s.font.family, s.font.style]), s.font])).values()];
@@ -13,9 +22,8 @@ async function runProjection(p) {
       await figma.loadFontAsync(font);
       receipt.font_resolution.push(font);
     }
-    page = figma.createPage(); page.name = namespace; receipt.created_node_ids.push(page.id); receipt.page_id = page.id;
+    page = figma.createPage(); receipt.created_node_ids.push(page.id); receipt.page_id = page.id; page.name = namespace;
     await figma.setCurrentPageAsync(page);
-    page.setPluginData('starlight.source', JSON.stringify({ repository: p.repository, commit: p.commit, manifest_sha256: p.manifest_sha256, readiness: p.readiness }));
     const collection = figma.variables.createVariableCollection(namespace);
     receipt.collection_ids.push(collection.id);
     // One mode per projection works on Starter. Ink/paper are separate inputs/collections.
@@ -48,7 +56,7 @@ async function runProjection(p) {
       node[field] = [figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: value.components[0], g: value.components[1], b: value.components[2] }, opacity: value.alpha }, 'color', v)];
     }
     function stack(name, width, gap = 20) {
-      const n = remember(figma.createFrame()); n.name = name; n.layoutMode = 'VERTICAL'; n.primaryAxisSizingMode = 'AUTO'; n.counterAxisSizingMode = 'FIXED'; n.resize(width, 100); n.itemSpacing = gap; n.fills = []; n.clipsContent = false; return n;
+      const n = remember(figma.createFrame()); n.name = name; n.layoutMode = 'VERTICAL'; n.resize(width, 100); n.primaryAxisSizingMode = 'AUTO'; n.counterAxisSizingMode = 'FIXED'; n.itemSpacing = gap; n.fills = []; n.clipsContent = false; return n;
     }
     const textRole = p.review_roles.text;
     const surfaceRole = p.review_roles.surface;
@@ -60,7 +68,7 @@ async function runProjection(p) {
     await addText(source, p.readiness === 'migration-candidate' ? 'Source migration candidate · review before adoption' : 'Committed source · native review pending', 620);
     const swatches = [];
     for (const token of p.tokens.filter(t => t.type === 'color')) {
-      const c = remember(figma.createComponent()); c.name = 'Foundation / ' + token.name; c.layoutMode = 'HORIZONTAL'; c.primaryAxisSizingMode = 'FIXED'; c.counterAxisSizingMode = 'AUTO'; c.resize(620, 60); c.itemSpacing = 12; c.paddingTop = c.paddingBottom = 8; c.fills = [];
+      const c = remember(figma.createComponent()); c.name = 'Foundation / ' + token.name; c.layoutMode = 'HORIZONTAL'; c.resize(620, 60); c.primaryAxisSizingMode = 'FIXED'; c.counterAxisSizingMode = 'AUTO'; c.itemSpacing = 12; c.paddingTop = c.paddingBottom = 8; c.fills = [];
       const chip = remember(figma.createRectangle()); chip.name = 'Bound color'; chip.resize(48, 32); paint(chip, token.name); c.appendChild(chip);
       const label = await addText(c, token.name, 540); label.componentPropertyReferences = { characters: c.addComponentProperty('Label', 'TEXT', token.name) }; c.description = 'Source-bound color specimen. ' + p.repository + '@' + p.commit; source.appendChild(c); swatches.push(c);
     }
@@ -68,7 +76,7 @@ async function runProjection(p) {
     for (const model of p.components || []) {
       const variants = [], labels = [];
       for (const v of model.variants) {
-        const c = remember(figma.createComponent()); c.name = 'State=' + v.state; c.layoutMode = 'HORIZONTAL'; c.primaryAxisSizingMode = 'AUTO'; c.counterAxisSizingMode = 'FIXED'; c.resize(120, v.height); c.primaryAxisAlignItems = 'CENTER'; c.counterAxisAlignItems = 'CENTER'; c.paddingLeft = c.paddingRight = v.padding_x; c.cornerRadius = v.radius; c.opacity = v.opacity ?? 1; paint(c, v.fill_token);
+        const c = remember(figma.createComponent()); c.name = 'State=' + v.state; c.layoutMode = 'HORIZONTAL'; c.resize(120, v.height); c.primaryAxisSizingMode = 'AUTO'; c.counterAxisSizingMode = 'FIXED'; c.primaryAxisAlignItems = 'CENTER'; c.counterAxisAlignItems = 'CENTER'; c.paddingLeft = c.paddingRight = v.padding_x; c.cornerRadius = v.radius; c.opacity = v.opacity ?? 1; paint(c, v.fill_token);
         const label = await addText(c, model.label || 'Continue', 100, v.text_style, v.text_token); label.textAutoResize = 'WIDTH_AND_HEIGHT'; labels.push(label);
         if (v.stroke_token) { paint(c, v.stroke_token, 'strokes'); c.strokeWeight = v.stroke_width || 2; c.strokeAlign = 'OUTSIDE'; }
         c.description = 'Visual ' + v.state + ' state. ' + model.code_path + '. ' + (v.notes || '') + ' Runtime interaction requires product verification.'; source.appendChild(c); variants.push(c);
@@ -88,12 +96,13 @@ async function runProjection(p) {
       for (const c of swatches.slice(0, 6)) { const instance = remember(c.createInstance()); review.appendChild(instance); if (width === 390) { instance.resize(width - 48, instance.height); const label = instance.findOne(n => n.type === 'TEXT'); if (label) { label.resize(width - 120, label.height); label.textAutoResize = 'HEIGHT'; } } }
       reviews.push(review); receipt[width === 390 ? 'mobile_id' : 'desktop_id'] = review.id;
     }
-    for (const n of page.findAll(() => true)) receipt.created_node_ids.push(n.id);
-    receipt.created_node_ids = [...new Set(receipt.created_node_ids)]; receipt.status = 'CREATED_UNREVIEWED'; receipt.gamut_notes = p.gamut_notes;
-    page.setPluginData('starlight.execution', JSON.stringify(receipt)); figma.viewport.scrollAndZoomIntoView(reviews);
+    collectAffectedNodes(); receipt.status = 'CREATED_UNREVIEWED'; receipt.gamut_notes = p.gamut_notes;
+    receipt.safeToRetryWithoutCanvasRead = false; figma.viewport.scrollAndZoomIntoView(reviews);
     return receipt;
   } catch (error) {
     receipt.status = page ? 'PARTIAL_FAILED' : 'PREFLIGHT_FAILED'; receipt.error = error.message;
-    if (page) page.setPluginData('starlight.execution', JSON.stringify(receipt)); return receipt;
+    try { collectAffectedNodes(); } catch (collectionError) { receipt.node_collection_error = collectionError.message; }
+    receipt.safeToRetryWithoutCanvasRead = !page;
+    return receipt;
   }
 }
