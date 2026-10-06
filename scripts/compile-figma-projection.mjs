@@ -73,6 +73,12 @@ function extractValue(spec, texts) {
 }
 function transform(raw, token, rootFontSize) {
   if (token.transform === 'color') return parseColor(raw);
+  if (token.transform === 'bezier') {
+    requireValue(typeof raw === 'string' && /^cubic-bezier\([^()]+\)$/.test(raw), 'Cubic Bézier source invalid.');
+    const values = raw.slice(13, -1).split(',').map(v => Number(v.trim()));
+    requireValue(values.length === 4 && values.every(Number.isFinite) && values[0] >= 0 && values[0] <= 1 && values[2] >= 0 && values[2] <= 1, 'Cubic Bézier control points invalid.');
+    return values;
+  }
   if (token.transform === 'string') { requireValue(typeof raw === 'string' && raw.length > 0 && raw.length <= 80 && !/[,{;}]/.test(raw), 'Font family token must be a single exact family.'); return raw; }
   if (token.transform === 'number') { const n = Number(raw); requireValue(Number.isFinite(n), 'Number token invalid.'); return n; }
   const match = String(raw).trim().match(/^(-?[\d.]+)(px|rem|ms|s)?$/);
@@ -103,7 +109,7 @@ export function compileProjection({ manifestPath, sourcesRoot }) {
   }
   requireValue(Array.isArray(m.tokens) && m.tokens.length > 0 && m.tokens.length <= 500, 'Token inventory invalid.');
   const tokens = [], seen = new Set();
-  const transforms = { color: 'color', dimension: 'px', number: 'number', duration: 'seconds', fontFamily: 'string' };
+  const transforms = { color: 'color', dimension: 'px', number: 'number', duration: 'seconds', fontFamily: 'string', cubicBezier: 'bezier' };
   for (const t of m.tokens) {
     requireValue(typeof t.name === 'string', 'Token name required.');
     const name = t.name.replaceAll('.', '/');

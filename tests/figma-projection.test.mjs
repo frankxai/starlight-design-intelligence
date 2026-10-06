@@ -66,6 +66,13 @@ test('JSON pointers cannot read inherited object properties', () => {
   f.m.tokens.push({ name: 'font/family', type: 'fontFamily', transform: 'string', extract: { path: 'source.json', pointer: '/__proto__/constructor/name' } });
   assert.throws(f.compile, /scalar/);
 });
+test('source easing becomes standard DTCG cubicBezier with bounded time control points', () => {
+  const f = fixture(), source = '{"ease":"cubic-bezier(0.23, 1, 0.32, 1)"}'; writeFileSync(join(f.root, 'ease.json'), source);
+  f.m.sources.push({ path: 'ease.json', sha256: hash(source) });
+  f.m.tokens.push({ name: 'ease/out', type: 'cubicBezier', transform: 'bezier', extract: { path: 'ease.json', pointer: '/ease' } });
+  assert.deepEqual(f.compile().dtcg.ease.out, { $type: 'cubicBezier', $value: [0.23,1,0.32,1], $description: `Projection of example/fixture@${'a'.repeat(40)}; source ease.json.` });
+  const bad = '{"ease":"cubic-bezier(2, 1, 0.32, 1)"}'; writeFileSync(join(f.root, 'ease.json'), bad); f.m.sources[1].sha256 = hash(bad); assert.throws(f.compile, /control points/);
+});
 test('sRGB, HSL and OKLCH conversion preserves alpha and explicitly records gamut clipping', () => {
   assert.deepEqual(parseColor('#ffffff').components, [1, 1, 1]);
   assert.deepEqual(parseColor('180 70% 50%').components.map(v => Math.round(v * 255)), [38, 217, 217]);

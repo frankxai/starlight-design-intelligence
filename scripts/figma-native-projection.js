@@ -21,7 +21,7 @@ async function runProjection(p) {
     // One mode per projection works on Starter. Ink/paper are separate inputs/collections.
     const variables = new Map(), tokens = new Map(p.tokens.map(t => [t.name, t]));
     for (const t of p.tokens) {
-      const type = t.type === 'color' ? 'COLOR' : t.type === 'fontFamily' ? 'STRING' : 'FLOAT';
+      const type = t.type === 'color' ? 'COLOR' : ['fontFamily', 'cubicBezier'].includes(t.type) ? 'STRING' : 'FLOAT';
       const v = figma.variables.createVariable(t.name, collection, type); variables.set(t.name, v); receipt.variable_ids.push(v.id);
       v.description = p.repository + '@' + p.commit + ' · ' + (t.source?.path || 'alias ' + t.alias);
       v.scopes = t.type === 'color' ? ['ALL_FILLS', 'STROKE_COLOR'] : t.type === 'dimension' ? ['GAP', 'WIDTH_HEIGHT', 'CORNER_RADIUS'] : [];
@@ -31,7 +31,7 @@ async function runProjection(p) {
       let value;
       if (t.alias) value = { type: 'VARIABLE_ALIAS', id: variables.get(t.alias).id };
       else if (t.type === 'color') value = { r: t.value.components[0], g: t.value.components[1], b: t.value.components[2], a: t.value.alpha };
-      else value = ['duration', 'dimension'].includes(t.type) ? t.value.value : t.value;
+      else value = t.type === 'cubicBezier' ? t.original : ['duration', 'dimension'].includes(t.type) ? t.value.value : t.value;
       variables.get(t.name).setValueForMode(collection.defaultModeId, value);
     }
     const textStyles = new Map();
