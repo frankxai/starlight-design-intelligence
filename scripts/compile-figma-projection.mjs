@@ -14,6 +14,18 @@ export function containedFile(root, path) {
   return full;
 }
 const clamp = n => Math.min(1, Math.max(0, n));
+function colorChannels(body, kind) {
+  const n = '-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)';
+  const channel = kind === 'rgb' ? n + '%?' : n;
+  const second = kind === 'hsl' ? n + '%' : channel;
+  const third = kind === 'hsl' ? n + '%' : channel;
+  const alpha = n + '%?';
+  const legacy = kind !== 'oklch' && body.includes(',');
+  const pattern = legacy ? `^\\s*(${channel})\\s*,\\s*(${second})\\s*,\\s*(${third})(?:\\s*,\\s*(${alpha}))?\\s*$` : `^\\s*(${channel})\\s+(${second})\\s+(${third})(?:\\s*/\\s*(${alpha}))?\\s*$`;
+  const match = body.match(new RegExp(pattern));
+  requireValue(match, 'Malformed color channels or separators.');
+  return match.slice(1).filter(v => v !== undefined);
+}
 export function parseColor(raw) {
   requireValue(typeof raw === 'string', 'Color must be a source string.');
   const s = raw.trim(); let c, alpha = 1;
@@ -21,22 +33,22 @@ export function parseColor(raw) {
     c = [1, 3, 5].map(i => parseInt(s.slice(i, i + 2), 16) / 255);
     if (s.length === 9) alpha = parseInt(s.slice(7, 9), 16) / 255;
   } else if (/^rgba?\([^()]+\)$/.test(s)) {
-    const values = s.slice(s.indexOf('(') + 1, -1).split(/[,\s/]+/).filter(Boolean);
+    const values = colorChannels(s.slice(s.indexOf('(') + 1, -1), 'rgb');
     requireValue(values.length === 3 || values.length === 4, 'Unsupported rgb syntax.');
     requireValue(values.every(v => /^-?(?:\d+(?:\.\d+)?|\.\d+)%?$/.test(v)), 'Malformed rgb channel.');
     c = values.slice(0, 3).map(v => v.endsWith('%') ? parseFloat(v) / 100 : Number(v) / 255);
     if (values[3]) alpha = values[3].endsWith('%') ? parseFloat(values[3]) / 100 : Number(values[3]);
   } else if (/^hsl\([^()]+\)$/.test(s) || /^-?\d+(?:\.\d+)?\s+[\d.]+%\s+[\d.]+%$/.test(s)) {
-    const values = (s.startsWith('hsl(') ? s.slice(4, -1) : s).split(/[,\s/]+/).filter(Boolean);
+    const values = colorChannels(s.startsWith('hsl(') ? s.slice(4, -1) : s, 'hsl');
     requireValue((values.length === 3 || values.length === 4) && values[1].endsWith('%') && values[2].endsWith('%'), 'Unsupported hsl syntax.');
     requireValue(values.every(v => /^-?(?:\d+(?:\.\d+)?|\.\d+)%?$/.test(v)), 'Malformed hsl channel.');
     const h = ((Number(values[0]) % 360) + 360) % 360 / 360, saturation = parseFloat(values[1]) / 100, l = parseFloat(values[2]) / 100;
     requireValue(saturation >= 0 && saturation <= 1 && l >= 0 && l <= 1, 'HSL range invalid.');
     const a = saturation * Math.min(l, 1 - l);
     c = [0, 8, 4].map(n => { const k = (n + h * 12) % 12; return l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1)); });
-    if (values[3]) alpha = Number(values[3]);
+    if (values[3]) alpha = values[3].endsWith('%') ? parseFloat(values[3]) / 100 : Number(values[3]);
   } else if (/^oklch\([^()]+\)$/.test(s)) {
-    const values = s.slice(6, -1).split(/[\s/]+/).filter(Boolean);
+    const values = colorChannels(s.slice(6, -1), 'oklch');
     requireValue(values.length === 3 || values.length === 4, 'Unsupported OKLCH syntax.');
     const [l, chroma, degrees] = values.slice(0, 3).map(Number), h = degrees * Math.PI / 180;
     requireValue(l >= 0 && l <= 1 && chroma >= 0, 'OKLCH range invalid.');
@@ -46,7 +58,7 @@ export function parseColor(raw) {
     const ss = (l - 0.0894841775 * a - 1.2914855480 * b) ** 3;
     const linear = [4.0767416621 * ll - 3.3077115913 * mm + 0.2309699292 * ss, -1.2684380046 * ll + 2.6097574011 * mm - 0.3413193965 * ss, -0.0041960863 * ll - 0.7034186147 * mm + 1.7076147010 * ss];
     c = linear.map(v => v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055);
-    if (values[3]) alpha = Number(values[3]);
+    if (values[3]) alpha = values[3].endsWith('%') ? parseFloat(values[3]) / 100 : Number(values[3]);
     // Figma variable import uses sRGB. Keep the original and disclose gamut clipping.
     const clipped = c.some(v => v < -0.00001 || v > 1.00001);
     requireValue([...c, alpha].every(Number.isFinite) && alpha >= 0 && alpha <= 1, 'Color is non-finite or alpha invalid.');
@@ -75,7 +87,9 @@ function transform(raw, token, rootFontSize) {
   if (token.transform === 'color') return parseColor(raw);
   if (token.transform === 'bezier') {
     requireValue(typeof raw === 'string' && /^cubic-bezier\([^()]+\)$/.test(raw), 'Cubic Bézier source invalid.');
-    const values = raw.slice(13, -1).split(',').map(v => Number(v.trim()));
+    const channels = raw.slice(13, -1).split(',').map(v => v.trim());
+    requireValue(channels.every(v => /^[+-]?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?$/i.test(v)), 'Cubic Bézier channels must be nonempty numbers.');
+    const values = channels.map(Number);
     requireValue(values.length === 4 && values.every(Number.isFinite) && values[0] >= 0 && values[0] <= 1 && values[2] >= 0 && values[2] <= 1, 'Cubic Bézier control points invalid.');
     return values;
   }
@@ -153,11 +167,11 @@ export function compileProjection({ manifestPath, sourcesRoot }) {
       requireValue(v.height >= 24 && v.height <= 120 && (v.opacity === undefined || (v.opacity >= 0 && v.opacity <= 1)), 'Component visual bounds invalid.');
     }
   }
-  const dtcg = {};
+  const dtcg = Object.create(null);
   for (const t of tokens) {
     const parts = t.name.split('/'); let group = dtcg;
-    for (const p of parts.slice(0, -1)) { requireValue(!group[p] || !Object.hasOwn(group[p], '$value'), 'Token/group name collision.'); group = group[p] ||= {}; }
-    requireValue(!group[parts.at(-1)], 'Token/group name collision.');
+    for (const p of parts.slice(0, -1)) { requireValue(!Object.hasOwn(group, p) || !Object.hasOwn(group[p], '$value'), 'Token/group name collision.'); if (!Object.hasOwn(group, p)) group[p] = Object.create(null); group = group[p]; }
+    requireValue(!Object.hasOwn(group, parts.at(-1)), 'Token/group name collision.');
     const value = t.alias ? '{' + t.alias.replaceAll('/', '.') + '}' : t.value;
     const clean = t.type === 'color' && !t.alias ? { colorSpace: value.colorSpace, components: value.components, alpha: value.alpha } : value;
     group[parts.at(-1)] = { $type: t.type, $value: clean, $description: `Projection of ${m.repository}@${m.commit}; source ${t.source?.path || t.alias}.` };

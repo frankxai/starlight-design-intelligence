@@ -48,6 +48,11 @@ test('normalized collisions and token/group collisions cannot silently drop a va
   const c = fixture(); c.m.tokens.push({ ...c.m.tokens[0], name: '__proto__/polluted' }); assert.throws(c.compile, /Reserved/); assert.equal({}.polluted, undefined);
   const d = fixture(); d.m.tokens[0].type = 'string'; d.m.tokens[0].transform = 'string'; assert.throws(d.compile, /Unsupported token type/);
 });
+test('inherited group names serialize their tokens without mutating built-in objects', () => {
+  const f = fixture(); f.m.tokens.push({ ...f.m.tokens[0], name: 'toString/fixture-color' });
+  const output = JSON.parse(JSON.stringify(f.compile().dtcg)); assert.equal(output.toString['fixture-color'].$type, 'color');
+  assert.equal(Object.prototype.toString['fixture-color'], undefined);
+});
 test('unowned component sources, fabricated states and fallback fonts are denied', () => {
   const a = fixture(); a.m.components[0].code_path = 'unowned.tsx'; assert.throws(a.compile, /owner/);
   const b = fixture(); b.m.components[0].variants.push({ ...b.m.components[0].variants[0], state: 'Loading' }); assert.throws(b.compile, /Unsupported/);
@@ -72,6 +77,7 @@ test('source easing becomes standard DTCG cubicBezier with bounded time control 
   f.m.tokens.push({ name: 'ease/out', type: 'cubicBezier', transform: 'bezier', extract: { path: 'ease.json', pointer: '/ease' } });
   assert.deepEqual(f.compile().dtcg.ease.out, { $type: 'cubicBezier', $value: [0.23,1,0.32,1], $description: `Projection of example/fixture@${'a'.repeat(40)}; source ease.json.` });
   const bad = '{"ease":"cubic-bezier(2, 1, 0.32, 1)"}'; writeFileSync(join(f.root, 'ease.json'), bad); f.m.sources[1].sha256 = hash(bad); assert.throws(f.compile, /control points/);
+  const empty = '{"ease":"cubic-bezier(0.1,,0.3,1)"}'; writeFileSync(join(f.root, 'ease.json'), empty); f.m.sources[1].sha256 = hash(empty); assert.throws(f.compile, /nonempty/);
 });
 test('sRGB, HSL and OKLCH conversion preserves alpha and explicitly records gamut clipping', () => {
   assert.deepEqual(parseColor('#ffffff').components, [1, 1, 1]);
@@ -80,8 +86,9 @@ test('sRGB, HSL and OKLCH conversion preserves alpha and explicitly records gamu
   assert.ok(parseColor('oklch(0.55 0.4 27)').gamut_clipped);
   assert.ok(parseColor('oklch(1 0 0)').components.every(v => v > 0.999));
   assert.throws(() => parseColor('rgba(300,0,0,1)'), /range/);
-  assert.throws(() => parseColor('oklch(NaN 0 0)'), /range/);
+  assert.throws(() => parseColor('oklch(NaN 0 0)'), /Malformed/);
   for (const value of ['rgb(20,30,40X', 'hsl(120 50% 50%X', 'rgba(20X%,30%,40%,1)', 'oklch(0.5 0.1 27X']) assert.throws(() => parseColor(value));
+  for (const value of ['rgb(20,,30,40)', 'hsl(120,,50%,50%)', 'oklch(0.5 0.2 10//0.5)', 'rgb(1 2 3 /)', 'rgba(1,2,3,)']) assert.throws(() => parseColor(value));
 });
 test('native preflight fails without any mutation when the exact font is unavailable', async () => {
   const { projection } = fixture().compile(); let mutated = false;
