@@ -26,6 +26,11 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
 - Portfolio toolchain boundary: `starlight.design_toolchain.v1`, stored in
   `portfolio/design-toolchain.json`; it contains roles, readiness, and rules but
   no private tool identifiers, credentials, or asset binaries.
+- Screen impact planning: `starlight.screen_atlas.v1` inventories source-known
+  screen templates at an immutable product commit; `starlight.design_impact.v1`
+  records nominated captures and blockers, not execution or release approval.
+  Both are checked by `scripts/design-impact.mjs`; see
+  `playbooks/design-atlas-reconciliation.md` for incomplete-dependency boundaries.
 - Design research target: `starlight.design_research_target.v1`.
 - Design snapshot manifest: `starlight.design_snapshot_manifest.v1`.
 - Normalized extraction: `starlight.design_extraction.v1`.
