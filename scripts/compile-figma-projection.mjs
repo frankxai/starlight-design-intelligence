@@ -149,7 +149,7 @@ export function compileProjection({ manifestPath, sourcesRoot }) {
   for (const s of m.text_styles) {
     requireValue(typeof s.name === 'string' && s.name && !styleNames.has(s.name), 'Text style name invalid or duplicate.'); styleNames.add(s.name);
     requireValue(texts.has(s.source_path), 'Typography source not pinned.');
-    requireValue(typeof s.font?.family === 'string' && !/[,{;}]/.test(s.font.family) && s.font.family.length <= 80 && typeof s.font.style === 'string' && s.font.style.length <= 40, 'Exact font family/style required; no fallback stack.');
+    requireValue(typeof s.font?.family === 'string' && s.font.family.trim().length > 0 && !/[,{;}]/.test(s.font.family) && s.font.family.length <= 80 && typeof s.font.style === 'string' && s.font.style.trim().length > 0 && s.font.style.length <= 40, 'Exact font family/style required; no fallback stack.');
     requireValue(Number.isFinite(s.font_size) && s.font_size > 0 && Number.isFinite(s.line_height) && s.line_height > 0 && s.line_height <= 300, 'Text metrics invalid.');
   }
   const components = m.components || [];
