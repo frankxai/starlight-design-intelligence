@@ -37,6 +37,13 @@ Figma, Canva, Google Drive, a DAM, and Vercel are execution surfaces. None is al
 
 ## Figma boundary
 
+The executable [source-pinned projection workflow](../playbooks/figma-portfolio-setup.md)
+provides typed token compilation, additive native Figma construction, exact-font
+preflight, component/source mappings and a narrow Vercel preview identity check.
+Current native execution, publishing and product adoption require their own
+receipts; the historical foundation evidence below does not establish today’s
+account state or downstream enforcement.
+
 Use a separate Figma visual system per active brand. Do not rename or merge the FrankX and Arcanea spaces into a global file.
 
 The first Figma build is deliberately small. FrankX Phase 1 is complete: its foundations were created directly from the local source contract, semantic values alias primitives, scopes and WEB code syntax were validated, and styles match the documented core type/effect set.
