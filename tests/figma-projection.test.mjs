@@ -101,13 +101,95 @@ test('existing projection is preserved and never mistaken for verified native ou
   const figma = { root: { children: [{ id: 'existing', name: projection.name + ' / ' + projection.revision + ' / ' + projection.manifest_sha256.slice(0, 8) }] } };
   const receipt = await vm.runInNewContext('(async()=>{' + compileNativeScript(projection) + '})()', { figma });
   assert.equal(receipt.status, 'EXISTS_UNVERIFIED'); assert.equal(receipt.page_id, 'existing');
+  assert.equal(receipt.safeToRetryWithoutCanvasRead, false);
+  assert.equal(receipt.mutated_node_ids.length, 0);
 });
 test('partial style assignment failure retains the created style ID for scoped cleanup', async () => {
   const { projection } = fixture().compile();
-  const page = { id: 'page', setPluginData() {} };
+  const page = { id: 'page' };
   const figma = { root: { children: [] }, listAvailableFontsAsync: async () => [{ fontName: projection.text_styles[0].font }], loadFontAsync: async () => {}, createPage: () => page, setCurrentPageAsync: async () => {}, variables: { createVariableCollection: () => ({ id: 'collection', defaultModeId: 'mode' }), createVariable: () => ({ id: 'var', setValueForMode() {}, setVariableCodeSyntax() {} }) }, createTextStyle: () => new Proxy({ id: 'created-style' }, { set() { throw new Error('style assignment failure'); } }) };
   const receipt = await vm.runInNewContext('(async()=>{' + compileNativeScript(projection) + '})()', { figma });
   assert.equal(receipt.status, 'PARTIAL_FAILED'); assert.deepEqual(Array.from(receipt.style_ids), ['created-style']);
+  assert.equal(receipt.safeToRetryWithoutCanvasRead, false);
+});
+test('empty exact font family or style is rejected at compilation', () => {
+  for (const font of [{ family: '', style: 'Regular' }, { family: 'Fixture Sans', style: ' ' }]) {
+    const f = fixture(); f.m.text_styles[0].font = font; assert.throws(f.compile, /Exact font/);
+  }
+});
+// This contract double checks mutation ordering and implicit instance descendants;
+// it does not claim to establish native rendering parity.
+function nativeDouble(projection, { failViewport = false } = {}) {
+  let id = 0, switches = 0;
+  const loaded = new Set(), nodes = new Map();
+  const root = { children: [] };
+  function node(type, parent = figma.currentPage) {
+    const n = { id: 'node-' + ++id, type, name: '', children: [], width: 100, height: 20,
+      appendChild(child) {
+        if (child.parent) child.parent.children = child.parent.children.filter(c => c !== child);
+        child.parent = this; this.children.push(child);
+      },
+      resize(width, height) { this.width = width; this.height = height; this.primaryAxisSizingMode = this.counterAxisSizingMode = 'FIXED'; },
+      findAll(fn) { return this.children.flatMap(child => [child, ...child.findAll(fn)]).filter(fn); },
+      findOne(fn) { return this.findAll(fn)[0] || null; },
+      addComponentProperty() { return 'Label#1'; },
+      async setTextStyleIdAsync() {},
+      createInstance() {
+        const copy = (source, owner) => {
+          const result = node(source.type === 'COMPONENT' ? 'INSTANCE' : source.type, owner);
+          result.fontName = source.fontName;
+          for (const child of source.children) copy(child, result);
+          return result;
+        };
+        return copy(this, figma.currentPage);
+      }
+    };
+    Object.defineProperty(n, 'characters', { set(value) {
+      assert.equal(this.type, 'TEXT'); assert.ok(loaded.has(JSON.stringify(this.fontName)), 'Exact font must be loaded before text mutation'); this.textValue = value;
+    } });
+    Object.defineProperty(n, 'description', { set() { assert.ok(['COMPONENT', 'COMPONENT_SET'].includes(this.type)); } });
+    // The MCP contract forbids storing workflow state on canvas nodes.
+    n.setPluginData = () => { throw new Error('setPluginData is prohibited'); };
+    nodes.set(n.id, n); if (parent) parent.appendChild(n); return n;
+  }
+  const figma = {
+    root, currentPage: null,
+    listAvailableFontsAsync: async () => projection.text_styles.map(s => ({ fontName: s.font })),
+    loadFontAsync: async font => loaded.add(JSON.stringify(font)),
+    createPage() { const p = node('PAGE', null); root.children.push(p); return p; },
+    async setCurrentPageAsync(page) { switches++; assert.equal(switches, 1); this.currentPage = page; },
+    variables: {
+      createVariableCollection: () => ({ id: 'collection', defaultModeId: 'mode' }),
+      createVariable: () => ({ id: 'variable-' + ++id, setValueForMode() {}, setVariableCodeSyntax() {} }),
+      setBoundVariableForPaint: paint => paint
+    },
+    createTextStyle: () => ({ id: 'style-' + ++id }),
+    createFrame: () => node('FRAME'), createComponent: () => node('COMPONENT'),
+    createRectangle: () => node('RECTANGLE'), createText: () => node('TEXT'),
+    combineAsVariants(variants, page) { const set = node('COMPONENT_SET', page); variants.forEach(v => set.appendChild(v)); return set; },
+    viewport: { scrollAndZoomIntoView() { if (failViewport) throw new Error('viewport failure'); } }
+  };
+  return { figma, nodes, switches: () => switches };
+}
+test('native execution returns every created and mutated node without plugin data, uses one page switch and preserves auto sizing', async () => {
+  const { projection } = fixture().compile(), mock = nativeDouble(projection);
+  const receipt = await vm.runInNewContext('(async()=>{' + compileNativeScript(projection) + '})()', mock);
+  assert.equal(receipt.status, 'CREATED_UNREVIEWED'); assert.equal(mock.switches(), 1);
+  assert.deepEqual(new Set(receipt.created_node_ids), new Set(mock.nodes.keys()));
+  assert.deepEqual(Array.from(receipt.mutated_node_ids), Array.from(receipt.created_node_ids));
+  assert.equal([...mock.nodes.values()].find(n => n.name === 'REVIEW / 390').primaryAxisSizingMode, 'AUTO');
+  assert.equal([...mock.nodes.values()].find(n => n.name === 'State=Default').primaryAxisSizingMode, 'AUTO');
+});
+test('partial failure includes implicit instance descendants and a second execution preserves that page', async () => {
+  const { projection } = fixture().compile(), mock = nativeDouble(projection, { failViewport: true });
+  const script = '(async()=>{' + compileNativeScript(projection) + '})()';
+  const receipt = await vm.runInNewContext(script, mock);
+  assert.equal(receipt.status, 'PARTIAL_FAILED'); assert.match(receipt.error, /viewport failure/);
+  assert.deepEqual(new Set(receipt.created_node_ids), new Set(mock.nodes.keys()));
+  assert.equal(receipt.safeToRetryWithoutCanvasRead, false);
+  const count = mock.nodes.size;
+  const retry = await vm.runInNewContext(script, mock);
+  assert.equal(retry.status, 'EXISTS_UNVERIFIED'); assert.equal(mock.nodes.size, count);
 });
 const expected = { repository: 'example/product', commit: 'c'.repeat(40), project: 'product' };
 function preview() { return { source: 'vercel-connector', observed_at: '2025-10-06T14:00:00Z', deployment: { id: 'dpl_123abc', state: 'READY', target: null, repository: expected.repository, commit: expected.commit, project: expected.project, url: 'https://product-abcdef-example.vercel.app' } }; }
