@@ -10,6 +10,7 @@
     "check:observatory-index": "node scripts/build-observatory-index.mjs --check",
     "check:freshness": "node scripts/check-observatory-freshness.mjs",
     "capture:reference": "node scripts/capture-reference.mjs",
+    "design:impact": "node scripts/design-impact.mjs",
     "validate:adoption": "node scripts/validate-adoption.mjs",
     "validate:portfolio": "node scripts/validate-adoption.mjs --registry-only",
     "validate:release": "node scripts/validate-release-evidence.mjs",
