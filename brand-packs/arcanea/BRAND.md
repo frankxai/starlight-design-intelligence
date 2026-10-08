@@ -24,3 +24,7 @@ The first product promise should be concrete: name the call, issue a Gift, set t
 ## Visual Memory
 
 Arcanea should feel luminous, crafted, layered, and enchanted. It should not collapse into generic purple fantasy UI.
+
+## Honor and responsibility
+
+Apply the shared principle through the brand-specific [narrative and behavior contract](NARRATIVE.md). Read it alongside this constitution; existing identity and source authority remain in force.

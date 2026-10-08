@@ -25,3 +25,7 @@ ladder does not define the brand.
   labelled. An edition metaphor does not prove a publishing capability.
 - Territory approval covers the visual direction. Wordmark selection, legal
   screening, application proofs and production rollout remain pending.
+
+## Honor and responsibility
+
+Apply the shared principle through the brand-specific [narrative and behavior contract](NARRATIVE.md). Read it alongside this constitution; existing identity and source authority remain in force.
