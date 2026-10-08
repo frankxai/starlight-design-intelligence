@@ -1,6 +1,6 @@
 # Intelligence people can direct
 
-Apply [honor and responsibility](../../playbooks/honor-and-responsibility.md) within the existing Starlight [brand modes](BRAND.md), [product behavior](PRODUCT.md) and [content system](CONTENT.md). Warmth, curiosity and possibility remain part of the brand. The operational specimen below belongs to Operator mode.
+Apply [honor and responsibility](../../playbooks/honor-and-responsibility.md) within the existing Starlight [brand modes](BRAND.md), [product behavior](PRODUCT.md) and [content system](CONTENT.md). Warmth, curiosity and possibility remain part of the brand. The operational specimen below applies to the runtime pack's `operations` mode, expressed in the constitution's Operator voice.
 
 **Reader and job:** A person coordinating consequential work needs to direct capable intelligence and understand what remains their decision.
 
@@ -20,7 +20,17 @@ Apply [honor and responsibility](../../playbooks/honor-and-responsibility.md) wi
 
 Use this only beside an actual result and review controls. If the application lacks a control, record the dependency rather than rendering a simulated success state.
 
-## Expression by mode
+## Runtime surface contracts
+
+Select the contract by the runtime pack's existing mode ID. These IDs describe operational surfaces; the constitution's Horizon, Operator, Academy and Cultural modes describe editorial intent. Follow the explicit intent below: `operations` and `evidence` use Operator, while `editorial` requires the owner's selection.
+
+| Runtime mode ID | Applicable narrative contract | Editorial intent |
+| --- | --- | --- |
+| `operations` | Put the mission, authority, intervention and recovery at the point of decision. Stop scheduling new actions when a stop request is recorded; show stopped only after acknowledgement. | Operator |
+| `evidence` | Show the inspected artifact, source revision, checks, uncertainty and reviewer decision. Acceptance does not establish deployment or customer value. | Operator |
+| `editorial` | Credit sources, distinguish vision from observation, preserve consent and give the reader a useful next contribution. | The owner explicitly selects Horizon, Academy or Cultural for the content's purpose; do not infer that selection from `editorial`. |
+
+## Constitution expression
 
 - **Horizon:** Connect inherited knowledge and long ambition to a frontier people can enter. Show a real contribution opportunity; label vision as vision.
 - **Operator:** Put authority, evidence, intervention and recovery at the point of decision. A requested stop is not a completed stop; an accepted result is not necessarily deployed.

@@ -3,7 +3,7 @@
   "brandId": "sis",
   "displayName": "Starlight Intelligence Systems",
   "operatingUnit": "starlight-substrate",
-  "sourceDocs": ["brand-packs/sis/NARRATIVE.md", "brand-packs/sis/DESIGN.md"],
+  "sourceDocs": ["brand-packs/sis/NARRATIVE.md", "brand-packs/sis/BRAND.md", "brand-packs/sis/PRODUCT.md", "brand-packs/sis/CONTENT.md", "brand-packs/sis/DESIGN.md"],
   "canonicalRepos": ["frankxai/starlight-intelligence-system"],
   "surfaceModes": ["operations", "evidence", "editorial"],
   "audiences": ["AI platform leaders", "operators", "evaluation and governance teams"],
