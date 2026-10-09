@@ -22,7 +22,7 @@ Before generation, record:
 
 ```json
 {
-  "reference_revision": "2026-10-09.3",
+  "reference_revision": "2026-10-09.4",
   "character_ids": ["host.frank", "custom.nilo"],
   "assets_loaded": ["mini-frank-model", "mini-cast-model"],
   "asset_hashes_verified": true,
@@ -44,6 +44,12 @@ For turnarounds, acting, brand-angle or motion development, also load the instal
 For replacement candidates or community-fit comparisons, read the installed skill's separate brand-character-directions registry and use `--directions --verify` when supported. Design recommendations, owner selections, visual editions, implementation and publication are separate states. A shortlisted direction is not a newly approved identity.
 
 Recover existing owned canon before inventing a brand pet. Anime Legends already has Akashi, Kage and Mira: inspect their owner source character sheets and native art. The new miniature interpretations remain development studies, and the ink marten remains an optional noncanonical Forge candidate. Load current owning repository contracts before applying any direction to a product or logo.
+
+## Identity quality
+
+Before brand-character or logo selection, load the installed identity quality policy and use `--identity-review --directions --verify` when supported. Revision 2026-10-09.4 reopens new mascot form recommendations; earlier attractive comparisons remain research references. Preserve current operating identities and recovered canon.
+
+Retrieve existing editable vectors and source applications before drawing again. Keep native source, runtime application, exploration, export, owner selection and approved master as separate states. Rasterization and verified hashes establish reproducibility, not recognition, preference or optical quality. Apply every relevant required gate; a failed or pending gate cannot be offset by a high beauty score. Record independent verifier evidence and named owner selection before promotion.
 
 ## Cross-runtime adoption
 
