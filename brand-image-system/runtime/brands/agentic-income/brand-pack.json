@@ -3,7 +3,7 @@
   "brandId": "agentic-income",
   "displayName": "Agentic Income",
   "operatingUnit": "agentic-income",
-  "sourceDocs": ["brand-packs/agentic-income/BRAND.md", "brand-packs/agentic-income/DESIGN.md"],
+  "sourceDocs": ["brand-packs/agentic-income/NARRATIVE.md", "brand-packs/agentic-income/BRAND.md", "brand-packs/agentic-income/DESIGN.md"],
   "canonicalRepos": ["frankxai/agenticincome"],
   "surfaceModes": ["machinery-editorial", "evidence-library", "offer"],
   "audiences": ["independent operators", "service builders", "agent-system owners"],
@@ -25,5 +25,5 @@
   "channels": { "primary": ["website", "knowledge base", "public repository"] },
   "approvals": { "requiredBeforePublicAction": true, "route": "independent-verifier-and-named-human" },
   "doNotUse": ["cash imagery", "luxury lifestyle proof", "invented revenue dashboards", "hidden affiliate routes"],
-  "updatedAt": "2026-09-02"
+  "updatedAt": "2026-10-08"
 }

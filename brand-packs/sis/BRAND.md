@@ -64,3 +64,7 @@ Starlight loses its identity when it becomes cold compliance language, generic c
 
 The desired feeling is rare: a trusted intelligence laboratory, a beautiful future institution, and a living invitation to help humanity go further.
 
+
+## Honor and responsibility
+
+Apply the shared principle through the brand-specific [narrative and behavior contract](NARRATIVE.md). Read it alongside this constitution; existing identity and source authority remain in force.

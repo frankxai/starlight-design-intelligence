@@ -4,6 +4,7 @@
   "displayName": "FrankX",
   "operatingUnit": "frankx-demand",
   "sourceDocs": [
+    "brand-packs/frankx/NARRATIVE.md",
     "brand-packs/frankx/BRAND.md",
     "brand-packs/frankx/COPY.md",
     "brand-packs/frankx/DESIGN.md",
@@ -39,5 +40,5 @@
   "channels": { "primary": ["website", "product", "editorial", "social proof"] },
   "approvals": { "requiredBeforePublicAction": true, "route": "independent-verifier-and-named-human" },
   "doNotUse": ["universal obsidian command center", "liquid-glass card walls", "fake UI", "invented intimacy"],
-  "updatedAt": "2026-07-24"
+  "updatedAt": "2026-10-08"
 }

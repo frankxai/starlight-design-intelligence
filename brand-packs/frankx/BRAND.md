@@ -19,3 +19,7 @@ Help builders turn AI capability into owned systems, products, revenue loops, an
 - Enterprise fog.
 - Empty hustle copy.
 - Generic "unlock your potential" phrasing.
+
+## Honor and responsibility
+
+Apply the shared principle through the brand-specific [narrative and behavior contract](NARRATIVE.md). Read it alongside this constitution; existing identity and source authority remain in force.
