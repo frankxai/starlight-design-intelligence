@@ -26,6 +26,7 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm audit --audit-level=moderate
       - run: npm run validate
+      - run: npm run validate:experience
       - run: npm run validate:observatory
       - run: npm run check:observatory-index
       - run: npm test

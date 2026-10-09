@@ -89,3 +89,24 @@ flag.
 ## Product outcome evaluation
 
 [Product outcome release standard](evals/product-outcome-release-standard.md) connects the existing design contract to complete customer journeys, deployment-bound verification, portable agent instructions, and accepted-output economics. It is a proposed operational standard; product repositories retain their decisions and require their own verified adoption.
+## Experience coherence
+
+Use [the portfolio experience standard](portfolio/experience-standard.md) to turn
+reference mechanisms into original brand-specific user journeys. The dated
+[contract and upgrade queue](portfolio/experience-standard.json) covers all
+registered surfaces without claiming identity approval or production adoption.
+Run `npm run validate:experience`; export an exact source bundle with
+`npm run export:brand -- --brand frankx --out /tmp/frankx-handoff`. Existing
+release and adoption validators remain authoritative.
+
+Use [the Figma template pipeline](playbooks/figma-template-pipeline.md) to pair
+editable collections with native implementations, explicit component/state maps
+and rights-cleared asset subsets. It extends the existing App Factory contract
+and the current Template Studio pilot rather than creating another catalogue.
+
+## Integrated design workflow
+
+[Portfolio design integration](playbooks/portfolio-design-integration.md) connects
+journey contracts, committed brand exports, source-pinned Figma imports, change
+impact planning and private content/asset evidence. These are accepted substrate
+capabilities; native execution and product adoption require separate proof.

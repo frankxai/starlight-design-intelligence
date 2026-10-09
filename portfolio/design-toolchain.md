@@ -1,7 +1,10 @@
 # Portfolio Design Toolchain Boundary
 
 Status: canonical policy  
-Last verified: 2026-08-10  
+Original policy verification: 2026-08-10
+
+Scoped Figma/Canva audit: 2026-09-30; other systems were not reverified
+
 Machine-readable companion: portfolio/design-toolchain.json
 
 ## Executive decision
@@ -37,9 +40,16 @@ Figma, Canva, Google Drive, a DAM, and Vercel are execution surfaces. None is al
 
 ## Figma boundary
 
+The executable [source-pinned projection workflow](../playbooks/figma-portfolio-setup.md)
+provides typed token compilation, additive native Figma construction, exact-font
+preflight, component/source mappings and a narrow Vercel preview identity check.
+Current native execution, publishing and product adoption require their own
+receipts; the historical foundation evidence below does not establish today’s
+account state or downstream enforcement.
+
 Use a separate Figma visual system per active brand. Do not rename or merge the FrankX and Arcanea spaces into a global file.
 
-The first Figma build is deliberately small. FrankX Phase 1 is complete: its foundations were created directly from the local source contract, semantic values alias primitives, scopes and WEB code syntax were validated, and styles match the documented core type/effect set.
+The first Figma build is deliberately small. The historical FrankX bootstrap established foundations. The September 30 scoped audit found no local components on inspected pages and no usable overview specimen. It did not reverify source parity, font bytes, flow quality or library publication.
 
 1. Commit a generated Figma projection and provenance record that can replace the one-time bootstrap.
 2. Validate one actual desktop and one mobile flow.
@@ -87,3 +97,16 @@ Lucide is the default product UI icon set. Phosphor is optional for editorial us
 - No component matrix is built before a real product flow proves its need.
 - No generic reference kit becomes an owned brand library.
 - No new brand receives a full design system before its registry record and central brand pack are established.
+
+## Experience and import companion
+
+Use [the experience standard](experience-standard.md) and its
+[machine-readable queue](experience-standard.json) for current scoped findings,
+brand-specific jobs, reference mechanisms and acceptance evidence. Figma inspection
+is quota-blocked; Code Connect needs a separate eligibility decision. Canva kit
+contents, rights, fillable automation and export quality remain unverified.
+Private kit relationships and tool identifiers must not enter public Git.
+
+The read-only `export:brand` command packages committed sources and their hashes
+for one brand. It does not publish libraries, rename kits, approve identity or
+replace the product-owned semantic token projection.

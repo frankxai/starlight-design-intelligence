@@ -1,0 +1,1328 @@
+{
+  "schema_version": "starlight.screen_atlas.v1",
+  "repository": "frankxai/gencreator.ai",
+  "brand_id": "gencreator",
+  "source_commit": "8d2dc80834e097c51dfdf99f5248bdb3e7657430",
+  "source_evidence": "Authenticated GitHub recursive tree; route templates only. URL availability, auth states, journeys and native Figma mappings remain unverified.",
+  "source_tree_complete": true,
+  "shared_sources": [
+    "app/layout.tsx",
+    "app/globals.css",
+    "package.json",
+    "next.config.ts"
+  ],
+  "shared_prefixes": [
+    "app/components/",
+    "components/",
+    "lib/"
+  ],
+  "screens": [
+    {
+      "id": "screen-about",
+      "route": "/about",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/about/page.tsx"
+      ],
+      "prefixes": [
+        "app/about/"
+      ],
+      "source_blob": "6340ec68f4bef8f94a8dc47780e651e3aba2dcf6",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-activate",
+      "route": "/activate",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/activate/page.tsx"
+      ],
+      "prefixes": [
+        "app/activate/"
+      ],
+      "source_blob": "feef406a747fad15cfd1398c8cc7f8f56e6eb3b5",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-approvals",
+      "route": "/approvals",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/approvals/page.tsx"
+      ],
+      "prefixes": [
+        "app/approvals/"
+      ],
+      "source_blob": "d8e0d9a475b4ac0d0fb331c17dabc0004b56eb8a",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-ask",
+      "route": "/ask",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/ask/page.tsx"
+      ],
+      "prefixes": [
+        "app/ask/"
+      ],
+      "source_blob": "93b5e56391afcb59cd2c373fe6e6b80a13896533",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-blueprint",
+      "route": "/blueprint",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/blueprint/page.tsx"
+      ],
+      "prefixes": [
+        "app/blueprint/"
+      ],
+      "source_blob": "930012330ea669468c80ebd5a75804b2127d74ae",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-book",
+      "route": "/book",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/book/page.tsx"
+      ],
+      "prefixes": [
+        "app/book/"
+      ],
+      "source_blob": "66245cf7e4cc4d58f065dc3fc6928a15657963e1",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-brand",
+      "route": "/brand",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/brand/page.tsx"
+      ],
+      "prefixes": [
+        "app/brand/"
+      ],
+      "source_blob": "0965663e9681506a67322ba07ccbf10e18114388",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-brand-social",
+      "route": "/brand/social",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/brand/social/page.tsx"
+      ],
+      "prefixes": [
+        "app/brand/social/"
+      ],
+      "source_blob": "03999936c69e99da3ba462178e4c2c9e79134e34",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-campaigns",
+      "route": "/campaigns",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/campaigns/page.tsx"
+      ],
+      "prefixes": [
+        "app/campaigns/"
+      ],
+      "source_blob": "828c28ac72303e705e77f3841ea0ec60f1982b4f",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-community-cohorts-slug",
+      "route": "/community/cohorts/[slug]",
+      "route_kind": "dynamic-template",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/community/cohorts/[slug]/page.tsx"
+      ],
+      "prefixes": [
+        "app/community/cohorts/[slug]/"
+      ],
+      "source_blob": "fefc0183a7bc8423d3b0a30ed43cf0da0640a6bb",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-community-onboarding",
+      "route": "/community/onboarding",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/community/onboarding/page.tsx"
+      ],
+      "prefixes": [
+        "app/community/onboarding/"
+      ],
+      "source_blob": "7641ce889bf42be4ffbd95a08519f911dd00b09b",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-community-os",
+      "route": "/community/os",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/community/os/page.tsx"
+      ],
+      "prefixes": [
+        "app/community/os/"
+      ],
+      "source_blob": "53e1574da8302a16ccac500cfc28a4f5d7c18943",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-community",
+      "route": "/community",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/community/page.tsx"
+      ],
+      "prefixes": [
+        "app/community/"
+      ],
+      "source_blob": "d48509c4aa0778b70f759c4ad9e060bf3a394d9f",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-community-proof-loop",
+      "route": "/community/proof-loop",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/community/proof-loop/page.tsx"
+      ],
+      "prefixes": [
+        "app/community/proof-loop/"
+      ],
+      "source_blob": "000baf8e85a828850738b8ca3982ecb1e560ba04",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-create",
+      "route": "/create",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/create/page.tsx"
+      ],
+      "prefixes": [
+        "app/create/"
+      ],
+      "source_blob": "ce43186868c5274744adb80748d47ea9fa68671a",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-creator-sovereignty",
+      "route": "/creator-sovereignty",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/creator-sovereignty/page.tsx"
+      ],
+      "prefixes": [
+        "app/creator-sovereignty/"
+      ],
+      "source_blob": "b0714ebcb117380e5d36f1def052ae89a43571dd",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-creator-studio",
+      "route": "/creator-studio",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/creator-studio/page.tsx"
+      ],
+      "prefixes": [
+        "app/creator-studio/"
+      ],
+      "source_blob": "1ed5569a6ffc9490f098c87c53babdd4a2d88319",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-creator-studio-production",
+      "route": "/creator-studio/production",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/creator-studio/production/page.tsx"
+      ],
+      "prefixes": [
+        "app/creator-studio/production/"
+      ],
+      "source_blob": "57d6e5b4da11f196630dfb76e9c53a465e7fbf50",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-dashboard",
+      "route": "/dashboard",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/dashboard/page.tsx"
+      ],
+      "prefixes": [
+        "app/dashboard/"
+      ],
+      "source_blob": "a40802356e10cae348da594820c867323545f986",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-eve",
+      "route": "/eve",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/eve/page.tsx"
+      ],
+      "prefixes": [
+        "app/eve/"
+      ],
+      "source_blob": "eaef62a21fd66965f48fd636e7ed9888ca5cad2c",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-factory",
+      "route": "/factory",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/factory/page.tsx"
+      ],
+      "prefixes": [
+        "app/factory/"
+      ],
+      "source_blob": "5aa1376914acf582c6c2929dfe07d7da1e48e450",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-factory-run",
+      "route": "/factory/run",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/factory/run/page.tsx"
+      ],
+      "prefixes": [
+        "app/factory/run/"
+      ],
+      "source_blob": "22b378d646542542c74bedbc8288ade14e0dd966",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-founding-serial",
+      "route": "/founding/[serial]",
+      "route_kind": "dynamic-template",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/founding/[serial]/page.tsx"
+      ],
+      "prefixes": [
+        "app/founding/[serial]/"
+      ],
+      "source_blob": "47e5568861a80b3d4f8eedaeda2a8e3bc91a06a4",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-founding-confirm",
+      "route": "/founding/confirm",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/founding/confirm/page.tsx"
+      ],
+      "prefixes": [
+        "app/founding/confirm/"
+      ],
+      "source_blob": "41384bb71f0c5fef6c3d6c84edd365ccb3cfc17f",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-founding",
+      "route": "/founding",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/founding/page.tsx"
+      ],
+      "prefixes": [
+        "app/founding/"
+      ],
+      "source_blob": "47387fca3c12ddb035648ebbf6fd00e51ec7d0d2",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-founding-unsubscribe",
+      "route": "/founding/unsubscribe",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/founding/unsubscribe/page.tsx"
+      ],
+      "prefixes": [
+        "app/founding/unsubscribe/"
+      ],
+      "source_blob": "1eba4982effcb1a891ac520c92f474a6f8ad675a",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-integrations",
+      "route": "/integrations",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/integrations/page.tsx"
+      ],
+      "prefixes": [
+        "app/integrations/"
+      ],
+      "source_blob": "775b50a723cfd50c378eb6169f1e97e8b155ebe0",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-intelligence",
+      "route": "/intelligence",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/intelligence/page.tsx"
+      ],
+      "prefixes": [
+        "app/intelligence/"
+      ],
+      "source_blob": "54b869a9ee76598a294e891ad48f363a37a6d565",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-ladder",
+      "route": "/ladder",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/ladder/page.tsx"
+      ],
+      "prefixes": [
+        "app/ladder/"
+      ],
+      "source_blob": "912d93882c42f156e7f5c6784eeb3375bc2ab40c",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-learn",
+      "route": "/learn",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/learn/page.tsx"
+      ],
+      "prefixes": [
+        "app/learn/"
+      ],
+      "source_blob": "7e23b9b369086a2d76ae90c4ade526127f10c0ab",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-licenses",
+      "route": "/licenses",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/licenses/page.tsx"
+      ],
+      "prefixes": [
+        "app/licenses/"
+      ],
+      "source_blob": "fb76c39d866c965493c2e438a054114a916db53e",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-loop",
+      "route": "/loop",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/loop/page.tsx"
+      ],
+      "prefixes": [
+        "app/loop/"
+      ],
+      "source_blob": "a17c851fac847dd99434bc1899db57afde71e0a0",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-mcp",
+      "route": "/mcp",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/mcp/page.tsx"
+      ],
+      "prefixes": [
+        "app/mcp/"
+      ],
+      "source_blob": "102ef382e20f92941e585868bfd1c48244cb34bd",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-offers",
+      "route": "/offers",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/offers/page.tsx"
+      ],
+      "prefixes": [
+        "app/offers/"
+      ],
+      "source_blob": "57b8c4281385cc448a2a594170827b555c7baee7",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-os",
+      "route": "/os",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/os/page.tsx"
+      ],
+      "prefixes": [
+        "app/os/"
+      ],
+      "source_blob": "5bea65a116267546a5f34a85be974144ac2eeaab",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-pack",
+      "route": "/pack",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/pack/page.tsx"
+      ],
+      "prefixes": [
+        "app/pack/"
+      ],
+      "source_blob": "5af7cf437e1a3d9447dea6ba3c91ad642b2d33b0",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-home",
+      "route": "/",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/page.tsx"
+      ],
+      "prefixes": [],
+      "source_blob": "bb24875e72a1d0e7cc09860a9f988f464b242478",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-personas",
+      "route": "/personas",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/personas/page.tsx"
+      ],
+      "prefixes": [
+        "app/personas/"
+      ],
+      "source_blob": "b003853684e2a64526c60a47d8f4bfe995aa449b",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-pricing",
+      "route": "/pricing",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/pricing/page.tsx"
+      ],
+      "prefixes": [
+        "app/pricing/"
+      ],
+      "source_blob": "d1425f78cee77d577df8b8777cc2cfebc1765162",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-principles",
+      "route": "/principles",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/principles/page.tsx"
+      ],
+      "prefixes": [
+        "app/principles/"
+      ],
+      "source_blob": "f61bf4ddc78a82410b9019bec49375797ae5ae9e",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-privacy",
+      "route": "/privacy",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/privacy/page.tsx"
+      ],
+      "prefixes": [
+        "app/privacy/"
+      ],
+      "source_blob": "9aa43883d3ff4b30bf569f536889ca3368b998be",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products-agent-pack",
+      "route": "/products/agent-pack",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/agent-pack/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/agent-pack/"
+      ],
+      "source_blob": "b293d13fa10b7d6a8bd59678c8632e5dca93d88d",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products-checkout",
+      "route": "/products/checkout",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/checkout/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/checkout/"
+      ],
+      "source_blob": "8b5238f4e116ee51678b06991e486dafea299809",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products-checkout-success",
+      "route": "/products/checkout/success",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/checkout/success/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/checkout/success/"
+      ],
+      "source_blob": "3f6d90cb8563a32cf738dcf6fcbafb4e2bb8bff6",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products-creator-os",
+      "route": "/products/creator-os",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/creator-os/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/creator-os/"
+      ],
+      "source_blob": "cd37df8b20236f8d01d7bd5e0b48788078c2c85c",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products-delivery",
+      "route": "/products/delivery",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/delivery/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/delivery/"
+      ],
+      "source_blob": "bfd1e51f7102a608cb7ac506cc7da7fe303aa05b",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products-diagnostic",
+      "route": "/products/diagnostic",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/diagnostic/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/diagnostic/"
+      ],
+      "source_blob": "baef5e06599887d762e517eb31d9f4b05d9e28d1",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products-kit",
+      "route": "/products/kit",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/kit/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/kit/"
+      ],
+      "source_blob": "1918caa326f77e287364fdfd45fce7cb27f95fe5",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products-offers",
+      "route": "/products/offers",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/offers/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/offers/"
+      ],
+      "source_blob": "3fd22e3249316714e8e9e5a8b2eadfa4ca431093",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products",
+      "route": "/products",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/"
+      ],
+      "source_blob": "9ad53c5823d041d79cc7b2f496360a7e4c42c006",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products-skill-packs",
+      "route": "/products/skill-packs",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/skill-packs/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/skill-packs/"
+      ],
+      "source_blob": "46112cf91875932de85ceed549225997f18322d4",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-products-waitlist",
+      "route": "/products/waitlist",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/products/waitlist/page.tsx"
+      ],
+      "prefixes": [
+        "app/products/waitlist/"
+      ],
+      "source_blob": "987666763bf4a160ff8645a8b13dc7c3e5ba455e",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-quiz",
+      "route": "/quiz",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/quiz/page.tsx"
+      ],
+      "prefixes": [
+        "app/quiz/"
+      ],
+      "source_blob": "16f461a091baf9723668b408e90ed60e88796857",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-radar",
+      "route": "/radar",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/radar/page.tsx"
+      ],
+      "prefixes": [
+        "app/radar/"
+      ],
+      "source_blob": "096bc3475ec0fc102942ca5fe3b3c7467cdfc6b4",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-research-slug-contribute",
+      "route": "/research/[slug]/contribute",
+      "route_kind": "dynamic-template",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/research/[slug]/contribute/page.tsx"
+      ],
+      "prefixes": [
+        "app/research/[slug]/contribute/"
+      ],
+      "source_blob": "70ef48afc465d7f9b489f25ec6ba97ac595c5fdc",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-research-slug",
+      "route": "/research/[slug]",
+      "route_kind": "dynamic-template",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/research/[slug]/page.tsx"
+      ],
+      "prefixes": [
+        "app/research/[slug]/"
+      ],
+      "source_blob": "cd87d56d43b3a6cb89213137db393c8fea34edc7",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-research",
+      "route": "/research",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/research/page.tsx"
+      ],
+      "prefixes": [
+        "app/research/"
+      ],
+      "source_blob": "93473c15dee9edd4cc70baa697a48b14e96c2107",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-showcase-slug",
+      "route": "/showcase/[slug]",
+      "route_kind": "dynamic-template",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/showcase/[slug]/page.tsx"
+      ],
+      "prefixes": [
+        "app/showcase/[slug]/"
+      ],
+      "source_blob": "47d5fc241f0be8b02a297d8a6fe376b2ed751a33",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-showcase",
+      "route": "/showcase",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/showcase/page.tsx"
+      ],
+      "prefixes": [
+        "app/showcase/"
+      ],
+      "source_blob": "ad288971f5556a85a3cd106f65550e62ba879995",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-sign-in",
+      "route": "/sign-in",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/sign-in/page.tsx"
+      ],
+      "prefixes": [
+        "app/sign-in/"
+      ],
+      "source_blob": "67ab9cd2177a7f8544bff0d7994539d649e1a59a",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-sprint",
+      "route": "/sprint",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/sprint/page.tsx"
+      ],
+      "prefixes": [
+        "app/sprint/"
+      ],
+      "source_blob": "d8bfce9149cb6c43d242cb093fd64eef604adf45",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-stacks-slug",
+      "route": "/stacks/[slug]",
+      "route_kind": "dynamic-template",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/stacks/[slug]/page.tsx"
+      ],
+      "prefixes": [
+        "app/stacks/[slug]/"
+      ],
+      "source_blob": "7e5096fa0267bd93a7db3db43b78dedd902896c1",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-stacks",
+      "route": "/stacks",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/stacks/page.tsx"
+      ],
+      "prefixes": [
+        "app/stacks/"
+      ],
+      "source_blob": "585940ce411dc7b4029245ab2e9c0c8260e8e983",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-start",
+      "route": "/start",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/start/page.tsx"
+      ],
+      "prefixes": [
+        "app/start/"
+      ],
+      "source_blob": "4a24ec6752e44a2712948d026a461bf7ffd7aea3",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-studio-agent",
+      "route": "/studio/agent",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/studio/agent/page.tsx"
+      ],
+      "prefixes": [
+        "app/studio/agent/"
+      ],
+      "source_blob": "92c03d8b9fce14b0cec6fed365df4abcfa53625c",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-studio-apply",
+      "route": "/studio/apply",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/studio/apply/page.tsx"
+      ],
+      "prefixes": [
+        "app/studio/apply/"
+      ],
+      "source_blob": "51e96a862380c7f9d6542a4e57fcfc76590f207d",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-studio",
+      "route": "/studio",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/studio/page.tsx"
+      ],
+      "prefixes": [
+        "app/studio/"
+      ],
+      "source_blob": "24d8225efb78ae7c9fa081cccedf86b4ab893af6",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-terms",
+      "route": "/terms",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/terms/page.tsx"
+      ],
+      "prefixes": [
+        "app/terms/"
+      ],
+      "source_blob": "c75f92b877cb46634a6a2126e385477ca9a5450d",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-thefutureisforeveryone",
+      "route": "/thefutureisforeveryone",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/thefutureisforeveryone/page.tsx"
+      ],
+      "prefixes": [
+        "app/thefutureisforeveryone/"
+      ],
+      "source_blob": "05e0e3310f001e8ec8a5204ba684ba9fc43b8b58",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-tools-slug",
+      "route": "/tools/[slug]",
+      "route_kind": "dynamic-template",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/tools/[slug]/page.tsx"
+      ],
+      "prefixes": [
+        "app/tools/[slug]/"
+      ],
+      "source_blob": "0c6c9e89592a80c8e5be122c05093b330c313426",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-tools-compare-hyperagent-vs-adk-vercel-eve",
+      "route": "/tools/compare/hyperagent-vs-adk-vercel-eve",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/tools/compare/hyperagent-vs-adk-vercel-eve/page.tsx"
+      ],
+      "prefixes": [
+        "app/tools/compare/hyperagent-vs-adk-vercel-eve/"
+      ],
+      "source_blob": "e36161c1a2fd7fe700d3850d6360ecf2db9b8798",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-tools",
+      "route": "/tools",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/tools/page.tsx"
+      ],
+      "prefixes": [
+        "app/tools/"
+      ],
+      "source_blob": "549fa385f4b197c02fd30c4eddf7f2c6a1743466",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-vault",
+      "route": "/vault",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/vault/page.tsx"
+      ],
+      "prefixes": [
+        "app/vault/"
+      ],
+      "source_blob": "53bd667f270526f965801093a601b44a07481c04",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-vibeos-app",
+      "route": "/vibeos/app",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/vibeos/app/page.tsx"
+      ],
+      "prefixes": [
+        "app/vibeos/app/"
+      ],
+      "source_blob": "6960877f2ef4eaed453bdd106d957df13f8e0ac1",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-vibeos",
+      "route": "/vibeos",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/vibeos/page.tsx"
+      ],
+      "prefixes": [
+        "app/vibeos/"
+      ],
+      "source_blob": "424467e0b6b62d779380a56aabe07380799e85d0",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-waitlist",
+      "route": "/waitlist",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/waitlist/page.tsx"
+      ],
+      "prefixes": [
+        "app/waitlist/"
+      ],
+      "source_blob": "7189ae36c2f976038e1812d7e7249cd0498c25c3",
+      "figma_status": "unmapped"
+    },
+    {
+      "id": "screen-workspace",
+      "route": "/workspace",
+      "route_kind": "static",
+      "status": "source-known",
+      "states": [
+        "default"
+      ],
+      "sources": [
+        "app/workspace/page.tsx"
+      ],
+      "prefixes": [
+        "app/workspace/"
+      ],
+      "source_blob": "f13dd87f1692d397e3556891983dfd1c155597c6",
+      "figma_status": "unmapped"
+    }
+  ]
+}

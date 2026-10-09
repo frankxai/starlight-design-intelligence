@@ -1,0 +1,898 @@
+{
+  "schema_version": "starlight.experience_standard.v1",
+  "reviewed_at": "2026-09-30",
+  "scope": "Design requirements and a bounded upgrade queue for the 14 registered portfolio surfaces. These proposed jobs and dated observations do not establish adoption, brand approval or production quality.",
+  "policy": {
+    "identity_authority": "existing-brand-packs-and-recorded-owner-decisions",
+    "reference_rights": "third-party-reference-only",
+    "production_claim": "none",
+    "typography_dependency": "https://github.com/frankxai/starlight-design-intelligence/pull/22"
+  },
+  "checks": [
+    {
+      "id": "task",
+      "requirement": "One recipient, one user job and one bounded next action.",
+      "acceptance": [
+        "A first-time user can identify the job, actual availability and consequence before committing.",
+        "The primary journey reaches a saved, inspectable or usable outcome with actual content."
+      ],
+      "evidence": [
+        "Record task completion, elapsed time, error count and a qualitative user observation; set a baseline before claiming improvement."
+      ],
+      "gate_paths": [
+        "evals/ui-quality-scorecard.md",
+        "evals/editorial-articulation-gate.md"
+      ]
+    },
+    {
+      "id": "proof",
+      "requirement": "Important claims resolve to inspectable, dated evidence.",
+      "acceptance": [
+        "Place the source or owned artifact beside each consequential claim.",
+        "Distinguish live, prototype, sample, customer-reported and proposed evidence; remove unsupported claims."
+      ],
+      "evidence": [
+        "A route-by-route claim ledger with source date, rights, consent and limitations."
+      ],
+      "gate_paths": [
+        "evals/editorial-articulation-gate.md",
+        "evals/web-release-gate.md"
+      ]
+    },
+    {
+      "id": "states",
+      "requirement": "Every consequential action has complete, recoverable states.",
+      "acceptance": [
+        "Exercise loading, empty, error, success, disabled and unavailable states where applicable.",
+        "A failed request preserves input and offers a specific recovery; retries do not duplicate a purchase or submission.",
+        "Explain credit use, data destination, consent and irreversible consequences before action."
+      ],
+      "evidence": [
+        "A journey recording and state matrix covering normal, slow-network, denied-permission and failed-request paths."
+      ],
+      "gate_paths": [
+        "evals/ui-quality-scorecard.md",
+        "evals/web-release-gate.md"
+      ]
+    },
+    {
+      "id": "accessibility",
+      "requirement": "The full task remains usable on a phone and without a pointer.",
+      "acceptance": [
+        "Complete the primary task by keyboard with visible focus, logical order and understandable labels.",
+        "Verify 1440px desktop, 390px phone, 320px reflow and 200% zoom with long real content.",
+        "Verify contrast, text alternatives and semantic errors; record manual checks as well as automated findings."
+      ],
+      "evidence": [
+        "Scoped accessibility report, manual keyboard result and screenshots of each required viewport."
+      ],
+      "gate_paths": [
+        "evals/web-release-gate.md",
+        "evals/ui-quality-scorecard.md"
+      ]
+    },
+    {
+      "id": "typography",
+      "requirement": "Use the chosen brand roles with real loaded fonts and readable copy.",
+      "acceptance": [
+        "Use sentence case and real lowercase; preserve proper names, genuine acronyms, code and existing wordmarks.",
+        "Use actual licensed weights and styles; inspect fallback, slow loading, long names and clipping in the exported artifact.",
+        "Preserve existing owner selections; PR22 recommendations remain proposals until recorded approval."
+      ],
+      "evidence": [
+        "Exact font provenance, computed-font report, mobile specimen and export inspection."
+      ],
+      "gate_paths": [
+        "evals/typography-quality-gate.md"
+      ]
+    },
+    {
+      "id": "motion",
+      "requirement": "Motion explains an actual state or relationship and keeps control responsive.",
+      "acceptance": [
+        "Name the job of every shipped sequence and retain a complete static journey.",
+        "Verify reduced-motion equivalence, interruptibility and intentionally composed phone behavior.",
+        "Measure layout stability, loading and input responsiveness on the actual route; decoration cannot delay the primary task."
+      ],
+      "evidence": [
+        "Purpose decision, performance report and decoded motion/reduced-motion evidence required by the existing release validator."
+      ],
+      "gate_paths": [
+        "evals/motion-purpose-gate.md",
+        "evals/web-release-gate.md"
+      ]
+    },
+    {
+      "id": "portability",
+      "requirement": "Users can return to, share and use the artifact they created.",
+      "acceptance": [
+        "Exercise save, reopen, share and download when the surface promises them.",
+        "Verify exported text, fonts, crops, rights and links in the actual download or native share destination.",
+        "Never publish placeholder contact details, stale offer dates or an unapproved identity."
+      ],
+      "evidence": [
+        "Reopened artifact and inspected export with source revision, rights, claim date and usage record."
+      ],
+      "gate_paths": [
+        "evals/generated-asset-quality-gate.md",
+        "evals/typography-quality-gate.md"
+      ]
+    },
+    {
+      "id": "release",
+      "requirement": "A structurally valid plan does not constitute a verified experience.",
+      "acceptance": [
+        "Keep maker, independent verifier and named approver separate for public flagship releases.",
+        "Use the existing release gate and adoption validator; retain all existing numerical bars and evidence requirements.",
+        "Record preview checks before promotion and scoped production verification plus an exact rollback after deployment."
+      ],
+      "evidence": [
+        "The existing content-addressed release bundle and independent verdict in the owning product repository."
+      ],
+      "gate_paths": [
+        "evals/web-release-gate.md"
+      ]
+    }
+  ],
+  "tool_reviews": [
+    {
+      "id": "github.2026-09-30",
+      "tool": "github",
+      "reviewed_at": "2026-09-30",
+      "evidence_kind": "repository-inspection",
+      "scope": "Canonical design repository main at c7a58f112b46ddd8ba85844ba03c31a1308bc5eb and open draft typography PR22 at 7cccfcc8c1752eb6e621f99392f096e17ee1ee03.",
+      "observations": [
+        "The existing registry covers 11 brand/domain profiles, 13 owning repositories and 14 surfaces.",
+        "PR22 adds typography guidance, font evidence and specimens; it remains a separate open draft."
+      ],
+      "limitations": [
+        "Registry coverage is not downstream adoption or production proof.",
+        "Domain direction nominations do not constitute identity approval; typography candidates do not replace owner decisions."
+      ],
+      "next_action": "Validate the shared experience requirements and export a source-pinned brand handoff before changing a product or tool."
+    },
+    {
+      "id": "figma.2026-09-30",
+      "tool": "figma",
+      "reviewed_at": "2026-09-30",
+      "evidence_kind": "private-read-only-audit",
+      "scope": "Seven scoped design files and repository links were inspected. One additional file hit the account tool quota; two boards remain unverified.",
+      "observations": [
+        "The inspected FrankX foundation has 60 variables in four one-mode collections, 14 text styles and five effect styles.",
+        "No local components were found on the inspected FrankX pages; its overview capture did not form a usable design-system specimen.",
+        "The inspected Arcanea master and two GenCreator files contained no owned local system content; vendor references are separate."
+      ],
+      "limitations": [
+        "This is a scoped audit, not an account-wide inventory.",
+        "The Starter plan tool quota blocked further inspection; Code Connect eligibility requires a separate plan decision.",
+        "Counts do not verify token source parity, font bytes, component behavior or library publication."
+      ],
+      "next_action": "Generate the committed source projection; reconcile identity conflicts; build and verify one desktop and phone flow before publishing its first component family."
+    },
+    {
+      "id": "canva.2026-09-30",
+      "tool": "canva",
+      "reviewed_at": "2026-09-30",
+      "evidence_kind": "private-read-only-audit",
+      "scope": "Read-only account inventory and selected design text were audited; most designs were not visually reviewed. Private kit names and tool identifiers remain outside public Git.",
+      "observations": [
+        "The audit returned 337 unique designs, 1454 images, 68 folders, 28 empty folders, six kits and one published Brand Template.",
+        "Folder spines existed but several operating folders were empty.",
+        "Selected decks and reports contained dated claims or placeholder contact details requiring review before reuse."
+      ],
+      "limitations": [
+        "Kit names do not establish their brand relationship, contents, font rights or approval.",
+        "Template datasets did not establish a fillable automation workflow; exported visual quality and sync were not verified.",
+        "Repeated titles alone do not prove duplicate content."
+      ],
+      "next_action": "Pilot one approved brand kit and two locked content templates; inspect real exports and register approved media before wider migration."
+    }
+  ],
+  "references": [
+    {
+      "id": "linear.text.2026-09-30",
+      "target_id": "linear",
+      "source_url": "https://linear.app/",
+      "reviewed_at": "2026-09-30",
+      "evidence_kind": "primary-page-text",
+      "rights": "third-party-reference-only",
+      "observed": "The retrieved homepage names an issue, agent work, a draft PR awaiting review, status changes and review/revert controls.",
+      "inference": "Use real work states to explain capability; make sources and consequences inspectable.",
+      "applications": [
+        {
+          "domain_id": "sis",
+          "pattern_id": "pattern.product-in-context.v1"
+        },
+        {
+          "domain_id": "frankx-ai",
+          "pattern_id": "pattern.product-in-context.v1"
+        },
+        {
+          "domain_id": "aiarchitect-academy",
+          "pattern_id": "pattern.product-in-context.v1"
+        },
+        {
+          "domain_id": "realityarchitect-ai",
+          "pattern_id": "pattern.product-in-context.v1"
+        }
+      ]
+    },
+    {
+      "id": "stripe.text.2026-09-30",
+      "target_id": "stripe",
+      "source_url": "https://stripe.com/en-be/customers",
+      "reviewed_at": "2026-09-30",
+      "evidence_kind": "primary-page-text",
+      "rights": "third-party-reference-only",
+      "observed": "The retrieved customer page places named results beside products used and links to deeper customer stories; the source URL redirected to a locale page.",
+      "inference": "Attach specific dated evidence to a consequential claim instead of relying on a logo wall.",
+      "applications": [
+        {
+          "domain_id": "frankx-ai",
+          "pattern_id": "pattern.progressive-proof.v1"
+        },
+        {
+          "domain_id": "starlight-technology",
+          "pattern_id": "pattern.progressive-proof.v1"
+        },
+        {
+          "domain_id": "agenticincome-ai",
+          "pattern_id": "pattern.progressive-proof.v1"
+        },
+        {
+          "domain_id": "rial-aurevia-energy",
+          "pattern_id": "pattern.progressive-proof.v1"
+        }
+      ]
+    },
+    {
+      "id": "raycast.text.2026-09-30",
+      "target_id": "raycast",
+      "source_url": "https://www.raycast.com/core-features/ai",
+      "reviewed_at": "2026-09-30",
+      "evidence_kind": "primary-page-text",
+      "rights": "third-party-reference-only",
+      "observed": "The retrieved AI page names reusable commands and tasks, model choices, credit usage and local versus enabled cloud storage.",
+      "inference": "Let users start with a concrete task and see input, output, cost and data boundaries.",
+      "applications": [
+        {
+          "domain_id": "gencreator-ai",
+          "pattern_id": "pattern.product-in-context.v1"
+        },
+        {
+          "domain_id": "sis",
+          "pattern_id": "pattern.product-in-context.v1"
+        },
+        {
+          "domain_id": "arcanea-ai",
+          "pattern_id": "pattern.product-in-context.v1"
+        }
+      ]
+    },
+    {
+      "id": "maven.text.2026-09-30",
+      "target_id": "maven",
+      "source_url": "https://maven.com/courses",
+      "reviewed_at": "2026-09-30",
+      "evidence_kind": "primary-page-text",
+      "rights": "third-party-reference-only",
+      "observed": "The retrieved course page separates professional roles and topics and includes instructor, duration and start-date information.",
+      "inference": "Route learning by the artifact a person wants to build and disclose actual prerequisites and availability.",
+      "applications": [
+        {
+          "domain_id": "aiarchitect-academy",
+          "pattern_id": "pattern.role-based-pathways.v1"
+        },
+        {
+          "domain_id": "gencreator-ai",
+          "pattern_id": "pattern.role-based-pathways.v1"
+        },
+        {
+          "domain_id": "arcanea-ai",
+          "pattern_id": "pattern.role-based-pathways.v1"
+        }
+      ]
+    },
+    {
+      "id": "runway.text.2026-09-30",
+      "target_id": "runway",
+      "source_url": "https://runway.com/product",
+      "reviewed_at": "2026-09-30",
+      "evidence_kind": "primary-page-text",
+      "rights": "third-party-reference-only",
+      "observed": "The retrieved product page names editing tasks, includes before/after labels and connects named use cases to try and learn-more routes.",
+      "inference": "Explain a making task through required input and an owned output example, with recovery and export.",
+      "applications": [
+        {
+          "domain_id": "gencreator-ai",
+          "pattern_id": "pattern.product-in-context.v1"
+        },
+        {
+          "domain_id": "animelegends-ai",
+          "pattern_id": "pattern.product-in-context.v1"
+        },
+        {
+          "domain_id": "arcanea-ai",
+          "pattern_id": "pattern.product-in-context.v1"
+        }
+      ]
+    },
+    {
+      "id": "circle.text.2026-09-30",
+      "target_id": "circle",
+      "source_url": "https://circle.so/platform",
+      "reviewed_at": "2026-09-30",
+      "evidence_kind": "primary-page-text",
+      "rights": "third-party-reference-only",
+      "observed": "The retrieved platform page connects community, courses, events, payments and access; plan descriptions expose included scope and onboarding steps.",
+      "inference": "Keep availability, price, entitlement and the next onboarding step together at the decision point.",
+      "applications": [
+        {
+          "domain_id": "gencreator-ai",
+          "pattern_id": "pattern.bounded-conversion.v1"
+        },
+        {
+          "domain_id": "agenticincome-ai",
+          "pattern_id": "pattern.bounded-conversion.v1"
+        },
+        {
+          "domain_id": "vibeclubs-ai",
+          "pattern_id": "pattern.bounded-conversion.v1"
+        },
+        {
+          "domain_id": "rial-aurevia-energy",
+          "pattern_id": "pattern.bounded-conversion.v1"
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "domain_id": "frankx-ai",
+      "brand_id": "frankx",
+      "repository": "frankxai/frankx.ai-vercel-website",
+      "surface_id": "homepage",
+      "mode": "editorial",
+      "recipient": "A founder or builder evaluating Frank’s current work.",
+      "job": "Understand one relevant build and why it matters.",
+      "primary_action": "Open one current authored artifact.",
+      "first_useful_outcome": "An inspectable field note or working artifact with a dated source.",
+      "proof": "A real build, authorized source and explicit limitation.",
+      "failure_recovery": "A missing artifact explains its status and offers another relevant source.",
+      "pattern_ids": [
+        "pattern.outcome-led-entry.v1",
+        "pattern.editorial-depth-break.v1",
+        "pattern.progressive-proof.v1"
+      ]
+    },
+    {
+      "domain_id": "frankx-ai",
+      "brand_id": "frankx",
+      "repository": "frankxai/frankx.ai-vercel-website",
+      "surface_id": "ai-architecture",
+      "mode": "product",
+      "recipient": "An AI builder evaluating an architecture approach.",
+      "job": "Inspect an architecture and decide whether it fits the task.",
+      "primary_action": "Inspect or run one working example.",
+      "first_useful_outcome": "A reproducible input, output and trace with its limitations.",
+      "proof": "Actual source, trace and a named validation result.",
+      "failure_recovery": "Preserve setup inputs and provide a specific failed-step recovery.",
+      "pattern_ids": [
+        "pattern.product-in-context.v1",
+        "pattern.progressive-proof.v1"
+      ]
+    },
+    {
+      "domain_id": "sis",
+      "brand_id": "sis",
+      "repository": "frankxai/Starlight-Intelligence-System",
+      "surface_id": "homepage",
+      "mode": "operations",
+      "recipient": "An operator evaluating governed intelligence and decisions.",
+      "job": "Understand a decision and inspect its authority.",
+      "primary_action": "Open the evidence behind one current decision.",
+      "first_useful_outcome": "A trace from source through transformation and authority to receipt.",
+      "proof": "An actual provenance record, permission boundary and receipt.",
+      "failure_recovery": "Explain missing, stale or denied evidence and offer a bounded review path.",
+      "pattern_ids": [
+        "pattern.product-in-context.v1",
+        "pattern.progressive-proof.v1"
+      ]
+    },
+    {
+      "domain_id": "arcanea-ai",
+      "brand_id": "arcanea",
+      "repository": "frankxai/arcanea-ai-app",
+      "surface_id": "homepage",
+      "mode": "mythic-world",
+      "recipient": "A creator beginning an original world or narrative.",
+      "job": "Explore an original world and begin a small act of creation.",
+      "primary_action": "Begin one available creator task and save its artifact.",
+      "first_useful_outcome": "One saved original artifact with its source and right-use boundary.",
+      "proof": "Owned world material, a creator output and saved memory.",
+      "failure_recovery": "Preserve creative input after failure; offer retry, save or an available static path.",
+      "pattern_ids": [
+        "pattern.outcome-led-entry.v1",
+        "pattern.low-chrome-discovery.v1",
+        "pattern.product-in-context.v1"
+      ]
+    },
+    {
+      "domain_id": "gencreator-ai",
+      "brand_id": "gencreator",
+      "repository": "frankxai/gencreator.ai",
+      "surface_id": "product-home",
+      "mode": "product-intelligence",
+      "recipient": "A creator choosing the next useful step in their practice.",
+      "job": "Choose an available creator step and obtain its artifact.",
+      "primary_action": "Start one available diagnostic or guided artifact.",
+      "first_useful_outcome": "A usable brief, installation or creator stack with entitlement explained.",
+      "proof": "An actual creator artifact and clear availability boundary.",
+      "failure_recovery": "Preserve inputs and explain unavailable offers without a misleading purchase action.",
+      "pattern_ids": [
+        "pattern.outcome-led-entry.v1",
+        "pattern.product-in-context.v1",
+        "pattern.bounded-conversion.v1"
+      ]
+    },
+    {
+      "domain_id": "gencreator-ai",
+      "brand_id": "gencreator",
+      "repository": "frankxai/gencreator-community",
+      "surface_id": "community-home",
+      "mode": "community-editorial",
+      "recipient": "A creator seeking a relevant community or cohort.",
+      "job": "Find a contribution or cohort that matches their current need.",
+      "primary_action": "Open an available contribution or join a current cohort.",
+      "first_useful_outcome": "Useful community material or a confirmed place with explicit next steps.",
+      "proof": "Consented creator output and dated cohort details.",
+      "failure_recovery": "Provide a useful alternative when a cohort is closed; retain consent choices.",
+      "pattern_ids": [
+        "pattern.role-based-pathways.v1",
+        "pattern.progressive-proof.v1",
+        "pattern.bounded-conversion.v1"
+      ]
+    },
+    {
+      "domain_id": "aiarchitect-academy",
+      "brand_id": "ai-coe",
+      "repository": "frankxai/ai-architect-academy",
+      "surface_id": "academy-home",
+      "mode": "academy-lab",
+      "recipient": "A practitioner learning AI architecture by building.",
+      "job": "Choose a relevant lab and understand the next checkpoint.",
+      "primary_action": "Start a runnable lab with visible prerequisites.",
+      "first_useful_outcome": "A small working artifact and a verifiable review result.",
+      "proof": "An actual failing test, hint and pass/fail result.",
+      "failure_recovery": "Keep checkpoint progress and give a specific hint or setup recovery.",
+      "pattern_ids": [
+        "pattern.role-based-pathways.v1",
+        "pattern.product-in-context.v1",
+        "pattern.progressive-proof.v1"
+      ]
+    },
+    {
+      "domain_id": "agenticincome-ai",
+      "brand_id": "agentic-income",
+      "repository": "frankxai/agenticincome",
+      "surface_id": "income-home",
+      "mode": "machinery-editorial",
+      "recipient": "An operator evaluating a viable commercial system.",
+      "job": "Evaluate one request-to-quote workflow and its real economics.",
+      "primary_action": "Inspect one current workflow and its human boundaries.",
+      "first_useful_outcome": "A scoped operating artifact with dated assumptions and costs.",
+      "proof": "Actual contracts, costs, approvals and receipts; no implied earnings.",
+      "failure_recovery": "Explain missing inputs and unavailable offers; permit correction before submission.",
+      "pattern_ids": [
+        "pattern.product-in-context.v1",
+        "pattern.progressive-proof.v1",
+        "pattern.bounded-conversion.v1"
+      ]
+    },
+    {
+      "domain_id": "vibeclubs-ai",
+      "brand_id": "vibeclubs",
+      "repository": "frankxai/vibeclubs",
+      "surface_id": "format-home",
+      "mode": "community",
+      "recipient": "A participant or host beginning a focused work session.",
+      "job": "Find a suitable session format and understand its controls.",
+      "primary_action": "Join or start an available session.",
+      "first_useful_outcome": "A usable session with controls and a consented recap path.",
+      "proof": "A real timer or mixer state and an authorized session artifact.",
+      "failure_recovery": "Retain session state after reconnect; label proposed paid features unavailable.",
+      "pattern_ids": [
+        "pattern.outcome-led-entry.v1",
+        "pattern.product-in-context.v1",
+        "pattern.bounded-conversion.v1"
+      ]
+    },
+    {
+      "domain_id": "animelegends-ai",
+      "brand_id": "animelegends",
+      "repository": "frankxai/AnimeLegends",
+      "surface_id": "world-home",
+      "mode": "studio-cinematic",
+      "recipient": "A reader or creator exploring an original story world.",
+      "job": "Find a canonical story or character and its release state.",
+      "primary_action": "Open an owned character or story artifact.",
+      "first_useful_outcome": "A readable, canonical artifact with provenance and an available next step.",
+      "proof": "Owned art, a canon source and a clear draft or released label.",
+      "failure_recovery": "Provide a readable text path when media fails and preserve atlas orientation.",
+      "pattern_ids": [
+        "pattern.low-chrome-discovery.v1",
+        "pattern.product-in-context.v1",
+        "pattern.progressive-proof.v1"
+      ]
+    },
+    {
+      "domain_id": "realityarchitect-ai",
+      "brand_id": "reality-architect",
+      "repository": "frankxai/realityarchitect",
+      "surface_id": "method-home",
+      "mode": "method-editorial",
+      "recipient": "A builder identifying a missing system in their work.",
+      "job": "Identify a bounded system need and receive its starter artifact.",
+      "primary_action": "Complete an available assessment and review the brief.",
+      "first_useful_outcome": "An exportable brief with assumptions, confidence and an acceptance test.",
+      "proof": "An actual assessment result and inspectable starter artifact.",
+      "failure_recovery": "Preserve answers, explain uncertainty and permit correcting the result.",
+      "pattern_ids": [
+        "pattern.outcome-led-entry.v1",
+        "pattern.product-in-context.v1",
+        "pattern.bounded-conversion.v1"
+      ]
+    },
+    {
+      "domain_id": "starlight-technology",
+      "brand_id": "starlight-technology",
+      "repository": "frankxai/starlight-technology",
+      "surface_id": "creator-studio-home",
+      "mode": "buying-guide",
+      "recipient": "A creator choosing a compatible tool or equipment system.",
+      "job": "Choose a system with costs, compatibility and alternatives understood.",
+      "primary_action": "Inspect one sourced recommendation and its alternatives.",
+      "first_useful_outcome": "A costed recommendation with source dates and wrong-purchase conditions.",
+      "proof": "Dated sources, total cost, compatibility and research versus hands-on labels.",
+      "failure_recovery": "Explain unknown prices or compatibility and offer a human research path.",
+      "pattern_ids": [
+        "pattern.progressive-proof.v1",
+        "pattern.bounded-conversion.v1",
+        "pattern.product-in-context.v1"
+      ]
+    },
+    {
+      "domain_id": "rial-aurevia-energy",
+      "brand_id": "rial-energy",
+      "repository": "frankxai/pv-lager-agentic",
+      "surface_id": "buyer-quiz",
+      "mode": "buyer-quiz",
+      "recipient": "A German-speaking buyer describing building and energy needs.",
+      "job": "Create a reviewable system brief from real building inputs.",
+      "primary_action": "Complete the intake and review its assumptions before submitting.",
+      "first_useful_outcome": "A German-language brief with ranges, assumptions and a human review boundary.",
+      "proof": "Dated assumptions and a scoped human-reviewed proposal path.",
+      "failure_recovery": "Preserve answers, explain invalid fields in German and allow correction.",
+      "pattern_ids": [
+        "pattern.role-based-pathways.v1",
+        "pattern.product-in-context.v1",
+        "pattern.bounded-conversion.v1"
+      ]
+    },
+    {
+      "domain_id": "rial-aurevia-energy",
+      "brand_id": "rial-energy",
+      "repository": "frankxai/aurevia-solar",
+      "surface_id": "energy-home",
+      "mode": "local-trust",
+      "recipient": "A local buyer evaluating an energy provider and service scope.",
+      "job": "Understand available local provision and request a scoped quote.",
+      "primary_action": "Request a human-reviewed quote with clear service boundaries.",
+      "first_useful_outcome": "A acknowledged request with explicit next steps and consent choices.",
+      "proof": "Current inventory, authorized installation evidence and service scope.",
+      "failure_recovery": "Show unavailable stock or service honestly; prevent duplicate submissions.",
+      "pattern_ids": [
+        "pattern.outcome-led-entry.v1",
+        "pattern.progressive-proof.v1",
+        "pattern.bounded-conversion.v1"
+      ]
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "resolve-source-conflicts",
+      "priority": "P0",
+      "domain_ids": [
+        "gencreator-ai",
+        "arcanea-ai",
+        "sis"
+      ],
+      "state": "queued",
+      "action": "Reconcile recorded owner decisions, source packs and surface-specific typography before changing identity tokens.",
+      "basis": "Repository and audit comparison found conflicting sources; newer drafts and app loaders are not automatic identity authority.",
+      "depends_on": [],
+      "exit_criteria": [
+        "Record the exact owner decision, surface and revision; retain rejected alternatives.",
+        "GenCreator preserves its recorded territory; Arcanea distinguishes world, tools and sustained reading; SIS preserves its broader surface modes.",
+        "Treat PR22 font recommendations as proposed until their own review is complete."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "content-truth",
+      "priority": "P0",
+      "domain_ids": [
+        "agenticincome-ai",
+        "aiarchitect-academy",
+        "animelegends-ai",
+        "arcanea-ai",
+        "frankx-ai",
+        "gencreator-ai",
+        "realityarchitect-ai",
+        "rial-aurevia-energy",
+        "sis",
+        "starlight-technology",
+        "vibeclubs-ai"
+      ],
+      "state": "queued",
+      "action": "Review active offers, dated claims, contact details and rights before reusing exported material.",
+      "basis": "Selected Canva text had stale dates and placeholders; commercial claims elsewhere require surface-specific current sources.",
+      "depends_on": [],
+      "exit_criteria": [
+        "No placeholder contact, stale availability or unsubstantiated financial result survives publication.",
+        "Claims, local prices, service regions, subsidies and affiliate relationships have dated primary evidence.",
+        "Existing live pages are audited individually; this task does not establish that every page currently has the sampled defect."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "figma-frankx-pilot",
+      "priority": "P1",
+      "domain_ids": [
+        "frankx-ai"
+      ],
+      "state": "blocked",
+      "action": "Generate the source projection, build a desktop and phone architecture flow, then its first reusable component family.",
+      "basis": "The scoped FrankX audit found foundations but no local components or usable overview specimen.",
+      "depends_on": [],
+      "exit_criteria": [
+        "A committed source revision and mapping identify every imported semantic value.",
+        "One actual flow passes loading, empty, error, success, focus and long-copy inspection.",
+        "A component and code-prop map are verified against the owning app before library publication."
+      ],
+      "blocker": "The account tool quota blocks additional Figma inspection; publishing and Code Connect eligibility need a separate plan decision."
+    },
+    {
+      "id": "canva-template-pilot",
+      "priority": "P1",
+      "domain_ids": [
+        "agenticincome-ai",
+        "aiarchitect-academy",
+        "animelegends-ai",
+        "arcanea-ai",
+        "frankx-ai",
+        "gencreator-ai",
+        "realityarchitect-ai",
+        "rial-aurevia-energy",
+        "sis",
+        "starlight-technology",
+        "vibeclubs-ai"
+      ],
+      "state": "queued",
+      "action": "Use one approved brand to pilot two locked templates: an evidence-led carousel and a current offer or briefing deck.",
+      "basis": "Canva inventory and folder spines do not establish approved, reusable or fillable production templates.",
+      "depends_on": [
+        "resolve-source-conflicts",
+        "content-truth"
+      ],
+      "exit_criteria": [
+        "Resolve kit-to-brand relationships privately without automatic rename.",
+        "Lock logo, type roles, colors and required source/date fields; use only approved identity and licensed files.",
+        "Inspect a real export at phone size and verify substitutions, cropping, links and factual copy.",
+        "Prove fillable fields separately before claiming automation; register approved assets and usage."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.frankx-ai",
+      "priority": "P1",
+      "domain_ids": [
+        "frankx-ai"
+      ],
+      "state": "queued",
+      "action": "Build an authored first viewport and a bounded architecture journey with real proof.",
+      "basis": "Existing profile gaps include editorial measure, annotation and proof status.",
+      "depends_on": [
+        "content-truth"
+      ],
+      "exit_criteria": [
+        "The homepage opens one relevant dated artifact.",
+        "The technical journey exposes input, output, limitations and recovery on desktop and phone."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.sis",
+      "priority": "P1",
+      "domain_ids": [
+        "sis"
+      ],
+      "state": "queued",
+      "action": "Distinguish vision, current capability, provenance and human authority in the registered operations surface.",
+      "basis": "Current profile identifies terminology, memory age, authority and handoff gaps.",
+      "depends_on": [
+        "content-truth",
+        "resolve-source-conflicts"
+      ],
+      "exit_criteria": [
+        "Current capabilities resolve to actual evidence and receipts.",
+        "Horizon, Operator, Academy and Cultural modes remain distinct; the registered homepage mode is not silently changed."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.arcanea-ai",
+      "priority": "P1",
+      "domain_ids": [
+        "arcanea-ai"
+      ],
+      "state": "queued",
+      "action": "Build one original world-to-artifact journey with stable creator and reading states.",
+      "basis": "Inspected master lacked local content and source families conflict across surface modes.",
+      "depends_on": [
+        "content-truth",
+        "resolve-source-conflicts"
+      ],
+      "exit_criteria": [
+        "One creator input yields a saved artifact with provenance.",
+        "Mythic imagery never prevents navigation, sustained reading or reduced-motion completion."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.gencreator-ai",
+      "priority": "P0",
+      "domain_ids": [
+        "gencreator-ai"
+      ],
+      "state": "queued",
+      "action": "Give every available creator step one output, entitlement and clear next action.",
+      "basis": "The profile names conflicting entry metaphors; inspected design files lacked local systems.",
+      "depends_on": [
+        "content-truth",
+        "resolve-source-conflicts"
+      ],
+      "exit_criteria": [
+        "Preserve the recorded territory for each named surface.",
+        "Product and community journeys expose live availability, real outputs, cohort boundaries and consent."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.aiarchitect-academy",
+      "priority": "P1",
+      "domain_ids": [
+        "aiarchitect-academy"
+      ],
+      "state": "queued",
+      "action": "Create a lab journey with prerequisites, checkpoints, hints and a verifiable review.",
+      "basis": "Current profile identifies lab and curriculum proof as a differentiating need.",
+      "depends_on": [
+        "content-truth"
+      ],
+      "exit_criteria": [
+        "A fresh learner completes one representative checkpoint.",
+        "Setup failure, hint use and review results preserve progress and are understandable."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.agenticincome-ai",
+      "priority": "P0",
+      "domain_ids": [
+        "agenticincome-ai"
+      ],
+      "state": "queued",
+      "action": "Show a bounded operating workflow with dated economics and explicit human approvals.",
+      "basis": "Commercial material requires availability, cost and disclosure evidence before claims.",
+      "depends_on": [
+        "content-truth"
+      ],
+      "exit_criteria": [
+        "A request-to-quote artifact exposes assumptions and real costs.",
+        "Proposed offers remain unavailable; affiliates are disclosed and earnings are not implied."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.vibeclubs-ai",
+      "priority": "P1",
+      "domain_ids": [
+        "vibeclubs-ai"
+      ],
+      "state": "queued",
+      "action": "Make an available session usable with clear controls and a consented recap.",
+      "basis": "Current profile prioritizes session state and a bounded format over generic community marketing.",
+      "depends_on": [
+        "content-truth"
+      ],
+      "exit_criteria": [
+        "Timer, audio controls and reconnect behavior are usable on a phone and keyboard.",
+        "Proposed paid features stay unavailable; reduced motion retains the full task."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.animelegends-ai",
+      "priority": "P1",
+      "domain_ids": [
+        "animelegends-ai"
+      ],
+      "state": "queued",
+      "action": "Separate canonical story, atlas discovery and creator work while proving media ownership.",
+      "basis": "Current profile requires original world evidence and rejects franchise imitation.",
+      "depends_on": [
+        "content-truth"
+      ],
+      "exit_criteria": [
+        "Canonical and draft artifacts are visibly distinct.",
+        "Owned art, crops, text alternatives and source provenance survive the published export."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.realityarchitect-ai",
+      "priority": "P1",
+      "domain_ids": [
+        "realityarchitect-ai"
+      ],
+      "state": "queued",
+      "action": "Make an assessment produce a complete starter artifact with a bounded next step.",
+      "basis": "Current profile requires method proof rather than framework names alone.",
+      "depends_on": [
+        "content-truth"
+      ],
+      "exit_criteria": [
+        "Users can inspect assumptions, confidence and acceptance criteria.",
+        "Answers survive failure and the resulting brief reopens and exports correctly."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.starlight-technology",
+      "priority": "P0",
+      "domain_ids": [
+        "starlight-technology"
+      ],
+      "state": "queued",
+      "action": "Make recommendations source-dated, compatible, fully costed and honestly qualified.",
+      "basis": "Current buying-guide mode requires provenance and pricing evidence.",
+      "depends_on": [
+        "content-truth"
+      ],
+      "exit_criteria": [
+        "Research-only material is distinguished from hands-on evidence.",
+        "Total cost, incompatibilities, alternatives and affiliate disclosures are visible before purchase."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "journey.rial-aurevia-energy",
+      "priority": "P0",
+      "domain_ids": [
+        "rial-aurevia-energy"
+      ],
+      "state": "queued",
+      "action": "Resolve the naming hierarchy and make German intake and local quote claims reviewable.",
+      "basis": "Shared brand surfaces need consistent provider, service, inventory and human-review boundaries.",
+      "depends_on": [
+        "content-truth"
+      ],
+      "exit_criteria": [
+        "Brand endorsement and provider relationships have an explicit owner decision.",
+        "Dated inventory, ROI or subsidy assumptions are source-backed; intake errors preserve answers."
+      ],
+      "blocker": null
+    }
+  ]
+}
