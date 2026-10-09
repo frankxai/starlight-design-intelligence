@@ -22,7 +22,7 @@ Before generation, record:
 
 ```json
 {
-  "reference_revision": "2026-10-09.2",
+  "reference_revision": "2026-10-09.3",
   "character_ids": ["host.frank", "custom.nilo"],
   "assets_loaded": ["mini-frank-model", "mini-cast-model"],
   "asset_hashes_verified": true,
@@ -38,6 +38,12 @@ When the installed skill supports it, run `python scripts/resolve_character.py -
 ## Production development
 
 For turnarounds, acting, brand-angle or motion development, also load the installed skill's production-foundations reference and run its resolver with `--production` when supported. Selected development studies remain separate from approved identity anchors. A static pose sheet or 2D timing prototype is not a rig, articulated animation, or release-ready video. Follow the current brand's logo and motion contracts; generated mascot art cannot establish a vector logo master.
+
+## Brand foundations
+
+For replacement candidates or community-fit comparisons, read the installed skill's separate brand-character-directions registry and use `--directions --verify` when supported. Design recommendations, owner selections, visual editions, implementation and publication are separate states. A shortlisted direction is not a newly approved identity.
+
+Recover existing owned canon before inventing a brand pet. Anime Legends already has Akashi, Kage and Mira: inspect their owner source character sheets and native art. The new miniature interpretations remain development studies, and the ink marten remains an optional noncanonical Forge candidate. Load current owning repository contracts before applying any direction to a product or logo.
 
 ## Cross-runtime adoption
 
