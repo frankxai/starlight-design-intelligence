@@ -26,6 +26,26 @@ Contract: `starlight.repo_profile.v2` · Team: `frankx-product-revenue-team` · 
 - Portfolio toolchain boundary: `starlight.design_toolchain.v1`, stored in
   `portfolio/design-toolchain.json`; it contains roles, readiness, and rules but
   no private tool identifiers, credentials, or asset binaries.
+- Screen impact planning: `starlight.screen_atlas.v1` inventories source-known
+  screen templates at an immutable product commit; `starlight.design_impact.v1`
+  records nominated captures and blockers, not execution or release approval.
+  Both are checked by `scripts/design-impact.mjs`; see
+  `playbooks/design-atlas-reconciliation.md` for incomplete-dependency boundaries.
+- Portfolio experience standard and bounded upgrade queue: `starlight.experience_standard.v1`,
+  stored in `portfolio/experience-standard.json`, defined in
+  `schemas/experience-standard.schema.json` and checked by `scripts/validate-experience.mjs`.
+  It cross-references existing authorities and records proposed jobs and dated observations,
+  never adoption, identity approval or a production pass.
+- Read-only brand handoff: `starlight.brand_handoff.v1`, emitted by
+  `scripts/export-brand-handoff.mjs` from committed Git blobs with revision and raw-byte hashes.
+  This is an export format, not a new brand authority or release validator.
+  The bundle includes `playbooks/figma-template-pipeline.md` and the existing
+  App Factory source pointers. Template implementation manifests and asset
+  validators remain owned by their implementation package/repository.
+- Content and asset relationships: `starlight.content_asset_atlas.v1`, defined in
+  `schemas/content-asset-atlas.schema.json` and checked by
+  `scripts/content-asset-atlas.mjs`; operational records remain private.
+  Historical release screen definitions and version payloads are immutable.
 - Design research target: `starlight.design_research_target.v1`.
 - Design snapshot manifest: `starlight.design_snapshot_manifest.v1`.
 - Normalized extraction: `starlight.design_extraction.v1`.

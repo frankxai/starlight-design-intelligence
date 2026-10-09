@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "assets", "contents", "lessons", "screens", "releases"],
+  "properties": {
+    "schema_version": {"const": "starlight.content_asset_atlas.v1"},
+    "assets": {"type": "array", "items": {"$ref": "#/$defs/asset"}},
+    "contents": {"type": "array", "items": {"$ref": "#/$defs/content"}},
+    "lessons": {"type": "array", "items": {"$ref": "#/$defs/lesson"}},
+    "screens": {"type": "array", "items": {"$ref": "#/$defs/screen"}},
+    "releases": {"type": "array", "items": {"$ref": "#/$defs/release"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,119}$"},
+    "sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "url": {"type": "string", "format": "uri", "pattern": "^https://"},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository", "commit", "path"],
+      "properties": {
+        "repository": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"},
+        "commit": {"$ref": "#/$defs/commit"},
+        "path": {"type": "string", "minLength": 1, "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\\\]+$"}
+      }
+    },
+    "assetRef": {
+      "type": "object", "additionalProperties": false,
+      "required": ["asset_id", "sha256", "role"],
+      "properties": {"asset_id": {"$ref": "#/$defs/id"}, "sha256": {"$ref": "#/$defs/sha"}, "role": {"type": "string", "minLength": 1}}
+    },
+    "approval": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "evidence_url"],
+      "properties": {
+        "status": {"enum": ["source-reviewed", "approved", "unreviewed"]},
+        "evidence_url": {"$ref": "#/$defs/url"},
+        "reviewer": {"type": "string", "minLength": 1},
+        "approved_at": {"type": "string", "format": "date-time"}
+      },
+      "if": {"properties": {"status": {"const": "approved"}}},
+      "then": {"required": ["reviewer", "approved_at"]}
+    },
+    "asset": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "brand", "rights", "versions"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "brand": {"$ref": "#/$defs/id"},
+        "rights": {"type": "object", "additionalProperties": false, "required": ["claim", "evidence_url"], "properties": {"claim": {"type": "string", "minLength": 1}, "evidence_url": {"$ref": "#/$defs/url"}}},
+        "versions": {"type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["sha256", "source", "delivery_url", "mime", "alt", "approval"],
+          "properties": {"sha256": {"$ref": "#/$defs/sha"}, "source": {"$ref": "#/$defs/source"}, "delivery_url": {"$ref": "#/$defs/url"}, "mime": {"type": "string", "pattern": "^(image|video|audio|application)/"}, "alt": {"type": "string", "minLength": 1}, "approval": {"$ref": "#/$defs/approval"}}
+        }}
+      }
+    },
+    "content": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "brand", "kind", "versions"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "brand": {"$ref": "#/$defs/id"}, "kind": {"enum": ["page", "lesson", "article"]},
+        "versions": {"type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["sha256", "source", "assets"],
+          "properties": {"sha256": {"$ref": "#/$defs/sha"}, "source": {"$ref": "#/$defs/source"}, "assets": {"type": "array", "items": {"$ref": "#/$defs/assetRef"}}}
+        }}
+      }
+    },
+    "lesson": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "content_id", "objectives", "learner_store", "fragment"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "content_id": {"$ref": "#/$defs/id"}, "objectives": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "fragment": {"type": ["string", "null"], "pattern": "^#[A-Za-z0-9_.-]+$"}, "learner_store": {"enum": ["none", "browser-local", "product-owned-separate"]}}
+    },
+    "screen": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "route", "state", "role", "viewport", "content_ids", "figma"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "route": {"$ref": "#/$defs/url"}, "state": {"type": "string", "minLength": 1}, "role": {"type": "string", "minLength": 1},
+        "viewport": {"type": "object", "additionalProperties": false, "required": ["width", "height"], "properties": {"width": {"type": "integer", "minimum": 320, "maximum": 7680}, "height": {"type": "integer", "minimum": 320, "maximum": 7680}}},
+        "content_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "figma": {"type": "object", "additionalProperties": false, "required": ["status", "file_key", "node_id", "reason"], "properties": {"status": {"enum": ["mapped", "pending", "blocked"]}, "file_key": {"type": ["string", "null"], "minLength": 1}, "node_id": {"type": ["string", "null"], "pattern": "^[0-9]+:[0-9]+$"}, "reason": {"type": "string"}}}
+      }
+    },
+    "release": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "status", "commit", "content_pins", "screen_ids", "evidence_url"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "status": {"enum": ["observed", "evidence-recorded"]}, "commit": {"$ref": "#/$defs/commit"},
+        "content_pins": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["content_id", "sha256"], "properties": {"content_id": {"$ref": "#/$defs/id"}, "sha256": {"$ref": "#/$defs/sha"}}}},
+        "screen_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "evidence_url": {"anyOf": [{"$ref": "#/$defs/url"}, {"type": "null"}]}
+      }
+    }
+  }
+}

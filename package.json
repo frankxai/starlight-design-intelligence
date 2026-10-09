@@ -10,13 +10,16 @@
     "check:observatory-index": "node scripts/build-observatory-index.mjs --check",
     "check:freshness": "node scripts/check-observatory-freshness.mjs",
     "capture:reference": "node scripts/capture-reference.mjs",
+    "design:impact": "node scripts/design-impact.mjs",
     "validate:adoption": "node scripts/validate-adoption.mjs",
     "validate:portfolio": "node scripts/validate-adoption.mjs --registry-only",
     "validate:release": "node scripts/validate-release-evidence.mjs",
     "validate:media": "node scripts/validate-media-job.mjs",
     "validate:interface": "node scripts/validate-interface-foundations.mjs",
     "test:interface": "node browser-checks/interface-foundations.mjs",
-    "test": "node --test"
+    "test": "node --test",
+    "validate:experience": "node scripts/validate-experience.mjs",
+    "export:brand": "node scripts/export-brand-handoff.mjs"
   },
   "engines": {
     "node": ">=24.14.0 <25"
