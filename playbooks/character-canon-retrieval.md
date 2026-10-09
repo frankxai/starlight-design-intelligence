@@ -22,7 +22,7 @@ Before generation, record:
 
 ```json
 {
-  "reference_revision": "2026-10-09.1",
+  "reference_revision": "2026-10-09.2",
   "character_ids": ["host.frank", "custom.nilo"],
   "assets_loaded": ["mini-frank-model", "mini-cast-model"],
   "asset_hashes_verified": true,
@@ -34,6 +34,10 @@ Before generation, record:
 Only report `asset_hashes_verified: true` after comparing actual bytes to the index. If the asset is missing or its hash fails, recover the exact archived source or report the missing reference. Never generate a plausible substitute and describe it as canon.
 
 When the installed skill supports it, run `python scripts/resolve_character.py --character <stable-id> --verify` from that skill's root, inspect the returned files, and attach them to the generation call. The resolver returns status as well as paths so a visually attractive proposal cannot silently become an approved identity.
+
+## Production development
+
+For turnarounds, acting, brand-angle or motion development, also load the installed skill's production-foundations reference and run its resolver with `--production` when supported. Selected development studies remain separate from approved identity anchors. A static pose sheet or 2D timing prototype is not a rig, articulated animation, or release-ready video. Follow the current brand's logo and motion contracts; generated mascot art cannot establish a vector logo master.
 
 ## Cross-runtime adoption
 
