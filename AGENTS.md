@@ -48,6 +48,11 @@ When motion, scroll, generated media, GIF/video, or premium polish matters, use
 `skills/motion-and-interaction/SKILL.md` and verify the exported result visually.
 Optional plugins may accelerate production but are not canonical dependencies.
 
+
+## Character reference retrieval
+
+For Mini Frank, recurring companions, mascots, agent/pet storyboards, or brand-character studies, read `playbooks/character-canon-retrieval.md` before generation. Resolve the installed private skill's index, inspect the actual image bytes, verify hashes, and preserve approved-canon versus candidate status. Record the reference revision and assets loaded; do not infer fleet adoption from this hook.
+
 ## Generated Asset Gate
 
 Before accepting generated images, logos, posters, video stills, social crops, motion loops, or hero art, apply:
