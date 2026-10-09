@@ -86,9 +86,11 @@ the release. Quota or browser failure leaves the slice incomplete.
 
 This is a relationship adapter, not another asset registration authority.
 Existing media-registration work in draft PR #35 owns local byte/VIS proof;
-draft PR #41 owns Figma source projections. Neither unmerged draft is assumed
-to be present. A future product adoption must consume accepted proof records
-from those owners rather than bypass their gates with this metadata schema.
+The source-pinned Figma projection tooling originated in PR #41 and is integrated
+with its corrections through the portfolio design consolidation. Media-registration
+PR #35 remains separate and unmerged. Product adoption must consume accepted proof
+records from the relevant owners rather than bypass their gates with this metadata
+schema.
 
 ## Tool choice
 
