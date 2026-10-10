@@ -22,6 +22,7 @@ Figma, Canva, Google Drive, a DAM, and Vercel are execution surfaces. None is al
 | Starlight Design Intelligence | Brand packs, portfolio contracts, quality gates, source-of-truth tool policy | App-specific deployed code or private media binaries |
 | Agentic Ops | Brand/domain/repository/lifecycle registry and exclusions | Design tokens, components, or Figma source |
 | Product repositories | Local code tokens, components, implementation contracts, release evidence | Portfolio-wide brand policy |
+| v0 | Brand-scoped imports, composition studies and bounded source refinements | Product authority, automatic adoption or production promotion |
 | Figma | Per-brand foundations, component design, key flows, design QA | Raw token authority or a cross-brand mega-library |
 | Canva | Brand Kits, locked content templates, decks and campaign variants | Product UI or canonical tokens |
 | Google Drive | Working originals, legal/rights evidence and human operating material | Runtime public delivery or product design authority |
@@ -39,6 +40,14 @@ Figma, Canva, Google Drive, a DAM, and Vercel are execution surfaces. None is al
 - Keep Cloudinary as a controlled pilot. Do not add a second DAM or migrate media until it passes a single-brand metadata, approval, transformation, delivery, and usage-tracking proof.
 
 ## Figma boundary
+
+The [v0 workflow](v0-operating-workflow.md) uses the existing hashed brand handoff
+and real product consumer. Its [dated inputs](v0-imports.json) preserve adoption
+pins and unresolved owner/source conflicts. Review saved skill revisions and
+installable starters before reuse. Keep private chat/project evidence outside
+public Git. Figma participates when a named design flow needs it; access or quota
+limits do not require replacing its existing brand files or making it a mandatory
+step for every native product refinement.
 
 The executable [source-pinned projection workflow](../playbooks/figma-portfolio-setup.md)
 provides typed token compilation, additive native Figma construction, exact-font
