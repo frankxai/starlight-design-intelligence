@@ -23,11 +23,15 @@ function fixture(t) {
   return { bundle, out, profiles, manifest, save, brand: "gencreator" };
 }
 
-test("projects a verified handoff into three immutable references without adopting a skill", (t) => {
+test("preserves immutable source identities without broken native SHA mounts or skill adoption", (t) => {
   const f = fixture(t), result = exportV0Import(f);
   assert.equal(result.status, "import-input-for-review");
   assert.equal(result.consumer_registered_in_handoff, true);
-  assert.deepEqual(result.v0_reference_config.referenceWorkspace.sources.map((s) => s.ref), [sha, product, old]);
+  assert.deepEqual(result.source_references.map((s) => s.commit), [sha, product, old]);
+  assert.deepEqual(result.v0_reference_config.referenceWorkspace.sources, []);
+  assert.deepEqual(JSON.parse(readFileSync(join(f.out, "v0.reference.json"))).referenceWorkspace.sources, []);
+  assert.equal(result.source_references[1].url, `https://github.com/frankxai/gencreator.ai/tree/${product}`);
+  assert.match(result.limits.join(" "), /provenance, not mounted files/);
   assert.deepEqual(result.v0_reference_config.starter, { source: "empty" });
   assert.match(readFileSync(join(f.out, "IMPORT.md"), "utf8"), /Review the old adopted pin/);
   assert.equal(JSON.parse(readFileSync(join(f.out, "import-packet.json"))).handoff_manifest_sha256.length, 64);
@@ -35,7 +39,7 @@ test("projects a verified handoff into three immutable references without adopti
 
 test("omits a redundant adopted reference", (t) => {
   const f = fixture(t); f.profiles.profiles[0].adopted_kernel_commit = sha;
-  assert.equal(exportV0Import(f).v0_reference_config.referenceWorkspace.sources.length, 2);
+  assert.equal(exportV0Import(f).source_references.length, 2);
 });
 
 for (const [name, change, error] of [
