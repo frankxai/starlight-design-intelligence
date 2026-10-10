@@ -76,10 +76,9 @@ export function exportV0Import({ bundle, brand, out, profiles } = {}) {
   ];
   const referenceConfig = {
     version: 1,
-    referenceWorkspace: { sources: refs.map(([repo, ref]) => {
-      const [org, name] = repo.split("/");
-      return { id: `github-repo:${repo}:${ref}`, type: "github-repo", repo: { org, name }, ref, mountPath: `/vercel/share/v0-reference-workspace-sources/${repo}/${ref}` };
-    }) },
+    // Native attachment currently clones ref as a branch name and rejects SHAs.
+    // Preserve immutable source identities separately; never silently use main.
+    referenceWorkspace: { sources: [] },
     starter: { source: "empty" }
   };
   const packet = {
@@ -89,10 +88,11 @@ export function exportV0Import({ bundle, brand, out, profiles } = {}) {
     reference_kernel_commit: config.reference_kernel_commit,
     brand_pack_sha256: manifest.brand_pack_sha256,
     consumer: profile, consumer_registered_in_handoff: Boolean(registered),
+    source_references: refs.map(([repository, commit]) => ({ repository, commit, url: `https://github.com/${repository}/tree/${commit}` })),
     v0_reference_config: referenceConfig,
-    limits: ["Not a saved v0 skill, native import command or production-adoption receipt.", "Configured commit syntax is checked locally; resolve repositories, commits and consumer paths in v0 before accepting the import.", "Product references are read-only; verify current instructions, ownership and imported HEAD before editing.", "Reconcile source conflicts before saving a skill; verify its installable starter, fonts, providers, components and states.", "Figma is an optional projection; retain existing files and quota/plan limits.", "Preserve original chats and attach the existing Vercel project; do not create a second product project."]
+    limits: ["Not a saved v0 skill, native import command or production-adoption receipt.", "Native Git mounts are omitted after an observed SHA-as-branch checkout failure. Attach the hash-verified bundle and verified consumer snapshots; source URLs are provenance, not mounted files.", "Configured commit syntax is checked locally; resolve repositories, commits and consumer paths before accepting the import.", "Product references are read-only; verify current instructions, ownership and imported HEAD before editing.", "Reconcile source conflicts before saving a skill; verify its installable starter, fonts, providers, components and states.", "Figma is an optional projection; retain existing files and quota/plan limits.", "Preserve original chats and attach the existing Vercel project; do not create a second product project."]
   };
-  const notes = `# ${brand} v0 import\n\nStatus: import inputs for review.\n\nJob: ${profile.job}\n\nConsumer: https://github.com/${profile.repository}/tree/${profile.commit}\nApp root: ${profile.app_root}\nCurrent context: ${profile.context_url}\n\nRead these consumer paths at the pinned commit:\n\n${profile.source_paths.map((path) => `- ${path}`).join("\n")}\n\nReconciliation: ${profile.reconciliation}\n\nImport the existing brand handoff plus the real consumer. The reference JSON uses an empty starter until v0 creates and verifies a small installable starter. Do not save this draft as a design-system skill. Keep exactly one brand selected; preserve the existing team skills and defaults.\n\nBefore UI edits, capture current desktop and phone states, compare three compositions and select one. Verify the actual useful task, denied/interrupted operations, reflow, keyboard focus and reduced motion. Keep the skill revision, product SHA, chat, branch, preview and review receipt together in the existing product issue.\n\nSaving a skill requires inspected starter evidence. Product releases require the owning repository's exact-revision checks, independent review and approval. Existing apps adopt a changed skill explicitly.\n`;
+  const notes = `# ${brand} v0 import\n\nStatus: import inputs for review.\n\nJob: ${profile.job}\n\nConsumer: https://github.com/${profile.repository}/tree/${profile.commit}\nApp root: ${profile.app_root}\nCurrent context: ${profile.context_url}\n\nRead these consumer paths at the pinned commit:\n\n${profile.source_paths.map((path) => `- ${path}`).join("\n")}\n\nReconciliation: ${profile.reconciliation}\n\nAttach the hash-verified brand handoff plus verified consumer source snapshots, retaining repository, commit, path and SHA256. Native Git mounts are omitted because observed SHA checkout fails; source URLs are provenance only. Never silently substitute main. The reference JSON uses an empty starter until v0 creates and verifies a small installable starter. Do not save this draft as a design-system skill. Keep exactly one brand selected; preserve the existing team skills and defaults.\n\nBefore UI edits, capture current desktop and phone states, compare three compositions and select one. Verify the actual useful task, denied/interrupted operations, reflow, keyboard focus and reduced motion. Keep the skill revision, product SHA, chat, branch, preview and review receipt together in the existing product issue.\n\nSaving a skill requires inspected starter evidence. Product releases require the owning repository's exact-revision checks, independent review and approval. Existing apps adopt a changed skill explicitly.\n`;
   const destination = resolve(out);
   if (existsSync(destination)) throw new Error("Output already exists; use a new directory.");
   mkdirSync(dirname(destination), { recursive: true });
@@ -118,6 +118,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
       options[args[i].slice(2)] = args[i + 1];
     }
     const packet = exportV0Import(options);
-    console.log(`Prepared ${packet.brand_id}: ${packet.v0_reference_config.referenceWorkspace.sources.length} pinned read-only references; starter and adoption require review.`);
+    console.log(`Prepared ${packet.brand_id}: ${packet.source_references.length} pinned source identities; native Git mounts disabled; attach verified source bytes. Starter and adoption require review.`);
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

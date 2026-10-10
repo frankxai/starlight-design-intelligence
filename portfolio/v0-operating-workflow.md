@@ -25,8 +25,20 @@ Design Systems import form, enter the listed GitHub repositories and supply the
 commit links, `IMPORT.md` and hashed bundle as focused inputs. Alternatively,
 attach those inputs to the existing brand chat and ask v0 to resolve the pinned
 sources, build the starter, and produce its documented saved-skill `v0.json`.
-The adapter checks commit syntax; v0 must resolve each repository, commit and
-consumer path before the import can be accepted.
+The adapter checks commit syntax and preserves immutable source identities in
+`import-packet.json.source_references`. Its native reference workspace is empty.
+Attach the hash-verified bundle and verified consumer source snapshots, retaining
+repository, commit, path and SHA256 for each snapshot in the saved skill. Source
+URLs establish provenance; they do not establish mounted reference access.
+
+On 10 October 2026, an actual saved-skill attachment tried to clone a commit SHA
+as a remote branch and failed. An Arcanea intake also rejected the shared repo
+because it was not linked to that Vercel project. Do not turn these failures into
+mutable `main` references or fabricate successful mounting. Focused attachments
+are supported import inputs and can become skill references. Use native Git
+mounts only after a separate attachment resolves each ref and verifies its HEAD.
+Reconcile a consumer imported from newer main against the dated source profile
+before editing; preserve intervening accepted product work.
 
 `v0-imports.json` contains dated consumer inputs for six existing sites. Refresh
 the product revision and reconcile its instructions before an import. The shared
