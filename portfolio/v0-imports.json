@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "captured_at": "2026-10-10",
+  "registry_commit": "b767cd9664280cfd3c976d8f4229a768b355b31a",
+  "reference_kernel_commit": "268aaa97f2fa9124d89c2dc5b4a6e694fab434ff",
+  "source_state": "dated-import-inputs-for-review",
+  "profiles": [
+    {
+      "brand_id": "gencreator",
+      "repository": "frankxai/gencreator.ai",
+      "commit": "57fcf5bf6c3216e69922e08a6c719dae10415adf",
+      "app_root": ".",
+      "project": "gencreator-ai",
+      "context_url": "https://gencreator.ai/creator-studio",
+      "job": "Make the owned-source, direct-edit, exact-content review and portable-export sequence clear in the existing Creator Studio.",
+      "source_paths": ["AGENTS.md", "CLAUDE.md", ".starlight/design-contract.json", "design.md", "taste.md", "docs/DECISIONS.md", "app/layout.tsx", "app/globals.css", "app/creator-studio", "lib/creator-studio"],
+      "adopted_kernel_commit": "80830c60040967956580c761772469664c44dd55",
+      "reconciliation": "The adopted pack contains retired green/catalog language. SOURCE_AUTHORITY.md in the reference kernel records the accepted Territory B decision. Resolve this conflict explicitly; preserve the product pin until its owner reviews adoption."
+    },
+    {
+      "brand_id": "arcanea",
+      "repository": "frankxai/arcanea-ai-app",
+      "commit": "6e774c1653936e5e6078f04c481cb1a6a3568ad3",
+      "app_root": "apps/web",
+      "project": "arcanea-ai-app",
+      "context_url": "https://www.arcanea.ai",
+      "job": "Connect the existing world-building entry to a useful saved world while preserving canon and real creation states.",
+      "source_paths": ["AGENTS.md", "CLAUDE.md", ".starlight/design-contract.json", "DESIGN.md", "TASTE.md", ".arcanea/lore/CANON_LOCKED.md", "apps/web/package.json", "apps/web/app/layout.tsx", "apps/web/app/globals.css"],
+      "adopted_kernel_commit": "80830c60040967956580c761772469664c44dd55",
+      "reconciliation": "Preserve the adopted contract and locked canon; newer shared guidance is a review input. Existing legacy Arcanea v0 projects require mapping before reuse."
+    },
+    {
+      "brand_id": "sis",
+      "repository": "frankxai/starlightintelligence.ai",
+      "commit": "dbf8b5d459a1b47c80880620d84cfc5df6db1ab6",
+      "app_root": ".",
+      "project": "starlightintelligence-ai",
+      "context_url": "https://starlightintelligence.ai",
+      "job": "Clarify the existing Memory Studio import, edit and export journey and its current-tab limits.",
+      "source_paths": ["AGENTS.md", "CLAUDE.md", ".starlight/voice/context.md", "app/layout.tsx", "app/globals.css", "package.json"],
+      "adopted_kernel_commit": null,
+      "reconciliation": "No .starlight/design-contract.json was found at this revision. Reconcile the public-site owner with the central SIS owner before claiming adoption; preserve the current voice context."
+    },
+    {
+      "brand_id": "frankx",
+      "repository": "frankxai/frankx.ai-vercel-website",
+      "commit": "b7e617bd28168daea4c0e53d5ac45c89fbf3b328",
+      "app_root": ".",
+      "project": "frankx-ai-vercel-website",
+      "context_url": "https://www.frankx.ai/v0",
+      "job": "Improve the existing Product Foundry study-to-product handoff and route-specific proof; preserve the approved homepage structure.",
+      "source_paths": ["AGENTS.md", "CLAUDE.md", ".starlight/design-contract.json", "design.md", "taste.md", "docs/strategy/v0-mcp-operating-standard.md", "docs/strategy/v0-product-foundry-roadmap-2026.md", "app/layout.tsx", "app/globals.css", "tailwind.config.js", "content/v0/foundry.ts"],
+      "adopted_kernel_commit": "80830c60040967956580c761772469664c44dd55",
+      "reconciliation": "The existing frankx team skill references main and must be revision-checked before reuse. Keep the 19-study archive and 22-business Foundry roadmap in their existing homes."
+    },
+    {
+      "brand_id": "agentic-income",
+      "repository": "frankxai/agenticincome",
+      "commit": "237d7f727ecf7056c6fb7602564c9365585b31a3",
+      "app_root": ".",
+      "project": "agenticincome",
+      "context_url": "https://www.agenticincome.ai",
+      "job": "Make the current fit check, scope and first owned workflow inspectable without inventing revenue or checkout availability.",
+      "source_paths": ["AGENTS.md", "CLAUDE.md", "DESIGN.md", "TASTE.md", "SYSTEM.md", "SKILL.md", "app/layout.tsx", "app/globals.css", "package.json"],
+      "adopted_kernel_commit": null,
+      "reconciliation": "No .starlight/design-contract.json was found at this revision. Reconcile the reviewed Registry pack status with the current shared pack before adoption; preserve commercial gates."
+    },
+    {
+      "brand_id": "ai-coe",
+      "repository": "frankxai/ai-architect-academy",
+      "commit": "eb1d26d99a2d4644bf815262317b5fd19b26a1d3",
+      "app_root": "site",
+      "project": "aiarchitectacademy",
+      "context_url": "https://aiarchitectacademy.com",
+      "job": "Show one real lesson-to-lab-to-artifact journey using the existing curriculum and waitlist-first site.",
+      "source_paths": ["AGENTS.md", "CONTENT-CONTRACT.md", "docs/BUILD-BRIEFS.md", "site/package.json", "site/app/layout.tsx", "site/app/globals.css", "site/lib/academy-graph"],
+      "adopted_kernel_commit": null,
+      "reconciliation": "No .starlight/design-contract.json was found at this revision. The ai-coe pack names academy mode; reconcile the Academy's own brand and licensing before adoption. The Vercel app root is site, not the repository root."
+    }
+  ]
+}

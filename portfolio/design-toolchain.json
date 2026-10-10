@@ -45,6 +45,26 @@
     }
   },
   "systems": {
+    "v0": {
+      "status": "source-import-and-design-exploration",
+      "role": "Brand-scoped design-system imports, composition studies and bounded product refinements using the existing consumer and Vercel project.",
+      "workflow": "portfolio/v0-operating-workflow.md",
+      "source_inputs": "portfolio/v0-imports.json",
+      "adapter": "scripts/export-v0-import.mjs",
+      "requirements": [
+        "OAuth authentication and an exercised capability in the intended team",
+        "pinned brand handoff plus actual product consumer",
+        "explicit resolution of adopted-source conflicts",
+        "reviewed installable starter and saved skill revision",
+        "existing product issue, isolated branch and exact preview evidence"
+      ],
+      "prohibited": [
+        "cross-brand default styling",
+        "automatic product adoption or production promotion",
+        "private chat inventories or credentials in public Git",
+        "new Vercel projects duplicating existing products"
+      ]
+    },
     "github": {
       "status": "active",
       "role": "Canonical reviewable contracts, source token schemas, component API metadata, source SVGs, manifests, validators, and release evidence.",
