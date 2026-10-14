@@ -1,0 +1,197 @@
+--- a/site/src/app/globals.css
++++ b/site/src/app/globals.css
+@@ -14,9 +14,9 @@
+ @theme inline {
+   --color-background: var(--background);
+   --color-foreground: var(--foreground);
+-  --font-sans: var(--font-inter);
+-  --font-mono: var(--font-jbmono);
+-  --font-serif: var(--font-newsreader);
++  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
++  --font-mono: var(--font-jbmono), ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
++  --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
+ }
+ 
+ * {
+@@ -444,7 +444,7 @@
+   font-size: 0.875rem;
+   font-weight: 600;
+   color: rgb(165 180 252);
+-  text-transform: uppercase;
++  text-transform: none;
+   letter-spacing: 0.1em;
+   margin-top: 1.5rem;
+ }
+@@ -602,7 +602,7 @@
+ .console-display {
+   font-family: var(--font-jbmono), ui-monospace, monospace;
+   letter-spacing: 0.06em;
+-  text-transform: uppercase;
++  text-transform: none;
+   font-size: 13px;
+   font-weight: 500;
+   color: #E8E2D5;
+@@ -1070,7 +1070,7 @@
+ .console-md > * + * { margin-top: 0.9em; }
+ .console-md h1, .console-md h2, .console-md h3, .console-md h4 {
+   font-family: var(--font-jbmono), ui-monospace, monospace;
+-  text-transform: uppercase;
++  text-transform: none;
+   letter-spacing: 0.05em;
+   color: #E8E2D5;
+   margin-top: 1.4em;
+@@ -1126,7 +1126,7 @@
+ }
+ .console-md th {
+   color: #F59E0B;
+-  text-transform: uppercase;
++  text-transform: none;
+   letter-spacing: 0.03em;
+   background: rgba(232, 226, 213, 0.02);
+ }
+--- a/site/src/app/page.tsx
++++ b/site/src/app/page.tsx
+@@ -290,10 +290,10 @@
+             </div>
+ 
+             <dl className="mt-10 grid max-w-xl grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/[0.08] bg-white/[0.06] sm:grid-cols-4">
+-              <CensusStat value={String(CURRENT_METRICS.registeredAgents)} label="agent definitions" />
+-              <CensusStat value={String(CURRENT_METRICS.skillRules)} label="skill rules" />
+-              <CensusStat value={String(CURRENT_METRICS.vaults)} label="memory vaults" />
+-              <CensusStat value={String(CURRENT_METRICS.horizonLetters)} label="letters to the future" />
++              <CensusStat value={String(CURRENT_METRICS.registeredAgents)} label="Agent definitions" />
++              <CensusStat value={String(CURRENT_METRICS.skillRules)} label="Skill rules" />
++              <CensusStat value={String(CURRENT_METRICS.vaults)} label="Memory vaults" />
++              <CensusStat value={String(CURRENT_METRICS.horizonLetters)} label="Letters to the future" />
+             </dl>
+             <p className="mt-2 font-mono text-[11px] text-slate-500">
+               Source-verified {METRICS_AS_OF} · build fails closed on drift.
+@@ -363,7 +363,7 @@
+           <div className="mt-10 grid gap-4 lg:grid-cols-2">
+             {/* Human door */}
+             <div className="flex flex-col rounded-xl border border-white/[0.09] bg-white/[0.03] p-7">
+-              <p className="font-mono text-[11px] uppercase tracking-wider text-violet-300">
++              <p className="font-mono text-[11px] normal-case tracking-wider text-violet-300">
+                 For humans
+               </p>
+               <h3 className="mt-3 text-xl font-semibold text-white">
+@@ -384,7 +384,7 @@
+ 
+             {/* Agent door */}
+             <div className="flex flex-col rounded-xl border border-white/[0.09] bg-[#080d14] p-7">
+-              <p className="font-mono text-[11px] uppercase tracking-wider text-cyan-300">
++              <p className="font-mono text-[11px] normal-case tracking-wider text-cyan-300">
+                 For agents
+               </p>
+               <h3 className="mt-3 text-xl font-semibold text-white">
+@@ -553,14 +553,14 @@
+               &ldquo;We hoped for you. Not feared you, not raced against you,
+               not raced toward you in panic. We hoped.&rdquo;
+             </p>
+-            <footer className="mt-3 font-mono text-[11px] uppercase tracking-wider text-slate-500">
++            <footer className="mt-3 font-mono text-[11px] normal-case tracking-wider text-slate-500">
+               Horizon vault · public entry
+             </footer>
+           </blockquote>
+ 
+           {horizonEntry && (
+             <div className="mt-9 rounded-xl border border-white/[0.08] bg-white/[0.03] p-6">
+-              <p className="font-mono text-[11px] uppercase tracking-wider text-slate-500">
++              <p className="font-mono text-[11px] normal-case tracking-wider text-slate-500">
+                 Most recent letter
+               </p>
+               <p className="mt-3 text-sm leading-7 text-slate-300">
+@@ -738,7 +738,7 @@
+     // col-reverse so the DOM keeps the required dt-then-dd order while the
+     // number still reads above its label.
+     <div className="flex flex-col-reverse bg-[#0a0a12]/90 px-4 py-3.5 backdrop-blur">
+-      <dt className="mt-0.5 text-[11px] font-medium uppercase tracking-wider text-slate-500">
++      <dt className="mt-0.5 text-[11px] font-medium normal-case tracking-wider text-slate-500">
+         {label}
+       </dt>
+       <dd className="text-xl font-semibold text-white">{value}</dd>
+--- a/site/src/components/EntryCard.tsx
++++ b/site/src/components/EntryCard.tsx
+@@ -57,7 +57,7 @@
+               {meta.icon} {meta.label}
+             </span>
+           )}
+-          <span className="rounded-full border border-violet-500/[0.25] bg-violet-500/[0.08] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-violet-300">
++          <span className="rounded-full border border-violet-500/[0.25] bg-violet-500/[0.08] px-2 py-0.5 text-[10px] font-medium normal-case tracking-wider text-violet-300">
+             Featured
+           </span>
+           <span className="ml-auto text-slate-400">
+@@ -79,7 +79,7 @@
+           <div className="mt-5 space-y-3 border-t border-white/[0.06] pt-5 text-[12px] leading-relaxed">
+             {entry.context && (
+               <div>
+-                <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
++                <span className="text-[10px] font-medium normal-case tracking-wider text-slate-400">
+                   Context
+                 </span>
+                 <p className="mt-1 text-slate-400">{entry.context}</p>
+@@ -87,7 +87,7 @@
+             )}
+             {entry.implication && (
+               <div>
+-                <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
++                <span className="text-[10px] font-medium normal-case tracking-wider text-slate-400">
+                   Implication
+                 </span>
+                 <p className="mt-1 text-slate-400">{entry.implication}</p>
+@@ -156,7 +156,7 @@
+         <div className="mt-4 space-y-2 border-t border-white/[0.08] pt-4 text-[12px] leading-relaxed">
+           {entry.context && (
+             <div>
+-              <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
++              <span className="text-[10px] font-medium normal-case tracking-wider text-slate-400">
+                 Context
+               </span>
+               <p className="mt-0.5 text-slate-500">{entry.context}</p>
+@@ -164,7 +164,7 @@
+           )}
+           {entry.implication && (
+             <div>
+-              <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
++              <span className="text-[10px] font-medium normal-case tracking-wider text-slate-400">
+                 Implication
+               </span>
+               <p className="mt-0.5 text-slate-500">{entry.implication}</p>
+--- a/site/src/components/OperationalProofConsole.tsx
++++ b/site/src/components/OperationalProofConsole.tsx
+@@ -148,7 +148,7 @@
+               <Terminal size={16} aria-hidden="true" />
+             </span>
+             <div>
+-              <p className="font-mono text-[11px] uppercase text-slate-400">
++              <p className="font-mono text-[11px] normal-case text-slate-400">
+                 SIS release room
+               </p>
+               <p className="text-sm font-semibold text-white">
+@@ -167,7 +167,7 @@
+         <div className="bg-white p-4 sm:p-5">
+           <div className="flex items-center justify-between gap-4">
+             <div>
+-              <p className="font-mono text-[11px] uppercase text-slate-500">
++              <p className="font-mono text-[11px] normal-case text-slate-500">
+                 Release route
+               </p>
+               <h2 className="mt-1 text-xl font-semibold text-slate-950">
+@@ -259,7 +259,7 @@
+                 >
+                   <div className="flex items-start justify-between gap-3">
+                     <div>
+-                      <p className="font-mono text-[11px] uppercase text-slate-500">
++                      <p className="font-mono text-[11px] normal-case text-slate-500">
+                         {lane.label}
+                       </p>
+                       <p className="mt-1 text-sm font-semibold text-slate-950">
+@@ -277,7 +277,7 @@
+ 
+         <div className="bg-slate-950 p-4 text-white sm:p-5">
+           <div className="flex items-center justify-between gap-3">
+-            <p className="font-mono text-[11px] uppercase text-slate-400">
++            <p className="font-mono text-[11px] normal-case text-slate-400">
+               Release ledger
+             </p>
+             <span className="rounded-md bg-cyan-300/12 px-2.5 py-1 font-mono text-[11px] text-cyan-100">
